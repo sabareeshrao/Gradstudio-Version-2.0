@@ -339,7 +339,7 @@ button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid #3
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none !important;animation:none !important}}
 
 
-/* Ten shareable themes: all active in one offline HTML */
+/* Fifteen shareable themes, one lesson and one interactive Concept Lab */
 .theme-gallery{background:#fff;border:1px solid var(--accent-border);border-radius:17px;padding:19px;margin:20px 0 23px;box-shadow:0 6px 25px #25345108}
 .gallery-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .gallery-head h2{font-size:1.1rem;margin:2px 0 3px;color:var(--text)}
@@ -355,6 +355,13 @@ button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid #3
 .theme-mini:after{content:"";display:block;width:80%;height:4px;border-radius:3px;background:var(--preview-hint)}
 .theme-choice strong{font-size:.77rem;line-height:1.3}
 .theme-choice small{color:#718190;font-size:.66rem}
+.theme-mini{display:grid;grid-template-rows:7px 1fr;gap:6px;height:69px;padding:7px;background:var(--preview-bg);border:1px solid var(--preview-hint)}
+.theme-mini:before,.theme-mini:after{content:none;display:none}
+.mini-page-top{height:7px;width:56%;border-radius:7px;background:var(--preview-color)}
+.mini-page-layout{height:100%;display:grid;grid-template-columns:34% minmax(0,1fr);gap:6px}
+.mini-page-layout i{background:var(--preview-hint);border-radius:4px}
+.mini-page-layout b{background:var(--preview-card);border-radius:4px;border:1px solid var(--preview-hint);position:relative}
+.mini-page-layout b:after{content:"";position:absolute;left:7px;top:8px;width:64%;height:4px;border-radius:4px;background:var(--preview-color)}
 .theme-hint{font-size:.72rem;color:var(--muted);line-height:1.4}
 .topbar{background:var(--bg)}
 .progress{background:var(--accent-border)}
@@ -394,10 +401,10 @@ body{transition:background-color .15s}
 <div class="container">
 
   <h1>Multimodal Training, General-Purpose Models &amp; Model Adaptation</h1>
-  <p class="sub">Seven carefully balanced questions, including one prerequisite and a final interview scenario. Visual explanations, ten color themes, and three interactive Concept Lab experiments are included below.</p>
+  <p class="sub">Seven carefully balanced questions, including one prerequisite and a final interview scenario. Visual explanations, fifteen color themes, and three interactive Concept Lab experiments are included below.</p>
 
   <!-- ===================== HERO ===================== -->
-  <section class="theme-gallery" aria-label="Color theme selector"><div class="gallery-head"><div><span class="theme-eyebrow">VISUAL THEME LIBRARY</span><h2>Choose a color direction</h2><p>Same lesson, ten styles. Select a theme to preview instantly; the link in your address bar identifies that theme.</p></div><button type="button" id="copyThemeUrl">Copy theme URL</button></div><div id="themeChoices" class="theme-choices" role="group" aria-label="Choose one of ten color themes"></div><div class="theme-hint" id="themeHint" aria-live="polite">Select any swatch to see this entire study module in that palette.</div></section>
+  <section class="theme-gallery" aria-label="Color theme selector"><div class="gallery-head"><div><span class="theme-eyebrow">VISUAL THEME LIBRARY</span><h2>Choose a color direction</h2><p>Same lesson, 15 distinctive palettes. Select one to preview instantly; the URL identifies the active palette.</p></div><button type="button" id="copyThemeUrl">Copy theme URL</button></div><div id="themeChoices" class="theme-choices" role="group" aria-label="Choose one of fifteen color themes"></div><div class="theme-hint" id="themeHint" aria-live="polite">Select any swatch to see this entire study module in that palette.</div></section>
 <div class="hero hero-new" aria-label="Overview of visual and language representation learning">
 <div class="hero-heading"><div><span class="eyebrow">MODULE MAP · PAGES 10–11</span><h2>From paired data to adaptable AI</h2><p>Follow how images and language become representations, then how those capabilities reach real applications.</p></div><span class="hero-index">01 / FOUNDATION</span></div>
 <div class="hero-flow"><div class="hero-visual"><svg class="photo-art" viewBox="0 0 260 166" role="img" aria-label="Illustration of a dog beside the sea under a sunset"><defs><linearGradient id="sea" x2="0" y2="1"><stop stop-color="#ffd9a7"/><stop offset="1" stop-color="#9ad5c7"/></linearGradient></defs><rect width="260" height="166" rx="13" fill="url(#sea)"/><circle cx="200" cy="40" r="23" fill="#ffad57"/><path d="M0 99Q68 81 124 101T260 88V166H0Z" fill="#60a5a2"/><path d="M0 130Q80 121 151 138T260 128V166H0Z" fill="#e5c69a"/><path d="M75 124q12-20 34-18l20-14 10 9-8 11 15 12-11 8-20-7-20 1-4 15H78l1-17-14-7z" fill="#5d463c"/><circle cx="134" cy="104" r="2" fill="#fff"/><path d="M62 116l-9-8" stroke="#5d463c" stroke-width="7" stroke-linecap="round"/></svg><span class="hero-caption">“a dog on the beach”</span><span class="mini-label">Naturally paired data</span></div><span class="flow-arrow" aria-hidden="true">→</span>
@@ -584,13 +591,18 @@ const THEMES=[
 {id:'sunset',name:'Sunset Orange',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2'},
 {id:'ocean',name:'Ocean Blue',a:'#226cc0',dark:'#1e477e',mid:'#75b2f0',soft:'#e8f3ff',border:'#bad7f4',bg:'#f6faff',surface:'#dfedfc',canvas:'#f2f8ff'},
 {id:'forest',name:'Forest Green',a:'#23784b',dark:'#185534',mid:'#74ba8c',soft:'#e8f6ec',border:'#b9dfc2',bg:'#f7fcf8',surface:'#dff0e4',canvas:'#f2faf4'},
-{id:'violet',name:'Royal Violet',a:'#7344b9',dark:'#4d287f',mid:'#ad8be4',soft:'#f2eafe',border:'#d9c7f2',bg:'#fcf9ff',surface:'#ecddfb',canvas:'#f9f3ff'},
+{id:'sky',name:'Sky Blue',a:'#0878B6',dark:'#145879',mid:'#79C8EF',soft:'#EAF8FF',border:'#ADDDF7',bg:'#F4FBFF',surface:'#DDF3FF',canvas:'#ECF8FF'},
 {id:'rose',name:'Rose Quartz',a:'#b23e70',dark:'#82264f',mid:'#e194b4',soft:'#ffedf3',border:'#f2c5d4',bg:'#fff9fb',surface:'#fbe0e9',canvas:'#fff3f7'},
 {id:'midnight',name:'Midnight Indigo',a:'#3a4b9d',dark:'#27336c',mid:'#8999dc',soft:'#e9edff',border:'#c1caf0',bg:'#f4f5fc',surface:'#dce2fa',canvas:'#eef1fe'},
-{id:'lagoon',name:'Lagoon Teal',a:'#087f84',dark:'#0b565b',mid:'#59bcb2',soft:'#e2f7f5',border:'#a8deda',bg:'#f4fdfb',surface:'#d5f1eb',canvas:'#ecfaf6'},
+{id:'cocoa',name:'Cocoa Espresso',a:'#704933',dark:'#4B2D22',mid:'#BB9173',soft:'#F6EEE6',border:'#DCC7B5',bg:'#FCF9F5',surface:'#EDE0D2',canvas:'#F9F2EB'},
 {id:'ruby',name:'Ruby Red',a:'#ac3541',dark:'#771f2b',mid:'#dc8185',soft:'#ffeded',border:'#efbfc1',bg:'#fff9f9',surface:'#f9dfe0',canvas:'#fff3f3'},
-{id:'gold',name:'Golden Ochre',a:'#97641d',dark:'#654014',mid:'#d7a857',soft:'#fff5df',border:'#f0d6a3',bg:'#fffdf6',surface:'#fbeac6',canvas:'#fff9ea'},
-{id:'slate',name:'Slate Graphite',a:'#3e6477',dark:'#283e4a',mid:'#89a7b5',soft:'#eaf1f5',border:'#c9dbe3',bg:'#f7fafb',surface:'#dfeaf0',canvas:'#f0f5f7'}
+{id:'arctic',name:'Arctic Cyan',a:'#007F96',dark:'#005C70',mid:'#70D5E4',soft:'#E5FAFC',border:'#A8E4EC',bg:'#F2FDFF',surface:'#D4F5FA',canvas:'#EAFBFD'},
+{id:'slate',name:'Slate Graphite',a:'#3e6477',dark:'#283e4a',mid:'#89a7b5',soft:'#eaf1f5',border:'#c9dbe3',bg:'#f7fafb',surface:'#dfeaf0',canvas:'#f0f5f7'},
+{id:'lime',name:'Lime Spark',a:'#617A00',dark:'#455700',mid:'#C1D66F',soft:'#F5F9DE',border:'#DCE8A3',bg:'#FAFCEF',surface:'#F0F5C3',canvas:'#F7FBE3'},
+{id:'coral',name:'Coral Peach',a:'#B25149',dark:'#813A32',mid:'#F1AD91',soft:'#FFF0EB',border:'#F4C6BA',bg:'#FFF9F6',surface:'#FFE2D8',canvas:'#FFF3EC'},
+{id:'fuchsia',name:'Fuchsia Pop',a:'#9E257C',dark:'#711454',mid:'#E38AC5',soft:'#FCE8F5',border:'#F0BBDD',bg:'#FFF7FD',surface:'#F8DCEF',canvas:'#FFF0F9'},
+{id:'periwinkle',name:'Periwinkle Mist',a:'#596DA7',dark:'#364D83',mid:'#A9B8DF',soft:'#EFF2FC',border:'#CED6EF',bg:'#F8FAFF',surface:'#E1E9FC',canvas:'#F2F5FF'},
+{id:'silver',name:'Silver Frost',a:'#536C80',dark:'#30495D',mid:'#A0B5C4',soft:'#EDF4F8',border:'#CCDDE7',bg:'#FAFCFD',surface:'#E1ECF3',canvas:'#F3F7FA'}
 ];
 let activeTheme;
 const choiceContainer=document.getElementById('themeChoices'),themeHint=document.getElementById('themeHint');
@@ -611,11 +623,19 @@ function chooseTheme(id,changeUrl){
 }
 THEMES.forEach((t,n)=>{
  const b=document.createElement('button');b.type='button';b.className='theme-choice';b.dataset.theme=t.id;b.setAttribute('aria-pressed','false');
- b.innerHTML='<span class="theme-mini" style="--preview-bg:'+t.surface+';--preview-color:'+t.a+';--preview-hint:'+t.mid+'"></span><strong>'+(n+1)+'. '+t.name+'</strong><small>'+t.id+'</small>';
+ b.innerHTML='<span class="theme-mini" style="--preview-bg:'+t.surface+';--preview-color:'+t.a+';--preview-hint:'+t.mid+';--preview-card:'+t.soft+'"><span class="mini-page-top"></span><span class="mini-page-layout"><i></i><b></b></span></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><small>'+t.id+'</small>';
  b.addEventListener('click',()=>chooseTheme(t.id,true));choiceContainer.appendChild(b);
 });
 let initialTheme='';
-try{initialTheme=new URLSearchParams(location.search).get('theme')||window.localStorage.getItem('gradstudio-theme')||'sunset';}catch(e){initialTheme='sunset'}
+try{
+ const candidate=new URLSearchParams(location.search).get('theme')||window.localStorage.getItem('gradstudio-theme')||'sunset';
+ initialTheme=THEMES.some(t=>t.id===candidate)?candidate:'sunset';
+ const u=new URL(window.location.href);
+ if(u.searchParams.has('theme')&&u.searchParams.get('theme')!==initialTheme){
+   u.searchParams.set('theme',initialTheme);
+   window.history.replaceState(null,'',u.toString());
+ }
+}catch(e){initialTheme='sunset'}
 chooseTheme(initialTheme,false);
 document.getElementById('copyThemeUrl').addEventListener('click',async()=>{
  const b=document.getElementById('copyThemeUrl');
