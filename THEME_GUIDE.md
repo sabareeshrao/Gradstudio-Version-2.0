@@ -1,49 +1,55 @@
 # Gradstudio Version 2.0 — Theme and Pages Guide
 
-There is one interactive HTML lesson and fifteen URL-selectable color themes. All fifteen use the same quiz and Concept Lab; no duplicate HTML downloads are needed.
+One interactive HTML module supports **15 deliberately differentiated color palettes**. All themes share the same seven questions and interactive Concept Lab. You don't need 15 separate HTML downloads.
 
-| Theme | Query parameter | Accent |
-|---|---|---|
-| 01 Sunset Orange | ?theme=sunset | #bd511b |
-| 02 Ocean Blue | ?theme=ocean | #226cc0 |
-| 03 Forest Green | ?theme=forest | #23784b |
-| 04 Sky Blue | ?theme=sky | #0878B6 |
-| 05 Rose Quartz | ?theme=rose | #b23e70 |
-| 06 Midnight Indigo | ?theme=midnight | #3a4b9d |
-| 07 Cocoa Espresso | ?theme=cocoa | #704933 |
-| 08 Ruby Red | ?theme=ruby | #ac3541 |
-| 09 Arctic Cyan | ?theme=arctic | #007F96 |
-| 10 Slate Graphite | ?theme=slate | #3e6477 |
-| 11 Lime Spark | ?theme=lime | #617A00 |
-| 12 Coral Peach | ?theme=coral | #B25149 |
-| 13 Fuchsia Pop | ?theme=fuchsia | #9E257C |
-| 14 Periwinkle Mist | ?theme=periwinkle | #596DA7 |
-| 15 Silver Frost | ?theme=silver | #536C80 |
+## Available themes
 
-## How to enable GitHub Pages
+| No. | Theme | Shareable parameter | Main accent | Page treatment |
+|---|---|---|---|---|
+| 01 | Sunset Orange | `?theme=sunset` | `#BD511B` | Light / warm ivory |
+| 02 | Forest Green | `?theme=forest` | `#23784B` | Light / botanical |
+| 03 | Sky Blue | `?theme=sky` | `#0878B6` | Light / sky |
+| 04 | Rose Quartz | `?theme=rose` | `#B23E70` | Light / blush |
+| 05 | Midnight Indigo | `?theme=midnight` | `#3A4B9D` | Light / cool indigo |
+| 06 | Cocoa After Dark | `?theme=cocoa` | `#A97955` | Dark / espresso |
+| 07 | Ivory Ink | `?theme=paper` | `#145458` | Light / parchment |
+| 08 | Obsidian Black | `?theme=obsidian` | `#252D36` | Light / grayscale |
+| 09 | Electric Lemon | `?theme=lemon` | `#DDE748` | Dark / neon citrus |
+| 10 | Glacier Ice | `?theme=glacier` | `#75D4FF` | Dark / arctic blue |
+| 11 | Scarlet Signal | `?theme=scarlet` | `#FF6860` | Dark / coral-red |
+| 12 | Jade Neon | `?theme=jade` | `#59E7BC` | Dark / bright jade |
+| 13 | Peach Noir | `?theme=peach` | `#FFD0A1` | Dark / warm peach |
+| 14 | Carbon Contrast | `?theme=carbon` | `#D0D4D9` | Dark / monochrome |
+| 15 | Electric Cobalt | `?theme=cobalt` | `#8195FF` | Dark / electric blue |
 
-1. Visit https://github.com/sabareeshrao/Gradstudio-Version-2.0/settings/pages
-2. Under Build and deployment, select Deploy from a branch.
-3. Select main and /(root), then Save.
-4. Once published, use Visit site to open your website.
+The gallery previews both the accent color and its page background. Some choices use light study pages; others use intentionally dark, high-contrast canvases. Similar palettes from earlier versions were retired rather than simply renamed.
 
-Expected site: https://sabareeshrao.github.io/Gradstudio-Version-2.0/
+## Enable GitHub Pages
 
-Example theme link: https://sabareeshrao.github.io/Gradstudio-Version-2.0/?theme=forest
+1. Open https://github.com/sabareeshrao/Gradstudio-Version-2.0/settings/pages
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Select branch `main`, folder `/(root)`, then click **Save**.
+4. After publication, use **Visit site** to open the module.
 
-The site is not confirmed live until GitHub Pages has published it.
+Expected address: https://sabareeshrao.github.io/Gradstudio-Version-2.0/
 
-**Private repository caveat:** This repository was private when this guide was written. GitHub Free requires a public repo for Pages; GitHub Pro can publish from a private repo, but the website itself is still publicly accessible. Do not change repository visibility without user approval.
+Example dark theme: https://sabareeshrao.github.io/Gradstudio-Version-2.0/?theme=jade
 
-## Reusable files
+Example light theme: https://sabareeshrao.github.io/Gradstudio-Version-2.0/?theme=sky
 
-- index.html — visual lesson, question bank, and color chooser
-- lab-v3.css — reusable responsive Concept Lab design
-- lab-v3.js — interactive toy embedding search, retail adaptation studio, and technique-choice challenges
-- TEMPLATE_RULES.md — quality standards for future modules
+These URLs are expected addresses, not confirmation that the site is currently live.
 
-Choose a palette from the on-page gallery, or enter its query parameter directly. The browser URL updates when a color is selected and can be shared. All fifteen variants share the same learning content.
+**Visibility note:** GitHub Pages availability for a private repository depends on GitHub plan. Pages sites may be publicly accessible even when the repository itself is private. Do not change repository visibility without approval.
 
-## Palette changes (October 2026)
+## Files and reuse
 
-Royal Violet, Lagoon Teal and Golden Ochre were retired. They were replaced with **Sky Blue**, **Cocoa Espresso**, and **Arctic Cyan**. Five additional themes were added: **Lime Spark**, **Coral Peach**, **Fuchsia Pop**, **Periwinkle Mist**, and **Silver Frost**. The website now offers 15 palettes while retaining a single quiz and interactive Concept Lab. If an old deleted theme URL is opened, the website falls back to Sunset Orange and fixes the query parameter.
+- `index.html`: study content, question bank, theme selector, and shared theme definitions
+- `lab-v3.js`: interactive image matching, retail adaptation comparison, and decision practice
+- `lab-v3.css`: responsive Concept Lab presentation
+- `TEMPLATE_RULES.md`: standards for future modules
+
+For a new module, reuse the same visual architecture and theme list. Replace domain-specific learning material with examples grounded in the new topic.
+
+## Distinctness rule
+
+Never add two themes that look like different names for nearly the same color. Review **both** the primary accent and the complete page treatment (background, surface, borders, active buttons, and headings). If two themes share a similar hue, their visual contrast must be clearly different—for example, a light study page versus a strongly contrasting dark page. Prefer replacing a near-duplicate instead of adding another variation. Check readable contrast for button labels and instructional text.
