@@ -62,16 +62,36 @@ h1{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.035em;margin:5px 0 6px;li
 .footnote{font-size:.79rem;color:#526e82;background:#e6f0f5;border-left:3px solid #307eac;border-radius:0 9px 9px 0;padding:12px 14px;margin:22px 0}
 @media(max-width:810px){.workbench{grid-template-columns:1fr}.preview-panel{position:static}#palettes{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:470px){#palettes{grid-template-columns:repeat(2,minmax(0,1fr))}.panel-head{padding:15px}.sample-flow{gap:4px}.flow-node{font-size:.66rem;padding:12px 2px}.page{padding-top:19px}.preview-panel{overflow:hidden}.sample-question{padding:12px}}
+
+/* Theme choices belong solely in the top-bar dropdown; no palette cards */
+.site-header{position:sticky;top:0;z-index:100}
+.site-header nav{align-items:center}
+.gallery-theme-menu{position:relative}
+.gallery-theme-menu>summary{display:flex;align-items:center;gap:8px;background:#253e50;border:1px solid #253e50;border-radius:9px;color:#fff;cursor:pointer;padding:9px 11px;font-size:.78rem;list-style:none;white-space:nowrap}
+.gallery-theme-menu>summary::-webkit-details-marker{display:none}
+.gallery-theme-menu>summary strong{font-size:.74rem;font-weight:750;color:#a7e8ff}
+.gallery-theme-menu[open]>summary{background:#334f63}
+.gallery-dropdown{position:absolute;z-index:200;right:0;top:calc(100% + 8px);background:#fff;border:1px solid #c4d5df;box-shadow:0 16px 35px #132c3f40;border-radius:12px;padding:6px;width:min(285px,calc(100vw - 24px));max-height:min(70vh,500px);overflow:auto;display:flex;flex-direction:column;gap:1px}
+.gallery-dropdown .palette{display:flex;align-items:center;gap:10px;width:100%;border:1px solid transparent;padding:9px 10px;text-align:left;background:#fff;border-radius:8px;box-shadow:none}
+.gallery-dropdown .palette:hover,.gallery-dropdown .palette[aria-pressed=true]{border-color:#d2e5ef;background:#edf6fa;transform:none}
+.gallery-dropdown .palette[aria-pressed=true]{outline:0}
+.gallery-dropdown .palette[aria-pressed=true]:after{content:"✓";margin-left:auto;color:#236f95;font-weight:900}
+.gallery-dropdown .palette strong{font-size:.8rem;margin:0;flex:1}
+.gallery-dropdown .palette small{font-size:.7rem}
+.gallery-dropdown .dropdown-dot{width:18px;height:18px;flex:0 0 18px;border-radius:5px;border:3px solid var(--swatch-bg);background:var(--swatch-accent);box-shadow:0 0 0 1px #b5c9d5}
+.workbench{grid-template-columns:minmax(0,1fr)}
+.preview-panel{position:static;width:100%}
+@media(max-width:600px){.site-header{flex-wrap:wrap}.site-header nav{width:100%;justify-content:flex-end}.gallery-theme-menu>summary{padding:7px 9px}}
+
 </style>
 </head>
 <body>
-<header class="site-header"><div><strong>GRADSTUDIO / DESIGN LIBRARY</strong><span>Standalone theme preview — not part of study modules</span></div><nav><a href="../">Study modules</a><a href="../keyword-study/web-api/">Web API study</a></nav></header>
+<header class="site-header"><div><strong>GRADSTUDIO / DESIGN LIBRARY</strong><span>Standalone color preview</span></div><nav><a href="../">Study modules</a><a href="../keyword-study/web-api/">Web API study</a><details id="galleryThemeMenu" class="gallery-theme-menu"><summary>Theme <strong id="galleryCurrentTheme">Glacier Ice</strong><span aria-hidden="true">▾</span></summary><div id="palettes" class="gallery-dropdown" role="group" aria-label="Choose a color theme"></div></details></nav></header>
 <main class="page">
 <div class="eyebrow">VISUAL DESIGN SYSTEM / 15 DIFFERENT PALETTES</div>
 <h1>Theme gallery</h1>
-<p class="intro">Choose a look here, preview its sample lesson layout, and tell me the theme number for your next keyword. Individual lessons have <strong>one preselected theme</strong>—this gallery is never embedded inside them.</p>
+<p class="intro">Click <strong>Theme</strong> in the top bar to choose one of 15 designs. The page preview changes immediately; the dropdown stays hidden until you open it.</p>
 <div class="workbench">
-<section class="palette-panel" aria-labelledby="palette-title"><div class="panel-head"><strong id="palette-title">Available palettes</strong><small>15 styles</small></div><div id="palettes" role="group" aria-label="Select a palette"></div></section>
 <section class="preview-panel" aria-label="Preview of the selected style"><div class="preview-meta"><strong>Live design preview</strong><span>Sample layout only</span></div>
 <div id="themePreview">
 <div class="sample-kicker">KEYWORD STUDY / 001</div><div class="sample-title">Web API</div><p class="sample-summary">Software Engineering · API Design · 8 questions</p>
@@ -81,7 +101,7 @@ h1{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.035em;margin:5px 0 6px;li
 <div class="info"><div><strong id="chosenTheme">Glacier Ice</strong><span id="chosenHex"></span></div><button type="button" id="copyLink" class="copy">Copy preview link</button></div>
 </section>
 </div>
-<p class="footnote"><strong>Separation rule:</strong> The gallery is for design decisions only. It does not contain the Web API question bank or Concept Lab. The published Web API lesson uses one fixed Glacier Ice theme.</p>
+<p class="footnote"><strong>Separation rule:</strong> The gallery is for design decisions only. It does not contain the Web API question bank or Concept Lab. The Web API lesson has its own top-bar Theme dropdown and a Download HTML button.</p>
 </main>
 <script>
 const THEMES=[
@@ -114,6 +134,8 @@ function apply(id,update){
  '--t-surface':t.surface,'--t-soft':t.soft,'--t-accent-text':t.mode==='dark'?'#13293a':'#fff'
  }))preview.style.setProperty(key,val);
  document.getElementById('chosenTheme').textContent=t.name;
+ document.getElementById('galleryCurrentTheme').textContent=t.name;
+ document.getElementById('galleryThemeMenu').open=false;
  document.getElementById('chosenHex').textContent='Accent '+t.a+' · '+t.mode+' palette · theme '+t.id;
  area.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===id)));
  if(update)try{const u=new URL(location.href);u.searchParams.set('theme',id);history.replaceState(null,'',u.href);}catch(e){}
@@ -121,11 +143,14 @@ function apply(id,update){
 THEMES.forEach((t,n)=>{
  const b=document.createElement('button');b.type='button';b.className='palette';b.dataset.theme=t.id;
  b.setAttribute('aria-pressed','false');
- b.innerHTML='<span class="swatch-page" style="--swatch-bg:'+t.bg+';--swatch-accent:'+t.a+';--swatch-mid:'+t.mid+';--swatch-soft:'+t.soft+';--swatch-border:'+t.border+'"><i></i><b></b><em></em></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><small>'+t.mode+'</small>';
+ b.innerHTML='<span class="dropdown-dot" style="--swatch-bg:'+t.bg+';--swatch-accent:'+t.a+'"></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><small>'+t.mode+'</small>';
  b.addEventListener('click',()=>apply(t.id,true));area.appendChild(b);
 });
 try{const u=new URL(location.href);const p=u.searchParams.get('theme');if(p&&THEMES.some(t=>t.id===p))current=p;}catch(e){}
 apply(current,false);
+const themeMenu=document.getElementById('galleryThemeMenu');
+document.addEventListener('click',e=>{if(themeMenu.open&&!themeMenu.contains(e.target))themeMenu.open=false;});
+themeMenu.addEventListener('keydown',e=>{if(e.key==='Escape'){themeMenu.open=false;themeMenu.querySelector('summary').focus();}});
 document.getElementById('copyLink').addEventListener('click',async()=>{
  const b=document.getElementById('copyLink'),old=b.textContent;
  try{const u=new URL(location.href);u.searchParams.set('theme',current);await navigator.clipboard.writeText(u.href);b.textContent='Copied';}
