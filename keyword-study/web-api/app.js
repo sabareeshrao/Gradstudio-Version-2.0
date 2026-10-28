@@ -108,7 +108,7 @@ const THEMES=[
     "level": "INTRODUCTION",
     "skill": "API vs Web API",
     "diagram": 1,
-    "question": "What makes a Web API different from an API in general?",
+    "question": "What is a Web API, and how does it differ from the broader concept of an API?",
     "choices": [
       "An API always needs internet access, but a Web API can work inside one program.",
       "A Web API works through web communication; other APIs can also work locally.",
@@ -124,7 +124,7 @@ const THEMES=[
     "level": "FUNDAMENTALS",
     "skill": "Why APIs matter",
     "diagram": 2,
-    "question": "Why is a clear Web API useful when several apps need the same service?",
+    "question": "Why do software applications use Web APIs, and what problems would arise if applications communicated without well-defined interfaces?",
     "choices": [
       "It lets each app read the database directly without going through the service.",
       "It makes all apps use the same programming language as the backend server.",
@@ -140,7 +140,7 @@ const THEMES=[
     "level": "WORKING MECHANISM",
     "skill": "Request and response",
     "diagram": 3,
-    "question": "What usually happens after a client sends a request to a Web API?",
+    "question": "What happens from the moment a client sends an HTTP request to a Web API until it receives a response?",
     "choices": [
       "The server finds the route, checks the request, does the work, and replies.",
       "The server sends a reply first, then checks the request and finds the route.",
@@ -156,14 +156,14 @@ const THEMES=[
     "level": "TECHNICAL UNDERSTANDING",
     "skill": "Parts of an HTTP message",
     "diagram": 4,
-    "question": "Which explanation of HTTP methods, paths, headers, and status codes is correct?",
+    "question": "What roles do HTTP methods, endpoints, headers, status codes, and request and response bodies play in Web API communication?",
     "choices": [
-      "The path chooses an action; the method carries data; headers report success.",
-      "The method stores the result; the path checks security; headers name the user.",
-      "The method sets the format; the path stores data; status codes name routes.",
-      "The method says what to do; the path says where; status codes show the result."
+      "The method tells the action; the path picks the item; headers give details; status and bodies show results.",
+      "The method picks the item; the path tells the action; headers show errors; bodies are only for requests.",
+      "The method formats data; the path stores login; headers create items; status and bodies select routes.",
+      "The method checks login; the path picks the status; headers hold values; bodies are only for servers."
     ],
-    "correct": 3,
+    "correct": 0,
     "title": "Each part of an HTTP request has a specific job.",
     "explain": "<p>Look at <code>GET /products/42</code>. <strong>GET</strong> is the HTTP method: it asks to read something. <strong>/products/42</strong> is the path: it identifies which product. <strong>Headers</strong> carry extra information, such as the accepted data format or login details.</p><p>Some requests also have a <strong>body</strong> that carries data—for example, the items in a new order. The server returns a <strong>status code</strong> to show what happened, such as <code>200</code> for success or <code>404</code> when a product cannot be found. The response body may contain data or an error message.</p>",
     "why": "Methods, paths, headers, bodies, and status codes have different roles. Mixing them up leads to confusing requests and responses."
@@ -172,7 +172,7 @@ const THEMES=[
     "level": "PRACTICAL APPLICATION",
     "skill": "Products and orders",
     "diagram": 5,
-    "question": "Which routes would you use to list products, create an order, and read one order?",
+    "question": "How would you design the basic Web API endpoints for an e-commerce application that allows customers to view products, place orders, and retrieve order details?",
     "choices": [
       "GET /products, then POST /orders, then GET /orders/{id}.",
       "POST /products, then GET /orders, then GET /orders/{id}.",
@@ -188,7 +188,7 @@ const THEMES=[
     "level": "ADVANCED UNDERSTANDING",
     "skill": "Handling problems",
     "diagram": 6,
-    "question": "Which HTTP status codes fit invalid data, missing login, missing items, and server errors?",
+    "question": "How should a Web API handle invalid requests, authentication failures, missing resources, and unexpected server errors while maintaining a consistent interface?",
     "choices": [
       "404 for invalid data; 400 for missing login; 500 for missing items; 401 for server errors.",
       "500 for invalid data; 404 for missing login; 401 for missing items; 400 for server errors.",
@@ -204,7 +204,7 @@ const THEMES=[
     "level": "SMART-LEVEL REASONING",
     "skill": "Safe order retries",
     "diagram": 7,
-    "question": "An order request times out. What is the safest way for the app to try again?",
+    "question": "A client sends a request to create an order, but the connection times out before the response arrives. How would you design the Web API to handle retries safely without accidentally creating duplicate orders?",
     "choices": [
       "Send a new key on every retry so each attempt appears as a separate request.",
       "Try again after a short delay and assume the first order was never saved.",
@@ -221,12 +221,12 @@ const THEMES=[
     "skill": "Real-world design choices",
     "diagram": 8,
     "interview": true,
-    "question": "What is the strongest starting design for an e-commerce Web API with many users?",
+    "question": "You are asked to design a Web API for an e-commerce platform serving thousands of concurrent users. How would you approach its resource design, security, performance, reliability, and backward compatibility, and what trade-offs would influence your decisions?",
     "choices": [
-      "Build separate routes for each app and let each client decide its own order rules.",
-      "Prioritize speed first and leave permissions and older-client support until later.",
-      "Use clear routes, check access, load large lists in pages, and make order retries safe.",
-      "Share database details with apps and change response formats whenever needed."
+      "Give each app separate routes, skip older versions, and fix failures only when they happen.",
+      "Share database access with clients, cache every order, and replace old replies as needed.",
+      "Use clear routes, access checks, paging, safe retries, and changes that still work with older apps.",
+      "Focus on speed first, trust clients with permissions, and change the API when traffic grows."
     ],
     "correct": 2,
     "title": "Start with clear rules and correct behavior, then improve performance.",
