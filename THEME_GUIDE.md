@@ -22,7 +22,7 @@ One interactive HTML module supports **15 deliberately differentiated color pale
 | 14 | Carbon Contrast | `?theme=carbon` | `#D0D4D9` | Dark / monochrome |
 | 15 | Electric Cobalt | `?theme=cobalt` | `#8195FF` | Dark / electric blue |
 
-The gallery previews both the accent color and its page background. Some choices use light study pages; others use intentionally dark, high-contrast canvases. Similar palettes from earlier versions were retired rather than simply renamed.
+Use the **Themes** button in the sticky top navigation bar to open the dropdown of all 15 palettes. Pick a name to recolor the page instantly; the dropdown closes automatically. The selected theme is saved in the browser and is also shareable through `?theme=...`. The dropdown has color previews, keyboard focus support, Escape-to-close, click-outside-to-close, and a Copy link button. The large gallery has been removed from the lesson body. Some choices use light study pages; others use dark, high-contrast designs.
 
 ## Enable GitHub Pages
 
@@ -43,10 +43,12 @@ These URLs are expected addresses, not confirmation that the site is currently l
 
 ## Files and reuse
 
-- `index.html`: study content, question bank, theme selector, and shared theme definitions
+- `index.html`: study content, question bank, sticky top-bar theme dropdown, and shared theme definitions
 - `lab-v3.js`: interactive image matching, retail adaptation comparison, and decision practice
 - `lab-v3.css`: responsive Concept Lab presentation
 - `TEMPLATE_RULES.md`: standards for future modules
+- `Gradstudio-15-Themes-Standalone.html`: preserved original standalone edition with the former large theme gallery
+- `Gradstudio-15-Themes-Dropdown-Standalone.html`: new offline single-file edition, including the top-bar dropdown and all Concept Lab assets
 
 For a new module, reuse the same visual architecture and theme list. Replace domain-specific learning material with examples grounded in the new topic.
 
