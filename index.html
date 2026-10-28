@@ -339,30 +339,46 @@ button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid #3
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none !important;animation:none !important}}
 
 
-/* Fifteen shareable themes, one lesson and one interactive Concept Lab */
-.theme-gallery{background:#fff;border:1px solid var(--accent-border);border-radius:17px;padding:19px;margin:20px 0 23px;box-shadow:0 6px 25px #25345108}
-.gallery-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.gallery-head h2{font-size:1.1rem;margin:2px 0 3px;color:var(--text)}
-.gallery-head p{font-size:.78rem;color:var(--muted);margin:0}
-.theme-eyebrow{font-size:.68rem;letter-spacing:.12em;color:var(--accent-dark);font-weight:800}
-#copyThemeUrl{background:var(--accent);color:white;padding:8px 12px;font-size:.77rem;white-space:nowrap}
-.theme-choices{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:17px 0 11px}
-.theme-choice{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:10px;border:1px solid #d8dfe5;border-radius:11px;background:#fff;min-width:0;text-align:left;position:relative;color:#2a3747;transition:transform .15s,border-color .15s,box-shadow .15s}
-.theme-choice:hover{transform:translateY(-2px);border-color:var(--accent)}
-.theme-choice[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:1px}
-.theme-mini{display:flex;flex-direction:column;gap:3px;width:100%;height:35px;padding:5px;border-radius:6px;background:var(--preview-bg)}
-.theme-mini:before{content:"";display:block;width:40%;height:6px;border-radius:3px;background:var(--preview-color)}
-.theme-mini:after{content:"";display:block;width:80%;height:4px;border-radius:3px;background:var(--preview-hint)}
-.theme-choice strong{font-size:.77rem;line-height:1.3}
-.theme-choice small{color:#718190;font-size:.66rem}
-.theme-mini{display:grid;grid-template-rows:7px 1fr;gap:6px;height:69px;padding:7px;background:var(--preview-bg);border:1px solid var(--preview-hint)}
-.theme-mini:before,.theme-mini:after{content:none;display:none}
-.mini-page-top{height:7px;width:56%;border-radius:7px;background:var(--preview-color)}
-.mini-page-layout{height:100%;display:grid;grid-template-columns:34% minmax(0,1fr);gap:6px}
-.mini-page-layout i{background:var(--preview-hint);border-radius:4px}
-.mini-page-layout b{background:var(--preview-card);border-radius:4px;border:1px solid var(--preview-hint);position:relative}
-.mini-page-layout b:after{content:"";position:absolute;left:7px;top:8px;width:64%;height:4px;border-radius:4px;background:var(--preview-color)}
-.theme-hint{font-size:.72rem;color:var(--muted);line-height:1.4}
+/* Compact, keyboard-accessible top-bar theme picker */
+.theme-menu{position:relative;flex:0 0 auto;z-index:75}
+.theme-menu-toggle{display:flex;gap:8px;align-items:center;justify-content:center;white-space:nowrap;padding:8px 12px;background:#fff;border:1px solid var(--accent-border);border-radius:9px;color:var(--accent-dark);font-size:.83rem;line-height:1.2}
+.theme-menu-toggle:hover,.theme-menu-toggle[aria-expanded="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.theme-menu-toggle:focus-visible,.theme-choice:focus-visible,#copyThemeUrl:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.theme-menu-indicator{width:13px;height:13px;border:2px solid #fff;box-shadow:0 0 0 1px #0003;border-radius:50%;background:var(--accent);flex:none}
+.theme-chevron{font-size:1rem;font-weight:900;line-height:1;transition:transform .12s}
+.theme-menu-toggle[aria-expanded="true"] .theme-chevron{transform:rotate(180deg)}
+.theme-dropdown-panel{position:absolute;top:calc(100% + 12px);right:0;width:min(365px,calc(100vw - 24px));max-height:min(72vh,620px);overflow:auto;overscroll-behavior:contain;padding:15px;background:#fff;border:1px solid #d7dee6;border-radius:15px;box-shadow:0 18px 44px #11263d3d;color:#253345}
+.theme-dropdown-panel[hidden]{display:none}
+.theme-menu-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:13px}
+.theme-menu-head strong{font-size:.95rem;color:#233245}
+.theme-menu-head span{font-size:.73rem;color:#6c7b89}
+.theme-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.theme-choice{display:flex;align-items:center;gap:8px;padding:10px 8px;background:#fff;border:1px solid #d9e0e7;border-radius:9px;color:#2a3747;text-align:left;min-width:0;font-size:.73rem;line-height:1.2}
+.theme-choice:hover{border-color:#879cb0;background:#f7fafc}
+.theme-choice[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:#f5f8fa}
+.theme-choice strong{font-size:inherit;font-weight:650;min-width:0;overflow-wrap:anywhere;flex:1}
+.theme-choice .theme-check{font-size:.8rem;visibility:hidden;color:#304154}
+.theme-choice[aria-pressed="true"] .theme-check{visibility:visible}
+.theme-swatch{width:27px;height:27px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--swatch-bg);border:1px solid #b4bcc6;border-radius:6px}
+.theme-swatch:after{content:"";display:block;width:15px;height:6px;background:var(--swatch-accent);border-radius:9px}
+.theme-menu-footer{display:flex;align-items:center;justify-content:space-between;gap:7px;border-top:1px solid #e4e8ec;margin-top:12px;padding-top:12px}
+.theme-hint{font-size:.71rem;color:#526579;line-height:1.35}
+#copyThemeUrl{background:#eaf1f7;color:#25445b;border:1px solid #c5d5e0;padding:7px 9px;font-size:.7rem;white-space:nowrap}
+#copyThemeUrl:hover{background:#dceaf4}
+@media(max-width:620px){
+ .topbar{padding:9px 12px}
+ .topbar-inner{gap:9px;flex-wrap:wrap}
+ .topbar .brand{font-size:.8rem;min-width:0;white-space:normal}
+ .topbar .brand small{font-size:.65rem}
+ .topbar .progress{order:5;flex:0 0 100%;height:6px}
+ .topbar .counter{margin-left:auto}
+ .theme-menu-toggle{font-size:.76rem;padding:8px 9px}
+ .theme-dropdown-panel{max-height:min(68vh,560px)}
+}
+@media(max-width:370px){
+ .topbar .brand{font-size:.72rem}
+ .theme-dropdown-panel{width:calc(100vw - 24px)}
+}
 .topbar{background:var(--bg)}
 .progress{background:var(--accent-border)}
 .progress-fill{background:linear-gradient(90deg,var(--accent-mid),var(--accent))}
@@ -392,13 +408,9 @@ body{transition:background-color .15s}
 .theme-dark .topbar{background:var(--bg);border-color:#ffffff42}
 .theme-dark .topbar .brand,.theme-dark .topbar .brand small,.theme-dark .topbar .counter{color:#edf5fa}
 .theme-dark .footer{color:#c2cbd8}
-.theme-dark .theme-gallery{background:#fff}
-.theme-dark #checkBtn,.theme-dark #copyThemeUrl,.theme-dark .theme-choice[aria-pressed="true"],.theme-dark .lab3-buttonset button.active{color:#17232d}
-.theme-dark .theme-choices{background:#fff}
-.theme-choice .theme-mini{min-height:69px;border:1px solid #c5d1d9}
-.theme-choice .mini-page-layout i{background:var(--preview-color);opacity:.7}
-.theme-choice .mini-page-layout b{background:var(--preview-card)}
-.theme-choice[aria-pressed="true"]{box-shadow:0 0 0 2px var(--accent-soft)}
+.theme-dark .theme-menu-toggle{background:#ffffff14;color:#f4f8fb;border-color:#ffffff58}
+.theme-dark .theme-menu-toggle:hover,.theme-dark .theme-menu-toggle[aria-expanded="true"]{background:#ffffff26}
+.theme-dark #checkBtn,.theme-dark .lab3-buttonset button.active{color:#17232d}
 .theme-dark .lab3-methods button.active,.theme-dark .lab3-buttonset button.active{color:#20313f}
 @media(prefers-reduced-motion:reduce){.theme-choice{transition:none}}
 
@@ -411,17 +423,28 @@ body{transition:background-color .15s}
   <div class="topbar-inner">
     <div class="brand">Multimodal &amp; Adaptation<small>Module 01 · pages 10–11</small></div>
     <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="counter" id="counter">0 / 6</div>
+    <div class="counter" id="counter">0 / 7</div>
+    <div class="theme-menu" id="themeMenu">
+      <button type="button" class="theme-menu-toggle" id="themeMenuButton" aria-expanded="false" aria-controls="themeMenuPanel" aria-haspopup="true"><span class="theme-menu-indicator" id="activeThemeColor" aria-hidden="true"></span> Themes <span class="theme-chevron" aria-hidden="true">⌄</span></button>
+      <div class="theme-dropdown-panel" id="themeMenuPanel" hidden>
+        <div class="theme-menu-head"><strong>Choose your theme</strong><span>15 palettes</span></div>
+        <div class="theme-choices" id="themeChoices" role="group" aria-label="Choose one of fifteen color themes"></div>
+        <div class="theme-menu-footer">
+          <span class="theme-hint" id="themeHint" role="status" aria-live="polite">Choose any palette</span>
+          <button type="button" id="copyThemeUrl">Copy link</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="container">
 
   <h1>Multimodal Training, General-Purpose Models &amp; Model Adaptation</h1>
-  <p class="sub">Seven carefully balanced questions, including one prerequisite and a final interview scenario. Visual explanations, fifteen color themes, and three interactive Concept Lab experiments are included below.</p>
+  <p class="sub">Seven carefully balanced questions, including one prerequisite and a final interview scenario. Visual explanations, fifteen selectable themes in the top bar, and three interactive Concept Lab experiments are included below.</p>
 
+  <!-- Theme selection is available in the sticky top bar. -->
   <!-- ===================== HERO ===================== -->
-  <section class="theme-gallery" aria-label="Color theme selector"><div class="gallery-head"><div><span class="theme-eyebrow">VISUAL THEME LIBRARY</span><h2>Choose a color direction</h2><p>Same lesson, 15 distinctive palettes. Select one to preview instantly; the URL identifies the active palette.</p></div><button type="button" id="copyThemeUrl">Copy theme URL</button></div><div id="themeChoices" class="theme-choices" role="group" aria-label="Choose one of fifteen color themes"></div><div class="theme-hint" id="themeHint" aria-live="polite">Select any swatch to see this entire study module in that palette.</div></section>
 <div class="hero hero-new" aria-label="Overview of visual and language representation learning">
 <div class="hero-heading"><div><span class="eyebrow">MODULE MAP · PAGES 10–11</span><h2>From paired data to adaptable AI</h2><p>Follow how images and language become representations, then how those capabilities reach real applications.</p></div><span class="hero-index">01 / FOUNDATION</span></div>
 <div class="hero-flow"><div class="hero-visual"><svg class="photo-art" viewBox="0 0 260 166" role="img" aria-label="Illustration of a dog beside the sea under a sunset"><defs><linearGradient id="sea" x2="0" y2="1"><stop stop-color="#ffd9a7"/><stop offset="1" stop-color="#9ad5c7"/></linearGradient></defs><rect width="260" height="166" rx="13" fill="url(#sea)"/><circle cx="200" cy="40" r="23" fill="#ffad57"/><path d="M0 99Q68 81 124 101T260 88V166H0Z" fill="#60a5a2"/><path d="M0 130Q80 121 151 138T260 128V166H0Z" fill="#e5c69a"/><path d="M75 124q12-20 34-18l20-14 10 9-8 11 15 12-11 8-20-7-20 1-4 15H78l1-17-14-7z" fill="#5d463c"/><circle cx="134" cy="104" r="2" fill="#fff"/><path d="M62 116l-9-8" stroke="#5d463c" stroke-width="7" stroke-linecap="round"/></svg><span class="hero-caption">“a dog on the beach”</span><span class="mini-label">Naturally paired data</span></div><span class="flow-arrow" aria-hidden="true">→</span>
@@ -622,7 +645,22 @@ const THEMES=[
 {id:'cobalt',name:'Electric Cobalt',a:'#8195FF',dark:'#3145A0',mid:'#BBC8FF',soft:'#EDF0FF',border:'#CBD4FF',bg:'#111B43',surface:'#E7ECFF',canvas:'#F4F5FF',mode:'dark'}
 ];
 let activeTheme;
-const choiceContainer=document.getElementById('themeChoices'),themeHint=document.getElementById('themeHint');
+const themeMenu=document.getElementById('themeMenu');
+const themeMenuButton=document.getElementById('themeMenuButton');
+const themeMenuPanel=document.getElementById('themeMenuPanel');
+const choiceContainer=document.getElementById('themeChoices');
+const themeHint=document.getElementById('themeHint');
+function setThemeMenu(open){
+ themeMenuPanel.hidden=!open;
+ themeMenuButton.setAttribute('aria-expanded',String(open));
+}
+themeMenuButton.addEventListener('click',()=>setThemeMenu(themeMenuPanel.hidden));
+document.addEventListener('pointerdown',e=>{
+ if(!themeMenu.contains(e.target))setThemeMenu(false);
+});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'&&!themeMenuPanel.hidden){setThemeMenu(false);themeMenuButton.focus();}
+});
 function chooseTheme(id,changeUrl){
  const theme=THEMES.find(t=>t.id===id)||THEMES[0];
  document.documentElement.classList.toggle('theme-dark',theme.mode==='dark');
@@ -630,8 +668,10 @@ function chooseTheme(id,changeUrl){
  const vars={'--accent':theme.a,'--accent-dark':theme.dark,'--accent-mid':theme.mid,'--accent-soft':theme.soft,'--accent-border':theme.border,
  '--bg':theme.bg,'--border':theme.border,'--lab-surface':theme.surface,'--lab-border':theme.border,'--lab-canvas':theme.canvas,'--lab-ink':'#26394a','--teal':theme.a,'--deep':theme.dark};
  Object.entries(vars).forEach(([k,v])=>document.documentElement.style.setProperty(k,v));
+ document.getElementById('activeThemeColor').style.background=theme.a;
  document.querySelectorAll('.theme-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===theme.id)));
- themeHint.textContent='Active: '+theme.name+' · The browser address bar contains ?theme='+theme.id+'.';
+ themeHint.textContent='Active: '+theme.name;
+ themeMenuButton.title='Themes · '+theme.name;
  if(changeUrl){
   try{
    const u=new URL(window.location.href);u.searchParams.set('theme',theme.id);window.history.replaceState(null,'',u.toString());
@@ -640,9 +680,13 @@ function chooseTheme(id,changeUrl){
  }
 }
 THEMES.forEach((t,n)=>{
- const b=document.createElement('button');b.type='button';b.className='theme-choice';b.dataset.theme=t.id;b.setAttribute('aria-pressed','false');
- b.innerHTML='<span class="theme-mini" style="--preview-bg:'+t.bg+';--preview-color:'+t.a+';--preview-hint:'+t.mid+';--preview-card:'+t.soft+'"><span class="mini-page-top"></span><span class="mini-page-layout"><i></i><b></b></span></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><small>'+t.id+'</small>';
- b.addEventListener('click',()=>chooseTheme(t.id,true));choiceContainer.appendChild(b);
+ const b=document.createElement('button');
+ b.type='button';b.className='theme-choice';b.dataset.theme=t.id;
+ b.setAttribute('aria-pressed','false');
+ b.setAttribute('aria-label',String(n+1)+'. '+t.name+' theme');
+ b.innerHTML='<span class="theme-swatch" style="--swatch-bg:'+t.bg+';--swatch-accent:'+t.a+'"></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><span class="theme-check" aria-hidden="true">✓</span>';
+ b.addEventListener('click',()=>{chooseTheme(t.id,true);setThemeMenu(false);themeMenuButton.focus();});
+ choiceContainer.appendChild(b);
 });
 let initialTheme='';
 try{
@@ -659,10 +703,10 @@ document.getElementById('copyThemeUrl').addEventListener('click',async()=>{
  const b=document.getElementById('copyThemeUrl');
  try{
   const u=new URL(window.location.href);u.searchParams.set('theme',activeTheme);
-  await navigator.clipboard.writeText(u.href);b.textContent='Link copied';setTimeout(()=>b.textContent='Copy theme URL',1800);
- }catch(e){b.textContent='Copy address bar URL';setTimeout(()=>b.textContent='Copy theme URL',2500)}
+  await navigator.clipboard.writeText(u.href);b.textContent='Link copied';
+  setTimeout(()=>b.textContent='Copy link',1800);
+ }catch(e){b.textContent='Copy address bar URL';setTimeout(()=>b.textContent='Copy link',2500)}
 });
-
 </script>
 <script src="lab-v3.js"></script>
 </body>
