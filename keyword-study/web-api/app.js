@@ -1,6 +1,107 @@
-/* Study module uses one fixed theme: Glacier Ice. Theme chooser is separate. */
+const THEMES=[
+{id:'sunset',name:'Sunset Orange',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2',mode:'light'},
+{id:'forest',name:'Forest Green',a:'#23784b',dark:'#185534',mid:'#74ba8c',soft:'#e8f6ec',border:'#b9dfc2',bg:'#f7fcf8',surface:'#dff0e4',canvas:'#f2faf4',mode:'light'},
+{id:'sky',name:'Sky Blue',a:'#0878B6',dark:'#145879',mid:'#79C8EF',soft:'#EAF8FF',border:'#ADDDF7',bg:'#F4FBFF',surface:'#DDF3FF',canvas:'#ECF8FF',mode:'light'},
+{id:'rose',name:'Rose Quartz',a:'#b23e70',dark:'#82264f',mid:'#e194b4',soft:'#ffedf3',border:'#f2c5d4',bg:'#fff9fb',surface:'#fbe0e9',canvas:'#fff3f7',mode:'light'},
+{id:'midnight',name:'Midnight Indigo',a:'#3a4b9d',dark:'#27336c',mid:'#8999dc',soft:'#e9edff',border:'#c1caf0',bg:'#f4f5fc',surface:'#dce2fa',canvas:'#eef1fe',mode:'light'},
+{id:'cocoa',name:'Cocoa After Dark',a:'#BD8D6B',dark:'#71462E',mid:'#E2B38C',soft:'#FAF0E7',border:'#E3C8B4',bg:'#291A17',surface:'#F3DCC6',canvas:'#FFF6EC',mode:'dark'},
+{id:'paper',name:'Ivory Ink',a:'#145458',dark:'#0B4045',mid:'#6B9496',soft:'#F5EAD9',border:'#E1CFB4',bg:'#FFE8C9',surface:'#F2D9B5',canvas:'#FFF3E3',mode:'light'},
+{id:'obsidian',name:'Obsidian Black',a:'#252D36',dark:'#1B222A',mid:'#9CA8B3',soft:'#E8ECEF',border:'#CCD4DB',bg:'#EBEEF0',surface:'#DDE3E7',canvas:'#F1F3F5',mode:'light'},
+{id:'lemon',name:'Electric Lemon',a:'#DDE748',dark:'#4D550C',mid:'#F7FC9F',soft:'#F7FBE1',border:'#DCE49A',bg:'#18231A',surface:'#EBEEC7',canvas:'#F8FBEF',mode:'dark'},
+{id:'glacier',name:'Glacier Ice',a:'#75D4FF',dark:'#075376',mid:'#A7E7FF',soft:'#E9F8FF',border:'#BDE7F7',bg:'#0A2C45',surface:'#DBF4FF',canvas:'#F0FBFF',mode:'dark'},
+{id:'scarlet',name:'Scarlet Signal',a:'#FF6860',dark:'#8E1E24',mid:'#FFB5A6',soft:'#FFF0EC',border:'#FFCCBE',bg:'#33141B',surface:'#FFE2D9',canvas:'#FFF5F0',mode:'dark'},
+{id:'jade',name:'Jade Neon',a:'#59E7BC',dark:'#076B53',mid:'#AFFFE1',soft:'#E2FFF2',border:'#B9ECD8',bg:'#06352F',surface:'#D9F8E8',canvas:'#EFFCF7',mode:'dark'},
+{id:'peach',name:'Peach Noir',a:'#FFD0A1',dark:'#90512E',mid:'#FFE3C7',soft:'#FFF2E6',border:'#F2D2B4',bg:'#2B1639',surface:'#FAE2CC',canvas:'#FFF8EF',mode:'dark'},
+{id:'carbon',name:'Carbon Contrast',a:'#D0D4D9',dark:'#2C3339',mid:'#F0F1F3',soft:'#F5F6F7',border:'#D4D9DE',bg:'#111214',surface:'#E9ECEE',canvas:'#FCFDFE',mode:'dark'},
+{id:'cobalt',name:'Electric Cobalt',a:'#8195FF',dark:'#3145A0',mid:'#BBC8FF',soft:'#EDF0FF',border:'#CBD4FF',bg:'#111B43',surface:'#E7ECFF',canvas:'#F4F5FF',mode:'dark'}
+];
+/* The top bar has a collapsed theme dropdown; study content never shows palette cards. */
 (function browserApp(){
   'use strict';
+
+  const DEFAULT_THEME='glacier';
+  let activeTheme=DEFAULT_THEME;
+  function setupThemeDropdown(){
+    const dropdown=document.getElementById('themeDropdown');
+    const disclosure=document.getElementById('themeMenu');
+    const label=document.getElementById('themeName');
+    function selectTheme(id,updateURL){
+      const t=THEMES.find(x=>x.id===id)||THEMES.find(x=>x.id===DEFAULT_THEME);
+      activeTheme=t.id;
+      const vars={
+        '--bg':t.bg,'--accent':t.a,'--accent-mid':t.mid,'--accent-dark':t.dark,
+        '--accent-soft':t.soft,'--accent-border':t.border,'--canvas':t.canvas,
+        '--surface':t.surface,'--on-accent':t.mode==='dark'?'#142938':'#ffffff',
+        '--page-head':t.mode==='dark'?'#f4f9fc':'#263d50',
+        '--page-muted':t.mode==='dark'?'#d3e2ec':'#526b7c',
+        '--page-eyebrow':t.mode==='dark'?t.a:t.dark
+      };
+      Object.entries(vars).forEach(([key,val])=>document.documentElement.style.setProperty(key,val));
+      document.body.classList.toggle('theme-light',t.mode==='light');
+      document.body.classList.toggle('theme-dark',t.mode==='dark');
+      label.textContent=t.name;
+      dropdown.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===t.id)));
+      if(updateURL && location.protocol!=='file:'){
+        try{const u=new URL(location.href);u.searchParams.set('theme',t.id);history.replaceState(null,'',u.href);}catch(err){}
+      }
+      disclosure.open=false;
+    }
+    dropdown.replaceChildren();
+    THEMES.forEach((t,i)=>{
+      const b=document.createElement('button');
+      b.type='button';b.dataset.theme=t.id;b.setAttribute('aria-pressed','false');
+      const swatch=document.createElement('span');swatch.className='dropdown-dot';
+      swatch.style.setProperty('--dot-accent',t.a);
+      swatch.style.setProperty('--dot-bg',t.bg);
+      const name=document.createElement('span');name.textContent=String(i+1).padStart(2,'0')+'. '+t.name;
+      b.append(swatch,name);
+      b.addEventListener('click',()=>selectTheme(t.id,true));
+      dropdown.appendChild(b);
+    });
+    let initial=DEFAULT_THEME;
+    try{
+      const fromURL=new URL(location.href).searchParams.get('theme');
+      if(THEMES.some(t=>t.id===fromURL))initial=fromURL;
+    }catch(err){}
+    selectTheme(initial,false);
+    disclosure.addEventListener('keydown',e=>{
+      if(e.key==='Escape'){disclosure.open=false;disclosure.querySelector('summary').focus();}
+    });
+    document.addEventListener('click',e=>{if(disclosure.open&&!disclosure.contains(e.target))disclosure.open=false;});
+    const download=document.getElementById('downloadStandalone');
+    download.addEventListener('click',async e=>{
+      e.preventDefault();
+      const filename='Web-API-Keyword-Study-001.html';
+      try{
+        let htmlText;
+        if(document.documentElement.dataset.standalone==='true'){
+          const clone=document.documentElement.cloneNode(true);
+          clone.querySelector('#themeDropdown').replaceChildren();
+          clone.querySelector('#quiz').replaceChildren();
+          clone.querySelector('#result').replaceChildren();
+          clone.querySelector('#result').hidden=true;
+          htmlText='<!DOCTYPE html>\n'+clone.outerHTML;
+        }else{
+          const response=await fetch(download.getAttribute('href'),{cache:'no-store'});
+          if(!response.ok)throw Error('Standalone file unavailable');
+          htmlText=await response.text();
+        }
+        // Export the color the learner actually chose.
+        htmlText=htmlText.replace("const DEFAULT_THEME='glacier';","const DEFAULT_THEME='"+activeTheme+"';");
+        const url=URL.createObjectURL(new Blob([htmlText],{type:'text/html;charset=utf-8'}));
+        const anchor=document.createElement('a');
+        anchor.href=url;anchor.download=filename;
+        document.body.appendChild(anchor);anchor.click();anchor.remove();
+        setTimeout(()=>URL.revokeObjectURL(url),2000);
+      }catch(err){
+        // Direct checked-in, self-contained file remains downloadable if fetch fails.
+        const anchor=document.createElement('a');
+        anchor.href=download.getAttribute('href');anchor.download=filename;
+        document.body.appendChild(anchor);anchor.click();anchor.remove();
+      }
+    });
+  }
+
   const LETTERS=['a','b','c','d'];
   const questions=[
   {
@@ -267,6 +368,7 @@
     document.getElementById('resetRetry').addEventListener('click',()=>{orders=0;started=false;newKeys=0;out.innerHTML='<div class="retry-event muted">Awaiting first request…</div>';paint();});
     paint();
   }
+  setupThemeDropdown();
   renderQuiz();
   setupRequestLab();
   setupErrors();
