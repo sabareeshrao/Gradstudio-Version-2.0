@@ -1,20 +1,4 @@
-const THEMES=[
-{id:'sunset',name:'Sunset Orange',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2',mode:'light'},
-{id:'forest',name:'Forest Green',a:'#23784b',dark:'#185534',mid:'#74ba8c',soft:'#e8f6ec',border:'#b9dfc2',bg:'#f7fcf8',surface:'#dff0e4',canvas:'#f2faf4',mode:'light'},
-{id:'sky',name:'Sky Blue',a:'#0878B6',dark:'#145879',mid:'#79C8EF',soft:'#EAF8FF',border:'#ADDDF7',bg:'#F4FBFF',surface:'#DDF3FF',canvas:'#ECF8FF',mode:'light'},
-{id:'rose',name:'Rose Quartz',a:'#b23e70',dark:'#82264f',mid:'#e194b4',soft:'#ffedf3',border:'#f2c5d4',bg:'#fff9fb',surface:'#fbe0e9',canvas:'#fff3f7',mode:'light'},
-{id:'midnight',name:'Midnight Indigo',a:'#3a4b9d',dark:'#27336c',mid:'#8999dc',soft:'#e9edff',border:'#c1caf0',bg:'#f4f5fc',surface:'#dce2fa',canvas:'#eef1fe',mode:'light'},
-{id:'cocoa',name:'Cocoa After Dark',a:'#BD8D6B',dark:'#71462E',mid:'#E2B38C',soft:'#FAF0E7',border:'#E3C8B4',bg:'#291A17',surface:'#F3DCC6',canvas:'#FFF6EC',mode:'dark'},
-{id:'paper',name:'Ivory Ink',a:'#145458',dark:'#0B4045',mid:'#6B9496',soft:'#F5EAD9',border:'#E1CFB4',bg:'#FFE8C9',surface:'#F2D9B5',canvas:'#FFF3E3',mode:'light'},
-{id:'obsidian',name:'Obsidian Black',a:'#252D36',dark:'#1B222A',mid:'#9CA8B3',soft:'#E8ECEF',border:'#CCD4DB',bg:'#EBEEF0',surface:'#DDE3E7',canvas:'#F1F3F5',mode:'light'},
-{id:'lemon',name:'Electric Lemon',a:'#DDE748',dark:'#4D550C',mid:'#F7FC9F',soft:'#F7FBE1',border:'#DCE49A',bg:'#18231A',surface:'#EBEEC7',canvas:'#F8FBEF',mode:'dark'},
-{id:'glacier',name:'Glacier Ice',a:'#75D4FF',dark:'#075376',mid:'#A7E7FF',soft:'#E9F8FF',border:'#BDE7F7',bg:'#0A2C45',surface:'#DBF4FF',canvas:'#F0FBFF',mode:'dark'},
-{id:'scarlet',name:'Scarlet Signal',a:'#FF6860',dark:'#8E1E24',mid:'#FFB5A6',soft:'#FFF0EC',border:'#FFCCBE',bg:'#33141B',surface:'#FFE2D9',canvas:'#FFF5F0',mode:'dark'},
-{id:'jade',name:'Jade Neon',a:'#59E7BC',dark:'#076B53',mid:'#AFFFE1',soft:'#E2FFF2',border:'#B9ECD8',bg:'#06352F',surface:'#D9F8E8',canvas:'#EFFCF7',mode:'dark'},
-{id:'peach',name:'Peach Noir',a:'#FFD0A1',dark:'#90512E',mid:'#FFE3C7',soft:'#FFF2E6',border:'#F2D2B4',bg:'#2B1639',surface:'#FAE2CC',canvas:'#FFF8EF',mode:'dark'},
-{id:'carbon',name:'Carbon Contrast',a:'#D0D4D9',dark:'#2C3339',mid:'#F0F1F3',soft:'#F5F6F7',border:'#D4D9DE',bg:'#111214',surface:'#E9ECEE',canvas:'#FCFDFE',mode:'dark'},
-{id:'cobalt',name:'Electric Cobalt',a:'#8195FF',dark:'#3145A0',mid:'#BBC8FF',soft:'#EDF0FF',border:'#CBD4FF',bg:'#111B43',surface:'#E7ECFF',canvas:'#F4F5FF',mode:'dark'}
-];
+/* Study module uses one fixed theme: Glacier Ice. Theme chooser is separate. */
 (function browserApp(){
   'use strict';
   const LETTERS=['a','b','c','d'];
@@ -202,34 +186,6 @@ const THEMES=[
     });
     progress();
   }
-  function setupThemes(){
-    const root=document.documentElement,body=document.body,list=document.getElementById('themeList'),note=document.getElementById('themeNote'),copy=document.getElementById('copyTheme');
-    let active='glacier';
-    function choose(id,update){
-      const t=THEMES.find(t=>t.id===id)||THEMES.find(t=>t.id==='glacier');
-      active=t.id;
-      const props={'--bg':t.bg,'--accent':t.a,'--accent-dark':t.dark,'--accent-mid':t.mid,'--accent-soft':t.soft,'--accent-border':t.border,'--canvas':t.canvas,'--surface':t.surface,'--on-accent':t.mode==='dark'?'#142938':'#ffffff','--page-head':t.mode==='dark'?'#f4f9fc':'#263d50','--page-muted':t.mode==='dark'?'#d3e2ec':'#526b7c','--page-eyebrow':t.mode==='dark'?t.a:t.dark};
-      Object.entries(props).forEach(([k,v])=>root.style.setProperty(k,v));
-      body.classList.toggle('theme-light',t.mode==='light');body.classList.toggle('theme-dark',t.mode==='dark');
-      list.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===active)));
-      note.textContent='Active: '+t.name+' · '+t.mode+' palette · share with ?theme='+t.id;
-      if(update){try{const url=new URL(location.href);url.searchParams.set('theme',t.id);history.replaceState(null,'',url.href);}catch(e){}}
-    }
-    THEMES.forEach((t,i)=>{
-      const b=document.createElement('button');b.type='button';b.className='theme-swatch';b.dataset.theme=t.id;
-      b.setAttribute('aria-pressed','false');
-      b.innerHTML='<span class="swatch-sheet" style="--sample-bg:'+t.bg+';--sample-accent:'+t.a+';--sample-light:'+t.mid+'"><i></i><b></b></span><strong>'+String(i+1).padStart(2,'0')+'. '+esc(t.name)+'</strong><small>'+t.mode+'</small>';
-      b.addEventListener('click',()=>choose(t.id,true));list.appendChild(b);
-    });
-    try{const url=new URL(location.href);const requested=url.searchParams.get('theme');if(requested&&THEMES.some(t=>t.id===requested))active=requested;}catch(e){}
-    choose(active,false);
-    copy.addEventListener('click',async()=>{
-      const txt=copy.textContent;
-      try{const url=new URL(location.href);url.searchParams.set('theme',active);await navigator.clipboard.writeText(url.href);copy.textContent='Link copied';}
-      catch(e){copy.textContent='Copy address bar URL';}
-      setTimeout(()=>copy.textContent=txt,1800);
-    });
-  }
   function setupRequestLab(){
     const flows={
       get:{request:'GET /products/42 HTTP/1.1\nAccept: application/json\nAuthorization: Bearer <token>',status:'200 OK',reply:'HTTP/1.1 200 OK\nContent-Type: application/json\n\n{"id":42,"name":"Trail Bottle"}',noun:'product 42',action:'reads product information',notes:['The client requests product 42 with an HTTP GET.','The router maps /products/42 to a product retrieval handler.','Credentials and route permissions are evaluated; parameters are checked.','The product handler applies application rules.','The service reads product 42 from storage.','The server formats a 200 response with product JSON.']},
@@ -287,7 +243,6 @@ const THEMES=[
     paint();
   }
   renderQuiz();
-  setupThemes();
   setupRequestLab();
   setupErrors();
   setupRetries();
