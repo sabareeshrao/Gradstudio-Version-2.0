@@ -3,111 +3,136 @@
   'use strict';
   const LETTERS=['a','b','c','d'];
   const questions=[
-    {
-      level:"INTRODUCTION",skill:"API vs Web API",diagram:1,
-      question:"Which statement correctly distinguishes a Web API from the broader concept of an API?",
-      choices:[
-        "A Web API refers only to REST services, while other APIs can also expose remote interfaces.",
-        "An API requires network access, while a Web API may be called only as a local function.",
-        "An API defines a software interface; a Web API exposes an interface using web protocols.",
-        "A Web API serves browser pages, while other APIs are used for program-to-program calls."
-      ],correct:2,
-      title:"API is the broader contract; Web API identifies how it is accessed.",
-      explain:`<p>An <strong>application programming interface</strong> is an agreed way for software components to interact. Examples include a language library's method signatures, an operating system's interfaces, and a service's network operations. An API does not inherently require HTTP or any network.</p><p>A <strong>Web API</strong> makes capabilities available through web-facing communication—commonly HTTP requests to URLs with structured responses such as JSON. REST is one common style, but it is not the only way to build a Web API; other web-facing interface styles exist. The important distinction is the interface contract plus the communication medium, not whether a website has a graphical page.</p>`,
-      why:"The other choices incorrectly restrict all Web APIs to REST, reverse local-versus-network access, or confuse a machine-readable interface with a web page."
-    },
-    {
-      level:"FUNDAMENTALS",skill:"Contracts and decoupling",diagram:2,
-      question:"What is the strongest reason for different applications to integrate through a well-defined Web API?",
-      choices:[
-        "A stable contract lets clients use a service without depending on its internal implementation.",
-        "A shared database lets clients bypass the service while preserving independent deployments.",
-        "Direct server access removes the need to agree on data shapes and failure responses.",
-        "Client-specific integrations ensure that backend changes never require coordination."
-      ],correct:0,
-      title:"A documented contract reduces coupling between consumers and the service.",
-      explain:`<p>A browser, mobile app, and partner service may all need the same product catalog. With a defined Web API, each client relies on documented operations and response formats instead of knowing the server's classes, database schema, or deployment details. The server can change internally while keeping its public contract compatible.</p><p>The contract must still define authentication, accepted input, response schemas, and errors. It does <em>not</em> remove the need for coordination when the contract itself changes. Direct database access, shared implementation code, and ad hoc client-specific endpoints generally make independent changes harder and increase security and maintenance risk.</p>`,
-      why:"The alternatives either bypass the service contract or pretend that schema and compatibility work disappears entirely."
-    },
-    {
-      level:"WORKING MECHANISM",skill:"Lifecycle and processing",diagram:3,
-      question:"Which sequence best represents what normally happens during a request to a Web API?",
-      choices:[
-        "Client → database write → response creation → URL matching → access checks → client.",
-        "Client → business logic → response → endpoint selection → permission checks → client.",
-        "Client → response formatting → authentication → database lookup → routing → client.",
-        "Client → routing and checks → handler and data access → response formatting → client."
-      ],correct:3,
-      title:"The server must route and evaluate a request before producing its result.",
-      explain:`<p>First, the client constructs an HTTP request with a method and target URL, along with any required headers and body. The server's HTTP stack receives it, matches the route, and applies relevant checks such as authentication, authorization, and input validation. The handler performs business logic and may read or change data in a database or another service.</p><p>The server then creates a status code, headers, and response body. The client interprets that response and updates its interface or workflow. The exact placement of checks may vary by framework or middleware; the diagram describes the logical responsibilities rather than a mandatory implementation order.</p>`,
-      why:"The distractors place output formatting or data changes before routing and checks, which reverses the normal direction of processing."
-    },
-    {
-      level:"TECHNICAL UNDERSTANDING",skill:"HTTP request anatomy",diagram:4,
-      question:"Which description correctly matches the main pieces of HTTP-based Web API communication?",
-      choices:[
-        "Methods select users; paths define status; headers identify tables; bodies hold only errors.",
-        "Methods express actions; paths locate resources; headers carry metadata; codes report outcomes.",
-        "Methods format payloads; paths set permissions; headers choose servers; codes name resources.",
-        "Methods identify responses; paths hold credentials; headers create data; codes return payloads."
-      ],correct:1,
-      title:"Each part of an HTTP message has a different responsibility.",
-      explain:`<p>The <strong>method</strong> describes the intended operation—such as reading with GET or submitting a new order with POST. The <strong>path</strong> identifies the target resource or collection, such as <code>/products/42</code>. <strong>Headers</strong> convey metadata: <code>Accept</code> expresses a preferred response representation, <code>Content-Type</code> identifies the payload format, and <code>Authorization</code> can carry credentials.</p><p>The <strong>request body</strong> contains input when appropriate, while a <strong>response body</strong> may contain the result or a structured error. The <strong>status code</strong> indicates the outcome at the protocol level: for example, 200 for a successful retrieval, 201 for a created resource, or 404 for a missing resource.</p>`,
-      why:"The other options assign jobs to methods, paths, and headers that belong to different parts of the request or application."
-    },
-    {
-      level:"PRACTICAL APPLICATION",skill:"Resource-oriented routes",diagram:5,
-      question:"Which set of endpoints best supports viewing products, creating orders, and reading one order?",
-      choices:[
-        "GET /products lists products; POST /orders creates orders; GET /orders/{id} reads an order.",
-        "POST /products lists products; GET /orders creates orders; PUT /orders/{id} reads an order.",
-        "GET /products lists products; GET /orders creates orders; POST /orders/{id} reads an order.",
-        "PUT /products lists products; POST /orders creates orders; DELETE /orders/{id} reads an order."
-      ],correct:0,
-      title:"Resources are nouns; HTTP methods express what the client wants to do.",
-      explain:`<p>Use a <strong>products collection</strong>, <code>GET /products</code>, to return a list of products. Use <strong>order creation</strong>, <code>POST /orders</code>, with a validated request body; on success, return an appropriate creation status, often 201, and identify the new order, commonly with a <code>Location</code> header. Use <strong>order retrieval</strong>, <code>GET /orders/{id}</code>, to read a specific order.</p><p>In a real store, you would add pagination and filtering to the product collection, check availability and prices on the server, authenticate purchases, and ensure users can read only orders they are authorized to access. GET should not create an order as a side effect. API route naming and representation details should remain consistent as the application grows.</p>`,
-      why:"The incorrect alternatives confuse safe reads, resource creation, updates, and deletion. Matching route nouns with the correct method matters."
-    },
-    {
-      level:"ADVANCED UNDERSTANDING",skill:"Consistent failure behavior",diagram:6,
-      question:"Which status-code mapping is most appropriate when an API needs to report common failures?",
-      choices:[
-        "401 for invalid fields; 404 for missing login; 400 for absent orders; 500 for server faults.",
-        "500 for invalid fields; 401 for missing login; 400 for absent orders; 404 for server faults.",
-        "400 for invalid fields; 500 for missing login; 401 for absent orders; 404 for server faults.",
-        "400 for invalid fields; 401 for missing login; 404 for absent orders; 500 for server faults."
-      ],correct:3,
-      title:"An API should tell the client what kind of failure occurred.",
-      explain:`<p><strong>400 Bad Request</strong> is suitable when a client submits malformed or invalid data under the API's contract. <strong>401 Unauthorized</strong> means authentication is missing or invalid. <strong>403 Forbidden</strong> is different: the caller may be authenticated but lacks permission. <strong>404 Not Found</strong> means the requested resource could not be found or, in some designs, cannot be disclosed to this caller. <strong>500 Internal Server Error</strong> indicates an unexpected server-side fault.</p><p>Use a <strong>consistent structured error format</strong> with a stable error code, a safe human-readable message, and a request or correlation ID where helpful. Validate input before expensive work, log the details server-side, avoid leaking stack traces or secrets, and document whether retrying makes sense. Status codes guide client behavior but cannot replace a clear error contract.</p>`,
-      why:"The distractors swap client mistakes, authentication failures, missing resources, and server faults, which misleads callers about recovery."
-    },
-    {
-      level:"SMART-LEVEL REASONING",skill:"Retry safety and idempotency",diagram:7,
-      question:"A POST to create an order times out after the server may have saved it. What is the safest retry design?",
-      choices:[
-        "Generate a new request key on every retry so the server can treat each attempt separately.",
-        "Reuse a stable idempotency key; persist the operation result so the retry is not duplicated.",
-        "Change the retry to GET because the server can infer which order the client intended.",
-        "Disable client timeouts and trust users not to submit the same operation more than once."
-      ],correct:1,
-      title:"A lost response is not proof that the operation failed.",
-      explain:`<p>The server might have created the order and committed the payment or inventory reservation even though the response never reached the client. Blindly sending a second creation request can duplicate the order. A practical design lets the client attach a stable <strong>idempotency key</strong> to one logical operation and reuse that same key on a retry with the same request content.</p><p>The server records the key and resulting operation status in a concurrency-safe, persistent way. When the same operation is retried, the server returns the earlier result or safely indicates that processing is still in progress, instead of repeating the side effect. Production systems must define a key scope, retention window, request-equivalence check, and atomicity around the order and idempotency record. A different key generally represents a different operation, so it does not prevent duplicates.</p>`,
-      why:"A fresh key on every retry defeats deduplication; changing methods cannot recover an unknown order by magic; removing timeouts is not a reliability strategy."
-    },
-    {
-      level:"INTERVIEW QUESTION",skill:"Architecture and trade-offs",diagram:8,interview:true,
-      question:"For an e-commerce API serving thousands of users, which design approach best balances correctness, security, scale, and evolution?",
-      choices:[
-        "Return full catalogs in each response, share one service credential, and revise payloads in place.",
-        "Expose database tables to clients, rely on perimeter security, and let clients retry writes.",
-        "Use stable resource contracts, enforce permissions, paginate and cache reads, support safe retries.",
-        "Create endpoints per screen, keep business validation in clients, and postpone API compatibility."
-      ],correct:2,
-      title:"A strong architecture starts with correctness and clear contracts, then scales deliberately.",
-      explain:`<p><strong>Resource model and contract:</strong> Define a small set of meaningful resources such as products, orders, customers, and inventory. Specify methods, status codes, request and response schemas, pagination, filtering, and predictable error formats. Keep sensitive authorization decisions and order calculations on the server rather than trusting client data.</p><p><strong>Security and correctness:</strong> Use TLS, suitable authentication, resource-level authorization, validated inputs, controlled secrets, and rate limiting. Treat POST order creation as a potentially non-idempotent operation; support stable idempotency keys for safe retries, with transaction boundaries designed around inventory, payment, and order persistence.</p><p><strong>Scale, reliability, and operability:</strong> Paginate large reads, measure hot paths, cache appropriate catalog data with a clear freshness policy, optimize database indexes and connection pools, add bounded timeouts and retry policies, and observe latency, errors, throughput, and saturation. Separate components only where it helps the actual workload; distributed services add operational complexity.</p><p><strong>Evolution and trade-offs:</strong> Prefer additive, backward-compatible changes, explicit deprecation notices and versioning when compatibility cannot be preserved. Weigh cache freshness against latency, consistency against availability needs, and simplicity against independent deployment. Before prescribing microservices or a specific database, ask about traffic shape, business requirements, failure budget, and team capacity.</p>`,
-      why:"The alternatives compromise contract compatibility, authorization, safe writes, or server-side validation. A strong interview answer also identifies workload-dependent trade-offs rather than presenting scaling tactics as universal rules."
-    }
-  ];
+  {
+    "level": "INTRODUCTION",
+    "skill": "API vs Web API",
+    "diagram": 1,
+    "question": "What makes a Web API different from an API in general?",
+    "choices": [
+      "An API always needs internet access, but a Web API can work inside one program.",
+      "A Web API works through web communication; other APIs can also work locally.",
+      "A Web API must display web pages, while other APIs communicate only with servers.",
+      "A Web API must always use REST, while other APIs can follow different styles."
+    ],
+    "correct": 1,
+    "title": "A Web API is one kind of API.",
+    "explain": "<p>An <strong>API</strong> is a set of rules that lets one piece of software use another. For example, a Java program can call a method from a library. That is an API, even if no network is involved.</p><p>A <strong>Web API</strong> lets applications communicate using web technologies, usually HTTP. For example, a shopping app can ask a store's server for product information. Web APIs do not have to use REST, and they do not have to display web pages.</p>",
+    "why": "A general API does not always use the internet. A Web API is not the same thing as a website, and REST is only one possible design style."
+  },
+  {
+    "level": "FUNDAMENTALS",
+    "skill": "Why APIs matter",
+    "diagram": 2,
+    "question": "Why is a clear Web API useful when several apps need the same service?",
+    "choices": [
+      "It lets each app read the database directly without going through the service.",
+      "It makes all apps use the same programming language as the backend server.",
+      "It lets the server change inside while apps keep using the same agreed rules.",
+      "It means apps never need to handle errors when the service is unavailable."
+    ],
+    "correct": 2,
+    "title": "An API gives different apps a shared agreement.",
+    "explain": "<p>Imagine a website and a mobile app that both show the same product list. Each can call <code>GET /products</code> rather than needing to know how the server stores or finds products.</p><p>That shared agreement is often called an <strong>API contract</strong>. It says what requests clients can make and what responses they can expect. The backend team can change the database or code without breaking clients, as long as the contract stays compatible.</p>",
+    "why": "Clients should not bypass the server and access its database directly. A clear API also does not eliminate network failures or the need to handle errors."
+  },
+  {
+    "level": "WORKING MECHANISM",
+    "skill": "Request and response",
+    "diagram": 3,
+    "question": "What usually happens after a client sends a request to a Web API?",
+    "choices": [
+      "The server finds the route, checks the request, does the work, and replies.",
+      "The server sends a reply first, then checks the request and finds the route.",
+      "The client reads the database, then asks the server which route it should use.",
+      "The server changes its database before it knows which request arrived."
+    ],
+    "correct": 0,
+    "title": "A request travels through several steps before a response returns.",
+    "explain": "<p>Suppose you open a product in a shopping app. The app sends a request such as <code>GET /products/42</code>. The server finds the matching route, checks whether the request is allowed, and runs the code that handles it.</p><p>The server may read a product from a database. It then sends a <strong>response</strong>, often with JSON data and a status such as <code>200 OK</code>. If something goes wrong, it sends an appropriate error instead.</p>",
+    "why": "The server needs to understand and check the request before producing the final response. The client normally does not read the server's private database."
+  },
+  {
+    "level": "TECHNICAL UNDERSTANDING",
+    "skill": "Parts of an HTTP message",
+    "diagram": 4,
+    "question": "Which explanation of HTTP methods, paths, headers, and status codes is correct?",
+    "choices": [
+      "The path chooses an action; the method carries data; headers report success.",
+      "The method stores the result; the path checks security; headers name the user.",
+      "The method sets the format; the path stores data; status codes name routes.",
+      "The method says what to do; the path says where; status codes show the result."
+    ],
+    "correct": 3,
+    "title": "Each part of an HTTP request has a specific job.",
+    "explain": "<p>Look at <code>GET /products/42</code>. <strong>GET</strong> is the HTTP method: it asks to read something. <strong>/products/42</strong> is the path: it identifies which product. <strong>Headers</strong> carry extra information, such as the accepted data format or login details.</p><p>Some requests also have a <strong>body</strong> that carries data—for example, the items in a new order. The server returns a <strong>status code</strong> to show what happened, such as <code>200</code> for success or <code>404</code> when a product cannot be found. The response body may contain data or an error message.</p>",
+    "why": "Methods, paths, headers, bodies, and status codes have different roles. Mixing them up leads to confusing requests and responses."
+  },
+  {
+    "level": "PRACTICAL APPLICATION",
+    "skill": "Products and orders",
+    "diagram": 5,
+    "question": "Which routes would you use to list products, create an order, and read one order?",
+    "choices": [
+      "GET /products, then POST /orders, then GET /orders/{id}.",
+      "POST /products, then GET /orders, then GET /orders/{id}.",
+      "GET /products, then GET /orders, then POST /orders/{id}.",
+      "GET /products, then POST /orders, then DELETE /orders/{id}."
+    ],
+    "correct": 0,
+    "title": "Use resource names for paths and methods for actions.",
+    "explain": "<p>A shop might use <code>GET /products</code> to show the product list. When a customer places an order, the app sends <code>POST /orders</code> with the order details. To view an existing order, it uses <code>GET /orders/8472</code>.</p><p>This design keeps routes easy to understand: <strong>products</strong> and <strong>orders</strong> are the things being managed. GET reads information; POST usually creates something. The server must still check prices, stock, and who is allowed to see each order.</p>",
+    "why": "Creating an order should not be a GET request. DELETE removes a resource; it is not used to read order details."
+  },
+  {
+    "level": "ADVANCED UNDERSTANDING",
+    "skill": "Handling problems",
+    "diagram": 6,
+    "question": "Which HTTP status codes fit invalid data, missing login, missing items, and server errors?",
+    "choices": [
+      "404 for invalid data; 400 for missing login; 500 for missing items; 401 for server errors.",
+      "500 for invalid data; 404 for missing login; 401 for missing items; 400 for server errors.",
+      "400 for invalid data; 401 for missing login; 404 for missing items; 500 for server errors.",
+      "401 for invalid data; 500 for missing login; 400 for missing items; 404 for server errors."
+    ],
+    "correct": 2,
+    "title": "Clear error codes help the client know what to do next.",
+    "explain": "<p>If a customer sends invalid order details, the API can return <code>400 Bad Request</code>. If login details are missing or invalid, it can return <code>401</code>. If the customer asks for an order that does not exist, <code>404</code> is suitable. If the server fails unexpectedly, it can return <code>500</code>.</p><p>One more useful code is <code>403 Forbidden</code>: the user may be logged in but does not have permission to perform that action. A good API also returns a short, consistent error message without exposing private server details.</p>",
+    "why": "These codes describe different problems. Using the wrong one makes it harder for apps and users to understand what went wrong."
+  },
+  {
+    "level": "SMART-LEVEL REASONING",
+    "skill": "Safe order retries",
+    "diagram": 7,
+    "question": "An order request times out. What is the safest way for the app to try again?",
+    "choices": [
+      "Send a new key on every retry so each attempt appears as a separate request.",
+      "Try again after a short delay and assume the first order was never saved.",
+      "Ask the customer to submit the order again without checking the first attempt.",
+      "Retry with the same request key so the server can recognize an earlier order."
+    ],
+    "correct": 3,
+    "title": "A timeout does not always mean the order failed.",
+    "explain": "<p>Imagine a customer taps <strong>Place order</strong>. The server saves the order, but the reply gets lost. The app shows a timeout. If it creates a second order immediately, the customer could be charged or receive items twice.</p><p>An <strong>idempotency key</strong> is a unique reference for one intended action. The app sends the key with the order and uses <strong>the same key</strong> when retrying that order. The server remembers the first result and avoids creating a duplicate. This only works when the server saves and checks keys safely, including when two requests arrive close together.</p>",
+    "why": "Waiting longer does not prove whether an order was saved. A new key can look like a completely new order instead of a retry."
+  },
+  {
+    "level": "INTERVIEW QUESTION",
+    "skill": "Real-world design choices",
+    "diagram": 8,
+    "interview": true,
+    "question": "What is the strongest starting design for an e-commerce Web API with many users?",
+    "choices": [
+      "Build separate routes for each app and let each client decide its own order rules.",
+      "Prioritize speed first and leave permissions and older-client support until later.",
+      "Use clear routes, check access, load large lists in pages, and make order retries safe.",
+      "Share database details with apps and change response formats whenever needed."
+    ],
+    "correct": 2,
+    "title": "Start with clear rules and correct behavior, then improve performance.",
+    "explain": "<p><strong>1. Design clear routes.</strong> Use simple names such as <code>/products</code> and <code>/orders</code>. Keep responses consistent, so websites and mobile apps can use the same API.</p><p><strong>2. Protect customer data.</strong> Check who is logged in and whether they are allowed to view or change an order. Never trust product prices or permissions supplied by the client.</p><p><strong>3. Handle many users sensibly.</strong> Return large product lists in smaller pages, use caching where fresh-enough data is acceptable, and monitor slow requests and errors.</p><p><strong>4. Plan for failures and changes.</strong> Make order retries safe, and avoid breaking older apps when you add new fields or features.</p><p><strong>Interview trade-off:</strong> More caching can improve speed but may show older information. Splitting everything into separate services may help some teams scale, but it also adds complexity. Choose based on the store's real needs, not trends.</p>",
+    "why": "The other plans either weaken security, let clients control important business rules, or make future changes unnecessarily risky."
+  }
+]
   const iconMap={
     code:'<path d="M22 19L9 32l13 13M42 19l13 13-13 13M36 13l-8 38"/>',
     globe:'<circle cx="32" cy="32" r="23"/><path d="M9 32h46M32 9c-14 13-14 33 0 46M32 9c14 13 14 33 0 46M13 20h38M13 44h38"/>',
