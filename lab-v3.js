@@ -27,12 +27,12 @@ function matching(){
   card.classList.toggle('inspected',selected===x.key);card.setAttribute('aria-pressed',String(selected===x.key));
   card.querySelector('.rank').textContent='#'+(i+1);
   card.querySelector('.lab3-meter i').style.width=Math.max(2,Math.min(100,percent))+'%';
-  card.querySelector('.score').textContent=percent+'% similarity';
+  card.querySelector('.score').textContent=x.sim.toFixed(2)+' cosine';
  });
  const match=ranks.find(x=>x.key===selected);
  const best=ranks[0].key;
  document.getElementById('lab3-match-title').textContent=selected===best?'Nearest match: '+best:'Inspecting '+selected;
- document.getElementById('lab3-match-note').textContent='The '+selected+' image and this sentence have an illustrative cosine-based score of '+Math.round((1+match.sim)*50)+'%. '+(selected===best?'Their vectors point in the closest directions in this example.':'The '+best+' image scores higher. Try a different sentence and compare.');
+ document.getElementById('lab3-match-note').textContent='The '+selected+' image and this sentence have an illustrative cosine similarity of '+match.sim.toFixed(2)+'. '+(selected===best?'Their vectors point in the closest directions in this example.':'The '+best+' image scores higher. Try a different sentence and compare.');
 }
 document.querySelectorAll('#lab3-queries button').forEach(b=>b.addEventListener('click',()=>{query=b.dataset.query;selected=query;matching();}));
 document.querySelectorAll('#lab3-images button').forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.image;matching();}));
