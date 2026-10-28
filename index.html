@@ -379,6 +379,7 @@ body{transition:background-color .15s}
 @media(max-width:450px){.theme-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-head{align-items:flex-start}}
 
 </style>
+<link rel="stylesheet" href="lab-v3.css">
 </head>
 <body>
 
@@ -500,97 +501,8 @@ body{transition:background-color .15s}
     <button id="resetBtn" type="button">Reset</button>
   </div>
 
-  <!-- ===================== CONCEPT LAB ===================== -->
-  <div class="lab">
-    <h2>Concept Lab</h2>
-    <p class="hint">Two hands-on widgets: explore how embeddings place meaning in a shared space, then compare the three adaptation techniques side by side.</p>
-
-    <!-- --- embedding explorer --- -->
-    <div class="lab-block">
-      <h3>Embedding space · click a point</h3>
-      <div class="emb-chips" id="embChips">
-        <button type="button" data-emb="dog_text">"a photo of a dog" (text)</button>
-        <button type="button" data-emb="dog_image">dog photo (image)</button>
-        <button type="button" data-emb="cat_text">"a photo of a cat" (text)</button>
-        <button type="button" data-emb="cat_image">cat photo (image)</button>
-        <button type="button" data-emb="car_image">car photo (image)</button>
-      </div>
-
-      <div class="emb-stage">
-        <svg viewBox="0 0 720 280" role="img" aria-label="A two dimensional embedding space showing dog text and dog image close together, cat text and cat image close together, and a car image far away">
-          <!-- grid -->
-          <g stroke="#f5e0cd" stroke-width="1">
-            <line x1="60" y1="60" x2="680" y2="60"/>
-            <line x1="60" y1="110" x2="680" y2="110"/>
-            <line x1="60" y1="160" x2="680" y2="160"/>
-            <line x1="60" y1="210" x2="680" y2="210"/>
-            <line x1="200" y1="40" x2="200" y2="250"/>
-            <line x1="340" y1="40" x2="340" y2="250"/>
-            <line x1="480" y1="40" x2="480" y2="250"/>
-            <line x1="620" y1="40" x2="620" y2="250"/>
-          </g>
-          <!-- axes -->
-          <line x1="60" y1="250" x2="690" y2="250" stroke="#d6d3d1" stroke-width="1.5"/>
-          <line x1="60" y1="40" x2="60" y2="250" stroke="#d6d3d1" stroke-width="1.5"/>
-          <text x="690" y="266" font-size="9" text-anchor="end" fill="#a8a29e">dimension 1 →</text>
-          <text x="66" y="36" font-size="9" fill="#a8a29e">↑ dimension 2</text>
-
-          <!-- cluster ovals -->
-          <ellipse id="cl-dog" cx="246" cy="102" rx="66" ry="48" fill="#fed7aa" opacity=".4"/>
-          <ellipse id="cl-cat" cx="346" cy="166" rx="64" ry="46" fill="#fde68a" opacity=".4"/>
-          <ellipse id="cl-car" cx="580" cy="210" rx="46" ry="34" fill="#e7e5e4" opacity=".5"/>
-
-          <!-- dog text -->
-          <g id="pt-dog_text" class="pt">
-            <circle cx="230" cy="92" r="8" fill="#ea580c" stroke="#ffffff" stroke-width="2"/>
-            <text x="230" y="76" font-size="9" text-anchor="middle" fill="#9a3412" font-weight="700">dog (text)</text>
-          </g>
-          <!-- dog image -->
-          <g id="pt-dog_image" class="pt">
-            <circle cx="262" cy="112" r="8" fill="#fb923c" stroke="#ffffff" stroke-width="2"/>
-            <text x="272" y="132" font-size="9" text-anchor="middle" fill="#c2410c" font-weight="700">dog (image)</text>
-          </g>
-          <!-- cat text -->
-          <g id="pt-cat_text" class="pt">
-            <circle cx="330" cy="156" r="8" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
-            <text x="330" y="140" font-size="9" text-anchor="middle" fill="#b45309" font-weight="700">cat (text)</text>
-          </g>
-          <!-- cat image -->
-          <g id="pt-cat_image" class="pt">
-            <circle cx="362" cy="176" r="8" fill="#fbbf24" stroke="#ffffff" stroke-width="2"/>
-            <text x="376" y="196" font-size="9" text-anchor="middle" fill="#b45309" font-weight="700">cat (image)</text>
-          </g>
-          <!-- car image -->
-          <g id="pt-car_image" class="pt">
-            <circle cx="580" cy="210" r="8" fill="#a8a29e" stroke="#ffffff" stroke-width="2"/>
-            <text x="580" y="194" font-size="9" text-anchor="middle" fill="#78716c" font-weight="700">car (image)</text>
-          </g>
-
-          <!-- distance annotation -->
-          <path d="M276 118 C 360 92, 460 130, 566 200" fill="none" stroke="#d6d3d1" stroke-width="1.4" stroke-dasharray="5 4"/>
-          <text x="430" y="118" font-size="8.5" text-anchor="middle" fill="#a8a29e">far apart = different meaning</text>
-
-          <text x="250" y="44" font-size="8.5" text-anchor="middle" fill="#c2410c" font-weight="700">nearby = similar meaning</text>
-        </svg>
-      </div>
-
-      <div class="emb-readout" id="embReadout">
-        <strong>Click a point above</strong>
-        Each text and image becomes a vector of numbers. Matching meanings land close together in the same space — that is what "joint embeddings" means.
-      </div>
-    </div>
-
-    <!-- --- adaptation picker --- -->
-    <div class="lab-block">
-      <h3>Adaptation techniques · pick one</h3>
-      <div class="adapt-btns" id="adaptBtns">
-        <button type="button" data-adapt="prompt" class="active">Prompt engineering</button>
-        <button type="button" data-adapt="rag">RAG</button>
-        <button type="button" data-adapt="finetune">Finetuning</button>
-      </div>
-      <div class="adapt-card" id="adaptCard"></div>
-    </div>
-  </div>
+  <!-- Interactive Concept Lab v3 is rendered from lab-v3.js -->
+<section id="concept-lab" class="lab lab-v3" aria-label="Interactive Concept Lab"></section>
 
   <div class="footer">
     Module 01 · Printed pages 10–11 · Seven questions, including interview challenge
@@ -667,138 +579,6 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   window.scrollTo({ top:0, behavior:'smooth' });
 });
 
-/* ============================================================
-   EMBEDDING EXPLORER
-   ============================================================ */
-const EMB = {
-  dog_text: {
-    label: '"a photo of a dog" — text',
-    vec: [0.82, -0.31, 0.55, 0.12],
-    cluster: 'dog',
-    msg: 'The <strong>dog text</strong> embedding sits right next to the dog image embedding. CLIP was trained so that matching image–text pairs land near each other in the same vector space — no separate training run needed for each concept.'
-  },
-  dog_image: {
-    label: 'dog photo — image',
-    vec: [0.79, -0.28, 0.58, 0.09],
-    cluster: 'dog',
-    msg: 'The <strong>dog image</strong> embedding is very close to the dog text embedding (compare their vectors — the numbers are similar). Both describe the same meaning, so CLIP places them together.'
-  },
-  cat_text: {
-    label: '"a photo of a cat" — text',
-    vec: [0.71, 0.22, 0.44, -0.30],
-    cluster: 'cat',
-    msg: 'The <strong>cat text</strong> embedding forms its own cluster with the cat image. Cats and dogs are different meanings, so the two clusters sit apart — but both are animals, so they are closer to each other than to the car.'
-  },
-  cat_image: {
-    label: 'cat photo — image',
-    vec: [0.68, 0.25, 0.47, -0.27],
-    cluster: 'cat',
-    msg: 'The <strong>cat image</strong> embedding pairs with the cat text embedding, just as dog image paired with dog text. This is the joint embedding property: text and images share one representational space.'
-  },
-  car_image: {
-    label: 'car photo — image',
-    vec: [-0.55, 0.66, -0.21, 0.40],
-    cluster: 'car',
-    msg: 'The <strong>car image</strong> embedding is far from both clusters, and its vector values are quite different (note the negative first value). A different meaning points in a different direction in the space.'
-  }
-};
-
-const embChips = document.getElementById('embChips');
-const embReadout = document.getElementById('embReadout');
-const allPts = document.querySelectorAll('.emb-stage .pt');
-const allClusters = document.querySelectorAll('.emb-stage ellipse');
-
-function fmtVec(v){
-  return v.map(n => (n < 0 ? '−' : '') + Math.abs(n).toFixed(2)).join(',  ');
-}
-
-function selectEmb(key){
-  const data = EMB[key];
-
-  Array.from(embChips.children).forEach(b => b.classList.toggle('active', b.dataset.emb === key));
-
-  // highlight points
-  allPts.forEach(g => {
-    const id = g.id.replace('pt-','');
-    const on = (id === key) || (EMB[id] && EMB[id].cluster === data.cluster && id !== key);
-    g.style.opacity = on ? '1' : '.28';
-    const c = g.querySelector('circle');
-    if (c) c.setAttribute('r', id === key ? '11' : '8');
-  });
-
-  // highlight cluster
-  allClusters.forEach(el => {
-    const id = el.id.replace('cl-','');
-    el.style.opacity = (id === data.cluster) ? '.85' : '.12';
-  });
-
-  embReadout.innerHTML =
-    '<strong>' + data.label + '</strong>' +
-    '<div class="vec-row">' + data.vec.map(n =>
-      '<span>' + ((n < 0 ? '−' : '') + Math.abs(n).toFixed(2)) + '</span>').join('') +
-      '<span>…</span></div>' +
-    data.msg;
-}
-
-Array.from(embChips.children).forEach(btn => {
-  btn.addEventListener('click', () => selectEmb(btn.dataset.emb));
-});
-
-// reset dimming on load
-allPts.forEach(g => g.style.opacity = '1');
-allClusters.forEach(el => el.style.opacity = '.4');
-
-/* ============================================================
-   ADAPTATION PICKER
-   ============================================================ */
-const ADAPT = {
-  prompt: {
-    title: 'Prompt engineering',
-    changes: 'The instructions and examples supplied to the model.',
-    example: 'Provide detailed instructions and examples of desirable product descriptions.',
-    mech: 'Guides the model — the model itself is unchanged.',
-    badge: 'Model weights unchanged',
-    badgeClass: 'same'
-  },
-  rag: {
-    title: 'Retrieval-augmented generation (RAG)',
-    changes: 'The information available to the model through retrieved context.',
-    example: 'Connect the model to a customer-review database to inform its descriptions.',
-    mech: 'Supplies additional information — the model itself is unchanged.',
-    badge: 'Model weights unchanged',
-    badgeClass: 'same'
-  },
-  finetune: {
-    title: 'Finetuning',
-    changes: 'The model is further trained.',
-    example: 'Train the existing model further using high-quality product descriptions.',
-    mech: 'Adapts the trained model itself — the weights change.',
-    badge: 'Model weights updated',
-    badgeClass: 'change'
-  }
-};
-
-const adaptBtns = document.getElementById('adaptBtns');
-const adaptCard = document.getElementById('adaptCard');
-
-function renderAdapt(key){
-  const d = ADAPT[key];
-  adaptCard.innerHTML =
-    '<h4>' + d.title + '</h4>' +
-    '<div class="adapt-row"><div class="lbl">What changes</div><div class="val">' + d.changes + '</div></div>' +
-    '<div class="adapt-row"><div class="lbl">Retailer example</div><div class="val">' + d.example + '</div></div>' +
-    '<div class="adapt-row"><div class="lbl">Mechanism</div><div class="val">' + d.mech + '</div></div>' +
-    '<span class="adapt-badge ' + d.badgeClass + '">' + d.badge + '</span>';
-
-  Array.from(adaptBtns.children).forEach(b => b.classList.toggle('active', b.dataset.adapt === key));
-}
-
-Array.from(adaptBtns.children).forEach(btn => {
-  btn.addEventListener('click', () => renderAdapt(btn.dataset.adapt));
-});
-
-renderAdapt('prompt');
-
 /* Palette system: shareable query URLs, no duplicate lesson files. */
 const THEMES=[
 {id:'sunset',name:'Sunset Orange',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2'},
@@ -846,5 +626,6 @@ document.getElementById('copyThemeUrl').addEventListener('click',async()=>{
 });
 
 </script>
+<script src="lab-v3.js"></script>
 </body>
 </html>
