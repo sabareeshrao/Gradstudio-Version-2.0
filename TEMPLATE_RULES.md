@@ -33,15 +33,19 @@ This repository's `index.html` is the visual and interaction standard for subseq
 - Numbering starts at 1 and is consecutive.
 - Correct choices are not conspicuously longer than distractors.
 - Exactly one final interview scenario.
-- Quiz check, reset, progress, embedding matching, retail adaptation studio, case challenge, and all fifteen distinctive light and dark theme selections work on GitHub Pages.
+- Quiz check, reset, and progress work.
+- All Concept Lab interactions work and remain specific to the current topic.
+- **No study module displays a theme selector or a palette gallery.** The selected module color is fixed.
 
-## Reuse of themes and Concept Lab
+## Separation of themes from study modules
 
-The fifteen themes are selected from the `THEMES` array near the end of `index.html`. Their IDs are: `sunset`, `forest`, `sky`, `rose`, `midnight`, `cocoa`, `paper`, `obsidian`, `lemon`, `glacier`, `scarlet`, `jade`, `peach`, `carbon`, `cobalt`. These all share the same HTML; `?theme=sky` or `?theme=lemon` changes the palette only. Invalid or retired IDs fall back to Sunset Orange.
+The 15 palettes are maintained in the **standalone Design Library** at [themes/index.html](themes/index.html). This page alone may display the palette gallery and shareable `?theme=...` preview URLs.
 
-**Theme quality gate:** compare the full accent-plus-background experience before introducing another palette. Two themes with similar accent hues are unacceptable if the page treatments also look similar. Use noticeably different hue families, luminance, background temperature, or light-versus-dark modes. Verify accessible text contrast and inspect the cards and Concept Lab under every theme. Do not add cosmetic renames of existing palettes.
+Every study module, including the original multimodal module and new keyword study modules, must use **one fixed theme only**. When the user does not name a theme, choose one of the 15 styles without asking, hardcode the chosen palette into the module, and never show a theme selection UI inside the lesson. Do not put palette cards, 15-theme selectors, color-picker buttons, or theme parameter logic in study HTML/JS. A small link to the separate Design Library is acceptable, but no embedded gallery.
 
-The interactive Concept Lab is implemented by `lab-v3.js` and `lab-v3.css`, linked as relative assets in `index.html`. Reuse the mechanism of input, observable state change, and explanatory outcome for new modules, but rewrite topic-specific examples instead of reusing unrelated retail or animal examples. Identify all model outputs, toy vectors, scores, and training effects as educational illustrations, not measured model results. Keep those relative assets alongside each HTML entry point in GitHub Pages.
+Quality gate: inspect accent, page background, contrast, diagrams and legibility for the chosen theme. Avoid visually redundant colors in the gallery. Keep the Concept Lab interactions aligned with the module's teaching objective.
+
+The original interactive lab uses relative `lab-v3.js` and `lab-v3.css` files. For new topics, replace topic-specific examples and interactions; do not copy the AI lab into a Web API lesson.
 
 ## Keyword Study variants — eight-question standard
 
