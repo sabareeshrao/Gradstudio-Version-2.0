@@ -37,7 +37,7 @@ This repository's `index.html` is the visual and interaction standard for subseq
 
 ## Reuse of themes and Concept Lab
 
-The fifteen themes are selected from the `THEMES` array near the end of `index.html`. Their IDs are: `sunset`, `forest`, `sky`, `rose`, `midnight`, `cocoa`, `paper`, `obsidian`, `lemon`, `glacier`, `scarlet`, `jade`, `peach`, `carbon`, `cobalt`. These all share the same HTML; `?theme=sky` or `?theme=lemon` changes the palette only. Invalid or retired IDs fall back to Sunset Orange.
+The fifteen themes are selected from the `THEMES` array near the end of `index.html`, presented through the `Themes` button and dropdown in the sticky top bar. Keep the dropdown keyboard-accessible and mobile-friendly; do not display a separate theme gallery inside the lesson content. Their IDs are: `sunset`, `forest`, `sky`, `rose`, `midnight`, `cocoa`, `paper`, `obsidian`, `lemon`, `glacier`, `scarlet`, `jade`, `peach`, `carbon`, `cobalt`. These all share the same HTML; `?theme=sky` or `?theme=lemon` changes the palette only. Invalid or retired IDs fall back to Sunset Orange.
 
 **Theme quality gate:** compare the full accent-plus-background experience before introducing another palette. Two themes with similar accent hues are unacceptable if the page treatments also look similar. Use noticeably different hue families, luminance, background temperature, or light-versus-dark modes. Verify accessible text contrast and inspect the cards and Concept Lab under every theme. Do not add cosmetic renames of existing palettes.
 
