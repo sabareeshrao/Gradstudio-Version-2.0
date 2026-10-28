@@ -11,7 +11,7 @@ One interactive HTML module supports **15 deliberately differentiated color pale
 | 03 | Sky Blue | `?theme=sky` | `#0878B6` | Light / sky |
 | 04 | Rose Quartz | `?theme=rose` | `#B23E70` | Light / blush |
 | 05 | Midnight Indigo | `?theme=midnight` | `#3A4B9D` | Light / cool indigo |
-| 06 | Cocoa After Dark | `?theme=cocoa` | `#A97955` | Dark / espresso |
+| 06 | Cocoa After Dark | `?theme=cocoa` | `#BD8D6B` | Dark / espresso |
 | 07 | Ivory Ink | `?theme=paper` | `#145458` | Light / parchment |
 | 08 | Obsidian Black | `?theme=obsidian` | `#252D36` | Light / grayscale |
 | 09 | Electric Lemon | `?theme=lemon` | `#DDE748` | Dark / neon citrus |
