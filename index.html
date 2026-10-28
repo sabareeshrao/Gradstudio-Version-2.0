@@ -340,29 +340,29 @@ button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid #3
 
 
 /* Fifteen shareable themes, one lesson and one interactive Concept Lab */
-
-
-
-
-
+.theme-gallery{background:#fff;border:1px solid var(--accent-border);border-radius:17px;padding:19px;margin:20px 0 23px;box-shadow:0 6px 25px #25345108}
+.gallery-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.gallery-head h2{font-size:1.1rem;margin:2px 0 3px;color:var(--text)}
+.gallery-head p{font-size:.78rem;color:var(--muted);margin:0}
+.theme-eyebrow{font-size:.68rem;letter-spacing:.12em;color:var(--accent-dark);font-weight:800}
 #copyThemeUrl{background:var(--accent);color:white;padding:8px 12px;font-size:.77rem;white-space:nowrap}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.theme-choices{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:17px 0 11px}
+.theme-choice{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:10px;border:1px solid #d8dfe5;border-radius:11px;background:#fff;min-width:0;text-align:left;position:relative;color:#2a3747;transition:transform .15s,border-color .15s,box-shadow .15s}
+.theme-choice:hover{transform:translateY(-2px);border-color:var(--accent)}
+.theme-choice[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:1px}
+.theme-mini{display:flex;flex-direction:column;gap:3px;width:100%;height:35px;padding:5px;border-radius:6px;background:var(--preview-bg)}
+.theme-mini:before{content:"";display:block;width:40%;height:6px;border-radius:3px;background:var(--preview-color)}
+.theme-mini:after{content:"";display:block;width:80%;height:4px;border-radius:3px;background:var(--preview-hint)}
+.theme-choice strong{font-size:.77rem;line-height:1.3}
+.theme-choice small{color:#718190;font-size:.66rem}
+.theme-mini{display:grid;grid-template-rows:7px 1fr;gap:6px;height:69px;padding:7px;background:var(--preview-bg);border:1px solid var(--preview-hint)}
+.theme-mini:before,.theme-mini:after{content:none;display:none}
+.mini-page-top{height:7px;width:56%;border-radius:7px;background:var(--preview-color)}
+.mini-page-layout{height:100%;display:grid;grid-template-columns:34% minmax(0,1fr);gap:6px}
+.mini-page-layout i{background:var(--preview-hint);border-radius:4px}
+.mini-page-layout b{background:var(--preview-card);border-radius:4px;border:1px solid var(--preview-hint);position:relative}
+.mini-page-layout b:after{content:"";position:absolute;left:7px;top:8px;width:64%;height:4px;border-radius:4px;background:var(--preview-color)}
+.theme-hint{font-size:.72rem;color:var(--muted);line-height:1.4}
 .topbar{background:var(--bg)}
 .progress{background:var(--accent-border)}
 .progress-fill{background:linear-gradient(90deg,var(--accent-mid),var(--accent))}
@@ -382,33 +382,26 @@ button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid #3
 .explanation{color:var(--text)}
 .question label{background:#fff;border-color:var(--border)}
 body{transition:background-color .15s}
-@media(max-width:740px){}
-@media(max-width:450px){}
+@media(max-width:740px){.theme-choices{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:450px){.theme-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-head{align-items:flex-start}}
 
 
 /* Deliberately different light and high-contrast nighttime palettes */
+.theme-dark .container>h1{color:#f4f8fb}
+.theme-dark .container>.sub{color:#c4d5df}
+.theme-dark .topbar{background:var(--bg);border-color:#ffffff42}
+.theme-dark .topbar .brand,.theme-dark .topbar .brand small,.theme-dark .topbar .counter{color:#edf5fa}
+.theme-dark .footer{color:#c2cbd8}
+.theme-dark .theme-gallery{background:#fff}
+.theme-dark #checkBtn,.theme-dark #copyThemeUrl,.theme-dark .theme-choice[aria-pressed="true"],.theme-dark .lab3-buttonset button.active{color:#17232d}
+.theme-dark .theme-choices{background:#fff}
+.theme-choice .theme-mini{min-height:69px;border:1px solid #c5d1d9}
+.theme-choice .mini-page-layout i{background:var(--preview-color);opacity:.7}
+.theme-choice .mini-page-layout b{background:var(--preview-card)}
+.theme-choice[aria-pressed="true"]{box-shadow:0 0 0 2px var(--accent-soft)}
+.theme-dark .lab3-methods button.active,.theme-dark .lab3-buttonset button.active{color:#20313f}
+@media(prefers-reduced-motion:reduce){.theme-choice{transition:none}}
 
-
-
-
-
-
-@media(prefers-reduced-motion:reduce){}
-
-
-/* Additional keyword modules: discoverable without replacing the original study page */
-.keyword-index-entry{margin:1px 0 22px;padding:14px 17px;background:#fff;border:1px solid var(--accent-border);border-radius:14px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:0 4px 17px #223d4b0d}
-.keyword-index-entry>div{min-width:0}
-.keyword-new-label{font-size:.66rem;font-weight:850;letter-spacing:.09em;color:var(--accent-dark);display:block}
-.keyword-index-entry strong{font-size:1.02rem;color:#2b4052;display:block;margin:2px 0}
-.keyword-index-entry small{font-size:.73rem;color:#67808f;display:block;line-height:1.45}
-.keyword-open-link{font-size:.79rem;text-decoration:none;background:var(--accent-dark);color:#fff;border-radius:9px;padding:10px 12px;white-space:nowrap;font-weight:800}
-.keyword-open-link:hover{filter:brightness(.96)}
-.keyword-open-link:focus-visible{outline:3px solid var(--accent-mid);outline-offset:3px}
-
-
-.standalone-palette-link{margin:0 0 18px;font-size:.76rem;text-align:right}
-.standalone-palette-link a{color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px}
 </style>
 <link rel="stylesheet" href="lab-v3.css">
 </head>
@@ -423,14 +416,13 @@ body{transition:background-color .15s}
 </div>
 
 <div class="container">
-<div class="keyword-index-entry"><div><span class="keyword-new-label">NEW KEYWORD STUDY · 001</span><strong>Web API</strong><small>8 multiple-choice questions · 8 distinct diagrams · interactive request and retry labs</small></div><a href="keyword-study/web-api/" class="keyword-open-link">Open Web API module →</a></div>
-<p class="standalone-palette-link"><a href="themes/">Explore color palettes in the separate Design Library</a></p>
 
   <h1>Multimodal Training, General-Purpose Models &amp; Model Adaptation</h1>
-  <p class="sub">Seven carefully balanced questions, including one prerequisite and a final interview scenario. Visual explanations and three interactive Concept Lab experiments are included below.</p>
+  <p class="sub">Seven carefully balanced questions, including one prerequisite and a final interview scenario. Visual explanations, fifteen color themes, and three interactive Concept Lab experiments are included below.</p>
 
   <!-- ===================== HERO ===================== -->
-  <div class="hero hero-new" aria-label="Overview of visual and language representation learning">
+  <section class="theme-gallery" aria-label="Color theme selector"><div class="gallery-head"><div><span class="theme-eyebrow">VISUAL THEME LIBRARY</span><h2>Choose a color direction</h2><p>Same lesson, 15 distinctive palettes. Select one to preview instantly; the URL identifies the active palette.</p></div><button type="button" id="copyThemeUrl">Copy theme URL</button></div><div id="themeChoices" class="theme-choices" role="group" aria-label="Choose one of fifteen color themes"></div><div class="theme-hint" id="themeHint" aria-live="polite">Select any swatch to see this entire study module in that palette.</div></section>
+<div class="hero hero-new" aria-label="Overview of visual and language representation learning">
 <div class="hero-heading"><div><span class="eyebrow">MODULE MAP · PAGES 10–11</span><h2>From paired data to adaptable AI</h2><p>Follow how images and language become representations, then how those capabilities reach real applications.</p></div><span class="hero-index">01 / FOUNDATION</span></div>
 <div class="hero-flow"><div class="hero-visual"><svg class="photo-art" viewBox="0 0 260 166" role="img" aria-label="Illustration of a dog beside the sea under a sunset"><defs><linearGradient id="sea" x2="0" y2="1"><stop stop-color="#ffd9a7"/><stop offset="1" stop-color="#9ad5c7"/></linearGradient></defs><rect width="260" height="166" rx="13" fill="url(#sea)"/><circle cx="200" cy="40" r="23" fill="#ffad57"/><path d="M0 99Q68 81 124 101T260 88V166H0Z" fill="#60a5a2"/><path d="M0 130Q80 121 151 138T260 128V166H0Z" fill="#e5c69a"/><path d="M75 124q12-20 34-18l20-14 10 9-8 11 15 12-11 8-20-7-20 1-4 15H78l1-17-14-7z" fill="#5d463c"/><circle cx="134" cy="104" r="2" fill="#fff"/><path d="M62 116l-9-8" stroke="#5d463c" stroke-width="7" stroke-linecap="round"/></svg><span class="hero-caption">“a dog on the beach”</span><span class="mini-label">Naturally paired data</span></div><span class="flow-arrow" aria-hidden="true">→</span>
 <div class="hero-middle"><span class="hero-process"><svg class="ill-icon " viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 8L7 23l25 15 25-15zM7 32l25 15 25-15M7 41l25 15 25-15"/></svg> Shared meaning</span><div class="mini-embedding"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="mini-label">Vector representations</span></div><span class="flow-arrow" aria-hidden="true">→</span>
@@ -611,6 +603,67 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   window.scrollTo({ top:0, behavior:'smooth' });
 });
 
+/* Palette system: shareable query URLs, no duplicate lesson files. */
+const THEMES=[
+{id:'sunset',name:'Sunset Orange',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2',mode:'light'},
+{id:'forest',name:'Forest Green',a:'#23784b',dark:'#185534',mid:'#74ba8c',soft:'#e8f6ec',border:'#b9dfc2',bg:'#f7fcf8',surface:'#dff0e4',canvas:'#f2faf4',mode:'light'},
+{id:'sky',name:'Sky Blue',a:'#0878B6',dark:'#145879',mid:'#79C8EF',soft:'#EAF8FF',border:'#ADDDF7',bg:'#F4FBFF',surface:'#DDF3FF',canvas:'#ECF8FF',mode:'light'},
+{id:'rose',name:'Rose Quartz',a:'#b23e70',dark:'#82264f',mid:'#e194b4',soft:'#ffedf3',border:'#f2c5d4',bg:'#fff9fb',surface:'#fbe0e9',canvas:'#fff3f7',mode:'light'},
+{id:'midnight',name:'Midnight Indigo',a:'#3a4b9d',dark:'#27336c',mid:'#8999dc',soft:'#e9edff',border:'#c1caf0',bg:'#f4f5fc',surface:'#dce2fa',canvas:'#eef1fe',mode:'light'},
+{id:'cocoa',name:'Cocoa After Dark',a:'#BD8D6B',dark:'#71462E',mid:'#E2B38C',soft:'#FAF0E7',border:'#E3C8B4',bg:'#291A17',surface:'#F3DCC6',canvas:'#FFF6EC',mode:'dark'},
+{id:'paper',name:'Ivory Ink',a:'#145458',dark:'#0B4045',mid:'#6B9496',soft:'#F5EAD9',border:'#E1CFB4',bg:'#FFE8C9',surface:'#F2D9B5',canvas:'#FFF3E3',mode:'light'},
+{id:'obsidian',name:'Obsidian Black',a:'#252D36',dark:'#1B222A',mid:'#9CA8B3',soft:'#E8ECEF',border:'#CCD4DB',bg:'#EBEEF0',surface:'#DDE3E7',canvas:'#F1F3F5',mode:'light'},
+{id:'lemon',name:'Electric Lemon',a:'#DDE748',dark:'#4D550C',mid:'#F7FC9F',soft:'#F7FBE1',border:'#DCE49A',bg:'#18231A',surface:'#EBEEC7',canvas:'#F8FBEF',mode:'dark'},
+{id:'glacier',name:'Glacier Ice',a:'#75D4FF',dark:'#075376',mid:'#A7E7FF',soft:'#E9F8FF',border:'#BDE7F7',bg:'#0A2C45',surface:'#DBF4FF',canvas:'#F0FBFF',mode:'dark'},
+{id:'scarlet',name:'Scarlet Signal',a:'#FF6860',dark:'#8E1E24',mid:'#FFB5A6',soft:'#FFF0EC',border:'#FFCCBE',bg:'#33141B',surface:'#FFE2D9',canvas:'#FFF5F0',mode:'dark'},
+{id:'jade',name:'Jade Neon',a:'#59E7BC',dark:'#076B53',mid:'#AFFFE1',soft:'#E2FFF2',border:'#B9ECD8',bg:'#06352F',surface:'#D9F8E8',canvas:'#EFFCF7',mode:'dark'},
+{id:'peach',name:'Peach Noir',a:'#FFD0A1',dark:'#90512E',mid:'#FFE3C7',soft:'#FFF2E6',border:'#F2D2B4',bg:'#2B1639',surface:'#FAE2CC',canvas:'#FFF8EF',mode:'dark'},
+{id:'carbon',name:'Carbon Contrast',a:'#D0D4D9',dark:'#2C3339',mid:'#F0F1F3',soft:'#F5F6F7',border:'#D4D9DE',bg:'#111214',surface:'#E9ECEE',canvas:'#FCFDFE',mode:'dark'},
+{id:'cobalt',name:'Electric Cobalt',a:'#8195FF',dark:'#3145A0',mid:'#BBC8FF',soft:'#EDF0FF',border:'#CBD4FF',bg:'#111B43',surface:'#E7ECFF',canvas:'#F4F5FF',mode:'dark'}
+];
+let activeTheme;
+const choiceContainer=document.getElementById('themeChoices'),themeHint=document.getElementById('themeHint');
+function chooseTheme(id,changeUrl){
+ const theme=THEMES.find(t=>t.id===id)||THEMES[0];
+ document.documentElement.classList.toggle('theme-dark',theme.mode==='dark');
+ activeTheme=theme.id;
+ const vars={'--accent':theme.a,'--accent-dark':theme.dark,'--accent-mid':theme.mid,'--accent-soft':theme.soft,'--accent-border':theme.border,
+ '--bg':theme.bg,'--border':theme.border,'--lab-surface':theme.surface,'--lab-border':theme.border,'--lab-canvas':theme.canvas,'--lab-ink':'#26394a','--teal':theme.a,'--deep':theme.dark};
+ Object.entries(vars).forEach(([k,v])=>document.documentElement.style.setProperty(k,v));
+ document.querySelectorAll('.theme-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===theme.id)));
+ themeHint.textContent='Active: '+theme.name+' · The browser address bar contains ?theme='+theme.id+'.';
+ if(changeUrl){
+  try{
+   const u=new URL(window.location.href);u.searchParams.set('theme',theme.id);window.history.replaceState(null,'',u.toString());
+   window.localStorage.setItem('gradstudio-theme',theme.id);
+  }catch(e){}
+ }
+}
+THEMES.forEach((t,n)=>{
+ const b=document.createElement('button');b.type='button';b.className='theme-choice';b.dataset.theme=t.id;b.setAttribute('aria-pressed','false');
+ b.innerHTML='<span class="theme-mini" style="--preview-bg:'+t.bg+';--preview-color:'+t.a+';--preview-hint:'+t.mid+';--preview-card:'+t.soft+'"><span class="mini-page-top"></span><span class="mini-page-layout"><i></i><b></b></span></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><small>'+t.id+'</small>';
+ b.addEventListener('click',()=>chooseTheme(t.id,true));choiceContainer.appendChild(b);
+});
+let initialTheme='';
+try{
+ const candidate=new URLSearchParams(location.search).get('theme')||window.localStorage.getItem('gradstudio-theme')||'sunset';
+ initialTheme=THEMES.some(t=>t.id===candidate)?candidate:'sunset';
+ const u=new URL(window.location.href);
+ if(u.searchParams.has('theme')&&u.searchParams.get('theme')!==initialTheme){
+   u.searchParams.set('theme',initialTheme);
+   window.history.replaceState(null,'',u.toString());
+ }
+}catch(e){initialTheme='sunset'}
+chooseTheme(initialTheme,false);
+document.getElementById('copyThemeUrl').addEventListener('click',async()=>{
+ const b=document.getElementById('copyThemeUrl');
+ try{
+  const u=new URL(window.location.href);u.searchParams.set('theme',activeTheme);
+  await navigator.clipboard.writeText(u.href);b.textContent='Link copied';setTimeout(()=>b.textContent='Copy theme URL',1800);
+ }catch(e){b.textContent='Copy address bar URL';setTimeout(()=>b.textContent='Copy theme URL',2500)}
+});
+
 </script>
+<script src="lab-v3.js"></script>
 </body>
 </html>
