@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gradstudio — Design System / Theme Gallery</title>
+<meta name="description" content="The separate color gallery for Gradstudio modules. Compare fifteen distinct study themes without adding palette controls to lessons.">
+<style>
+:root{--ink:#253747;--dim:#647789;--line:#d8e2e9;--paper:#f4f7fa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+button,a{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #2475ab;outline-offset:3px}
+a{color:#175d8d}
+.site-header{padding:15px clamp(14px,3vw,35px);background:#fff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:13px;align-items:center}
+.site-header strong{font-size:.8rem;letter-spacing:.12em}.site-header span{display:block;font-size:.71rem;color:var(--dim)}
+.site-header nav{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;font-weight:750}
+.page{max-width:1220px;margin:0 auto;padding:30px clamp(14px,3vw,35px) 50px}
+.eyebrow{font-size:.69rem;letter-spacing:.13em;font-weight:900;color:#37738e}
+h1{font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.035em;margin:5px 0 6px;line-height:1.13}
+.intro{color:#5f7180;font-size:.93rem;max-width:75ch;margin:0 0 24px}
+.workbench{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:23px;align-items:start}
+.palette-panel,.preview-panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 13px #102a3b08;min-width:0;overflow:hidden}
+.panel-head{padding:17px 19px 15px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.panel-head strong{font-size:.96rem}
+.panel-head small{font-size:.75rem;color:#788899}
+#palettes{padding:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.palette{display:block;text-align:left;border:1px solid #d8e3ea;background:white;border-radius:11px;padding:8px;min-width:0}
+.palette:hover{border-color:#4d83ac}
+.palette[aria-pressed="true"]{border:2px solid #1d6ea8;padding:7px;box-shadow:0 0 0 2px #cde8fa}
+.swatch-page{display:flex;flex-direction:column;gap:6px;height:60px;padding:9px;border-radius:7px;background:var(--swatch-bg);border:1px solid var(--swatch-border)}
+.swatch-page i{display:block;width:48%;height:7px;border-radius:3px;background:var(--swatch-accent)}
+.swatch-page b{display:block;width:86%;height:6px;border-radius:3px;background:var(--swatch-mid)}
+.swatch-page em{display:block;width:71%;height:9px;border-radius:3px;background:var(--swatch-soft)}
+.palette strong{display:block;font-size:.77rem;line-height:1.3;margin:8px 0 1px}
+.palette small{color:#788a96;font-size:.68rem}
+.preview-panel{position:sticky;top:18px}
+.preview-meta{display:flex;align-items:center;justify-content:space-between;padding:12px 19px;border-bottom:1px solid var(--line);gap:9px;flex-wrap:wrap}
+.preview-meta strong{font-size:.8rem}.preview-meta span{font-size:.72rem;color:#6c8291}
+#themePreview{padding:24px;background:var(--t-bg);color:var(--t-page-text);transition:background .18s}
+.sample-kicker{font-size:.67rem;letter-spacing:.13em;font-weight:900;color:var(--t-page-text);opacity:.85}
+.sample-title{font-weight:900;font-size:1.86rem;letter-spacing:-.03em;margin:4px 0 4px}
+.sample-summary{font-size:.78rem;opacity:.85;margin:0 0 15px}
+.sample-hero{background:var(--t-surface);border:1px solid var(--t-border);padding:18px;border-radius:14px;color:#2c4659}
+.sample-hero strong{font-size:.86rem}
+.sample-flow{display:grid;grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr) 20px minmax(0,1fr);gap:7px;align-items:center;margin-top:13px}
+.flow-node{background:#fff;border:1px solid var(--t-border);border-radius:9px;padding:15px 4px;text-align:center;font-size:.74rem;color:#38536a;font-weight:800}
+.flow-node.center{background:var(--t-accent);color:var(--t-accent-text);border-color:var(--t-accent)}
+.flow-line{height:2px;background:var(--t-accent);position:relative}
+.flow-line:after{content:"";position:absolute;right:0;top:-4px;border-left:7px solid var(--t-accent);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.sample-question{margin-top:13px;background:#fff;border:1px solid var(--t-border);padding:16px;border-radius:14px;color:#2b4155}
+.sample-question header{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.sample-label{font-size:.73rem;font-weight:900;padding:5px 9px;color:var(--t-accent-dark);background:var(--t-soft);border:1px solid var(--t-border);border-radius:18px}
+.sample-question header small{font-size:.7rem;letter-spacing:.08em;color:#708391;font-weight:800}
+.sample-question>strong{display:block;font-size:.92rem;margin-bottom:12px}
+.mock-answer{display:flex;align-items:center;gap:9px;background:#f8fbfd;border:1px solid #dce8ee;border-radius:8px;padding:11px;font-size:.82rem;color:#40586b;margin-bottom:7px}
+.mock-answer i{width:16px;height:16px;border:2px solid #a3bbc9;display:inline-block;border-radius:50%;flex-shrink:0}
+.sample-action{background:var(--t-accent);color:var(--t-accent-text);padding:10px 13px;border:0;border-radius:8px;font-size:.75rem;font-weight:800;margin-top:5px;pointer-events:none}
+.info{padding:15px 19px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.info>div{min-width:0}
+#chosenTheme{display:block;font-size:.91rem;font-weight:850}
+#chosenHex{color:var(--dim);font-size:.77rem;font-family:ui-monospace,Consolas,monospace}
+.copy{background:#243c50;color:#fff;border:0;border-radius:9px;font-size:.78rem;padding:9px 11px;font-weight:800}
+.footnote{font-size:.79rem;color:#526e82;background:#e6f0f5;border-left:3px solid #307eac;border-radius:0 9px 9px 0;padding:12px 14px;margin:22px 0}
+@media(max-width:810px){.workbench{grid-template-columns:1fr}.preview-panel{position:static}#palettes{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:470px){#palettes{grid-template-columns:repeat(2,minmax(0,1fr))}.panel-head{padding:15px}.sample-flow{gap:4px}.flow-node{font-size:.66rem;padding:12px 2px}.page{padding-top:19px}.preview-panel{overflow:hidden}.sample-question{padding:12px}}
+</style>
+</head>
+<body>
+<header class="site-header"><div><strong>GRADSTUDIO / DESIGN LIBRARY</strong><span>Standalone theme preview — not part of study modules</span></div><nav><a href="../">Study modules</a><a href="../keyword-study/web-api/">Web API study</a></nav></header>
+<main class="page">
+<div class="eyebrow">VISUAL DESIGN SYSTEM / 15 DIFFERENT PALETTES</div>
+<h1>Theme gallery</h1>
+<p class="intro">Choose a look here, preview its sample lesson layout, and tell me the theme number for your next keyword. Individual lessons have <strong>one preselected theme</strong>—this gallery is never embedded inside them.</p>
+<div class="workbench">
+<section class="palette-panel" aria-labelledby="palette-title"><div class="panel-head"><strong id="palette-title">Available palettes</strong><small>15 styles</small></div><div id="palettes" role="group" aria-label="Select a palette"></div></section>
+<section class="preview-panel" aria-label="Preview of the selected style"><div class="preview-meta"><strong>Live design preview</strong><span>Sample layout only</span></div>
+<div id="themePreview">
+<div class="sample-kicker">KEYWORD STUDY / 001</div><div class="sample-title">Web API</div><p class="sample-summary">Software Engineering · API Design · 8 questions</p>
+<div class="sample-hero"><strong>A client communicates with a service.</strong><div class="sample-flow"><div class="flow-node">Client</div><div class="flow-line"></div><div class="flow-node center">Web API</div><div class="flow-line"></div><div class="flow-node">Service</div></div></div>
+<div class="sample-question"><header><span class="sample-label">Q1</span><small>INTRODUCTION</small></header><strong>What is a Web API?</strong><div class="mock-answer"><i></i>A web-facing interface between applications</div><div class="mock-answer"><i></i>A graphical component rendered by a browser</div><button type="button" class="sample-action" disabled>Check answer</button></div>
+</div>
+<div class="info"><div><strong id="chosenTheme">Glacier Ice</strong><span id="chosenHex"></span></div><button type="button" id="copyLink" class="copy">Copy preview link</button></div>
+</section>
+</div>
+<p class="footnote"><strong>Separation rule:</strong> The gallery is for design decisions only. It does not contain the Web API question bank or Concept Lab. The published Web API lesson uses one fixed Glacier Ice theme.</p>
+</main>
+<script>
+const THEMES=[
+{id:'sunset',name:'Sunset Orange',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2',mode:'light'},
+{id:'forest',name:'Forest Green',a:'#23784b',dark:'#185534',mid:'#74ba8c',soft:'#e8f6ec',border:'#b9dfc2',bg:'#f7fcf8',surface:'#dff0e4',canvas:'#f2faf4',mode:'light'},
+{id:'sky',name:'Sky Blue',a:'#0878B6',dark:'#145879',mid:'#79C8EF',soft:'#EAF8FF',border:'#ADDDF7',bg:'#F4FBFF',surface:'#DDF3FF',canvas:'#ECF8FF',mode:'light'},
+{id:'rose',name:'Rose Quartz',a:'#b23e70',dark:'#82264f',mid:'#e194b4',soft:'#ffedf3',border:'#f2c5d4',bg:'#fff9fb',surface:'#fbe0e9',canvas:'#fff3f7',mode:'light'},
+{id:'midnight',name:'Midnight Indigo',a:'#3a4b9d',dark:'#27336c',mid:'#8999dc',soft:'#e9edff',border:'#c1caf0',bg:'#f4f5fc',surface:'#dce2fa',canvas:'#eef1fe',mode:'light'},
+{id:'cocoa',name:'Cocoa After Dark',a:'#BD8D6B',dark:'#71462E',mid:'#E2B38C',soft:'#FAF0E7',border:'#E3C8B4',bg:'#291A17',surface:'#F3DCC6',canvas:'#FFF6EC',mode:'dark'},
+{id:'paper',name:'Ivory Ink',a:'#145458',dark:'#0B4045',mid:'#6B9496',soft:'#F5EAD9',border:'#E1CFB4',bg:'#FFE8C9',surface:'#F2D9B5',canvas:'#FFF3E3',mode:'light'},
+{id:'obsidian',name:'Obsidian Black',a:'#252D36',dark:'#1B222A',mid:'#9CA8B3',soft:'#E8ECEF',border:'#CCD4DB',bg:'#EBEEF0',surface:'#DDE3E7',canvas:'#F1F3F5',mode:'light'},
+{id:'lemon',name:'Electric Lemon',a:'#DDE748',dark:'#4D550C',mid:'#F7FC9F',soft:'#F7FBE1',border:'#DCE49A',bg:'#18231A',surface:'#EBEEC7',canvas:'#F8FBEF',mode:'dark'},
+{id:'glacier',name:'Glacier Ice',a:'#75D4FF',dark:'#075376',mid:'#A7E7FF',soft:'#E9F8FF',border:'#BDE7F7',bg:'#0A2C45',surface:'#DBF4FF',canvas:'#F0FBFF',mode:'dark'},
+{id:'scarlet',name:'Scarlet Signal',a:'#FF6860',dark:'#8E1E24',mid:'#FFB5A6',soft:'#FFF0EC',border:'#FFCCBE',bg:'#33141B',surface:'#FFE2D9',canvas:'#FFF5F0',mode:'dark'},
+{id:'jade',name:'Jade Neon',a:'#59E7BC',dark:'#076B53',mid:'#AFFFE1',soft:'#E2FFF2',border:'#B9ECD8',bg:'#06352F',surface:'#D9F8E8',canvas:'#EFFCF7',mode:'dark'},
+{id:'peach',name:'Peach Noir',a:'#FFD0A1',dark:'#90512E',mid:'#FFE3C7',soft:'#FFF2E6',border:'#F2D2B4',bg:'#2B1639',surface:'#FAE2CC',canvas:'#FFF8EF',mode:'dark'},
+{id:'carbon',name:'Carbon Contrast',a:'#D0D4D9',dark:'#2C3339',mid:'#F0F1F3',soft:'#F5F6F7',border:'#D4D9DE',bg:'#111214',surface:'#E9ECEE',canvas:'#FCFDFE',mode:'dark'},
+{id:'cobalt',name:'Electric Cobalt',a:'#8195FF',dark:'#3145A0',mid:'#BBC8FF',soft:'#EDF0FF',border:'#CBD4FF',bg:'#111B43',surface:'#E7ECFF',canvas:'#F4F5FF',mode:'dark'}
+];
+(function(){
+const area=document.getElementById('palettes');
+let current='glacier';
+function apply(id,update){
+ const t=THEMES.find(x=>x.id===id)||THEMES[9],on=t.mode==='dark'?'#f0f7fb':'#243747';
+ const c=t.mode==='dark'?'#13293a':'#fff';
+ current=t.id;
+ const preview=document.getElementById('themePreview');
+ for(const [key,val] of Object.entries({
+ '--t-bg':t.bg,'--t-page-text':on,'--t-accent':t.a,'--t-accent-dark':t.dark,'--t-border':t.border,
+ '--t-surface':t.surface,'--t-soft':t.soft,'--t-accent-text':t.mode==='dark'?'#13293a':'#fff'
+ }))preview.style.setProperty(key,val);
+ document.getElementById('chosenTheme').textContent=t.name;
+ document.getElementById('chosenHex').textContent='Accent '+t.a+' · '+t.mode+' palette · theme '+t.id;
+ area.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===id)));
+ if(update)try{const u=new URL(location.href);u.searchParams.set('theme',id);history.replaceState(null,'',u.href);}catch(e){}
+}
+THEMES.forEach((t,n)=>{
+ const b=document.createElement('button');b.type='button';b.className='palette';b.dataset.theme=t.id;
+ b.setAttribute('aria-pressed','false');
+ b.innerHTML='<span class="swatch-page" style="--swatch-bg:'+t.bg+';--swatch-accent:'+t.a+';--swatch-mid:'+t.mid+';--swatch-soft:'+t.soft+';--swatch-border:'+t.border+'"><i></i><b></b><em></em></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><small>'+t.mode+'</small>';
+ b.addEventListener('click',()=>apply(t.id,true));area.appendChild(b);
+});
+try{const u=new URL(location.href);const p=u.searchParams.get('theme');if(p&&THEMES.some(t=>t.id===p))current=p;}catch(e){}
+apply(current,false);
+document.getElementById('copyLink').addEventListener('click',async()=>{
+ const b=document.getElementById('copyLink'),old=b.textContent;
+ try{const u=new URL(location.href);u.searchParams.set('theme',current);await navigator.clipboard.writeText(u.href);b.textContent='Copied';}
+ catch(e){b.textContent='Use address bar';}
+ setTimeout(()=>b.textContent=old,1800);
+});
+})();
+</script></body></html>
