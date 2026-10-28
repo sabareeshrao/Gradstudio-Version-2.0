@@ -33,4 +33,10 @@ This repository's `index.html` is the visual and interaction standard for subseq
 - Numbering starts at 1 and is consecutive.
 - Correct choices are not conspicuously longer than distractors.
 - Exactly one final interview scenario.
-- Quiz check, reset, progress, embedding explorer and adaptation picker all work offline.
+- Quiz check, reset, progress, embedding matching, retail adaptation studio, case challenge, and all ten color selections work on GitHub Pages.
+
+## Reuse of themes and Concept Lab
+
+The ten themes are selected from the `THEMES` array near the end of `index.html`. Use `?theme=sunset`, `ocean`, `forest`, `violet`, `rose`, `midnight`, `lagoon`, `ruby`, `gold`, or `slate`. These variants share one HTML file. Do not duplicate lesson content for each theme.
+
+The interactive Concept Lab is implemented by `lab-v3.js` and `lab-v3.css`, linked as relative assets in `index.html`. Reuse the mechanism of input, observable state change, and explanatory outcome for new modules, but rewrite topic-specific examples instead of reusing unrelated retail or animal examples. Identify all model outputs, toy vectors, scores, and training effects as educational illustrations, not measured model results. Keep those relative assets alongside each HTML entry point in GitHub Pages.
