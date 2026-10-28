@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Eight progressive multiple-choice questions on Web API design, including a real-world interview challenge and interactive labs.">
+  <title>Web API — Keyword Study 001 | Gradstudio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../../" aria-label="Gradstudio home"><span class="brand-mark">G<span>·</span></span><span>GRADSTUDIO <small>KEYWORD STUDY / 001</small></span></a>
+    <nav class="topnav" aria-label="Page sections"><a href="#questions">Questions</a><a href="#concept-lab">Concept Lab</a><a href="#themes">Themes</a></nav>
+    <div class="top-progress"><div class="progress-track"><div id="progressFill" class="progress-fill"></div></div><strong id="counter" aria-live="polite">0 / 8</strong></div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="overline"><span class="overline-dot"></span> SOFTWARE ENGINEERING <span class="overline-divider">/</span> API DESIGN</div>
+  <div class="heading-row"><div><h1>Web API</h1><p class="subtitle">One keyword. Eight purposeful questions. From the first principle to an engineering interview.</p></div><span class="module-token">MODULE 001 <small>8 MCQs</small></span></div>
+  <div class="meta-row" aria-label="Study metadata"><span><strong>BOOK</strong> API Design Patterns</span><span><strong>PROGRESSION</strong> Introduction → Smart → Interview</span><span><strong>FORMAT</strong> Explain • Choose • Check</span></div>
+  <section class="module-hero" aria-label="Illustration of how a Web API connects clients and services">
+    <div class="hero-top"><div><span class="eyebrow">CONCEPT MAP / ONE SHARED CONTRACT</span><h2>Different applications. One dependable interface.</h2><p>A browser, mobile app, and another service can communicate with the same server through HTTP requests and predictable responses.</p></div><span class="hero-protocol">HTTP / JSON</span></div>
+    <div class="hero-map">
+      <div class="hero-clients"><span class="mini-title">CLIENTS</span><div class="client-glyph browser-glyph"><i></i><i></i><i></i><span></span></div><div class="client-glyph phone-glyph"><span></span></div><div class="client-glyph service-glyph"><em></em><em></em><em></em></div></div>
+      <div class="hero-trunk"><span class="trunk-line line-one"></span><span class="trunk-line line-two"></span><span class="trunk-line line-three"></span><span class="hero-pulse"></span></div>
+      <div class="hero-api"><div class="api-avatar"><span>{ API }</span></div><strong>Web API</strong><small>Routes · Rules · Responses</small></div>
+      <div class="hero-wire"><span></span><span></span><span></span></div>
+      <div class="hero-backend"><div class="db-cyl"><span></span></div><strong>Application + data</strong><small>Business logic</small></div>
+    </div>
+    <div class="hero-caption"><span class="legend-dot client-color"></span>Client <span class="legend-dot contract-color"></span>Contract <span class="legend-dot storage-color"></span>Backend <span class="hero-caption-right">A conceptual architecture, not a vendor product diagram</span></div>
+  </section>
+  <section class="context-section" aria-labelledby="context-title"><span class="eyebrow">BEFORE YOU START</span><h2 id="context-title">What does a Web API actually enable?</h2><p>Modern applications need a reliable way to ask another program to do something: return products, create an order, or show its status. A <strong>Web API</strong> makes those capabilities available through a network-facing contract. Clients agree on routes, methods, data formats, security rules, and responses without depending on a server’s internal code.</p><p>This module builds understanding step by step: the meaning of an API, the HTTP request lifecycle, resource design, error handling, retries after lost responses, and design choices for an e-commerce platform under load.</p></section>
+  <section class="theme-gallery" id="themes" aria-labelledby="themes-title"><div class="theme-head"><div><span class="eyebrow">GRADSTUDIO DESIGN SYSTEM / 15 PALETTES</span><h2 id="themes-title">Change the study theme</h2><p>All variants use the same questions and diagrams. Choose a color or share the themed URL.</p></div><button type="button" id="copyTheme" class="button small">Copy theme link</button></div><div class="theme-list" id="themeList" role="group" aria-label="Color palettes"></div><div id="themeNote" class="theme-note" aria-live="polite">Selected theme: Glacier Ice</div></section>
+  <section class="section-question" id="questions" aria-labelledby="questions-title"><div class="section-heading"><div><span class="eyebrow">KNOWLEDGE CHECK / EIGHT QUESTIONS</span><h2 id="questions-title">From understanding to decisions</h2><p>Study each diagram, select one option per question, and reveal the detailed reasoning when you are ready.</p></div><span class="step-count">01 — 08</span></div>
+  <form id="quiz" autocomplete="off"></form>
+  <div class="quiz-actions"><button type="button" id="checkBtn" class="button primary">Check all 8 answers <span aria-hidden="true">↗</span></button><button type="button" id="resetBtn" class="button secondary">Reset quiz</button><span class="quiz-hint">Explanations appear after checking.</span></div>
+  <div class="result" id="result" role="status" aria-live="polite" hidden></div>
+  </section>
+  <section class="concept-lab" id="concept-lab" aria-labelledby="lab-title">
+    <div class="lab-head"><div><span class="eyebrow">CONCEPT LAB / HANDS-ON MODE</span><h2 id="lab-title">Learn the mechanism by changing it</h2><p>Three simulations built specifically for Web APIs: follow a request, inspect error responses, and prevent duplicate orders after a timeout.</p></div><span class="lab-stamp">WEB API<br>INTERACTIVE</span></div>
+    <div class="lab-panel">
+      <div class="lab-title"><span class="lab-number">01</span><div><h3>Request lifecycle explorer</h3><p>Select an endpoint and advance through the route, checks, handler, storage, and response.</p></div></div>
+      <div class="lab-choice-group" id="requestExamples" role="group" aria-label="Choose example request"><button type="button" data-flow="get" class="active" aria-pressed="true">GET product</button><button type="button" data-flow="post" aria-pressed="false">POST order</button><button type="button" data-flow="missing" aria-pressed="false">GET missing order</button></div>
+      <div class="lifecycle-stage"><div class="life-steps" id="lifeSteps"></div><div class="live-request"><div class="terminal-bar"><span>REQUEST</span><i class="terminal-dots"><b></b><b></b><b></b></i></div><pre id="requestPreview" class="terminal-body"></pre></div><div class="life-summary"><strong id="lifeTitle">Client sends an HTTP request</strong><p id="lifeNarration">A request describes the resource and action.</p><div class="lab-action-row"><button type="button" id="nextLife" class="button primary small">Next stage →</button><button type="button" id="restartLife" class="button secondary small">Restart</button></div></div><div class="live-response"><div class="terminal-bar"><span>RESPONSE</span><span id="responseStatus" class="terminal-status">Awaiting server</span></div><pre id="responsePreview" class="terminal-body">No response yet.</pre></div></div>
+    </div>
+    <div class="lab-divider"></div>
+    <div class="lab-panel"><div class="lab-title"><span class="lab-number">02</span><div><h3>Status-code decision board</h3><p>Choose a failure condition and see the response the API should return.</p></div></div><div class="error-choices" id="errorChoices" role="group" aria-label="Choose failure scenario"><button type="button" data-error="400" class="active" aria-pressed="true">Invalid request</button><button type="button" data-error="401" aria-pressed="false">No credentials</button><button type="button" data-error="403" aria-pressed="false">No permission</button><button type="button" data-error="404" aria-pressed="false">Missing order</button><button type="button" data-error="500" aria-pressed="false">Server failure</button></div><div class="status-lab"><div class="status-ring"><strong id="errorCode">400</strong><small>HTTP STATUS</small></div><div class="status-explain"><h4 id="errorName">Bad Request</h4><p id="errorWhy">The submitted data fails validation.</p><pre id="errorPayload"></pre></div></div><p class="lab-disclaimer">The error payloads are illustrative. Real APIs must document a consistent format and avoid leaking sensitive details.</p></div>
+    <div class="lab-divider"></div>
+    <div class="lab-panel"><div class="lab-title"><span class="lab-number">03</span><div><h3>The lost-response order experiment</h3><p>The first request succeeds on the server, but the client does not receive the reply. Decide how to retry.</p></div></div><div class="retry-layout"><div class="retry-control"><span class="eyebrow">IDEMPOTENCY KEY / FIXED ORDER</span><div class="key-chip">order-8472-request</div><p class="retry-brief">An order creation request is sent. The server commits it, but the connection fails before the client sees the result.</p><div class="retry-actions"><button type="button" id="firstSend" class="button primary small">1. Send; simulate timeout</button><button type="button" id="sameRetry" class="button secondary small" disabled>2. Retry same key</button><button type="button" id="newRetry" class="button secondary small" disabled>Try a new key</button><button type="button" id="resetRetry" class="button ghost small">Reset demo</button></div></div><div class="retry-output"><div class="order-visual"><div class="order-icon"><span></span></div><div><small>ORDERS CREATED</small><strong id="orderCount">0</strong></div></div><div class="retry-events" id="retryEvents" aria-live="polite"><div class="retry-event muted">Awaiting first request…</div></div></div></div><div class="lab-takeaway" id="retryLesson">A timeout does not tell the client whether the server committed the order. Reusing the <strong>same idempotency key for the same logical operation</strong> enables the server to recognize and replay a previous result.</div><p class="lab-disclaimer">This is a client-side demonstration. A real API must enforce key uniqueness, request equivalence, concurrency safety, retention policy, and atomic persistence with order creation.</p></div>
+  </section>
+  <footer class="footer"><span>GRADSTUDIO / KEYWORD STUDY 001</span><span>Web API · API Design Patterns · 8 progressively structured questions</span><a href="../../">Back to module collection</a></footer>
+</main>
+</body>
+</html>
