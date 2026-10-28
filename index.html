@@ -385,6 +385,23 @@ body{transition:background-color .15s}
 @media(max-width:740px){.theme-choices{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:450px){.theme-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-head{align-items:flex-start}}
 
+
+/* Deliberately different light and high-contrast nighttime palettes */
+.theme-dark .container>h1{color:#f4f8fb}
+.theme-dark .container>.sub{color:#c4d5df}
+.theme-dark .topbar{background:var(--bg);border-color:#ffffff42}
+.theme-dark .topbar .brand,.theme-dark .topbar .brand small,.theme-dark .topbar .counter{color:#edf5fa}
+.theme-dark .footer{color:#c2cbd8}
+.theme-dark .theme-gallery{background:#fff}
+.theme-dark #checkBtn,.theme-dark #copyThemeUrl,.theme-dark .theme-choice[aria-pressed="true"],.theme-dark .lab3-buttonset button.active{color:#17232d}
+.theme-dark .theme-choices{background:#fff}
+.theme-choice .theme-mini{min-height:69px;border:1px solid #c5d1d9}
+.theme-choice .mini-page-layout i{background:var(--preview-color);opacity:.7}
+.theme-choice .mini-page-layout b{background:var(--preview-card)}
+.theme-choice[aria-pressed="true"]{box-shadow:0 0 0 2px var(--accent-soft)}
+.theme-dark .lab3-methods button.active,.theme-dark .lab3-buttonset button.active{color:#20313f}
+@media(prefers-reduced-motion:reduce){.theme-choice{transition:none}}
+
 </style>
 <link rel="stylesheet" href="lab-v3.css">
 </head>
@@ -588,26 +605,27 @@ document.getElementById('resetBtn').addEventListener('click', () => {
 
 /* Palette system: shareable query URLs, no duplicate lesson files. */
 const THEMES=[
-{id:'sunset',name:'Sunset Orange',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2'},
-{id:'ocean',name:'Ocean Blue',a:'#226cc0',dark:'#1e477e',mid:'#75b2f0',soft:'#e8f3ff',border:'#bad7f4',bg:'#f6faff',surface:'#dfedfc',canvas:'#f2f8ff'},
-{id:'forest',name:'Forest Green',a:'#23784b',dark:'#185534',mid:'#74ba8c',soft:'#e8f6ec',border:'#b9dfc2',bg:'#f7fcf8',surface:'#dff0e4',canvas:'#f2faf4'},
-{id:'sky',name:'Sky Blue',a:'#0878B6',dark:'#145879',mid:'#79C8EF',soft:'#EAF8FF',border:'#ADDDF7',bg:'#F4FBFF',surface:'#DDF3FF',canvas:'#ECF8FF'},
-{id:'rose',name:'Rose Quartz',a:'#b23e70',dark:'#82264f',mid:'#e194b4',soft:'#ffedf3',border:'#f2c5d4',bg:'#fff9fb',surface:'#fbe0e9',canvas:'#fff3f7'},
-{id:'midnight',name:'Midnight Indigo',a:'#3a4b9d',dark:'#27336c',mid:'#8999dc',soft:'#e9edff',border:'#c1caf0',bg:'#f4f5fc',surface:'#dce2fa',canvas:'#eef1fe'},
-{id:'cocoa',name:'Cocoa Espresso',a:'#704933',dark:'#4B2D22',mid:'#BB9173',soft:'#F6EEE6',border:'#DCC7B5',bg:'#FCF9F5',surface:'#EDE0D2',canvas:'#F9F2EB'},
-{id:'ruby',name:'Ruby Red',a:'#ac3541',dark:'#771f2b',mid:'#dc8185',soft:'#ffeded',border:'#efbfc1',bg:'#fff9f9',surface:'#f9dfe0',canvas:'#fff3f3'},
-{id:'arctic',name:'Arctic Cyan',a:'#007F96',dark:'#005C70',mid:'#70D5E4',soft:'#E5FAFC',border:'#A8E4EC',bg:'#F2FDFF',surface:'#D4F5FA',canvas:'#EAFBFD'},
-{id:'slate',name:'Slate Graphite',a:'#3e6477',dark:'#283e4a',mid:'#89a7b5',soft:'#eaf1f5',border:'#c9dbe3',bg:'#f7fafb',surface:'#dfeaf0',canvas:'#f0f5f7'},
-{id:'lime',name:'Lime Spark',a:'#617A00',dark:'#455700',mid:'#C1D66F',soft:'#F5F9DE',border:'#DCE8A3',bg:'#FAFCEF',surface:'#F0F5C3',canvas:'#F7FBE3'},
-{id:'coral',name:'Coral Peach',a:'#B25149',dark:'#813A32',mid:'#F1AD91',soft:'#FFF0EB',border:'#F4C6BA',bg:'#FFF9F6',surface:'#FFE2D8',canvas:'#FFF3EC'},
-{id:'fuchsia',name:'Fuchsia Pop',a:'#9E257C',dark:'#711454',mid:'#E38AC5',soft:'#FCE8F5',border:'#F0BBDD',bg:'#FFF7FD',surface:'#F8DCEF',canvas:'#FFF0F9'},
-{id:'periwinkle',name:'Periwinkle Mist',a:'#596DA7',dark:'#364D83',mid:'#A9B8DF',soft:'#EFF2FC',border:'#CED6EF',bg:'#F8FAFF',surface:'#E1E9FC',canvas:'#F2F5FF'},
-{id:'silver',name:'Silver Frost',a:'#536C80',dark:'#30495D',mid:'#A0B5C4',soft:'#EDF4F8',border:'#CCDDE7',bg:'#FAFCFD',surface:'#E1ECF3',canvas:'#F3F7FA'}
+{id:'sunset',name:'Sunset Orange',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2',mode:'light'},
+{id:'forest',name:'Forest Green',a:'#23784b',dark:'#185534',mid:'#74ba8c',soft:'#e8f6ec',border:'#b9dfc2',bg:'#f7fcf8',surface:'#dff0e4',canvas:'#f2faf4',mode:'light'},
+{id:'sky',name:'Sky Blue',a:'#0878B6',dark:'#145879',mid:'#79C8EF',soft:'#EAF8FF',border:'#ADDDF7',bg:'#F4FBFF',surface:'#DDF3FF',canvas:'#ECF8FF',mode:'light'},
+{id:'rose',name:'Rose Quartz',a:'#b23e70',dark:'#82264f',mid:'#e194b4',soft:'#ffedf3',border:'#f2c5d4',bg:'#fff9fb',surface:'#fbe0e9',canvas:'#fff3f7',mode:'light'},
+{id:'midnight',name:'Midnight Indigo',a:'#3a4b9d',dark:'#27336c',mid:'#8999dc',soft:'#e9edff',border:'#c1caf0',bg:'#f4f5fc',surface:'#dce2fa',canvas:'#eef1fe',mode:'light'},
+{id:'cocoa',name:'Cocoa Espresso',a:'#704933',dark:'#4B2D22',mid:'#BB9173',soft:'#F6EEE6',border:'#DCC7B5',bg:'#FCF9F5',surface:'#EDE0D2',canvas:'#F9F2EB',mode:'light'},
+{id:'lime',name:'Lime Spark',a:'#617A00',dark:'#455700',mid:'#C1D66F',soft:'#F5F9DE',border:'#DCE8A3',bg:'#FAFCEF',surface:'#F0F5C3',canvas:'#F7FBE3',mode:'light'},
+{id:'obsidian',name:'Obsidian Black',a:'#252D36',dark:'#1B222A',mid:'#9CA8B3',soft:'#E8ECEF',border:'#CCD4DB',bg:'#EBEEF0',surface:'#DDE3E7',canvas:'#F1F3F5',mode:'light'},
+{id:'lemon',name:'Electric Lemon',a:'#DDE748',dark:'#4D550C',mid:'#F7FC9F',soft:'#F7FBE1',border:'#DCE49A',bg:'#18231A',surface:'#EBEEC7',canvas:'#F8FBEF',mode:'dark'},
+{id:'glacier',name:'Glacier Ice',a:'#75D4FF',dark:'#075376',mid:'#A7E7FF',soft:'#E9F8FF',border:'#BDE7F7',bg:'#0A2C45',surface:'#DBF4FF',canvas:'#F0FBFF',mode:'dark'},
+{id:'scarlet',name:'Scarlet Signal',a:'#FF6860',dark:'#8E1E24',mid:'#FFB5A6',soft:'#FFF0EC',border:'#FFCCBE',bg:'#33141B',surface:'#FFE2D9',canvas:'#FFF5F0',mode:'dark'},
+{id:'jade',name:'Jade Neon',a:'#59E7BC',dark:'#076B53',mid:'#AFFFE1',soft:'#E2FFF2',border:'#B9ECD8',bg:'#06352F',surface:'#D9F8E8',canvas:'#EFFCF7',mode:'dark'},
+{id:'copper',name:'Copper Ember',a:'#EEA16B',dark:'#8B4425',mid:'#FFD6AA',soft:'#FFF0E2',border:'#F2CCAE',bg:'#2C2730',surface:'#FFE1CC',canvas:'#FFF5E8',mode:'dark'},
+{id:'polar',name:'Polar Silver',a:'#D6E9F2',dark:'#38566B',mid:'#A9C3D2',soft:'#EFF6FA',border:'#BDD2DF',bg:'#141F2D',surface:'#E0EDF2',canvas:'#F5FAFC',mode:'dark'},
+{id:'cobalt',name:'Electric Cobalt',a:'#8195FF',dark:'#3145A0',mid:'#BBC8FF',soft:'#EDF0FF',border:'#CBD4FF',bg:'#111B43',surface:'#E7ECFF',canvas:'#F4F5FF',mode:'dark'}
 ];
 let activeTheme;
 const choiceContainer=document.getElementById('themeChoices'),themeHint=document.getElementById('themeHint');
 function chooseTheme(id,changeUrl){
  const theme=THEMES.find(t=>t.id===id)||THEMES[0];
+ document.documentElement.classList.toggle('theme-dark',theme.mode==='dark');
  activeTheme=theme.id;
  const vars={'--accent':theme.a,'--accent-dark':theme.dark,'--accent-mid':theme.mid,'--accent-soft':theme.soft,'--accent-border':theme.border,
  '--bg':theme.bg,'--border':theme.border,'--lab-surface':theme.surface,'--lab-border':theme.border,'--lab-canvas':theme.canvas,'--lab-ink':'#26394a','--teal':theme.a,'--deep':theme.dark};
@@ -623,7 +641,7 @@ function chooseTheme(id,changeUrl){
 }
 THEMES.forEach((t,n)=>{
  const b=document.createElement('button');b.type='button';b.className='theme-choice';b.dataset.theme=t.id;b.setAttribute('aria-pressed','false');
- b.innerHTML='<span class="theme-mini" style="--preview-bg:'+t.surface+';--preview-color:'+t.a+';--preview-hint:'+t.mid+';--preview-card:'+t.soft+'"><span class="mini-page-top"></span><span class="mini-page-layout"><i></i><b></b></span></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><small>'+t.id+'</small>';
+ b.innerHTML='<span class="theme-mini" style="--preview-bg:'+t.bg+';--preview-color:'+t.a+';--preview-hint:'+t.mid+';--preview-card:'+t.soft+'"><span class="mini-page-top"></span><span class="mini-page-layout"><i></i><b></b></span></span><strong>'+String(n+1).padStart(2,'0')+'. '+t.name+'</strong><small>'+t.id+'</small>';
  b.addEventListener('click',()=>chooseTheme(t.id,true));choiceContainer.appendChild(b);
 });
 let initialTheme='';
