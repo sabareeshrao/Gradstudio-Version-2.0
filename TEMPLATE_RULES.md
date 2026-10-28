@@ -33,10 +33,12 @@ This repository's `index.html` is the visual and interaction standard for subseq
 - Numbering starts at 1 and is consecutive.
 - Correct choices are not conspicuously longer than distractors.
 - Exactly one final interview scenario.
-- Quiz check, reset, progress, embedding matching, retail adaptation studio, case challenge, and all fifteen color selections work on GitHub Pages.
+- Quiz check, reset, progress, embedding matching, retail adaptation studio, case challenge, and all fifteen distinctive light and dark theme selections work on GitHub Pages.
 
 ## Reuse of themes and Concept Lab
 
-The fifteen themes are selected from the `THEMES` array near the end of `index.html`. Use `?theme=sunset`, `ocean`, `forest`, `sky`, `rose`, `midnight`, `cocoa`, `ruby`, `arctic`, `slate`, `lime`, `coral`, `fuchsia`, `periwinkle`, or `silver`. These variants share one HTML file. Do not duplicate lesson content for each theme.
+The fifteen themes are selected from the `THEMES` array near the end of `index.html`. Their IDs are: `sunset`, `forest`, `sky`, `rose`, `midnight`, `cocoa`, `paper`, `obsidian`, `lemon`, `glacier`, `scarlet`, `jade`, `peach`, `carbon`, `cobalt`. These all share the same HTML; `?theme=sky` or `?theme=lemon` changes the palette only. Invalid or retired IDs fall back to Sunset Orange.
+
+**Theme quality gate:** compare the full accent-plus-background experience before introducing another palette. Two themes with similar accent hues are unacceptable if the page treatments also look similar. Use noticeably different hue families, luminance, background temperature, or light-versus-dark modes. Verify accessible text contrast and inspect the cards and Concept Lab under every theme. Do not add cosmetic renames of existing palettes.
 
 The interactive Concept Lab is implemented by `lab-v3.js` and `lab-v3.css`, linked as relative assets in `index.html`. Reuse the mechanism of input, observable state change, and explanatory outcome for new modules, but rewrite topic-specific examples instead of reusing unrelated retail or animal examples. Identify all model outputs, toy vectors, scores, and training effects as educational illustrations, not measured model results. Keep those relative assets alongside each HTML entry point in GitHub Pages.
