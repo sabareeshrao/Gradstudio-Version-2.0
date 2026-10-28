@@ -1,6 +1,6 @@
 # Keyword Study — reusable module standard
 
-This document is the specification for **each new technical keyword**. The current example lives in \`keyword-study/web-api/\`.
+This document is the specification for **each new technical keyword**. The current example lives in `keyword-study/web-api/`.
 
 ## Required module header
 
@@ -51,12 +51,18 @@ Convert **each of the eight** into **one four-option MCQ**. Preserve the user's 
 
 ## Visual styles, paths, and publishing
 
-- Select an initial theme from the collection maintained in the main \`index.html\`, and retain URL-based theme selection when appropriate. Use visually distinct palettes and contrast-aware text.
-- Store each module in its own folder: \`keyword-study/<keyword-slug>/index.html\`, with relative assets beside it.
-- GitHub Pages serves the study module at \`/Gradstudio-Version-2.0/keyword-study/<keyword-slug>/\` if Pages is enabled.
+- **Choose exactly one theme when building a module.** If the user does not specify a theme, select one from the standalone [Design Library](../themes/) and apply it as a **fixed palette**. Never embed a theme selector, 15-palette list, theme switcher, shareable theme control, or theme-choice URLs in any keyword lesson.
+- The independent [Theme Gallery](../themes/) exists for choosing design styles; it must not be embedded inside the study HTML.
+- Keep theme CSS values and accessible contrasts inside the module, with no dependency on the separate gallery at runtime. The user should only see the topic, context, eight MCQs, diagrams, scoring and keyword-specific Concept Labs.
+- Store each module in its own folder: `keyword-study/<keyword-slug>/index.html`, with relative assets beside it.
+- GitHub Pages serves the study module at `/Gradstudio-Version-2.0/keyword-study/<keyword-slug>/` if Pages is enabled.
 - Preserve the original template page as a separate study module; do not replace it with the new keyword content.
 - When publishing a new module, add a discoverable index link without disturbing existing quiz functionality.
 
 ## Grounding and source limits
 
 A keyword list and eight supplied question prompts are a **study outline**, not excerpts from the entire named book. Use the user-provided outline as the structure. Explain any added general technical knowledge as independent study material, and do not claim it is a quotation or verified fact from unseen source pages. When actual book pages are supplied, stay within the supplied pages unless the user requests external research.
+
+## Mandatory separation QA
+
+Before pushing any keyword module, verify its HTML and JavaScript contain **none** of `theme-gallery`, `themeList`, `themeChoices`, `copyTheme`, `setupThemes`, or `const THEMES=`. One deliberately chosen palette is a presentation detail, not a learner-facing control. The standalone design gallery at `themes/index.html` may contain these controls.
