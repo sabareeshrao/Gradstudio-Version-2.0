@@ -16,7 +16,8 @@
         "It freezes selected layer weights during training so fewer parameters receive gradient updates.",
         "It executes the same neural layers in different orders during each training step."
       ],
-      "explanation": "<strong>Correct: B.</strong> Stochastic Depth is a training method that sometimes skips a residual branch. Think of taking a shortcut around one station without removing it from the map. Each training pass can use a different effective depth. At inference, all branches are normally available. The network architecture itself is not permanently shortened."
+      "explanation": "<strong>In simple words:</strong> During training, the model sometimes skips a learning branch but keeps the shortcut open. It is like occasionally taking a shorter route.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Stochastic Depth is a training method that sometimes skips a residual branch. Think of taking a shortcut around one station without removing it from the map. Each training pass can use a different effective depth. At inference, all branches are normally available. The network architecture itself is not permanently shortened."
     },
     {
       "tag": "Training problem",
@@ -29,7 +30,8 @@
         "It speeds inference by removing underused layers once the network finishes its training.",
         "It helps deep residual networks train more reliably and can reduce model overfitting."
       ],
-      "explanation": "<strong>Correct: D.</strong> Deep networks can be difficult to optimize, and powerful models can overfit. Stochastic Depth lets training use randomly shorter residual routes while preserving identity shortcuts. This can improve gradient flow and provide regularization. The original research also reported training-time and test-error benefits, although gains depend on the model and implementation."
+      "explanation": "<strong>In simple words:</strong> Very deep networks can be hard to train and may memorize examples. Randomly skipping some branches can make training more reliable.",
+      "technicalExplanation": "<strong>Correct: D.</strong> Deep networks can be difficult to optimize, and powerful models can overfit. Stochastic Depth lets training use randomly shorter residual routes while preserving identity shortcuts. This can improve gradient flow and provide regularization. The original research also reported training-time and test-error benefits, although gains depend on the model and implementation."
     },
     {
       "tag": "How the gate works",
@@ -42,7 +44,8 @@
         "It sets random residual weights permanently to zero whenever a layer is skipped.",
         "It changes which training examples feed each layer without changing the residual connections."
       ],
-      "explanation": "<strong>Correct: A.</strong> A residual block combines its input x with a learned branch F(x). A random keep-or-drop gate acts on F(x), not on x. If the branch is dropped, the block can still pass x along the identity shortcut. The survival probability controls how often the branch is active during training."
+      "explanation": "<strong>In simple words:</strong> A random decision chooses whether a branch runs. If it is skipped, the input still travels through the shortcut without being lost.",
+      "technicalExplanation": "<strong>Correct: A.</strong> A residual block combines its input x with a learned branch F(x). A random keep-or-drop gate acts on F(x), not on x. If the branch is dropped, the block can still pass x along the identity shortcut. The survival probability controls how often the branch is active during training."
     },
     {
       "tag": "Probabilities and scaling",
@@ -55,7 +58,8 @@
         "It samples Bernoulli gates and can scale kept residuals by their survival probabilities.",
         "It samples Bernoulli gates but makes dropped residual outputs larger during model inference."
       ],
-      "explanation": "<strong>Correct: C.</strong> A Bernoulli gate b equals 1 with probability p and 0 otherwise. One common implementation computes y = x + bF(x)/p during training, so its expected output is x + F(x) when p is positive. Deeper blocks can use smaller p values. The original formulation instead scales at inference."
+      "explanation": "<strong>In simple words:</strong> A random gate keeps a branch with a chosen probability. When it runs, its output can be scaled so the average contribution stays the same.",
+      "technicalExplanation": "<strong>Correct: C.</strong> A Bernoulli gate b equals 1 with probability p and 0 otherwise. One common implementation computes y = x + bF(x)/p during training, so its expected output is x + F(x) when p is positive. Deeper blocks can use smaller p values. The original formulation instead scales at inference."
     },
     {
       "tag": "PyTorch · DropPath",
@@ -68,7 +72,8 @@
         "It applies DropPath during evaluation but turns off random branch dropping for training.",
         "It applies separate masks to each feature instead of the entire residual branch."
       ],
-      "explanation": "<strong>Correct: B.</strong> In PyTorch, a residual block can return <code>x + drop_path(F(x))</code>. A per-sample mask uses shape <code>(batch, 1, …)</code> so the entire branch output for a sample is either kept or zeroed. Inverted scaling preserves the expected contribution. Calling <code>eval()</code> stops random dropping."
+      "explanation": "<strong>In simple words:</strong> In PyTorch, DropPath may zero a branch’s output, while the shortcut stays unchanged. Random dropping stops when the model is used for predictions.",
+      "technicalExplanation": "<strong>Correct: B.</strong> In PyTorch, a residual block can return <code>x + drop_path(F(x))</code>. A per-sample mask uses shape <code>(batch, 1, …)</code> so the entire branch output for a sample is either kept or zeroed. Inverted scaling preserves the expected contribution. Calling <code>eval()</code> stops random dropping."
     },
     {
       "tag": "Architecture comparisons",
@@ -81,7 +86,8 @@
         "It drops attention heads; Dropout masks residual paths, while DropConnect masks model activations.",
         "It drops token positions; Dropout masks weights, while DropConnect masks residual branch computations."
       ],
-      "explanation": "<strong>Correct: A.</strong> In ResNets, Stochastic Depth may drop convolutional residual branches. In Vision Transformers and some deep Transformers, DropPath may gate attention or MLP residual branches. Dropout usually masks individual activations, and DropConnect masks weight connections. The shared idea is random regularization, but the unit being dropped is different."
+      "explanation": "<strong>In simple words:</strong> ResNets and Transformers can skip whole residual branches. Dropout instead hides individual activations; DropConnect hides individual weights.",
+      "technicalExplanation": "<strong>Correct: A.</strong> In ResNets, Stochastic Depth may drop convolutional residual branches. In Vision Transformers and some deep Transformers, DropPath may gate attention or MLP residual branches. Dropout usually masks individual activations, and DropConnect masks weight connections. The shared idea is random regularization, but the unit being dropped is different."
     },
     {
       "tag": "Production training decisions",
@@ -94,7 +100,8 @@
         "Tune survival chances by depth, validate training, and disable dropping during model inference.",
         "Keep one survival chance across all blocks and assume masked branches save computation."
       ],
-      "explanation": "<strong>Correct: C.</strong> Start with modest branch-drop rates, often increasing with network depth, then tune them against validation quality and training stability. Identity shortcuts maintain an information path; large drop rates can undertrain deep branches. Random dropping is disabled at inference. A dense GPU implementation may calculate F(x) even for branches later zeroed, so speed gains are not guaranteed."
+      "explanation": "<strong>In simple words:</strong> Start with gentle dropping and test the results. Deeper blocks may drop more often. During prediction, use the complete network.",
+      "technicalExplanation": "<strong>Correct: C.</strong> Start with modest branch-drop rates, often increasing with network depth, then tune them against validation quality and training stability. Identity shortcuts maintain an information path; large drop rates can undertrain deep branches. Random dropping is disabled at inference. A dense GPU implementation may calculate F(x) even for branches later zeroed, so speed gains are not guaranteed."
     }
   ],
   "diagramStyle": "diagrams/stochastic-depth.css",
