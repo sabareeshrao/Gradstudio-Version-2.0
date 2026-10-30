@@ -29,6 +29,11 @@ for(const file of files) {
   for (let i=0;i<data.questions.length;i++) {
     examined++;
     const q=data.questions[i];
+    // Avoid duplicated "Layer 1:" / "Layer 2:" prefixes in learner-facing questions.
+    if (/^\s*(?:\d+\s*[.)]\s*)?layer\s*\d+\s*[:.\-–—]\s*/i.test(String(q.stem||''))) {
+      console.error('FAIL '+data.keyword+' Q'+(i+1)+': remove the redundant Layer N prefix from stem');
+      problems++;
+    }
     if(!Array.isArray(q.options)||q.options.length!==4||!('abcd'.includes(q.answer))) {
       console.error('FAIL '+data.keyword+' L'+(i+1)+': invalid A-D options or answer key');problems++;continue;
     }
