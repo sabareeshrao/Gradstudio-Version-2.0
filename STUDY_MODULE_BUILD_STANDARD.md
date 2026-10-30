@@ -1,6 +1,6 @@
 # Gradstudio — AI Module Build & Quality Standard
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** Required standard for future keyword-study modules  
 **Repository:** https://github.com/sabareeshrao/Gradstudio-Version-2.0  
 **Audience:** Any AI assistant, coding agent, developer, reviewer, or maintainer creating or fixing a module.
@@ -124,6 +124,30 @@ For a default eight-question module, distribute correct answers **two each acros
 - No essay-length explanation, redundant introduction, large table, or lengthy “why every other option is wrong” section by default.
 - When an edge case truly needs more words, simplify the thought without sacrificing accuracy; disclose a necessary qualification in the diagram if useful.
 - Never claim educational toy scores, token probabilities, vectors, or generated outputs were measured from an actual model unless verified.
+
+### 3.6 Strict zero-redundancy policy (mandatory for every module)
+
+**Changing the words does not create a new question.** If two questions measure the same knowledge, apply the same reasoning path, or differ only through synonyms, word order, examples, or topic labels, they are **duplicates** and must not both be published.
+
+This is an **intent-level and learning-objective check**, not merely a text-string check. It applies:
+
+1. **Within one module:** No two of the eight question stems may ask for the same conceptual answer, even if they use different words or different stories.
+2. **Across existing modules in the same curriculum:** Inspect current questions in adjacent keywords (especially GPT, Transformer Architecture, GenAI, Autoregressive Language Modeling, and LLMs). Avoid retesting their already-covered learning objectives with a renamed subject.
+3. **Across future batches:** Check the published question inventory before generating any new set. Maintain a persistent inventory when practical; do not assume a keyword title guarantees uniqueness.
+4. **Preserve user-authored questions:** Never silently edit supplied stems to satisfy this policy. If the supplied questions overlap, flag the specific pair and ask whether both should remain; do not change their words or silently delete one.
+5. **Distinct progression:** Every question must have its own *primary competency*: what a learner should be able to explain, distinguish, calculate, diagnose, design, or decide after answering it.
+6. **Different scenario is not sufficient:** Replacing "shopping app" with "banking app," replacing "GPT" with "LLM," or turning "explain" into "why" without a different technical decision is still a duplicate.
+7. **Shared prerequisites may appear in context or diagrams:** Brief background may recur when needed, but the **assessed target** and the **reason needed to solve the question** must be new.
+8. **No filler questions:** If eight truly different concepts cannot be justified without going beyond the supplied material, report the coverage limitation rather than inventing reworded repeats.
+
+**Required pre-publish redundancy audit:**
+- Create an internal table of question number → unique competency → expected answer reasoning → nearest existing question from other modules → why not duplicate.
+- Compare normalized/near-identical wording, then perform a **semantic** check based on answer and reasoning. An exact-string-only comparison is insufficient.
+- Reject candidates whose correct answers and core explanations are interchangeable, even if the question stems look different.
+- Ensure question 8 adds a **new integrative decision or trade-off** rather than restating question 7.
+- Re-run the check after edits, since replacement options or explanations can accidentally collapse two different questions into the same concept.
+
+**Pass condition:** Eight nonredundant, independently defensible learning objectives, with no semantic duplicates within the module or substantially equivalent repeats of existing curriculum questions. If existing curriculum already has redundant questions, note that debt without silently rewriting unrelated modules.
 
 ## 4. Diagram quality is the primary selling point
 
@@ -299,6 +323,7 @@ For a batch, repeat these gates **for each module**, not just the first sample.
 - [ ] Each explanation is 40–60 words by default.
 - [ ] For eight questions, two correct answers per A/B/C/D, unless doing so creates an incorrect key.
 - [ ] No conspicuous answer-length patterns or trivial distractors.
+- [ ] No semantically repeated learning objective within this module or compared with published curriculum modules, even when wording changes.
 - [ ] One meaningful figure per question, with no repeated unrelated content.
 - [ ] No duplicated element IDs or missing IDs used by JavaScript.
 - [ ] JavaScript parses and does not report console errors at load or interaction.
@@ -398,7 +423,7 @@ Before saying “done,” answer all of these **yes**:
 2. Did I preserve every supplied question exactly?
 3. Are all options genuinely plausible and close in length?
 4. Are correct answers accurate and the key properly wired?
-5. Are explanations concise, substantive and around 50 words?
+5. Are explanations concise, substantive and around 50 words, and are all question objectives semantically nonredundant?
 6. Does each diagram teach something visibly **different** and worthwhile?
 7. Have I checked SVG icon sizes, text wrapping and mobile overflow?
 8. Does the page match the original question UI and top theme dropdown?
