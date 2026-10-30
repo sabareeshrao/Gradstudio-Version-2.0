@@ -17,7 +17,8 @@
         "It proves a computer can experience genuine human emotions."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> In the commonly used text-based Turing Test, a person talks to a hidden human and a hidden AI, then tries to tell which is which. The focus is <strong>humanlike conversation</strong>, not computer speed, emotions or a test of consciousness."
+      "explanation": "<strong>In simple words:</strong> The Turing Test asks whether a judge can tell an AI from a person through conversation without seeing who is replying.",
+      "technicalExplanation": "<strong>Correct: B.</strong> In the commonly used text-based Turing Test, a person talks to a hidden human and a hidden AI, then tries to tell which is which. The focus is <strong>humanlike conversation</strong>, not computer speed, emotions or a test of consciousness."
     },
     {
       "tag": "Alan Turing · the 1950 idea",
@@ -30,7 +31,8 @@
         "It compared which programming language wrote programs fastest."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> Alan Turing's 1950 paper <em>Computing Machinery and Intelligence</em> asked how to make the question of machine thinking more workable. He proposed an <strong>imitation game</strong> instead of trying to settle the meaning of the word “think.” His original presentation began with a gender-based imitation game; the familiar human-versus-machine conversation is a later standard formulation."
+      "explanation": "<strong>In simple words:</strong> Alan Turing wanted a practical way to discuss machine intelligence. Instead of debating what “thinking” means, he proposed testing conversation.",
+      "technicalExplanation": "<strong>Correct: A.</strong> Alan Turing's 1950 paper <em>Computing Machinery and Intelligence</em> asked how to make the question of machine thinking more workable. He proposed an <strong>imitation game</strong> instead of trying to settle the meaning of the word “think.” His original presentation began with a gender-based imitation game; the familiar human-versus-machine conversation is a later standard formulation."
     },
     {
       "tag": "Three roles · hidden identities",
@@ -43,7 +45,8 @@
         "The human participant trains the AI during the interview."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> The <strong>evaluator</strong> asks questions without knowing the participants' identities. A <strong>human</strong> and an <strong>AI system</strong> reply, often through text. After the conversation the evaluator guesses which one is the AI. In a fair test the participants' identities are hidden until after the decision."
+      "explanation": "<strong>In simple words:</strong> A judge chats with a hidden human and a hidden AI. After asking questions, the judge guesses which participant is the machine.",
+      "technicalExplanation": "<strong>Correct: C.</strong> The <strong>evaluator</strong> asks questions without knowing the participants' identities. A <strong>human</strong> and an <strong>AI system</strong> reply, often through text. After the conversation the evaluator guesses which one is the AI. In a fair test the participants' identities are hidden until after the decision."
     },
     {
       "tag": "Fair conversations · careful judging",
@@ -56,7 +59,8 @@
         "Use blind conversations and judges' repeated identification attempts."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> A useful protocol hides identities, gives the evaluator enough opportunity for follow-up questions and records decisions over <strong>multiple conversations and judges</strong>. You can summarize how often AI was correctly identified, including uncertainty and relevant conditions. There is no single universal threshold that automatically proves intelligence."
+      "explanation": "<strong>In simple words:</strong> Keep identities hidden, allow fair questions, and repeat with different judges. Count how often judges correctly identify the AI.",
+      "technicalExplanation": "<strong>Correct: D.</strong> A useful protocol hides identities, gives the evaluator enough opportunity for follow-up questions and records decisions over <strong>multiple conversations and judges</strong>. You can summarize how often AI was correctly identified, including uncertainty and relevant conditions. There is no single universal threshold that automatically proves intelligence."
     },
     {
       "tag": "Runnable Python · simulated experiment",
@@ -69,7 +73,8 @@
         "Treat every friendly chatbot message as a verified human response."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> A simple Python demonstration can shuffle hidden identities, print two sets of responses, ask the evaluator for an A/B guess, and compute <strong>correct AI identifications ÷ valid rounds</strong>. This example uses <em>scripted</em> responses to teach the experiment design; an actual Turing Test needs genuine human conversations and a real AI participant, with identities blinded and the test conditions documented."
+      "explanation": "<strong>In simple words:</strong> Python can shuffle human and AI replies, collect judges’ guesses, and count correct identifications. It simulates the test procedure.",
+      "technicalExplanation": "<strong>Correct: B.</strong> A simple Python demonstration can shuffle hidden identities, print two sets of responses, ask the evaluator for an A/B guess, and compute <strong>correct AI identifications ÷ valid rounds</strong>. This example uses <em>scripted</em> responses to teach the experiment design; an actual Turing Test needs genuine human conversations and a real AI participant, with identities blinded and the test conditions documented."
     },
     {
       "tag": "NLP, chatbots & LLMs",
@@ -82,7 +87,8 @@
         "LLMs cannot join the test because their output is just written text."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> <strong>NLP</strong> provides techniques for handling language, <strong>chatbots</strong> are systems that converse with people, and many modern <strong>LLMs</strong> can produce flexible dialogue. The Turing Test evaluates an <em>interaction's apparent humanness</em>; it does not specify which model architecture must be used. A chatbot can sound human and still be wrong."
+      "explanation": "<strong>In simple words:</strong> Chatbots and language models can hold conversations. The Turing Test examines how humanlike those conversations appear, not whether every answer is true.",
+      "technicalExplanation": "<strong>Correct: C.</strong> <strong>NLP</strong> provides techniques for handling language, <strong>chatbots</strong> are systems that converse with people, and many modern <strong>LLMs</strong> can produce flexible dialogue. The Turing Test evaluates an <em>interaction's apparent humanness</em>; it does not specify which model architecture must be used. A chatbot can sound human and still be wrong."
     },
     {
       "tag": "What conversational imitation cannot prove",
@@ -95,7 +101,8 @@
         "Check friendliness instead of accuracy, reasoning or generalization."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> Imitating a person does not, by itself, establish deep reasoning, truthfulness, consistency or general intelligence. Modern evaluations separately use reasoning problems, factual checks, repeatability tests, unseen tasks, robustness tests and carefully designed human assessments. A strong evaluation reports the test setup and limitations—not simply “passed the Turing Test.”"
+      "explanation": "<strong>In simple words:</strong> Sounding human does not prove an AI reasons well or tells the truth. Other tests measure accuracy, reasoning, consistency, and safety.",
+      "technicalExplanation": "<strong>Correct: A.</strong> Imitating a person does not, by itself, establish deep reasoning, truthfulness, consistency or general intelligence. Modern evaluations separately use reasoning problems, factual checks, repeatability tests, unseen tasks, robustness tests and carefully designed human assessments. A strong evaluation reports the test setup and limitations—not simply “passed the Turing Test.”"
     }
   ],
   "sources": "<details class=\"tt-sources\"><summary>References and historical context</summary><ul><li><a href=\"https://doi.org/10.1093/mind/LIX.236.433\" target=\"_blank\" rel=\"noopener noreferrer\">Alan Turing (1950), Computing Machinery and Intelligence</a></li><li><a href=\"https://plato.stanford.edu/entries/turing-test/\" target=\"_blank\" rel=\"noopener noreferrer\">Stanford Encyclopedia of Philosophy: The Turing Test</a></li><li><a href=\"https://doi.org/10.1073/pnas.2524472123\" target=\"_blank\" rel=\"noopener noreferrer\">PNAS: Controlled conversational Turing tests for modern LLMs</a></li></ul></details>",
