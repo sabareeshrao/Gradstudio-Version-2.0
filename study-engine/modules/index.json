@@ -39,6 +39,11 @@
       "slug": "semantic-textual-similarity",
       "title": "Semantic Textual Similarity (STS)",
       "domain": "Semantic Similarity & Text Representation · NLP"
+    },
+    {
+      "slug": "gradient-descent",
+      "title": "Gradient Descent",
+      "domain": "Optimization Algorithms · Deep Learning & LLMs"
     }
   ]
 }
