@@ -7,6 +7,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 - Softmax: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=softmax
 - Masking: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=masking
 - Positional Encoding: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding
+- Stochastic Depth: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-depth
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
