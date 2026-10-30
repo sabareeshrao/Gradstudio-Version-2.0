@@ -29,6 +29,14 @@
 - Before starting, read the index, PDF, registry and full build standard. Default to the **earliest pending rank**, unless the user explicitly requests a different term.
 - After creating and verifying the HTML, update the same ranked row, add the module link, append its eight question stems to the registry and refresh the README progress. A module with an unupdated central tracker is not considered finished.
 
+## Browser preview links (mandatory)
+
+- For each Complete row in [KEYWORD_INDEX.md](KEYWORD_INDEX.md), put **two separate links**: **Preview in browser** (GitHub Pages, intended to render the running MCQ interface) and **View HTML source** (GitHub's code viewer).
+- **Preview URL format:** `https://sabareeshrao.github.io/Gradstudio-Version-2.0/<exact-file-name>.html`. Do not call a `github.com/.../blob/main/...html` link a browser preview.
+- Keep README and [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md) preview links aligned with the index.
+- Confirm that the Pages preview actually loads the intended quiz whenever browser access permits; otherwise disclose **not verified** and offer the offline HTML file, not a misleading code-view link.
+- In replies show **Preview in browser first**, then the separate source/download link.
+
 ## Quality gate
 
 Check the eight original question stages, source grounding, option plausibility and answer keys, unique diagrams, theme switching, keyboard usability, 360/390/768/1280/1440px layout, text wrapping, icon sizing, reset and quiz logic, and offline opening. Never claim browser-verified visual quality on the basis of source inspection alone.
