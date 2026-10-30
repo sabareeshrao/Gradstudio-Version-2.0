@@ -30,6 +30,8 @@ jobs:
           node-version: '22'
       - name: Reject answer-length bias in all study modules
         run: node study-engine/verify-module-options.mjs
+      - name: Reject overloaded or missing beginner explanations
+        run: node study-engine/verify-explanation-quality.mjs
       - name: Reject generic or repeated diagrams in new study modules
         run: node study-engine/verify-diagram-quality.mjs
       - name: Reject overlapping Attention Mechanism SVG labels
