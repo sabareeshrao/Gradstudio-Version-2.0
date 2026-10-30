@@ -25,8 +25,10 @@
     document.querySelector('#moduleBrand').innerHTML=esc(data.keyword)+'<small>Visual Study · '+data.questions.length+' Learning Layers</small>';
     document.getElementById('progress').setAttribute('aria-valuemax',String(data.questions.length));
     const renderCard=(q,i)=>{
+      // Defensive fallback for imported lessons: show the question, not its Layer N label.
+      const questionText=String(q.stem||'').replace(/^\s*(?:\d+\s*[.)]\s*)?Layer\s*\d+\s*[:.\-–—]\s*/i,'');
       const opts=q.options.map((opt,j)=>'<label><input name="q'+(i+1)+'" type="radio" value="'+('abcd'[j])+'"><span class="answer-text"><strong class="option-letter">'+('ABCD'[j])+'.</strong> '+opt+'</span></label>').join('');
-      return '<section class="question" data-answer="'+esc(q.answer)+'"><div class="q-head"><span class="q-badge">LAYER '+(i+1)+'</span><span class="q-tag">'+esc(q.tag)+'</span></div><figure class="q-fig">'+q.figure+'</figure><p class="q-text">'+q.stem+'</p><fieldset class="answer-choices"><legend class="sr-only">Choose the best answer for layer '+(i+1)+'</legend>'+opts+'</fieldset><div class="explanation" aria-live="polite">'+q.explanation+'</div></section>';
+      return '<section class="question" data-answer="'+esc(q.answer)+'"><div class="q-head"><span class="q-badge">Q'+(i+1)+'</span><span class="q-tag">'+esc(q.tag)+'</span></div><figure class="q-fig">'+q.figure+'</figure><p class="q-text">'+questionText+'</p><fieldset class="answer-choices"><legend class="sr-only">Choose the best answer for question '+(i+1)+'</legend>'+opts+'</fieldset><div class="explanation" aria-live="polite">'+q.explanation+'</div></section>';
     };
     root.innerHTML='<h1>'+esc(data.title)+'</h1><p class="sub">'+esc(data.subtitle)+'</p>'+data.hero+
       '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
