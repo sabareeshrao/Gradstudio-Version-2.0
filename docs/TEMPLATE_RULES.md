@@ -17,7 +17,10 @@
 - **Strict zero-repetition:** Audit all questions against each other and existing curriculum modules. A reworded question that asks for the same concept, reasoning, or answer is still a duplicate. Define one unique tested learning objective per question; compare semantics, not just exact wording. Preserve any user-supplied stems and flag conflicts rather than editing them.
 - Four genuinely plausible, similarly sized options per MCQ, exactly one correct. Avoid easy answer-length clues, predictable patterns, and jargon-heavy reading fatigue.
 - Explain each answer in approximately **50 words** (normally 40–60).
-- Use **one high-quality, concept-specific diagram per question**. Real mechanisms, real objects, varied visual forms; never just boxes of text.
+- **MANDATORY VISUAL BENCHMARK:** Open the actual root [Multimodal Training page](../index.html) and inspect its **seven different original diagrams** before drawing anything. Its diagram quality, not just its radio buttons and 15 themes, is the gold standard. Read [VISUAL_GOLD_STANDARD.md](VISUAL_GOLD_STANDARD.md).
+- Every question-card diagram must be a **bespoke visual composition**; **no two diagrams in the module or across adjacent keyword modules may share the same skeleton**. Changing text, colors, labels, icons or arrows does not make a new diagram.
+- **NO explanatory text in rectangles masquerading as diagrams.** Real token/code/data/UI labels may be drawn when technically necessary, but no cards with sentences, simple box chains, or repetitive visual templates. If only empty boxes and arrows remain after removing the text, reject it.
+- A module fails if ANY card does not match the original's pictorial/technical quality; inspect screenshots of all eight at desktop and mobile and compare against the seven originals. If no browser review took place, report that visual quality is unverified—not complete.
 - No icon explosion: the broad `.q-fig svg { width:100% }` rule is for illustrations. Scope small SVG icons with a stronger CSS selector and an intentional ~18–24px size. Test computed dimensions.
 - Keep the approved Multimodal question UI, normal small radio circles, scoring, Reset, progress and sticky 15-theme dropdown.
 - Every finished module is **one complete HTML file** with inline CSS, JS, SVG and all educational content. No companion assets or network connection required.
@@ -46,7 +49,7 @@
 
 ## Quality gate
 
-Check the eight original question stages, source grounding, option plausibility and answer keys, unique diagrams, theme switching, keyboard usability, 360/390/768/1280/1440px layout, text wrapping, icon sizing, reset and quiz logic, and offline opening. Never claim browser-verified visual quality on the basis of source inspection alone.
+Check the eight question stages, source grounding, plausible options and answer keys, **original seven Multimodal diagrams as visual reference**, eight individually unique custom compositions, zero text-box impostors, theme switching, keyboard use, 360/390/768/1280/1440px layout, text wrapping, icon sizing, reset, quiz logic and offline opening. Never claim browser-verified visual quality on the basis of source inspection alone.
 
 When a bug is universal, improve reusable authoring patterns and migrate approved outputs carefully; do not overwrite unrelated modules, root templates, or originals without a request.
 
