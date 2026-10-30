@@ -59,6 +59,11 @@
       "slug": "transformer",
       "title": "Transformer",
       "domain": "Transformer Architecture and Attention Mechanisms · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "deep-learning",
+      "title": "Deep Learning",
+      "domain": "Deep Learning Fundamentals and Neural Network Architectures · Deep Learning Foundations"
     }
   ]
 }
