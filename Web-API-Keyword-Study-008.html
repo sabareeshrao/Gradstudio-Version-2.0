@@ -476,6 +476,50 @@ body{transition:background-color .15s}
 .api-diagram .diagram-foot{font-size:.79rem;color:#5a6f82}
 @media(max-width:610px){.api-dual{grid-template-columns:1fr}.api-branch{display:none}.api-web-scene{min-height:95px}.api-pane-title small{margin-left:auto}}
 
+
+.api-request-strip{border:1px solid #b4d1db;border-radius:12px;background:white;padding:12px 15px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.api-method{background:#286db6;color:#fff;display:inline-block;padding:5px 10px;border-radius:6px;font-size:.72rem;font-weight:850}
+.api-request-strip code{font-size:.84rem;color:#314a63;background:transparent;border:0}
+.api-request-side{font-size:.74rem;color:#6d8290;margin-left:auto}
+.api-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:27px 0 16px}
+.api-step{position:relative;display:grid;align-content:start;justify-items:center;gap:7px;text-align:center;min-width:0;min-height:145px;padding:11px 7px;background:#fff;border:1px solid #d0e0e6;border-radius:12px}
+.api-step:after{content:"→";position:absolute;right:-12px;top:44%;font-size:1.35rem;font-weight:900;color:var(--accent);z-index:1}
+.api-step:last-child:after{display:none}
+.api-step>small{font-size:.65rem;font-weight:800;color:#638194}
+.api-step-symbol{display:grid;place-items:center;width:38px;height:38px;background:#e3f3f4;color:#317b91;border-radius:10px}
+.api-step b{font-size:.74rem}
+.api-step p{margin:0;font-size:.69rem;line-height:1.42;color:#6d8190}
+.api-reply{background:#1a3044;border:1px solid #4c687a;border-radius:12px;overflow:hidden;color:#e9f7f8}
+.api-reply-head{display:flex;align-items:center;gap:12px;border-bottom:1px solid #455c6b;padding:11px 15px}
+.api-reply-head>b{font-size:.79rem}.api-response-arrow{margin-left:auto;font-weight:900;font-size:1.35rem;color:#91d2cf}
+.api-success-pill{background:#225e50;padding:5px 9px;border-radius:6px;font-size:.71rem;color:#c9ffee;font-weight:850}
+.api-reply pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;color:#e8f5dd;font:normal .78rem/1.75 ui-monospace,Consolas,monospace;padding:13px 15px}
+.api-http-grid{display:grid;grid-template-columns:minmax(0,1fr) 65px minmax(0,1fr);gap:8px;align-items:stretch}
+.api-http-window{background:white;border:1px solid #cadce5;border-radius:12px;overflow:hidden;min-width:0}
+.api-http-window header{display:flex;align-items:center;gap:5px;background:#dceaf0;padding:0 12px;height:34px}
+.api-http-window header i{width:7px;height:7px;border-radius:50%;background:#8eafbf}
+.api-http-window header strong{margin-left:auto;color:#476678;font-size:.66rem;letter-spacing:.09em}
+.api-http-lines{display:grid;align-content:start;gap:9px;padding:14px 12px;min-height:230px}
+.api-http-lines>div:not(.api-rule){display:flex;gap:7px;flex-wrap:wrap;align-items:center;min-width:0}
+.api-http-lines code{font:normal .69rem/1.4 ui-monospace,Consolas,monospace;color:#355369;background:transparent;border:0;white-space:pre-wrap;overflow-wrap:anywhere;padding:0}
+.api-http-lines .api-method{padding:4px 8px}
+.api-marker{display:grid;place-items:center;flex:0 0 22px;height:22px;color:#fff;font-size:.68rem;font-weight:900;border-radius:6px}
+.api-marker.blue,.api-http-legend i.blue{background:#2d6eb6}
+.api-marker.amber,.api-http-legend i.amber{background:#9b6b1e}
+.api-marker.purple,.api-http-legend i.purple{background:#7350b3}
+.api-marker.green,.api-http-legend i.green{background:#23815c}
+.api-rule{height:1px;background:#e4eaee}
+.api-created{color:#167b53;background:#dff4e9;border-radius:7px;padding:5px 7px;font-size:.74rem;font-weight:850}
+.api-exchange{display:grid;place-content:center;justify-items:center;gap:6px;color:#677d89}
+.api-exchange small{font-size:.69rem}
+.api-exchange b{font-size:1.65rem;line-height:1;color:var(--accent)}
+.api-http-legend{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}
+.api-http-legend span{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #d5e3e9;border-radius:7px;padding:6px 9px;font-size:.69rem;font-weight:750}
+.api-http-legend i{font-style:normal;display:grid;place-items:center;border-radius:4px;width:17px;height:17px;color:#fff;font-size:.64rem}
+@media(max-width:820px){.api-steps{grid-template-columns:repeat(3,minmax(0,1fr))}.api-step:nth-child(3):after{display:none}.api-step{min-height:125px}}
+@media(max-width:620px){.api-http-grid{grid-template-columns:1fr}.api-exchange{display:flex;align-items:center;gap:7px}.api-exchange b{transform:rotate(90deg)}.api-http-lines{min-height:unset}}
+@media(max-width:460px){.api-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.api-step:nth-child(3):after{display:block}.api-step:nth-child(2n):after{display:none}}
+
 </style></head><body><div class="topbar">
   <div class="topbar-inner">
     <div class="brand">Web API Study<small>Software Engineering · API Design</small></div>
@@ -551,7 +595,12 @@ body{transition:background-color .15s}
 <div class="explanation"><strong>Correct: C.</strong> A Web API gives clients and servers an agreed way to communicate: which address to call, what data to send, and what result to expect. Without those rules, one app might send itemNumber while another expects productId. Even small changes could break other applications. Clear interfaces reduce these mistakes.</div></div>
 <div class="question" id="question-3" data-answer="d">
 <div class="q-head"><span class="q-badge">Q3</span><span class="q-tag">WORKING MECHANISM</span></div>
-<div class="q-fig" id="figure-3"><div class="diagram"><div class="section-kicker">03 / VISUAL STUDY</div><p class="diagram-foot">Diagram will be inserted.</p></div></div>
+<div class="q-fig" id="figure-3"><div class="diagram api-diagram api-route-visual" role="group" aria-label="Illustrated six-step HTTP request path"><div class="section-kicker">03 / REQUEST TO RESPONSE</div><h3 class="api-title">Trace one request from phone to backend and back</h3>
+<div class="api-request-strip"><span class="api-method">GET</span><code>/products/101</code><span class="api-request-side">HTTP request</span></div>
+<div class="api-steps">
+<div class="api-step"><small>01</small><span class="api-step-symbol"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-2 14h.01"/></svg></span><b>Client</b><p>Opens product 101</p></div><div class="api-step"><small>02</small><span class="api-step-symbol"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c4 4 4 14 0 18M12 3c-4 4-4 14 0 18"/></svg></span><b>Routing</b><p>Finds the matching endpoint</p></div><div class="api-step"><small>03</small><span class="api-step-symbol"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3 9 8 11 5-2 8-6 8-11V5Z"/><path d="m8 12 3 3 5-6"/></svg></span><b>Checks</b><p>Validates request and access</p></div><div class="api-step"><small>04</small><span class="api-step-symbol"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-2-12-4 16"/></svg></span><b>Backend</b><p>Runs the product operation</p></div><div class="api-step"><small>05</small><span class="api-step-symbol"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg></span><b>Storage</b><p>Looks up details if needed</p></div><div class="api-step"><small>06</small><span class="api-step-symbol"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="8" rx="2"/><rect x="3" y="13" width="18" height="8" rx="2"/><path d="M8 7h.01M12 7h6M8 17h.01M12 17h6"/></svg></span><b>Response</b><p>Sends HTTP status and data</p></div></div>
+<div class="api-reply"><div class="api-reply-head"><span class="api-success-pill">200 OK</span><b>Response to the client</b><span class="api-response-arrow">←</span></div><pre>{ "id": 101, "name": "Wireless Mouse", "price": 25.99 }</pre></div>
+<p class="diagram-foot">A request may use a database, another service, or only application code. The response tells the client what happened.</p></div></div>
 <p class="q-text">3. What happens from the moment a client sends an HTTP request to a Web API until it receives a response?</p>
 <label><input type="radio" name="q3" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> The client contacts the database directly, then shows whatever information the database sends back.</span></label>
 <label><input type="radio" name="q3" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> The server replies immediately, and only afterward checks the request and performs the operation.</span></label>
@@ -560,7 +609,24 @@ body{transition:background-color .15s}
 <div class="explanation"><strong>Correct: D.</strong> The client sends a method and address, such as GET /products/101. The server routes the request, checks what is needed, and performs the operation. It may read a database, but not every request needs one. The response includes an HTTP status and often data, such as product details in JSON.</div></div>
 <div class="question" id="question-4" data-answer="b">
 <div class="q-head"><span class="q-badge">Q4</span><span class="q-tag">TECHNICAL UNDERSTANDING</span></div>
-<div class="q-fig" id="figure-4"><div class="diagram"><div class="section-kicker">04 / VISUAL STUDY</div><p class="diagram-foot">Diagram will be inserted.</p></div></div>
+<div class="q-fig" id="figure-4"><div class="diagram api-diagram api-parts-visual" role="group" aria-label="Annotated HTTP request and response examples"><div class="section-kicker">04 / HTTP MESSAGE ANATOMY</div><h3 class="api-title">One HTTP exchange, five important parts</h3>
+<div class="api-http-grid">
+<section class="api-http-window"><header><i></i><i></i><i></i><strong>REQUEST</strong></header><div class="api-http-lines">
+<div><span class="api-marker blue">1</span><span class="api-method">POST</span><code>/orders</code><span class="api-marker blue">2</span></div>
+<div class="api-rule"></div>
+<div><span class="api-marker amber">3</span><code>Authorization: Bearer ••••••</code></div>
+<div><span class="api-marker amber">3</span><code>Content-Type: application/json</code></div>
+<div class="api-rule"></div>
+<div><span class="api-marker purple">4</span><code>{ "productId": 101, "quantity": 2 }</code></div></div></section>
+<div class="api-exchange"><small>server</small><b>→</b><small>responds</small></div>
+<section class="api-http-window"><header><i></i><i></i><i></i><strong>RESPONSE</strong></header><div class="api-http-lines">
+<div><span class="api-marker green">5</span><span class="api-created">201 Created</span></div>
+<div class="api-rule"></div>
+<div><span class="api-marker amber">3</span><code>Content-Type: application/json</code></div>
+<div class="api-rule"></div>
+<div><span class="api-marker purple">4</span><code>{ "orderId": 741, "status": "created" }</code></div></div></section></div>
+<div class="api-http-legend"><span><i class="blue">1</i> Method = action</span><span><i class="blue">2</i> Endpoint = resource</span><span><i class="amber">3</i> Headers = metadata</span><span><i class="purple">4</i> Bodies = data</span><span><i class="green">5</i> Status = result</span></div>
+<p class="diagram-foot">This example creates an order; GET requests often have no request body, but can still return a response body.</p></div></div>
 <p class="q-text">4. What roles do HTTP methods, endpoints, headers, status codes, and request and response bodies play in Web API communication?</p>
 <label><input type="radio" name="q4" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Methods identify users, endpoints store passwords, headers name databases, and bodies report server health.</span></label>
 <label><input type="radio" name="q4" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Methods describe actions, endpoints identify resources, headers carry extra details, bodies carry data, and status codes report outcomes.</span></label>
