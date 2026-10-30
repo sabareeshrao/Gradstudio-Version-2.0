@@ -17,6 +17,8 @@ This repository creates premium visual MCQ study modules. **Before creating, edi
 
 11. **Strict no-redundancy:** Do not repeat a question's learning objective within or across keyword modules. Rewording, replacing a noun, or using a new example does not make a repeated question unique. Audit existing curriculum questions and each new question's core answer/reasoning. Keep user-supplied stems unchanged; flag overlaps instead of rewriting them.
 
+12. **Rank-ordered curriculum control:** Before generating any keyword, read [KEYWORD_INDEX.md](KEYWORD_INDEX.md), the [ranked PDF](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf), and [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md). Follow exact PDF rank order unless the user names another keyword. After a verified commit, update the central index link/status, append exact question stems to the registry, and refresh README progress. Never mark a non-existent lesson as complete.
+
 **Authoritative reference order:** user requirements and supplied questions > `STUDY_MODULE_BUILD_STANDARD.md` > current templates/examples.
 
 **Default eight-stage progression:** Introduction; Fundamentals; Working Mechanism; Technical Understanding; Practical Application; Advanced Understanding; Smart-Level Reasoning; Interview Question.
