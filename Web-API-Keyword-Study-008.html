@@ -520,6 +520,45 @@ body{transition:background-color .15s}
 @media(max-width:620px){.api-http-grid{grid-template-columns:1fr}.api-exchange{display:flex;align-items:center;gap:7px}.api-exchange b{transform:rotate(90deg)}.api-http-lines{min-height:unset}}
 @media(max-width:460px){.api-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.api-step:nth-child(3):after{display:block}.api-step:nth-child(2n):after{display:none}}
 
+
+.api-shop{border:1px solid #c6dce2;border-radius:13px;background:white;overflow:hidden}
+.api-shop-top{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#e2f1f4;padding:12px 16px;color:#325d73}
+.api-shop-top span{display:flex;align-items:center;gap:7px;font-size:.8rem}
+.api-shop-top>div{display:flex;align-items:center;gap:7px;background:white;border:1px solid #cfdee4;border-radius:7px;padding:5px 13px;font-size:.72rem;color:#728b9a;min-width:165px}
+.api-shop-top>div .api-icon{width:16px;height:16px}
+.api-shop-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:15px}
+.api-shop-item{background:white;border:1px solid #dde8eb;border-radius:11px;padding:9px;min-width:0;display:grid;gap:5px}
+.api-art{height:114px;display:grid;place-items:center;background:linear-gradient(145deg,#e7f4f3,#f7f8f1);border-radius:8px}
+.api-art svg{max-height:100px;max-width:155px}
+.api-shop-item b{font-size:.81rem}.api-shop-item small{font-size:.73rem;color:#597888}
+.api-shop-routes{display:grid;gap:9px;margin-top:13px}
+.api-shop-route{display:flex;align-items:center;gap:11px;background:white;border:1px solid #d0dfe5;border-radius:10px;padding:11px 13px;min-width:0}
+.api-route-number{display:grid;place-items:center;background:#e8f4f4;color:#34758b;border-radius:8px;width:29px;height:29px;flex:none;font-size:.72rem}
+.api-shop-route>div{flex:1;min-width:0}
+.api-shop-route strong,.api-shop-route small{display:block}
+.api-shop-route strong{font-size:.79rem}.api-shop-route small{font-size:.7rem;color:#6c8291}
+.api-shop-route code{background:#eef5f8;border:0;border-radius:6px;padding:7px 9px;color:#29465c;white-space:normal;overflow-wrap:anywhere;font-size:.78rem}
+.api-shop-route em{font-style:normal;font-weight:900}.api-shop-route .get{color:#237859}.api-shop-route .post{color:#2776b5}
+.api-errors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.api-error-tile{display:grid;justify-items:start;align-content:start;gap:5px;background:#fff;border:1px solid #d6e3e7;border-radius:12px;padding:13px;min-height:169px}
+.api-error-icon{display:grid;place-items:center;background:#fce8e6;color:#bb504b;border-radius:9px;width:34px;height:34px}
+.api-error-icon.amber{background:#fff2dc;color:#aa7629}
+.api-error-icon.blue{background:#e4effa;color:#3078b5}
+.api-error-icon.purple{background:#eeebf9;color:#776ab5}
+.api-error-tile strong{font-size:1.19rem;color:#9f5151}
+.api-error-tile b{font-size:.77rem}
+.api-error-tile small{font-size:.7rem;color:#647c88;line-height:1.5}
+.api-error-response{display:grid;grid-template-columns:1.25fr .75fr;gap:11px;margin-top:14px}
+.api-error-pre{border-radius:11px;background:#182d42;color:#eaf7f9;padding:15px;min-width:0}
+.api-error-pre>span{font-size:.65rem;letter-spacing:.1em;color:#a1dce0;font-weight:850}
+.api-error-pre pre{white-space:pre-wrap;overflow-wrap:anywhere;font:normal .81rem/1.8 ui-monospace,Consolas,monospace;margin:10px 0 0;color:#f0edd9}
+.api-error-side{display:flex;flex-direction:column;justify-content:center;gap:8px;background:#e5f5ef;border-radius:11px;padding:15px;color:#286b56}
+.api-error-side .api-icon{width:30px;height:30px}
+.api-error-side b{font-size:.83rem}.api-error-side small{font-size:.73rem;line-height:1.55}
+@media(max-width:770px){.api-errors{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.api-shop-top>div{display:none}.api-shop-items{gap:7px;padding:9px}.api-art{height:83px}.api-shop-route{flex-wrap:wrap}.api-shop-route code{flex:1 1 100%;margin-left:40px}.api-error-response{grid-template-columns:1fr}}
+@media(max-width:400px){.api-shop-items{grid-template-columns:1fr}.api-shop-item{grid-template-columns:92px 1fr;align-items:center}.api-art{grid-row:span 2;height:73px}.api-errors{grid-template-columns:1fr}.api-error-tile{min-height:110px}}
+
 </style></head><body><div class="topbar">
   <div class="topbar-inner">
     <div class="brand">Web API Study<small>Software Engineering · API Design</small></div>
@@ -635,7 +674,18 @@ body{transition:background-color .15s}
 <div class="explanation"><strong>Correct: B.</strong> Each HTTP part has a different job. GET or POST describes the action. An endpoint such as /orders identifies the resource. Headers carry details like authentication or content type. The request body may contain order data. The response body holds results, while a status code such as 201 or 404 explains the outcome.</div></div>
 <div class="question" id="question-5" data-answer="a">
 <div class="q-head"><span class="q-badge">Q5</span><span class="q-tag">PRACTICAL APPLICATION</span></div>
-<div class="q-fig" id="figure-5"><div class="diagram"><div class="section-kicker">05 / VISUAL STUDY</div><p class="diagram-foot">Diagram will be inserted.</p></div></div>
+<div class="q-fig" id="figure-5"><div class="diagram api-diagram" role="group" aria-label="E-commerce storefront mockup and its three Web API endpoints"><div class="section-kicker">05 / PRACTICAL API DESIGN</div><h3 class="api-title">Design the API around the customer's actions</h3>
+<div class="api-shop"><div class="api-shop-top"><span><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h2l3 12h12l3-9H5M9 21h.01M19 21h.01"/></svg> <b>Northline Shop</b></span><div><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 5 5"/></svg> Search products</div><span><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h2l3 12h12l3-9H5M9 21h.01M19 21h.01"/></svg> <b>1</b></span></div>
+<div class="api-shop-items">
+<div class="api-shop-item"><div class="api-art"><svg viewBox="0 0 160 100" role="img" aria-label="Drawn wireless headphones" width="100%"><defs><linearGradient id="headphoneGrad" x1="0" x2="1"><stop stop-color="#28677b"/><stop offset="1" stop-color="#56a8ac"/></linearGradient></defs><path d="M49 66V43a31 31 0 0 1 62 0v23" stroke="#376f82" stroke-width="11" stroke-linecap="round" fill="none"/><rect x="38" y="57" width="26" height="34" rx="11" fill="url(#headphoneGrad)" stroke="#2a6170" stroke-width="3"/><rect x="96" y="57" width="26" height="34" rx="11" fill="url(#headphoneGrad)" stroke="#2a6170" stroke-width="3"/></svg></div><b>Headphones</b><small>$79.00</small></div>
+<div class="api-shop-item"><div class="api-art"><svg viewBox="0 0 160 100" role="img" aria-label="Drawn widescreen computer monitor" width="100%"><rect x="24" y="8" width="112" height="74" rx="8" fill="#f5faff" stroke="#456b85" stroke-width="5"/><path d="M31 65Q61 21 83 54T129 42V76H31Z" fill="#81c2c3"/><circle cx="111" cy="26" r="9" fill="#f6cf89"/><path d="M80 82v13M58 96h44" stroke="#456b85" stroke-width="5" stroke-linecap="round"/></svg></div><b>Monitor</b><small>$199.00</small></div>
+<div class="api-shop-item"><div class="api-art"><svg viewBox="0 0 160 100" role="img" aria-label="Drawn wireless computer mouse" width="100%"><rect x="56" y="9" width="49" height="83" rx="24" fill="#d2e4ef" stroke="#55798e" stroke-width="5"/><path d="M80 12v32M58 44h45" stroke="#55798e" stroke-width="3"/><rect x="76" y="23" width="8" height="14" rx="4" fill="#72b4bd"/></svg></div><b>Mouse</b><small>$25.99</small></div>
+</div></div>
+<div class="api-shop-routes">
+<div class="api-shop-route"><b class="api-route-number">01</b><div><strong>View products</strong><small>Return items customers can browse</small></div><code><em class="get">GET</em> /products</code></div>
+<div class="api-shop-route"><b class="api-route-number">02</b><div><strong>Place an order</strong><small>Create an order from selected items</small></div><code><em class="post">POST</em> /orders</code></div>
+<div class="api-shop-route"><b class="api-route-number">03</b><div><strong>Retrieve order details</strong><small>Verify the customer's permission first</small></div><code><em class="get">GET</em> /orders/741</code></div></div>
+<p class="diagram-foot">The endpoints name resources such as products and orders. The method describes what to do with that resource.</p></div></div>
 <p class="q-text">5. How would you design the basic Web API endpoints for an e-commerce application that allows customers to view products, place orders, and retrieve order details?</p>
 <label><input type="radio" name="q5" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Use GET /products to view items, POST /orders to place an order, and GET /orders/{id} to view an authorized order.</span></label>
 <label><input type="radio" name="q5" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Use POST /products to view items, GET /orders to place an order, and DELETE /orders/{id} to read details.</span></label>
@@ -644,7 +694,18 @@ body{transition:background-color .15s}
 <div class="explanation"><strong>Correct: A.</strong> Model products and orders as resources. GET /products lists items, while GET /products/{id} shows one product. POST /orders creates an order using details in the request body. GET /orders/{id} reads its status. Order endpoints must check that the customer is allowed to access the order.</div></div>
 <div class="question" id="question-6" data-answer="c">
 <div class="q-head"><span class="q-badge">Q6</span><span class="q-tag">ADVANCED UNDERSTANDING</span></div>
-<div class="q-fig" id="figure-6"><div class="diagram"><div class="section-kicker">06 / VISUAL STUDY</div><p class="diagram-foot">Diagram will be inserted.</p></div></div>
+<div class="q-fig" id="figure-6"><div class="diagram api-diagram" role="group" aria-label="Four HTTP error types and a consistent JSON error response"><div class="section-kicker">06 / CONSISTENT ERROR HANDLING</div><h3 class="api-title">Different failures. One response shape.</h3>
+<div class="api-errors">
+<div class="api-error-tile"><span class="api-error-icon"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></span><strong>400</strong><b>Bad Request</b><small>Required order details are invalid</small></div>
+<div class="api-error-tile"><span class="api-error-icon amber"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><strong>401</strong><b>Unauthorized</b><small>Login or valid credentials are needed</small></div>
+<div class="api-error-tile"><span class="api-error-icon blue"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 5 5"/></svg></span><strong>404</strong><b>Not Found</b><small>The requested product does not exist</small></div>
+<div class="api-error-tile"><span class="api-error-icon purple"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h5l3-7 5 14 3-7h4"/></svg></span><strong>500</strong><b>Server Error</b><small>An unexpected failure happened</small></div>
+</div>
+<div class="api-error-response"><div class="api-error-pre"><span>SHARED ERROR FORMAT · EXAMPLE</span><pre>{
+  "code": "NOT_FOUND",
+  "message": "Order not found"
+}</pre></div><div class="api-error-side"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3 9 8 11 5-2 8-6 8-11V5Z"/><path d="m8 12 3 3 5-6"/></svg><b>Predictable + safe</b><small>Clients can handle errors consistently. Never reveal passwords or internal stack traces.</small></div></div>
+<p class="diagram-foot">The HTTP status states the category of failure; a stable JSON body explains it in a safe, useful format.</p></div></div>
 <p class="q-text">6. How should a Web API handle invalid requests, authentication failures, missing resources, and unexpected server errors while maintaining a consistent interface?</p>
 <label><input type="radio" name="q6" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Return 200 for every request and describe all errors only in a message inside the response body.</span></label>
 <label><input type="radio" name="q6" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Return 500 for invalid inputs, missing resources, and access failures so the client handles errors uniformly.</span></label>
