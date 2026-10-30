@@ -54,6 +54,11 @@
       "slug": "backpropagation",
       "title": "Backpropagation",
       "domain": "Neural Network Training and Gradient Computation · Artificial Intelligence / Machine Learning / Deep Learning"
+    },
+    {
+      "slug": "transformer",
+      "title": "Transformer",
+      "domain": "Transformer Architecture and Attention Mechanisms · Transformers and LLM Architecture"
     }
   ]
 }
