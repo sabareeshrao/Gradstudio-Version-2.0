@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "keyword": "Gradient Descent",
+  "title": "Gradient Descent — 7 Learning Layers",
+  "subtitle": "Topic: Optimization Algorithms · Subject: Deep Learning & Large Language Models (LLMs). Seven beginner-to-advanced questions, four balanced choices each, and seven unique visual explanations.",
+  "diagramStyle": "diagrams/gradient-descent.css",
+  "hero": "<section class=\"gd-hero\"><span class=\"gd-kicker\">GRADIENT DESCENT · VISUAL OVERVIEW</span><h2>Improve predictions, one small update at a time.</h2><p>Measure prediction error, find a useful direction, and adjust weights. Repeat to learn.</p><div class=\"gd-hero-grid\"><div><small>START</small><b>Model weights</b><span>Current predictions</span></div><strong>→</strong><div><small>MEASURE</small><b>Loss + gradient</b><span>Error and direction</span></div><strong>→</strong><div><small>UPDATE</small><b>New weights</b><span>Try a lower loss</span></div></div></section>",
+  "questions": [
+    {
+      "stem": "Layer 1: What is Gradient Descent in simple, everyday language?",
+      "tag": "Everyday idea",
+      "answer": "b",
+      "options": [
+        "It remembers every example the network has already seen.",
+        "It adjusts model weights in small steps to reduce errors.",
+        "It adds new hidden layers whenever the loss becomes large.",
+        "It removes training examples whenever predictions are wrong."
+      ],
+      "explanation": "<strong>Correct: B.</strong> Gradient Descent is like walking downhill toward lower error. The model changes weights in small steps that usually lower a loss function. It can reach a useful minimum but is not guaranteed to find the absolute global minimum.",
+      "figure": "<div class=\"gd-fig gd-hill\"><span class=\"gd-kicker\">01 · EVERYDAY INTUITION</span><h3>Walk downhill, one careful step at a time</h3><svg viewBox=\"0 0 760 270\" role=\"img\" aria-label=\"Orange markers descending a green hill toward its low point\"><defs><linearGradient id=\"gdGrass\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop stop-color=\"#b4e4c9\"/><stop offset=\"1\" stop-color=\"#e7f4ea\"/></linearGradient></defs><rect width=\"760\" height=\"270\" rx=\"14\" fill=\"#eaf5fb\"/><circle cx=\"674\" cy=\"50\" r=\"25\" fill=\"#ffdda1\"/><path d=\"M0 57 C90 70 172 176 239 210 C324 258 412 231 499 199 C610 158 664 188 760 110 V270H0Z\" fill=\"url(#gdGrass)\"/><path d=\"M0 57 C90 70 172 176 239 210 C324 258 412 231 499 199 C610 158 664 188 760 110\" stroke=\"#5da78b\" stroke-width=\"4\" fill=\"none\"/><path d=\"M64 94 L133 139 L206 196 L272 222 L333 236\" fill=\"none\" stroke=\"#d78b57\" stroke-width=\"3\" stroke-dasharray=\"7 6\"/><g fill=\"#df9163\" stroke=\"#fff\" stroke-width=\"2\"><circle cx=\"64\" cy=\"94\" r=\"12\"/><circle cx=\"133\" cy=\"139\" r=\"11\"/><circle cx=\"206\" cy=\"196\" r=\"10\"/><circle cx=\"272\" cy=\"222\" r=\"9\"/><circle cx=\"333\" cy=\"236\" r=\"9\"/></g><text x=\"45\" y=\"58\" font-size=\"18\" font-weight=\"800\" fill=\"#8b634b\">High error</text><path d=\"M333 236L367 207\" stroke=\"#4e887b\" stroke-width=\"2\"/><text x=\"371\" y=\"202\" font-size=\"17\" font-weight=\"800\" fill=\"#347b65\">Lower error</text><text x=\"463\" y=\"51\" font-size=\"14\" fill=\"#69889a\">Each dot = a weight update</text></svg><div class=\"gd-legend\"><span>1 · Find slope</span><span>2 · Take step</span><span>3 · Repeat</span></div><p class=\"gd-note\">The hill stands for the loss function. Its lowest point represents lower prediction error.</p></div>"
+    },
+    {
+      "stem": "Layer 2: Why do neural networks use Gradient Descent, and what problem does it solve during training?",
+      "tag": "Why training needs it",
+      "answer": "d",
+      "options": [
+        "It makes every prediction correct before training begins.",
+        "It replaces backpropagation with randomly chosen labels.",
+        "It keeps all learned network weights fixed during training.",
+        "It updates weights to gradually reduce prediction error."
+      ],
+      "explanation": "<strong>Correct: D.</strong> A neural network starts with weights whose ideal values are unknown. A loss measures mistakes. Gradients guide weight updates so the model can become better at the training task.",
+      "figure": "<div class=\"gd-fig gd-fitting\"><span class=\"gd-kicker\">02 · WHY IT HELPS</span><h3>From a bad prediction to a better one</h3><div class=\"gd-fit-panels\"><div class=\"gd-fit-card\"><strong>Before training</strong><svg viewBox=\"0 0 300 176\" role=\"img\" aria-label=\"Target points lie along a rising trend but model predicts a nearly flat line\"><path d=\"M28 13V155H284\" stroke=\"#a3b5c1\" stroke-width=\"2\" fill=\"none\"/><path d=\"M32 111H282\" stroke=\"#d48b64\" stroke-width=\"4\"/><g fill=\"#488db2\"><circle cx=\"54\" cy=\"142\" r=\"5\"/><circle cx=\"101\" cy=\"119\" r=\"5\"/><circle cx=\"145\" cy=\"94\" r=\"5\"/><circle cx=\"197\" cy=\"69\" r=\"5\"/><circle cx=\"254\" cy=\"34\" r=\"5\"/></g></svg><div class=\"gd-error high\">Large mismatch</div></div><div class=\"gd-fit-middle\">→<small>weight updates</small></div><div class=\"gd-fit-card\"><strong>After training</strong><svg viewBox=\"0 0 300 176\" role=\"img\" aria-label=\"A prediction line follows the observed rising data points\"><path d=\"M28 13V155H284\" stroke=\"#a3b5c1\" stroke-width=\"2\" fill=\"none\"/><path d=\"M33 151L276 23\" stroke=\"#2a9a76\" stroke-width=\"4\"/><g fill=\"#488db2\"><circle cx=\"54\" cy=\"142\" r=\"5\"/><circle cx=\"101\" cy=\"119\" r=\"5\"/><circle cx=\"145\" cy=\"94\" r=\"5\"/><circle cx=\"197\" cy=\"69\" r=\"5\"/><circle cx=\"254\" cy=\"34\" r=\"5\"/></g></svg><div class=\"gd-error low\">Smaller mismatch</div></div></div><p class=\"gd-note\">A model starts with adjustable weights. Gradient Descent gives it a repeatable way to improve them.</p></div>"
+    },
+    {
+      "stem": "Layer 3: How does Gradient Descent use a loss function, gradients, and a learning rate to improve model predictions?",
+      "tag": "Loss, gradient, step size",
+      "answer": "a",
+      "options": [
+        "The gradient points; the learning rate controls step size.",
+        "The loss chooses new examples; the gradient deletes old ones.",
+        "The learning rate counts epochs; the loss labels each word.",
+        "The gradient fixes every weight while the loss grows larger."
+      ],
+      "explanation": "<strong>Correct: A.</strong> The <strong>loss</strong> measures error, the <strong>gradient</strong> measures how loss changes with a parameter, and the <strong>learning rate</strong> sets update magnitude. The rule subtracts the gradient scaled by the learning rate.",
+      "figure": "<div class=\"gd-fig gd-core\"><span class=\"gd-kicker\">03 · THREE MAIN PARTS</span><h3>Loss, gradient, and learning rate have different jobs</h3><div class=\"gd-core-cards\"><div class=\"gd-core-card\"><span class=\"gd-number\">1</span><strong>Loss</strong><small>How wrong was the guess?</small><div class=\"gd-meter\"><i style=\"width:78%\"></i></div><b>Measure error</b></div><div class=\"gd-core-card\"><span class=\"gd-number\">2</span><strong>Gradient</strong><small>In which direction does loss rise?</small><svg viewBox=\"0 0 180 70\" role=\"img\" aria-label=\"Slanted loss line with an arrow\"><path d=\"M18 16L161 56\" stroke=\"#7795ac\" stroke-width=\"4\"/><path d=\"M99 24L136 36L122 38\" stroke=\"#dd9355\" stroke-width=\"3\" fill=\"none\"/></svg><b>Find direction</b></div><div class=\"gd-core-card\"><span class=\"gd-number\">3</span><strong>Learning rate</strong><small>How far should weights move?</small><div class=\"gd-lr-steps\"><i></i><i></i></div><b>Set step size</b></div></div><div class=\"gd-formula\">new weight = old weight − learning rate × gradient</div><p class=\"gd-note\">We subtract the gradient because it points toward increasing loss.</p></div>"
+    },
+    {
+      "stem": "Layer 4: How does the Gradient Descent update rule work step by step with real numbers?",
+      "tag": "Worked arithmetic",
+      "answer": "c",
+      "options": [
+        "The next weight stays 0, since the starting weight is 0.",
+        "The next weight becomes −6, matching the gradient.",
+        "The next weight becomes 1.2 using 0 − 0.2 × (−6).",
+        "The next weight becomes 6, the size of the gradient."
+      ],
+      "explanation": "<strong>Correct: C.</strong> For the toy loss <code>L(w)=(w−3)²</code>, start with <code>w=0</code>, so the derivative is <code>2(w−3)=−6</code>. With learning rate <code>0.2</code>, the next weight is <code>0−0.2×(−6)=1.2</code>. The loss drops from <code>9</code> to <code>3.24</code>.",
+      "figure": "<div class=\"gd-fig gd-math\"><span class=\"gd-kicker\">04 · WORKED NUMBERS</span><h3>One update on L(w) = (w − 3)²</h3><div class=\"gd-math-layout\"><div class=\"gd-parabola\"><svg viewBox=\"0 0 380 260\" role=\"img\" aria-label=\"Quadratic loss curve with points at weight 0, loss 9, and weight 1.2, loss 3.24\"><rect width=\"380\" height=\"260\" rx=\"9\" fill=\"#fff\"/><path d=\"M36 14V224H370\" stroke=\"#a2b3ba\" stroke-width=\"2\" fill=\"none\"/><polyline points=\"37.0,76.0 39.9,80.2 42.7,84.3 45.5,88.3 48.4,92.3 51.3,96.3 54.1,100.1 57.0,103.9 59.8,107.7 62.7,111.4 65.5,115.0 68.3,118.6 71.2,122.1 74.1,125.5 76.9,128.9 79.8,132.3 82.6,135.5 85.4,138.7 88.3,141.9 91.2,145.0 94.0,148.0 96.8,151.0 99.7,153.9 102.5,156.7 105.4,159.5 108.3,162.3 111.1,164.9 114.0,167.5 116.8,170.1 119.6,172.6 122.5,175.0 125.4,177.4 128.2,179.7 131.1,181.9 133.9,184.1 136.8,186.3 139.6,188.3 142.4,190.3 145.3,192.3 148.1,194.2 151.0,196.0 153.8,197.8 156.7,199.5 159.6,201.1 162.4,202.7 165.3,204.3 168.1,205.7 171.0,207.1 173.8,208.5 176.7,209.8 179.5,211.0 182.3,212.2 185.2,213.3 188.0,214.3 190.9,215.3 193.8,216.3 196.6,217.1 199.5,217.9 202.3,218.7 205.2,219.4 208.0,220.0 210.8,220.6 213.7,221.1 216.5,221.5 219.4,221.9 222.3,222.3 225.1,222.5 228.0,222.7 230.8,222.9 233.7,223.0 236.5,223.0 239.3,223.0 242.2,222.9 245.0,222.7 247.9,222.5 250.8,222.3 253.6,221.9 256.5,221.5 259.3,221.1 262.1,220.6 265.0,220.0 267.9,219.4 270.7,218.7 273.6,217.9 276.4,217.1 279.3,216.3 282.1,215.3 284.9,214.3 287.8,213.3 290.6,212.2 293.5,211.0 296.3,209.8 299.2,208.5 302.1,207.1 304.9,205.7 307.8,204.3 310.6,202.7 313.4,201.1 316.3,199.5 319.2,197.8 322.0,196.0 324.8,194.2 327.7,192.3 330.6,190.3 333.4,188.3 336.3,186.3 339.1,184.1 341.9,181.9 344.8,179.7 347.7,177.4 350.5,175.0\" fill=\"none\" stroke=\"#4a87b0\" stroke-width=\"4\"/><circle cx=\"65.5\" cy=\"115\" r=\"8\" fill=\"#e08b60\" stroke=\"white\" stroke-width=\"2\"/><circle cx=\"133.9\" cy=\"184.1\" r=\"8\" fill=\"#259c79\" stroke=\"white\" stroke-width=\"2\"/><text x=\"69\" y=\"104\" font-size=\"13\" fill=\"#ad714a\">w=0, L=9</text><text x=\"141\" y=\"183\" font-size=\"13\" fill=\"#287f67\">w=1.2, L=3.24</text><text x=\"205\" y=\"248\" font-size=\"13\" fill=\"#607e90\">Minimum near w=3</text></svg></div><div class=\"gd-math-steps\"><div><b>1</b><span>Start</span><code>w=0; L=9</code></div><div><b>2</b><span>Gradient</span><code>2(w−3)=−6</code></div><div><b>3</b><span>Learning rate</span><code>η=0.2</code></div><div class=\"gd-math-answer\"><b>4</b><span>Update</span><code>0 − 0.2×(−6) = 1.2</code></div></div></div><div class=\"gd-loss-change\"><span>Before <strong>loss 9.00</strong></span><b>→</b><span>After <strong>loss 3.24</strong></span></div><p class=\"gd-note\">These are exact results for a toy loss function, not numbers from an LLM.</p></div>"
+    },
+    {
+      "stem": "Layer 5: How is Gradient Descent implemented in Python with PyTorch, including forward passes, backpropagation, and optimizer steps?",
+      "tag": "Python & PyTorch",
+      "answer": "b",
+      "options": [
+        "Call optimizer.step() before computing a loss.",
+        "Use zero_grad(), backward(), then optimizer.step().",
+        "Run backward() only when the model is in eval mode.",
+        "Apply softmax() to every weight after each prediction."
+      ],
+      "explanation": "<strong>Correct: B.</strong> Call <code>opt.zero_grad()</code> to clear old gradients, run a forward pass and compute loss, call <code>loss.backward()</code> to produce gradients, then call <code>opt.step()</code> to update model weights. Repeat this with training data. The Python illustration is a complete small example.",
+      "figure": "<div class=\"gd-fig gd-code\"><span class=\"gd-kicker\">05 · PYTORCH</span><h3>Train a tiny model to learn y = 2x</h3><div class=\"gd-code-grid\"><div class=\"gd-editor\"><div class=\"gd-editor-top\"><i></i><i></i><i></i><span>train.py</span></div><pre><code><span class=\"gd-keyword\">import</span> torch\n<span class=\"gd-keyword\">from</span> torch <span class=\"gd-keyword\">import</span> nn\n\ntorch.manual_seed(0)\nx = torch.tensor([[1.], [2.], [3.]])\ny = 2 * x\nmodel = nn.Linear(1, 1)\nopt = torch.optim.SGD(model.parameters(), lr=0.1)\nloss_fn = nn.MSELoss()\n\n<span class=\"gd-keyword\">for</span> step <span class=\"gd-keyword\">in</span> range(100):\n    <span class=\"gd-focus\">opt.zero_grad()</span>\n    prediction = model(x)\n    loss = loss_fn(prediction, y)\n    <span class=\"gd-focus\">loss.backward()</span>\n    <span class=\"gd-focus\">opt.step()</span>\n\n<span class=\"gd-keyword\">print</span>(model(torch.tensor([[4.]])).item())\n<span class=\"gd-comment\"># Approximately 8</span></code></pre></div><div class=\"gd-code-steps\"><div><b>1</b><strong>Clear old gradients</strong><small>zero_grad()</small></div><span>↓</span><div><b>2</b><strong>Predict and measure loss</strong><small>forward pass + MSE</small></div><span>↓</span><div><b>3</b><strong>Compute gradients</strong><small>loss.backward()</small></div><span>↓</span><div class=\"gd-code-update\"><b>4</b><strong>Update weights</strong><small>optimizer.step()</small></div><p>Repeat these steps over training batches.</p></div></div><p class=\"gd-note\">This runnable PyTorch example uses ordinary SGD; LLM training usually uses more data, layers, and optimization settings.</p></div>"
+    },
+    {
+      "stem": "Layer 6: How do Batch Gradient Descent, Stochastic Gradient Descent (SGD), Mini-Batch Gradient Descent, Momentum, and Adam differ?",
+      "tag": "Optimization families",
+      "answer": "a",
+      "options": [
+        "Batch uses all; SGD one sample; mini-batch a group.",
+        "All methods update weights only once at the end of training.",
+        "Momentum ignores gradients; Adam uses no learning rate.",
+        "Adam and momentum are names for full-batch training only."
+      ],
+      "explanation": "<strong>Correct: A.</strong> Classic <strong>batch</strong> descent uses all examples per update, <strong>stochastic</strong> descent uses one, and <strong>mini-batch</strong> uses a small group. Practical code often calls mini-batch training SGD. <strong>Momentum</strong> carries information from recent gradients. <strong>Adam</strong> adapts steps with gradient moments, while <strong>AdamW</strong> decouples weight decay.",
+      "figure": "<div class=\"gd-fig gd-types\"><span class=\"gd-kicker\">06 · TWO DIFFERENT CHOICES</span><h3>How many examples? How is the update adjusted?</h3><div class=\"gd-type-columns\"><div class=\"gd-type-panel\"><h4>A · Examples used per step</h4><div class=\"gd-data-mode\"><b>Batch</b><span>● ● ● ● ● ●</span><small>All samples</small></div><div class=\"gd-data-mode\"><b>SGD</b><span>● ○ ○ ○ ○ ○</span><small>One sample</small></div><div class=\"gd-data-mode\"><b>Mini-batch</b><span>● ● ○ ○ ○ ○</span><small>Small group</small></div></div><div class=\"gd-type-panel\"><h4>B · Update algorithm</h4><div class=\"gd-opt-row\"><span>↘</span><div><b>Plain SGD</b><small>Current gradient</small></div></div><div class=\"gd-opt-row\"><span>➜</span><div><b>Momentum</b><small>Uses past directions</small></div></div><div class=\"gd-opt-row\"><span>≈</span><div><b>Adam / AdamW</b><small>Adaptive steps by parameter</small></div></div></div></div><div class=\"gd-distinction\">Batch size and optimizer method are <strong>separate settings</strong>.</div><p class=\"gd-note\">SGD is often used as shorthand for mini-batch stochastic optimization in practical frameworks.</p></div>"
+    },
+    {
+      "stem": "Layer 7: How is Gradient Descent optimized during large-scale LLM training, including learning-rate schedules, gradient accumulation, clipping, mixed precision, and training stability?",
+      "tag": "LLM training scale",
+      "answer": "d",
+      "options": [
+        "Clipping increases every gradient to exactly the same large value.",
+        "Accumulation forces each GPU to load the full training dataset.",
+        "Warmup freezes every model weight until training has finished.",
+        "These tools help control updates, memory use, and stability."
+      ],
+      "explanation": "<strong>Correct: D.</strong> A <strong>schedule</strong> can warm up and lower the learning rate. <strong>Gradient accumulation</strong> combines micro-batch gradients before a step. <strong>Clipping</strong> limits very large gradient norms. <strong>Mixed precision</strong> often reduces memory and computation but needs numerical care. LLM training also monitors loss, gradient norms and throughput.",
+      "figure": "<div class=\"gd-fig gd-scale\"><span class=\"gd-kicker\">07 · LLM TRAINING CONTROLS</span><h3>Several techniques keep huge training runs manageable</h3><div class=\"gd-scale-grid\"><div class=\"gd-scale-tile\"><h4>1 · Learning-rate schedule</h4><svg viewBox=\"0 0 330 156\" role=\"img\" aria-label=\"Learning rate warms up then slowly decays\"><rect width=\"330\" height=\"156\" rx=\"8\" fill=\"#fff\"/><path d=\"M25 13V130H309\" stroke=\"#98aeb6\" stroke-width=\"2\" fill=\"none\"/><path d=\"M25 130L94 25Q173 43 299 116\" stroke=\"#428eaf\" stroke-width=\"4\" fill=\"none\"/><path d=\"M94 25V130\" stroke=\"#e6a063\" stroke-dasharray=\"5 5\"/><text x=\"34\" y=\"87\" font-size=\"11\" fill=\"#ba7f51\">Warmup</text><text x=\"187\" y=\"49\" font-size=\"11\" fill=\"#387d9b\">Decay</text><text x=\"121\" y=\"149\" font-size=\"11\" fill=\"#678392\">Steps →</text></svg></div><div class=\"gd-scale-tile\"><h4>2 · Accumulate gradients</h4><div class=\"gd-micros\"><span>micro 1</span><span>micro 2</span><span>micro 3</span></div><div class=\"gd-down\">↘ &nbsp; ↓ &nbsp; ↙</div><div class=\"gd-accum\">Combined gradients</div><div class=\"gd-down\">↓</div><div class=\"gd-accum gd-update\">One update</div></div><div class=\"gd-scale-tile\"><h4>3 · Clip large gradients</h4><div class=\"gd-clip\"><span>Before</span><i><b style=\"width:100%\"></b></i></div><div class=\"gd-clip\"><span>After</span><i><b style=\"width:49%\"></b></i></div><p>Limit large gradient norms to avoid huge jumps.</p></div><div class=\"gd-scale-tile\"><h4>4 · Mixed precision</h4><div class=\"gd-precision\"><span>BF16 / FP16<small>Efficient math</small></span><b>+</b><span>Higher precision<small>Sensitive operations</small></span></div><p>Reduce memory and compute with numeric care.</p></div></div><div class=\"gd-metrics\">Monitor: <b>loss</b><b>gradient norms</b><b>throughput</b><b>validation</b></div><p class=\"gd-note\">These tools complement the optimizer. Stable LLM training also depends on data, hardware, normalization, and model design.</p></div>"
+    }
+  ],
+  "sources": "<details class=\"gd-sources\"><summary>Technical references</summary><p><a href=\"https://docs.pytorch.org/docs/stable/generated/torch.optim.SGD\" target=\"_blank\" rel=\"noopener\">PyTorch SGD</a> · <a href=\"https://docs.pytorch.org/docs/stable/generated/torch.optim.AdamW\" target=\"_blank\" rel=\"noopener\">AdamW</a> · <a href=\"https://docs.pytorch.org/docs/stable/notes/amp_examples.html\" target=\"_blank\" rel=\"noopener\">Mixed-precision training examples</a>.</p></details>",
+  "footer": "Gradient Descent · 7 questions · 28 balanced options · 7 different diagrams · Shared 15-theme engine"
+}
