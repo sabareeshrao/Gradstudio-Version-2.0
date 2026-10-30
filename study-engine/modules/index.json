@@ -64,6 +64,11 @@
       "slug": "deep-learning",
       "title": "Deep Learning",
       "domain": "Deep Learning Fundamentals and Neural Network Architectures · Deep Learning Foundations"
+    },
+    {
+      "slug": "artificial-intelligence",
+      "title": "Artificial Intelligence (AI)",
+      "domain": "Foundations and Evolution of Artificial Intelligence · AI Foundations"
     }
   ]
 }
