@@ -40,3 +40,25 @@
   .am-fig h3{overflow-wrap:break-word;line-height:1.35}
   .q-text{overflow-wrap:anywhere}
 }
+
+
+/* Show the horizontal-diagram affordance before, not only after, the figure. */
+@media(max-width:680px){
+  .am-fig h3::after{
+    content:"↔ Swipe diagram sideways to see all tokens and labels";
+    display:block;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:0;
+    color:#547e91;
+    margin-top:7px;
+  }
+  .am-hero::after{
+    content:"↔ Swipe the overview to see the full illustration";
+    display:block;
+    margin-top:8px;
+    font-size:.7rem;
+    font-weight:700;
+    color:#547e91;
+  }
+}
