@@ -16,7 +16,8 @@
         "It links handcrafted logical rules that imitate how humans reason, without learning numerical connection weights."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> Artificial neural networks connect simplified mathematical neurons. They were inspired by neurons and connections in the brain, but typical modern networks use weighted sums, biases, and activation functions rather than faithfully reproducing biological cell chemistry."
+      "explanation": "<strong>In simple words:</strong> A neural network is a set of connected math units that learn patterns. It is loosely inspired by the brain, not a copy of it.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Artificial neural networks connect simplified mathematical neurons. They were inspired by neurons and connections in the brain, but typical modern networks use weighted sums, biases, and activation functions rather than faithfully reproducing biological cell chemistry."
     },
     {
       "tag": "Beginner · network anatomy",
@@ -29,7 +30,8 @@
         "Inputs pass through weighted connections and biased hidden neurons before reaching the output layer."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> Inputs carry features. Weights determine how strongly signals connect to hidden neurons; biases shift their activation. Hidden layers learn intermediate representations, and the output layer produces a prediction. The exact number of layers and neurons is a design choice."
+      "explanation": "<strong>In simple words:</strong> Inputs enter the network, hidden layers transform them, and the output gives a prediction. Weights and biases control what each unit learns.",
+      "technicalExplanation": "<strong>Correct: D.</strong> Inputs carry features. Weights determine how strongly signals connect to hidden neurons; biases shift their activation. Hidden layers learn intermediate representations, and the output layer produces a prediction. The exact number of layers and neurons is a design choice."
     },
     {
       "tag": "Beginner · forward propagation",
@@ -42,7 +44,8 @@
         "The network computes loss before predicting, then uses that error as its next input signal."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> During a forward pass, each neuron receives activations, multiplies them by learned weights, adds a bias, and applies an activation function. In the diagram, z = 2(0.6) + 1(0.4) − 0.5 = 1.1. A sigmoid activation maps that to about 0.750."
+      "explanation": "<strong>In simple words:</strong> Information moves forward through connected neurons. Each neuron mixes its inputs, adds a bias, then decides what signal to pass on.",
+      "technicalExplanation": "<strong>Correct: A.</strong> During a forward pass, each neuron receives activations, multiplies them by learned weights, adds a bias, and applies an activation function. In the diagram, z = 2(0.6) + 1(0.4) − 0.5 = 1.1. A sigmoid activation maps that to about 0.750."
     },
     {
       "tag": "Medium · backpropagation",
@@ -55,7 +58,8 @@
         "Hidden neurons memorize previous responses, while gradients decide which training samples to discard."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> The model predicts, loss measures its error, and backpropagation computes how changing each weight affects loss. An optimizer takes gradient-based steps, usually repeated over many batches. For the illustrated loss L = ½(w−0.3)², w = 0.80 and learning rate 0.10 yield w' = 0.75."
+      "explanation": "<strong>In simple words:</strong> The model guesses, checks its error, and calculates which weights should change. Repeated small updates help it improve.",
+      "technicalExplanation": "<strong>Correct: C.</strong> The model predicts, loss measures its error, and backpropagation computes how changing each weight affects loss. An optimizer takes gradient-based steps, usually repeated over many batches. For the illustrated loss L = ½(w−0.3)², w = 0.80 and learning rate 0.10 yield w' = 0.75."
     },
     {
       "tag": "Medium · working PyTorch",
@@ -68,7 +72,8 @@
         "Train with label sorting and manual parameter guesses instead of using PyTorch's automatic differentiation."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> PyTorch provides tensors, neural-network modules, autograd, and optimizers. The example builds a two-layer network for XOR, computes binary classification loss from logits, clears old gradients, backpropagates, updates weights, and switches to evaluation mode. Its displayed output was checked by execution."
+      "explanation": "<strong>In simple words:</strong> In PyTorch, define layers, feed in examples, calculate a loss, and update weights. Then test on data the model did not train on.",
+      "technicalExplanation": "<strong>Correct: A.</strong> PyTorch provides tensors, neural-network modules, autograd, and optimizers. The example builds a two-layer network for XOR, computes binary classification loss from logits, clears old gradients, backpropagates, updates weights, and switches to evaluation mode. Its displayed output was checked by execution."
     },
     {
       "tag": "Advanced · architecture families",
@@ -81,7 +86,8 @@
         "FNNs connect layers, CNNs scan spatial patterns, RNNs carry state, and Transformers use attention."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> A feedforward network uses layered transformations; a CNN slides learned kernels over spatial data; an RNN carries state across time; and a Transformer uses attention to model relationships between tokens. They differ in structure and what patterns they handle efficiently."
+      "explanation": "<strong>In simple words:</strong> Different designs fit different data: CNNs spot image patterns, RNNs track sequences, and Transformers connect related tokens through attention.",
+      "technicalExplanation": "<strong>Correct: D.</strong> A feedforward network uses layered transformations; a CNN slides learned kernels over spatial data; an RNN carries state across time; and a Transformer uses attention to model relationships between tokens. They differ in structure and what patterns they handle efficiently."
     },
     {
       "tag": "Advanced · training diagnostics",
@@ -94,7 +100,8 @@
         "Always lower training loss to zero before checking validation performance or computational resource costs."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> Different failures require different fixes: normalization and residual paths can improve gradient flow; gradient clipping can control large updates; regularization and validation monitoring can reduce overfitting; and learning-rate schedules can improve convergence. Underfitting means even training performance stays poor, so capacity, data features, or overly strong regularization may need adjustment. Also monitor compute and memory costs."
+      "explanation": "<strong>In simple words:</strong> Deep networks can forget general patterns or learn too slowly. Careful learning rates, shortcuts, normalization, and regularization help reduce these problems.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Different failures require different fixes: normalization and residual paths can improve gradient flow; gradient clipping can control large updates; regularization and validation monitoring can reduce overfitting; and learning-rate schedules can improve convergence. Underfitting means even training performance stays poor, so capacity, data features, or overly strong regularization may need adjustment. Also monitor compute and memory costs."
     }
   ],
   "diagramStyle": "diagrams/neural-network.css",
