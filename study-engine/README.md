@@ -17,6 +17,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 - Gradient Descent: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=gradient-descent
 
 - Neural Network: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network
+- Backpropagation: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=backpropagation
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
