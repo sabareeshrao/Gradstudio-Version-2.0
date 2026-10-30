@@ -24,6 +24,11 @@
       "slug": "flops",
       "title": "FLOPS",
       "domain": "Computational Performance Metrics · Efficient and Edge AI"
+    },
+    {
+      "slug": "rag",
+      "title": "Retrieval-Augmented Generation (RAG)",
+      "domain": "LLM Architecture · Large Language Models (LLMs)"
     }
   ]
 }
