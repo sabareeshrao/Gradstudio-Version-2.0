@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "keyword": "Softmax",
+  "title": "Softmax, From Zero to LLMs",
+  "subtitle": "Seven layers, in the exact order requested. Start with everyday language, then build toward Python, Transformers, and training. One clear diagram and three short answer choices per layer.",
+  "hero": "<section aria-label=\"Softmax at a glance\" class=\"hero simple-hero\"><div class=\"hero-head\"><div><span class=\"eyebrow\">YOUR STARTING POINT</span><h2>Softmax turns AI scores into chances.</h2><p>Picture three guesses. Softmax makes them easier to compare, using percentages that add up to 100%.</p></div><span class=\"hero-index\">7 LAYERS</span></div><div class=\"hero-simple-steps\"><div><span>AI makes scores</span><strong>Cat · Dog · Bird</strong></div><b aria-hidden=\"true\">→</b><div class=\"hero-key-step\"><span>Softmax</span><strong>Turns them into chances</strong></div><b aria-hidden=\"true\">→</b><div><span>Easy-to-read result</span><strong>66.5% · 24.5% · 9%</strong></div></div></section>",
+  "questions": [
+    {
+      "tag": "Simple meaning",
+      "stem": "Layer 1: What is Softmax in simple, everyday language?",
+      "figure": "<div class=\"diagram\"><span class=\"eyebrow\">01 · Everyday idea</span><h3>Imagine three guesses for the same picture</h3>\n<div aria-label=\"A photo clue and three outcomes: cat 70 percent, dog 20 percent, bird 10 percent\" class=\"everyday-scene\" role=\"img\">\n<div class=\"picture-window\"><div class=\"photo-sky\"><span class=\"sky-sun\"></span><span class=\"photo-hill\"></span><span class=\"cat-ears\"></span><span class=\"cat-head\"><i></i><i></i><b>ᴗ</b></span></div><span class=\"photo-caption\">What is in this picture?</span></div>\n<div aria-hidden=\"true\" class=\"scene-arrow\">→</div>\n<div class=\"guess-choices\"><div class=\"choice-piece\"><span class=\"choice-icon\">🐈</span><strong>Cat</strong><b>70%</b><span class=\"piece-meter\"><i style=\"width:70%\"></i></span></div><div class=\"choice-piece\"><span class=\"choice-icon\">🐕</span><strong>Dog</strong><b>20%</b><span class=\"piece-meter\"><i style=\"width:20%\"></i></span></div><div class=\"choice-piece\"><span class=\"choice-icon\">🐦</span><strong>Bird</strong><b>10%</b><span class=\"piece-meter\"><i style=\"width:10%\"></i></span></div></div></div>\n<p class=\"diagram-foot\"><strong>Plain English:</strong> Softmax helps show how much chance the AI gives each possible answer. These are example chances, not proof the guess is correct.</p></div>",
+      "options": [
+        "It saves every answer the model has ever given.",
+        "It turns a model’s scores into chances for different choices.",
+        "It makes the AI choose the same answer every time.",
+        "It writes a long explanation for every possible answer."
+      ],
+      "answer": "b",
+      "explanation": "<strong>Correct: B.</strong> Softmax converts numbers from an AI model into chances for its choices. Think of an AI guessing “cat,” “dog,” or “bird.” Softmax can give each one a percentage. The three percentages add up to 100%."
+    },
+    {
+      "tag": "Why it exists",
+      "stem": "Layer 2: Why do AI models need Softmax, and what problem does it solve?",
+      "figure": "<div class=\"diagram\"><span class=\"eyebrow\">02 · The problem it solves</span><h3>Raw scores are not automatically percentages</h3>\n<div class=\"problem-layout\"><div class=\"problem-card raw-problem\"><span class=\"stage-label\">BEFORE</span><strong>Unclear scores</strong><div class=\"unscaled-set\"><span>Choice A <b>3</b></span><span>Choice B <b>2</b></span><span>Choice C <b>1</b></span></div><small>3 + 2 + 1 = 6, not 100%</small></div><div class=\"problem-convert\"><span class=\"convert-circle\">Softmax</span><span class=\"convert-arrow\">→</span></div><div class=\"problem-card clean-problem\"><span class=\"stage-label\">AFTER</span><strong>Comparable chances</strong><div aria-label=\"Choice A 66.5 percent, B 24.5 percent, C 9 percent\" class=\"stacked-distribution\"><span style=\"width:66.5%\">A</span><span style=\"width:24.5%\">B</span><span style=\"width:9%\">C</span></div><div class=\"percentage-key\"><span>A · 66.5%</span><span>B · 24.5%</span><span>C · 9%</span></div><div class=\"one-hundred\">Together = 100%</div></div></div>\n<p class=\"diagram-foot\"><strong>Problem solved:</strong> You can compare choices as one complete set of chances. Softmax does not guarantee the most likely choice is correct.</p></div>",
+      "options": [
+        "Raw scores are not percentages; Softmax makes them comparable chances that add up to 100%.",
+        "It gives the AI more training pictures.",
+        "It makes every AI prediction correct.",
+        "It deletes all choices except the one with the highest score."
+      ],
+      "answer": "a",
+      "explanation": "<strong>Correct: A.</strong> Models produce scores that may be large, small, or negative. You cannot read them directly as percentages. Softmax transforms them into a probability distribution, so the choices can be compared. It does not guarantee accuracy."
+    },
+    {
+      "tag": "Raw scores to chances",
+      "stem": "Layer 3: What are logits, and how does Softmax convert them into probabilities?",
+      "figure": "<div class=\"diagram\"><span class=\"eyebrow\">03 · Meet logits</span><h3>A logit is simply a score before Softmax</h3>\n<div class=\"logit-stage\"><div class=\"logit-raw\"><span class=\"stage-label\">RAW LOGITS</span><div class=\"logit-zero\"><span>−</span><b>0</b><span>+</span></div><div class=\"logit-line\"><strong>Cat</strong><div class=\"logit-rail\"><i style=\"left:50%;width:42%\"></i></div><b>+2.0</b></div><div class=\"logit-line\"><strong>Dog</strong><div class=\"logit-rail\"><i style=\"left:50%;width:21%\"></i></div><b>+1.0</b></div><div class=\"logit-line\"><strong>Bird</strong><div class=\"logit-rail\"><i style=\"left:50%;width:0%\"></i></div><b>0.0</b></div><small>Scores can also be negative.</small></div><div aria-hidden=\"true\" class=\"logit-transform\"><span>Softmax</span><b>→</b></div><div class=\"logit-probs\"><span class=\"stage-label\">PROBABILITIES</span><div class=\"prob-line\"><strong>Cat</strong><div><i style=\"width:66.5%\"></i></div><b>66.5%</b></div><div class=\"prob-line\"><strong>Dog</strong><div><i style=\"width:24.5%\"></i></div><b>24.5%</b></div><div class=\"prob-line\"><strong>Bird</strong><div><i style=\"width:9%\"></i></div><b>9.0%</b></div><small>Now the values total 100%.</small></div></div>\n<p class=\"diagram-foot\"><strong>Remember:</strong> Bigger logit → bigger probability, but <em>2.0 does not mean 200%</em>.</p></div>",
+      "options": [
+        "Logits are already percentages; Softmax only sorts them.",
+        "Logits are words typed by a user; Softmax removes them.",
+        "Logits are raw model scores; Softmax gives higher scores higher chances, totaling 100%.",
+        "Softmax simply adds 10 to every logit to make a percentage."
+      ],
+      "answer": "c",
+      "explanation": "<strong>Correct: C.</strong> A <strong>logit</strong> is a raw score before Softmax. If the logits are <code>[2, 1, 0]</code>, Softmax turns them into approximately <code>[66.5%, 24.5%, 9.0%]</code>. Higher logit means higher probability, but the raw numbers themselves are not percentages."
+    },
+    {
+      "tag": "Worked example",
+      "stem": "Layer 4: How does the Softmax formula work step by step with real numbers?",
+      "figure": "<div class=\"diagram\"><span class=\"eyebrow\">04 · Work through the numbers</span><h3>One calculation, four small steps</h3>\n<div class=\"math-recipe\"><div class=\"math-stage\"><span class=\"number-dot\">1</span><strong>Start with scores</strong><div class=\"math-values\">[ 2, 1, 0 ]</div><small>Cat, Dog, Bird</small></div><div aria-hidden=\"true\" class=\"recipe-down\">↓</div><div class=\"math-stage\"><span class=\"number-dot\">2</span><strong>Use e raised to each score</strong><div class=\"math-values\">[ e², e¹, e⁰ ]</div><div class=\"math-values muted-math\">≈ [ 7.39, 2.72, 1.00 ]</div></div><div aria-hidden=\"true\" class=\"recipe-down\">↓</div><div class=\"math-stage\"><span class=\"number-dot\">3</span><strong>Add the results</strong><div class=\"math-values\">7.39 + 2.72 + 1.00 ≈ <span class=\"accent-num\">11.11</span></div></div><div aria-hidden=\"true\" class=\"recipe-down\">↓</div><div class=\"math-stage final-math\"><span class=\"number-dot\">4</span><strong>Divide each by 11.11</strong><div class=\"math-answers\"><span>Cat <b>66.5%</b></span><span>Dog <b>24.5%</b></span><span>Bird <b>9.0%</b></span></div><div class=\"math-total\">Total ≈ 100%</div></div></div>\n<p class=\"diagram-foot\"><strong>The formula:</strong> softmax(scoreᵢ) = e<sup>scoreᵢ</sup> ÷ (sum of all e<sup>scores</sup>). The rounded values above make the arithmetic easier to follow.</p></div>",
+      "options": [
+        "Add 2 + 1 + 0, then divide each score by 3.",
+        "Find e² ≈ 7.39, e¹ ≈ 2.72, e⁰ = 1; then divide each by their total, about 11.11.",
+        "Give all three choices exactly 33.3%, whatever their scores are.",
+        "Subtract the smallest score from each number and call the results probabilities."
+      ],
+      "answer": "b",
+      "explanation": "<strong>Correct: B.</strong> Step 1: Start with <code>[2, 1, 0]</code>. Step 2: Exponentiate to get about <code>[7.39, 2.72, 1]</code>. Step 3: Add them: <code>11.11</code>. Step 4: Divide each by the total. You get approximately <code>66.5%, 24.5%, 9.0%</code>."
+    },
+    {
+      "tag": "Python &amp; neural nets",
+      "stem": "Layer 5: How is Softmax implemented in Python, and how does it work inside a neural network?",
+      "figure": "<div class=\"diagram\"><span class=\"eyebrow\">05 · From Python code to model output</span><h3>One function call at the end of a classifier</h3>\n<div class=\"python-layout\"><div class=\"code-panel\"><div class=\"code-bar\"><span><i></i><i></i><i></i></span><b>softmax_example.py</b></div><pre><code><span class=\"code-purple\">import</span> torch\n\n<span class=\"code-comment\"># Scores from a model</span>\nscores = torch.tensor([2., 1., 0.])\n\n<span class=\"code-comment\"># Convert scores to chances</span>\nchances = torch.softmax(scores, dim=0)\n<span class=\"code-blue\">print</span>(chances)</code></pre><div class=\"code-out\"><span>OUTPUT</span>tensor([0.6652, 0.2447, 0.0900])</div></div><div class=\"network-track\"><span class=\"stage-label\">INSIDE A CLASSIFIER</span><div class=\"network-step\">Input <small>Picture or text</small></div><div class=\"network-join\">↓</div><div class=\"network-step\">Neural network <small>Learns useful features</small></div><div class=\"network-join\">↓</div><div class=\"network-step\">Final scores <small>Logits: [2, 1, 0]</small></div><div class=\"network-join\">↓</div><div class=\"network-step network-emph\">Softmax <small>Chances: 66.5%, 24.5%, 9%</small></div></div></div>\n<p class=\"diagram-foot\"><strong>Notice:</strong> In this one-dimensional Python example, <code>dim=0</code> means across the three choices. With batched class scores, <code>dim=-1</code> is common.</p></div>",
+      "options": [
+        "Use <code>torch.softmax(scores, dim=0)</code> on the output scores of the classifier.",
+        "Use <code>torch.sum(scores)</code> because adding scores gives probabilities.",
+        "Run Softmax on the picture before any network layers process it.",
+        "Use <code>torch.argmax(scores)</code> to get a probability for every class."
+      ],
+      "answer": "a",
+      "explanation": "<strong>Correct: A.</strong> In PyTorch, <code>torch.softmax(scores, dim=0)</code> turns this one-dimensional score list into probabilities. A simple classifier computes features, makes final class scores, and can then apply Softmax. During training, <code>CrossEntropyLoss</code> normally takes the raw logits directly (it handles the required normalization internally), so do not apply Softmax first."
+    },
+    {
+      "tag": "Transformers &amp; LLMs",
+      "stem": "Layer 6: How is Softmax used in Transformers and LLMs for attention and next-token prediction?",
+      "figure": "<div class=\"diagram\"><span class=\"eyebrow\">06 · Two jobs in a Transformer</span><h3>Softmax is used in two different places</h3>\n<div class=\"transformer-dual\"><div class=\"transformer-panel\"><div class=\"panel-top\"><span class=\"panel-number\">A</span><strong>Inside attention</strong></div><p>Which earlier words should this position focus on?</p><div class=\"heatmap\"><div class=\"heatmap-words\"><span>The</span><span>little</span><span>dog</span><span>ran</span></div><div class=\"heatmap-cells\"><div style=\"--level:.22\">10%</div><div style=\"--level:.36\">15%</div><div style=\"--level:1\">60%</div><div style=\"--level:.3\">15%</div></div></div><span class=\"panel-conclusion\">Softmax → attention weights</span></div><div class=\"transformer-panel\"><div class=\"panel-top\"><span class=\"panel-number\">B</span><strong>At the output</strong></div><p>What token is most likely to come next?</p><div class=\"token-prompt\">“The dog chased the <span class=\"typing-line\">│</span>”</div><div class=\"token-option\"><span>ball</span><i><b style=\"width:75%\"></b></i><strong>75%</strong></div><div class=\"token-option\"><span>cat</span><i><b style=\"width:17%\"></b></i><strong>17%</strong></div><div class=\"token-option\"><span>car</span><i><b style=\"width:8%\"></b></i><strong>8%</strong></div><span class=\"panel-conclusion\">Softmax → next-token chances</span></div></div>\n<p class=\"diagram-foot\"><strong>Same function, different roles:</strong> In attention, weights help combine information from token positions. At the output, probabilities describe candidate next tokens. Numbers are illustrations.</p></div>",
+      "options": [
+        "It is used only to create the first word of a sentence.",
+        "It guarantees that the highest-scoring next token is always selected.",
+        "In attention it makes attention weights; at the output it makes next-token probabilities.",
+        "It is used only during training, not while generating text."
+      ],
+      "answer": "c",
+      "explanation": "<strong>Correct: C.</strong> Transformer <strong>attention</strong> applies Softmax to attention scores to determine how strongly a token attends to positions. Separately, the model produces a logit for each vocabulary token; Softmax can turn those logits into next-token probabilities. A decoder might sample a lower-probability token; Softmax does not force the top one to be chosen."
+    },
+    {
+      "tag": "Training &amp; inference",
+      "stem": "Layer 7: How does Softmax interact with temperature, cross-entropy loss, backpropagation, and numerical stability during LLM training and inference?",
+      "figure": "<div class=\"diagram\"><span class=\"eyebrow\">07 · Advanced connections made simple</span><h3>Four things around Softmax during training and generation</h3>\n<div class=\"advanced-grid\"><div class=\"advanced-tile\"><div class=\"advanced-heading\"><span class=\"adv-icon temp-icon\">↕</span><strong>Temperature</strong></div><p>Changes how strongly the top choice stands out.</p><div class=\"temperature-comparison\"><div><small>Low T</small><span class=\"mini-stacks\"><i style=\"width:85%\"></i><i style=\"width:11%\"></i><i style=\"width:4%\"></i></span></div><div><small>High T</small><span class=\"mini-stacks\"><i style=\"width:46%\"></i><i style=\"width:33%\"></i><i style=\"width:21%\"></i></span></div></div></div>\n<div class=\"advanced-tile\"><div class=\"advanced-heading\"><span class=\"adv-icon loss-icon\">!</span><strong>Cross-entropy loss</strong></div><p>Checks how much probability the model gave the correct answer.</p><div class=\"loss-signal\"><span>Correct word</span><b>Low chance → higher loss</b></div></div>\n<div class=\"advanced-tile\"><div class=\"advanced-heading\"><span class=\"adv-icon back-icon\">↩</span><strong>Backpropagation</strong></div><p>Sends learning signals backward to update model weights.</p><div class=\"feedback-pipe\"><span>Prediction</span><b>←</b><span>Learning signal</span></div></div>\n<div class=\"advanced-tile\"><div class=\"advanced-heading\"><span class=\"adv-icon safe-icon\">✓</span><strong>Numerical stability</strong></div><p>Subtract the largest logit before applying exponentials.</p><div class=\"stable-number\"><s>[1000, 999, 998]</s><b>↓ subtract 1000</b><strong>[0, −1, −2]</strong></div></div></div>\n<p class=\"diagram-foot\"><strong>Key distinction:</strong> Training uses loss and backpropagation to update weights. During text generation, temperature can reshape next-token probabilities. Stable Softmax mathematics matters in both.</p></div>",
+      "options": [
+        "All four ideas simply pick the highest-scoring token.",
+        "Temperature reshapes chances; loss measures error; backprop updates weights; stable math avoids huge-number errors.",
+        "Temperature changes the training data, and cross-entropy replaces backpropagation.",
+        "Temperature trains the model, while backpropagation chooses the next word."
+      ],
+      "answer": "b",
+      "explanation": "<strong>Correct: B.</strong> <strong>Temperature</strong> changes the shape of probabilities during decoding: lower means sharper, higher means flatter. <strong>Cross-entropy loss</strong> measures how poorly a prediction matches the correct token. <strong>Backpropagation</strong> computes gradients so training can update weights. <strong>Numerical stability</strong> prevents overflow by subtracting the largest logit before exponentiation; this leaves Softmax probabilities unchanged. In practical training, loss is computed from logits using a stable implementation."
+    }
+  ],
+  "diagramStyle": null,
+  "sources": "",
+  "footer": "Softmax · 7 exact learning questions · 4 options each · 7 unique diagrams · 15 themes · Works offline"
+}
