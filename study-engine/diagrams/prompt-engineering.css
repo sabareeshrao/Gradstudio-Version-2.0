@@ -1,0 +1,30 @@
+/* Prompt Engineering illustrated-v2: keyword-only visual styling. Shared quiz UI remains in core.css. */
+.pe-hero,.pe-figure{color:#27455c;min-width:0;font-family:inherit}
+.pe-hero{border:1px solid #c8e1e9;border-radius:20px;background:radial-gradient(ellipse at 2% 0%,#dbf4eb,transparent 49%),linear-gradient(127deg,#eef8fc,#fff8ef);padding:clamp(18px,3vw,29px);margin:0 0 25px;box-shadow:0 12px 28px #31587813}
+.pe-hero h2{font-size:clamp(1.25rem,2.65vw,1.86rem);margin:7px 0 8px;line-height:1.2;color:#2a526a}
+.pe-hero p{margin:0 0 17px;color:#587080;font-size:.9rem;line-height:1.6}
+.pe-eyebrow{font-size:.72rem;letter-spacing:.105em;text-transform:uppercase;font-weight:900;color:#268078}
+.pe-figure{padding:clamp(15px,2.8vw,25px);background:radial-gradient(ellipse at 96% 0%,#e8f7ed,transparent 44%),linear-gradient(154deg,#f7fbfe,#fffdf7)}
+.pe-figure h3{font-size:clamp(1.02rem,2vw,1.24rem);font-weight:850;margin:7px 0 16px;color:#284d63;line-height:1.36}
+.pe-note{font-size:.83rem;color:#5e7486;line-height:1.65;margin:14px 0 0}
+.pe-scene{max-width:100%;overflow-x:auto;overflow-y:hidden;background:#fff;border:1px solid #d4e5ec;border-radius:13px;scrollbar-color:#b7ced9 transparent}
+.pe-svg{display:block;width:100%;height:auto;min-width:715px;max-width:none}
+.pe-hero .pe-svg{min-width:735px}
+.pe-scene svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.pe-code-grid{display:grid;grid-template-columns:minmax(0,1.24fr) minmax(0,.76fr);gap:13px}
+.pe-editor{border-radius:13px;overflow:hidden;min-width:0;border:1px solid #344b62;background:#16273c;box-shadow:0 10px 23px #213c501e}
+.pe-editor-head{background:#243951;color:#d7e6f5;padding:11px 14px;font-size:.75rem;font-weight:800;display:flex;gap:9px;align-items:center}
+.pe-editor-head i{font-style:normal;letter-spacing:3px;color:#f3b28b}
+.pe-editor-head b{margin-left:auto;color:#9bd6c1;font-size:.7rem}
+.pe-editor pre{margin:0;max-width:100%;overflow:auto;white-space:pre;tab-size:4;padding:14px 17px 19px;font-size:clamp(.63rem,1.16vw,.77rem);line-height:1.64;color:#e5effa}
+.pe-editor code{background:none;border:0;font:inherit;color:inherit;padding:0}
+.pe-code-inspector{min-width:0;border:1px solid #d6e6ec;border-radius:13px;padding:12px;background:#fff;display:flex;flex-direction:column;justify-content:center}
+.pe-code-inspector .pe-svg{min-width:345px}
+.pe-code-caption{font-size:.78rem;color:#5b7386;margin:12px 0 0;line-height:1.6}
+.pe-sources{margin:24px 0 10px;background:#fff;border:1px solid #d7e4ec;border-radius:12px;padding:14px 18px;font-size:.83rem;color:#607789}
+.pe-sources summary{cursor:pointer;font-weight:850;color:#2f657a}
+.pe-sources a{color:#146f97}
+@media(max-width:870px){.pe-code-grid{grid-template-columns:1fr}.pe-editor pre{font-size:.75rem}.pe-code-inspector{display:grid;grid-template-columns:minmax(0,1fr) minmax(140px,.6fr);align-items:center;gap:12px}.pe-code-caption{margin:0}}
+@media(max-width:650px){.pe-hero{padding:17px 12px}.pe-figure{padding:16px 11px}.pe-svg,.pe-hero .pe-svg{min-width:680px}.pe-code-inspector{display:block}.pe-code-caption{margin:11px 0 0}.pe-editor pre{font-size:.69rem}}
+@media(max-width:380px){.pe-editor pre{font-size:.63rem;padding:11px}}
+@media(prefers-reduced-motion:reduce){.pe-hero *,.pe-figure *{transition:none!important;animation:none!important}}
