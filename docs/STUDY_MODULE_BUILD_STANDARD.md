@@ -107,9 +107,10 @@ The original root `index.html` includes a distinctive illustrated hero titled "F
 
 ### 3.3 Fight answer-length bias and guessing shortcuts
 
-- Keep the four options **similar in visual size and complexity**. Target longest/shortest word-count ratio **no greater than 1.4**, where the subject allows it.
+- Keep the four options **similar in visual size and complexity**. For new hosted keyword modules, target longest/shortest word-count ratio **no greater than 1.15**, where clarity allows it, and normally keep choices within **1–2 words** of each other. Do not pad or distort technical correctness to satisfy a metric.
 - A useful starting range is roughly **12–25 words per option**, but correctness takes priority over any mechanical word limit.
 - Never make the correct choice consistently longest, most qualified, boldest, or most technical.
+- **Mandatory pre-publish answer-length audit:** programmatically count words and visible characters for A–D on every card. Check whether the correct answer is uniquely the longest by words **or rendered-text characters**. Redesign whenever this becomes a recurring clue; for seven-question modules the target is **zero** such cards. The learner should not be able to guess the key from relative option length. Preserve one technically defensible best answer and the user's exact question stem. The same audit applies to new keyword JSON files in `study-engine/modules/`.
 - Do not use "always," "never," "only," "obviously," "all of the above," or "none of the above" as a cheap giveaway.
 - Avoid three implausible statements plus one sensible statement.
 - Keep grammatical structure parallel where possible.
