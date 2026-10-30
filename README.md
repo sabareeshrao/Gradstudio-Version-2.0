@@ -9,7 +9,7 @@
 - **[Ranked keyword index](KEYWORD_INDEX.md)** — complete 265-keyword curriculum in PDF order, with progress and working lesson links.
 - **[Original ranked PDF](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf)** — authoritative keyword names, topics, and ranking.
 - **[Question registry](QUESTION_REGISTRY.md)** — 120 published questions; use for strict semantic no-repetition checks.
-- **[Instructions for AI builders](AGENTS.md)** · [Quality and build standard](docs/STUDY_MODULE_BUILD_STANDARD.md) · [Theme guide](docs/THEME_GUIDE.md)
+- **[Instructions for AI builders](AGENTS.md)** · [Visual gold standard — original Multimodal diagrams](docs/VISUAL_GOLD_STANDARD.md) · [Quality and build standard](docs/STUDY_MODULE_BUILD_STANDARD.md) · [Theme guide](docs/THEME_GUIDE.md)
 
 ### Completed modules
 
@@ -57,7 +57,7 @@ Gradstudio-Version-2.0/
 
 ### Future modules
 
-Put **new complete HTML files** inside the corresponding `lessons/<topic>/` folder. Read the [build standard](docs/STUDY_MODULE_BUILD_STANDARD.md), compare against the [question registry](QUESTION_REGISTRY.md) to avoid repeats (even if wording changes), then update the [central index](KEYWORD_INDEX.md) and registry.
+Put **new complete HTML files** inside the corresponding `lessons/<topic>/` folder. Inspect the [seven original Multimodal diagrams](index.html) and [visual gold standard](docs/VISUAL_GOLD_STANDARD.md) before designing: all eight figures must have distinct compositions, not repeated text boxes. Read the [build standard](docs/STUDY_MODULE_BUILD_STANDARD.md), compare against the [question registry](QUESTION_REGISTRY.md) to avoid repeats (even if wording changes), then update the [central index](KEYWORD_INDEX.md) and registry.
 
 **Existing preview URLs remain compatible:** the Pages workflow publishes full copies of each self-contained HTML lesson at their original root URLs, even though the GitHub source files now live in topic folders. The former root **GitHub source-code URLs** are no longer the canonical locations; use the updated links above.
 
