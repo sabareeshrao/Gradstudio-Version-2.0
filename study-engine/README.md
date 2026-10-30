@@ -28,7 +28,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 2. Author four understandable, credible options per question, one best answer, and a concise explanation.
 3. Design a **different instructional diagram for every question**, plus a bespoke intro illustration. No repeated generic box-and-arrow layouts.
 4. Add `modules/new-keyword.json`; add `diagrams/new-keyword.css` if needed. Add a manifest entry.
-5. Validate diagrams on mobile and desktop, correct answers, themes and buttons. Link to `?module=new-keyword` after the Pages deployment succeeds.
+5. Run `node study-engine/verify-module-options.mjs` before publishing: four answers per card, options within a 1.15 word-count ratio, and no correct option uniquely longest by words or visible characters. This test also runs in the Pages workflow. Validate diagrams on mobile and desktop, correctness, themes and buttons. Link to `?module=new-keyword` after Pages deployment succeeds.
 6. For offline export, assemble a separate standalone HTML file. **The GitHub Pages version intentionally uses shared assets and is not file:// portable.**
 
 The migrated Softmax, Masking and Positional Encoding questions and diagrams come from the prior seven-layer pages; their unique graphics are preserved instead of being re-generated as generic templates.
