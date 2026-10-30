@@ -49,6 +49,11 @@
       "slug": "neural-network",
       "title": "Neural Network",
       "domain": "Artificial Neural Networks"
+    },
+    {
+      "slug": "backpropagation",
+      "title": "Backpropagation",
+      "domain": "Neural Network Training and Gradient Computation · Artificial Intelligence / Machine Learning / Deep Learning"
     }
   ]
 }
