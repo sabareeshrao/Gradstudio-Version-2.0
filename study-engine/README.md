@@ -26,7 +26,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 - `diagrams/<slug>.css`: **unique** styling required by that keyword's illustrated scenes. Softmax needs no additional sheet because its original styles are the base.
 
 ## Workflow for every future keyword
-1. Preserve user-provided questions **verbatim** and their exact count.
+1. Keep the user's question wording and exact count, but remove redundant leading `Layer 1:`, `Layer 2:`, etc. labels from stored `stem` values. Display quiz question numbers only as `Q1`, `Q2`, ...; do not repeat layer labels in the question. Leave legitimate technical uses of the word “layer” untouched.
 2. Author four understandable, credible options per question, one best answer, and a concise explanation.
 3. Design a **different instructional diagram for every question**, plus a bespoke intro illustration. No repeated generic box-and-arrow layouts.
 4. Add `modules/new-keyword.json`; add `diagrams/new-keyword.css` if needed. Add a manifest entry.
