@@ -30,6 +30,8 @@ jobs:
           node-version: '22'
       - name: Reject answer-length bias in all study modules
         run: node study-engine/verify-module-options.mjs
+      - name: Reject generic or repeated diagrams in new study modules
+        run: node study-engine/verify-diagram-quality.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Build website and preserve existing browser links
