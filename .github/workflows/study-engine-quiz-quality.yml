@@ -1,0 +1,24 @@
+name: Study Module Quiz Quality
+on:
+  push:
+    paths:
+      - 'study-engine/modules/**'
+      - 'study-engine/check-option-bias.mjs'
+      - '.github/workflows/study-engine-quiz-quality.yml'
+  pull_request:
+    paths:
+      - 'study-engine/modules/**'
+      - 'study-engine/check-option-bias.mjs'
+      - '.github/workflows/study-engine-quiz-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  answer-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate quiz answers
+        run: node study-engine/check-option-bias.mjs
