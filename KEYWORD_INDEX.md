@@ -1,41 +1,41 @@
 # LLM Foundations — ranked keyword module index
 
-> **Canonical curriculum index.** Follow the PDF's original rank order exactly. The PDF is the source for the keyword, topic, tier, and rank; this index tracks module completion and offers separate links to the **running browser preview** and the **GitHub source code**. Read [AGENTS.md](AGENTS.md), [STUDY_MODULE_BUILD_STANDARD.md](STUDY_MODULE_BUILD_STANDARD.md), and [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md) before generating the next keyword.
+> **Canonical curriculum index.** Follow the PDF's original rank order exactly. The PDF is the source for the keyword, topic, tier, and rank; this index tracks module completion and offers separate links to the **running browser preview** and the **GitHub source code**. Read [AGENTS.md](AGENTS.md), [STUDY_MODULE_BUILD_STANDARD.md](docs/STUDY_MODULE_BUILD_STANDARD.md), and [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md) before generating the next keyword.
 
 **Ranked PDF (identical source file):** [Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf)
 
 **Source inventory:** 265 ranked keywords, 54 Essential, 105 High, 91 Specialized, 15 Peripheral. Ranking is editorial guidance from the PDF, not an order supplied by the textbook itself.
 
-**Progress:** 5 / 265 completed. **Next unbuilt rank:** 006 — Pretraining.
+**Progress:** 15 / 265 completed. **Next unbuilt rank:** 016 — Context length.
 
 ## Rules for future builds
 
 1. Follow rank 001 → 265; use the earliest **pending** rank unless the user names a different rank or keyword. The user's explicitly requested keyword takes priority.
 2. Check the matching PDF row for its exact **Keyword**, **Topic**, **Importance**, and **Rank**. Preserve that spelling and domain in the module.
 3. Read every existing question in [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md) and perform a **semantic no-repetition audit**; rephrasing a past question does not make it new.
-4. Build an independent eight-MCQ monolithic HTML file per keyword under the approved Multimodal-style template. Do not overwrite unrelated lessons or the homepage.
-5. After verification, add BOTH links for each Complete row: a **Browser preview** using GitHub Pages (`https://sabareeshrao.github.io/Gradstudio-Version-2.0/<filename>.html`) and **View HTML source** using the repository-relative `.html` filename. Never label a GitHub blob/source view as a browser preview. Check preview availability and report if deployment is not independently verified. Append the new questions/competencies to the question registry.
+4. Build an independent eight-MCQ monolithic HTML file under `lessons/<topic>/`, following the approved Multimodal-style template. Do not overwrite unrelated lessons or the homepage.
+5. After verification, add BOTH links for each Complete row: a **Browser preview** using GitHub Pages (`https://sabareeshrao.github.io/Gradstudio-Version-2.0/<filename>.html`) and **View HTML source** using the correct repository-relative `lessons/<topic>/<filename>.html` path. Never label a GitHub blob/source view as a browser preview. Check preview availability and report if deployment is not independently verified. Append the new questions/competencies to the question registry.
 6. Never reorder, renumber, merge, drop, or fill in a ranked keyword from memory. The PDF stays authoritative. If the source PDF changes, reconcile the entire table explicitly.
 
 ## Complete ranked inventory
 
 | Rank | Technical keyword | Topic | Importance | Status | Browser preview | HTML source |
 |---:|---|---|---|---|---|---|
-| 001 | Large language models (LLMs) | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Large-Language-Models-LLMs-Keyword-Study-008.html) | [View HTML source](Large-Language-Models-LLMs-Keyword-Study-008.html) |
-| 002 | Generative Pre-trained Transformer (GPT) | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/GPT-LLM-Foundation-Keyword-Study-008.html) | [View HTML source](GPT-LLM-Foundation-Keyword-Study-008.html) |
-| 003 | Transformer architecture | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Transformer-Architecture-Keyword-Study-008.html) | [View HTML source](Transformer-Architecture-Keyword-Study-008.html) |
-| 004 | Generative artificial intelligence (GenAI) | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Generative-AI-GenAI-Keyword-Study-008.html) | [View HTML source](Generative-AI-GenAI-Keyword-Study-008.html) |
-| 005 | Autoregressive language modeling | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Autoregressive-Language-Modeling-Keyword-Study-008.html) | [View HTML source](Autoregressive-Language-Modeling-Keyword-Study-008.html) |
-| 006 | Pretraining | LLM Foundations | Essential | Pending | — | — |
-| 007 | Fine-tuning | LLM Foundations | Essential | Pending | — | — |
-| 008 | Foundation models | LLM Foundations | Essential | Pending | — | — |
-| 009 | Language model training objectives | LLM Foundations | Essential | Pending | — | — |
-| 010 | Tokenization | Text Processing | Essential | Pending | — | — |
-| 011 | Byte pair encoding (BPE) | Text Processing | Essential | Pending | — | — |
-| 012 | Token IDs | Text Processing | Essential | Pending | — | — |
-| 013 | Token embeddings | Text Processing | Essential | Pending | — | — |
-| 014 | Word embeddings | Text Processing | Essential | Pending | — | — |
-| 015 | Positional embeddings | Text Processing | Essential | Pending | — | — |
+| 001 | Large language models (LLMs) | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Large-Language-Models-LLMs-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/Large-Language-Models-LLMs-Keyword-Study-008.html) |
+| 002 | Generative Pre-trained Transformer (GPT) | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/GPT-LLM-Foundation-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html) |
+| 003 | Transformer architecture | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Transformer-Architecture-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/Transformer-Architecture-Keyword-Study-008.html) |
+| 004 | Generative artificial intelligence (GenAI) | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Generative-AI-GenAI-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/Generative-AI-GenAI-Keyword-Study-008.html) |
+| 005 | Autoregressive language modeling | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Autoregressive-Language-Modeling-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/Autoregressive-Language-Modeling-Keyword-Study-008.html) |
+| 006 | Pretraining | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Pretraining-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/Pretraining-Keyword-Study-008.html) |
+| 007 | Fine-tuning | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Fine-tuning-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/Fine-tuning-Keyword-Study-008.html) |
+| 008 | Foundation models | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Foundation-models-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/Foundation-models-Keyword-Study-008.html) |
+| 009 | Language model training objectives | LLM Foundations | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Language-model-training-objectives-Keyword-Study-008.html) | [View HTML source](lessons/llm-foundations/Language-model-training-objectives-Keyword-Study-008.html) |
+| 010 | Tokenization | Text Processing | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Tokenization-Keyword-Study-008.html) | [View HTML source](lessons/text-processing/Tokenization-Keyword-Study-008.html) |
+| 011 | Byte pair encoding (BPE) | Text Processing | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Rank-011-Byte-Pair-Encoding-BPE-Keyword-Study-008.html) | [View HTML source](lessons/text-processing/Rank-011-Byte-Pair-Encoding-BPE-Keyword-Study-008.html) |
+| 012 | Token IDs | Text Processing | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Rank-012-Token-IDs-Keyword-Study-008.html) | [View HTML source](lessons/text-processing/Rank-012-Token-IDs-Keyword-Study-008.html) |
+| 013 | Token embeddings | Text Processing | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Rank-013-Token-Embeddings-Keyword-Study-008.html) | [View HTML source](lessons/text-processing/Rank-013-Token-Embeddings-Keyword-Study-008.html) |
+| 014 | Word embeddings | Text Processing | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Rank-014-Word-Embeddings-Keyword-Study-008.html) | [View HTML source](lessons/text-processing/Rank-014-Word-Embeddings-Keyword-Study-008.html) |
+| 015 | Positional embeddings | Text Processing | Essential | Complete | [Preview in browser](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Rank-015-Positional-Embeddings-Keyword-Study-008.html) | [View HTML source](lessons/text-processing/Rank-015-Positional-Embeddings-Keyword-Study-008.html) |
 | 016 | Context length | Text Processing | Essential | Pending | — | — |
 | 017 | Special context tokens | Text Processing | Essential | Pending | — | — |
 | 018 | Attention mechanisms | Transformer Attention | Essential | Pending | — | — |
@@ -290,5 +290,7 @@
 ---
 
 **Preview vs source:** **Preview in browser** is the GitHub Pages address where the interactive lesson should render; **View HTML source** opens the complete file on GitHub (code view). Pages previews are subject to deployment and were not browser-verified in this update. If the preview is unavailable, download the raw `.html` file and open it in a browser. Do not mark previews as verified without checking them.
+
+**Repository organization:** Source files now live in `lessons/llm-foundations/`, `lessons/text-processing/`, or `lessons/api-design/`. Pages publishing retains the historical flat preview URLs with full HTML copies. New modules must be added inside topic folders, with updated links here and in `QUESTION_REGISTRY.md`.
 
 **Maintenance note:** This list is rank-ordered, not grouped alphabetically. Only a verified, committed HTML file should be labeled Complete. A missing lesson remains Pending even if its questions have been drafted. Always preserve source PDF and update this index and the question registry together.
