@@ -1,6 +1,6 @@
 # Gradstudio — AI Module Build & Quality Standard
 
-**Version:** 1.2  
+**Version:** 1.3  
 **Status:** Required standard for future keyword-study modules  
 **Repository:** https://github.com/sabareeshrao/Gradstudio-Version-2.0  
 **Audience:** Any AI assistant, coding agent, developer, reviewer, or maintainer creating or fixing a module.
@@ -27,8 +27,8 @@ Never “fix,” summarize, simplify, or paraphrase supplied question wording un
 | Repository path | Use | Important limitation |
 |---|---|---|
 | `index.html` | Original Multimodal Training visual design: page width, question card, ordinary circular radio inputs, score/progress/reset behavior, sticky header, and 15-theme selector | This source may reference separate Concept Lab files. Do **not** deliver a module with those dependencies. |
-| `Web-API-Keyword-Study-008.html` | Corrected standalone baseline for options, responsive figures, diagrams, and the **small SVG icon sizing repair** | Web API content is an example, not content to copy to unrelated topics. |
-| `GPT-LLM-Foundation-Keyword-Study-008.html` | Example of topic-specific questions, explanatory diagrams, and small interactive demonstrations | Do not copy GPT content, interaction scenarios, or illustrative probabilities into other topics. |
+| `lessons/api-design/Web-API-Keyword-Study-008.html` | Corrected standalone baseline for options, responsive figures, diagrams, and the **small SVG icon sizing repair** | Web API content is an example, not content to copy to unrelated topics. |
+| `lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html` | Example of topic-specific questions, explanatory diagrams, and small interactive demonstrations | Do not copy GPT content, interaction scenarios, or illustrative probabilities into other topics. |
 | `THEME_GUIDE.md` | Authoritative names and IDs of the 15 existing palettes | Do not silently add, rename, duplicate, or delete themes. |
 | `TEMPLATE_RULES.md` | Quick compatibility checklist linking to this full standard | This document takes precedence if older text conflicts. |
 
@@ -283,8 +283,8 @@ Clicking **Download Raw** from GitHub or saving the standalone file and opening 
 ### 6.1 File naming and version integrity
 
 Use stable, readable names such as:
-- `Web-API-Keyword-Study-008.html`
-- `GPT-LLM-Foundation-Keyword-Study-008.html`
+- `lessons/api-design/Web-API-Keyword-Study-008.html`
+- `lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html`
 - `<Keyword-Slug>-Keyword-Study-008.html` for a new eight-question module
 
 Choose a safe slug and avoid collisions. If revising an existing module, update that same file when the user asks to improve it; don't proliferate ambiguous “v2-final-fixed-new” variants. Keep prior standalone backups intact unless the user explicitly asks to replace or remove them.
@@ -299,10 +299,10 @@ Escape user-provided text before adding it to HTML. Prevent untrusted question t
 
 The repository contains a **canonical ranked keyword curriculum**:
 
-- [KEYWORD_INDEX.md](KEYWORD_INDEX.md): the **single central file** listing every keyword in rank order, with importance, exact topic, completion status, and clickable links to completed standalone HTML files.
-- [references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf): an **identical copy of the ranked 265-term PDF** used as the source of truth.
-- [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md): the existing exact MCQ stems for semantic no-repetition checks, with links back to their HTML modules.
-- [README.md](README.md): repository landing page pointing to all three.
+- [KEYWORD_INDEX.md](../KEYWORD_INDEX.md): the **single central file** listing every keyword in rank order, with importance, exact topic, completion status, and clickable links to completed standalone HTML files.
+- [references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](../references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf): an **identical copy of the ranked 265-term PDF** used as the source of truth.
+- [QUESTION_REGISTRY.md](../QUESTION_REGISTRY.md): the existing exact MCQ stems for semantic no-repetition checks, with links back to their HTML modules.
+- [README.md](../README.md): repository landing page pointing to all three.
 
 **Required AI workflow for any future keyword:**
 
@@ -313,9 +313,17 @@ The repository contains a **canonical ranked keyword curriculum**:
 5. **Immediately after a successful module commit**, update the matching row in `KEYWORD_INDEX.md` from Pending → Complete, add its verified relative HTML link, append the question stems and lesson link to `QUESTION_REGISTRY.md`, and update completion counts and the next pending rank in both the central index and README.
 6. **Never** silently delete old rows, duplicate ranks, change the canonical 265-term order, or substitute guesses for source PDF content. If the PDF is updated, audit changed ranks and regenerate the list with an explicit reconciliation.
 7. If the index and PDF disagree, pause the index edit, inspect the actual PDF rank and reconcile the discrepancy before claiming completion. If the question registry lacks a published module, backfill it before generating further content.
-8. Use relative GitHub links to actual committed files; keep filenames stable. The central index is the human/AI navigation source, not a separate runtime dependency of standalone HTML modules.
+8. Use root-relative GitHub links to actual committed files under `lessons/<topic>/`; keep filenames stable. The central index is the human/AI navigation source, not a separate runtime dependency of standalone HTML modules.
 
 **Hard-fail rule:** A new lesson is **not fully delivered** if its HTML was pushed but the central ranked index and exact-question registry were not updated. Conversely, an index link is not valid until the HTML file exists.
+
+## 6.4 Repository layout and preview compatibility
+
+The canonical full HTML files live in `lessons/llm-foundations/`, `lessons/text-processing/` and `lessons/api-design/`, not at repository root. Build guidelines live in `docs/`, reference PDF in `references/`, theme examples in `templates/`, and the early prototype in `archive/`. Keep `index.html`, `lab-v3.css` and `lab-v3.js` at root because the original homepage depends on those paths.
+
+The GitHub Pages workflow publishes the full lesson HTML at BOTH its nested URL and its previous flat root browser URL by copying files into a deployment-only staging directory. Thus existing Pages preview bookmarks remain supported. Old GitHub code viewer `blob/main/<filename>.html` URLs cannot redirect: update source links to `blob/main/lessons/<topic>/<filename>.html`.
+
+After every new module, update `../KEYWORD_INDEX.md` and `../QUESTION_REGISTRY.md` with the new `lessons/<topic>/` source link and the unchanged root-style Pages preview URL. Never create manual root duplicates of the HTML: the Pages workflow performs that compatibility copy.
 
 ## 7. Required build workflow for every keyword
 
