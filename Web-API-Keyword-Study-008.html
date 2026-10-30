@@ -559,6 +559,55 @@ body{transition:background-color .15s}
 @media(max-width:590px){.api-shop-top>div{display:none}.api-shop-items{gap:7px;padding:9px}.api-art{height:83px}.api-shop-route{flex-wrap:wrap}.api-shop-route code{flex:1 1 100%;margin-left:40px}.api-error-response{grid-template-columns:1fr}}
 @media(max-width:400px){.api-shop-items{grid-template-columns:1fr}.api-shop-item{grid-template-columns:92px 1fr;align-items:center}.api-art{grid-row:span 2;height:73px}.api-errors{grid-template-columns:1fr}.api-error-tile{min-height:110px}}
 
+
+.api-timeout-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}
+.api-timeout-heading>span{display:flex;align-items:center;gap:6px;padding:7px 10px;border-radius:8px;background:#edf2f5;color:#4b7185;font-size:.73rem}
+.api-timeout-heading>span .api-icon{width:18px;height:18px}
+.api-timeout-heading>b{font-size:.79rem}
+.api-retry-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.api-retry-lane{min-width:0;padding:14px;background:#fff;border:1px solid #d4e0e7;border-radius:12px}
+.api-retry-lane.unsafe{border-color:#e7bbb3}.api-retry-lane.safe{border-color:#9fd0bb}
+.api-retry-lane-head b,.api-retry-lane-head small{display:block}
+.api-retry-lane-head b{font-size:.72rem;letter-spacing:.03em}.api-retry-lane-head small{font-size:.69rem;color:#6d8190;margin:4px 0 13px}
+.api-retry-row{display:flex;align-items:center;gap:8px}
+.api-retry-node{display:grid;justify-items:center;align-content:center;text-align:center;gap:6px;flex:1;min-width:0;min-height:109px;border-radius:9px;background:#f1f7fa;padding:9px 6px}
+.api-retry-node .api-icon{color:#4689a0;width:24px;height:24px}
+.api-retry-node>b{font-size:.7rem}.api-retry-node small{font-size:.65rem;color:#6e8190;overflow-wrap:anywhere}
+.api-right-arrow{font-size:1.3rem;color:var(--accent);font-weight:900}
+.api-retry-break{display:flex;align-items:center;justify-content:center;gap:7px;font-size:.69rem;color:#7e6d77;margin:10px 0;text-align:center}
+.api-retry-break .api-icon{width:15px;height:15px;flex:none}
+.api-retry-result{display:flex;align-items:center;justify-content:center;gap:7px;border-radius:8px;padding:10px;margin-top:13px;font-size:.72rem;font-weight:850;text-align:center}
+.api-retry-result .api-icon{width:18px;height:18px}
+.api-retry-result.unsafe{color:#a94042;background:#ffe9e7}
+.api-retry-result.safe{color:#176e50;background:#e3f7ec}
+.api-architecture{display:grid;justify-items:center;gap:5px}
+.api-arch-clients,.api-arch-gateway{width:min(100%,540px);background:#fff;border:1px solid #b8d3dc;border-radius:12px;padding:12px 16px}
+.api-arch-clients{display:flex;align-items:center;gap:11px}
+.api-arch-symbol{display:grid;place-items:center;width:40px;height:40px;background:#e4f1f7;color:#36778f;border-radius:10px}
+.api-arch-clients>div{flex:1}
+.api-arch-clients b,.api-arch-clients small,.api-arch-gateway b,.api-arch-gateway small{display:block}
+.api-arch-clients b,.api-arch-gateway b{font-size:.84rem}
+.api-arch-clients small,.api-arch-gateway small{font-size:.71rem;color:#6d8190}
+.api-arch-clients>strong{font-size:.69rem;color:#50869a}
+.api-arch-arrow{font-size:1.45rem;line-height:1.1;font-weight:850;color:#4b9da6}
+.api-arch-gateway{background:#e8f5f5;display:grid;gap:10px}
+.api-arch-gateway>div{display:flex;align-items:center;justify-content:center;gap:11px}
+.api-arch-gateway>div>.api-icon{width:28px;height:28px;color:#368488}
+.api-arch-gateway footer{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.api-arch-gateway footer span{padding:5px 11px;background:#fff;border:1px solid #add1d1;border-radius:7px;color:#437785;font-size:.66rem;font-weight:850;letter-spacing:.04em}
+.api-arch-services,.api-arch-foundation{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;width:100%}
+.api-arch-services>div,.api-arch-foundation>div{display:grid;align-content:center;justify-items:center;text-align:center;gap:5px;min-height:105px;padding:12px;border:1px solid #cddfe5;background:#fff;border-radius:12px}
+.api-arch-services>div>span{color:#46899d}
+.api-arch-services b,.api-arch-foundation b{font-size:.79rem}
+.api-arch-services small,.api-arch-foundation small{font-size:.69rem;color:#67808d}
+.api-arch-foundation>div{background:#f1f8f9;min-height:90px}
+.api-arch-foundation>div>.api-icon{color:#4e91a2}
+.api-arch-foot{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:12px;width:100%}
+.api-arch-foot span{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #cadce3;border-radius:9px;padding:9px 12px;color:#456d82;font-size:.74rem;font-weight:800}
+.api-arch-foot .api-icon{width:18px;height:18px}
+@media(max-width:640px){.api-retry-compare{grid-template-columns:1fr}.api-arch-foot span{width:100%}}
+@media(max-width:400px){.api-arch-services,.api-arch-foundation{gap:5px}.api-arch-services>div,.api-arch-foundation>div{padding:10px 5px}.api-arch-services b,.api-arch-foundation b{font-size:.7rem}.api-arch-clients>strong{display:none}}
+
 </style></head><body><div class="topbar">
   <div class="topbar-inner">
     <div class="brand">Web API Study<small>Software Engineering · API Design</small></div>
@@ -714,7 +763,20 @@ body{transition:background-color .15s}
 <div class="explanation"><strong>Correct: C.</strong> Use status codes to identify the problem: 400 for an invalid request, 401 when authentication is needed, 404 for a missing resource, and 500 for an unexpected server failure. Keep one predictable error shape, with fields such as code and message. Never send passwords, stack traces, or internal secrets to clients.</div></div>
 <div class="question" id="question-7" data-answer="b">
 <div class="q-head"><span class="q-badge">Q7</span><span class="q-tag">SMART-LEVEL REASONING</span></div>
-<div class="q-fig" id="figure-7"><div class="diagram"><div class="section-kicker">07 / VISUAL STUDY</div><p class="diagram-foot">Diagram will be inserted.</p></div></div>
+<div class="q-fig" id="figure-7"><div class="diagram api-diagram" role="group" aria-label="Comparison of unsafe retries that duplicate an order with an idempotency-key protected retry"><div class="section-kicker">07 / REAL WORLD RELIABILITY</div><h3 class="api-title">The response is lost—but the order may already exist</h3>
+<div class="api-timeout-heading"><span><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> The client times out</span><b>What happens if checkout is repeated?</b></div>
+<div class="api-retry-compare">
+<div class="api-retry-lane unsafe"><div class="api-retry-lane-head"><b>WITHOUT RETRY PROTECTION</b><small>Each request creates a new order</small></div>
+<div class="api-retry-row"><div class="api-retry-node"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h2l3 12h12l3-9H5M9 21h.01M19 21h.01"/></svg><b>POST /orders</b><small>First attempt</small></div><span class="api-right-arrow">→</span><div class="api-retry-node"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="8" rx="2"/><rect x="3" y="13" width="18" height="8" rx="2"/><path d="M8 7h.01M12 7h6M8 17h.01M12 17h6"/></svg><b>Order #741</b><small>Created</small></div></div>
+<div class="api-retry-break"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> Response lost. Client retries.</div>
+<div class="api-retry-row"><div class="api-retry-node"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4v6h-6M4 20v-6h6M6 10a7 7 0 0 1 12-4l2 4M4 14l2 4a7 7 0 0 0 12-4"/></svg><b>POST /orders</b><small>Second attempt</small></div><span class="api-right-arrow">→</span><div class="api-retry-node"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="8" rx="2"/><rect x="3" y="13" width="18" height="8" rx="2"/><path d="M8 7h.01M12 7h6M8 17h.01M12 17h6"/></svg><b>Order #742</b><small>Created again</small></div></div>
+<div class="api-retry-result unsafe"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg> Two orders for one checkout</div></div>
+<div class="api-retry-lane safe"><div class="api-retry-lane-head"><b>WITH AN IDEMPOTENCY KEY</b><small>The same key identifies one attempt</small></div>
+<div class="api-retry-row"><div class="api-retry-node"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h2l3 12h12l3-9H5M9 21h.01M19 21h.01"/></svg><b>POST /orders</b><small>Key: checkout-abc</small></div><span class="api-right-arrow">→</span><div class="api-retry-node"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="8" rx="2"/><rect x="3" y="13" width="18" height="8" rx="2"/><path d="M8 7h.01M12 7h6M8 17h.01M12 17h6"/></svg><b>Order #741</b><small>Key + result saved</small></div></div>
+<div class="api-retry-break"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg> Response lost. Same key retried.</div>
+<div class="api-retry-row"><div class="api-retry-node"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4v6h-6M4 20v-6h6M6 10a7 7 0 0 1 12-4l2 4M4 14l2 4a7 7 0 0 0 12-4"/></svg><b>POST /orders</b><small>Key: checkout-abc</small></div><span class="api-right-arrow">→</span><div class="api-retry-node"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg><b>Order #741</b><small>Original result reused</small></div></div>
+<div class="api-retry-result safe"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-11"/></svg> One order, even after retry</div></div></div>
+<p class="diagram-foot">The server must store and enforce the idempotency key safely, even if two matching requests arrive at nearly the same moment.</p></div></div>
 <p class="q-text">7. A client sends a request to create an order, but the connection times out before the response arrives. How would you design the Web API to handle retries safely without accidentally creating duplicate orders?</p>
 <label><input type="radio" name="q7" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Tell the client not to retry, because a timeout always means the server rejected the first request.</span></label>
 <label><input type="radio" name="q7" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Accept an idempotency key, remember its first result, and return that result when the same request is retried.</span></label>
@@ -723,7 +785,23 @@ body{transition:background-color .15s}
 <div class="explanation"><strong>Correct: B.</strong> A timeout does not prove the order failed; the server might have saved it before the connection ended. The client sends an idempotency key with the create-order request. The server records the key and result. If that request is repeated, it returns the same outcome instead of creating another order.</div></div>
 <div class="question" id="question-8" data-answer="d">
 <div class="q-head"><span class="q-badge">Q8</span><span class="q-tag">INTERVIEW QUESTION</span></div>
-<div class="q-fig" id="figure-8"><div class="diagram"><div class="section-kicker">08 / VISUAL STUDY</div><p class="diagram-foot">Diagram will be inserted.</p></div></div>
+<div class="q-fig" id="figure-8"><div class="diagram api-diagram" role="group" aria-label="Layered high-traffic e-commerce Web API architecture including clients, security, services, storage, caching and monitoring"><div class="section-kicker">08 / ENGINEERING DESIGN INTERVIEW</div><h3 class="api-title">A production Web API needs more than endpoints</h3>
+<div class="api-architecture">
+<div class="api-arch-clients"><span class="api-arch-symbol"><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m1 4a5 5 0 0 1 4 5"/></svg></span><div><b>Thousands of customers</b><small>Mobile apps · Browsers · Partner clients</small></div><strong>Traffic</strong></div>
+<div class="api-arch-arrow">↓</div>
+<div class="api-arch-gateway"><div><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3 9 8 11 5-2 8-6 8-11V5Z"/><path d="m8 12 3 3 5-6"/></svg><span><b>API gateway</b><small>Authentication, routing, rate limiting, TLS</small></span></div><footer><span>AUTH</span><span>RATE LIMITS</span><span>HTTPS</span></footer></div>
+<div class="api-arch-arrow">↓</div>
+<div class="api-arch-services">
+<div><span><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h2l3 12h12l3-9H5M9 21h.01M19 21h.01"/></svg></span><b>Product API</b><small>GET /products</small></div>
+<div><span><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-2-12-4 16"/></svg></span><b>Order API</b><small>POST /orders</small></div>
+<div><span><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4v6h-6M4 20v-6h6M6 10a7 7 0 0 1 12-4l2 4M4 14l2 4a7 7 0 0 0 12-4"/></svg></span><b>Scale-out instances</b><small>Handle traffic spikes</small></div></div>
+<div class="api-arch-arrow">↓</div>
+<div class="api-arch-foundation">
+<div><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7Z"/></svg><b>Cache</b><small>Fast product reads</small></div>
+<div><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg><b>Database</b><small>Reliable order records</small></div>
+<div><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h5l3-7 5 14 3-7h4"/></svg><b>Monitoring</b><small>Errors and response time</small></div></div>
+<div class="api-arch-foot"><span><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 5 9 5 9-5"/></svg> Backward-compatible API versions</span><span><svg class="api-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M4 7h16M6 7l-4 8h8L6 7Zm12 0-4 8h8l-4-8ZM7 21h10"/></svg> Speed vs cost vs complexity</span></div>
+</div><p class="diagram-foot">Choose architecture from measured traffic and failure needs—not automatically the most complex design. Security and compatibility cannot be added as afterthoughts.</p></div></div>
 <p class="q-text">8. You are asked to design a Web API for an e-commerce platform serving thousands of concurrent users. How would you approach its resource design, security, performance, reliability, and backward compatibility, and what trade-offs would influence your decisions?</p>
 <label><input type="radio" name="q8" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Start with one unrestricted endpoint and add security, caching, and versioning only after users report problems.</span></label>
 <label><input type="radio" name="q8" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Give each client direct database access to reduce response time, then duplicate databases whenever traffic increases.</span></label>
