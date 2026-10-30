@@ -1,44 +1,30 @@
-# Gradstudio Version 2.0 — module template rules
+# Gradstudio Version 2.0 — Quick Template Rules
 
-This repository's `index.html` is the visual and interaction standard for subsequent study modules. For another topic, duplicate the file and replace the educational content while retaining the design and assessment rules.
+> **Start here:** [STUDY_MODULE_BUILD_STANDARD.md](./STUDY_MODULE_BUILD_STANDARD.md) is the definitive detailed specification. [AGENTS.md](./AGENTS.md) tells new coding agents to read it first. If these shorter rules conflict, the full standard wins.
 
-## Content and sequence
+## Baseline
 
-1. Start visible question labels and question text at **Q1 / 1.**, then increment continuously. Do not reuse upstream textbook question IDs in the user-facing numbering.
-2. Keep explanations substantive and beginner-friendly. Put prerequisites immediately before the concepts they unlock when possible.
-3. End every module with **exactly one scenario-based interview question**, with a reasoned answer or model response.
-4. Record topic/page provenance in a short caption without exposing irrelevant book metadata; do not invent facts outside the provided source.
+- Original look and behavior: `index.html` (Multimodal Training).
+- Corrected self-contained output reference: `Web-API-Keyword-Study-008.html`.
+- Topic-specific GPT example: `GPT-LLM-Foundation-Keyword-Study-008.html`.
+- Color definitions and names: `THEME_GUIDE.md`.
 
-## Assessment integrity
+## Required output
 
-1. Every question has four defensible, parallel alternatives; three are plausible but demonstrably incorrect or suboptimal.
-2. Do not reveal the answer by length, bold keywords, absolute language, excessive detail, or a predictable letter pattern.
-3. Within a question, keep choice lengths roughly similar (aim for longest/shortest ratio <= 1.4). Keep supporting statistics and full reasoning in the **post-submission explanation**, not only the right option.
-4. Check that a reader must understand the distinction, not merely recognize an obviously absurd distractor.
-5. Validate the `data-answer` key, input name, displayed option labels, progress count, answer highlighting, and reset behavior after edits.
+- Show only **Subject, Domain, Keyword** in the metadata.
+- If only a keyword is given, create **eight progressively harder questions**, ending with exactly one scenario-based interview question.
+- If questions are supplied, preserve their exact wording and order, even if the count is not eight. Number visibly from 1 without altering the question sentence.
+- Four genuinely plausible, similarly sized options per MCQ, exactly one correct. Avoid easy answer-length clues, predictable patterns, and jargon-heavy reading fatigue.
+- Explain each answer in approximately **50 words** (normally 40–60).
+- Use **one high-quality, concept-specific diagram per question**. Real mechanisms, real objects, varied visual forms; never just boxes of text.
+- No icon explosion: the broad `.q-fig svg { width:100% }` rule is for illustrations. Scope small SVG icons with a stronger CSS selector and an intentional ~18–24px size. Test computed dimensions.
+- Keep the approved Multimodal question UI, normal small radio circles, scoring, Reset, progress and sticky 15-theme dropdown.
+- Every finished module is **one complete HTML file** with inline CSS, JS, SVG and all educational content. No companion assets or network connection required.
 
-## Visual design
+## Quality gate
 
-1. Make a diagram teach a specific mechanism: use charts, scenes, trajectories, vector plots, miniature UIs, or spatial relationships. Avoid presenting ordinary paragraphs as a stack of boxes.
-2. Prefer HTML and CSS with content-driven height for labels and responsive grids. Do not force text inside fixed-height SVG containers.
-3. If SVG is needed, avoid tiny text, hard-coded positions that collide, and oversized arrowheads. Use small, consistent connectors.
-4. Every figure needs an accessible text description. Diagrams must remain useful on desktop and narrow mobile screens.
-5. Use `min-width:0`, `overflow-wrap:anywhere`, reasonable spacing, and accessible focus styles on interactive components.
-6. Treat any chart scores/coordinates used for teaching as **illustrative**, never real measurement.
+Check the eight original question stages, source grounding, option plausibility and answer keys, unique diagrams, theme switching, keyboard usability, 360/390/768/1280/1440px layout, text wrapping, icon sizing, reset and quiz logic, and offline opening. Never claim browser-verified visual quality on the basis of source inspection alone.
 
-## Module completion QA
+When a bug is universal, improve reusable authoring patterns and migrate approved outputs carefully; do not overwrite unrelated modules, root templates, or originals without a request.
 
-- No horizontal page overflow at 360px, 768px or 1280px.
-- No overlaps, clipped text or unreadable annotation inside figures.
-- Numbering starts at 1 and is consecutive.
-- Correct choices are not conspicuously longer than distractors.
-- Exactly one final interview scenario.
-- Quiz check, reset, progress, embedding matching, retail adaptation studio, case challenge, and all fifteen distinctive light and dark theme selections work on GitHub Pages.
-
-## Reuse of themes and Concept Lab
-
-The fifteen themes are selected from the `THEMES` array near the end of `index.html`, presented through the `Themes` button and dropdown in the sticky top bar. Keep the dropdown keyboard-accessible and mobile-friendly; do not display a separate theme gallery inside the lesson content. Their IDs are: `sunset`, `forest`, `sky`, `rose`, `midnight`, `cocoa`, `paper`, `obsidian`, `lemon`, `glacier`, `scarlet`, `jade`, `peach`, `carbon`, `cobalt`. These all share the same HTML; `?theme=sky` or `?theme=lemon` changes the palette only. Invalid or retired IDs fall back to Sunset Orange.
-
-**Theme quality gate:** compare the full accent-plus-background experience before introducing another palette. Two themes with similar accent hues are unacceptable if the page treatments also look similar. Use noticeably different hue families, luminance, background temperature, or light-versus-dark modes. Verify accessible text contrast and inspect the cards and Concept Lab under every theme. Do not add cosmetic renames of existing palettes.
-
-The interactive Concept Lab is implemented by `lab-v3.js` and `lab-v3.css`, linked as relative assets in `index.html`. Reuse the mechanism of input, observable state change, and explanatory outcome for new modules, but rewrite topic-specific examples instead of reusing unrelated retail or animal examples. Identify all model outputs, toy vectors, scores, and training effects as educational illustrations, not measured model results. Keep those relative assets alongside each HTML entry point in GitHub Pages.
+**Full quality rubric, complete build sequence, and pass/fail criteria:** [STUDY_MODULE_BUILD_STANDARD.md](./STUDY_MODULE_BUILD_STANDARD.md).
