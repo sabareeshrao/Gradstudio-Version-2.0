@@ -317,7 +317,7 @@ Escape user-provided text before adding it to HTML. Prevent untrusted question t
 The repository contains a **canonical ranked keyword curriculum**:
 
 - [KEYWORD_INDEX.md](../KEYWORD_INDEX.md): the **single central file** listing every keyword in rank order, with importance, exact topic, completion status, and clickable links to completed standalone HTML files.
-- [references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](../references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf): an **identical copy of the ranked 265-term PDF** used as the source of truth.
+- [archive/references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](../archive/references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf): an **identical copy of the ranked 265-term PDF** used as the source of truth.
 - [QUESTION_REGISTRY.md](../QUESTION_REGISTRY.md): the existing exact MCQ stems for semantic no-repetition checks, with links back to their HTML modules.
 - [README.md](../README.md): repository landing page pointing to all three.
 
@@ -336,7 +336,7 @@ The repository contains a **canonical ranked keyword curriculum**:
 
 ## 6.4 Repository layout and preview compatibility
 
-The canonical full HTML files live in `lessons/llm-foundations/`, `lessons/text-processing/` and `lessons/api-design/`, not at repository root. Build guidelines live in `docs/`, reference PDF in `references/`, theme examples in `templates/`, and the early prototype in `archive/`. Keep `index.html`, `lab-v3.css` and `lab-v3.js` at root because the original homepage depends on those paths.
+The canonical full HTML files live in `lessons/llm-foundations/`, `lessons/text-processing/` and `lessons/api-design/`, not at repository root. Build guidelines live in `docs/`, reference PDF in `archive/references/`, theme examples in `templates/`, and the early prototype in `archive/`. Keep `index.html`, `lab-v3.css` and `lab-v3.js` at root because the original homepage depends on those paths.
 
 The GitHub Pages workflow publishes the full lesson HTML at BOTH its nested URL and its previous flat root browser URL by copying files into a deployment-only staging directory. Thus existing Pages preview bookmarks remain supported. Old GitHub code viewer `blob/main/<filename>.html` URLs cannot redirect: update source links to `blob/main/lessons/<topic>/<filename>.html`.
 

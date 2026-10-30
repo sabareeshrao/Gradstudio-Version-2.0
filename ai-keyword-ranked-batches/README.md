@@ -1,8 +1,8 @@
 # Global AI Keyword Ranking — 4,857 Terms
 
-**43 domains · 49 batches · ranks 1–4,857 · no duplicates**. All keywords are drawn unchanged from [the AI keyword source catalog](../ai-keyword-catalog/README.md). This is an editorial importance/popularity study ranking—not measured Google Trends search volumes.
+**43 domains · 49 batches · ranks 1–4,857 · no duplicates**. All keywords are drawn unchanged from [the AI keyword source catalog](../archive/ai-keyword-catalog/README.md). This is an editorial importance/popularity study ranking—not measured Google Trends search volumes.
 
-[Full ranked CSV](ranked-keywords.csv) · [Ranking method and research sources](RANKING_METHODOLOGY.md) · [Original keyword inventory](../ai-keyword-catalog/ALL_KEYWORDS.md)
+[Full ranked CSV](ranked-keywords.csv) · [Ranking method and research sources](RANKING_METHODOLOGY.md) · [Original keyword inventory](../archive/ai-keyword-catalog/ALL_KEYWORDS.md)
 
 ## Top 20
 

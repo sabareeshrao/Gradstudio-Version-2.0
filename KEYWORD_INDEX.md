@@ -4,7 +4,7 @@
 
 > **Canonical curriculum index.** Follow the PDF's original rank order exactly. The PDF is the source for the keyword, topic, tier, and rank; this index tracks module completion and offers separate links to the **running browser preview** and the **GitHub source code**. Read [AGENTS.md](AGENTS.md), [STUDY_MODULE_BUILD_STANDARD.md](docs/STUDY_MODULE_BUILD_STANDARD.md), and [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md) before generating the next keyword.
 
-**Ranked PDF (identical source file):** [Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf)
+**Ranked PDF (identical source file):** [Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](archive/references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf)
 
 **Source inventory:** 265 ranked keywords, 54 Essential, 105 High, 91 Specialized, 15 Peripheral. Ranking is editorial guidance from the PDF, not an order supplied by the textbook itself.
 

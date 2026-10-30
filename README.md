@@ -32,7 +32,7 @@ All 16 older standalone HTML lessons were moved into [archive/legacy-lessons](ar
 ### Start here
 
 - **[Ranked keyword index](KEYWORD_INDEX.md)** — complete 265-keyword curriculum in PDF order, with progress and working lesson links.
-- **[Original ranked PDF](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf)** — authoritative keyword names, topics, and ranking.
+- **[Original ranked PDF](archive/references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf)** — authoritative keyword names, topics, and ranking.
 - **[Question registry](QUESTION_REGISTRY.md)** — 120 published questions; use for strict semantic no-repetition checks.
 - **[Instructions for AI builders](AGENTS.md)** · [Visual gold standard — original Multimodal diagrams](docs/VISUAL_GOLD_STANDARD.md) · [Quality and build standard](docs/STUDY_MODULE_BUILD_STANDARD.md) · [Theme guide](docs/THEME_GUIDE.md)
 
@@ -69,20 +69,20 @@ Gradstudio-Version-2.0/
 ├── index.html                     Original Multimodal study homepage
 ├── lab-v3.css                     Homepage styles
 ├── lab-v3.js                      Homepage script
-├── lessons/
-│   ├── llm-foundations/          Ranks 001–009
-│   ├── text-processing/          Ranks 010–015
-│   └── api-design/               Web API keyword module
+├── lessons/                       Latest ranked HTML entrypoints (1–10)
+├── study-engine/                  Canonical 7-question modules and shared UI
 ├── docs/                          Quality standard, template and theme guides
 ├── templates/                     Standalone 15-theme reference examples
-├── archive/                       Original Web API demo
-├── references/                    Original ranked glossary PDF
+├── archive/
+│   ├── legacy-lessons/           Earlier independent HTML modules
+│   ├── ai-keyword-catalog/       4,857-keyword source catalog
+│   └── references/               Original ranked glossary PDF
 └── .github/workflows/             Pages deployment workflow
 ```
 
 ### Future modules
 
-Put **new complete HTML files** inside the corresponding `lessons/<topic>/` folder. Inspect the [seven original Multimodal diagrams](index.html) and [visual gold standard](docs/VISUAL_GOLD_STANDARD.md) before designing: all eight figures must have distinct compositions, not repeated text boxes. Read the [build standard](docs/STUDY_MODULE_BUILD_STANDARD.md), compare against the [question registry](QUESTION_REGISTRY.md) to avoid repeats (even if wording changes), then update the [central index](KEYWORD_INDEX.md) and registry.
+For new hosted keyword lessons, add the current JSON module under `study-engine/modules/` and link it from the active `lessons/` entries; use complete standalone HTML only when requested. Inspect the [seven original Multimodal diagrams](index.html) and [visual gold standard](docs/VISUAL_GOLD_STANDARD.md) before designing: all eight figures must have distinct compositions, not repeated text boxes. Read the [build standard](docs/STUDY_MODULE_BUILD_STANDARD.md), compare against the [question registry](QUESTION_REGISTRY.md) to avoid repeats (even if wording changes), then update the [central index](KEYWORD_INDEX.md) and registry.
 
 **Existing preview URLs remain compatible:** the Pages workflow publishes full copies of each self-contained HTML lesson at their original root URLs, even though the GitHub source files now live in topic folders. The former root **GitHub source-code URLs** are no longer the canonical locations; use the updated links above.
 
