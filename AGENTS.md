@@ -19,10 +19,12 @@ This repository creates premium visual MCQ study modules. **Before creating, edi
 
 12. **Rank-ordered curriculum control:** Before generating any keyword, read [KEYWORD_INDEX.md](KEYWORD_INDEX.md), the [ranked PDF](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf), and [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md). Follow exact PDF rank order unless the user names another keyword. After a verified commit, update the central index link/status, append exact question stems to the registry, and refresh README progress. Never mark a non-existent lesson as complete.
 
+13. **Browser preview links:** Every completed entry in `KEYWORD_INDEX.md` MUST have a primary GitHub Pages **Preview in browser** link that opens the interactive lesson, and a separate **View HTML source** link for GitHub code. Add preview links to README and question registry too. Never confuse a `github.com/.../blob/...html` code viewer with a live preview. Verify Pages or report that deployment is unverified.
+
 **Authoritative reference order:** user requirements and supplied questions > `STUDY_MODULE_BUILD_STANDARD.md` > current templates/examples.
 
 **Default eight-stage progression:** Introduction; Fundamentals; Working Mechanism; Technical Understanding; Practical Application; Advanced Understanding; Smart-Level Reasoning; Interview Question.
 
-**Required final response:** GitHub source link, raw standalone HTML link, Pages link if deployed, counts/QA facts, and any unverified tests.
+**Required final response:** **Preview in browser** (GitHub Pages) first, then distinct **HTML source** (GitHub code) and optional raw HTML. Check the live preview if possible and clearly label it unverified when inaccessible. Include counts/QA facts and any unverified tests.
 
 Do not bypass the detailed acceptance checks and quality rubric in the full standard.
