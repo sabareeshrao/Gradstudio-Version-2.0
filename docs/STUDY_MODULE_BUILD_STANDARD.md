@@ -1,6 +1,6 @@
 # Gradstudio — AI Module Build & Quality Standard
 
-**Version:** 1.4  
+**Version:** 1.5  
 **Status:** Required standard for future keyword-study modules  
 **Repository:** https://github.com/sabareeshrao/Gradstudio-Version-2.0  
 **Audience:** Any AI assistant, coding agent, developer, reviewer, or maintainer creating or fixing a module.
@@ -81,6 +81,10 @@ Ground claims, examples, and explanations in the supplied material unless the us
 ### 2.5 Work involving several keywords
 
 Each keyword receives its own independent module, questions, diagrams, QA report, and full HTML file. **Never reduce design quality simply to finish more topics.** Do not claim a batch is completed if only a subset has been built.
+
+### 2.1 Required ninth illustration — intro module map
+
+The original root `index.html` includes a distinctive illustrated hero titled "From paired data to adaptable AI" **before** Q1. That is mandatory for every keyword module: an original, illustrated, topic-specific module map before Q1 **plus eight question diagrams** (9 illustrations per module). This intro must NOT simply repeat Q1, use the same three-box template as adjacent modules, or contain explanatory text boxes in place of meaningful artwork. Review its rendered desktop/mobile appearance with the other eight diagrams. See [VISUAL_GOLD_STANDARD.md](VISUAL_GOLD_STANDARD.md).
 
 ## 3. Assessment quality: questions and four options
 
