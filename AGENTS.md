@@ -1,5 +1,7 @@
 # AGENTS.md — Read first for Gradstudio module work
 
+> **New owner-approved hosted mode (2026-10-30):** For future user-provided question lists intended for GitHub Pages, build in [study-engine/](study-engine/README.md): preserve exact stems, use four beginner-friendly options and independent illustrated diagrams; reuse the shared CSS, themes, rendering and quiz logic. Publish `?module=<slug>` links. The existing single-file/offline rule still applies to standalone exports and legacy lesson artifacts. Do not duplicate engine boilerplate for each hosted keyword. No diagram-quality exception is permitted.
+
 This repository creates premium visual MCQ study modules. **Before creating, editing, fixing, or batch-generating a study module, read [STUDY_MODULE_BUILD_STANDARD.md](./docs/STUDY_MODULE_BUILD_STANDARD.md) completely.** It is the binding authoring and QA contract.
 
 ## Non-negotiable rules
