@@ -495,3 +495,16 @@ Before saying “done,” answer all of these **yes**:
 12. Did I verify the GitHub file and provide a clear link?
 
 If any answer is no, repair it or report the precise limitation. **Never hide the failure behind a confident completion message.**
+
+## 17. Owner-approved shared GitHub Pages delivery mode (2026-10-30)
+
+For **browser-hosted modules** under [`study-engine/`](../study-engine/README.md), use the split reusable architecture rather than including repeated HTML/CSS/JavaScript in every new keyword file:
+
+- Shared once: `study-engine/index.html`, `core.css`, `quiz-theme.js`, `app.js`.
+- Per keyword: `study-engine/modules/<slug>.json` containing original question stems (exact wording and order), **four A–D options per question**, one correct answer, explanations, a unique introductory illustration, and original instructional figures; `study-engine/diagrams/<slug>.css` when custom figure styling is required.
+- Add a manifest entry in `study-engine/modules/index.json`. The browser preview uses `https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=<slug>`. Provide that verified Pages link first, plus the distinct GitHub source URL. If deployment is not confirmed, label the preview unverified.
+- Keep **the number of questions supplied by the user**, including seven-layer sequences. Do not rephrase or pad to eight. Preserve all concept/visual-quality and full interaction QA gates; never trade away diagram complexity for token savings. No repeated generic shapes or boilerplate diagrams.
+- The shared hosted mode fetches JSON and CSS and **requires a web server/GitHub Pages**; it does not run as a `file://` offline document. If a standalone/offline HTML is requested, produce a separate bundled export preserving the existing monolithic-delivery requirement.
+- Preserve root `index.html`, legacy completed lessons, and historical source/page URLs. Pages workflow must publish `study-engine/` without using the existing root-compatibility copier for its HTML files.
+
+This section is the later, explicit, owner-approved **browser-hosted delivery exception** to the older blanket single-file rule; standards for assessment, diagrams, accessibility, and quality remain in force.
