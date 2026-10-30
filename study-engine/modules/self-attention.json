@@ -17,7 +17,8 @@
         "Self-attention sorts sentence tokens alphabetically before combining their learned vector representations."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> Self-attention compares each token with tokens in the same sequence and uses learned weights to combine their information. This produces context-aware representations. Different attention masks decide which positions a token is allowed to see."
+      "explanation": "<strong>In simple words:</strong> Self-attention helps each word use information from other words in the same sentence. This makes the meaning depend on context.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Self-attention compares each token with tokens in the same sequence and uses learned weights to combine their information. This produces context-aware representations. Different attention masks decide which positions a token is allowed to see."
     },
     {
       "tag": "Beginner · architecture comparison",
@@ -30,7 +31,8 @@
         "It links tokens within one sequence, allowing Transformers to process them in parallel."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> Classic encoder-decoder attention may use queries from one sequence and keys/values from another. In self-attention, all three come from the same sequence. Unlike RNNs and LSTMs, Transformer self-attention can calculate positions together during training, while adding direct token-to-token interaction paths."
+      "explanation": "<strong>In simple words:</strong> Unlike a model that reads one word at a time, self-attention can connect many positions directly within one sequence.",
+      "technicalExplanation": "<strong>Correct: D.</strong> Classic encoder-decoder attention may use queries from one sequence and keys/values from another. In self-attention, all three come from the same sequence. Unlike RNNs and LSTMs, Transformer self-attention can calculate positions together during training, while adding direct token-to-token interaction paths."
     },
     {
       "tag": "Beginner · pronoun resolution",
@@ -43,7 +45,8 @@
         "It replaces the pronoun with a fixed dictionary meaning without considering nearby sentence context."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> In this sentence, 'frightened' makes 'animal' a plausible antecedent for 'it'. An attention head may assign more weight to the animal token as part of its contextual representation. Attention weights are learned and are not definitive explanations of linguistic reasoning; multiple heads and layers contribute."
+      "explanation": "<strong>In simple words:</strong> In “The animal crossed the road because it was frightened,” attention may help connect “it” with “animal” using the sentence’s meaning.",
+      "technicalExplanation": "<strong>Correct: A.</strong> In this sentence, 'frightened' makes 'animal' a plausible antecedent for 'it'. An attention head may assign more weight to the animal token as part of its contextual representation. Attention weights are learned and are not definitive explanations of linguistic reasoning; multiple heads and layers contribute."
     },
     {
       "tag": "Medium · Q/K/V mathematics",
@@ -56,8 +59,9 @@
         "It generates Q from positional indices only, then multiplies unnormalized scores by keys."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> From inputs X, learn projections Q=XWq, K=XWk, V=XWv. The similarity matrix QKᵀ compares each query with all keys; dividing by √dₖ prevents scores becoming too large. Row-wise softmax turns scores into weights, and multiplying by V produces contextualized vectors. Masks exclude forbidden positions before softmax.",
-      "sourceStem": "How does Self-Attention mathematically transform input embeddings into Query (Q), Key (K), and Value (V) matrices, calculate token-to-token similarity scores, apply scaling and softmax normalization, and generate contextualized token representations using the formula \\(\\operatorname{softmax}(QK^T/\\sqrt{d_k})V\\)?"
+      "explanation": "<strong>In simple words:</strong> The model makes query, key, and value vectors. It compares queries with keys, turns scores into weights, then mixes the values.",
+      "sourceStem": "How does Self-Attention mathematically transform input embeddings into Query (Q), Key (K), and Value (V) matrices, calculate token-to-token similarity scores, apply scaling and softmax normalization, and generate contextualized token representations using the formula \\(\\operatorname{softmax}(QK^T/\\sqrt{d_k})V\\)?",
+      "technicalExplanation": "<strong>Correct: C.</strong> From inputs X, learn projections Q=XWq, K=XWk, V=XWv. The similarity matrix QKᵀ compares each query with all keys; dividing by √dₖ prevents scores becoming too large. Row-wise softmax turns scores into weights, and multiplying by V produces contextualized vectors. Masks exclude forbidden positions before softmax."
     },
     {
       "tag": "Medium · PyTorch implementation",
@@ -70,7 +74,8 @@
         "PyTorch replaces attention weights with constant probabilities independent of sequence content."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> A basic PyTorch implementation uses trainable nn.Linear projections for Q, K, and V, computes Q @ K.transpose(-2,-1) / √dₖ, optionally masks forbidden positions, normalizes with softmax and multiplies by V. The resulting matrix contains one attention distribution per query token."
+      "explanation": "<strong>In simple words:</strong> In PyTorch, create query, key, and value projections, compare their scores, apply any needed mask, and combine the values.",
+      "technicalExplanation": "<strong>Correct: B.</strong> A basic PyTorch implementation uses trainable nn.Linear projections for Q, K, and V, computes Q @ K.transpose(-2,-1) / √dₖ, optionally masks forbidden positions, normalizes with softmax and multiplies by V. The resulting matrix contains one attention distribution per query token."
     },
     {
       "tag": "Advanced · visibility and heads",
@@ -83,7 +88,8 @@
         "BERT commonly sees both directions; GPT masks future positions during causal processing."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> A bidirectional encoder such as BERT usually allows a token to use both earlier and later input positions. A causal decoder such as GPT prevents attention to future tokens, preserving autoregressive prediction. Both rely on positional information and multiple attention heads; increasing context length increases the available information and attention cost."
+      "explanation": "<strong>In simple words:</strong> BERT can often use words on both sides. GPT hides future words, so it predicts without looking ahead.",
+      "technicalExplanation": "<strong>Correct: D.</strong> A bidirectional encoder such as BERT usually allows a token to use both earlier and later input positions. A causal decoder such as GPT prevents attention to future tokens, preserving autoregressive prediction. Both rely on positional information and multiple attention heads; increasing context length increases the available information and attention cost."
     },
     {
       "tag": "Advanced · long-context efficiency",
@@ -96,7 +102,8 @@
         "KV caches discard older tokens, so autoregressive decoding becomes independent of context."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> Ordinary full self-attention scores all token pairs, giving O(n²) score interactions. FlashAttention reorganizes exact attention into IO-efficient tiles, reducing memory traffic rather than eliminating quadratic arithmetic. KV caching reuses previous keys/values in causal inference. Sparse patterns reduce interactions but may miss distant dependencies. Evaluate speed, memory and retrieval quality together."
+      "explanation": "<strong>In simple words:</strong> Long sequences make attention expensive. Tiled calculations save memory traffic, and cached earlier information speeds up word-by-word generation.",
+      "technicalExplanation": "<strong>Correct: A.</strong> Ordinary full self-attention scores all token pairs, giving O(n²) score interactions. FlashAttention reorganizes exact attention into IO-efficient tiles, reducing memory traffic rather than eliminating quadratic arithmetic. KV caching reuses previous keys/values in causal inference. Sparse patterns reduce interactions but may miss distant dependencies. Evaluate speed, memory and retrieval quality together."
     }
   ],
   "diagramStyle": "diagrams/self-attention.css",
