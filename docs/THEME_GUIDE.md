@@ -1,6 +1,6 @@
 # Gradstudio Version 2.0 — Theme and Pages Guide
 
-One interactive HTML module supports **15 deliberately differentiated color palettes**. All themes share the same seven questions and interactive Concept Lab. You don't need 15 separate HTML downloads.
+One interactive HTML module supports **15 deliberately differentiated color palettes**. The same 15 themes are available in the original Multimodal module and standalone eight-question keyword studies. You do not need 15 separate HTML downloads.
 
 ## Available themes
 
@@ -24,31 +24,31 @@ One interactive HTML module supports **15 deliberately differentiated color pale
 
 Use the **Themes** button in the sticky top navigation bar to open the dropdown of all 15 palettes. Pick a name to recolor the page instantly; the dropdown closes automatically. The selected theme is saved in the browser and is also shareable through `?theme=...`. The dropdown has color previews, keyboard focus support, Escape-to-close, click-outside-to-close, and a Copy link button. The large gallery has been removed from the lesson body. Some choices use light study pages; others use dark, high-contrast designs.
 
-## Enable GitHub Pages
+## GitHub Pages deployment
 
-1. Open https://github.com/sabareeshrao/Gradstudio-Version-2.0/settings/pages
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch `main`, folder `/(root)`, then click **Save**.
-4. After publication, use **Visit site** to open the module.
+This repository uses the GitHub Actions workflow `../.github/workflows/deploy-pages.yml`. In **Settings → Pages → Build and deployment**, choose **GitHub Actions** (not branch-root publishing), then let the workflow publish its prepared `_site/` artifact after each push to `main`.
 
-Expected address: https://sabareeshrao.github.io/Gradstudio-Version-2.0/
+The workflow publishes:
+- the original `index.html`, `lab-v3.css` and `lab-v3.js` homepage files;
+- full standalone lessons under `lessons/<topic>/`;
+- **complete-file copies at the original root preview URLs**, retaining existing bookmarks.
+
+Expected site: https://sabareeshrao.github.io/Gradstudio-Version-2.0/
 
 Example dark theme: https://sabareeshrao.github.io/Gradstudio-Version-2.0/?theme=jade
 
 Example light theme: https://sabareeshrao.github.io/Gradstudio-Version-2.0/?theme=sky
 
-These URLs are expected addresses, not confirmation that the site is currently live.
-
-**Visibility note:** GitHub Pages availability for a private repository depends on GitHub plan. Pages sites may be publicly accessible even when the repository itself is private. Do not change repository visibility without approval.
+These are expected URLs, not verification that the latest deployment is live.
 
 ## Files and reuse
 
 - `index.html`: study content, question bank, sticky top-bar theme dropdown, and shared theme definitions
 - `lab-v3.js`: interactive image matching, retail adaptation comparison, and decision practice
 - `lab-v3.css`: responsive Concept Lab presentation
-- `TEMPLATE_RULES.md`: standards for future modules
-- `Gradstudio-15-Themes-Standalone.html`: preserved original standalone edition with the former large theme gallery
-- `Gradstudio-15-Themes-Dropdown-Standalone.html`: new offline single-file edition, including the top-bar dropdown and all Concept Lab assets
+- `docs/TEMPLATE_RULES.md`: standards for future modules
+- `templates/Gradstudio-15-Themes-Standalone.html`: preserved original standalone edition with the former large theme gallery
+- `templates/Gradstudio-15-Themes-Dropdown-Standalone.html`: new offline single-file edition, including the top-bar dropdown and all Concept Lab assets
 
 For a new module, reuse the same visual architecture and theme list. Replace domain-specific learning material with examples grounded in the new topic.
 
