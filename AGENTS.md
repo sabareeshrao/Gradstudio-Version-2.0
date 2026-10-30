@@ -7,11 +7,11 @@ This repository creates premium visual MCQ study modules. **Before creating, edi
 1. **Do not change user-supplied questions.** Keep text and order verbatim; question numbers begin at 1 and are separate from the stem.
 2. For a keyword-only request, default to eight progressive questions ending in **one scenario-based interview question**, with four credible options per question.
 3. Use beginner-friendly but meaningful English, balanced answer lengths and letters, and approximately 50 words per explanation.
-4. Create **one genuinely instructive and premium visual per question**. No generic text-in-box diagrams, oversized SVG icons, bulky arrows, text overlap or mobile overflow.
+4. **Mandatory original visual benchmark:** Open `index.html` and inspect all SEVEN original Multimodal Training diagrams (not merely CSS/quiz UI); study [docs/VISUAL_GOLD_STANDARD.md](docs/VISUAL_GOLD_STANDARD.md). Every card needs bespoke, technically meaningful artwork at or above the original's quality. **No two diagrams in one module or an adjacent keyword batch may share the same visual composition**, regardless of relabeled text/icons/colors. **Absolutely no explanatory text-in-box diagrams**, feature-card rows, or generic arrows masquerading as visuals. Short intrinsic token/data/UI labels are fine. Visually compare all eight rendered diagrams against the original seven before approval.
 5. **Reuse the existing Multimodal/Gradstudio UI exactly:** ordinary circular radio buttons, card structure, scoring, reset, sticky top bar and 15-theme dropdown. The corrected `lessons/api-design/Web-API-Keyword-Study-008.html` illustrates the SVG icon-sizing fix.
 6. **Author modularly; export monolithically.** Every delivered HTML file includes all CSS, JS, images/diagrams, options, explanations and theme data. It must open offline without any companion file.
 7. Only three metadata fields: **Subject, Domain, Keyword**.
-8. Verify question/answer mapping, source accuracy, mobile and desktop layout, interactions and all 15 themes. Never claim visual browser QA without actually doing it.
+8. Verify question/answer mapping, source accuracy, mobile and desktop rendering of **each of the eight different diagrams**, interactions and all 15 themes. **No screenshot/browser QA = no claim of premium visual quality or completed visual acceptance.** Reject any single generic box-based or cloned diagram.
 9. Preserve `index.html`, existing standalone originals and unrelated modules when adding a new keyword.
 10. If a universal design or assessment rule changes, update `docs/STUDY_MODULE_BUILD_STANDARD.md` and keep compatibility docs aligned.
 
