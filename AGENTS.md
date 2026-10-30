@@ -15,6 +15,8 @@ This repository creates premium visual MCQ study modules. **Before creating, edi
 9. Preserve `index.html`, existing standalone originals and unrelated modules when adding a new keyword.
 10. If a universal design or assessment rule changes, update `STUDY_MODULE_BUILD_STANDARD.md` and keep compatibility docs aligned.
 
+11. **Strict no-redundancy:** Do not repeat a question's learning objective within or across keyword modules. Rewording, replacing a noun, or using a new example does not make a repeated question unique. Audit existing curriculum questions and each new question's core answer/reasoning. Keep user-supplied stems unchanged; flag overlaps instead of rewriting them.
+
 **Authoritative reference order:** user requirements and supplied questions > `STUDY_MODULE_BUILD_STANDARD.md` > current templates/examples.
 
 **Default eight-stage progression:** Introduction; Fundamentals; Working Mechanism; Technical Understanding; Practical Application; Advanced Understanding; Smart-Level Reasoning; Interview Question.
