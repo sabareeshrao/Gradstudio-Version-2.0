@@ -44,6 +44,11 @@
       "slug": "gradient-descent",
       "title": "Gradient Descent",
       "domain": "Optimization Algorithms · Deep Learning & LLMs"
+    },
+    {
+      "slug": "neural-network",
+      "title": "Neural Network",
+      "domain": "Artificial Neural Networks"
     }
   ]
 }
