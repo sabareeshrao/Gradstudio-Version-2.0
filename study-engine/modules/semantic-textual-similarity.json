@@ -76,8 +76,8 @@
       "tag": "Model architectures & training",
       "options": [
         "A cross-encoder computes separate vectors for each sentence, stores them, and searches a vector index.",
-        "All architectures compare only exact shared words.",
-        "Contrastive training intentionally moves every embedding together.",
+        "Bi-encoders and cross-encoders both compare only exact matching words, ignoring sentence meaning.",
+        "Contrastive training moves every sentence embedding closer, even when the texts disagree in meaning.",
         "Bi-encoders embed separately; cross-encoders score pairs; contrastive training shapes embeddings."
       ],
       "answer": "d",
