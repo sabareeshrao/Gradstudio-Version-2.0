@@ -35,6 +35,7 @@ jobs:
           cp -R lessons _site/lessons
           cp -R templates _site/templates
           cp -R archive _site/archive
+          cp -R study-engine _site/study-engine
 
           # Historical root preview URLs continue to serve COMPLETE HTML.
           while IFS= read -r -d '' file; do
@@ -48,6 +49,8 @@ jobs:
 
           touch _site/.nojekyll
           test -s _site/index.html
+          test -s _site/study-engine/index.html
+          test -s _site/study-engine/modules/positional-encoding.json
           test -s _site/Large-Language-Models-LLMs-Keyword-Study-008.html
       - name: Upload static website
         uses: actions/upload-pages-artifact@v4
