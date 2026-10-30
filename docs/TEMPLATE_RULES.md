@@ -47,6 +47,7 @@
 - The Pages deployment workflow copies every full HTML file into a deployed root alias, preserving all existing flat browser preview URLs. **Only one canonical source** per lesson remains in GitHub.
 - For new work, update [the ranked index](../KEYWORD_INDEX.md) and [question registry](../QUESTION_REGISTRY.md) with the correct nested GitHub source path and old-style root Pages preview URL. Never manually duplicate lesson HTML in repository root.
 
+- **Mandatory INTRO DIAGRAM:** Every module must contain one bespoke illustrated module-map hero **above Q1**, like the original Multimodal Training `index.html`. Total is **9 visuals** per eight-question module: 1 hero + 8 unique card diagrams. The hero must have unique composition, not generic text-in-box flow or a copy of Q1.
 ## Quality gate
 
 Check the eight question stages, source grounding, plausible options and answer keys, **original seven Multimodal diagrams as visual reference**, eight individually unique custom compositions, zero text-box impostors, theme switching, keyboard use, 360/390/768/1280/1440px layout, text wrapping, icon sizing, reset, quiz logic and offline opening. Never claim browser-verified visual quality on the basis of source inspection alone.
