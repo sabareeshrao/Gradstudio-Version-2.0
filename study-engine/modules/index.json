@@ -94,6 +94,11 @@
       "slug": "vector-database",
       "title": "Vector Database",
       "domain": "Vector Storage, Similarity Search, and Semantic Information Retrieval · Information Retrieval and RAG"
+    },
+    {
+      "slug": "generative-model",
+      "title": "Generative Model",
+      "domain": "Generative Artificial Intelligence and Data Distribution Learning · Generative Modeling"
     }
   ]
 }
