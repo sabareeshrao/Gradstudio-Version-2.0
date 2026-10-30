@@ -1,6 +1,6 @@
 # 43. Quantum Machine Learning
 
-> AI-wide keyword catalog. 87 unique entries.
+> AI-wide keyword catalog · 86 unique primary-domain keywords.
 
 1. Quantum machine learning
 2. Quantum computing for AI
@@ -17,75 +17,74 @@
 13. Variational quantum algorithm
 14. Variational quantum classifier
 15. Variational quantum eigensolver
-16. Quantum approximate optimization algorithm
-17. QAOA
-18. Quantum neural network
-19. Quantum perceptron
-20. Quantum convolutional neural network
-21. Quantum recurrent neural network
-22. Quantum transformer proposal
-23. Quantum feature map
-24. Quantum embedding
-25. Angle embedding
-26. Amplitude embedding
-27. Basis encoding
-28. Data re-uploading quantum circuit
-29. Quantum kernel
-30. Quantum kernel method
-31. Quantum support vector machine
-32. Quantum kernel alignment
-33. Quantum tangent kernel
-34. Quantum circuit ansatz
-35. Hardware-efficient ansatz
-36. Expressibility of quantum circuits
-37. Entangling layer
-38. Quantum gradient
-39. Parameter-shift rule
-40. Quantum natural gradient
-41. Barren plateau
-42. Shot noise
-43. Quantum noise model
-44. Noisy intermediate-scale quantum device
-45. NISQ
-46. Quantum error mitigation
-47. Quantum error correction
-48. Quantum circuit transpilation
-49. Quantum simulator
-50. Quantum annealing
-51. Ising model
-52. QUBO formulation
-53. Quantum Boltzmann machine
-54. Quantum generative adversarial network
-55. Quantum autoencoder
-56. Quantum reinforcement learning
-57. Quantum generative model
-58. Quantum data encoding
-59. Quantum advantage in learning
-60. Quantum sampling advantage
-61. Quantum-classical hybrid model
-62. Hybrid quantum neural network
-63. Quantum-classical optimization loop
-64. Quantum circuit depth
-65. Measurement shots
-66. Quantum fidelity
-67. Quantum state tomography
-68. Quantum process tomography
-69. Quantum amplitude estimation
-70. Quantum phase estimation
-71. Grover search
-72. Quantum principal component analysis
-73. Quantum clustering
-74. Quantum dimensionality reduction
-75. Quantum reservoir computing
-76. Quantum federated learning
-77. Quantum transfer learning
-78. Quantum feature selection
-79. Quantum-inspired optimization
-80. Tensor network quantum machine learning
-81. Quantum tensor network
-82. Variational quantum regression
-83. Quantum uncertainty estimation
-84. Quantum model evaluation
-85. Quantum learning theory
-86. Quantum sample complexity
-87. Quantum hypothesis testing
+16. Quantum approximate optimization algorithm (QAOA)
+17. Quantum neural network
+18. Quantum perceptron
+19. Quantum convolutional neural network
+20. Quantum recurrent neural network
+21. Quantum transformer proposal
+22. Quantum feature map
+23. Quantum embedding
+24. Angle embedding
+25. Amplitude embedding
+26. Basis encoding
+27. Data re-uploading quantum circuit
+28. Quantum kernel
+29. Quantum kernel method
+30. Quantum support vector machine
+31. Quantum kernel alignment
+32. Quantum tangent kernel
+33. Quantum circuit ansatz
+34. Hardware-efficient ansatz
+35. Expressibility of quantum circuits
+36. Entangling layer
+37. Quantum gradient
+38. Parameter-shift rule
+39. Quantum natural gradient
+40. Barren plateau
+41. Shot noise
+42. Quantum noise model
+43. Noisy intermediate-scale quantum device
+44. NISQ
+45. Quantum error mitigation
+46. Quantum error correction
+47. Quantum circuit transpilation
+48. Quantum simulator
+49. Quantum annealing
+50. Ising model
+51. QUBO formulation
+52. Quantum Boltzmann machine
+53. Quantum generative adversarial network
+54. Quantum autoencoder
+55. Quantum reinforcement learning
+56. Quantum generative model
+57. Quantum data encoding
+58. Quantum advantage in learning
+59. Quantum sampling advantage
+60. Quantum-classical hybrid model
+61. Hybrid quantum neural network
+62. Quantum-classical optimization loop
+63. Quantum circuit depth
+64. Measurement shots
+65. Quantum fidelity
+66. Quantum state tomography
+67. Quantum process tomography
+68. Quantum amplitude estimation
+69. Quantum phase estimation
+70. Grover search
+71. Quantum principal component analysis
+72. Quantum clustering
+73. Quantum dimensionality reduction
+74. Quantum reservoir computing
+75. Quantum federated learning
+76. Quantum transfer learning
+77. Quantum feature selection
+78. Quantum-inspired optimization
+79. Tensor network quantum machine learning
+80. Quantum tensor network
+81. Variational quantum regression
+82. Quantum uncertainty estimation
+83. Quantum model evaluation
+84. Quantum learning theory
+85. Quantum sample complexity
+86. Quantum hypothesis testing

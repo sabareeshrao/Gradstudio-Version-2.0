@@ -1,6 +1,6 @@
 # 12. Generative Modeling
 
-> AI-wide keyword catalog · Primary-domain ownership · 128 distinct entries in this file.
+> AI-wide keyword catalog · 127 unique primary-domain keywords.
 
 1. Generative model
 2. Generative adversarial network
@@ -50,83 +50,82 @@
 46. Score matching
 47. Denoising score matching
 48. Diffusion model
-49. Denoising diffusion probabilistic model
-50. DDPM
-51. DDIM
-52. Score-based SDE
-53. Forward diffusion process
-54. Reverse diffusion process
-55. Noise schedule
-56. Beta schedule
-57. Alpha cumulative product
-58. Diffusion denoiser
-59. Noise prediction objective
-60. Velocity prediction objective
-61. X0 prediction
-62. Classifier guidance
-63. Classifier-free guidance
-64. Guidance scale
-65. Negative guidance
-66. Diffusion sampler
-67. Euler sampler
-68. Heun sampler
-69. DPM-Solver
-70. DPM++ sampler
-71. Karras sigma schedule
-72. Latent diffusion model
-73. Stable Diffusion architecture
-74. Text-to-image generation
-75. Image-to-image generation
-76. Inpainting
-77. Outpainting
-78. ControlNet
-79. T2I-Adapter
-80. IP-Adapter
-81. LoRA for diffusion models
-82. DreamBooth
-83. Textual inversion
-84. Diffusion transformer (DiT)
-85. Rectified flow
-86. Flow matching
-87. Consistency model
-88. Latent consistency model
-89. Progressive distillation for diffusion
-90. Diffusion distillation
-91. Energy-based model
-92. Contrastive divergence
-93. Autoregressive image model
-94. PixelCNN
-95. PixelRNN
-96. ImageGPT
-97. Masked generative modeling
-98. Masked autoregressive flow
-99. Neural radiance field generation
-100. 3D-aware generative modeling
-101. Video diffusion model
-102. Temporal diffusion consistency
-103. Frame interpolation generation
-104. Motion conditioning
-105. Audio diffusion model
-106. Music generation model
-107. Generative speech model
-108. Discrete diffusion
-109. Diffusion prior
-110. Diffusion posterior
-111. Variational bound for diffusion
-112. Probability flow ODE
-113. Stochastic differential equation sampler
-114. Score network
-115. Latent variable model
-116. Discrete latent model
-117. Generative likelihood
-118. Sampling temperature for generators
-119. Latent traversal
-120. Truncation trick
-121. Perceptual image synthesis
-122. Generative editing
-123. Reference-conditioned generation
-124. Structure-conditioned generation
-125. Generative upscaling
-126. Super-resolution diffusion
-127. Generative inpainting mask
-128. Seed reproducibility
+49. Denoising diffusion probabilistic model (DDPM)
+50. DDIM
+51. Score-based SDE
+52. Forward diffusion process
+53. Reverse diffusion process
+54. Noise schedule
+55. Beta schedule
+56. Alpha cumulative product
+57. Diffusion denoiser
+58. Noise prediction objective
+59. Velocity prediction objective
+60. X0 prediction
+61. Classifier guidance
+62. Classifier-free guidance
+63. Guidance scale
+64. Negative guidance
+65. Diffusion sampler
+66. Euler sampler
+67. Heun sampler
+68. DPM-Solver
+69. DPM++ sampler
+70. Karras sigma schedule
+71. Latent diffusion model
+72. Stable Diffusion architecture
+73. Text-to-image generation
+74. Image-to-image generation
+75. Inpainting
+76. Outpainting
+77. ControlNet
+78. T2I-Adapter
+79. IP-Adapter
+80. LoRA for diffusion models
+81. DreamBooth
+82. Textual inversion
+83. Diffusion transformer (DiT)
+84. Rectified flow
+85. Flow matching
+86. Consistency model
+87. Latent consistency model
+88. Progressive distillation for diffusion
+89. Diffusion distillation
+90. Energy-based model
+91. Contrastive divergence
+92. Autoregressive image model
+93. PixelCNN
+94. PixelRNN
+95. ImageGPT
+96. Masked generative modeling
+97. Masked autoregressive flow
+98. Neural radiance field generation
+99. 3D-aware generative modeling
+100. Video diffusion model
+101. Temporal diffusion consistency
+102. Frame interpolation generation
+103. Motion conditioning
+104. Audio diffusion model
+105. Music generation model
+106. Generative speech model
+107. Discrete diffusion
+108. Diffusion prior
+109. Diffusion posterior
+110. Variational bound for diffusion
+111. Probability flow ODE
+112. Stochastic differential equation sampler
+113. Score network
+114. Latent variable model
+115. Discrete latent model
+116. Generative likelihood
+117. Sampling temperature for generators
+118. Latent traversal
+119. Truncation trick
+120. Perceptual image synthesis
+121. Generative editing
+122. Reference-conditioned generation
+123. Structure-conditioned generation
+124. Generative upscaling
+125. Super-resolution diffusion
+126. Generative inpainting mask
+127. Seed reproducibility

@@ -1,6 +1,6 @@
 # 26. Robotics and Embodied AI
 
-> AI-wide keyword catalog. 142 unique entries.
+> AI-wide keyword catalog · 141 unique primary-domain keywords.
 
 1. Robotics
 2. Embodied AI
@@ -52,95 +52,94 @@
 48. Robot simulation
 49. Robot perception
 50. Robot localization
-51. Simultaneous localization and mapping
-52. SLAM
-53. Visual SLAM
-54. LiDAR SLAM
-55. Graph-based SLAM
-56. Pose graph optimization
-57. Loop closure detection
-58. Occupancy grid mapping
-59. Semantic mapping
-60. 3D mapping
-61. Particle-filter localization
-62. Monte Carlo localization
-63. Extended Kalman localization
-64. Robot sensor fusion
-65. Wheel odometry
-66. Inertial measurement unit
-67. LiDAR sensor
-68. RGB-D camera
-69. Depth camera
-70. Tactile sensing
-71. Force-torque sensing
-72. Proprioception
-73. Contact sensing
-74. Robot calibration
-75. Hand-eye calibration
-76. Path planning for robots
-77. Trajectory planning
-78. Trajectory optimization
-79. Motion planning
-80. Sampling-based motion planning
-81. RRT
-82. PRM planner
-83. Collision detection
-84. Collision avoidance
-85. Obstacle avoidance
-86. Dynamic obstacle avoidance
-87. Navigation mesh
-88. Robot navigation stack
-89. Costmap
-90. Local planner
-91. Global planner
-92. Robot control
-93. PID control
-94. Model predictive control for robotics
-95. Impedance control
-96. Admittance control
-97. Operational space control
-98. Whole-body control
-99. Balance control
-100. Gait generation
-101. Footstep planning
-102. Grasp planning
-103. Grasp quality metric
-104. Dexterous manipulation
-105. Pick-and-place manipulation
-106. Visual servoing
-107. Force control
-108. Learning from demonstration for robotics
-109. Behavior cloning for robots
-110. Imitation learning for robots
-111. Robot policy learning
-112. Robot foundation model
-113. Robotic manipulation policy
-114. End-to-end robot learning
-115. Robot action tokenization
-116. Vision-language-action robotics
-117. Affordance prediction
-118. Task and motion planning
-119. Mobile manipulation
-120. Multi-robot coordination
-121. Swarm robotics
-122. Robot teleoperation
-123. Shared autonomy
-124. Robot safety envelope
-125. Human-robot interaction
-126. Human-robot collaboration
-127. Sim-to-real robotics
-128. Domain randomization in robotics
-129. Real-to-sim robotics
-130. Synthetic robot trajectories
-131. Closed-loop manipulation
-132. Open-loop robotic control
-133. Robot task execution
-134. Robot fleet orchestration
-135. Autonomous navigation
-136. Autonomous driving perception
-137. Autonomous vehicle planning
-138. Behavior planning for vehicles
-139. Motion prediction
-140. Trajectory prediction for autonomous vehicles
-141. Occupancy flow prediction
-142. Sensor extrinsic calibration
+51. Simultaneous localization and mapping (SLAM)
+52. Visual SLAM
+53. LiDAR SLAM
+54. Graph-based SLAM
+55. Pose graph optimization
+56. Loop closure detection
+57. Occupancy grid mapping
+58. Semantic mapping
+59. 3D mapping
+60. Particle-filter localization
+61. Monte Carlo localization
+62. Extended Kalman localization
+63. Robot sensor fusion
+64. Wheel odometry
+65. Inertial measurement unit
+66. LiDAR sensor
+67. RGB-D camera
+68. Depth camera
+69. Tactile sensing
+70. Force-torque sensing
+71. Proprioception
+72. Contact sensing
+73. Robot calibration
+74. Hand-eye calibration
+75. Path planning for robots
+76. Trajectory planning
+77. Trajectory optimization
+78. Motion planning
+79. Sampling-based motion planning
+80. RRT
+81. PRM planner
+82. Collision detection
+83. Collision avoidance
+84. Obstacle avoidance
+85. Dynamic obstacle avoidance
+86. Navigation mesh
+87. Robot navigation stack
+88. Costmap
+89. Local planner
+90. Global planner
+91. Robot control
+92. PID control
+93. Model predictive control for robotics
+94. Impedance control
+95. Admittance control
+96. Operational space control
+97. Whole-body control
+98. Balance control
+99. Gait generation
+100. Footstep planning
+101. Grasp planning
+102. Grasp quality metric
+103. Dexterous manipulation
+104. Pick-and-place manipulation
+105. Visual servoing
+106. Force control
+107. Learning from demonstration for robotics
+108. Behavior cloning for robots
+109. Imitation learning for robots
+110. Robot policy learning
+111. Robot foundation model
+112. Robotic manipulation policy
+113. End-to-end robot learning
+114. Robot action tokenization
+115. Vision-language-action robotics
+116. Affordance prediction
+117. Task and motion planning
+118. Mobile manipulation
+119. Multi-robot coordination
+120. Swarm robotics
+121. Robot teleoperation
+122. Shared autonomy
+123. Robot safety envelope
+124. Human-robot interaction
+125. Human-robot collaboration
+126. Sim-to-real robotics
+127. Domain randomization in robotics
+128. Real-to-sim robotics
+129. Synthetic robot trajectories
+130. Closed-loop manipulation
+131. Open-loop robotic control
+132. Robot task execution
+133. Robot fleet orchestration
+134. Autonomous navigation
+135. Autonomous driving perception
+136. Autonomous vehicle planning
+137. Behavior planning for vehicles
+138. Motion prediction
+139. Trajectory prediction for autonomous vehicles
+140. Occupancy flow prediction
+141. Sensor extrinsic calibration

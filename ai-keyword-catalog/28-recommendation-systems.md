@@ -1,6 +1,6 @@
 # 28. Recommendation Systems
 
-> AI-wide keyword catalog. 114 unique entries.
+> AI-wide keyword catalog · 111 unique primary-domain keywords.
 
 1. Recommender system
 2. Personalized recommendation
@@ -23,96 +23,93 @@
 19. Wide and Deep
 20. DeepFM
 21. xDeepFM
-22. DCN
-23. Deep and Cross Network
-24. Two-tower retrieval model
-25. Candidate retrieval stage
-26. Recommendation ranking stage
-27. Re-ranking for recommendations
-28. Learning to rank
-29. Pointwise ranking loss
-30. Pairwise ranking loss
-31. Listwise ranking loss
-32. BPR loss
-33. Bayesian personalized ranking
-34. LambdaRank
-35. LambdaMART
-36. ListNet
-37. ListMLE
-38. Top-N recommendation
-39. Cold start problem
-40. New user cold start
-41. New item cold start
-42. User embedding for recommendation
-43. Item embedding for recommendation
-44. Session-based recommendation
-45. Sequential recommendation
-46. SASRec
-47. BERT4Rec
-48. GRU4Rec
-49. DIN
-50. DIEN
-51. Deep Interest Network
-52. Deep Interest Evolution Network
-53. Click-through rate prediction
-54. Conversion rate prediction
-55. Click-through rate calibration
-56. Click model
-57. Position bias
-58. Exposure bias
-59. Selection bias in recommendations
-60. Implicit feedback
-61. Explicit feedback
-62. User-item interaction
-63. User-item interaction matrix
-64. User history
-65. Item metadata
-66. Item similarity
-67. User similarity
-68. Nearest-neighbor recommendation
-69. Popularity bias
-70. Long-tail recommendation
-71. Catalog coverage
-72. Recommendation diversity
-73. Recommendation novelty
-74. Serendipity
-75. Exploration-exploitation in recommendations
-76. Multi-armed bandit recommendation
-77. Contextual recommendation
-78. Context-aware recommender
-79. Cross-domain recommendation
-80. Knowledge-aware recommendation
-81. Graph-based recommendation
-82. Graph collaborative filtering
-83. LightGCN
-84. PinSage
-85. Social recommendation
-86. Group recommendation
-87. Multiobjective ranking
-88. Business rules in ranking
-89. Fairness in recommendation
-90. Recommendation explainability
-91. Counterfactual recommendation
-92. Off-policy recommendation evaluation
-93. Offline ranking evaluation
-94. Online recommendation evaluation
-95. Interleaving experiments
-96. Recommendation A/B testing
-97. Negative sampling for recommendation
-98. Hard-negative recommendation training
-99. In-batch negative sampling
-100. Candidate popularity correction
-101. Embedding refresh
-102. Approximate nearest neighbor retrieval for recommendation
-103. Real-time personalization
-104. Recommendation serving latency
-105. Recommendation feedback loop
-106. Feedback amplification
-107. User satisfaction optimization
-108. Retention-aware recommendation
-109. Dwell-time prediction
-110. Watch-time prediction
-111. Purchase propensity modeling
-112. Ranking feature store
-113. Recommendation feature crossing
-114. Delayed feedback in recommendation
+22. Deep and Cross Network (DCN)
+23. Two-tower retrieval model
+24. Candidate retrieval stage
+25. Recommendation ranking stage
+26. Re-ranking for recommendations
+27. Learning to rank
+28. Pointwise ranking loss
+29. Pairwise ranking loss
+30. Listwise ranking loss
+31. BPR loss
+32. Bayesian personalized ranking
+33. LambdaRank
+34. LambdaMART
+35. ListNet
+36. ListMLE
+37. Top-N recommendation
+38. Cold start problem
+39. New user cold start
+40. New item cold start
+41. User embedding for recommendation
+42. Item embedding for recommendation
+43. Session-based recommendation
+44. Sequential recommendation
+45. SASRec
+46. BERT4Rec
+47. GRU4Rec
+48. Deep Interest Network (DIN)
+49. Deep Interest Evolution Network (DIEN)
+50. Click-through rate prediction
+51. Conversion rate prediction
+52. Click-through rate calibration
+53. Click model
+54. Position bias
+55. Exposure bias
+56. Selection bias in recommendations
+57. Implicit feedback
+58. Explicit feedback
+59. User-item interaction
+60. User-item interaction matrix
+61. User history
+62. Item metadata
+63. Item similarity
+64. User similarity
+65. Nearest-neighbor recommendation
+66. Popularity bias
+67. Long-tail recommendation
+68. Catalog coverage
+69. Recommendation diversity
+70. Recommendation novelty
+71. Serendipity
+72. Exploration-exploitation in recommendations
+73. Multi-armed bandit recommendation
+74. Contextual recommendation
+75. Context-aware recommender
+76. Cross-domain recommendation
+77. Knowledge-aware recommendation
+78. Graph-based recommendation
+79. Graph collaborative filtering
+80. LightGCN
+81. PinSage
+82. Social recommendation
+83. Group recommendation
+84. Multiobjective ranking
+85. Business rules in ranking
+86. Fairness in recommendation
+87. Recommendation explainability
+88. Counterfactual recommendation
+89. Off-policy recommendation evaluation
+90. Offline ranking evaluation
+91. Online recommendation evaluation
+92. Interleaving experiments
+93. Recommendation A/B testing
+94. Negative sampling for recommendation
+95. Hard-negative recommendation training
+96. In-batch negative sampling
+97. Candidate popularity correction
+98. Embedding refresh
+99. Approximate nearest neighbor retrieval for recommendation
+100. Real-time personalization
+101. Recommendation serving latency
+102. Recommendation feedback loop
+103. Feedback amplification
+104. User satisfaction optimization
+105. Retention-aware recommendation
+106. Dwell-time prediction
+107. Watch-time prediction
+108. Purchase propensity modeling
+109. Ranking feature store
+110. Recommendation feature crossing
+111. Delayed feedback in recommendation

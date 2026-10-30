@@ -1,6 +1,6 @@
 # 27. Evolutionary Computing
 
-> AI-wide keyword catalog. 83 unique entries.
+> AI-wide keyword catalog · 82 unique primary-domain keywords.
 
 1. Evolutionary computation
 2. Evolutionary algorithm
@@ -83,5 +83,4 @@
 79. Constraint handling in evolutionary algorithms
 80. Repair operator for chromosomes
 81. Evolutionary hyperparameter optimization
-82. Population-based training
-83. Surrogate-assisted evolutionary optimization
+82. Surrogate-assisted evolutionary optimization
