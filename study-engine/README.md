@@ -35,15 +35,15 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 - `quiz-theme.js`: one reusable 15-theme selector, grading, progress and reset system.
 - `app.js`: manifest-driven loading, validation and rendering.
 - `modules/index.json`: discoverable lesson manifest.
-- `modules/<slug>.json`: **unique** exact question stems, four choices, answer, explanation, illustrated hero and seven custom diagrams.
+- `modules/<slug>.json`: **unique** exact question stems, four choices, answer, **simple explanation + optional technicalExplanation**, illustrated hero and seven custom diagrams.
 - `diagrams/<slug>.css`: **unique** styling required by that keyword's illustrated scenes. Softmax needs no additional sheet because its original styles are the base.
 
 ## Workflow for every future keyword
 1. Keep the user's question wording and exact count, but remove redundant leading `Layer 1:`, `Layer 2:`, etc. labels from stored `stem` values. Display quiz question numbers only as `Q1`, `Q2`, ...; do not repeat layer labels in the question. Leave legitimate technical uses of the word “layer” untouched.
-2. Author four understandable, credible options per question, one best answer, and a concise explanation.
+2. Author four understandable options and one correct answer per question. Write **18–30 words of beginner-friendly explanation** (allowed range 12–42) and retain thorough content separately as `technicalExplanation`.
 3. Design a **different instructional diagram for every question**, plus a bespoke intro illustration. No repeated generic box-and-arrow layouts.
 4. Add `modules/new-keyword.json`; add `diagrams/new-keyword.css` if needed. Add a manifest entry.
-5. Run `node study-engine/verify-diagram-quality.mjs` for every new module to reject copied diagrams, generic text-only figures, missing accessible SVG scenes, or duplicate fingerprints; also run `node study-engine/verify-module-options.mjs` before publishing: four answers per card, options within a 1.15 word-count ratio, and no correct option uniquely longest by words or visible characters. This test also runs in the Pages workflow. Validate diagrams on mobile and desktop, correctness, themes and buttons. Link to `?module=new-keyword` after Pages deployment succeeds.
+5. Run `node study-engine/verify-explanation-quality.mjs` to reject overloaded explanations, then run `node study-engine/verify-diagram-quality.mjs` for every new module to reject copied diagrams, generic text-only figures, missing accessible SVG scenes, or duplicate fingerprints; also run `node study-engine/verify-module-options.mjs` before publishing: four answers per card, options within a 1.15 word-count ratio, and no correct option uniquely longest by words or visible characters. This test also runs in the Pages workflow. Validate diagrams on mobile and desktop, correctness, themes and buttons. Link to `?module=new-keyword` after Pages deployment succeeds.
 6. For offline export, assemble a separate standalone HTML file. **The GitHub Pages version intentionally uses shared assets and is not file:// portable.**
 
 The migrated Softmax, Masking and Positional Encoding questions and diagrams come from the prior seven-layer pages; their unique graphics are preserved instead of being re-generated as generic templates.
@@ -67,3 +67,14 @@ The repository's older standalone-HTML policy remains applicable to exported off
 **SVG serialization guardrail:** Build repeated SVG labels with `items.map(renderLabel).join('')`, never `html += items.forEach(renderLabel)` (which appends `undefined`). The diagram-quality gate rejects serialized `undefined`, `NaN`, and `[object Object]` in visual content. Confirm required caption text is actually visible in desktop and mobile screenshots; passing structural checks alone does not establish visual quality.
 
 Every new keyword module (after the nine legacy modules) must declare `visualQuality: "illustrated-v2"`, include a concept-specific illustrated intro and one independently designed SVG instructional scene for each supplied question, and define unique `data-scene` fingerprints. The Pages build checks these constraints using `node study-engine/verify-diagram-quality.mjs`. Distinct compositions are required: do not copy a box-and-arrow skeleton and change its labels. The checker is a structural preflight, not a substitute for visual comparison to the original Multimodal Training diagrams or mobile screenshots.
+
+## Beginner-first explanations (required for every hosted lesson)
+
+The initial answer box must be easy enough for a newcomer to understand after a single read:
+
+- `explanation`: Start with `<strong>In simple words:</strong>` followed by **one idea in 18–30 everyday words** (acceptable 12–42). Use one tiny example when it makes the idea clearer.
+- `technicalExplanation`: Keep the original rigorous explanation here. The shared UI renders it inside **“Read the detailed explanation”**, collapsed until the learner chooses to expand it.
+- Avoid repeating the question, naming every wrong option, stacking jargon, or placing formulas and long code in the default explanation.
+- Run `node study-engine/verify-explanation-quality.mjs`; the Pages deployment workflow runs the same check. A human must also check factual accuracy and clarity.
+
+**Migration complete for all 17 active modules (119 questions).** Existing question text, correct keys, answer choices, unique diagrams, and original detailed explanations remain intact.
