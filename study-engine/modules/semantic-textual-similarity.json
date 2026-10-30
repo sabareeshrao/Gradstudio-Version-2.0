@@ -11,7 +11,7 @@
       "tag": "The everyday idea",
       "options": [
         "STS counts how many letters two sentences share.",
-        "STS estimates how similar two pieces of text are in meaning.",
+        "STS compares how similar two sentences are in meaning.",
         "STS translates every sentence into English.",
         "STS checks whether two sentences have identical punctuation."
       ],
@@ -23,8 +23,8 @@
       "stem": "Layer 2: Why is Semantic Textual Similarity needed, and what problems does it solve when comparing text?",
       "tag": "Why STS matters",
       "options": [
-        "Word matching misses paraphrases and can mistake unrelated uses of the same word for a match.",
-        "STS fixes spelling errors in every document automatically.",
+        "It catches paraphrases and avoids being fooled by shared words.",
+        "It corrects grammar and spelling across all texts automatically.",
         "STS removes the need to understand any language.",
         "STS guarantees that search results are always factually correct."
       ],
@@ -38,8 +38,8 @@
       "options": [
         "It ignores every word except the longest one.",
         "It assigns the same score to every pair of sentences.",
-        "It uses only the sentence's length and punctuation.",
-        "It represents each sentence with learned meaning-related features, then compares those representations."
+        "It uses only each word's letter count and punctuation for matching.",
+        "It compares learned sentence vectors that represent meaning."
       ],
       "answer": "d",
       "figure": "<div class=\"sts-fig sts-meaning\"><span class=\"sts-eyebrow\">03 · TEXT → MEANING SPACE</span><h3>Different wording can land near the same idea</h3><div class=\"sts-map\"><div class=\"sts-map-left\"><div class=\"sts-map-phrase\">“The child is sleeping.”</div><div class=\"sts-map-phrase\">“A kid is taking a nap.”</div><div class=\"sts-map-phrase sts-other\">“The bus is running late.”</div></div><div class=\"sts-map-arrows\" aria-hidden=\"true\"><span>↗</span><span>→</span><span>↘</span></div><div class=\"sts-map-board\"><div class=\"sts-map-caption\">Illustrative embedding space</div><svg viewBox=\"0 0 380 220\" role=\"img\" aria-label=\"Two points about sleeping close together; a point about a late bus farther away\"><defs><pattern id=\"stsDots\" width=\"22\" height=\"22\" patternUnits=\"userSpaceOnUse\"><circle cx=\"2\" cy=\"2\" r=\"1\" fill=\"#dce7ed\"/></pattern></defs><rect x=\"0\" y=\"0\" width=\"380\" height=\"220\" rx=\"12\" fill=\"url(#stsDots)\"/><circle cx=\"120\" cy=\"94\" r=\"58\" fill=\"#dff4e8\" opacity=\".8\"/><path d=\"M117 93L155 77\" stroke=\"#2c9b77\" stroke-width=\"3\" stroke-dasharray=\"5 4\"/><circle cx=\"117\" cy=\"93\" r=\"8\" fill=\"#3b9d7e\"/><circle cx=\"155\" cy=\"77\" r=\"8\" fill=\"#7c7ac2\"/><circle cx=\"306\" cy=\"181\" r=\"9\" fill=\"#da8e60\"/><text x=\"78\" y=\"72\" font-size=\"13\" fill=\"#286b56\" font-weight=\"700\">sleep</text><text x=\"164\" y=\"70\" font-size=\"13\" fill=\"#6c62a8\" font-weight=\"700\">nap</text><text x=\"246\" y=\"165\" font-size=\"13\" fill=\"#a76a45\" font-weight=\"700\">late bus</text><text x=\"13\" y=\"207\" font-size=\"11\" fill=\"#778a95\">Schematic, not model output</text></svg></div></div><div class=\"sts-insight\">Nearby points often describe a <strong>similar idea</strong>, even with different wording.</div></div>",
@@ -50,8 +50,8 @@
       "tag": "Cosine similarity math",
       "options": [
         "Multiply the number of words in the two sentences.",
-        "Convert each sentence into a percentage and add them.",
-        "Encode sentences as vectors and compare their angle with cosine similarity.",
+        "Turn both sentences into percentages and add the two totals.",
+        "Compare sentence vector directions using cosine similarity.",
         "Count vowels and subtract the two totals."
       ],
       "answer": "c",
@@ -63,9 +63,9 @@
       "tag": "Python implementation",
       "options": [
         "Use <code>sorted()</code> on both sentences and count matching letters.",
-        "Encode the sentences with Sentence Transformers, then calculate cosine similarity.",
+        "Encode text with Sentence Transformers, then compare cosine scores.",
         "Convert sentences into images before comparing them.",
-        "Train a brand-new language model every time two sentences are compared."
+        "Train a new language model for each sentence pair comparison."
       ],
       "answer": "b",
       "figure": "<div class=\"sts-fig sts-python\"><span class=\"sts-eyebrow\">05 · PYTHON + MODEL FLOW</span><h3>One reusable embedding model; two sentences; one similarity score</h3><div class=\"sts-python-layout\"><div class=\"sts-code\"><div class=\"sts-code-top\"><span class=\"sts-dots\"><i></i><i></i><i></i></span><strong>sts_example.py</strong></div><pre><code><span class=\"sts-comment\"># pip install -U sentence-transformers</span>\n<span class=\"sts-keyword\">from</span> sentence_transformers <span class=\"sts-keyword\">import</span> (\n    SentenceTransformer, util\n)\n\nmodel = SentenceTransformer(\n    <span class=\"sts-string\">\"sentence-transformers/all-MiniLM-L6-v2\"</span>\n)\n\nsentences = [\n    <span class=\"sts-string\">\"A child rides a bike.\"</span>,\n    <span class=\"sts-string\">\"A kid is cycling.\"</span>\n]\n\nvectors = model.encode(\n    sentences, convert_to_tensor=True\n)\nscore = util.cos_sim(\n    vectors[0], vectors[1]\n).item()\n<span class=\"sts-function\">print</span>(f<span class=\"sts-string\">\"Similarity: {score:.3f}\"</span>)</code></pre></div><div class=\"sts-python-flow\"><div class=\"sts-flow-step\"><b>1</b><span>Two sentences</span></div><span class=\"sts-flow-down\">↓</span><div class=\"sts-flow-step\"><b>2</b><span>SentenceTransformer</span></div><span class=\"sts-flow-down\">↓</span><div class=\"sts-flow-vectors\"><span>[… embedding A …]</span><span>[… embedding B …]</span></div><span class=\"sts-flow-down\">↓</span><div class=\"sts-flow-final\">Cosine similarity</div><p>Real model score printed at runtime</p></div></div><p class=\"sts-note\">The model downloads on first use. Cosine similarity can be negative; do not interpret it automatically as a percentage probability.</p></div>",
@@ -75,10 +75,10 @@
       "stem": "Layer 6: How do bi-encoders, cross-encoders, Siamese networks, and transformer-based embedding models perform Semantic Textual Similarity, and how are they trained using contrastive learning?",
       "tag": "Model architectures & training",
       "options": [
-        "A cross-encoder always saves a separate vector for each sentence.",
+        "A cross-encoder computes separate vectors for each sentence, stores them, and searches a vector index.",
         "All architectures compare only exact shared words.",
         "Contrastive training intentionally moves every embedding together.",
-        "A bi-encoder embeds sentences separately, a cross-encoder scores a pair jointly, and contrastive training helps useful pairs cluster."
+        "Bi-encoders embed separately; cross-encoders score pairs; contrastive training shapes embeddings."
       ],
       "answer": "d",
       "figure": "<div class=\"sts-fig sts-architectures\"><span class=\"sts-eyebrow\">06 · FOUR CONNECTED IDEAS</span><h3>Two scoring routes — and how embedding models learn</h3><div class=\"sts-model-grid\"><div class=\"sts-model-card\"><span class=\"sts-model-badge\">BI-ENCODER / SIAMESE</span><div class=\"sts-two-inputs\"><span>Sentence A</span><span>Sentence B</span></div><div class=\"sts-vert-double\">↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓</div><div class=\"sts-two-inputs sts-model-blocks\"><span>Shared model</span><span>Shared model</span></div><div class=\"sts-vert-double\">↓ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↓</div><div class=\"sts-two-inputs sts-model-vectors\"><span>Vector A</span><span>Vector B</span></div><div class=\"sts-center-arrow\">↘ &nbsp;&nbsp; ↙</div><div class=\"sts-model-outcome\">Cosine / vector comparison</div><p>Fast for large collections: embed documents once, then search.</p></div><div class=\"sts-model-card sts-cross-card\"><span class=\"sts-model-badge\">CROSS-ENCODER</span><div class=\"sts-pair-input\"><span>Sentence A</span><b>+</b><span>Sentence B</span></div><div class=\"sts-center-arrow\">↓</div><div class=\"sts-cross-body\">One Transformer sees both texts together</div><div class=\"sts-center-arrow\">↓</div><div class=\"sts-model-outcome\">Direct pair score</div><p>Often useful for reranking a smaller set of candidates. No standalone sentence embedding for indexing.</p></div></div><div class=\"sts-contrast\"><div class=\"sts-contrast-head\"><strong>Contrastive learning</strong><span>Anchor → positive closer, negative farther</span></div><div class=\"sts-triplet\"><span class=\"sts-anchor\">“A child is running.”<small>Anchor</small></span><span class=\"sts-positive\">“A kid runs.”<small>Positive ✓</small></span><span class=\"sts-negative\">“The sky is cloudy.”<small>Negative ×</small></span></div><p>Learn a useful embedding space from labeled or mined positive/negative examples.</p></div></div>",
@@ -88,10 +88,10 @@
       "stem": "Layer 7: How are Semantic Textual Similarity systems evaluated and optimized in production, including STS benchmarks, Pearson and Spearman correlations, semantic search, model fine-tuning, multilingual similarity, latency, and scalability?",
       "tag": "Evaluation & production",
       "options": [
-        "Test agreement with human STS scores, then measure retrieval quality, multilingual performance, latency, and scaling.",
+        "Compare human STS ratings, retrieval quality, languages and speed.",
         "Evaluate only whether the program runs without errors.",
         "Use a high cosine score as proof of factual correctness.",
-        "Skip human-labeled benchmarks because all embedding models score sentences identically."
+        "Skip labeled benchmarks and trust scores seen in one short model demonstration."
       ],
       "answer": "a",
       "figure": "<div class=\"sts-fig sts-prod\"><span class=\"sts-eyebrow\">07 · PRODUCTION QUALITY CONTROL</span><h3>Measure whether the scores match people — and whether search works at scale</h3><div class=\"sts-dash\"><div class=\"sts-eval\"><div class=\"sts-panel-title\">A · STS benchmark evaluation</div><div class=\"sts-eval-points\"><svg viewBox=\"0 0 320 205\" role=\"img\" aria-label=\"Illustrative increasing relationship between human STS ratings and model similarity scores\"><rect width=\"320\" height=\"205\" rx=\"12\" fill=\"#fff\"/><path d=\"M40 20V164H295\" fill=\"none\" stroke=\"#7c93a2\" stroke-width=\"2\"/><path d=\"M45 151L271 33\" stroke=\"#9fc7c0\" stroke-width=\"2.5\" stroke-dasharray=\"6 5\"/><g fill=\"#428b9b\" opacity=\".85\"><circle cx=\"69\" cy=\"145\" r=\"6\"/><circle cx=\"105\" cy=\"114\" r=\"6\"/><circle cx=\"139\" cy=\"121\" r=\"6\"/><circle cx=\"172\" cy=\"78\" r=\"6\"/><circle cx=\"219\" cy=\"66\" r=\"6\"/><circle cx=\"270\" cy=\"33\" r=\"6\"/></g><text x=\"95\" y=\"193\" font-size=\"12\" fill=\"#667d8b\">Human rating →</text><text transform=\"translate(14 140) rotate(-90)\" font-size=\"11\" fill=\"#667d8b\">Model score →</text><text x=\"201\" y=\"19\" font-size=\"10\" fill=\"#8b9da7\">Illustrative points</text></svg></div><div class=\"sts-metric-cards\"><div><strong>Pearson</strong><span>Linear agreement</span></div><div><strong>Spearman</strong><span>Ranking agreement</span></div></div></div><div class=\"sts-ship\"><div class=\"sts-panel-title\">B · Semantic search pipeline</div><div class=\"sts-ship-step\"><span>1</span><div><strong>Encode documents</strong><small>Batch and cache embeddings</small></div></div><div class=\"sts-ship-connector\">↓</div><div class=\"sts-ship-step\"><span>2</span><div><strong>Vector index</strong><small>Approximate nearest-neighbor retrieval</small></div></div><div class=\"sts-ship-connector\">↓</div><div class=\"sts-ship-step\"><span>3</span><div><strong>Optional reranker</strong><small>Cross-encoder for top candidates</small></div></div><div class=\"sts-ship-connector\">↓</div><div class=\"sts-ship-step sts-ship-last\"><span>4</span><div><strong>Monitor quality</strong><small>Relevance, multilingual, drift, latency</small></div></div></div></div><div class=\"sts-production-footer\"><span>STS Benchmark / domain labels</span><span>Fine-tuning & calibration</span><span>Multilingual tests</span><span>Latency & throughput</span></div><p class=\"sts-note\">Benchmark agreement and real-world search relevance are different checks. Both should be measured.</p></div>",
