@@ -43,3 +43,6 @@
 @media(max-width:890px){.bp-code-layout{grid-template-columns:1fr}.bp-test-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}.bp-test-card h4,.bp-test-card>p{grid-column:1/-1}}
 @media(max-width:650px){.bp-hero{padding:16px 13px}.bp-scene svg{min-width:650px}.bp-hero .bp-scene svg{min-width:650px}.bp-technique-strip{grid-template-columns:repeat(2,1fr)}.bp-test-card{grid-template-columns:1fr}.bp-fig h3{font-size:1.03rem}.bp-code pre{font-size:.69rem}}
 @media(prefers-reduced-motion:reduce){.bp-hero *,.bp-fig *{animation:none!important;transition:none!important}}
+
+.bp-verify-graphic{margin-top:12px}
+.bp-verify-graphic .bp-scene svg{min-width:650px}
