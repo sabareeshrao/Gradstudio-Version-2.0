@@ -659,257 +659,461 @@ body{transition:background-color .15s}
 }
 
 
-/* Original Multimodal card/topbar/theme shell is preserved; visuals are completely rebuilt. */
-#quiz .q-fig .studio-story{--ink:#1c3552;--muted:#5b7188;--blue:#3375c5;--pale:#e7f1ff;--gold:#ffc56f;background:linear-gradient(146deg,#ffffff 0%,#f5f9ff 76%,#edf5ff 100%);border:1px solid #d3e1f1;color:var(--ink);border-radius:15px;padding:18px;overflow:hidden;min-width:0;box-shadow:0 4px 16px rgba(39,81,140,.07)}
-#quiz .q-fig .studio-story *,#quiz .q-fig .studio-story *:before,#quiz .q-fig .studio-story *:after{box-sizing:border-box;min-width:0}
-#quiz .studio-story-top{border-bottom:1px solid #dfebf7;padding-bottom:12px;margin-bottom:15px}
-#quiz .studio-story-top h3{margin:4px 0;font-size:clamp(18px,2.3vw,23px);line-height:1.22;letter-spacing:-.035em;color:#183b63;font-weight:850}
-#quiz .studio-story-top p{margin:4px 0 0;font-size:13px;color:#55718c;line-height:1.45}
-#quiz .studio-eyebrow{font-size:10px;letter-spacing:.17em;color:#5180b1;font-weight:850}
-#quiz .studio-eyebrow b{color:#fff;background:#3578be;border-radius:5px;padding:2px 5px}
-#quiz .studio-annotation{font-size:10px;color:#6680a1;letter-spacing:.12em;font-weight:850;margin-bottom:7px}
-#quiz .studio-takeaway{display:flex;align-items:flex-start;gap:8px;background:rgba(213,232,255,.52);border-radius:9px;color:#274b72;padding:10px 12px;margin-top:13px;font-size:12.5px;line-height:1.45}
-#quiz .studio-story svg.studio-glyph{display:block!important;width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;max-width:34px!important;max-height:34px!important;flex:0 0 34px!important}
-#quiz .studio-story svg.studio-mini-icon{display:block!important;width:19px!important;height:19px!important;min-width:19px!important;min-height:19px!important;max-width:19px!important;max-height:19px!important;flex:0 0 19px!important}
-#quiz .studio-story svg.studio-network{display:block;width:100%;height:auto;max-width:190px;margin:auto}
-#quiz .studio-story svg.studio-plot{display:block;width:100%;height:auto;min-width:0}
-#quiz .studio-story .studio-map-layout{display:grid;grid-template-columns:minmax(0,1.2fr) 24px minmax(0,1.18fr) 24px minmax(0,1.2fr);align-items:center;gap:8px}
-#quiz .studio-raw-item{background:#fff;border:1px solid #d7e5f5;display:flex;align-items:center;gap:9px;border-radius:9px;padding:9px;margin:7px 0;box-shadow:0 2px 0 rgba(55,110,175,.04);font-size:12px;font-weight:700}
-#quiz .studio-raw-item svg{color:#367abf}
-#quiz .studio-raw-line{height:2px;background:linear-gradient(90deg,#d0dff0,transparent);flex:1}
-#quiz .studio-map-connect{display:grid;gap:7px;font-size:23px;text-align:center;color:#5794cb}
-#quiz .studio-neural{position:relative;border-radius:99px;aspect-ratio:1;min-height:165px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 20%,#eef7ff,#d8e9ff);border:3px solid #c2dcf9;box-shadow:0 0 0 7px rgba(213,231,253,.7),inset 0 2px 12px rgba(19,86,153,.07);padding:10px;text-align:center}
-#quiz .studio-neural-ring{width:72%;max-width:160px}
-#quiz .studio-neural strong{font-size:11px;letter-spacing:.055em;color:#194477;margin-top:3px}
-#quiz .studio-neural small{font-size:10px;color:#5f7b99}
-#quiz .studio-output-item{display:flex;align-items:center;gap:8px;margin:7px 0;padding:10px 7px;border-bottom:1px solid #d5e5f4;font-size:12px}
-#quiz .studio-output-ind{color:#2466ad;background:#dbeafa;border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-size:11px;font-weight:850;flex-shrink:0}
-#quiz .studio-compare-layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-#quiz .studio-compare-half{background:#fff9f7;border:1px solid #f2d9ce;border-radius:12px;padding:12px}
-#quiz .studio-compare-half.is-good{background:#f3fbf8;border-color:#c3e7d9}
-#quiz .studio-compare-top{display:flex;gap:7px;align-items:center;font-size:13px;color:#294561}
-#quiz .studio-status-dot{width:9px;height:9px;border-radius:50%;background:#df926f;flex:0 0 9px}
-#quiz .is-good .studio-status-dot{background:#25a77d}
-#quiz .studio-lineplot{background:linear-gradient(#fff,#f5f9ff);border-radius:7px;margin:9px 0;padding:6px 3px 2px}
-#quiz .studio-compare-cards{display:grid;gap:6px}
-#quiz .studio-compare-cards span{display:flex;align-items:center;gap:6px;font-size:11.5px;line-height:1.4;color:#455e78}
-#quiz .studio-compare-cards svg{color:#5589bd}
-#quiz .studio-chart-legend{display:flex;align-items:center;flex-wrap:wrap;gap:8px 15px;font-size:11px;color:#667d97;margin-top:9px}
-#quiz .studio-chart-legend span{display:flex;align-items:center;gap:5px}
-#quiz .studio-chart-legend i{width:13px;height:4px;border-radius:99px;display:inline-block}
-#quiz .studio-token-stage{background:#f0f7ff;border:1px solid #d9e9fa;padding:13px;border-radius:12px}
-#quiz .studio-token-caption{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;font-weight:800;letter-spacing:.09em;color:#547ba3;margin-bottom:10px}
-#quiz .studio-token-ribbon{display:flex;flex-wrap:wrap;gap:7px}
-#quiz .studio-token{display:grid;gap:2px;border:1px solid #aacff7;background:white;padding:12px 14px;min-width:63px;border-radius:9px;box-shadow:0 4px 0 rgba(71,119,193,.09)}
-#quiz .studio-token:nth-child(2n){background:#fff5e6;border-color:#f2d6a9}
-#quiz .studio-token small{font-size:10px;color:#86a2be}
-#quiz .studio-token b{font-family:ui-monospace,Consolas,monospace;color:#2c568a;font-size:14px}
-#quiz .studio-target-lane{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:14px;padding-top:11px;border-top:2px dashed #c2d8ef}
-#quiz .studio-target-lane>span:first-child{font-size:10px;color:#5c7aa0;font-weight:850;display:flex;align-items:center;gap:5px}
-#quiz .studio-target-lane>strong{padding:6px 10px;background:#285e9b;border-radius:7px;color:white;font-family:ui-monospace,Consolas,monospace;font-size:12px;overflow-wrap:anywhere}
-#quiz .studio-target-pointer{font-size:11px;color:#6885a6}
-#quiz .studio-trace{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:12px}
-#quiz .studio-trace-step{border-top:3px solid #69a2d4;background:#fff;border-radius:6px;padding:10px 8px;position:relative;min-height:80px}
-#quiz .studio-trace-step:not(:last-child):after{content:'›';position:absolute;right:-8px;top:24px;font-size:24px;color:#5a96cc;z-index:1}
-#quiz .studio-trace-step i{font-size:11px;font-style:normal;color:#386b9e;font-weight:900}
-#quiz .studio-trace-text{font-size:11px;color:#426383;line-height:1.5;margin-top:5px}
-#quiz .studio-inspector{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px}
-#quiz .studio-editor{background:#162a41;color:#e7effa;border-radius:11px;overflow:hidden;border:1px solid #293d59;box-shadow:0 9px 20px rgba(9,33,70,.15)}
-#quiz .studio-editor-bar{display:flex;gap:5px;align-items:center;background:#263c58;padding:11px}
-#quiz .studio-editor-bar i,#quiz .studio-browserbar i{width:8px;height:8px;background:#ed968b;border-radius:50%;flex:none}
-#quiz .studio-editor-bar i:nth-child(2),#quiz .studio-browserbar i:nth-child(2){background:#eaca78}
-#quiz .studio-editor-bar i:nth-child(3),#quiz .studio-browserbar i:nth-child(3){background:#72c9a7}
-#quiz .studio-editor-bar span{margin-left:7px;font:11px ui-monospace,Consolas,monospace;color:#d6e6fa}
-#quiz .studio-editor-bar em{font-size:9px;font-style:normal;margin-left:auto;color:#97c1ec}
-#quiz .studio-editor-body{padding:14px 9px;display:grid;gap:7px}
-#quiz .studio-code-line{display:grid;grid-template-columns:24px minmax(0,1fr);gap:9px;border-left:2px solid transparent;padding:5px 4px}
-#quiz .studio-code-line.is-marked{border-left-color:#f3c372;background:rgba(255,204,110,.09)}
-#quiz .studio-ln{color:#7394b5;font-size:10px}
-#quiz .studio-code-line code{color:#e5f5ff;font:11.5px/1.65 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
-#quiz .studio-inspector-detail{display:flex;flex-direction:column;gap:8px}
-#quiz .studio-inspector-row{display:flex;align-items:center;gap:9px;background:#fff;padding:12px 9px;border-radius:9px;border:1px solid #d9e7f6;font-size:12px;color:#395a7b}
-#quiz .studio-inspector-line{color:#3981c8;background:#e4f2ff;border-radius:6px;padding:2px 6px;font-size:11px;font-weight:800}
-#quiz .studio-inspector-row svg{margin-left:auto;color:#4786c5}
-#quiz .studio-workspace{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.8fr);gap:12px}
-#quiz .studio-product{background:#fff;box-shadow:0 10px 26px rgba(26,74,121,.1);border-radius:11px;overflow:hidden;border:1px solid #c7dbec}
-#quiz .studio-browserbar{display:flex;align-items:center;gap:6px;padding:11px 13px;background:#e3ecf7}
-#quiz .studio-browserbar strong{font-size:11px;margin-left:5px;color:#3a6189}
-#quiz .studio-browserbar span{margin-left:auto;font-size:9px;color:#618cb4;font-weight:850}
-#quiz .studio-product-body{padding:16px;display:grid;gap:8px}
-#quiz .studio-form-title{font-size:10px;font-weight:850;color:#5380b0;letter-spacing:.12em}
-#quiz .studio-form-row{display:grid;gap:5px}
-#quiz .studio-form-row label{color:#7088a4;font-size:10px;font-weight:850}
-#quiz .studio-form-row div{border:1px solid #d5e3f0;border-radius:6px;background:#fafcff;padding:9px 11px;font-size:12px;color:#345676;overflow-wrap:anywhere}
-#quiz .studio-action-fake{background:#e7f0fb;color:#315d88;font-size:11px;font-weight:800;display:flex;align-items:center;gap:8px;border-radius:6px;padding:9px 11px;width:max-content;max-width:100%}
-#quiz .studio-result{background:#ecf9f2;border:1px solid #b6dcc7;border-radius:7px;padding:10px;display:grid;gap:4px}
-#quiz .studio-result small{font-size:10px;color:#38795b;font-weight:850}
-#quiz .studio-result code{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.45 ui-monospace,Consolas,monospace;color:#225b42}
-#quiz .studio-workspace-notes{display:grid;align-content:center;gap:10px}
-#quiz .studio-check-item{display:flex;gap:9px;align-items:center;background:#fff;border-radius:8px;border:1px solid #dce8f6;padding:12px 10px;font-size:12px;color:#345779}
-#quiz .studio-check-item svg{color:#2e8e69}
-#quiz .studio-diagnostic{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.75fr);gap:12px}
-#quiz .studio-chart-card{border:1px solid #d6e4f2;background:#fff;border-radius:11px;padding:12px}
-#quiz .studio-chart-heading{display:flex;align-items:center;gap:8px;font-weight:850;color:#4879a7;font-size:10px;letter-spacing:.07em}
-#quiz .studio-chart-heading small{margin-left:auto;color:#7a9bb9;font-weight:500;font-size:10px}
-#quiz .studio-risk-stack{display:flex;flex-direction:column;gap:10px;justify-content:center}
-#quiz .studio-risk-card{background:#fff4f0;border:1px solid #f0ccbf;padding:13px;border-radius:10px;display:grid;gap:9px}
-#quiz .studio-risk-card span{font-size:10px;color:#be6b4a;font-weight:850;letter-spacing:.11em}
-#quiz .studio-risk-card b{font-size:12px;line-height:1.4;color:#8b4735}
-#quiz .studio-risk-mini{display:flex;align-items:end;gap:5px;height:24px}
-#quiz .studio-risk-mini i{background:#e5ad94;width:9px;height:25%;border-radius:3px 3px 0 0}
-#quiz .studio-risk-mini i:nth-child(2){height:50%}#quiz .studio-risk-mini i:nth-child(3){height:85%}#quiz .studio-risk-mini i:nth-child(4){height:62%}
-#quiz .studio-fix-card{display:flex;gap:9px;align-items:center;background:#ebf8f2;border:1px solid #bfe2cf;padding:13px;border-radius:10px}
-#quiz .studio-fix-card svg{color:#188e67}
-#quiz .studio-fix-card span{display:grid;gap:5px}
-#quiz .studio-fix-card small{font-size:10px;color:#318765;font-weight:850}
-#quiz .studio-fix-card b{color:#245b48;font-size:12px;line-height:1.4}
-#quiz .studio-evidence{display:flex;gap:13px;align-items:center;background:#1c3b5d;color:#e8f4ff;border-radius:12px;padding:17px}
-#quiz .studio-evidence-icon{border-radius:10px;background:#2d5b8b;color:#b9ddff;padding:12px;flex-shrink:0}
-#quiz .studio-evidence>div{display:grid;gap:7px}
-#quiz .studio-evidence small{font-size:10px;color:#90bddf;font-weight:850;letter-spacing:.12em}
-#quiz .studio-evidence strong{font-size:13px;color:#edf7ff;line-height:1.5}
-#quiz .studio-evidence code{font-size:11px;color:#c4dfed;white-space:pre-wrap;overflow-wrap:anywhere}
-#quiz .studio-branch-arms{display:flex;gap:0;justify-content:center;height:35px;position:relative}
-#quiz .studio-branch-arms:before{content:'';display:block;position:absolute;top:0;left:25%;right:25%;height:26px;border-left:2px solid #8cadcf;border-right:2px solid #8cadcf;border-top:2px solid #8cadcf;transform:rotate(180deg)}
-#quiz .studio-branch-arms:after{content:'';display:block;height:23px;width:2px;background:#8cadcf}
-#quiz .studio-two-paths{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-#quiz .studio-path-good,#quiz .studio-path-bad{display:grid;gap:8px;background:#eefbf5;border:1px solid #b8e5cb;border-top:4px solid #36a77b;border-radius:9px;padding:13px}
-#quiz .studio-path-bad{background:#fff5f1;border-color:#f0c9bd;border-top-color:#d98d72}
-#quiz .studio-path-good svg{color:#2b9969}#quiz .studio-path-bad svg{color:#c88365}
-#quiz .studio-two-paths small{font-size:10px;font-weight:850;color:#598a76}
-#quiz .studio-path-bad small{color:#ac806c}
-#quiz .studio-two-paths strong{font-size:13px;line-height:1.42}
-#quiz .studio-two-paths em{font-size:11px;font-style:normal;color:#71877f}
-#quiz .studio-architecture{display:grid;grid-template-columns:minmax(0,1fr) 20px minmax(0,.9fr) 20px minmax(0,1fr);gap:10px;align-items:center}
-#quiz .studio-arch-unit{display:grid;gap:8px;background:#fff;border:1px solid #cddfee;border-radius:11px;padding:13px;min-height:166px}
-#quiz .studio-arch-unit>svg{color:#5a83b9}
-#quiz .studio-arch-unit.guard>svg{color:#2a9672}
-#quiz .studio-arch-artifact{display:flex;align-items:center;gap:7px;font-size:11px;color:#3f6285;border-top:1px solid #e9f0f6;padding-top:6px}
-#quiz .studio-arch-arrow{text-align:center;color:#6599ca;font-size:22px;font-weight:700}
-#quiz .studio-arch-engine{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding:16px 9px;background:linear-gradient(145deg,#e3f0ff,#eef6ff);border:2px solid #c1d8ef;border-radius:14px;min-height:185px}
-#quiz .studio-neural-ring.small{max-width:136px}
-#quiz .studio-arch-engine b{font-size:13px;color:#244a70}
-#quiz .studio-arch-engine small{font-size:10px;color:#547fa5;letter-spacing:.09em;margin-top:6px}
-#quiz .studio-arch-output{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px;border-top:1px dashed #bdd1e9;padding-top:12px}
-#quiz .studio-arch-output>span{color:#597aa0;font-size:10px;letter-spacing:.1em;font-weight:850;width:100%}
-#quiz .studio-arch-output b{display:flex;align-items:center;gap:6px;font-size:11px;padding:8px 10px;background:#e8f8ef;border:1px solid #c0e4cc;border-radius:7px;color:#39775c}
-@media(max-width:700px){#quiz .q-fig .studio-story{padding:13px}#quiz .studio-map-layout{grid-template-columns:minmax(0,1fr) 20px minmax(0,1.1fr)!important}#quiz .studio-map-layout>.studio-map-connect:nth-of-type(4){display:none}#quiz .studio-map-layout>.studio-outputs{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}#quiz .studio-map-layout>.studio-outputs>.studio-annotation{grid-column:1/-1}#quiz .studio-output-item{font-size:11px}#quiz .studio-neural{min-height:155px}#quiz .studio-trace{grid-template-columns:repeat(2,minmax(0,1fr))}#quiz .studio-trace-step:after{display:none}#quiz .studio-inspector,#quiz .studio-workspace,#quiz .studio-diagnostic{grid-template-columns:1fr}#quiz .studio-risk-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}#quiz .studio-architecture{grid-template-columns:1fr!important;gap:7px}#quiz .studio-arch-arrow{transform:rotate(90deg)}#quiz .studio-arch-unit{min-height:auto}#quiz .studio-arch-engine{min-height:150px}}
-@media(max-width:470px){#quiz .studio-compare-layout{grid-template-columns:1fr}#quiz .studio-two-paths{grid-template-columns:1fr}#quiz .studio-risk-stack{grid-template-columns:1fr}#quiz .studio-map-layout{grid-template-columns:1fr!important}#quiz .studio-map-connect{display:none!important}#quiz .studio-map-layout>.studio-outputs{grid-template-columns:1fr!important}#quiz .studio-neural{aspect-ratio:auto;min-height:185px}#quiz .studio-token{min-width:calc(50% - 7px)}#quiz .studio-story-top h3{font-size:18px}#quiz .studio-story .studio-code-line code{font-size:10.8px}}
 
-/* Topic-specific illustration upgrades: do not substitute generic trend charts for a mechanism. */
-#quiz .studio-custom-case .studio-content{min-width:0}
-#quiz .studio-custom-case .studio-chat-compare{display:grid;grid-template-columns:minmax(0,1fr) 110px minmax(0,1fr);gap:10px;align-items:center}
-#quiz .studio-chat-window{background:white;border:1px solid #e4d1cd;border-radius:11px;overflow:hidden;box-shadow:0 6px 15px rgba(34,62,96,.06)}
-#quiz .studio-chat-window.trained{border-color:#b0dcc8}
-#quiz .studio-chat-title{background:#e9f0f7;display:flex;align-items:center;gap:7px;padding:12px 10px;font-size:11px;color:#345d87}
-#quiz .studio-chat-title i{width:8px;height:8px;border-radius:50%;background:#d9a28c;flex:none}
-#quiz .studio-chat-window.trained .studio-chat-title i{background:#4cae81}
-#quiz .studio-chat-title span{margin-left:auto;color:#8296a7;font-size:9px}
-#quiz .studio-chat-msg{padding:10px 12px;margin:12px;font-size:12px;line-height:1.5;color:#3d5f7e;border-radius:9px;overflow-wrap:anywhere}
-#quiz .studio-chat-msg.sender{background:#eaf4ff;margin-left:20px}
-#quiz .studio-chat-msg.response{background:#fff5f0;margin-right:20px;border-left:3px solid #e4a084}
-#quiz .trained .studio-chat-msg.response{background:#eef9f2;border-left-color:#64b38b}
-#quiz .studio-chat-msg.response.code{font-family:ui-monospace,Consolas,monospace;color:#216946;font-weight:800;font-size:14px}
-#quiz .studio-chat-state{padding:11px;font-size:11px;text-align:center;font-weight:800}
-#quiz .studio-chat-state.wrong{background:#fcece5;color:#9f5b43}#quiz .studio-chat-state.right{background:#e6f7ee;color:#307e5a}
-#quiz .studio-chat-transfer{text-align:center;color:#477fae;font-size:10px;display:grid;gap:12px;justify-items:center}
-#quiz .studio-chat-transfer>span{font-size:29px;color:#71a4cc}
-#quiz .studio-training-dots{display:flex;align-items:center;gap:5px;flex-direction:column}
-#quiz .studio-training-dots i{width:10px;height:10px;background:#6a9ed3;border-radius:50%}
-#quiz .studio-overfit-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr);gap:12px}
-#quiz .studio-overfit-plot{background:white;border:1px solid #d9e7f5;padding:14px;border-radius:11px}
-#quiz .studio-graph-title{font-size:10px;color:#5a7da2;font-weight:850;letter-spacing:.1em}
-#quiz .studio-overfit-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:11px;color:#55708c}
-#quiz .studio-overfit-legend span{display:flex;align-items:center;gap:6px}
-#quiz .studio-overfit-legend i{width:15px;height:4px;border-radius:99px}
-#quiz .studio-overfit-legend .train{background:#3d81bf}#quiz .studio-overfit-legend .val{background:#d98765}
-#quiz .studio-overfit-reading{align-self:center;color:#426184;font-size:12px;line-height:1.5}
-#quiz .studio-alert-head{color:#bd6d4f;letter-spacing:.1em;font-size:10px;font-weight:850}
-#quiz .studio-overfit-remedy{background:#e6f6ee;border-left:3px solid #52a67e;padding:10px;color:#396951;border-radius:5px}
-#quiz .studio-buildpaths{display:grid;grid-template-columns:1fr 42px 1fr;gap:10px;align-items:stretch}
-#quiz .studio-buildroute{padding:13px;background:#fff9f5;border:1px solid #ecd6c9;border-radius:11px}
-#quiz .studio-buildroute.reusable{background:#effaf3;border-color:#bbddcb}
-#quiz .studio-path-label{color:#ae785b;font-size:10px;letter-spacing:.12em;font-weight:850;margin-bottom:12px}
-#quiz .studio-buildroute.reusable .studio-path-label{color:#2f8461}
-#quiz .studio-vertical-seq{display:grid;gap:12px;position:relative}
-#quiz .studio-vertical-seq:before{position:absolute;content:'';left:14px;top:10px;bottom:20px;border-left:2px dashed #bac7d8}
-#quiz .studio-vertical-seq>div{position:relative;display:grid;grid-template-columns:28px 1fr;gap:3px 8px;align-items:center;font-size:12px}
-#quiz .studio-vertical-seq span{grid-row:span 2;z-index:1;width:27px;height:27px;background:#d7e7f7;color:#345f8c;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800}
-#quiz .studio-vertical-seq b{color:#385675;overflow-wrap:anywhere}
-#quiz .studio-vertical-seq small{font-size:11px;color:#7892aa}
-#quiz .studio-build-divider{display:grid;place-items:center;color:#81a2bc;font-size:13px;font-weight:850}
-#quiz .studio-build-divider>div{border-radius:50%;background:#dce9f7;border:1px solid #b5cde8;padding:9px}
-#quiz .studio-gov{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:12px;align-items:center}
-#quiz .studio-gov-model{text-align:center;border-radius:12px;background:#e0edff;min-height:210px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:13px}
-#quiz .studio-gov-brain{font-size:83px;line-height:1;color:#457db2;text-shadow:0 2px 10px #bedbf9}
-#quiz .studio-gov-model strong{font-size:13px;color:#34597e}
-#quiz .studio-gov-model span{font-size:11px;line-height:1.4;color:#5f7c99;margin-top:8px}
-#quiz .studio-gov-audit{background:#fff;border:1px solid #d5e3f0;border-radius:11px;overflow:hidden}
-#quiz .studio-gov-line{display:flex;gap:10px;align-items:center;border-bottom:1px solid #e1eaf4;padding:11px 10px}
-#quiz .studio-gov-line i{font-size:12px;font-weight:850;font-style:normal;color:#ac7043;background:#ffeada;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
-#quiz .studio-gov-line span{display:grid;gap:3px}
-#quiz .studio-gov-line b{font-size:12px;color:#365574}
-#quiz .studio-gov-line small{font-size:10px;color:#6c88a3}
-#quiz .studio-gov-line em{margin-left:auto;font-style:normal;font-size:9px;color:#b38057}
-#quiz .studio-gov-gate{background:#eaf8ee;color:#36775b;padding:11px 12px;font-size:10px;font-weight:850;letter-spacing:.06em}
-#quiz .studio-gov-gate span{float:right}
-#quiz .studio-loss-demo{display:grid;grid-template-columns:minmax(0,1fr) 35px minmax(0,.9fr);align-items:stretch;gap:10px}
-#quiz .studio-loss-left,#quiz .studio-loss-right{background:#fff;border:1px solid #d8e7f4;border-radius:11px;padding:13px}
-#quiz .studio-loss-title{font-size:10px;color:#5e83a7;font-weight:850;letter-spacing:.11em}
-#quiz .studio-loss-target{font-size:12px;color:#486681;line-height:1.65;margin:10px 0}
-#quiz .studio-loss-votes{display:grid;gap:7px}
-#quiz .studio-loss-votes>span{display:grid;grid-template-columns:45px minmax(0,1fr) 30px;align-items:center;gap:8px;font-size:11px}
-#quiz .studio-loss-votes i{position:relative;background:linear-gradient(90deg,#f2cc85 var(--v),#e9f0f8 var(--v));height:10px;border-radius:99px}
-#quiz .studio-loss-votes span:first-child i{background:linear-gradient(90deg,#4b92cb var(--v),#e9f0f8 var(--v))}
-#quiz .studio-loss-left>small{color:#718da5;font-size:10px}
-#quiz .studio-loss-direction{display:grid;justify-content:center;align-content:center;text-align:center;font-weight:850;color:#5385b5;font-size:11px}
-#quiz .studio-loss-direction div{font-size:28px}
-#quiz .studio-loss-equation{font-family:ui-monospace,Consolas,monospace;font-size:clamp(15px,2.5vw,24px);font-weight:800;color:#2967a1;margin:15px 0 10px}
-#quiz .studio-loss-right p{color:#536e88;font-size:12px;line-height:1.5}
-#quiz .studio-loss-feedback{border-top:2px dashed #d3e1f1;padding-top:9px;display:flex;gap:9px;align-items:center;color:#2f835f;flex-wrap:wrap}
-#quiz .studio-loss-feedback span{font-size:10px}#quiz .studio-loss-feedback i{font-size:21px}
-#quiz .studio-bpe{background:linear-gradient(#ecf5ff,#fff);border:1px solid #d6e7f7;border-radius:12px;padding:15px;display:grid;justify-items:center;gap:10px}
-#quiz .studio-bpe-source{display:grid;gap:4px;text-align:center}
-#quiz .studio-bpe-source div{font-size:10px;font-weight:850;letter-spacing:.1em;color:#6c8fb1}
-#quiz .studio-bpe-source strong{font:800 clamp(21px,4vw,29px) ui-monospace,Consolas,monospace;color:#2f6b9d}
-#quiz .studio-bpe-source span{font-size:11px;color:#6083a6}
-#quiz .studio-bpe-trunk{font-size:11px;color:#6788a9;font-weight:700}
-#quiz .studio-bpe-segments{display:flex;justify-content:center;flex-wrap:wrap;gap:7px}
-#quiz .studio-bpe-segments>span{border:1px solid #add5f6;border-bottom:4px solid #5e9cd5;background:#fff;color:#245889;border-radius:8px;padding:11px 17px;font:800 14px ui-monospace,Consolas,monospace}
-#quiz .studio-bpe-segments>span:nth-child(2){background:#fff7ea;border-color:#ebd0a6;border-bottom-color:#dfa65a}
-#quiz .studio-bpe-guide{display:flex;gap:14px;align-items:center}
-#quiz .studio-bpe-connector{font-size:22px;color:#83a8cb}
-#quiz .studio-bpe-message{text-align:center;max-width:330px;color:#416687;font-size:12px}
-#quiz .studio-bpe-message p{margin:3px 0 0;line-height:1.4}
-#quiz .studio-bpe-output{font:850 11px ui-monospace,Consolas,monospace;color:#3d739e;letter-spacing:.05em;text-align:center}
-#quiz .studio-bpe-output span{color:#c89855;padding:0 4px}
-#quiz .studio-fragments{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-#quiz .studio-frag-track{background:#fff;border:1px solid #dae7f5;border-radius:11px;padding:14px;display:grid;align-content:start;gap:11px}
-#quiz .studio-frag-heading{display:grid;gap:5px}
-#quiz .studio-frag-heading strong{font-size:13px;color:#416389}
-#quiz .studio-frag-heading span{font-size:11px;color:#6e8ca8}
-#quiz .studio-frag-pieces{display:flex;gap:5px;flex-wrap:wrap;min-height:55px;align-items:center}
-#quiz .studio-frag-pieces span{padding:9px 10px;background:#dceeff;border-bottom:3px solid #73a2d2;border-radius:6px;color:#2f6096;font:800 12px ui-monospace,Consolas,monospace}
-#quiz .studio-frag-pieces span.freq{font-size:16px}
-#quiz .studio-frag-meter{background:#eaf1f7;border-radius:99px;height:7px}
-#quiz .studio-frag-meter span{display:block;background:#5c96ce;height:100%;border-radius:99px}
-#quiz .studio-frag-footer{grid-column:1/-1;color:#517396;font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
-#quiz .studio-frag-footer small{color:#748da5}
-#quiz .studio-stale-timeline{display:grid;grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr) 20px minmax(0,1fr);gap:7px;align-items:center}
-#quiz .studio-stale-stage{align-self:stretch;background:#fff;border:1px solid #dae7f3;border-radius:10px;padding:10px}
-#quiz .studio-stale-top{display:flex;gap:7px;align-items:center;font-size:10px;color:#51769b}
-#quiz .studio-stale-top span{width:23px;height:23px;border-radius:50%;background:#dcecff;display:grid;place-items:center;font-weight:850}
-#quiz .studio-stale-screen{background:#f3f7fc;border:1px solid #dfebf5;margin-top:12px;border-radius:8px;padding:12px;display:grid;gap:7px;min-height:135px}
-#quiz .studio-stale-screen.updated{background:#ecf9ef;border-color:#bfe3cf}
-#quiz .studio-stale-screen small{color:#6d879e;font-size:11px}
-#quiz .studio-stale-screen strong{color:#285e90;font-size:clamp(15px,2vw,21px)}
-#quiz .studio-stale-screen .warning{color:#bb6952}
-#quiz .studio-stale-screen em{font-size:10px;font-style:normal;color:#6989a5}
-#quiz .studio-stale-arrow{font-size:22px;color:#79a0c5}
-#quiz .studio-stale-gate{font-size:12px;background:#e8f6ef;border-left:3px solid #53a77b;border-radius:6px;padding:10px;margin-top:12px;color:#316a51}
-#quiz .studio-stale-gate span{font-weight:850;margin-right:6px}
-@media(max-width:700px){#quiz .studio-chat-compare{grid-template-columns:1fr}#quiz .studio-chat-transfer{display:flex;justify-content:center;flex-wrap:wrap}#quiz .studio-training-dots{flex-direction:row}#quiz .studio-overfit-layout,#quiz .studio-gov{grid-template-columns:1fr}#quiz .studio-buildpaths{grid-template-columns:1fr}#quiz .studio-build-divider{min-height:25px}#quiz .studio-loss-demo{grid-template-columns:1fr}#quiz .studio-loss-direction{display:flex;align-items:center;gap:10px;justify-content:center}#quiz .studio-fragments{grid-template-columns:1fr}#quiz .studio-frag-footer{grid-column:auto}#quiz .studio-stale-timeline{grid-template-columns:1fr}#quiz .studio-stale-arrow{text-align:center;transform:rotate(90deg)}}
-@media(max-width:400px){#quiz .studio-stale-screen{min-height:90px}#quiz .studio-bpe-segments>span{padding:9px 11px}#quiz .studio-loss-votes>span{grid-template-columns:42px minmax(0,1fr) 25px}#quiz .studio-gov-line em{display:none}}
+/* Per-question illustrated teaching scenes: forty different mechanisms, shared visual tokens only. */
+#quiz .q-fig .fx-figure{--fblue:#377dbf;--fink:#264566;--fmuted:#627d99;--fpale:#e8f3ff;--fgreen:#237b60;--famber:#c07a3c;--fline:#ccdfef;color:var(--fink);background:linear-gradient(140deg,#ffffff,#f3f8ff);border:1px solid #cadff2;border-radius:15px;padding:17px;overflow:hidden;min-width:0;line-height:1.5}
+#quiz .fx-figure *{box-sizing:border-box;min-width:0}
+#quiz .fx-heading{margin-bottom:13px;border-bottom:1px solid #dce9f5;padding-bottom:10px}
+#quiz .fx-eyebrow{color:#507eaa;font-size:10px;letter-spacing:.14em;font-weight:850}
+#quiz .fx-heading h3{color:#173e69;margin:5px 0 2px;font-size:clamp(17px,2.4vw,21px);line-height:1.25;letter-spacing:-.026em;font-weight:850}
+#quiz .fx-heading p{color:#5a7794;font-size:12px;margin:4px 0 0}
+#quiz .fx-stage{min-width:0}
+#quiz .fx-lesson{display:flex;align-items:start;gap:8px;margin-top:13px;padding:9px 11px;background:#e5f1ff;border-left:3px solid #4789c7;border-radius:7px;color:#325d88;font-size:11.5px}
+#quiz .fx-lesson b{color:#33845f;font-size:15px}
+#quiz .fx-status{font-size:11px;font-weight:800;padding:6px 8px;border-radius:6px}
+#quiz .fx-status.good{background:#dff5e7;color:#227651}#quiz .fx-status.bad{background:#fff0e8;color:#9c553c}
+#quiz .fx-token{display:inline-flex;align-items:center;justify-content:center;border-radius:7px;border:1px solid #b3d3ef;background:#fff;color:#2d5f90;padding:9px 11px;font:700 12px ui-monospace,Consolas,monospace;white-space:normal;overflow-wrap:anywhere}
+#quiz .fx-token.warm,#quiz .fx-token.target{background:#fff2da;border-color:#ecc996;color:#916328}
+#quiz .fx-token.index{background:#eef5fd;border-color:#e2eefa;color:#7c9bbc;font-size:11px}
+#quiz .fx-wide-art{display:block!important;width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important}
+#quiz .fx-figure .fx-paper{width:90px;min-height:118px;border-radius:5px;background:#fff;border:1px solid #c7d8e9;box-shadow:3px 5px 10px #94acc032;padding:12px 8px;transform:rotate(-5deg);flex:0 0 90px}
+#quiz .fx-paper.code{transform:rotate(7deg);background:#e8f2ff}
+#quiz .fx-paper.book{transform:rotate(-2deg);background:#fff4e8}
+#quiz .fx-paper-top{font-size:10px;color:#487caf;font-weight:850;margin-bottom:11px}
+#quiz .fx-paper i{display:block;height:4px;width:var(--len);border-radius:4px;background:#adc8e0;margin:6px 0}
+#quiz .fx-corpus{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#quiz .fx-corpus-pile{display:flex;align-items:center;justify-content:center;gap:0;flex:1;max-width:205px}
+#quiz .fx-corpus-pile .fx-paper:not(:first-child){margin-left:-24px}
+#quiz .fx-corpus-stream{text-align:center;color:#6f94b7;font-size:11px;font-weight:750;flex:0 1 110px}
+#quiz .fx-stream-dots{font-size:17px;letter-spacing:3px;line-height:2;color:#498ecc}
+#quiz .fx-brain-object{border-radius:50%;width:148px;height:148px;border:3px solid #b0d1f2;background:radial-gradient(circle at 35% 25%,white,#cfe6fe);box-shadow:0 0 0 7px #dbeafa;flex:0 0 148px;display:grid;place-content:center;justify-items:center;text-align:center;padding:15px}
+#quiz .fx-brain-glow{font-size:55px;color:#4988bd;line-height:1}
+#quiz .fx-brain-object b{font-size:10px}#quiz .fx-brain-object small{font-size:9px;color:#6285a5}
+#quiz .fx-micro-arrow{font-size:23px;color:#74a3ca}
+#quiz .fx-checkpoint{padding:12px;background:#1e3b5b;color:#e9f4ff;display:grid;justify-items:center;gap:6px;border-radius:10px;text-align:center}
+#quiz .fx-drive-icon{font-size:48px;line-height:1}
+#quiz .fx-checkpoint b{font:700 11px ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+#quiz .fx-checkpoint small{font-size:10px;color:#c1d8eb}
+#quiz .fx-headstart{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative}
+#quiz .fx-start-column{border:1px solid #dbe8f4;background:#fff;padding:13px;border-radius:9px;display:grid;gap:8px}
+#quiz .fx-start-column>b{font-size:12px}#quiz .fx-start-column>small{font-size:11px;color:#6685a3}
+#quiz .fx-start-dot{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;font-size:20px;background:#fff0e7;color:#a85e42}
+#quiz .fx-start-dot.warm{background:#dcf3e8;color:#268763}
+#quiz .fx-stairs{display:flex;align-items:end;gap:5px;height:55px}
+#quiz .fx-stairs i{flex:1;background:#dba68f;border-radius:4px 4px 0 0}
+#quiz .fx-stairs.fast i{background:#63ad90}
+#quiz .fx-stairs i:nth-child(1){height:15%}.fx-stairs i:nth-child(2){height:25%}.fx-stairs i:nth-child(3){height:43%}.fx-stairs i:nth-child(4){height:58%}.fx-stairs i:nth-child(5){height:75%}
+#quiz .fx-stairs.fast i:nth-child(1){height:62%}.fx-stairs.fast i:nth-child(2){height:70%}.fx-stairs.fast i:nth-child(3){height:78%}.fx-stairs.fast i:nth-child(4){height:86%}.fx-stairs.fast i:nth-child(5){height:94%}
+#quiz .fx-training-cards{grid-column:1/-1;text-align:center;background:#edf5ff;border:1px dashed #b4d4f3;border-radius:8px;padding:7px;color:#5578a1;font-size:10px;display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap}
+#quiz .fx-training-cards b{font-size:12px;color:#255b8d}#quiz .fx-training-cards small{font-size:10px}
+#quiz .fx-predict{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+#quiz .fx-prompt-strip{grid-column:1/-1;background:#183c63;color:#eaf4ff;padding:13px;text-align:center;font:16px ui-monospace,Consolas,monospace;border-radius:9px}
+#quiz .fx-prompt-strip strong{border-bottom:2px solid #91c6ff}#quiz .fx-prompt-strip em{color:#b9d0e6}
+#quiz .fx-predict-choice{background:white;border:1px solid #d4e6f5;border-radius:9px;padding:11px}
+#quiz .fx-predict-choice>small{display:block;font-size:9px;color:#6889a7;margin-bottom:9px;font-weight:800}
+#quiz .fx-predict-choice>div{display:grid;grid-template-columns:60px 1fr 31px;gap:6px;align-items:center;margin-top:7px;font-size:11px}
+#quiz .fx-predict-choice i{display:block;height:10px;width:var(--fill);background:#4d92ca;border-radius:4px}
+#quiz .fx-loss-loop{display:grid;align-content:center;gap:8px;text-align:center}
+#quiz .fx-loss-bubble{background:#fff3e5;border:1px solid #eac69a;border-radius:8px;padding:8px;font-size:11px;font-weight:800}
+#quiz .fx-loss-delta{font-size:12px;color:#5e81a1}
+#quiz .fx-update-wheel{font-size:34px;color:#3989c3;display:grid;justify-content:center}
+#quiz .fx-update-wheel small{font-size:10px;color:#6b86a1}
+#quiz .fx-shift{display:grid;gap:7px}
+#quiz .fx-shift-line{display:grid;grid-template-columns:90px repeat(3,minmax(0,1fr));gap:6px}
+#quiz .fx-shift-line label{font-size:10px;color:#6081a1;font-weight:850;align-self:center}
+#quiz .fx-shift-line.target{border-top:1px dashed #d2dfeb;padding-top:12px}
+#quiz .fx-shift-connectors{display:grid;grid-template-columns:90px repeat(3,minmax(0,1fr));gap:6px;text-align:center;font-size:10px;color:#5c8cb4}
+#quiz .fx-shift-connectors:before{content:""}
+#quiz .fx-causal-shield{padding:9px;background:#ebf7f3;border:1px solid #c1e2d4;border-radius:6px;font-size:11px}
+#quiz .fx-causal-shield b{color:#268063;margin-right:9px}
+#quiz .fx-contract,.fx-chat{display:grid;grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);gap:11px;align-items:center}
+#quiz .fx-mini-app{background:#fff;border:1px solid #d3e3f2;border-radius:9px;overflow:hidden}
+#quiz .fx-appbar{background:#dce9f6;padding:8px;font-size:11px;font-weight:700;color:#416b91}
+#quiz .fx-appbar i{display:inline-block;width:6px;height:6px;background:#d8a28f;border-radius:50%;margin:0 2px}
+#quiz .fx-app-input{padding:12px;font-size:12px}
+#quiz .fx-app-input small{font-size:10px;color:#6e8ca8}
+#quiz .fx-app-input p{margin:6px 0}
+#quiz .fx-app-response{padding:10px;background:#fff3ec;border-left:3px solid #dc9b80;margin:8px;font-size:11px}
+#quiz .fx-contract-divider{text-align:center;color:#567ea1;font-size:11px;font-weight:750}
+#quiz .fx-contract-divider span{display:block;font-size:27px}
+#quiz .fx-app-result{background:#1b3c60;border-radius:9px;padding:13px;color:#e2f0ff;display:grid;gap:14px;text-align:center}
+#quiz .fx-terminal-title{font-size:10px;color:#a9cbe8}
+#quiz .fx-app-result code{font-size:12px;overflow-wrap:anywhere}
+#quiz .fx-valid-check{color:#9ce0ba;font-size:11px}
+#quiz .fx-time{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;position:relative}
+#quiz .fx-time-axis{position:absolute;left:10%;right:10%;top:17px;height:3px;background:#b6d3e9}
+#quiz .fx-time-event{position:relative;display:grid;justify-items:center;gap:7px;text-align:center}
+#quiz .fx-time-event>span{background:#3684be;color:white;border-radius:50%;width:36px;height:36px;display:grid;place-items:center;z-index:1}
+#quiz .fx-time-event>b{font-size:12px}
+#quiz .fx-price-sheet{background:white;border:1px solid #d7e8f4;border-radius:8px;padding:11px;display:grid;gap:4px;width:100%}
+#quiz .fx-price-sheet small{font-size:10px;color:#67849e}
+#quiz .fx-price-sheet strong{font-size:23px;color:#357bad}
+#quiz .fx-price-sheet.new{background:#ebf9f1;border-color:#b8e5cb}
+#quiz .fx-price-sheet.new strong{color:#238262}
+#quiz .fx-price-sheet.warning{background:#fff5ef;border-color:#ecc6ad}
+#quiz .fx-price-sheet.warning strong{color:#ac603f}
+#quiz .fx-time-bottom{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+#quiz .fx-time-bottom small{color:#6b8aa4;font-size:10px}
+#quiz .fx-venn{display:grid;grid-template-columns:1fr minmax(0,.85fr);gap:12px;align-items:center}
+#quiz .fx-venn-circles{height:185px;position:relative}
+#quiz .fx-venn-train,#quiz .fx-venn-test{position:absolute;top:5px;width:64%;height:170px;border-radius:50%;display:grid;align-content:center;text-align:center;gap:3px;padding:15px}
+#quiz .fx-venn-train{left:0;background:#d3eaffb8;border:3px solid #8ebce0}
+#quiz .fx-venn-test{right:0;background:#fbe3c3ab;border:3px solid #e5bc8a}
+#quiz .fx-venn-train b,#quiz .fx-venn-test b{font-size:10px}
+#quiz .fx-venn-train span,#quiz .fx-venn-test span{font-size:9px}
+#quiz .fx-venn-overlap{position:absolute;left:42%;top:78px;color:#8e623b;font-size:10px;font-weight:850;z-index:1}
+#quiz .fx-audit-ticket{border:1px solid #dbebf4;background:white;border-radius:8px;padding:12px;display:grid;gap:9px}
+#quiz .fx-audit-ticket b{font-size:12px}
+#quiz .fx-audit-sample{font:11px ui-monospace,Consolas,monospace;background:#f1f6fd;padding:8px}
+#quiz .fx-audit-ticket small{font-size:11px;color:#66849b}
+#quiz .fx-audit-action{font-size:11px;font-weight:700;color:#2d8263}
+#quiz .fx-legal{display:grid;gap:12px}
+#quiz .fx-resource{display:flex;justify-content:center;gap:8px}
+#quiz .fx-resource-dial{border-radius:50%;width:72px;height:72px;background:#fff2e8;border:4px solid #edd3bc;text-align:center;display:grid;align-content:center;font-size:10px;color:#a06b4a}
+#quiz .fx-resource-dial b{font-size:11px}
+#quiz .fx-legal-branch{text-align:center}
+#quiz .fx-legal-checkpoint{display:flex;align-items:center;gap:8px;justify-content:center;color:#2f71a1;font-size:13px}
+#quiz .fx-legal-checkpoint:first-letter{font-size:26px}
+#quiz .fx-legal-lines{display:flex;justify-content:space-evenly;font-size:24px;color:#83add0}
+#quiz .fx-legal-gates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+#quiz .fx-legal-gates>div{background:#ecf7ff;border-bottom:3px solid #79a9d6;border-radius:8px;padding:12px;font-size:11px;font-weight:750;text-align:center}
+#quiz .fx-legal-release{background:#e4f6ee;color:#287e5b;border-radius:8px;padding:9px;text-align:center;font-size:11px;font-weight:800}
+#quiz .fx-weights{display:grid;grid-template-columns:1fr .8fr 1fr .8fr;gap:10px;align-items:center}
+#quiz .fx-weight-matrix{display:grid;gap:4px;border:1px solid #d9e6f4;background:#fff;padding:11px}
+#quiz .fx-weight-matrix>div{display:flex;gap:4px}
+#quiz .fx-weight-matrix i{height:14px;flex:1;background:#bed5ed;border-radius:3px}
+#quiz .fx-weight-matrix i.lit{background:#eebd72}
+#quiz .fx-weight-arrow{display:grid;text-align:center;gap:5px;font-size:11px;color:#6586a6}
+#quiz .fx-weight-arrow strong{font-size:24px;color:#db9863}
+#quiz .fx-adapter-inset{display:grid;gap:5px;justify-items:center;background:#fff4e5;border:1px solid #f0d3ac;padding:11px;border-radius:10px;text-align:center}
+#quiz .fx-adapter-small{display:grid;gap:4px}
+#quiz .fx-adapter-small>div{display:flex;gap:4px}
+#quiz .fx-adapter-small i{width:12px;height:12px;background:#e6b065}
+#quiz .fx-adapter-inset b{font-size:11px}
+#quiz .fx-adapter-inset small{font-size:9px;color:#8e714e}
+#quiz .fx-weights-final{font-size:11px;background:#dff4e9;color:#267e5d;padding:12px;border-radius:9px;display:grid;text-align:center}
+#quiz .fx-weights-final:first-letter{font-size:25px}
+#quiz .fx-chat-side{background:white;border:1px solid #d6e7f4;border-radius:10px;overflow:hidden}
+#quiz .fx-chat-top{display:flex;align-items:center;justify-content:space-between;background:#e1ebf5;padding:10px;font-size:10px;font-weight:800}
+#quiz .fx-chat-top span{font-size:9px}
+#quiz .fx-chat-user{font-size:11px;background:#e7f2fe;border-radius:8px;padding:10px;margin:11px 9px}
+#quiz .fx-chat-agent{font-size:11px;background:#fff3ea;border-radius:8px;padding:10px;margin:9px;min-height:64px}
+#quiz .fx-chat-agent.code{font:750 12px ui-monospace,Consolas,monospace;background:#e6f7ee;color:#207b55}
+#quiz .fx-chat-foot{padding:9px;font-size:10px;font-weight:800}
+#quiz .fx-chat-foot.bad{background:#fdebe4;color:#ac5c44}
+#quiz .fx-chat-foot.good{background:#e2f7ec;color:#287c5b}
+#quiz .fx-chat-transform{text-align:center;display:grid;font-size:10px;color:#62839d}
+#quiz .fx-chat-transform span{font-size:24px}
+#quiz .fx-supervise{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;position:relative}
+#quiz .fx-supervise>div:not(.fx-feedback-arc){background:#fff;border:1px solid #d5e4f1;border-radius:9px;display:grid;justify-content:center;align-content:center;text-align:center;padding:12px;gap:8px}
+#quiz .fx-supervise-input small{color:#6686a0;font-size:10px}
+#quiz .fx-supervise-input b{font-size:12px}
+#quiz .fx-supervise-marker{background:#fff3e1;border-radius:5px;padding:5px;font-size:11px}
+#quiz .fx-network-core{font-size:58px;color:#457eb1}
+#quiz .fx-supervise-model span,#quiz .fx-supervise-loss small{font-size:10px;color:#6686a0}
+#quiz .fx-supervise-model b{font-size:12px}
+#quiz .fx-loss-compare{font-size:10px;color:#ab684c;font-weight:850}
+#quiz .fx-error-gauge{height:12px;background:#f9e6d6;border-radius:99px}
+#quiz .fx-error-gauge i{display:block;width:70%;height:100%;background:#de9b71;border-radius:99px}
+#quiz .fx-supervise-loss b{font-size:12px}
+#quiz .fx-feedback-arc{grid-column:1/-1;text-align:center;color:#5687ad;font-size:12px;font-weight:800}
+#quiz .fx-console{background:#172d48;color:#d9efff;border-radius:10px;padding:0 15px 11px;overflow:hidden}
+#quiz .fx-console-header{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #4e6781;font-size:11px;color:#a6c9e6}
+#quiz .fx-console-header i{font-style:normal;color:#edc17f}
+#quiz .fx-console-row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;padding:10px 0;border-bottom:1px solid #2f4963;font:11px ui-monospace,Consolas,monospace}
+#quiz .fx-console-row>b{color:#a7bdd7}
+#quiz .fx-highlight{color:#98e1b4}
+#quiz .fx-slider{height:7px;background:#3d5f82;margin-top:5px;border-radius:99px}
+#quiz .fx-slider i{display:block;width:35%;height:100%;background:#85c6f6;position:relative}
+#quiz .fx-slider i:after{content:"";position:absolute;right:0;top:-4px;width:13px;height:13px;border-radius:50%;background:#c2e6ff}
+#quiz .fx-config-check{padding-top:9px;color:#98e1b4;font-size:11px}
+#quiz .fx-kanban{display:grid;grid-template-columns:1fr 70px 1fr;gap:10px}
+#quiz .fx-kanban-column{background:#edf5fe;border:1px solid #d1e4f5;border-radius:9px;padding:10px;display:grid;gap:8px}
+#quiz .fx-kanban-column h4{margin:0;font-size:12px;color:#47759b}
+#quiz .fx-ticket{background:#fff;border-left:3px solid #85a9ca;padding:9px;font-size:11px;border-radius:4px}
+#quiz .fx-ticket small{display:block;color:#8ea4b7;font-size:9px}
+#quiz .fx-ticket.blue{border-color:#7aa7d4}.fx-ticket.gold{border-color:#edc382}.fx-ticket.green{border-color:#7bbd9d}
+#quiz .fx-kanban-router{display:grid;align-content:center;text-align:center;color:#3d81ba;font-size:11px;font-weight:700}
+#quiz .fx-kanban-router strong{font-size:30px}
+#quiz .fx-legend{display:flex;flex-wrap:wrap;gap:11px;font-size:11px;color:#547692}
+#quiz .fx-legend>span{display:flex;align-items:center;gap:5px}
+#quiz .fx-legend i{width:14px;height:4px;display:inline-block}
+#quiz .fx-diff{display:grid;grid-template-columns:1fr 28px 1fr;gap:8px}
+#quiz .fx-diff-col{background:#1c344c;border:1px solid #496584;border-radius:8px;overflow:hidden}
+#quiz .fx-diff-head{color:#adcee8;background:#314c67;padding:9px;display:flex;justify-content:space-between;font-size:11px}
+#quiz .fx-diff-head i{color:#dcb076}
+#quiz .fx-diff-col code{display:block;color:#ebf5fe;padding:14px;line-height:2;font-size:11px;overflow-wrap:anywhere}
+#quiz .fx-diff-col code b{color:#f1cf86}
+#quiz .fx-diff-line{display:block;padding:10px;color:#c5d9ea;font-size:10px}
+#quiz .fx-diff-connector{align-self:center;text-align:center;font-size:24px;color:#c88c60}
+#quiz .fx-diff-foot{grid-column:1/-1;background:#fff3e9;color:#906044;padding:9px;font-size:11px;border-radius:5px}
+#quiz .fx-policy{display:grid;gap:12px}
+#quiz .fx-policy-version{display:flex;align-items:center;justify-content:center;gap:12px}
+#quiz .fx-version-doc{border:1px solid #d1dcec;border-radius:7px;padding:13px;display:grid;gap:6px;background:#fff;font-size:11px;max-width:200px}
+#quiz .fx-version-doc small{color:#7e98b2}
+#quiz .fx-version-doc.old{opacity:.68;text-decoration:line-through}
+#quiz .fx-version-doc.new{background:#e7f8ed;border-color:#b4ddc5}
+#quiz .fx-version-doc em{font-size:9px;color:#6285a0}
+#quiz .fx-version-arrow{font-size:24px;color:#5b8eb6}
+#quiz .fx-policy-feed{display:grid;grid-template-columns:1fr 30px 1fr;gap:10px;text-align:center}
+#quiz .fx-policy-feed>div{font-size:11px;line-height:1.7;background:#edf4ff;border-radius:7px;padding:8px}
+#quiz .fx-policy-feed>div:nth-child(2){background:transparent;color:#5c90bd;font-size:25px}
+#quiz .fx-policy-answer{background:#1e3d5b;color:#fff;padding:10px;border-radius:8px;font-size:12px}
+#quiz .fx-policy-answer span{font-size:10px;color:#9fe3b8;margin-left:7px}
+#quiz .fx-hub{display:grid;grid-template-columns:1fr 1.3fr 1fr;grid-template-rows:1fr 1fr;gap:10px;align-items:center}
+#quiz .fx-hub-center{grid-column:2;grid-row:1/3;border-radius:50%;width:160px;height:160px;max-width:100%;margin:auto;background:radial-gradient(circle,#e8f4ff,#cbdff5);border:4px solid #b5d1ee;text-align:center;display:grid;align-content:center;justify-items:center;gap:3px}
+#quiz .fx-hub-center div{font-size:57px;color:#407db0;line-height:1}
+#quiz .fx-hub-center b{font-size:13px}
+#quiz .fx-hub-center small{font-size:10px;color:#587d9f}
+#quiz .fx-hub-spoke{border:1px solid #d0e4f4;border-left:4px solid #6aa4d1;background:white;border-radius:8px;padding:11px;display:grid;gap:3px;font-size:11px}
+#quiz .fx-hub-spoke.b,#quiz .fx-hub-spoke.d{border-left-color:#e4b66e}
+#quiz .fx-hub-spoke.a{grid-column:1;grid-row:1}.fx-hub-spoke.b{grid-column:3;grid-row:1}.fx-hub-spoke.c{grid-column:1;grid-row:2}.fx-hub-spoke.d{grid-column:3;grid-row:2}
+#quiz .fx-hub-symbol{font-size:25px;color:#407fae}
+#quiz .fx-hub-spoke small{color:#6482a0}
+#quiz .fx-gantt{background:#fff;border:1px solid #d7e7f3;border-radius:11px;padding:14px}
+#quiz .fx-gantt-scale{margin-left:125px;display:flex;justify-content:space-between;font-size:10px;color:#728ca3}
+#quiz .fx-gantt-row{display:grid;grid-template-columns:115px minmax(0,1fr);gap:10px;align-items:center;margin:13px 0}
+#quiz .fx-gantt-row b{font-size:11px}
+#quiz .fx-gantt-track{display:flex;background:#eef4fa;border-radius:5px;min-height:42px;align-items:center;overflow:hidden}
+#quiz .fx-gantt-track i{font-style:normal;display:grid;place-items:center;font-size:9px;font-weight:800;min-height:42px;padding:2px 5px;text-align:center}
+#quiz .fx-gantt-track i.long{width:75%;background:#efc19d}.fx-gantt-track i.short{flex:1;background:#b6cee9}.fx-gantt-track i.small{width:20%;background:#a8c8e9}.fx-gantt-track i.medium{width:51%;background:#9ad4b9}.fx-gantt-track i.short.green{background:#addcbf}
+#quiz .fx-gantt-caption{font-size:10px;color:#6889a5}
+#quiz .fx-space{display:grid;grid-template-columns:1.4fr .75fr;gap:11px}
+#quiz .fx-space-chart{height:220px;border-left:2px solid #819fbd;border-bottom:2px solid #819fbd;background:linear-gradient(90deg,#eef7ff,#fff);border-radius:3px;position:relative;overflow:hidden}
+#quiz .fx-space-axis-y,#quiz .fx-space-axis-x{font-size:10px;color:#7892a7;position:absolute}
+#quiz .fx-space-axis-y{left:7px;top:5px}#quiz .fx-space-axis-x{bottom:5px;right:9px}
+#quiz .fx-ellipses{position:absolute;width:110px;height:90px;border-radius:50%;border:2px dashed #86afd5;background:#b9dbfa64;left:15%;top:18%}
+#quiz .fx-ellipses.b{left:58%;top:45%;border-color:#e7b684;background:#fae3c36a}
+#quiz .fx-pt{position:absolute;font-size:22px;color:#367eae}.fx-pt small{font-size:9px;display:block;color:#446889}
+#quiz .fx-pt.p1{left:26%;top:28%}.fx-pt.p2{left:40%;top:42%}.fx-pt.p3{left:63%;top:55%;color:#cf9857}.fx-pt.p4{left:76%;top:68%;color:#cf9857}
+#quiz .fx-space-side{align-self:center;font-size:12px;color:#496b89}
+#quiz .fx-space-side h4{font-size:13px;margin:0}
+#quiz .fx-space-side small{color:#718da5}
+#quiz .fx-model-card{background:#fff;border:1px solid #d0e4f3;border-radius:11px;overflow:hidden}
+#quiz .fx-card-banner{background:linear-gradient(110deg,#1e4674,#3c7cad);padding:16px;color:#fff;display:grid;gap:5px}
+#quiz .fx-card-chip{font-size:10px;letter-spacing:.11em;color:#b7d5f0}
+#quiz .fx-card-banner strong{font-size:18px}
+#quiz .fx-card-dials{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:13px}
+#quiz .fx-card-dials>div{border:1px solid #deebf6;background:#f8fbff;border-radius:9px;padding:13px 7px;text-align:center;display:grid;gap:10px}
+#quiz .fx-card-dials span{font-size:10px;color:#6787a3}
+#quiz .fx-card-dials b{font-size:12px;color:#2d6ba0}
+#quiz .fx-model-card-footer{text-align:center;padding:10px}
+#quiz .fx-invoice{display:grid;grid-template-columns:1fr 54px 1fr;align-items:center;gap:12px}
+#quiz .fx-invoice-page{position:relative;background:#fff;border:1px solid #cfdfec;box-shadow:7px 11px 15px #6a93ac18;min-height:235px;padding:21px 14px}
+#quiz .fx-invoice-header{display:flex;justify-content:space-between;font-weight:850;font-size:14px;color:#3d6385;border-bottom:3px solid #bbd6ea;padding-bottom:10px}
+#quiz .fx-invoice-header span{color:#578abe}
+#quiz .fx-invoice-line{font-size:12px;margin-top:22px;display:flex;justify-content:space-between;gap:12px}
+#quiz .fx-invoice-line.thin{height:3px;background:#e2edf6;margin:15px 0}
+#quiz .fx-invoice-total{display:flex;justify-content:space-between;font-size:13px}
+#quiz .fx-callout{position:absolute;font-size:10px;background:#e3f0ff;border:1px solid #b7d5ee;padding:5px;border-radius:5px;color:#286ca3}
+#quiz .fx-callout.one{right:-8px;top:28px}.fx-callout.two{right:-8px;bottom:27px}
+#quiz .fx-extraction-arrow{text-align:center;color:#4588ba;font-size:29px}
+#quiz .fx-extraction-arrow small{display:block;font-size:9px}
+#quiz .fx-extraction-code{background:#1b3654;border:1px solid #325b80;color:#ddf1ff;padding:14px;border-radius:9px;display:grid;gap:11px}
+#quiz .fx-code-title{font-size:10px;color:#9abdd9}
+#quiz .fx-extraction-code code{font:11px/1.8 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+#quiz .fx-extraction-check{font-size:10px;color:#9cdeba}
+#quiz .fx-compliance{display:grid;grid-template-columns:.8fr 1.5fr;gap:10px}
+#quiz .fx-compliance-model{background:linear-gradient(#e3f0ff,#cddff3);border-radius:10px;display:grid;justify-items:center;align-content:center;padding:12px;gap:8px}
+#quiz .fx-compliance-model:first-letter{font-size:55px}
+#quiz .fx-compliance-model b{font-size:12px}
+#quiz .fx-compliance-model small{font-size:10px}
+#quiz .fx-compliance-rails{display:grid;gap:8px}
+#quiz .fx-compliance-rails>div{background:white;border:1px solid #d6e4f1;border-radius:7px;padding:9px;display:grid;grid-template-columns:22px 1fr 50px;gap:3px 7px;align-items:center}
+#quiz .fx-compliance-rails span{grid-row:span 2;background:#dceaff;border-radius:50%;height:22px;display:grid;place-items:center;font-size:11px}
+#quiz .fx-compliance-rails b{font-size:11px}
+#quiz .fx-compliance-rails small{font-size:10px}
+#quiz .fx-compliance-rails em{grid-column:3;grid-row:1/3;font-size:9px;color:#b07a4e;font-style:normal}
+#quiz .fx-compliance-gate{grid-column:1/-1;background:#e6f7ed;border-radius:8px;padding:12px;text-align:center;font-size:11px;font-weight:850;color:#297b58}
+#quiz .fx-compliance-gate strong{margin-left:8px}
+#quiz .fx-local-eval{display:grid;gap:10px}
+#quiz .fx-local-public{display:flex;justify-content:center;align-items:center;gap:10px;background:#edf4fd;border-radius:8px;padding:10px;font-size:12px}
+#quiz .fx-local-public strong{color:#2b82a8;font-size:20px}
+#quiz .fx-local-tests{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+#quiz .fx-local-model{background:#fff;border:1px solid #d7e5f1;padding:11px;border-radius:8px;display:grid;gap:8px}
+#quiz .fx-local-model>b{font-size:11px}
+#quiz .fx-local-sheet{background:#f7faff;padding:13px;font-size:12px;border:1px solid #e0e9f2}
+#quiz .fx-local-sheet span{display:block;font-weight:800;color:#4179ab}
+#quiz .fx-local-outcome{font-size:11px;padding:7px;border-radius:6px}
+#quiz .fx-local-outcome.ok{color:#277d56;background:#e4f7ea}.fx-local-outcome.fail{color:#b06247;background:#fff0e8}
+#quiz .fx-local-lesson{text-align:center;font-size:11px;color:#497398}
+#quiz .fx-regulated{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px}
+#quiz .fx-reg-entry{text-align:center;font-size:11px;display:grid;justify-items:center;gap:4px}
+#quiz .fx-reg-avatar{border-radius:50%;background:#dcecfb;width:52px;height:52px;display:grid;place-items:center;font-size:32px;color:#3a82b7}
+#quiz .fx-reg-connector{font-size:21px;color:#78a6cb}
+#quiz .fx-reg-gate{display:grid;gap:8px;padding:12px;background:#fff;border:1px solid #cbdfee;border-top:4px solid #6da8d4;border-radius:9px;text-align:center}
+#quiz .fx-reg-gate span{font-size:9px;color:#6489a8;font-weight:850}
+#quiz .fx-reg-gate b{font-size:11px}
+#quiz .fx-reg-gate.finish{border-top-color:#50ae8a}
+#quiz .fx-reg-engine{text-align:center;border-radius:50%;background:#e6f1ff;width:86px;height:86px;display:grid;place-content:center;color:#316da1}
+#quiz .fx-reg-engine div{font-size:33px}
+#quiz .fx-reg-engine b{font-size:11px}
+#quiz .fx-reg-audit{width:100%;background:#e6f7ed;text-align:center;color:#34795b;padding:11px;font-size:11px;border-radius:8px}
+#quiz .fx-objective{display:grid;justify-content:center;gap:7px;text-align:center}
+#quiz .fx-objective-context{border:1px solid #d6e6f3;background:#fff;border-radius:8px;padding:9px}
+#quiz .fx-objective-context>span,#quiz .fx-objective-target>span{font-size:10px;color:#7192ac;font-weight:850}
+#quiz .fx-objective-typing{font:18px ui-monospace,Consolas,monospace;padding:11px;color:#315c85}
+#quiz .fx-objective-typing b{color:#c38954}
+#quiz .fx-objective-choice{display:flex;gap:6px;justify-content:center}
+#quiz .fx-objective-choice i{background:#eaf4ff;padding:5px 10px;font-size:11px;font-style:normal}
+#quiz .fx-objective-arrow{font-size:21px;color:#6e9dc1}
+#quiz .fx-objective-target{background:#fff4e5;padding:8px 30px;border-radius:8px}
+#quiz .fx-objective-target strong{display:block;font-size:19px;color:#a87138}
+#quiz .fx-objective-loss{background:#1f4770;color:white;padding:10px;border-radius:8px;display:grid;gap:3px;font-size:11px}
+#quiz .fx-objective-loss span{color:#c9e0f2}
+#quiz .fx-landscape-key{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11px;color:#6383a3}
+#quiz .fx-landscape-key strong{color:#2f835c}
+#quiz .fx-causal-matrix{display:grid;grid-template-columns:1.2fr .9fr;gap:15px}
+#quiz .fx-causal-ribbons{display:grid;align-content:center;gap:15px}
+#quiz .fx-causal-ribbons>div{display:flex;flex-wrap:wrap;gap:5px}
+#quiz .fx-causal-ribbons small{width:100%;font-size:10px;color:#6284a1}
+#quiz .fx-mask-illustration{border:1px solid #d3e5f5;background:#fff;border-radius:10px;padding:11px;display:grid;justify-items:center;gap:8px}
+#quiz .fx-mask-illustration b{font-size:9px}
+#quiz .fx-mask-illustration small{font-size:10px;color:#6281a1}
+#quiz .fx-mask-grid{display:grid;grid-template-columns:repeat(4,24px);gap:3px}
+#quiz .fx-mask-grid i{display:grid;place-items:center;font-size:12px;font-style:normal;width:24px;height:24px}
+#quiz .fx-mask-grid i.seen{background:#d8ebfc;color:#316fa2}
+#quiz .fx-mask-grid i.masked{background:#fde9e2;color:#ae735d}
+#quiz .fx-prob{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
+#quiz .fx-prob-bars{background:white;border:1px solid #d8e7f2;border-radius:8px;padding:13px;display:grid;gap:12px}
+#quiz .fx-prob-row{display:grid;grid-template-columns:60px minmax(0,1fr) 33px;gap:8px;align-items:center;font-size:11px}
+#quiz .fx-prob-row>div{background:#e2ebf5;height:14px;border-radius:4px}
+#quiz .fx-prob-row i{display:block;background:#b7c9d8;height:100%;border-radius:4px}
+#quiz .fx-prob-row.target i{background:#478dbe}
+#quiz .fx-prob-bars small{color:#7591aa;font-size:10px}
+#quiz .fx-prob-math{background:#e6f2fe;border-radius:9px;padding:13px;display:grid;align-content:center;gap:9px;text-align:center}
+#quiz .fx-prob-math span{font-size:10px;color:#48749a}
+#quiz .fx-prob-math strong{font:700 19px ui-monospace,Consolas,monospace}
+#quiz .fx-prob-result{color:#237953;font-weight:800}
+#quiz .fx-prob-math small{font-size:10px}
+#quiz .fx-mask{display:grid;gap:11px}
+#quiz .fx-mask-row{display:flex;flex-wrap:wrap;gap:6px}
+#quiz .fx-mask-row label{width:100%;font-size:10px;color:#7590a7;font-weight:850}
+#quiz .fx-mask-row span{font:750 11px ui-monospace,Consolas,monospace;padding:10px 12px;border-radius:6px}
+#quiz .fx-masked,#quiz .fx-mask-row .off{background:#e7ebf0;color:#8192a3}
+#quiz .fx-mask-row .fx-active,#quiz .fx-mask-row .on{background:#ddf4e7;color:#238459}
+#quiz .fx-mask-brackets{display:flex;justify-content:space-between;gap:10px;font-size:10px;color:#6486a2}
+#quiz .fx-mask-annotation{font-size:11px;background:#fff4e8;padding:9px;border-radius:7px}
+#quiz .fx-json-test{display:grid;grid-template-columns:.7fr 1.5fr;gap:12px}
+#quiz .fx-loss-meter{display:grid;align-content:center;gap:10px;text-align:center;padding:12px;border-radius:8px;background:#eaf6ef}
+#quiz .fx-loss-trend{font-size:11px;color:#438262}
+#quiz .fx-loss-trend b{display:block;font-size:25px}
+#quiz .fx-meter-track{height:11px;border-radius:99px;background:#cce6d6}
+#quiz .fx-meter-track i{display:block;height:100%;border-radius:99px;background:#6bb98b}
+#quiz .fx-loss-meter small{font-size:10px;color:#62917b}
+#quiz .fx-json-window{border:1px solid #d1e3ef;border-radius:10px;background:#fff;overflow:hidden}
+#quiz .fx-json-title{background:#e3edf8;padding:11px;font-size:11px;font-weight:850}
+#quiz .fx-json-lines{padding:13px;display:grid;gap:10px}
+#quiz .fx-json-lines code{font-size:11px;color:#9c5b48;overflow-wrap:anywhere}
+#quiz .fx-json-lines strong{font-size:11px;color:#b35841}
+#quiz .fx-json-fix{background:#e6f6ee;color:#35775b;font-size:11px;padding:10px}
+#quiz .fx-json-fix code{font-size:11px}
+#quiz .fx-attn{display:grid;grid-template-columns:1.3fr .7fr;gap:15px}
+#quiz .fx-attn-matrix{display:grid;gap:3px}
+#quiz .fx-matrix-label{font-size:10px;color:#6c8aa7}
+#quiz .fx-attn-row{display:grid;grid-template-columns:45px repeat(5,minmax(0,1fr));gap:3px}
+#quiz .fx-attn-row b{font-size:10px;align-self:center}
+#quiz .fx-attn-row span{text-align:center;padding:8px 0;font-size:11px;border-radius:3px}
+#quiz .fx-attn-row span.allowed{background:#e1f4e9;color:#368561}
+#quiz .fx-attn-row span.forbidden{background:#ffede7;color:#b9775d}
+#quiz .fx-attn-legend{align-self:center;display:grid;gap:12px;font-size:11px}
+#quiz .fx-attn-legend i{display:inline-block;width:13px;height:13px;margin-right:5px}
+#quiz .fx-attn-legend i.allowed{background:#e1f4e9}.fx-attn-legend i.forbidden{background:#ffede7}
+#quiz .fx-attn-alert{background:#fff1e7;border-left:3px solid #db997a;padding:9px;color:#a0654e}
+#quiz .fx-continuation{display:grid;gap:9px}
+#quiz .fx-editor-mock{background:#fff;border:1px solid #d1dfeb;border-radius:8px;overflow:hidden}
+#quiz .fx-editor-heading{background:#e4edf8;padding:8px;color:#5a80a3;font-size:11px}
+#quiz .fx-editor-heading i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#d4a189;margin-right:4px}
+#quiz .fx-editor-mock p{padding:13px;color:#3a6183;font-size:12px}
+#quiz .fx-caret{color:#2e88c7}
+#quiz .fx-next-candidates{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:11px}
+#quiz .fx-next-candidates>small{width:100%;color:#6c8aa2}
+#quiz .fx-next-candidates>span{display:flex;align-items:center;gap:5px;background:white;border:1px solid #d6e4ef;border-radius:6px;padding:6px}
+#quiz .fx-next-candidates i{display:inline-block;background:#71afd7;height:7px;border-radius:3px}
+#quiz .fx-continuation-result{font-size:12px;background:#e5f7ed;padding:9px;border-radius:6px}
+#quiz .fx-continuation-result small{color:#62896f}
+#quiz .fx-token-machine{display:flex;justify-content:space-between;gap:9px;align-items:center}
+#quiz .fx-raw-text{font:750 14px ui-monospace,Consolas,monospace;background:#fff;padding:12px;border:1px solid #d2e4ef;border-radius:9px}
+#quiz .fx-feed-arrow{font-size:24px;color:#6c9dc6}
+#quiz .fx-machine{background:#d9ebf9;border:2px solid #91bce0;border-radius:14px;padding:12px;text-align:center}
+#quiz .fx-machine-rollers{display:flex;align-items:center;gap:6px;justify-content:center;font-size:10px;color:#3c75a4}
+#quiz .fx-machine-rollers span{font-size:23px}
+#quiz .fx-machine-pieces{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+#quiz .fx-machine-pieces .fx-token{font-size:10px;padding:6px}
+#quiz .fx-id-rack{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;align-items:center}
+#quiz .fx-id-rack>span{font:750 11px ui-monospace,Consolas,monospace;background:#194c77;color:#fff;border-radius:4px;padding:8px}
+#quiz .fx-id-rack small{color:#6384a1;font-size:10px;width:100%;text-align:center}
+#quiz .fx-breakword{display:grid;gap:10px;justify-items:center}
+#quiz .fx-wholeword{font:800 22px ui-monospace,Consolas,monospace;color:#2b5f8c;border-bottom:3px solid #cce1f5;padding:8px}
+#quiz .fx-crack{display:grid;justify-items:center;color:#5f90b8;font-size:10px}
+#quiz .fx-crack-line{height:26px;width:3px;background:#7aaace}
+#quiz .fx-fragments{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+#quiz .fx-fragments span{padding:14px;background:#e4f2ff;border:1px solid #b0d5f3;border-bottom:4px solid #70a9da;border-radius:9px;font:800 15px ui-monospace,Consolas,monospace}
+#quiz .fx-fragments span:nth-child(2){background:#fff4df;border-color:#ebcba0;border-bottom-color:#dfa461}
+#quiz .fx-fragments-bottom{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;font-size:10px;color:#5d83a3}
+#quiz .fx-fragments-bottom>div{background:#fff;padding:7px;border-radius:4px}
+#quiz .fx-codec{display:grid;gap:10px}
+#quiz .fx-codec-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+#quiz .fx-codec-top>div{background:white;border:1px solid #d4e5f1;padding:13px;border-radius:8px;text-align:center;font:11px ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+#quiz .fx-codec-rails{display:flex;justify-content:center;gap:25px}
+#quiz .fx-codec-rails>div{font-size:11px;color:#387daf;font-weight:850}
+#quiz .fx-codec-rails i{display:inline-block;width:75px;height:2px;background:#b6d4e9}
+#quiz .fx-codec-foot{font-size:11px;text-align:center;color:#5d7fa0}
+#quiz .fx-vocab{display:grid;grid-template-columns:1fr 58px 1fr;gap:9px;align-items:center}
+#quiz .fx-vocab-notebook{background:white;border:1px solid #d1e0ed;border-radius:8px;padding:10px}
+#quiz .fx-vocab-header{display:flex;justify-content:space-between;font-size:10px;color:#5e84a3;font-weight:850}
+#quiz .fx-vocab-entry{display:flex;justify-content:space-between;padding:7px;border-bottom:1px solid #e6eef6;font-size:11px}
+#quiz .fx-vocab-entry.picked{background:#fff1dc}
+#quiz .fx-vocab-entry code{overflow-wrap:anywhere}
+#quiz .fx-vocab-pointer{text-align:center;font-size:11px;color:#618db1}
+#quiz .fx-vocab-pointer b{display:block;font-size:24px}
+#quiz .fx-vocab-meaning{background:#1e456c;color:#e4f4ff;border-radius:9px;padding:12px;display:grid;gap:8px}
+#quiz .fx-vocab-meaning small{font-size:9px;color:#a7c6e3}
+#quiz .fx-vocab-cell{font-size:15px;font-weight:850}
+#quiz .fx-vocab-vector{font:11px ui-monospace,Consolas,monospace;color:#b2e0ff}
+#quiz .fx-budget{display:flex;align-items:center;justify-content:center;gap:30px}
+#quiz .fx-budget-ring{width:170px;height:170px;min-width:170px;min-height:170px;border-radius:50%;background:conic-gradient(#468cbd 0 87%,#e5bb71 87% 100%);display:grid;place-items:center}
+#quiz .fx-budget-center{width:120px;height:120px;border-radius:50%;background:#f5faff;display:grid;align-content:center;justify-items:center}
+#quiz .fx-budget-center b{font-size:28px;color:#2b658f}
+#quiz .fx-budget-center small{font-size:10px;color:#6186a6}
+#quiz .fx-budget-legend{display:grid;gap:14px}
+#quiz .fx-budget-legend>div{display:grid;grid-template-columns:13px 1fr;gap:3px 8px;font-size:11px}
+#quiz .fx-budget-legend i{width:12px;height:12px;background:#468cbd;grid-row:span 2;margin-top:2px}
+#quiz .fx-budget-legend i.b{background:#e5bb71}
+#quiz .fx-budget-legend small{color:#6c8aa3}
+#quiz .fx-budget-foot{font-size:11px}
+#quiz .fx-multitoken{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#quiz .fx-multitoken-row{padding:12px;background:#fff;border:1px solid #d1e4f1;border-radius:9px;display:grid;gap:9px}
+#quiz .fx-multitoken-row small{font-size:10px;color:#6888a5}
+#quiz .fx-multitoken-row strong{font:750 11px ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+#quiz .fx-multitoken-strip{display:flex;flex-wrap:wrap;gap:4px}
+#quiz .fx-multitoken-strip span{font:750 11px ui-monospace,Consolas,monospace;padding:9px 7px;background:#d7eaff;border-radius:5px}
+#quiz .fx-multitoken-row.special .fx-multitoken-strip span{background:#fff0d9}
+#quiz .fx-multitoken-row em{font-size:10px;color:#6585a3;font-style:normal}
+#quiz .fx-multitoken-note{grid-column:1/-1;background:#edf5ff;padding:8px;font-size:11px;color:#5b819d}
+#quiz .fx-dualtoken{display:grid;gap:11px}
+#quiz .fx-dualtoken-source{text-align:center;font:750 15px ui-monospace,Consolas,monospace;color:#366e9e}
+#quiz .fx-dualtoken-branch{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#quiz .fx-dualtoken-lane{text-align:center;background:#e9f5ff;border-radius:10px;padding:12px;display:grid;gap:12px}
+#quiz .fx-dualtoken-lane:nth-child(2){background:#fff3e3}
+#quiz .fx-dualtoken-lane b{font-size:12px}
+#quiz .fx-dualtoken-lane>div{display:flex;justify-content:center;flex-wrap:wrap;gap:5px}
+#quiz .fx-dualtoken-lane span{padding:9px 12px;background:#fff;border:1px solid #cedfed;border-radius:6px;font:750 12px ui-monospace,Consolas,monospace}
+#quiz .fx-dualtoken-lane small{color:#6688a6}
+#quiz .fx-dualtoken-danger{text-align:center;padding:8px;background:#fff0e9;color:#a36347;border-radius:7px;font-size:11px}
+#quiz .fx-diagnostic{display:grid;grid-template-columns:1.2fr 1fr;gap:12px}
+#quiz .fx-terminal{background:#162d47;border:1px solid #385470;border-radius:10px;overflow:hidden;color:#d9eeff}
+#quiz .fx-terminal-head{padding:11px;background:#2b4561;color:#a9c6df;font-size:11px}
+#quiz .fx-terminal-head i{display:inline-block;width:6px;height:6px;background:#d6a579;border-radius:50%;margin:0 2px}
+#quiz .fx-terminal code{display:block;padding:13px;font:11px/2 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+#quiz .fx-terminal code span{color:#75d4a1}
+#quiz .fx-debug-monitor{display:grid;align-content:center;gap:9px}
+#quiz .fx-debug-monitor>div{border:1px solid #d7e5f3;background:white;border-radius:7px;padding:9px;color:#5b7f9f;font-size:10px}
+#quiz .fx-debug-monitor span{display:block;font:750 11px ui-monospace,Consolas,monospace;color:#305f8b;margin-top:4px;overflow-wrap:anywhere}
+#quiz .fx-debug-monitor small{font-size:10px;color:#7a94aa}
+@media(max-width:690px){#quiz .fx-corpus{flex-wrap:wrap;justify-content:center}#quiz .fx-corpus-stream{flex:0 1 100px}#quiz .fx-checkpoint{flex:1;min-width:110px}#quiz .fx-contract,#quiz .fx-chat{grid-template-columns:1fr}#quiz .fx-contract-divider,#quiz .fx-chat-transform{display:flex;align-items:center;justify-content:center;gap:8px}#quiz .fx-contract-divider span{display:inline}#quiz .fx-predict,#quiz .fx-venn,#quiz .fx-space,#quiz .fx-compliance,#quiz .fx-json-test,#quiz .fx-attn,#quiz .fx-diagnostic,#quiz .fx-prob,#quiz .fx-causal-matrix{grid-template-columns:1fr}#quiz .fx-weights{grid-template-columns:1fr 1fr}#quiz .fx-hub-center{width:116px;height:116px}#quiz .fx-invoice{grid-template-columns:1fr 25px 1fr}#quiz .fx-regulated{gap:6px}}
+@media(max-width:440px){#quiz .q-fig .fx-figure{padding:11px}#quiz .fx-corpus-pile .fx-paper{flex-basis:68px;width:68px;min-height:105px}#quiz .fx-corpus-stream{display:none}#quiz .fx-brain-object{width:125px;height:125px;flex-basis:125px}#quiz .fx-checkpoint{width:100%}#quiz .fx-micro-arrow{display:none}#quiz .fx-headstart{grid-template-columns:1fr}#quiz .fx-shift-line,#quiz .fx-shift-connectors{grid-template-columns:58px repeat(3,minmax(0,1fr))}#quiz .fx-shift-line .fx-token{font-size:10px;padding:7px 3px}#quiz .fx-shift-line label{font-size:9px}#quiz .fx-time{grid-template-columns:1fr}#quiz .fx-time-axis{display:none}#quiz .fx-venn-circles{height:155px}#quiz .fx-venn-train,#quiz .fx-venn-test{height:140px}#quiz .fx-venn-overlap{top:70px;font-size:8px}#quiz .fx-legal-gates,#quiz .fx-supervise{grid-template-columns:1fr}#quiz .fx-feedback-arc{grid-column:auto}#quiz .fx-kanban{grid-template-columns:1fr}#quiz .fx-kanban-router{display:flex;justify-content:center}#quiz .fx-console-row{grid-template-columns:85px minmax(0,1fr)}#quiz .fx-diff{grid-template-columns:1fr}#quiz .fx-diff-connector{display:none}#quiz .fx-policy-feed{grid-template-columns:1fr}#quiz .fx-policy-feed>div:nth-child(2){display:none}#quiz .fx-hub{grid-template-columns:1fr 1fr}#quiz .fx-hub-center{grid-column:1/-1;grid-row:2;width:140px;height:140px}#quiz .fx-hub-spoke.a{grid-column:1;grid-row:1}.fx-hub-spoke.b{grid-column:2;grid-row:1}.fx-hub-spoke.c{grid-column:1;grid-row:3}.fx-hub-spoke.d{grid-column:2;grid-row:3}#quiz .fx-gantt-row{grid-template-columns:1fr}#quiz .fx-gantt-scale{margin-left:0}#quiz .fx-card-dials{grid-template-columns:repeat(2,1fr)}#quiz .fx-invoice{grid-template-columns:1fr}#quiz .fx-extraction-arrow{transform:rotate(90deg)}#quiz .fx-local-tests{grid-template-columns:1fr}#quiz .fx-reg-connector{transform:rotate(90deg)}#quiz .fx-regulated{flex-direction:column}#quiz .fx-codec-top{grid-template-columns:1fr}#quiz .fx-codec-rails i{width:30px}#quiz .fx-vocab{grid-template-columns:1fr}#quiz .fx-vocab-pointer b{transform:rotate(90deg)}#quiz .fx-budget{flex-direction:column;gap:13px}#quiz .fx-multitoken,#quiz .fx-dualtoken-branch{grid-template-columns:1fr}}
+
 </style></head><body><div class="topbar">
   <div class="topbar-inner">
     <div class="brand">Tokenization Study<small>Text Processing · Rank 010</small></div>
@@ -929,42 +1133,42 @@ body{transition:background-color .15s}
   </div>
 </div>
 
-<div class="container"><h1>Tokenization — Visual Study Module</h1><p class="sub">Rank 010 · Eight progressive questions · Eight purpose-built diagrams · Offline learning</p><table class="meta-study" aria-label="Study metadata"><thead><tr><th>Field</th><th>Details</th></tr></thead><tbody><tr><th>Subject</th><td>Large Language Models</td></tr><tr><th>Domain</th><td>Text Processing</td></tr><tr><th>Keyword</th><td>Tokenization</td></tr></tbody></table><h2 class="study-heading">Context</h2><div class="study-context"><p>Tokenization converts text into units a language model can process. A tokenizer maps text to tokens and token IDs, and a compatible decoder maps IDs back to text. Token boundaries depend on the tokenizer: a token may be a word, subword, punctuation mark, or other unit.</p><p>The following mini-scenes are explanatory examples, not measured model outputs. Progress from the definition to a practical interview scenario.</p></div><div id="result"></div><form id="quiz"><div class="question" id="question-1" data-answer="a"><div class="q-head"><span class="q-badge">Q1</span><span class="q-tag">INTRODUCTION</span></div><div class="q-fig" id="figure-1"><div class="studio-story studio-story-1" role="group" aria-label="Text becomes a sequence of model IDs. Tokenization translates language into a finite vocabulary representation."><div class="studio-story-top"><span class="studio-eyebrow">VISUAL EXPLANATION <b>01</b></span><h3>Text becomes a sequence of model IDs</h3><p>Tokenization translates language into a finite vocabulary representation.</p></div><div class="studio-content"><div class="studio-map-layout"><div class="studio-input-stack"><div class="studio-annotation">LEARNING MATERIAL</div><div class="studio-raw-item"><svg class="studio-glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M16 7c-5-3-9-3-13-1v19c4-2 8-2 13 1 5-3 9-3 13-1V6c-4-2-8-2-13 1Zm0 0v19"/></svg><span>Raw text</span><i class="studio-raw-line"></i></div><div class="studio-raw-item"><svg class="studio-glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M18 5H8a3 3 0 0 0-3 3v17a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V14Z"/><path d="M18 5v9h9M11 19h10M11 23h8"/></svg><span>Punctuation</span><i class="studio-raw-line"></i></div><div class="studio-raw-item"><svg class="studio-glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="26" height="22" rx="3"/><path d="m12 12-5 4 5 4m8-8 5 4-5 4M18 10l-4 12"/></svg><span>Whitespace</span><i class="studio-raw-line"></i></div></div><div class="studio-map-connect" aria-hidden="true"><span>↗</span><span>→</span><span>↘</span></div><div class="studio-neural"><div class="studio-neural-ring"><svg class="studio-network" viewBox="0 0 142 115" aria-hidden="true"><path d="M20 15L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 15L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 15L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 15L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 15L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><circle cx="20" cy="15" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="20" cy="36" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="20" cy="57" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="20" cy="78" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="20" cy="99" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="15" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="36" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="57" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="78" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="99" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="15" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="36" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="57" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="78" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="99" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/></svg></div><strong>TOKENIZER</strong><small>Learned parameters</small></div><div class="studio-map-connect" aria-hidden="true"><span>↗</span><span>→</span><span>↘</span></div><div class="studio-outputs"><div class="studio-annotation">POSSIBLE REUSE</div><div class="studio-output-item"><span class="studio-output-ind">1</span><b>Token pieces</b></div><div class="studio-output-item"><span class="studio-output-ind">2</span><b>Integer IDs</b></div><div class="studio-output-item"><span class="studio-output-ind">3</span><b>Embedding lookup</b></div></div></div></div><div class="studio-takeaway"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>IDs are model-specific vocabulary indices, not universal word meanings.</span></div></div></div>
+<div class="container"><h1>Tokenization — Visual Study Module</h1><p class="sub">Rank 010 · Eight progressive questions · Eight purpose-built diagrams · Offline learning</p><table class="meta-study" aria-label="Study metadata"><thead><tr><th>Field</th><th>Details</th></tr></thead><tbody><tr><th>Subject</th><td>Large Language Models</td></tr><tr><th>Domain</th><td>Text Processing</td></tr><tr><th>Keyword</th><td>Tokenization</td></tr></tbody></table><h2 class="study-heading">Context</h2><div class="study-context"><p>Tokenization converts text into units a language model can process. A tokenizer maps text to tokens and token IDs, and a compatible decoder maps IDs back to text. Token boundaries depend on the tokenizer: a token may be a word, subword, punctuation mark, or other unit.</p><p>The following mini-scenes are explanatory examples, not measured model outputs. Progress from the definition to a practical interview scenario.</p></div><div id="result"></div><form id="quiz"><div class="question" id="question-1" data-answer="a"><div class="q-head"><span class="q-badge">Q1</span><span class="q-tag">INTRODUCTION</span></div><div class="q-fig" id="figure-1"><div class="fx-figure fx-tokenmachine" role="group" aria-label="Rank 10 question 1: Watch text enter the model as IDs"><header class="fx-heading"><span class="fx-eyebrow">QUESTION 01 · CONCEPT ILLUSTRATION</span><h3>Watch text enter the model as IDs</h3><p>A tokenizer breaks the text into pieces before embedding lookup.</p></header><div class="fx-stage"><div class="fx-token-machine"><div class="fx-raw-text">Hello, world!</div><div class="fx-feed-arrow">⇢</div><div class="fx-machine"><div class="fx-machine-rollers"><span>⚙</span><b>TOKENIZER</b><span>⚙</span></div><div class="fx-machine-pieces"><span class="fx-token ">Hello</span><span class="fx-token ">,</span><span class="fx-token "> world</span><span class="fx-token ">!</span></div></div><div class="fx-feed-arrow">⇢</div><div class="fx-id-rack"><span>301</span><span>7</span><span>455</span><span>8</span><small>Illustrative vocabulary IDs</small></div></div></div><div class="fx-lesson"><b>✓</b><span>Token IDs—not raw strings—are passed into a model&#39;s embedding lookup.</span></div></div></div>
 <p class="q-text">What does tokenization do before text enters a language model?</p><label><input type="radio" name="q1" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> It splits or encodes text into token units and their numeric IDs for model processing.</span></label>
 <label><input type="radio" name="q1" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> It directly decides whether each generated sentence is factually correct or hallucinated.</span></label>
 <label><input type="radio" name="q1" value="c"><span class="answer-text"><strong class="option-letter">C.</strong> It turns every complete paragraph into one fixed model parameter during inference.</span></label>
 <label><input type="radio" name="q1" value="d"><span class="answer-text"><strong class="option-letter">D.</strong> It removes the need for an embedding layer by storing natural-language words as weights.</span></label><div class="explanation"><strong>Correct: A.</strong> A tokenizer maps text into a sequence of token units and IDs that a model can look up as embeddings. The units are not necessarily whole words; subword pieces and punctuation may be separate tokens. Tokenization is part of the model&#39;s input-output interface and must match the vocabulary used during training.</div></div>
-<div class="question" id="question-2" data-answer="d"><div class="q-head"><span class="q-badge">Q2</span><span class="q-tag">FUNDAMENTALS</span></div><div class="q-fig" id="figure-2"><div class="studio-story studio-story-2 studio-custom-case" role="group" aria-label="Build rare words from reusable pieces"><div class="studio-story-top"><span class="studio-eyebrow">VISUAL EXPLANATION <b>02</b></span><h3>Build rare words from reusable pieces</h3><p>Illustrative subword composition instead of a giant whole-word dictionary.</p></div><div class="studio-content"><div class="studio-bpe"><div class="studio-bpe-source"><div>UNFAMILIAR WORD</div><strong>microservices</strong><span>Not required as one vocabulary entry</span></div><div class="studio-bpe-trunk" aria-hidden="true">↓ split with learned vocabulary</div><div class="studio-bpe-segments"><span>micro</span><span>service</span><span>s</span></div><div class="studio-bpe-guide"><div class="studio-bpe-connector" aria-hidden="true">↘</div><div class="studio-bpe-message"><strong>Pieces can be reused</strong><p>Other words may share these fragments. Real tokenizers may split this word differently.</p></div><div class="studio-bpe-connector" aria-hidden="true">↙</div></div><div class="studio-bpe-output">SUBWORD PIECES <span>→</span> TOKEN IDs <span>→</span> MODEL EMBEDDINGS</div></div></div><div class="studio-takeaway"><span aria-hidden="true">✓</span><span>Subword vocabularies improve coverage without requiring a token for each possible word.</span></div></div></div>
+<div class="question" id="question-2" data-answer="d"><div class="q-head"><span class="q-badge">Q2</span><span class="q-tag">FUNDAMENTALS</span></div><div class="q-fig" id="figure-2"><div class="fx-figure fx-breakword" role="group" aria-label="Rank 10 question 2: Break a rare word into reusable pieces"><header class="fx-heading"><span class="fx-eyebrow">QUESTION 02 · CONCEPT ILLUSTRATION</span><h3>Break a rare word into reusable pieces</h3><p>Subword units reduce the need for every possible whole word to have its own entry.</p></header><div class="fx-stage"><div class="fx-breakword"><div class="fx-wholeword">microservices</div><div class="fx-crack"><div class="fx-crack-line"></div><span>SEGMENT</span></div><div class="fx-fragments"><span>micro</span><span>service</span><span>s</span></div><div class="fx-fragments-bottom"><div>micro → other compounds</div><div>service → common base</div><div>s → suffix</div></div></div></div><div class="fx-lesson"><b>✓</b><span>Pieces shown are illustrative, not the measured output of a specific tokenizer.</span></div></div></div>
 <p class="q-text">Why do many LLM tokenizers use subword pieces instead of one token per possible word?</p><label><input type="radio" name="q2" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Subword tokenizers force every sentence to contain exactly the same number of tokens.</span></label>
 <label><input type="radio" name="q2" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Subword pieces remove every vocabulary limit and guarantee one token per word.</span></label>
 <label><input type="radio" name="q2" value="c"><span class="answer-text"><strong class="option-letter">C.</strong> Subword pieces guarantee perfect spelling and meaning for unseen technical terminology.</span></label>
 <label><input type="radio" name="q2" value="d"><span class="answer-text"><strong class="option-letter">D.</strong> Subword units can represent many unfamiliar words without requiring every word in the vocabulary.</span></label><div class="explanation"><strong>Correct: D.</strong> A whole-word vocabulary would need entries for many word forms, names, and rare terms. Subword schemes reuse smaller pieces to encode words not present as single tokens. This trades off vocabulary size and sequence length. The exact segmentation depends on the trained tokenizer, so a word may be represented by one or several tokens.</div></div>
-<div class="question" id="question-3" data-answer="c"><div class="q-head"><span class="q-badge">Q3</span><span class="q-tag">WORKING MECHANISM</span></div><div class="q-fig" id="figure-3"><div class="studio-story studio-story-3" role="group" aria-label="Encode, look up, then decode. Encoding and decoding use one matching tokenizer vocabulary."><div class="studio-story-top"><span class="studio-eyebrow">VISUAL EXPLANATION <b>03</b></span><h3>Encode, look up, then decode</h3><p>Encoding and decoding use one matching tokenizer vocabulary.</p></div><div class="studio-content"><div class="studio-token-stage"><div class="studio-token-caption"><span>EXAMPLE TOKEN STREAM</span><span>context grows →</span></div><div class="studio-token-ribbon"><div class="studio-token"><small>01</small><b>Hello</b></div><div class="studio-token"><small>02</small><b>,</b></div><div class="studio-token"><small>03</small><b> world</b></div><div class="studio-token"><small>04</small><b>!</b></div></div><div class="studio-target-lane"><span><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="m18 2-13 17h10l-2 11 14-18H17Z"/></svg> LEARNING TARGET</span><strong>[301, 7, 455, 8]</strong><span class="studio-target-pointer">↑ target from sequence</span></div></div><div class="studio-trace"><div class="studio-trace-step"><i>1</i><div class="studio-trace-text">Raw text input</div></div><div class="studio-trace-step"><i>2</i><div class="studio-trace-text">Split into tokens</div></div><div class="studio-trace-step"><i>3</i><div class="studio-trace-text">Map to token IDs</div></div><div class="studio-trace-step"><i>4</i><div class="studio-trace-text">Decode IDs to text</div></div></div></div><div class="studio-takeaway"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>ID examples are illustrative and vary between tokenizer vocabularies.</span></div></div></div>
+<div class="question" id="question-3" data-answer="c"><div class="q-head"><span class="q-badge">Q3</span><span class="q-tag">WORKING MECHANISM</span></div><div class="q-fig" id="figure-3"><div class="fx-figure fx-codec" role="group" aria-label="Rank 10 question 3: Encoding and decoding go both directions"><header class="fx-heading"><span class="fx-eyebrow">QUESTION 03 · CONCEPT ILLUSTRATION</span><h3>Encoding and decoding go both directions</h3><p>The token vocabulary pairs text pieces with integer IDs.</p></header><div class="fx-stage"><div class="fx-codec"><div class="fx-codec-top"><div class="fx-codec-text">“Hello, world!”</div><div class="fx-codec-split">HELLO | , | WORLD | !</div><div class="fx-codec-ids">301 · 7 · 455 · 8</div></div><div class="fx-codec-rails"><div><span>ENCODE →</span><i></i></div><div><i></i><span>← DECODE</span></div></div><div class="fx-codec-foot">Tokenizer and decoder must use the same vocabulary.</div></div></div><div class="fx-lesson"><b>✓</b><span>The IDs are illustrative. Different trained tokenizers may segment the same text differently.</span></div></div></div>
 <p class="q-text">How does a tokenizer typically prepare an input sentence for a transformer?</p><label><input type="radio" name="q3" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> It directly inserts every Unicode character as a unique new model weight.</span></label>
 <label><input type="radio" name="q3" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> It trains an optimizer on every sentence before the model can read the prompt.</span></label>
 <label><input type="radio" name="q3" value="c"><span class="answer-text"><strong class="option-letter">C.</strong> It converts text into tokenizer-defined pieces, then maps them to integer IDs.</span></label>
 <label><input type="radio" name="q3" value="d"><span class="answer-text"><strong class="option-letter">D.</strong> It replaces all punctuation with response labels supplied by human annotators.</span></label><div class="explanation"><strong>Correct: C.</strong> Encoding starts with the tokenizer&#39;s normalization and segmentation rules, then maps recognized units to vocabulary IDs. The resulting integer sequence is passed to the model&#39;s embedding lookup. During generation, predicted token IDs can be decoded back into text. Different tokenizer implementations may represent the same sentence with different numbers of pieces.</div></div>
-<div class="question" id="question-4" data-answer="b"><div class="q-head"><span class="q-badge">Q4</span><span class="q-tag">TECHNICAL UNDERSTANDING</span></div><div class="q-fig" id="figure-4"><div class="studio-story studio-story-4" role="group" aria-label="Token string versus its ID. A tiny illustrative tokenizer vocabulary—not a real model mapping."><div class="studio-story-top"><span class="studio-eyebrow">VISUAL EXPLANATION <b>04</b></span><h3>Token string versus its ID</h3><p>A tiny illustrative tokenizer vocabulary—not a real model mapping.</p></div><div class="studio-content"><div class="studio-inspector"><div class="studio-editor"><div class="studio-editor-bar"><i></i><i></i><i></i><span>vocabulary.tsv</span><em>EXAMPLE</em></div><div class="studio-editor-body"><div class="studio-code-line "><span class="studio-ln">01</span><code>token_piece    token_id</code></div><div class="studio-code-line is-marked"><span class="studio-ln">02</span><code>Hello          31</code></div><div class="studio-code-line is-marked"><span class="studio-ln">03</span><code>,               8</code></div><div class="studio-code-line "><span class="studio-ln">04</span><code> world        204</code></div><div class="studio-code-line "><span class="studio-ln">05</span><code>!               9</code></div><div class="studio-code-line "><span class="studio-ln">06</span><code># IDs are vocabulary-specific</code></div></div></div><div class="studio-inspector-detail"><span class="studio-annotation">ANNOTATED MECHANISM</span><div class="studio-inspector-row"><span class="studio-inspector-line">1</span><span>Token piece is a unit</span><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="26" height="23" rx="3"/><path d="m7 23 6-8 5 4 8-10"/></svg></div><div class="studio-inspector-row"><span class="studio-inspector-line">2</span><span>ID is its integer address</span><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="26" height="23" rx="3"/><path d="m7 23 6-8 5 4 8-10"/></svg></div><div class="studio-inspector-row"><span class="studio-inspector-line">3</span><span>Model and tokenizer must match</span><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg></div></div></div></div><div class="studio-takeaway"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>Swapping an ID between tokenizers may change what it represents.</span></div></div></div>
+<div class="question" id="question-4" data-answer="b"><div class="q-head"><span class="q-badge">Q4</span><span class="q-tag">TECHNICAL UNDERSTANDING</span></div><div class="q-fig" id="figure-4"><div class="fx-figure fx-vocabulary" role="group" aria-label="Rank 10 question 4: An ID is a vocabulary address, not a meaning"><header class="fx-heading"><span class="fx-eyebrow">QUESTION 04 · CONCEPT ILLUSTRATION</span><h3>An ID is a vocabulary address, not a meaning</h3><p>Look up individual token pieces in the paired vocabulary table.</p></header><div class="fx-stage"><div class="fx-vocab"><div class="fx-vocab-notebook"><div class="fx-vocab-header">TOKEN PIECE <span>ID</span></div><div class="fx-vocab-entry "><code>Hello</code><b>31</b></div><div class="fx-vocab-entry "><code>,</code><b>8</b></div><div class="fx-vocab-entry picked"><code> world</code><b>204</b></div><div class="fx-vocab-entry "><code>!</code><b>9</b></div></div><div class="fx-vocab-pointer"><span>LOOKUP</span><b>➜</b></div><div class="fx-vocab-meaning"><small>MODEL'S EMBEDDING MATRIX</small><div class="fx-vocab-cell">Row 204</div><div class="fx-vocab-vector">[0.12, −0.08, …]</div></div></div></div><div class="fx-lesson"><b>✓</b><span>These are made-up IDs and vector values; actual mappings belong to each tokenizer.</span></div></div></div>
 <p class="q-text">What is the difference between a token string and a token ID?</p><label><input type="radio" name="q4" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> A token string is a numerical model weight; its ID is the user&#39;s full prompt.</span></label>
 <label><input type="radio" name="q4" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> A token string is a text unit; its ID is the vocabulary integer identifying that unit.</span></label>
 <label><input type="radio" name="q4" value="c"><span class="answer-text"><strong class="option-letter">C.</strong> A token string is the training loss; its ID is the optimizer&#39;s learning rate.</span></label>
 <label><input type="radio" name="q4" value="d"><span class="answer-text"><strong class="option-letter">D.</strong> A token string describes attention heads; its ID determines how many layers to train.</span></label><div class="explanation"><strong>Correct: B.</strong> A tokenizer&#39;s vocabulary pairs a token representation with an integer identifier. For example, an illustrative token piece &#39;hello&#39; could map to ID 42 in one tokenizer but a different ID in another. The ID is not inherently meaningful by itself. A model expects IDs from the vocabulary it was trained to use.</div></div>
-<div class="question" id="question-5" data-answer="a"><div class="q-head"><span class="q-badge">Q5</span><span class="q-tag">PRACTICAL APPLICATION</span></div><div class="q-fig" id="figure-5"><div class="studio-story studio-story-5" role="group" aria-label="Count tokens before accepting a prompt. Context limits count encoded positions, not words."><div class="studio-story-top"><span class="studio-eyebrow">VISUAL EXPLANATION <b>05</b></span><h3>Count tokens before accepting a prompt</h3><p>Context limits count encoded positions, not words.</p></div><div class="studio-content"><div class="studio-workspace"><div class="studio-product"><div class="studio-browserbar"><i></i><i></i><i></i><strong>Prompt budget / illustrative</strong><span>DEMO</span></div><div class="studio-product-body"><div class="studio-form-title">PROCESS SAMPLE</div><div class="studio-form-row"><label>Encoded input</label><div>870 tokens</div></div><div class="studio-form-row"><label>Reserved response</label><div>130 tokens</div></div><div class="studio-action-fake"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="m18 2-13 17h10l-2 11 14-18H17Z"/></svg> Illustrative processing step</div><div class="studio-result"><small>EXPECTED OUTPUT</small><code>870 + 130 = 1,000 / 1,000</code></div></div></div><div class="studio-workspace-notes"><span class="studio-annotation">BEFORE DEPLOYMENT</span><div class="studio-check-item"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><ellipse cx="16" cy="7" rx="12" ry="4"/><path d="M4 7v18c0 6 24 6 24 0V7M4 15c0 6 24 6 24 0M4 22c0 6 24 6 24 0"/></svg><span>Count with real tokenizer</span></div><div class="studio-check-item"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M16 3 28 8v8c0 9-7 13-12 15C11 29 4 25 4 16V8Z"/><path d="m10 16 4 4 8-9"/></svg><span>Reserve output capacity</span></div><div class="studio-check-item"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>Truncate carefully</span></div></div></div></div><div class="studio-takeaway"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>Always measure the actual encoded prompt rather than using word count.</span></div></div></div>
+<div class="question" id="question-5" data-answer="a"><div class="q-head"><span class="q-badge">Q5</span><span class="q-tag">PRACTICAL APPLICATION</span></div><div class="q-fig" id="figure-5"><div class="fx-figure fx-budget" role="group" aria-label="Rank 10 question 5: A context window is a token budget"><header class="fx-heading"><span class="fx-eyebrow">QUESTION 05 · CONCEPT ILLUSTRATION</span><h3>A context window is a token budget</h3><p>Measure the real encoded prompt plus the space reserved for generated output.</p></header><div class="fx-stage"><div class="fx-budget"><div class="fx-budget-ring"><div class="fx-budget-center"><b>1,000</b><small>example limit</small></div></div><div class="fx-budget-legend"><div><i class="a"></i><b>Input: 870</b><small>System + prompt</small></div><div><i class="b"></i><b>Output: 130</b><small>Reserved capacity</small></div><div class="fx-budget-foot">870 + 130 = 1,000 <strong>✓</strong></div></div></div></div><div class="fx-lesson"><b>✓</b><span>The values are illustrative; real context constraints apply to encoded token positions.</span></div></div></div>
 <p class="q-text">A prompt is rejected for exceeding the model&#39;s context limit. What should a developer inspect first?</p><label><input type="radio" name="q5" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Count the encoded input tokens and account for the output tokens the system may generate.</span></label>
 <label><input type="radio" name="q5" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Count only visible words because every word maps to exactly one model token.</span></label>
 <label><input type="radio" name="q5" value="c"><span class="answer-text"><strong class="option-letter">C.</strong> Increase text font size so the tokenizer processes fewer units per paragraph.</span></label>
 <label><input type="radio" name="q5" value="d"><span class="answer-text"><strong class="option-letter">D.</strong> Remove punctuation without measuring how the tokenizer or model handles the change.</span></label><div class="explanation"><strong>Correct: A.</strong> Context limits apply to token positions rather than displayed word counts. Tokenizers can split a word into several pieces, and punctuation or whitespace may affect the count. A developer should encode the actual prompt, measure its token length, and reserve room for expected output. Truncation needs care because it can remove important instructions.</div></div>
-<div class="question" id="question-6" data-answer="c"><div class="q-head"><span class="q-badge">Q6</span><span class="q-tag">ADVANCED UNDERSTANDING</span></div><div class="q-fig" id="figure-6"><div class="studio-story studio-story-6 studio-custom-case" role="group" aria-label="Subword fragmentation is context cost"><div class="studio-story-top"><span class="studio-eyebrow">VISUAL EXPLANATION <b>06</b></span><h3>Subword fragmentation is context cost</h3><p>A less-familiar term can occupy more tokens than a frequent one.</p></div><div class="studio-content"><div class="studio-fragments"><div class="studio-frag-track"><div class="studio-frag-heading"><strong>Frequent piece</strong><span>Conceptual: one vocabulary unit</span></div><div class="studio-frag-pieces"><span class="freq">network</span></div><div class="studio-frag-meter"><span style="width:25%"></span></div></div><div class="studio-frag-track"><div class="studio-frag-heading"><strong>Unfamiliar technical term</strong><span>Conceptual: several reusable pieces</span></div><div class="studio-frag-pieces"><span>hyper</span><span>parameter</span><span>ization</span><span>_x</span></div><div class="studio-frag-meter"><span style="width:90%"></span></div></div><div class="studio-frag-footer"><b>Same task, different token budgets</b><small>Exact splits depend on the tokenizer; verify with its encoder.</small></div></div></div><div class="studio-takeaway"><span aria-hidden="true">✓</span><span>The splits are schematic, not measured from a real tokenizer. Count real encoded IDs.</span></div></div></div>
+<div class="question" id="question-6" data-answer="c"><div class="q-head"><span class="q-badge">Q6</span><span class="q-tag">ADVANCED UNDERSTANDING</span></div><div class="q-fig" id="figure-6"><div class="fx-figure fx-fragmentation" role="group" aria-label="Rank 10 question 6: Unfamiliar names may fragment into more pieces"><header class="fx-heading"><span class="fx-eyebrow">QUESTION 06 · CONCEPT ILLUSTRATION</span><h3>Unfamiliar names may fragment into more pieces</h3><p>Token efficiency depends on the trained vocabulary, not just visible word count.</p></header><div class="fx-stage"><div class="fx-multitoken"><div class="fx-multitoken-row"><small>COMMON TERM</small><strong>network</strong><div class="fx-multitoken-strip"><span>network</span></div><em>1 illustrative piece</em></div><div class="fx-multitoken-row special"><small>RARE IDENTIFIER</small><strong>hyperparameterization_x</strong><div class="fx-multitoken-strip"><span>hyper</span><span>parameter</span><span>ization</span><span>_x</span></div><em>4 illustrative pieces</em></div><div class="fx-multitoken-note">Test real code, names and multilingual text with the actual tokenizer.</div></div></div><div class="fx-lesson"><b>✓</b><span>Displayed segmentation is conceptual; real models may use very different boundaries.</span></div></div></div>
 <p class="q-text">What challenge can tokenization create for unusual names, code, or multilingual text?</p><label><input type="radio" name="q6" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Every unusual word becomes a perfect single token across all trained tokenizers.</span></label>
 <label><input type="radio" name="q6" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Text in any writing system always produces the same number of tokens per character.</span></label>
 <label><input type="radio" name="q6" value="c"><span class="answer-text"><strong class="option-letter">C.</strong> Some inputs split into many pieces, affecting length, efficiency, and representation.</span></label>
 <label><input type="radio" name="q6" value="d"><span class="answer-text"><strong class="option-letter">D.</strong> A tokenizer translates every language into English before assigning token IDs.</span></label><div class="explanation"><strong>Correct: C.</strong> Tokenizers are shaped by their training corpus and vocabulary construction. Rare names, code fragments, and some languages may be split into more pieces than familiar text. More tokens can consume context space and increase cost or latency. Developers should evaluate token counts on the actual languages and formats their product supports.</div></div>
-<div class="question" id="question-7" data-answer="d"><div class="q-head"><span class="q-badge">Q7</span><span class="q-tag">SMART-LEVEL REASONING</span></div><div class="q-fig" id="figure-7"><div class="studio-story studio-story-7" role="group" aria-label="Two valid vocabularies, different IDs. The same text can map to different token sequences."><div class="studio-story-top"><span class="studio-eyebrow">VISUAL EXPLANATION <b>07</b></span><h3>Two valid vocabularies, different IDs</h3><p>The same text can map to different token sequences.</p></div><div class="studio-content"><div class="studio-investigate"><div class="studio-evidence"><span class="studio-evidence-icon"><svg class="studio-glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="26" height="23" rx="3"/><path d="m7 23 6-8 5 4 8-10"/></svg></span><div><small>EVIDENCE TO INVESTIGATE</small><strong>Tokenizer A: [10, 22]  •  Tokenizer B: [7, 3, 90] for the same sentence.</strong><code>Vocabularies are not interchangeable</code></div></div><div class="studio-branch-arms" aria-hidden="true"><span></span><i></i><span></span></div><div class="studio-two-paths"><div class="studio-path-good"><svg class="studio-glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><small>DEFENSIBLE ACTION</small><strong>Pair each model with its own tokenizer</strong><em>✓ supports independent verification</em></div><div class="studio-path-bad"><svg class="studio-glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M16 3 28 8v8c0 9-7 13-12 15C11 29 4 25 4 16V8Z"/><path d="m10 16 4 4 8-9"/></svg><small>WEAK SHORTCUT</small><strong>Feed token IDs from A directly into model B</strong><em>× skips root-cause checks</em></div></div></div></div><div class="studio-takeaway"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>Different segmentation does not imply an error; cross-model ID reuse can.</span></div></div></div>
+<div class="question" id="question-7" data-answer="d"><div class="q-head"><span class="q-badge">Q7</span><span class="q-tag">SMART-LEVEL REASONING</span></div><div class="q-fig" id="figure-7"><div class="fx-figure fx-twotokenizers" role="group" aria-label="Rank 10 question 7: Two tokenizers can agree on text but not IDs"><header class="fx-heading"><span class="fx-eyebrow">QUESTION 07 · CONCEPT ILLUSTRATION</span><h3>Two tokenizers can agree on text but not IDs</h3><p>Different vocabulary segmentation produces different model-ready sequences.</p></header><div class="fx-stage"><div class="fx-dualtoken"><div class="fx-dualtoken-source">SOURCE: “unbelievable”</div><div class="fx-dualtoken-branch"><div class="fx-dualtoken-lane"><b>Tokenizer A</b><div><span>un</span><span>believable</span></div><small>IDs [10, 22]</small></div><div class="fx-dualtoken-lane"><b>Tokenizer B</b><div><span>un</span><span>believ</span><span>able</span></div><small>IDs [7, 3, 90]</small></div></div><div class="fx-dualtoken-danger">Do not send A's IDs to model B without matching the vocabulary.</div></div></div><div class="fx-lesson"><b>✓</b><span>These are invented token splits and IDs demonstrating tokenizer-specific mappings.</span></div></div></div>
 <p class="q-text">Two tokenizers encode the same sentence into different ID sequences. Is that automatically an error?</p><label><input type="radio" name="q7" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Yes, every correct tokenizer must assign the same ID to every English word.</span></label>
 <label><input type="radio" name="q7" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Yes, vocabulary IDs are globally standardized across all language models.</span></label>
 <label><input type="radio" name="q7" value="c"><span class="answer-text"><strong class="option-letter">C.</strong> No, and the IDs can always be swapped between any two models safely.</span></label>
 <label><input type="radio" name="q7" value="d"><span class="answer-text"><strong class="option-letter">D.</strong> No, token boundaries and ID assignments are specific to each tokenizer vocabulary.</span></label><div class="explanation"><strong>Correct: D.</strong> Tokenizers can use different training data, algorithms, and vocabulary mappings. As a result, the same sentence may produce different boundaries and token IDs. This is normal, but the encoded IDs must match the target model&#39;s embedding vocabulary. Mixing unrelated tokenizer and model files can cause errors or misleading behavior.</div></div>
-<div class="question" id="question-8" data-answer="b"><div class="q-head"><span class="q-badge">Q8</span><span class="q-tag">INTERVIEW QUESTION</span></div><div class="q-fig" id="figure-8"><div class="studio-story studio-story-8" role="group" aria-label="Diagnose broken output after a model swap. Keep model, tokenizer, and special-token rules aligned."><div class="studio-story-top"><span class="studio-eyebrow">VISUAL EXPLANATION <b>08</b></span><h3>Diagnose broken output after a model swap</h3><p>Keep model, tokenizer, and special-token rules aligned.</p></div><div class="studio-content"><div class="studio-architecture"><div class="studio-arch-lane"><div class="studio-annotation">INPUT &amp; EVIDENCE</div><div class="studio-arch-unit"><svg class="studio-glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><ellipse cx="16" cy="7" rx="12" ry="4"/><path d="M4 7v18c0 6 24 6 24 0V7M4 15c0 6 24 6 24 0M4 22c0 6 24 6 24 0"/></svg><div class="studio-arch-artifact"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M18 5H8a3 3 0 0 0-3 3v17a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V14Z"/><path d="M18 5v9h9M11 19h10M11 23h8"/></svg><span>New checkpoint</span></div><div class="studio-arch-artifact"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M18 5H8a3 3 0 0 0-3 3v17a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V14Z"/><path d="M18 5v9h9M11 19h10M11 23h8"/></svg><span>Matching tokenizer</span></div></div></div><div class="studio-arch-arrow" aria-hidden="true">→</div><div class="studio-arch-engine"><div class="studio-neural-ring small"><svg class="studio-network" viewBox="0 0 142 115" aria-hidden="true"><path d="M20 15L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 15L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 15L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 15L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 15L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 36L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 57L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 78L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M20 99L70 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 15L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 36L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 57L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 78L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 15" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 36" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 57" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 78" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><path d="M70 99L120 99" stroke="#a8c8f2" stroke-opacity=".48" stroke-width="1"/><circle cx="20" cy="15" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="20" cy="36" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="20" cy="57" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="20" cy="78" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="20" cy="99" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="15" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="36" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="57" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="78" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="70" cy="99" r="4" fill="#ffce7b" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="15" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="36" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="57" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="78" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/><circle cx="120" cy="99" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="1.2"/></svg></div><b>Encode / generate</b><small>MODEL / STRATEGY</small></div><div class="studio-arch-arrow" aria-hidden="true">→</div><div class="studio-arch-lane"><div class="studio-annotation">SAFETY &amp; EVALUATION</div><div class="studio-arch-unit guard"><svg class="studio-glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M16 3 28 8v8c0 9-7 13-12 15C11 29 4 25 4 16V8Z"/><path d="m10 16 4 4 8-9"/></svg><div class="studio-arch-artifact"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>BOS, EOS, padding</span></div><div class="studio-arch-artifact"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>Round-trip tests</span></div></div></div></div><div class="studio-arch-output"><span>RELEASE CONDITIONS</span><b><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg>Readable text</b><b><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg>Correct token budgets</b></div></div><div class="studio-takeaway"><svg class="studio-mini-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg><span>Temperature changes cannot fix mismatched token-ID mappings.</span></div></div></div>
+<div class="question" id="question-8" data-answer="b"><div class="q-head"><span class="q-badge">Q8</span><span class="q-tag">INTERVIEW QUESTION</span></div><div class="q-fig" id="figure-8"><div class="fx-figure fx-diagnostic" role="group" aria-label="Rank 10 question 8: Debug the representation boundary first"><header class="fx-heading"><span class="fx-eyebrow">QUESTION 08 · CONCEPT ILLUSTRATION</span><h3>Debug the representation boundary first</h3><p>After a model swap, verify the tokenizer before tuning sampling settings.</p></header><div class="fx-stage"><div class="fx-diagnostic"><div class="fx-terminal"><div class="fx-terminal-head"><i></i><i></i><i></i> tokenizer-debug.log</div><code><span>✓</span> model checkpoint loaded<br/><span>✓</span> paired tokenizer loaded<br/><span>✓</span> special tokens checked<br/><span>✓</span> encode → decode round trip<br/><span>✓</span> representative token count</code></div><div class="fx-debug-monitor"><div>INPUT<span>Hello, world!</span></div><div>IDS<span>[301, 7, 455, 8]</span></div><div>DECODED<span>Hello, world!</span></div><small>Example mapping only</small></div></div></div><div class="fx-lesson"><b>✓</b><span>Temperature cannot repair a model/tokenizer vocabulary mismatch.</span></div></div></div>
 <p class="q-text">An interviewer asks how to troubleshoot unexpected token counts and broken outputs after swapping a model. What is the best response?</p><label><input type="radio" name="q8" value="a"><span class="answer-text"><strong class="option-letter">A.</strong> Keep the old tokenizer and tune sampling temperature until model outputs look similar.</span></label>
 <label><input type="radio" name="q8" value="b"><span class="answer-text"><strong class="option-letter">B.</strong> Load the tokenizer paired with the new model, inspect special tokens, and test encode/decode.</span></label>
 <label><input type="radio" name="q8" value="c"><span class="answer-text"><strong class="option-letter">C.</strong> Delete all special tokens and assume every model will then interpret inputs identically.</span></label>
