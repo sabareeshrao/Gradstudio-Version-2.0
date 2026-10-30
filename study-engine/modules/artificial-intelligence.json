@@ -20,7 +20,7 @@
       "stem": "What is Artificial Intelligence (AI), and what does it mean for a machine to perform tasks that normally require human intelligence, such as reasoning, learning, perception, and decision-making?",
       "tag": "Beginner · Meaning",
       "options": [
-        "Artificial intelligence means any computer program that always follows instructions without learning or making decisions.",
+        "Artificial intelligence means any computer program that always follows instructions without learning or making independent decisions.",
         "Artificial intelligence lets machines perform tasks involving reasoning, learning, perception, and making useful decisions.",
         "Artificial intelligence only describes physical robots that navigate rooms without any instructions from people.",
         "Artificial intelligence refers to ordinary websites that store information without analyzing patterns or uncertainty."
@@ -99,7 +99,7 @@
       "tag": "Advanced · Limitations",
       "options": [
         "AI still struggles with reliability, robustness, explanation, and generalization; research tests models and improves safeguards.",
-        "All AI limitations vanish if models become larger, making evaluation and human oversight unnecessary during deployment.",
+        "All AI limitations vanish if models become substantially larger, making evaluation and human oversight unnecessary during deployment.",
         "General intelligence is already a settled engineering milestone, so there are no meaningful open research questions.",
         "AI research mainly concerns faster hardware, because reasoning and alignment have already been solved completely."
       ],
