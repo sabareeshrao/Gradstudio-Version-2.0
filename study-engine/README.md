@@ -20,6 +20,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 - Backpropagation: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=backpropagation
 - Deep Learning: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=deep-learning
 - Transformer: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer
+- Self-Attention: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=self-attention
 
 - Artificial Intelligence (AI): https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=artificial-intelligence
 
