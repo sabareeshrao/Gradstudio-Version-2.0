@@ -4,36 +4,37 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Links
-- Index: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/
-- Softmax: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=softmax
-- Masking: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=masking
-- Positional Encoding: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding
-- Stochastic Depth: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-depth
-- FLOPS: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=flops
-- RAG: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rag
-- Turing Test: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=turing-test
+## Hosted lesson directory (21 modules)
 
-- STS: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=semantic-textual-similarity
+These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
 
-- Gradient Descent: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=gradient-descent
+| # | Keyword | Module slug |
+|---:|---|---|
+| 1 | [Softmax](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=softmax) | `softmax` |
+| 2 | [Masking in Transformers](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=masking) | `masking` |
+| 3 | [Positional Encoding](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding) | `positional-encoding` |
+| 4 | [Stochastic Depth](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-depth) | `stochastic-depth` |
+| 5 | [FLOPS](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=flops) | `flops` |
+| 6 | [Retrieval-Augmented Generation (RAG)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rag) | `rag` |
+| 7 | [Turing Test](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=turing-test) | `turing-test` |
+| 8 | [Semantic Textual Similarity (STS)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=semantic-textual-similarity) | `semantic-textual-similarity` |
+| 9 | [Gradient Descent](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=gradient-descent) | `gradient-descent` |
+| 10 | [Neural Network](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network) | `neural-network` |
+| 11 | [Backpropagation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=backpropagation) | `backpropagation` |
+| 12 | [Transformer](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer) | `transformer` |
+| 13 | [Deep Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=deep-learning) | `deep-learning` |
+| 14 | [Artificial Intelligence (AI)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=artificial-intelligence) | `artificial-intelligence` |
+| 15 | [Self-Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=self-attention) | `self-attention` |
+| 16 | [Attention Mechanism](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=attention-mechanism) | `attention-mechanism` |
+| 17 | [Prompt Engineering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=prompt-engineering) | `prompt-engineering` |
+| 18 | [Tokenization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization) | `tokenization` |
+| 19 | [Vector Database](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database) | `vector-database` |
+| 20 | [Generative Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model) | `generative-model` |
+| 21 | [Embedding Vector](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=embedding-vector) | `embedding-vector` |
 
-- Neural Network: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network
-- Backpropagation (Deep Learning Foundations; updated numerical and autograd edition): https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=backpropagation
-- Deep Learning: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=deep-learning
-- Transformer: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer
-- Self-Attention: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=self-attention
+### Latest additions — October 30, 2026
 
-- Artificial Intelligence (AI): https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=artificial-intelligence
-
-- Attention Mechanism: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=attention-mechanism
-- Prompt Engineering: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=prompt-engineering
-
-- Tokenization: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization
-
-- Vector Database: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database
-
-- Generative Model: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model
+Recent modules include Tokenization, Vector Database, Generative Model, and Embedding Vector, each with seven teaching questions and their own illustrations. Lesson JSON is stored in [`modules/`](modules/) and per-keyword visual styling in [`diagrams/`](diagrams/).
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
@@ -83,4 +84,4 @@ The initial answer box must be easy enough for a newcomer to understand after a 
 - Avoid repeating the question, naming every wrong option, stacking jargon, or placing formulas and long code in the default explanation.
 - Run `node study-engine/verify-explanation-quality.mjs`; the Pages deployment workflow runs the same check. A human must also check factual accuracy and clarity.
 
-**The 17 legacy modules have beginner-first explanations; new modules must pass the same quality check.** Existing question text, correct keys, answer choices, unique diagrams, and original detailed explanations remain intact.
+**The initial 17 hosted modules were updated to beginner-first explanations; later additions must meet the same quality standard.** Existing question text, correct keys, answer choices, unique diagrams, and original detailed explanations remain intact.
