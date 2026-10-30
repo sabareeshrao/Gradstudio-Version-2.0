@@ -33,16 +33,16 @@
 
 | Batch | Global ranks | Keywords | File |
 |---:|---:|---:|---|
-| 1 | 1–100 | 100 | [Open batch 01](batch-001-100.md) |
-| 2 | 101–200 | 100 | [Open batch 02](batch-101-200.md) |
-| 3 | 201–300 | 100 | [Open batch 03](batch-201-300.md) |
-| 4 | 301–400 | 100 | [Open batch 04](batch-301-400.md) |
-| 5 | 401–500 | 100 | [Open batch 05](batch-401-500.md) |
-| 6 | 501–600 | 100 | [Open batch 06](batch-501-600.md) |
-| 7 | 601–700 | 100 | [Open batch 07](batch-601-700.md) |
-| 8 | 701–800 | 100 | [Open batch 08](batch-701-800.md) |
-| 9 | 801–900 | 100 | [Open batch 09](batch-801-900.md) |
-| 10 | 901–1000 | 100 | [Open batch 10](batch-901-1000.md) |
+| 1 | 1–100 | 100 | [Open batch 01](batch-0001-0100.md) |
+| 2 | 101–200 | 100 | [Open batch 02](batch-0101-0200.md) |
+| 3 | 201–300 | 100 | [Open batch 03](batch-0201-0300.md) |
+| 4 | 301–400 | 100 | [Open batch 04](batch-0301-0400.md) |
+| 5 | 401–500 | 100 | [Open batch 05](batch-0401-0500.md) |
+| 6 | 501–600 | 100 | [Open batch 06](batch-0501-0600.md) |
+| 7 | 601–700 | 100 | [Open batch 07](batch-0601-0700.md) |
+| 8 | 701–800 | 100 | [Open batch 08](batch-0701-0800.md) |
+| 9 | 801–900 | 100 | [Open batch 09](batch-0801-0900.md) |
+| 10 | 901–1000 | 100 | [Open batch 10](batch-0901-1000.md) |
 | 11 | 1001–1100 | 100 | [Open batch 11](batch-1001-1100.md) |
 | 12 | 1101–1200 | 100 | [Open batch 12](batch-1101-1200.md) |
 | 13 | 1201–1300 | 100 | [Open batch 13](batch-1201-1300.md) |
