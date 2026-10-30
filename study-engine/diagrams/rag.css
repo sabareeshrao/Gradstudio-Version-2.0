@@ -152,3 +152,15 @@
 @media(max-width:780px){.rag-code-split{grid-template-columns:1fr}.rag-run{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.rag-run-title,.rag-run-note{grid-column:1/-1}.rag-run-arrow{display:none}.rag-ops{grid-template-columns:1fr}.rag-trace-pane{min-height:0}}
 @media(max-width:580px){.rag-hero-stage{grid-template-columns:1fr;gap:4px}.rag-hero-unit{min-height:0;padding:11px}.rag-hero-arrow{transform:rotate(90deg);height:21px;line-height:21px;font-size:21px}.rag-compare,.rag-index-scene,.rag-dual-search{grid-template-columns:1fr}.rag-answer{padding:12px}.rag-timeline{padding:14px 10px}.rag-tick-icon{width:45px;height:45px;font-size:21px}.rag-tick small{font-size:.64rem}.rag-tick strong{font-size:.74rem}.rag-need{flex-wrap:wrap}.rag-trace{grid-template-columns:1fr}.rag-plot svg{max-height:235px}.rag-run{grid-template-columns:1fr}.rag-rerank{grid-template-columns:1fr}.rag-merge{grid-template-columns:1fr 50px 1fr}.rag-ops-screen{padding:12px}}
 @media(max-width:390px){.rag-fig{padding:11px}.rag-ops .rag-metric{padding:8px}.rag-ops-hint{font-size:.62rem}.rag-code pre{font-size:.63rem}}
+
+
+/* illustrated-v2 RAG AI-01286; scoped to this keyword */
+.rag-illustrated .rag-scroll{max-width:100%;overflow-x:auto;scrollbar-color:#9fc8d2 #edf4f8}
+.rag-illustrated .rag-new-diagram-svg{display:block;width:100%;min-width:700px;height:auto}
+.rag-illustrated h3{font-size:clamp(1rem,2vw,1.25rem)}
+.rag-python{margin-top:14px;background:#172a3b;border:1px solid #37556b;border-radius:13px;overflow:hidden}
+.rag-python-head{background:#294459;color:#eaf2f9;padding:11px 13px;font-weight:800;font-size:.72rem}
+.rag-python pre{margin:0;overflow-x:auto;padding:14px;font-size:.76rem;line-height:1.55;color:#e8f4fb}
+.rag-python code{background:transparent;color:inherit;border:0;padding:0}
+@media(min-width:920px){.rag-illustrated .rag-new-diagram-svg{min-width:0}}
+@media(max-width:719px){.rag-illustrated .rag-scroll:after{content:"Swipe diagram sideways for detail →";display:block;text-align:right;color:#698998;font-size:.68rem}}
