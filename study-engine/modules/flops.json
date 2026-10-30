@@ -16,7 +16,8 @@
         "It counts the number of trainable network weights saved on disk.",
         "It describes how well a trained model predicts unseen examples."
       ],
-      "explanation": "<strong>Correct: B.</strong> FLOPS describes a <em>rate</em>: floating-point arithmetic operations performed per second. For example, 1 TFLOP/s means one trillion such operations per second. A model's FLOPs count, in contrast, describes how much arithmetic a specified run requires."
+      "explanation": "<strong>In simple words:</strong> FLOPS tells you how many floating-point calculations a device performs each second. Higher FLOPS can mean faster arithmetic, but not always faster applications.",
+      "technicalExplanation": "<strong>Correct: B.</strong> FLOPS describes a <em>rate</em>: floating-point arithmetic operations performed per second. For example, 1 TFLOP/s means one trillion such operations per second. A model's FLOPs count, in contrast, describes how much arithmetic a specified run requires."
     },
     {
       "tag": "Why compare speed?",
@@ -29,7 +30,8 @@
         "It measures precisely how long any future model request will take.",
         "It calculates the number of hours a device's battery can last."
       ],
-      "explanation": "<strong>Correct: A.</strong> FLOP/s helps characterize arithmetic throughput. Given the same 1-billion-FLOP task, completing it in 0.1 seconds implies about 10 GFLOP/s; in 0.2 seconds, about 5 GFLOP/s. Actual latency also depends on memory, software and overhead, so theoretical peak performance is not a guarantee."
+      "explanation": "<strong>In simple words:</strong> FLOPS helps compare computing power. The same calculation finished in half the time achieves twice the operation rate.",
+      "technicalExplanation": "<strong>Correct: A.</strong> FLOP/s helps characterize arithmetic throughput. Given the same 1-billion-FLOP task, completing it in 0.1 seconds implies about 10 GFLOP/s; in 0.2 seconds, about 5 GFLOP/s. Actual latency also depends on memory, software and overhead, so theoretical peak performance is not a guarantee."
     },
     {
       "tag": "Count vs. rate",
@@ -42,7 +44,8 @@
         "FLOP/s means the number of bits stored in each model parameter.",
         "FLOPs count work, while FLOP/s counts work done per second."
       ],
-      "explanation": "<strong>Correct: D.</strong> FLOPs (plural) usually means a number of floating-point operations; FLOPS and FLOP/s describe operations each second. Under a common compute convention one multiply plus one add counts as 2 FLOPs. Some tools use a different convention for a fused multiply-add (FMA), so compare like with like."
+      "explanation": "<strong>In simple words:</strong> FLOPs counts how much calculation work a task needs. FLOP/s measures how quickly the machine does that work.",
+      "technicalExplanation": "<strong>Correct: D.</strong> FLOPs (plural) usually means a number of floating-point operations; FLOPS and FLOP/s describe operations each second. Under a common compute convention one multiply plus one add counts as 2 FLOPs. Some tools use a different convention for a fused multiply-add (FMA), so compare like with like."
     },
     {
       "tag": "Do the math",
@@ -55,7 +58,8 @@
         "A matrix product costs about 2mnk FLOPs; divide by time for FLOP/s.",
         "Every matrix multiplication costs exactly the model's parameter count."
       ],
-      "explanation": "<strong>Correct: C.</strong> A standard matrix multiplication estimate is 2 × m × n × k floating-point operations, corresponding to multiply-add accounting. For 2×3 times 3×2, that is 24 estimated FLOPs. Counting scalar multiplications and additions without an initial accumulator addition gives 20 in this tiny example. A dense linear layer with batch B, inputs I and outputs O costs roughly 2BIO FLOPs for the matrix product, plus optional bias and other operations. FLOP/s = work ÷ time."
+      "explanation": "<strong>In simple words:</strong> Estimate the operations needed for a matrix multiplication, then divide by running time to find the rate. Bigger matrices usually need more calculations.",
+      "technicalExplanation": "<strong>Correct: C.</strong> A standard matrix multiplication estimate is 2 × m × n × k floating-point operations, corresponding to multiply-add accounting. For 2×3 times 3×2, that is 24 estimated FLOPs. Counting scalar multiplications and additions without an initial accumulator addition gives 20 in this tiny example. A dense linear layer with batch B, inputs I and outputs O costs roughly 2BIO FLOPs for the matrix product, plus optional bias and other operations. FLOP/s = work ÷ time."
     },
     {
       "tag": "Measure in Python",
@@ -68,7 +72,8 @@
         "Use the hardware product name instead of timing the program.",
         "Run an unsynchronized GPU operation and treat launch time as latency."
       ],
-      "explanation": "<strong>Correct: A.</strong> PyTorch's <code>with_flops=True</code> estimates arithmetic for supported operators, primarily matmul and 2D convolutions; it is not a universal count of every executed instruction. For meaningful speed measurements, warm up, repeat, synchronize GPU kernels around timing, and report the input shapes, device and precision. In the illustrated 512×512 matmul, the usual estimate is 2 × 512³ ≈ 268 million FLOPs per run."
+      "explanation": "<strong>In simple words:</strong> Use a profiler to estimate operations and a timer to measure speed. They answer different questions: how much work and how fast.",
+      "technicalExplanation": "<strong>Correct: A.</strong> PyTorch's <code>with_flops=True</code> estimates arithmetic for supported operators, primarily matmul and 2D convolutions; it is not a universal count of every executed instruction. For meaningful speed measurements, warm up, repeat, synchronize GPU kernels around timing, and report the input shapes, device and precision. In the illustrated 512×512 matmul, the usual estimate is 2 × 512³ ≈ 268 million FLOPs per run."
     },
     {
       "tag": "Hardware and precision",
@@ -81,7 +86,8 @@
         "More peak FLOP/s always means less latency, even for memory-bound tasks.",
         "Throughput depends on dtype, memory bandwidth, and device utilization."
       ],
-      "explanation": "<strong>Correct: D.</strong> CPUs, GPUs, TPUs and edge accelerators have different strengths. FP32, FP16 and BF16 are floating-point formats, but INT8 uses integer arithmetic, commonly reported in OPS/s or TOPS. Real inference may hit a memory-bandwidth or power ceiling before peak arithmetic throughput; therefore compare results for the <em>same</em> workload and precision."
+      "explanation": "<strong>In simple words:</strong> Speed depends on hardware and number format. Even a powerful GPU may slow down if moving data takes longer than calculating.",
+      "technicalExplanation": "<strong>Correct: D.</strong> CPUs, GPUs, TPUs and edge accelerators have different strengths. FP32, FP16 and BF16 are floating-point formats, but INT8 uses integer arithmetic, commonly reported in OPS/s or TOPS. Real inference may hit a memory-bandwidth or power ceiling before peak arithmetic throughput; therefore compare results for the <em>same</em> workload and precision."
     },
     {
       "tag": "Production decisions",
@@ -94,7 +100,8 @@
         "Increase batch size because it always makes each request finish sooner.",
         "Pruning and quantization always make every model faster on every device."
       ],
-      "explanation": "<strong>Correct: B.</strong> Quantization can reduce memory and exploit lower-precision kernels, pruning can reduce work when implementations support useful sparsity, and batching often raises throughput at a latency trade-off. Validate on real devices and input shapes. FLOPs is only one metric: track request latency, requests/s, energy per request, memory, accuracy, and realistic utilization."
+      "explanation": "<strong>In simple words:</strong> Measure the real device, not just its advertised power. Smaller models or lower precision can save memory, but always check accuracy and response time.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Quantization can reduce memory and exploit lower-precision kernels, pruning can reduce work when implementations support useful sparsity, and batching often raises throughput at a latency trade-off. Validate on real devices and input shapes. FLOPs is only one metric: track request latency, requests/s, energy per request, memory, accuracy, and realistic utilization."
     }
   ],
   "diagramStyle": "diagrams/flops.css",
