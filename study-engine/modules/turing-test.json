@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "keyword": "Turing Test",
+  "title": "Turing Test — 7 Learning Layers",
+  "subtitle": "Topic: Foundations of Artificial Intelligence · Subject: Artificial Intelligence (AI). Seven exact questions, four beginner-friendly options and seven different educational diagrams.",
+  "diagramStyle": "diagrams/turing-test.css",
+  "hero": "<section class=\"tt-hero\" aria-label=\"Blind conversational test illustrated\"><span class=\"tt-kicker\">Turing Test · illustrated overview</span><h2>Two hidden speakers. One human judge. Can the judge tell?</h2><p>In the familiar conversation version, the evaluator reads answers without knowing which participant is human and which is AI.</p><div class=\"tt-hero-stage\"><div class=\"tt-judge\"><div class=\"tt-avatar\" aria-hidden=\"true\"></div><strong>Human evaluator</strong><small>Asks questions · makes a guess</small></div><span class=\"tt-hero-arrow\" aria-hidden=\"true\">⇄</span><div class=\"tt-booths\"><div class=\"tt-booth\"><strong>Participant A</strong><small>Identity concealed</small><div class=\"tt-msg\">“I'd take a walk on a rainy day.”</div></div><div class=\"tt-booth\"><strong>Participant B</strong><small>Identity concealed</small><div class=\"tt-msg\">“I'd probably make tea first.”</div></div></div></div><div class=\"tt-takeaway\"><b>The question:</b> Can a judge distinguish a machine from a human using only the conversation? <i>Fictional dialogue for illustration.</i></div></section>",
+  "questions": [
+    {
+      "tag": "Start here · the guessing game",
+      "stem": "Layer 1: What is the Turing Test in Artificial Intelligence?",
+      "figure": "<div class=\"tt-fig tt-layer1\"><span class=\"tt-eyebrow\">01 · Everyday idea</span><h3>Read two chats without seeing who's behind them</h3><div class=\"tt-intro-scene\"><div class=\"tt-chat-room\"><div class=\"tt-chat-header\">Chat A <span class=\"tt-hidden\">Identity hidden</span></div><div class=\"tt-chat-content\"><div class=\"tt-bubble\">Judge: “What's a fun weekend?”</div><div class=\"tt-bubble answer\">“A long walk and good food.”</div></div></div><div class=\"tt-question-icon\" aria-hidden=\"true\">?</div><div class=\"tt-chat-room\"><div class=\"tt-chat-header\">Chat B <span class=\"tt-hidden\">Identity hidden</span></div><div class=\"tt-chat-content\"><div class=\"tt-bubble\">Judge: “What's a fun weekend?”</div><div class=\"tt-bubble answer\">“Maybe a movie with friends.”</div></div></div></div><div class=\"tt-blind-strip\"><span aria-hidden=\"true\">◉</span><strong>Now guess:</strong> Which chat was with the AI? The actual identities stay hidden until you decide.</div><p class=\"tt-caption\">This is a <strong>blind conversation challenge</strong>. Both sample replies are invented; they do not reveal which speaker is human or AI.</p></div>",
+      "options": [
+        "It checks how quickly a computer can do arithmetic.",
+        "It asks whether a human judge can tell an AI from a human through conversation.",
+        "It counts how many facts an AI has memorized.",
+        "It proves that a computer has feelings."
+      ],
+      "answer": "b",
+      "explanation": "<strong>Correct: B.</strong> In the commonly used text-based Turing Test, a person talks to a hidden human and a hidden AI, then tries to tell which is which. The focus is <strong>humanlike conversation</strong>, not computer speed, emotions or a test of consciousness."
+    },
+    {
+      "tag": "Alan Turing · the 1950 idea",
+      "stem": "Layer 2: Why did Alan Turing introduce the Turing Test, and what problem was it designed to address?",
+      "figure": "<div class=\"tt-fig tt-layer2\"><span class=\"tt-eyebrow\">02 · Where the idea came from</span><h3>1950: turn a difficult philosophical question into an observable game</h3><div class=\"tt-origin\"><div class=\"tt-paper\"><div class=\"tt-year\">1950</div><div class=\"tt-article\"><strong>Computing Machinery and Intelligence</strong><br>Alan M. Turing · <em>Mind</em></div><div class=\"tt-ink-lines\"><i></i><i></i><i></i></div><div class=\"tt-footnote\">The original paper introduced the “imitation game.”</div></div><div class=\"tt-origin-arrow\" aria-hidden=\"true\">→</div><div class=\"tt-reframe\"><div class=\"tt-abstract\"><span class=\"tt-muted\">BIG, HARD-TO-DEFINE QUESTION</span><strong>“Can machines think?”</strong></div><div class=\"tt-line-down\" aria-hidden=\"true\">↓</div><div class=\"tt-measurable\">A concrete challenge: Can an interrogator distinguish a machine from a person in an imitation game?</div></div></div><p class=\"tt-caption\">Turing's original game had a specific three-person gender-based setup. The familiar human-versus-AI text interview is a widely used <strong>modern formulation</strong> of the idea.</p></div>",
+      "options": [
+        "He wanted to replace a vague debate about machine thinking with a practical imitation experiment.",
+        "He wanted to prove that every machine is conscious.",
+        "He designed it to measure computer processing speed.",
+        "He introduced it to compare programming languages."
+      ],
+      "answer": "a",
+      "explanation": "<strong>Correct: A.</strong> Alan Turing's 1950 paper <em>Computing Machinery and Intelligence</em> asked how to make the question of machine thinking more workable. He proposed an <strong>imitation game</strong> instead of trying to settle the meaning of the word “think.” His original presentation began with a gender-based imitation game; the familiar human-versus-machine conversation is a later standard formulation."
+    },
+    {
+      "tag": "Three roles · hidden identities",
+      "stem": "Layer 3: How does the Turing Test work using a human evaluator, a human participant, and an AI system?",
+      "figure": "<div class=\"tt-fig tt-layer3\"><span class=\"tt-eyebrow\">03 · The three roles</span><h3>Who asks, who answers, and who must remain unknown?</h3><div class=\"tt-triad\"><div class=\"tt-interrogator\"><span class=\"tt-icon-head\" aria-hidden=\"true\">◉</span><strong>Human evaluator</strong><small>Types the same questions for A and B</small></div><div class=\"tt-links\" aria-hidden=\"true\"></div><div class=\"tt-seat\"><strong>Speaker A</strong><div class=\"tt-curtain\">?</div><small>Chat replies, identity hidden</small></div><div class=\"tt-seat\"><strong>Speaker B</strong><div class=\"tt-curtain\">?</div><small>Chat replies, identity hidden</small></div></div><div class=\"tt-reveal\"><strong>After the judge decides:</strong><span>A = AI</span><span>·</span><span>B = Human</span><span class=\"tt-muted\">(one illustrative randomized round)</span></div><p class=\"tt-caption\">The judge cannot see faces or labels revealing which side is AI. They only receive the answers and then make an identification.</p></div>",
+      "options": [
+        "The judge already knows which participant is the AI before asking questions.",
+        "The AI judges the human's answers and gives a score.",
+        "A human evaluator questions two hidden participants, one human and one AI, then guesses which is which.",
+        "The human participant must teach the AI every answer during the test."
+      ],
+      "answer": "c",
+      "explanation": "<strong>Correct: C.</strong> The <strong>evaluator</strong> asks questions without knowing the participants' identities. A <strong>human</strong> and an <strong>AI system</strong> reply, often through text. After the conversation the evaluator guesses which one is the AI. In a fair test the participants' identities are hidden until after the decision."
+    },
+    {
+      "tag": "Fair conversations · careful judging",
+      "stem": "Layer 4: How are AI systems evaluated in the Turing Test, including conversation structure, questioning strategies, imitation, and the evaluator's ability to distinguish humans from machines?",
+      "figure": "<div class=\"tt-fig tt-layer4\"><span class=\"tt-eyebrow\">04 · A fair evaluation protocol</span><h3>Ask follow-up questions, then collect the blind decision</h3><div class=\"tt-eval-scene\"><div class=\"tt-transcript\"><div class=\"tt-transcript-head\">Illustrative conversation transcript · Partner A</div><div class=\"tt-transcript-list\"><div class=\"tt-ask\"><b>Judge</b><span>What might you do when a plan fails?</span></div><div><b>A</b><span>I'd rethink the steps and try a different approach.</span></div><div class=\"tt-ask\"><b>Judge</b><span>Can you give a specific example?</span></div><div><b>A</b><span>Suppose I missed a train—I might call ahead and find another route.</span></div><div class=\"tt-ask\"><b>Judge</b><span>Could you explain your choice?</span></div><div><b>A</b><span>Calling ahead helps other people plan around the delay.</span></div></div></div><div class=\"tt-rubric\"><strong>Judge's protocol</strong><div class=\"tt-method\">For both hidden participants, test more than a greeting.</div><div class=\"tt-check\"><i>✓</i><span>Ask open questions</span></div><div class=\"tt-check\"><i>✓</i><span>Ask follow-up questions</span></div><div class=\"tt-check\"><i>✓</i><span>Check consistency across turns</span></div><div class=\"tt-check\"><i>✓</i><span>Record A/B decision without identity hints</span></div><div class=\"tt-decision\">Final decision → Which one was AI?</div></div></div><div class=\"tt-repeat\"><span class=\"tt-chip\">Multiple judges</span><span>+</span><span class=\"tt-chip\">Multiple rounds</span><span>→</span><span>Estimate AI-identification accuracy</span></div><p class=\"tt-caption\">One fluent answer does not establish a pass. Report the test length, conditions, sample size and how often judges correctly identify the AI.</p></div>",
+      "options": [
+        "Count how often the AI uses long words, without asking follow-up questions.",
+        "Give the judge the participants' identities first, then ask for a score.",
+        "Ask the AI one memorized question and call the test successful if it answers.",
+        "Use blind conversations, varied questions and repeated judgments to see how well judges identify the AI."
+      ],
+      "answer": "d",
+      "explanation": "<strong>Correct: D.</strong> A useful protocol hides identities, gives the evaluator enough opportunity for follow-up questions and records decisions over <strong>multiple conversations and judges</strong>. You can summarize how often AI was correctly identified, including uncertainty and relevant conditions. There is no single universal threshold that automatically proves intelligence."
+    },
+    {
+      "tag": "Runnable Python · simulated experiment",
+      "stem": "Layer 5: How can a basic Turing Test simulation be implemented in Python, including human-AI conversations, response collection, evaluator decisions, and result analysis?",
+      "figure": "<div class=\"tt-fig tt-layer5\"><span class=\"tt-eyebrow\">05 · Try it in Python</span><h3>Shuffle identities, collect guesses, count correct identifications</h3><div class=\"tt-code-layout\"><div class=\"tt-code\"><div class=\"tt-code-toolbar\"><i></i> turing_test_demo.py · standard library only</div><pre><code>import random\n\nquestions = [&quot;Favorite food?&quot;, &quot;A small mistake?&quot;]\nreplies = {\n    &quot;human&quot;: [&quot;Rice with vegetables.&quot;, &quot;I forgot my keys.&quot;],\n    &quot;ai&quot;: [&quot;Probably noodles.&quot;, &quot;I missed a bus once.&quot;]\n}\nresults = []\n\nfor round_no in range(1, 4):\n    roles = [&quot;human&quot;, &quot;ai&quot;]\n    random.shuffle(roles)\n    print(&quot;\\nRound&quot;, round_no)\n    for label, role in zip(&quot;AB&quot;, roles):\n        print(&quot;\\nParticipant&quot;, label)\n        for q, answer in zip(questions, replies[role]):\n            print(&quot;Q:&quot;, q, &quot;\\nA:&quot;, answer)\n\n    guess = input(&quot;Which is AI? A or B: &quot;).strip().upper()\n    if guess not in (&quot;A&quot;, &quot;B&quot;):\n        print(&quot;Invalid guess; round not counted.&quot;)\n        continue\n    actual = &quot;AB&quot;[roles.index(&quot;ai&quot;)]\n    results.append(guess == actual)\n    print(&quot;Actual AI:&quot;, actual)\n\nif results:\n    correct = sum(results)\n    print(f&quot;AI identified: {correct}/{len(results)} &quot;\n          f&quot;({correct / len(results):.0%})&quot;)</code></pre></div><div class=\"tt-result-card\"><strong>How the result is calculated</strong><div class=\"tt-mini-terminal\">Round 1: A / B<br>Which is AI? <b>B</b><br>Actual AI: B<br><br>...<br>Illustrative outcome:<br>AI identified: 2/3 (67%)</div><div class=\"tt-stat-visual\"><span>Correct identifications</span><b>2 / 3</b><i aria-label=\"Two thirds of sample judgments correct\"></i></div><div class=\"tt-toy-note\"><strong>Toy simulation, not a real Turing Test:</strong> both sides use prewritten fictional replies. Replace these with blinded conversations from genuine humans and a real AI for an actual study.</div></div></div><p class=\"tt-caption\">This code runs in a normal Python terminal. The 67% outcome shown is <strong>illustrative</strong>; your actual result depends on what the evaluator guesses.</p></div>",
+      "options": [
+        "Use Python to measure the computer's typing speed.",
+        "Randomize who appears as A/B, show sample conversations, collect guesses and calculate identification accuracy.",
+        "Always label the AI as A so the evaluator is never confused.",
+        "Treat every friendly chatbot answer as a verified human response."
+      ],
+      "answer": "b",
+      "explanation": "<strong>Correct: B.</strong> A simple Python demonstration can shuffle hidden identities, print two sets of responses, ask the evaluator for an A/B guess, and compute <strong>correct AI identifications ÷ valid rounds</strong>. This example uses <em>scripted</em> responses to teach the experiment design; an actual Turing Test needs genuine human conversations and a real AI participant, with identities blinded and the test conditions documented."
+    },
+    {
+      "tag": "NLP, chatbots & LLMs",
+      "stem": "Layer 6: How does the Turing Test relate to natural language processing, conversational AI, chatbots, and modern Large Language Models (LLMs)?",
+      "figure": "<div class=\"tt-fig tt-layer6\"><span class=\"tt-eyebrow\">06 · Connect it to modern AI</span><h3>Many kinds of language systems can be tested by a human judge</h3><div class=\"tt-family\"><div class=\"tt-family-card\"><div class=\"tt-icon\" aria-hidden=\"true\">Aa</div><strong>Natural Language Processing</strong><p>Techniques for working with written or spoken language.</p><div class=\"tt-family-example\">Example: understand a sentence</div></div><div class=\"tt-family-card\"><div class=\"tt-icon\" aria-hidden=\"true\">☷</div><strong>Conversational chatbots</strong><p>Systems that ask and answer messages in a dialogue.</p><div class=\"tt-family-example\">Example: a rule-based chat program</div></div><div class=\"tt-family-card\"><div class=\"tt-icon\" aria-hidden=\"true\">✧</div><strong>Large Language Models</strong><p>Models trained on large amounts of data that can generate varied text.</p><div class=\"tt-family-example\">Example: flexible multi-turn chat</div></div></div><div class=\"tt-two-axes\"><div><strong>What technology does it use?</strong><div class=\"tt-scale\" aria-hidden=\"true\"></div><small>Architecture, training data, linguistic capabilities</small></div><div><strong>How humanlike does it seem?</strong><div class=\"tt-scale\" aria-hidden=\"true\"></div><small>Blind judges' conversation-based judgments</small></div></div><p class=\"tt-caption\">The two questions are related but <strong>not identical</strong>. The Turing Test does not tell you what model architecture produced the dialogue.</p></div>",
+      "options": [
+        "The Turing Test is a specific Python library that builds every chatbot.",
+        "Any AI that uses NLP automatically passes the Turing Test.",
+        "NLP and LLMs help systems produce conversational language; the test examines how humanlike the interaction seems.",
+        "LLMs are unable to take part because they generate text."
+      ],
+      "answer": "c",
+      "explanation": "<strong>Correct: C.</strong> <strong>NLP</strong> provides techniques for handling language, <strong>chatbots</strong> are systems that converse with people, and many modern <strong>LLMs</strong> can produce flexible dialogue. The Turing Test evaluates an <em>interaction's apparent humanness</em>; it does not specify which model architecture must be used. A chatbot can sound human and still be wrong."
+    },
+    {
+      "tag": "What conversational imitation cannot prove",
+      "stem": "Layer 7: What are the limitations of the Turing Test, and how do modern AI evaluation methods assess reasoning, intelligence, reliability, generalization, and human-like behavior beyond conversational imitation?",
+      "figure": "<div class=\"tt-fig tt-layer7\"><span class=\"tt-eyebrow\">07 · Beyond pretending to be human</span><h3>A fuller evaluation checks several abilities separately</h3><div class=\"tt-dashboard\"><div class=\"tt-meter-center\"><svg viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"Illustration of a humanlike chat bubble surrounded by five independent assessment areas\"><circle cx=\"80\" cy=\"80\" r=\"65\" fill=\"#f3f8fb\" stroke=\"#d9e9ef\" stroke-width=\"3\"/><circle cx=\"80\" cy=\"80\" r=\"48\" fill=\"none\" stroke=\"#92b5c8\" stroke-width=\"12\" stroke-dasharray=\"38 23\" transform=\"rotate(-90 80 80)\"/><rect x=\"41\" y=\"53\" width=\"78\" height=\"49\" rx=\"17\" fill=\"#5b94b2\"/><path d=\"M59 101 l-9 15 25-15\" fill=\"#5b94b2\"/><circle cx=\"62\" cy=\"76\" r=\"4\" fill=\"white\"/><circle cx=\"80\" cy=\"76\" r=\"4\" fill=\"white\"/><circle cx=\"98\" cy=\"76\" r=\"4\" fill=\"white\"/></svg><strong>Humanlike dialogue</strong><small>One useful signal, not a complete measure of intelligence.</small></div><div class=\"tt-eval-stack\"><div class=\"tt-eval-line\"><span class=\"tt-eval-icon\">∴</span><div><strong>Reasoning</strong><small>New logic and multi-step problems with checkable answers</small></div></div><div class=\"tt-eval-line\"><span class=\"tt-eval-icon\">✓</span><div><strong>Reliability</strong><small>Accuracy, consistency and uncertainty on repeated trials</small></div></div><div class=\"tt-eval-line\"><span class=\"tt-eval-icon\">↗</span><div><strong>Generalization</strong><small>Performance on unfamiliar tasks and changed conditions</small></div></div><div class=\"tt-eval-line\"><span class=\"tt-eval-icon\">◎</span><div><strong>Broad ability</strong><small>Different domains, tools and real tasks—not just small talk</small></div></div><div class=\"tt-eval-line\"><span class=\"tt-eval-icon\">◌</span><div><strong>Humanlike behavior</strong><small>Blind conversations, when that is relevant to the goal</small></div></div></div></div><div class=\"tt-beyond\"><strong>Important:</strong> Being mistaken for a human does not, by itself, prove consciousness, general intelligence or factual correctness. Report separate, task-specific evaluation results.</div></div>",
+      "options": [
+        "Check reasoning, accuracy, reliability and performance on new situations separately; realistic conversation alone is not enough.",
+        "Passing one short chat proves an AI can solve every real-world problem.",
+        "Humanlike spelling and humor guarantee factual reliability.",
+        "Modern testing can be replaced by checking only how friendly the AI sounds."
+      ],
+      "answer": "a",
+      "explanation": "<strong>Correct: A.</strong> Imitating a person does not, by itself, establish deep reasoning, truthfulness, consistency or general intelligence. Modern evaluations separately use reasoning problems, factual checks, repeatability tests, unseen tasks, robustness tests and carefully designed human assessments. A strong evaluation reports the test setup and limitations—not simply “passed the Turing Test.”"
+    }
+  ],
+  "sources": "<details class=\"tt-sources\"><summary>References and historical context</summary><ul><li><a href=\"https://doi.org/10.1093/mind/LIX.236.433\" target=\"_blank\" rel=\"noopener noreferrer\">Alan Turing (1950), Computing Machinery and Intelligence</a></li><li><a href=\"https://plato.stanford.edu/entries/turing-test/\" target=\"_blank\" rel=\"noopener noreferrer\">Stanford Encyclopedia of Philosophy: The Turing Test</a></li><li><a href=\"https://doi.org/10.1073/pnas.2524472123\" target=\"_blank\" rel=\"noopener noreferrer\">PNAS: Controlled conversational Turing tests for modern LLMs</a></li></ul></details>",
+  "footer": "Turing Test · 7 exact questions · 28 answer options · 7 bespoke diagrams · 15 themes"
+}
