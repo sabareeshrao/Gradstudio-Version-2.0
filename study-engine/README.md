@@ -14,6 +14,8 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 - STS: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=semantic-textual-similarity
 
+- Gradient Descent: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=gradient-descent
+
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
 - `core.css`: reused layout, responsive behavior and theme-related styling.
@@ -38,3 +40,9 @@ The module JSON contains trusted, authored HTML for figures and explanations. Tr
 
 ## Notes
 The repository's older standalone-HTML policy remains applicable to exported offline editions. This engine is the new **hosted-page** mode requested by the repository owner. GitHub Pages must build and deploy before live URLs work.
+
+## Quiz answer-quality policy
+- Exactly four plausible, understandable options per layer; all distractors must be substantively relevant.
+- **Avoid answer-length clues:** correct choices should not consistently be the longest, and alternatives should have reasonably similar visible lengths. Distribute correct letters across A/B/C/D rather than putting most in one position.
+- Before committing a keyword, run `node study-engine/check-option-bias.mjs` (checks every module) or `node study-engine/check-option-bias.mjs gradient-descent` (one module). The check fails when the correct option is longest in more than two of seven layers, or one answer letter dominates.
+- Review option quality manually too. The checker does not prove options are unambiguous, accurate, or pedagogically fair.
