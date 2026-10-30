@@ -1,6 +1,6 @@
 # Gradstudio — AI Module Build & Quality Standard
 
-**Version:** 1.1  
+**Version:** 1.2  
 **Status:** Required standard for future keyword-study modules  
 **Repository:** https://github.com/sabareeshrao/Gradstudio-Version-2.0  
 **Audience:** Any AI assistant, coding agent, developer, reviewer, or maintainer creating or fixing a module.
@@ -422,6 +422,22 @@ If visual QA is unavailable, **do not assign the visual portion as “passed”*
 9. If a new requirement becomes universal, add it here before scaling to many keywords.
 10. Before batch generation, QA a representative module, then still QA every output independently.
 
+
+## Browser preview is mandatory for every completed HTML module
+
+**Never present a GitHub `/blob/main/file.html` link as if it runs the quiz.** GitHub's file viewer displays HTML source code, not an interactive website.
+
+Every completed lesson must have **two distinctly named links**, in the central rank table and the final answer:
+
+1. **Preview in browser (primary):** `https://sabareeshrao.github.io/Gradstudio-Version-2.0/<exact-file-name>.html`. This is the intended interactive GitHub Pages page.
+2. **View HTML source (secondary):** the GitHub `blob/main/<exact-file-name>.html` page or the exact repository-relative `<file>.html` link for people who want full code or offline download.
+
+For all new modules, update `KEYWORD_INDEX.md` with **two separate columns, Browser preview and HTML source**, and update `README.md` plus `QUESTION_REGISTRY.md` with usable preview links. Preserve PDF rank ordering and existing questions. When giving users a single link to study, default to **Preview in browser**, not HTML source.
+
+**Deployment acceptance:** Check the published Pages URL actually returns the intended interactive HTML (rather than a 404, a code viewer, or an outdated module). If unable to verify Pages deployment, explicitly mark it **unverified**. Do not claim a working live preview just because `has_pages=true` or because the source file exists. When Pages is unavailable, give the raw standalone HTML and instructions to open it locally; do not disguise a code link as a preview.
+
+**Release blocker:** Missing browser preview link in the central index is incomplete delivery. A present but unverified URL must be disclosed, and a broken URL should be fixed or explicitly reported.
+
 ## 11. Delivery format and final AI report
 
 For a successful module provide:
@@ -430,9 +446,10 @@ For a successful module provide:
 - Number of questions, options and diagrams;
 - Confirmation of the original wording rule when questions were supplied;
 - Correct answer/explanation length checks and whether letters are reasonably balanced;
-- Source file link to **the complete HTML** in GitHub;
+- **Primary:** Browser preview link to the rendered interactive HTML (GitHub Pages), verified or clearly labeled unverified;
+- **Secondary:** Source file link to **the complete HTML** in GitHub;
 - Raw HTML link for saving;
-- Pages preview link **only if the site is deployed or clearly marked as pending**;
+- The preview's deployment/testing state: verified working, unverified, or broken;
 - What was tested, at which viewports, and what is still unverified.
 
 No user should have to download a separate theme, JS, CSS, font, diagram pack, JSON file, or template to open the finished module.
