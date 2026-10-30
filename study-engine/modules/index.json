@@ -89,6 +89,11 @@
       "slug": "tokenization",
       "title": "Tokenization",
       "domain": "Text Processing and Token Representation · NLP"
+    },
+    {
+      "slug": "vector-database",
+      "title": "Vector Database",
+      "domain": "Vector Storage, Similarity Search, and Semantic Information Retrieval · Information Retrieval and RAG"
     }
   ]
 }
