@@ -9,6 +9,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 - Positional Encoding: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding
 - Stochastic Depth: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-depth
 - FLOPS: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=flops
+- RAG: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rag
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
