@@ -16,7 +16,8 @@
         "It translates tokens from one language into another language before attention runs."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> A Transformer processes tokens, but basic attention does not itself provide a built-in notion of where tokens occur. <strong>Positional encoding gives tokens location information.</strong> Think of page numbers in a book: the words tell you what is written, and the page number tells you where it appears."
+      "explanation": "<strong>In simple words:</strong> Positional encoding gives each token an idea of where it appears. Like page numbers, it helps the model understand order.",
+      "technicalExplanation": "<strong>Correct: A.</strong> A Transformer processes tokens, but basic attention does not itself provide a built-in notion of where tokens occur. <strong>Positional encoding gives tokens location information.</strong> Think of page numbers in a book: the words tell you what is written, and the page number tells you where it appears."
     },
     {
       "tag": "Why order matters",
@@ -29,7 +30,8 @@
         "It prevents repeated words from appearing more than once in generated sentences."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> “Dog bites man” and “Man bites dog” contain the same words, but the word order changes the meaning. Without positional information, a plain self-attention layer is unable to tell that one word came before another. Position information lets the network learn those distinctions."
+      "explanation": "<strong>In simple words:</strong> “Dog bites man” and “Man bites dog” use the same words but mean different things. Position information helps the model notice that difference.",
+      "technicalExplanation": "<strong>Correct: B.</strong> “Dog bites man” and “Man bites dog” contain the same words, but the word order changes the meaning. Without positional information, a plain self-attention layer is unable to tell that one word came before another. Position information lets the network learn those distinctions."
     },
     {
       "tag": "Position + meaning",
@@ -42,7 +44,8 @@
         "It gives longer words higher attention scores than short words automatically."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> Tokens are assigned positions such as <code>0, 1, 2, 3</code>. In a classic additive approach, each token has a <strong>meaning vector</strong> (embedding) plus a <strong>position vector</strong>. Repeating the same word at two positions starts with the same word embedding but receives different positional information. Modern approaches can add positional information inside attention rather than to the input vectors."
+      "explanation": "<strong>In simple words:</strong> Each word gets a position such as 0, 1, or 2. The model combines that position with the word’s meaning.",
+      "technicalExplanation": "<strong>Correct: C.</strong> Tokens are assigned positions such as <code>0, 1, 2, 3</code>. In a classic additive approach, each token has a <strong>meaning vector</strong> (embedding) plus a <strong>position vector</strong>. Repeating the same word at two positions starts with the same word embedding but receives different positional information. Modern approaches can add positional information inside attention rather than to the input vectors."
     },
     {
       "tag": "Sine and cosine",
@@ -55,7 +58,8 @@
         "It estimates a token's position from the number of letters in its word."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> In the original sinusoidal method, even dimensions use <strong>sine</strong> and odd dimensions use <strong>cosine</strong>. Different pairs change at different speeds. For <code>d_model = 4</code> and position <code>1</code>, the four numbers are approximately <code>[0.841, 0.540, 0.010, 1.000]</code>. These patterns are deterministic, not newly sampled every time."
+      "explanation": "<strong>In simple words:</strong> Sine and cosine create changing number patterns for different positions. These patterns tell the model where tokens appear without storing a separate learned value for every position.",
+      "technicalExplanation": "<strong>Correct: A.</strong> In the original sinusoidal method, even dimensions use <strong>sine</strong> and odd dimensions use <strong>cosine</strong>. Different pairs change at different speeds. For <code>d_model = 4</code> and position <code>1</code>, the four numbers are approximately <code>[0.841, 0.540, 0.010, 1.000]</code>. These patterns are deterministic, not newly sampled every time."
     },
     {
       "tag": "Python and embeddings",
@@ -68,7 +72,8 @@
         "It lets Softmax insert positional values automatically without generating any extra position vectors."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> A classic PyTorch implementation creates a table of positional values, matching the embedding width. The <code>sin</code> values fill even vector columns, the <code>cos</code> values fill odd columns, and <code>x + pe</code> joins token meaning with position. The example code produces a tensor of shape <code>[1, 4, 4]</code> (batch, tokens, embedding dimensions). This additive method is not how every modern LLM handles position."
+      "explanation": "<strong>In simple words:</strong> Python builds position vectors with the same width as token embeddings. Adding them lets the model use both the word and its location.",
+      "technicalExplanation": "<strong>Correct: A.</strong> A classic PyTorch implementation creates a table of positional values, matching the embedding width. The <code>sin</code> values fill even vector columns, the <code>cos</code> values fill odd columns, and <code>x + pe</code> joins token meaning with position. The example code produces a tensor of shape <code>[1, 4, 4]</code> (batch, tokens, embedding dimensions). This additive method is not how every modern LLM handles position."
     },
     {
       "tag": "Four approaches",
@@ -81,7 +86,8 @@
         "Absolute adds vectors; relative uses distances; RoPE rotates; ALiBi biases attention scores."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> <strong>Absolute</strong> encodings represent each numbered location directly, sometimes with learned vectors. <strong>Relative</strong> schemes use how far tokens are apart, often inside attention. <strong>RoPE</strong> rotates query and key components by position-dependent angles, which makes attention reflect relative offsets. <strong>ALiBi</strong> adds a distance-based bias to attention scores; it does not add an embedding to the input."
+      "explanation": "<strong>In simple words:</strong> These methods express position differently: absolute uses numbered locations, relative uses distances, RoPE rotates vectors, and ALiBi changes attention scores.",
+      "technicalExplanation": "<strong>Correct: D.</strong> <strong>Absolute</strong> encodings represent each numbered location directly, sometimes with learned vectors. <strong>Relative</strong> schemes use how far tokens are apart, often inside attention. <strong>RoPE</strong> rotates query and key components by position-dependent angles, which makes attention reflect relative offsets. <strong>ALiBi</strong> adds a distance-based bias to attention scores; it does not add an embedding to the input."
     },
     {
       "tag": "Training and generation",
@@ -94,7 +100,8 @@
         "Position encodings guarantee perfect accuracy at unlimited lengths without additional model tuning."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> During training, token positions must line up with their inputs and causal attention must block future tokens. During step-by-step generation, new tokens continue at the correct absolute sequence positions; a <strong>KV cache</strong> reuses previously computed keys/values with positional information handled consistently. Longer input windows may need an appropriate position method, scaling, and training; extrapolation is <em>not automatically guaranteed</em>. Causal masking controls what can be seen, whereas position information tells attention where tokens are."
+      "explanation": "<strong>In simple words:</strong> When generating one word at a time, positions must keep increasing correctly. Cached earlier words must retain their original positions.",
+      "technicalExplanation": "<strong>Correct: B.</strong> During training, token positions must line up with their inputs and causal attention must block future tokens. During step-by-step generation, new tokens continue at the correct absolute sequence positions; a <strong>KV cache</strong> reuses previously computed keys/values with positional information handled consistently. Longer input windows may need an appropriate position method, scaling, and training; extrapolation is <em>not automatically guaranteed</em>. Causal masking controls what can be seen, whereas position information tells attention where tokens are."
     }
   ],
   "diagramStyle": "diagrams/positional-encoding.css",
