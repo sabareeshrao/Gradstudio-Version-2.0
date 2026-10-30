@@ -1,0 +1,19 @@
+{
+  "modules": [
+    {
+      "slug": "softmax",
+      "title": "Softmax",
+      "domain": "LLM foundations"
+    },
+    {
+      "slug": "masking",
+      "title": "Masking in Transformers",
+      "domain": "Transformer architecture"
+    },
+    {
+      "slug": "positional-encoding",
+      "title": "Positional Encoding",
+      "domain": "Transformer architecture"
+    }
+  ]
+}
