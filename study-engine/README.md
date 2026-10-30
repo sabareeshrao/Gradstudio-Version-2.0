@@ -29,6 +29,8 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 - Attention Mechanism: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=attention-mechanism
 - Prompt Engineering: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=prompt-engineering
 
+- Tokenization: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization
+
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
 - `core.css`: reused layout, responsive behavior and theme-related styling.
