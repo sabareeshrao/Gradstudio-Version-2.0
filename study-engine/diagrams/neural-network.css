@@ -1,0 +1,41 @@
+
+/* Neural Network visual lab. One keyword only: shared quiz/theme engine remains unchanged. */
+.nn-hero,.nn-fig{color:#294257;font-family:inherit}
+.nn-hero *,.nn-fig *{box-sizing:border-box}
+.nn-hero{padding:clamp(17px,3vw,28px);background:radial-gradient(ellipse at 4% 8%,#d9f5eb,transparent 52%),linear-gradient(125deg,#f1f8fe,#fff8ed);border:1px solid #cbe0e0;border-radius:19px;margin-bottom:24px}
+.nn-hero h2{font-size:clamp(1.25rem,2.6vw,1.82rem);line-height:1.23;color:#284f66;margin:5px 0 7px}
+.nn-hero>p{font-size:.88rem;color:#5a7486;margin:0 0 14px;line-height:1.52}
+.nn-kicker{font-weight:900;text-transform:uppercase;letter-spacing:.10em;font-size:.70rem;color:#28857c}
+.nn-fig{padding:clamp(15px,2.75vw,25px);background:radial-gradient(ellipse at 98% 0%,#e6f7ed,transparent 43%),linear-gradient(150deg,#f7fbfe,#fffdf9)}
+.nn-fig>h3{font-size:clamp(1.01rem,1.8vw,1.17rem);font-weight:850;line-height:1.33;color:#28536b;margin:6px 0 12px}
+.nn-fig svg,.nn-hero svg{width:100%;height:auto;display:block}
+.nn-scroller{max-width:100%;overflow-x:auto;border-radius:13px;scrollbar-color:#b6d6db transparent;overscroll-behavior-inline:contain}
+.nn-scroller svg{min-width:590px;background:linear-gradient(180deg,#fff,#f5fafc);border:1px solid #d8e6ec;border-radius:13px}
+.nn-hero .nn-scroller svg{min-width:540px}
+.nn-fig .nn-note{font-size:.79rem;line-height:1.65;color:#587789;margin:12px 0 0}
+.nn-fig .nn-note strong{color:#256b70}
+.nn-equation{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;padding:11px 12px;margin-top:10px;background:#eaf7f1;border:1px solid #c7e7d9;color:#226f5b;border-radius:11px;font:700 .86rem/1.5 ui-monospace,Consolas,monospace}
+.nn-equation .nn-em{background:#fff;padding:5px 9px;border:1px solid #badfd2;border-radius:8px}
+.nn-code-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(245px,.80fr);gap:12px;align-items:stretch}
+.nn-editor{background:#172b40;color:#e9f2fa;min-width:0;border:1px solid #35516a;border-radius:13px;overflow:hidden;box-shadow:0 10px 23px #22394e16}
+.nn-editor-top{padding:9px 13px;background:#293f56;color:#c6d7e6;font-weight:800;font-size:.77rem;display:flex;align-items:center;gap:6px}
+.nn-editor-top i{width:8px;height:8px;background:#f49b92;border-radius:50%}
+.nn-editor-top i:nth-child(2){background:#e2cb81}.nn-editor-top i:nth-child(3){background:#82d4ab}
+.nn-editor-top span{margin-left:8px}
+.nn-editor pre{font:clamp(.66rem,1.28vw,.79rem)/1.57 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre;overflow-x:auto;padding:13px 15px;margin:0;tab-size:2;color:#e8f0fa}
+.nn-editor code{color:inherit;font:inherit;background:none;padding:0;border:0}
+.nn-kw{color:#dbb8ff}.nn-fn{color:#98d6ff}.nn-number{color:#ffd28e}.nn-comment{color:#94aab9}
+.nn-xor{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #d9e5eb;border-radius:13px;padding:13px;min-width:0}
+.nn-xor strong{color:#325c72;font-size:.85rem}
+.nn-xor svg{max-width:100%;max-height:255px;margin:auto}
+.nn-xor p{font-size:.76rem;line-height:1.53;color:#55758a;margin:0}
+.nn-xor .nn-result{background:#e9f7f0;border:1px solid #c9e6d7;border-radius:9px;color:#28725b;padding:9px 11px;font:800 .79rem ui-monospace,monospace;white-space:normal}
+.nn-sources{border:1px solid #d6e5eb;border-radius:12px;background:#fff;padding:12px 15px;margin:16px 0}
+.nn-sources summary{font-weight:850;color:#316a81;cursor:pointer}
+.nn-sources p{color:#637888;font-size:.82rem}
+.nn-sources a{color:#17668b;overflow-wrap:anywhere}
+.nn-visual-strip{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.nn-visual-strip span{padding:4px 10px;border-radius:99px;border:1px solid #d5e7e7;background:#eff9f6;color:#41776c;font-size:.72rem;font-weight:850}
+@media(max-width:790px){.nn-code-grid{grid-template-columns:1fr}.nn-scroller svg{min-width:585px}.nn-hero .nn-scroller svg{min-width:540px}.nn-editor pre{font-size:.75rem}.nn-xor{padding:12px}.nn-xor svg{max-height:260px}}
+@media(max-width:450px){.nn-fig{padding:12px}.nn-scroller svg{min-width:525px}.nn-hero .nn-scroller svg{min-width:515px}.nn-editor pre{font-size:.67rem;line-height:1.54}}
+@media(prefers-reduced-motion:reduce){.nn-hero *, .nn-fig *{animation:none!important;transition:none!important}}
