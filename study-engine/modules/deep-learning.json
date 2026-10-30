@@ -17,7 +17,8 @@
         "Deep Learning applies statistical tests to features chosen entirely by human domain experts."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> Deep learning uses neural networks with multiple stages of learned transformation. Earlier layers can detect simple patterns; later layers combine them into features useful for a prediction. Training changes the weights that define those transformations."
+      "explanation": "<strong>In simple words:</strong> Deep learning uses neural networks with many layers. Early layers learn simple features, while later ones combine them into useful patterns.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Deep learning uses neural networks with multiple stages of learned transformation. Earlier layers can detect simple patterns; later layers combine them into features useful for a prediction. Training changes the weights that define those transformations."
     },
     {
       "tag": "Beginner · feature discovery",
@@ -30,7 +31,8 @@
         "It learns useful features from examples, reducing dependence on manual feature engineering steps."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> Deep models can learn useful features from training data, reducing reliance on manual feature engineering. They still need appropriate data, training objectives, evaluation, and thoughtful architecture choices. Deep learning does not automatically outperform simpler models on every task."
+      "explanation": "<strong>In simple words:</strong> Instead of manually choosing every feature, deep learning can discover features from examples. For an image, it may learn edges and shapes.",
+      "technicalExplanation": "<strong>Correct: D.</strong> Deep models can learn useful features from training data, reducing reliance on manual feature engineering. They still need appropriate data, training objectives, evaluation, and thoughtful architecture choices. Deep learning does not automatically outperform simpler models on every task."
     },
     {
       "tag": "Beginner · learned hierarchy",
@@ -43,7 +45,8 @@
         "It constructs the final decision before reconstructing its original input through intermediate layers."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> Data moves forward through learned weights and nonlinear activations. In vision, early units may detect edges, middle units parts or textures, and deeper units help recognize objects. This is an illustrative pattern, not a guaranteed fixed division of work."
+      "explanation": "<strong>In simple words:</strong> Data passes through several stages. In vision, a model may notice edges first, then shapes, and finally an object.",
+      "technicalExplanation": "<strong>Correct: A.</strong> Data moves forward through learned weights and nonlinear activations. In vision, early units may detect edges, middle units parts or textures, and deeper units help recognize objects. This is an illustrative pattern, not a guaranteed fixed division of work."
     },
     {
       "tag": "Medium · training mechanics",
@@ -56,7 +59,8 @@
         "Training updates labels after each epoch, guaranteeing every subsequent validation prediction becomes accurate."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> A forward pass predicts outputs, the loss compares them with labels, backpropagation calculates gradients, and an optimizer updates weights for successive mini-batches. Activation functions enable nonlinearity; depth and width affect capacity; initialization and normalization influence training stability."
+      "explanation": "<strong>In simple words:</strong> Training repeats a simple loop: predict, measure the mistake, calculate corrections backward, and update weights using small batches of examples.",
+      "technicalExplanation": "<strong>Correct: C.</strong> A forward pass predicts outputs, the loss compares them with labels, backpropagation calculates gradients, and an optimizer updates weights for successive mini-batches. Activation functions enable nonlinearity; depth and width affect capacity; initialization and normalization influence training stability."
     },
     {
       "tag": "Medium · PyTorch practice",
@@ -69,7 +73,8 @@
         "PyTorch uses test labels to update training weights and reports those results as validation."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> In PyTorch, prepare data, define <code>nn.Module</code> layers, choose a loss and optimizer, then iterate through mini-batches with <code>zero_grad()</code>, <code>backward()</code> and <code>step()</code>. Validation uses held-out data with <code>model.eval()</code> and <code>torch.no_grad()</code>. Inference applies the trained model to new data."
+      "explanation": "<strong>In simple words:</strong> In PyTorch, prepare examples, define the model, train with a loss and optimizer, then check predictions on separate test data.",
+      "technicalExplanation": "<strong>Correct: B.</strong> In PyTorch, prepare data, define <code>nn.Module</code> layers, choose a loss and optimizer, then iterate through mini-batches with <code>zero_grad()</code>, <code>backward()</code> and <code>step()</code>. Validation uses held-out data with <code>model.eval()</code> and <code>torch.no_grad()</code>. Inference applies the trained model to new data."
     },
     {
       "tag": "Advanced · architecture comparison",
@@ -82,7 +87,8 @@
         "These architectures differ by optimizer choice, not by their objectives or structures."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> CNNs extract spatial patterns; RNNs propagate a sequential state; Transformers use attention; autoencoders compress and reconstruct; GANs involve a generator and discriminator; diffusion models learn to denoise. Their computational graphs, objectives and applications differ."
+      "explanation": "<strong>In simple words:</strong> Different models suit different tasks: CNNs handle images, RNNs handle sequences, Transformers use attention, and generative models create new data.",
+      "technicalExplanation": "<strong>Correct: A.</strong> CNNs extract spatial patterns; RNNs propagate a sequential state; Transformers use attention; autoencoders compress and reconstruct; GANs involve a generator and discriminator; diffusion models learn to denoise. Their computational graphs, objectives and applications differ."
     },
     {
       "tag": "Advanced · scaling challenges",
@@ -95,7 +101,8 @@
         "Scaling relies on stable gradients, efficient memory, distributed training, and careful evaluation."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> At scale, gradient stability, memory, computation, and generalization all matter. Residuals and normalization support optimization; regularization and transfer learning can improve learning efficiency or generalization; mixed precision, checkpointing and distributed training manage hardware resources. Monitor rather than assume."
+      "explanation": "<strong>In simple words:</strong> Big networks need more memory and computing power. Teams use careful training, distributed hardware, and validation to keep them useful and stable.",
+      "technicalExplanation": "<strong>Correct: D.</strong> At scale, gradient stability, memory, computation, and generalization all matter. Residuals and normalization support optimization; regularization and transfer learning can improve learning efficiency or generalization; mixed precision, checkpointing and distributed training manage hardware resources. Monitor rather than assume."
     }
   ],
   "diagramStyle": "diagrams/deep-learning.css",
