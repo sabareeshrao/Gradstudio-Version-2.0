@@ -20,3 +20,23 @@
 .am-references a{color:#197e9e;overflow-wrap:anywhere}
 @media(min-width:920px){.am-scene svg{min-width:0}}
 @media(max-width:680px){.am-scene:after{content:"Swipe the diagram sideways to see all details →";display:block;text-align:right;font-size:.68rem;color:#728c9d;padding:3px 9px 7px}.am-fig{padding:14px}.am-code pre{font-size:.7rem}}
+
+
+/* Layout repair 2026-10-30: keep the SVG's native label spacing instead of
+   compressing text and panels into the quiz.  Mobile uses horizontal scrolling. */
+.am-scene{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-gutter:stable;touch-action:pan-x}
+.am-scene>svg{display:block;width:100%;min-width:920px;max-width:none;height:auto;overflow:visible}
+.am-fig,.am-hero{overflow-wrap:anywhere}
+.am-fig .am-note,.am-hero>p{max-width:82ch}
+.am-code pre{max-width:100%;overflow-x:auto;white-space:pre;overflow-wrap:normal}
+@media (max-width:680px){
+  .topbar .topbar-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px 9px;padding:10px 12px;align-items:center}
+  .topbar .brand{grid-column:1;grid-row:1;white-space:normal;min-width:0;overflow-wrap:anywhere;font-size:.77rem;line-height:1.28}
+  .topbar .theme-menu{grid-column:2;grid-row:1;justify-self:end}
+  .topbar .progress{grid-column:1/-1;grid-row:2;order:initial;width:100%;min-width:0;height:6px}
+  .topbar .counter{grid-column:1/-1;grid-row:3;justify-self:end;margin-left:0}
+  .am-hero,.am-fig{padding:13px}
+  .am-scene>svg{min-width:920px;width:920px}
+  .am-fig h3{overflow-wrap:break-word;line-height:1.35}
+  .q-text{overflow-wrap:anywhere}
+}
