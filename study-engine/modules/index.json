@@ -34,6 +34,11 @@
       "slug": "turing-test",
       "title": "Turing Test",
       "domain": "Foundations of Artificial Intelligence · Artificial Intelligence (AI)"
+    },
+    {
+      "slug": "semantic-textual-similarity",
+      "title": "Semantic Textual Similarity (STS)",
+      "domain": "Semantic Similarity & Text Representation · NLP"
     }
   ]
 }
