@@ -2,13 +2,17 @@
 
 **Organized technical learning modules with visual diagrams, MCQs, and 15 color themes.**
 
-**Curriculum progress: 15 / 265 keywords completed.** Next in PDF rank order: **016 — Context length**.
+**Ranked-PDF curriculum progress:** 15 / 265 keywords completed in the historical rank-order track; next is **016 — Context length**. Separately, the shared study engine currently lists **21 hosted keyword modules**. These are different progress measures.
 
-### New: reusable browser-hosted study engine
+### Shared study engine — latest additions (October 30, 2026)
 
-- **[Shared study library (GitHub Pages)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/)** — Softmax, Masking, and Positional Encoding are migrated as seven-layer modules, with their original custom diagrams.
-- **[Engine source and instructions](study-engine/README.md)** — shared `index.html`, `core.css`, `quiz-theme.js`, `app.js`; each new keyword is a unique JSON lesson plus optional diagram-specific CSS.
-- **Direct lesson example:** [Positional Encoding](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding). The browser-hosted version uses shared files; older independent HTML lessons remain available. Pages URLs depend on a successful GitHub Actions deployment.
+- **[Open all 21 hosted modules](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/)** — one shared HTML/CSS/JavaScript engine, quiz scoring, progress, reset and 15 themes. Per-topic JSON plus bespoke diagram CSS keeps lesson content separate from boilerplate.
+- **Latest four interactive lessons:** [Tokenization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization) · [Vector Database](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database) · [Generative Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model) · [Embedding Vector](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=embedding-vector).
+- **[Engine source and instructions](study-engine/README.md)** — canonical manifest at [`study-engine/modules/index.json`](study-engine/modules/index.json); the 21 hosted modules can be opened independently via `?module=<slug>`.
+- **Learning quality rules:** exactly four plausible A–D choices per user-supplied question, no answer-length giveaways, preserve question wording while removing redundant leading “Layer N” labels, and design a unique SVG lesson diagram for every question plus an illustrated hero.
+- **Beginner-first answer boxes:** an 18–30-word everyday explanation (allowed 12–42), with more technical reasoning hidden behind “Read the detailed explanation.”
+- **Quality checks:** [answer-option bias](study-engine/verify-module-options.mjs), [diagram quality](study-engine/verify-diagram-quality.mjs), and [explanation clarity](study-engine/verify-explanation-quality.mjs). These are structural safeguards; diagrams still need desktop and mobile visual inspection.
+- GitHub Pages links require a successful deployment. Archived standalone lessons remain available independently; new hosted modules reuse the engine.
 
 ### Current Batch 01 lessons — ranked 1–10 (October 30, 2026)
 
@@ -70,7 +74,7 @@ Gradstudio-Version-2.0/
 ├── lab-v3.css                     Homepage styles
 ├── lab-v3.js                      Homepage script
 ├── lessons/                       Latest ranked HTML entrypoints (1–10)
-├── study-engine/                  Canonical 7-question modules and shared UI
+├── study-engine/                  21 hosted modules, shared UI and validation gates
 ├── docs/                          Quality standard, template and theme guides
 ├── templates/                     Standalone 15-theme reference examples
 ├── archive/
@@ -82,7 +86,7 @@ Gradstudio-Version-2.0/
 
 ### Future modules
 
-For new hosted keyword lessons, add the current JSON module under `study-engine/modules/` and link it from the active `lessons/` entries; use complete standalone HTML only when requested. Inspect the [seven original Multimodal diagrams](index.html) and [visual gold standard](docs/VISUAL_GOLD_STANDARD.md) before designing: all eight figures must have distinct compositions, not repeated text boxes. Read the [build standard](docs/STUDY_MODULE_BUILD_STANDARD.md), compare against the [question registry](QUESTION_REGISTRY.md) to avoid repeats (even if wording changes), then update the [central index](KEYWORD_INDEX.md) and registry.
+For new hosted keyword lessons, add a keyword JSON module under `study-engine/modules/`, its diagram CSS under `study-engine/diagrams/` where needed, and a slug entry in `study-engine/modules/index.json`. Create or update `lessons/` entrypoints only when required for the separate ranked batch. Use complete standalone HTML only when requested. Inspect the [seven original Multimodal diagrams](index.html) and [visual gold standard](docs/VISUAL_GOLD_STANDARD.md) before designing: for user-supplied seven-question modules, provide a bespoke hero plus seven distinct illustrated question diagrams, not repeated text boxes. Read the [build standard](docs/STUDY_MODULE_BUILD_STANDARD.md), compare against the [question registry](QUESTION_REGISTRY.md) to avoid repeats (even if wording changes), then update the [central index](KEYWORD_INDEX.md) and registry.
 
 **Existing preview URLs remain compatible:** the Pages workflow publishes full copies of each self-contained HTML lesson at their original root URLs, even though the GitHub source files now live in topic folders. The former root **GitHub source-code URLs** are no longer the canonical locations; use the updated links above.
 
