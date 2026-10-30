@@ -1,5 +1,7 @@
 # Gradstudio — AI Module Build & Quality Standard
 
+> **October 30, 2026 hosted-mode/folder update:** The older standalone HTML source files cited in this document have moved to `archive/legacy-lessons/`. Current lesson entry HTMLs are placed under `lessons/`, but canonical hosted lesson data remains in `study-engine/modules/` using shared CSS, JS and themes. The old monolithic HTML rules below apply only to expressly requested offline exports and legacy artifacts. The folder paths in the historical implementation section describe the previous organization.
+
 **Version:** 1.5  
 **Status:** Required standard for future keyword-study modules  
 **Repository:** https://github.com/sabareeshrao/Gradstudio-Version-2.0  
@@ -27,8 +29,8 @@ Never “fix,” summarize, simplify, or paraphrase supplied question wording un
 | Repository path | Use | Important limitation |
 |---|---|---|
 | `index.html` | **Mandatory original visual gold standard:** inspect ALL SEVEN question-card diagrams (`d-scale`, `d-space`, `d-dual`, `d-hub`, `d-retail`, `d-paths`, `interview-section`), as well as UI and 15 themes | Never treat it merely as a CSS/quiz-shell reference. Reproduce its craftsmanship, not the same topic imagery. |
-| `lessons/api-design/Web-API-Keyword-Study-008.html` | Corrected standalone baseline for options, responsive figures, diagrams, and the **small SVG icon sizing repair** | Web API content is an example, not content to copy to unrelated topics. |
-| `lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html` | Example of topic-specific questions, explanatory diagrams, and small interactive demonstrations | Do not copy GPT content, interaction scenarios, or illustrative probabilities into other topics. |
+| `archive/legacy-lessons/api-design/Web-API-Keyword-Study-008.html` | Corrected standalone baseline for options, responsive figures, diagrams, and the **small SVG icon sizing repair** | Web API content is an example, not content to copy to unrelated topics. |
+| `archive/legacy-lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html` | Example of topic-specific questions, explanatory diagrams, and small interactive demonstrations | Do not copy GPT content, interaction scenarios, or illustrative probabilities into other topics. |
 | `THEME_GUIDE.md` | Authoritative names and IDs of the 15 existing palettes | Do not silently add, rename, duplicate, or delete themes. |
 | `TEMPLATE_RULES.md` | Quick compatibility checklist linking to this full standard | This document takes precedence if older text conflicts. |
 
@@ -298,8 +300,8 @@ Clicking **Download Raw** from GitHub or saving the standalone file and opening 
 ### 6.1 File naming and version integrity
 
 Use stable, readable names such as:
-- `lessons/api-design/Web-API-Keyword-Study-008.html`
-- `lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html`
+- `archive/legacy-lessons/api-design/Web-API-Keyword-Study-008.html`
+- `archive/legacy-lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html`
 - `<Keyword-Slug>-Keyword-Study-008.html` for a new eight-question module
 
 Choose a safe slug and avoid collisions. If revising an existing module, update that same file when the user asks to improve it; don't proliferate ambiguous “v2-final-fixed-new” variants. Keep prior standalone backups intact unless the user explicitly asks to replace or remove them.

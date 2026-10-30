@@ -1,3 +1,5 @@
+> **2026-10-30 current organization:** old standalone HTML references below now live under `archive/legacy-lessons/`; new hosted modules are canonical in `study-engine/` with active entry HTML under `lessons/`. Monolithic output rules apply only to standalone offline requests.
+
 # Gradstudio Version 2.0 — Quick Template Rules
 
 > **Start here:** [STUDY_MODULE_BUILD_STANDARD.md](./STUDY_MODULE_BUILD_STANDARD.md) is the definitive detailed specification. [AGENTS.md](../AGENTS.md) tells new coding agents to read it first. If these shorter rules conflict, the full standard wins.
@@ -5,8 +7,8 @@
 ## Baseline
 
 - Original look and behavior: `../index.html` (Multimodal Training).
-- Corrected self-contained output reference: `lessons/api-design/Web-API-Keyword-Study-008.html`.
-- Topic-specific GPT example: `lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html`.
+- Corrected self-contained output reference: `archive/legacy-lessons/api-design/Web-API-Keyword-Study-008.html`.
+- Topic-specific GPT example: `archive/legacy-lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html`.
 - Color definitions and names: `THEME_GUIDE.md`.
 
 ## Required output

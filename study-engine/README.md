@@ -2,6 +2,8 @@
 
 This folder is an **additive**, browser-hosted study-module system. Older independent lessons and the root homepage remain unchanged.
 
+**Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
+
 ## Links
 - Index: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/
 - Softmax: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=softmax
