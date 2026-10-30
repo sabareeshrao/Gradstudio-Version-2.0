@@ -74,6 +74,11 @@
       "slug": "self-attention",
       "title": "Self-Attention",
       "domain": "Self-Attention and Contextual Representation Learning · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "attention-mechanism",
+      "title": "Attention Mechanism",
+      "domain": "Attention Mechanisms and Contextual Information Processing · Transformers and LLM Architecture"
     }
   ]
 }
