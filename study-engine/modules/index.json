@@ -84,6 +84,11 @@
       "slug": "prompt-engineering",
       "title": "Prompt Engineering",
       "domain": "Prompt Design, Instruction Optimization, and LLM Behavior Control · Prompt Engineering"
+    },
+    {
+      "slug": "tokenization",
+      "title": "Tokenization",
+      "domain": "Text Processing and Token Representation · NLP"
     }
   ]
 }
