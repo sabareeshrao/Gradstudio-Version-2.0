@@ -657,4 +657,4 @@ document.getElementById('copyThemeUrl').addEventListener('click',async()=>{
 
 
 
-document.querySelectorAll('.tkstep').forEach(root=>{const steps=JSON.parse(root.dataset.stages);let i=0;const b=root.querySelector('.tkstep-next');b.addEventListener('click',()=>{i=(i+1)%steps.length;root.querySelector('.tkstep-title').textContent=steps[i];root.querySelector('.tkstep-count').textContent=(i+1)+' / '+steps.length;b.textContent=i===steps.length-1?'Restart ↻':'Next stage →';});});</script></body></html>
+document.querySelectorAll('.tkstep').forEach(root=>{const steps=JSON.parse(root.dataset.stages);let i=0;const b=root.querySelector('.tkstep-next');function show(){root.querySelector('.tkstep-title').textContent=steps[i];root.querySelector('.tkstep-count').textContent=(i+1)+' / '+steps.length;b.textContent=i===steps.length-1?'Restart ↻':'Next stage →';}b.addEventListener('click',()=>{i=(i+1)%steps.length;show();});document.getElementById('resetBtn').addEventListener('click',()=>{i=0;show();});});</script></body></html>
