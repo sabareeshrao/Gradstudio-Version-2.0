@@ -1,12 +1,12 @@
 # Gradstudio Version 2.0 — Quick Template Rules
 
-> **Start here:** [STUDY_MODULE_BUILD_STANDARD.md](./STUDY_MODULE_BUILD_STANDARD.md) is the definitive detailed specification. [AGENTS.md](./AGENTS.md) tells new coding agents to read it first. If these shorter rules conflict, the full standard wins.
+> **Start here:** [STUDY_MODULE_BUILD_STANDARD.md](./STUDY_MODULE_BUILD_STANDARD.md) is the definitive detailed specification. [AGENTS.md](../AGENTS.md) tells new coding agents to read it first. If these shorter rules conflict, the full standard wins.
 
 ## Baseline
 
-- Original look and behavior: `index.html` (Multimodal Training).
-- Corrected self-contained output reference: `Web-API-Keyword-Study-008.html`.
-- Topic-specific GPT example: `GPT-LLM-Foundation-Keyword-Study-008.html`.
+- Original look and behavior: `../index.html` (Multimodal Training).
+- Corrected self-contained output reference: `lessons/api-design/Web-API-Keyword-Study-008.html`.
+- Topic-specific GPT example: `lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html`.
 - Color definitions and names: `THEME_GUIDE.md`.
 
 ## Required output
@@ -24,18 +24,25 @@
 
 ## Ranked curriculum and no-repetition tracking
 
-- **Central ranked file:** [KEYWORD_INDEX.md](KEYWORD_INDEX.md) lists all 265 keywords in exactly the order of the [attached ranked PDF](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf), with topic, importance, completion status and committed HTML links.
-- **Question audit:** [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md) records published question stems. Wording changes, synonyms and new scenarios do not make repeated learning objectives unique.
+- **Central ranked file:** [KEYWORD_INDEX.md](../KEYWORD_INDEX.md) lists all 265 keywords in exactly the order of the [attached ranked PDF](../references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf), with topic, importance, completion status and committed HTML links.
+- **Question audit:** [QUESTION_REGISTRY.md](../QUESTION_REGISTRY.md) records published question stems. Wording changes, synonyms and new scenarios do not make repeated learning objectives unique.
 - Before starting, read the index, PDF, registry and full build standard. Default to the **earliest pending rank**, unless the user explicitly requests a different term.
 - After creating and verifying the HTML, update the same ranked row, add the module link, append its eight question stems to the registry and refresh the README progress. A module with an unupdated central tracker is not considered finished.
 
 ## Browser preview links (mandatory)
 
-- For each Complete row in [KEYWORD_INDEX.md](KEYWORD_INDEX.md), put **two separate links**: **Preview in browser** (GitHub Pages, intended to render the running MCQ interface) and **View HTML source** (GitHub's code viewer).
+- For each Complete row in [KEYWORD_INDEX.md](../KEYWORD_INDEX.md), put **two separate links**: **Preview in browser** (GitHub Pages, intended to render the running MCQ interface) and **View HTML source** (GitHub's code viewer).
 - **Preview URL format:** `https://sabareeshrao.github.io/Gradstudio-Version-2.0/<exact-file-name>.html`. Do not call a `github.com/.../blob/main/...html` link a browser preview.
-- Keep README and [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md) preview links aligned with the index.
+- Keep README and [QUESTION_REGISTRY.md](../QUESTION_REGISTRY.md) preview links aligned with the index.
 - Confirm that the Pages preview actually loads the intended quiz whenever browser access permits; otherwise disclose **not verified** and offer the offline HTML file, not a misleading code-view link.
 - In replies show **Preview in browser first**, then the separate source/download link.
+
+## Repository folders and Pages compatibility
+
+- New complete HTML modules go in `lessons/<topic>/`, not root. Site `index.html`, `lab-v3.js`, `lab-v3.css` must stay in root.
+- Detailed rules are under `docs/`; theme example pages belong to `templates/`; old demos belong to `archive/`.
+- The Pages deployment workflow copies every full HTML file into a deployed root alias, preserving all existing flat browser preview URLs. **Only one canonical source** per lesson remains in GitHub.
+- For new work, update [the ranked index](../KEYWORD_INDEX.md) and [question registry](../QUESTION_REGISTRY.md) with the correct nested GitHub source path and old-style root Pages preview URL. Never manually duplicate lesson HTML in repository root.
 
 ## Quality gate
 
