@@ -1,0 +1,25 @@
+/* Vector Database illustrated-v2. Only diagram presentation; shared quiz UI is reused. */
+.vd-hero,.vd-figure{font-family:inherit;color:#28485b;min-width:0}
+.vd-hero{background:radial-gradient(ellipse at 8% 0%,#dff4ec,transparent 54%),linear-gradient(140deg,#f7fcfe,#fff9f0);border:1px solid #c8dfe6;border-radius:20px;padding:clamp(17px,3vw,30px);margin:0 0 23px;box-shadow:0 9px 24px #31587812}
+.vd-hero h2{font-size:clamp(1.2rem,2.6vw,1.85rem);color:#285a66;line-height:1.26;letter-spacing:-.02em;margin:6px 0 9px}
+.vd-hero p{margin:0 0 19px;color:#587483;font-size:.9rem;line-height:1.58;max-width:76ch}
+.vd-kicker{display:block;font-size:.69rem;font-weight:850;text-transform:uppercase;letter-spacing:.095em;color:#248373}
+.vd-figure{padding:clamp(16px,2.8vw,27px);background:radial-gradient(ellipse at 90% 0%,#e5f5ed,transparent 49%),linear-gradient(150deg,#f6fbfe,#fffaf3);border-radius:15px}
+.vd-figure h3{font-size:clamp(1rem,1.8vw,1.2rem);line-height:1.35;color:#294e63;font-weight:850;margin:7px 0 15px}
+.vd-art{max-width:100%;overflow-x:auto;overflow-y:hidden;border:1px solid #d5e6ed;background:#fff;border-radius:13px;scrollbar-color:#b7d2dc transparent}
+.vd-svg{display:block;width:100%;height:auto;min-width:765px;max-width:none}
+.vd-svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.vd-hero .vd-svg{min-width:735px}
+.vd-note{color:#567183;font-size:.82rem;line-height:1.62;margin:12px 0 0}
+.vd-note em{font-size:.73rem;color:#778c98}
+.vd-sources{margin:22px 0 10px;padding:13px 17px;background:#fff;border:1px solid #d4e4eb;border-radius:12px;font-size:.81rem;color:#5e7383}
+.vd-sources summary{color:#2e677c;cursor:pointer;font-weight:850}
+.vd-sources p{margin:8px 0;line-height:1.6}
+.vd-sources a{color:#176f95}
+@media(max-width:660px){
+.vd-hero{padding:17px 12px}
+.vd-figure{padding:15px 11px}
+.vd-svg,.vd-hero .vd-svg{min-width:755px}
+.vd-note{font-size:.8rem}
+}
+@media(prefers-reduced-motion:reduce){.vd-hero *, .vd-figure *{transition:none!important;animation:none!important}}
