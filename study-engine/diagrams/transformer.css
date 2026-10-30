@@ -1,0 +1,44 @@
+/* Transformer: seven concept-specific scenes; the page shell, quiz, and 15 themes are shared. */
+.tr-intro,.tr-figure{font-family:inherit;color:#29475b;min-width:0}
+.tr-intro{padding:clamp(17px,2.9vw,29px);margin:0 0 25px;border-radius:20px;border:1px solid #c9e1e7;background:radial-gradient(ellipse at 5% 5%,#d9f4eb,transparent 48%),linear-gradient(128deg,#eff8ff,#fff8ee);box-shadow:0 11px 28px #31587812}
+.tr-eyebrow{font-size:.7rem;letter-spacing:.105em;font-weight:900;text-transform:uppercase;color:#287f78}
+.tr-intro h2{font-size:clamp(1.27rem,2.5vw,1.85rem);margin:7px 0 7px;color:#2b5066;line-height:1.22;letter-spacing:-.025em}
+.tr-intro p{margin:0 0 17px;color:#536f7e;font-size:.91rem;line-height:1.57}
+.tr-figure{padding:clamp(16px,2.8vw,25px);background:radial-gradient(ellipse at 100% 0%,#e6f6ee,transparent 45%),linear-gradient(155deg,#f7fbfe,#fffdf7);min-width:0}
+.tr-figure h3{font-size:clamp(1rem,2vw,1.2rem);font-weight:860;letter-spacing:-.01em;color:#294b66;margin:7px 0 16px;line-height:1.37}
+.tr-note{font-size:.83rem;color:#597384;line-height:1.62;margin:13px 0 0}
+.tr-surface{border:1px solid #d4e6ec;border-radius:13px;background:#fff;max-width:100%;overflow-x:auto;overflow-y:hidden;box-shadow:inset 0 0 0 1px #f8fbfc;scrollbar-color:#bbd0da transparent}
+.tr-svg{width:100%;height:auto;min-width:710px;max-width:none;display:block}
+.tr-intro .tr-svg{min-width:730px}
+.tr-surface svg text{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.tr-code-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:13px;align-items:stretch}
+.tr-code{background:#18273a;border:1px solid #334960;border-radius:14px;overflow:hidden;box-shadow:0 10px 22px #18364f1b;min-width:0}
+.tr-code-head{background:#26384d;color:#e1ebf5;padding:11px 13px;font-size:.75rem;font-weight:850;display:flex;align-items:center;gap:10px}
+.tr-code-head span{font-size:.83rem;letter-spacing:3px;color:#f3ac82}
+.tr-code pre{margin:0;overflow:auto;padding:14px 14px 18px;max-width:100%;line-height:1.55;font-size:clamp(.63rem,1.28vw,.78rem);tab-size:4;white-space:pre}
+.tr-code code{background:transparent;color:#e3f1ff;border:0;padding:0;font:inherit;white-space:pre}
+.tr-code-side{background:#fff;border:1px solid #dbe8ec;border-radius:13px;padding:12px;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.tr-code-side .tr-svg{min-width:335px}
+.tr-codelabel{font-size:.77rem;color:#647987;line-height:1.6;margin:11px 0 0}
+.tr-sources{margin:22px 0 7px;padding:14px 17px;border:1px solid #d7e6ec;border-radius:12px;background:#fff;color:#5b7282;font-size:.81rem}
+.tr-sources summary{font-weight:850;color:#2c667c;cursor:pointer}
+.tr-sources p{margin:10px 0 1px;line-height:1.65}
+.tr-sources a{color:#1a729a;text-decoration:underline}
+@media(max-width:875px){
+ .tr-code-grid{grid-template-columns:1fr}
+ .tr-code-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,.55fr);gap:13px;align-items:center}
+ .tr-codelabel{margin:0}
+ .tr-code pre{font-size:.75rem}
+}
+@media(max-width:640px){
+ .tr-intro{padding:17px 12px}
+ .tr-figure{padding:16px 11px}
+ .tr-svg,.tr-intro .tr-svg{min-width:680px}
+ .tr-code-side{display:block;padding:11px}
+ .tr-code-side .tr-svg{min-width:335px}
+ .tr-codelabel{margin:12px 0 0}
+ .tr-code pre{font-size:.69rem}
+ .tr-surface{position:relative}
+}
+@media(max-width:380px){.tr-code pre{font-size:.64rem;padding:11px}}
+@media(prefers-reduced-motion:reduce){.tr-intro *,.tr-figure *{transition:none!important;animation:none!important}}
