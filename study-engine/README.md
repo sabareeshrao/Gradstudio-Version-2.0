@@ -31,6 +31,8 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 - Tokenization: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization
 
+- Vector Database: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database
+
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
 - `core.css`: reused layout, responsive behavior and theme-related styling.
