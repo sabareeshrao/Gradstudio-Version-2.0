@@ -33,6 +33,8 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 - Vector Database: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database
 
+- Generative Model: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model
+
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
 - `core.css`: reused layout, responsive behavior and theme-related styling.
@@ -81,4 +83,4 @@ The initial answer box must be easy enough for a newcomer to understand after a 
 - Avoid repeating the question, naming every wrong option, stacking jargon, or placing formulas and long code in the default explanation.
 - Run `node study-engine/verify-explanation-quality.mjs`; the Pages deployment workflow runs the same check. A human must also check factual accuracy and clarity.
 
-**Migration complete for all 17 active modules (119 questions).** Existing question text, correct keys, answer choices, unique diagrams, and original detailed explanations remain intact.
+**The 17 legacy modules have beginner-first explanations; new modules must pass the same quality check.** Existing question text, correct keys, answer choices, unique diagrams, and original detailed explanations remain intact.
