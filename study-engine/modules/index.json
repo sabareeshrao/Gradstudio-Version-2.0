@@ -19,6 +19,11 @@
       "slug": "stochastic-depth",
       "title": "Stochastic Depth",
       "domain": "Regularization Techniques · Deep Learning & LLMs"
+    },
+    {
+      "slug": "flops",
+      "title": "FLOPS",
+      "domain": "Computational Performance Metrics · Efficient and Edge AI"
     }
   ]
 }
