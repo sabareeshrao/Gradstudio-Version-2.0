@@ -1,0 +1,154 @@
+
+/* RAG: seven bespoke teaching scenes. Shared quiz/layout lives in core.css. */
+.rag-hero,.rag-fig{--ink:#263f55;--quiet:#587386;--blue:#287ea1;--mint:#1d9b83;--gold:#d18a40;--line:#dae6eb;color:var(--ink);min-width:0}
+.rag-hero{border:1px solid #cddfe9;background:radial-gradient(circle at 0% 0%,#e4f5f2,transparent 45%),linear-gradient(130deg,#edf6ff,#fff9f3);border-radius:18px;padding:clamp(16px,3vw,24px);margin:0 0 21px}
+.rag-hero .rag-kicker,.rag-fig .rag-kicker{font-size:.7rem;font-weight:900;letter-spacing:.1em;color:#437e91;text-transform:uppercase}
+.rag-hero h2{font-size:clamp(1.2rem,2.5vw,1.65rem);margin:5px 0;line-height:1.23;color:#264761}
+.rag-hero p{font-size:.83rem;line-height:1.5;color:#56758a;margin:5px 0 13px}
+.rag-hero-stage{display:grid;grid-template-columns:1fr 29px 1fr 29px 1fr;gap:8px;align-items:center}
+.rag-hero-unit{border-radius:12px;background:#ffffffc9;border:1px solid #c9dfe6;min-width:0;min-height:130px;padding:12px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.rag-hero-unit .rag-unit-name{font-size:.7rem;font-weight:800;color:#557789;text-transform:uppercase;letter-spacing:.05em}
+.rag-hero-arrow{font-size:26px;text-align:center;font-weight:500;color:#70a4b4}
+.rag-bubble{background:#dff1f9;border-radius:13px 13px 13px 4px;padding:12px;color:#265875;font-size:.88rem;font-weight:780}
+.rag-books{height:58px;display:flex;align-items:end;justify-content:center;gap:5px}
+.rag-books i{height:49px;width:21px;border:2px solid #6b9d9e;border-radius:3px;background:#bfe4df;display:block;position:relative;box-shadow:inset 0 -7px #94cabc}
+.rag-books i:nth-child(2){height:55px;background:#f7dcb6;border-color:#bb9766;transform:rotate(-5deg)}
+.rag-books i:nth-child(3){height:44px;background:#cbdcf7;border-color:#739bca;transform:rotate(4deg)}
+.rag-books i:nth-child(4){height:51px;background:#dfd4f5;border-color:#9b85ba}
+.rag-hero-unit small{font-size:.68rem;color:#6d8994;text-align:center}
+.rag-evidence{border-left:4px solid #42a891;background:#eaf8f1;border-radius:6px;padding:8px;font-size:.78rem;color:#2b6756;line-height:1.45}
+.rag-fig{padding:clamp(15px,2.3vw,22px);background:radial-gradient(circle at 93% 4%,#e8f3fa,transparent 47%),linear-gradient(150deg,#f9fcff,#fffaf5);min-width:0}
+.rag-fig h3{font-size:clamp(1rem,2vw,1.13rem);color:#294a62;margin:5px 0 14px;letter-spacing:-.012em;line-height:1.35}
+.rag-fig p{margin:0}
+.rag-fig .rag-caption{color:#607888;font-size:.79rem;line-height:1.57;margin:12px 0 0}
+.rag-fig .rag-caption strong{color:#32647a}
+.rag-fig .rag-mini{font-size:.67rem;color:#70899a;font-weight:750}
+.rag-fig .rag-label{font-size:.72rem;font-weight:850;color:#5a7587;letter-spacing:.025em}
+.rag-fig .rag-tag{display:inline-block;background:#e6f3ee;color:#28765e;border:1px solid #b7dfcc;border-radius:20px;font-size:.65rem;padding:3px 9px;font-weight:850}
+.rag-fig code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.88em;background:#edf5f6;border-color:#cfe4ea;color:#2c6679}
+.rag-fig strong{color:#284b61}
+/* 01: two real answer cards / visual reading comprehension */
+.rag-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rag-answer{padding:16px;border-radius:14px;border:1px solid #dbe5e9;background:#fff;min-width:0;position:relative;display:flex;flex-direction:column;gap:11px}
+.rag-answer.rag-good{border-color:#a9d9ca;background:#f7fdf9}
+.rag-answer-head{display:flex;align-items:center;justify-content:space-between;gap:6px;color:#537184;font-size:.76rem;font-weight:900}
+.rag-face{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:21px;background:#eff3f7}
+.rag-good .rag-face{background:#d8f2e8}
+.rag-question-strip{font-size:.83rem;font-weight:750;background:#f1f6f9;border-radius:8px;padding:11px;color:#3a6479}
+.rag-answer.rag-good .rag-question-strip{background:#e5f5ec}
+.rag-answer-body{padding:13px 13px;border-radius:8px;background:#fff;border:1px dashed #cfdee5;font-size:.89rem;line-height:1.52;color:#415d70}
+.rag-answer-body .rag-wrong{color:#ac6060;text-decoration:underline wavy #d59494;text-decoration-thickness:1px}
+.rag-source-chip{margin-top:auto;display:flex;align-items:center;gap:6px;color:#24826c;background:#e7f6ed;border-radius:8px;padding:8px;font-size:.73rem;font-weight:750}
+.rag-nosearch{color:#9b6771;background:#fbeef0}
+/* 02: timeline / knowledge boundary */
+.rag-timeline{background:#fff;border:1px solid #d9e8ed;border-radius:13px;padding:22px 19px}
+.rag-timeline-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;align-items:end}
+.rag-tick{display:grid;gap:9px;justify-items:center;text-align:center;min-width:0}
+.rag-tick-icon{width:58px;height:58px;border-radius:15px;display:grid;place-items:center;font-size:25px;background:#e7f1f9;color:#356e89}
+.rag-tick:nth-child(2) .rag-tick-icon{background:#faeddc}
+.rag-tick:nth-child(3) .rag-tick-icon{background:#def3e9}
+.rag-tick strong{font-size:.85rem}
+.rag-tick small{font-size:.73rem;color:#6d8392}
+.rag-line-track{margin:15px 6%;height:7px;border-radius:9px;background:linear-gradient(90deg,#8daed0 0 37%,#f1c78e 37% 70%,#6bb8a2 70%);position:relative}
+.rag-line-track::before,.rag-line-track::after{content:'';position:absolute;top:-5px;width:17px;height:17px;border-radius:50%;border:3px solid #fff;background:#8ba8bf;box-shadow:0 0 0 1px #acc6d4}
+.rag-line-track:before{left:32%}.rag-line-track:after{left:69%;background:#62b89e}
+.rag-need{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff7e9;border:1px solid #f0d9b9;padding:11px;border-radius:9px;font-size:.79rem;color:#8c643b}
+.rag-need b{color:#82572e}
+.rag-need em{background:white;border-radius:8px;padding:7px;font-style:normal;color:#2e8069;font-weight:850}
+/* 03: traced roundtrip from query to cited evidence */
+.rag-trace{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.15fr) minmax(0,1fr);gap:12px;align-items:start}
+.rag-trace-pane{background:#fff;border:1px solid #d7e4ea;border-radius:13px;padding:14px;min-width:0;min-height:220px}
+.rag-trace-title{font-size:.73rem;text-transform:uppercase;letter-spacing:.07em;color:#648195;font-weight:900}
+.rag-search-field{background:#f3f8fa;border:1px solid #d4e5ec;border-radius:10px;margin:16px 0 12px;padding:11px;font-size:.86rem;color:#3b6177;font-weight:750}
+.rag-magnify{height:42px;width:42px;border:6px solid #63a3bd;border-radius:50%;position:relative;margin:16px auto 5px}
+.rag-magnify:after{content:'';position:absolute;width:26px;height:6px;background:#63a3bd;border-radius:8px;transform:rotate(44deg);left:28px;top:31px}
+.rag-files{display:grid;gap:8px;margin:13px 0}
+.rag-file{display:grid;grid-template-columns:24px 1fr;gap:7px;align-items:center;border:1px solid #e0e8ed;border-radius:7px;padding:8px;font-size:.75rem;color:#6c7e8e}
+.rag-file:before{content:'▤';font-size:19px;color:#86a6b3}
+.rag-file.selected{background:#e5f6ed;border-color:#89ceb0;color:#286951;font-weight:800}
+.rag-file.selected:before{color:#27896f}
+.rag-evidence-slip{font-size:.83rem;color:#39725b;background:#eaf7ee;padding:11px;border-left:3px solid #45a889;border-radius:5px;margin-top:12px}
+.rag-trace-answer{margin-top:12px;padding:12px;border-radius:10px;background:#f1f5fb;color:#395c79;font-size:.88rem;line-height:1.6}
+.rag-trace-answer b{color:#197b62}
+/* 04: chunk film strip and honest semantic 2D illustration */
+.rag-index-scene{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:14px;align-items:stretch}
+.rag-film{background:#fff;border-radius:14px;border:1px solid #dbe7e9;padding:14px}
+.rag-film-doc{background:#fff8ef;border:1px solid #ebd8b6;border-radius:9px;padding:11px;font-size:.75rem;color:#755f4b}
+.rag-film-doc b{display:block;color:#765535;margin-bottom:8px}
+.rag-fake-lines{display:grid;gap:6px}.rag-fake-lines i{height:6px;background:#e5c9a2;border-radius:7px}.rag-fake-lines i:nth-child(2){width:75%}.rag-fake-lines i:nth-child(3){width:87%}
+.rag-cut{display:flex;gap:6px;align-items:center;margin:12px 0;font-size:.7rem;font-weight:800;color:#867963}
+.rag-cut:before,.rag-cut:after{content:'';flex:1;border-top:2px dashed #d4b783}
+.rag-film-chunks{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.rag-film-chunks span{display:block;background:#edf5fa;border:1px solid #cee0ec;color:#53748e;font-size:.73rem;font-weight:850;padding:13px 6px;text-align:center;border-radius:7px}
+.rag-film-chunks span:nth-child(2){background:#dff3ea;border-color:#8bceb0;color:#27705b}
+.rag-film-chunks span:nth-child(4){background:#fff1e3;border-color:#edceae}
+.rag-plot{background:#fff;border:1px solid #dce7ea;border-radius:14px;padding:12px;min-width:0}
+.rag-plot svg{display:block;width:100%;height:auto;max-height:260px}
+.rag-plot-legend{display:flex;gap:8px;flex-wrap:wrap;color:#587285;font-size:.71rem;font-weight:750}
+.rag-plot-legend span{display:flex;align-items:center;gap:5px}.rag-plot-legend i{width:10px;height:10px;display:inline-block;border-radius:50%;background:#9aaec3}
+.rag-plot-legend .rag-highlight{background:#2ba481}.rag-plot-legend .rag-query{background:#c88f48}
+.rag-vector-bottom{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px;background:#eaf7f1;color:#327b63;padding:10px 12px;border-radius:9px;font-size:.78rem;font-weight:800}
+/* 05: actual Python + notebook run path */
+.rag-code-split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(195px,.72fr);gap:13px}
+.rag-code{border:1px solid #34495d;border-radius:13px;overflow:hidden;background:#14273a;color:#e4edf6;min-width:0}
+.rag-code-head{display:flex;align-items:center;gap:8px;background:#243c53;padding:10px 13px;font-size:.75rem;color:#c9d9e8;font-weight:800}
+.rag-traffic{display:inline-block;width:8px;height:8px;border-radius:50%;background:#f1a789;box-shadow:13px 0 #e0c88b,26px 0 #7ac1aa;margin-right:27px}
+.rag-code pre{overflow:auto;margin:0;padding:14px;font-family:ui-monospace,Menlo,Consolas,monospace;line-height:1.55;font-size:clamp(.65rem,1.2vw,.78rem);max-height:450px;tab-size:2}
+.rag-code pre code{background:transparent;border:0;font-size:inherit;color:#e6edf6;padding:0;white-space:pre}
+.rag-run{display:flex;flex-direction:column;justify-content:center;gap:8px;background:#fff;border:1px solid #dbe6eb;padding:14px;border-radius:13px}
+.rag-run-title{font-size:.78rem;font-weight:900;color:#436f80;margin-bottom:8px}
+.rag-run-step{background:#e7f1f6;border-radius:9px;padding:10px;display:flex;align-items:center;gap:9px;font-weight:790;font-size:.76rem;color:#436b7c}
+.rag-run-step i{font-style:normal;background:#fff;border-radius:6px;width:24px;height:24px;display:grid;place-items:center;color:#43829a;flex:none}
+.rag-run-step.rag-run-active{background:#e2f5eb;color:#287355}
+.rag-run-arrow{text-align:center;color:#a6b8c0;font-size:15px;height:10px;line-height:10px}
+.rag-run-note{font-size:.72rem;color:#6a7d8b;line-height:1.5;background:#fff7e9;border-radius:8px;padding:9px;margin-top:5px}
+/* 06: branching multi-stage search mixer */
+.rag-advanced{display:grid;gap:11px}
+.rag-rewrite{border-radius:10px;padding:10px 14px;background:#f5edfc;color:#76598d;border:1px solid #e4d5f4;font-size:.79rem}
+.rag-rewrite strong{color:#705090}
+.rag-dual-search{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rag-search-lane{border:1px solid #dbe7ec;border-radius:12px;padding:14px;background:white}
+.rag-search-lane .rag-lane-header{display:flex;justify-content:space-between;gap:6px;align-items:center;font-size:.85rem;font-weight:900;color:#3c617b}
+.rag-lane-header em{font-size:.62rem;font-weight:800;font-style:normal;color:#7890a1}
+.rag-search-lane:nth-child(2){background:#f5fcf8;border-color:#cce8d9}
+.rag-adv-result{margin-top:9px;border-radius:8px;background:#f2f6f9;padding:9px;font-size:.74rem;color:#577080;display:flex;gap:8px;justify-content:space-between;align-items:center}
+.rag-adv-result b{font-size:.7rem;color:#315c7a}
+.rag-search-lane:nth-child(2) .rag-adv-result{background:#e8f6ee}
+.rag-merge{display:grid;grid-template-columns:1fr 46px 1fr;gap:8px;align-items:center}
+.rag-merge-line{height:4px;border-radius:5px;background:linear-gradient(90deg,#9ac1d8,#7bc4ac)}
+.rag-merge-target{text-align:center;font-size:.73rem;font-weight:900;color:#427e74}
+.rag-rerank{background:#fff;border:1px solid #d8e8e9;border-radius:12px;display:grid;grid-template-columns:minmax(0,.8fr) 1fr;align-items:center;gap:15px;padding:14px}
+.rag-rerank-title{font-size:.8rem;font-weight:850;color:#476c79}
+.rag-rank-rows{display:grid;gap:7px}
+.rag-rank-row{display:grid;grid-template-columns:31px 1fr 41px;align-items:center;gap:6px;font-size:.73rem;color:#57758a}
+.rag-rank-row span{height:10px;border-radius:7px;background:#e8f0f3;overflow:hidden}
+.rag-rank-row i{display:block;height:100%;border-radius:7px;background:#75a5c7}
+.rag-rank-row:first-child i{background:#3aad8d}
+.rag-rank-row b{color:#426d80;text-align:right}
+.rag-filter-note{padding:10px 13px;background:#eaf6ef;border:1px solid #cbebd9;border-radius:9px;color:#346f5f;font-size:.75rem;display:flex;align-items:center;gap:10px}
+/* 07: operating control room, metrics + security gates */
+.rag-ops{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:14px}
+.rag-ops-screen{background:#173349;border-radius:14px;border:1px solid #36627b;padding:16px;color:#e8f5fc;box-shadow:0 9px 24px #28475c16}
+.rag-ops-header{display:flex;gap:8px;align-items:center;justify-content:space-between;font-size:.76rem;color:#bfe0ea;font-weight:900;margin-bottom:13px}
+.rag-live{border-radius:100px;padding:4px 9px;color:#9ce6c9;background:#245c52;font-size:.63rem}
+.rag-metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.rag-metric{border:1px solid #3f6375;background:#20465c;border-radius:10px;padding:11px;min-width:0}
+.rag-metric span{display:block;color:#b1cfdb;font-size:.66rem}
+.rag-metric b{display:block;font-size:clamp(1.12rem,2.4vw,1.45rem);color:white;margin:6px 0 8px}
+.rag-metric i{display:block;height:6px;border-radius:9px;background:#355b71;overflow:hidden}
+.rag-metric i:before{content:'';display:block;height:100%;width:var(--pct);background:var(--color,#54c6a5);border-radius:9px}
+.rag-ops-hint{font-size:.65rem;color:#aac9d9;margin-top:10px}
+.rag-safety{background:#fff;border-radius:13px;padding:14px;border:1px solid #dae6ec;display:grid;gap:9px}
+.rag-safety>strong{color:#365f77;font-size:.83rem}
+.rag-check{display:grid;grid-template-columns:25px 1fr;gap:9px;align-items:center;font-size:.77rem;color:#526e80;padding:7px;border-bottom:1px dashed #dce8eb}
+.rag-check i{display:grid;place-items:center;border-radius:7px;background:#e0f4e9;color:#2b8769;font-style:normal;font-size:.82rem;width:25px;height:25px}
+.rag-check:last-child{border-bottom:none}
+.rag-ops-footer{display:flex;align-items:center;gap:9px;background:#fff2e5;border-radius:9px;margin-top:13px;padding:10px 12px;color:#815c3b;font-size:.75rem}
+.rag-ops-footer strong{color:#945e2a}
+.rag-references{margin:16px 0 0;border:1px solid #d9e7ea;border-radius:11px;background:#fff;padding:12px;color:#597789;font-size:.77rem}
+.rag-references summary{font-weight:850;cursor:pointer;color:#3d6f85}
+.rag-references a{color:#197b9b}
+.rag-references li{margin:6px 0}
+@media(max-width:780px){.rag-code-split{grid-template-columns:1fr}.rag-run{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.rag-run-title,.rag-run-note{grid-column:1/-1}.rag-run-arrow{display:none}.rag-ops{grid-template-columns:1fr}.rag-trace-pane{min-height:0}}
+@media(max-width:580px){.rag-hero-stage{grid-template-columns:1fr;gap:4px}.rag-hero-unit{min-height:0;padding:11px}.rag-hero-arrow{transform:rotate(90deg);height:21px;line-height:21px;font-size:21px}.rag-compare,.rag-index-scene,.rag-dual-search{grid-template-columns:1fr}.rag-answer{padding:12px}.rag-timeline{padding:14px 10px}.rag-tick-icon{width:45px;height:45px;font-size:21px}.rag-tick small{font-size:.64rem}.rag-tick strong{font-size:.74rem}.rag-need{flex-wrap:wrap}.rag-trace{grid-template-columns:1fr}.rag-plot svg{max-height:235px}.rag-run{grid-template-columns:1fr}.rag-rerank{grid-template-columns:1fr}.rag-merge{grid-template-columns:1fr 50px 1fr}.rag-ops-screen{padding:12px}}
+@media(max-width:390px){.rag-fig{padding:11px}.rag-ops .rag-metric{padding:8px}.rag-ops-hint{font-size:.62rem}.rag-code pre{font-size:.63rem}}
