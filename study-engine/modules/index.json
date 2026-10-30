@@ -99,6 +99,11 @@
       "slug": "generative-model",
       "title": "Generative Model",
       "domain": "Generative Artificial Intelligence and Data Distribution Learning · Generative Modeling"
+    },
+    {
+      "slug": "embedding-vector",
+      "title": "Embedding Vector",
+      "domain": "Numerical Representations and Semantic Feature Spaces · Deep Learning Foundations"
     }
   ]
 }
