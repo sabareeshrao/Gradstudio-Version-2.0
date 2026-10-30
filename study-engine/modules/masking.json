@@ -16,7 +16,8 @@
         "It changes the order of tokens so the model never reads ahead."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> Masking is a rule for attention. It says which positions can be used and which must be ignored. For example, when a decoder reads “The cat,” a causal mask can stop “cat” from peeking at words that come later. The words are not erased; their attention connections are blocked."
+      "explanation": "<strong>In simple words:</strong> A mask tells attention which words it may use. For example, it can hide words that come later in a sentence.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Masking is a rule for attention. It says which positions can be used and which must be ignored. For example, when a decoder reads “The cat,” a causal mask can stop “cat” from peeking at words that come later. The words are not erased; their attention connections are blocked."
     },
     {
       "tag": "Why it exists",
@@ -29,7 +30,8 @@
         "It keeps attention focused entirely on the first token of every sequence."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> There are two common problems: a model might accidentally peek at a future answer, and it might spend attention on padding added just to make sequences equal in length. Masks block those unwanted connections. Which positions are blocked depends on the task."
+      "explanation": "<strong>In simple words:</strong> Without a mask, a model might peek at the future answer or focus on empty padding spaces. Masks block both when needed.",
+      "technicalExplanation": "<strong>Correct: A.</strong> There are two common problems: a model might accidentally peek at a future answer, and it might spend attention on padding added just to make sequences equal in length. Masks block those unwanted connections. Which positions are blocked depends on the task."
     },
     {
       "tag": "Types of masks",
@@ -42,7 +44,8 @@
         "Padding masks hide fillers; causal masks hide future; attention masks cover both."
       ],
       "answer": "d",
-      "explanation": "<strong>Correct: D.</strong> A <strong>padding mask</strong> hides filler positions such as <code>&lt;PAD&gt;</code>. A <strong>causal mask</strong> hides future positions. <strong>Attention mask</strong> is a general term for a rule that decides which positions may be attended to; padding and causal masks are examples, and masks can be combined. Note: some APIs use 1 for allowed and 0 for blocked; others reverse this convention."
+      "explanation": "<strong>In simple words:</strong> Padding masks hide empty filler tokens. Causal masks hide future words. Both tell attention which positions it must ignore.",
+      "technicalExplanation": "<strong>Correct: D.</strong> A <strong>padding mask</strong> hides filler positions such as <code>&lt;PAD&gt;</code>. A <strong>causal mask</strong> hides future positions. <strong>Attention mask</strong> is a general term for a rule that decides which positions may be attended to; padding and causal masks are examples, and masks can be combined. Note: some APIs use 1 for allowed and 0 for blocked; others reverse this convention."
     },
     {
       "tag": "Scores to weights",
@@ -55,7 +58,8 @@
         "It changes the token IDs so forbidden positions are deleted from all inputs."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> The model first calculates attention scores. It then places a very negative number (often <code>-inf</code>) at forbidden positions <em>before</em> Softmax. Softmax turns those blocked positions into weight 0, so they contribute nothing to that attention output. Example for the “like” row: scores <code>[1, 2, 5]</code> become <code>[1, 2, -inf]</code>, then weights about <code>[27%, 73%, 0%]</code>."
+      "explanation": "<strong>In simple words:</strong> The model gives blocked positions an extremely low score. Softmax then gives those positions no attention, so their information is ignored.",
+      "technicalExplanation": "<strong>Correct: C.</strong> The model first calculates attention scores. It then places a very negative number (often <code>-inf</code>) at forbidden positions <em>before</em> Softmax. Softmax turns those blocked positions into weight 0, so they contribute nothing to that attention output. Example for the “like” row: scores <code>[1, 2, 5]</code> become <code>[1, 2, -inf]</code>, then weights about <code>[27%, 73%, 0%]</code>."
     },
     {
       "tag": "Python implementation",
@@ -68,7 +72,8 @@
         "Filter generated words after decoding rather than masking attention while processing tokens."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> In PyTorch, a Boolean mask marks positions to block. A causal mask uses an upper triangle above the diagonal, while a padding mask marks <code>&lt;PAD&gt;</code> columns. Combine them with OR, apply <code>masked_fill(..., -inf)</code> to attention scores, then use <code>torch.softmax</code>. Real Transformer libraries also manage padding query positions and optimized attention kernels."
+      "explanation": "<strong>In simple words:</strong> In Python, mark the positions to hide, apply the mask to attention scores, and then calculate Softmax. The blocked positions get zero weight.",
+      "technicalExplanation": "<strong>Correct: B.</strong> In PyTorch, a Boolean mask marks positions to block. A causal mask uses an upper triangle above the diagonal, while a padding mask marks <code>&lt;PAD&gt;</code> columns. Combine them with OR, apply <code>masked_fill(..., -inf)</code> to attention scores, then use <code>torch.softmax</code>. Real Transformer libraries also manage padding query positions and optimized attention kernels."
     },
     {
       "tag": "Three architectures",
@@ -81,7 +86,8 @@
         "Decoders can always attend to future training tokens, while encoders mask earlier tokens."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> <strong>Encoder-only</strong> models typically let real tokens attend to other real tokens on both sides, while masking padding. <strong>Decoder-only</strong> models use causal masking to prevent attention to later positions. <strong>Encoder–decoder</strong> models have bidirectional encoder self-attention, causal decoder self-attention, and decoder-to-encoder cross-attention that may mask padded source positions. A BERT <code>[MASK]</code> input token is a separate training idea from blocking attention connections."
+      "explanation": "<strong>In simple words:</strong> Encoders usually read words on both sides. Decoders hide future words. Encoder–decoder models also avoid attending to empty padding.",
+      "technicalExplanation": "<strong>Correct: C.</strong> <strong>Encoder-only</strong> models typically let real tokens attend to other real tokens on both sides, while masking padding. <strong>Decoder-only</strong> models use causal masking to prevent attention to later positions. <strong>Encoder–decoder</strong> models have bidirectional encoder self-attention, causal decoder self-attention, and decoder-to-encoder cross-attention that may mask padded source positions. A BERT <code>[MASK]</code> input token is a separate training idea from blocking attention connections."
     },
     {
       "tag": "Training and generation",
@@ -94,7 +100,8 @@
         "Masking assigns high attention probabilities to future tokens before the decoder generates."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> During next-token training, a causal mask stops a position from using future input tokens to predict its target. During generation, only previous and current positions exist, and a KV cache saves past <strong>keys and values</strong> so they need not be recomputed each step. Padding masks may avoid invalid attention, but a normal dense attention calculation is not automatically faster merely because it contains a mask; optimized sparse or block-aware implementations can skip some work."
+      "explanation": "<strong>In simple words:</strong> While training, masks stop future-word cheating. When generating text, a cache reuses information from earlier words so the model avoids repeated work.",
+      "technicalExplanation": "<strong>Correct: A.</strong> During next-token training, a causal mask stops a position from using future input tokens to predict its target. During generation, only previous and current positions exist, and a KV cache saves past <strong>keys and values</strong> so they need not be recomputed each step. Padding masks may avoid invalid attention, but a normal dense attention calculation is not automatically faster merely because it contains a mask; optimized sparse or block-aware implementations can skip some work."
     }
   ],
   "diagramStyle": "diagrams/masking.css",
