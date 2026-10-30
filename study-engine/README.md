@@ -17,7 +17,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 - Gradient Descent: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=gradient-descent
 
 - Neural Network: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network
-- Backpropagation: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=backpropagation
+- Backpropagation (Deep Learning Foundations; updated numerical and autograd edition): https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=backpropagation
 - Deep Learning: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=deep-learning
 - Transformer: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer
 - Self-Attention: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=self-attention
