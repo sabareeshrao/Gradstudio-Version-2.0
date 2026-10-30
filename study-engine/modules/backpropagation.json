@@ -13,7 +13,7 @@
         "It computes predictions in a forward pass and chooses the network architecture before training begins.",
         "It computes loss gradients for parameters, guiding updates that reduce prediction errors during learning.",
         "It sends model outputs backward as new inputs, without calculating any parameter derivatives accurately.",
-        "It records incorrect predictions and memorizes them instead of adjusting learned connections afterward permanently."
+        "It permanently memorizes incorrect predictions instead of adjusting the learned weights that produced each mistake."
       ],
       "answer": "b",
       "explanation": "<strong>Correct: B.</strong> Backpropagation calculates how the loss changes with each trainable parameter. An optimizer uses those gradients to adjust weights and biases. Backpropagation is not the initial prediction or the optimizer itself.",
