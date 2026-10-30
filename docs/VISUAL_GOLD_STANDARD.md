@@ -4,6 +4,18 @@
 
 **Primary reference:** [../index.html](../index.html) — the original Multimodal Training page. Its seven distinct question-card visuals are the **minimum artistic and instructional benchmark**, not just its radio buttons or CSS.
 
+## 1A. Mandatory illustrated module-map hero before Q1
+
+**Every standalone keyword HTML file MUST contain a full-width, concept-specific illustrated introduction immediately after its Context and before the first question.** The original root `index.html` has this module-map scene under `<div class="hero hero-new">`; it is a distinct educational visual above the question cards.
+
+- The per-keyword total is **NINE** visuals: **one intro/module-map hero + eight separate Q1–Q8 question diagrams**.
+- The intro scene must teach the relationship among the keyword's central objects and processes, rather than repeat the first question or display text in feature boxes.
+- Its visual composition must be unique to the keyword and distinct from all eight Q1–Q8 diagrams. In a batch, intro diagrams may not share a boilerplate geometry with changed labels.
+- At least comparable to the original Multimodal Training hero in polish: meaningfully illustrated objects, transformation/relationship, strong spacing and clear hierarchy.
+- The overview must appear before Q1, render at desktop and mobile, and not depend on external assets. Keep Subject, Domain, Keyword metadata, Context, quiz UI, themes and standalone behavior intact.
+- A module with eight question diagrams but **no hero is automatically incomplete**. A decorative hero containing only three boxes and arrows also fails.
+- Review a screenshot of the hero **plus** the eight question visuals. Without screenshot/browser QA, label visual verification outstanding.
+
 ## 1. Mandatory original-template inspection
 
 Before generating, repairing, or approving any diagrams, the author must open the actual original `index.html`, inspect **all seven** question-card diagrams, and record the specific design properties they demonstrate:
