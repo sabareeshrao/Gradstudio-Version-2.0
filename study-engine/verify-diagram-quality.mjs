@@ -26,6 +26,11 @@ for(const slug of slugs) {
   checked++;
   if(lesson.visualQuality!=='illustrated-v2')fail(slug,'New modules must declare visualQuality: illustrated-v2');
   if(!lesson.hero?.includes('<svg '))fail(slug,'Hero must contain a purpose-built illustrated scene, not text-only cards');
+  // Guard against JavaScript string builders accidentally inserting the return value
+  // of Array.forEach() (undefined), or otherwise serializing invalid placeholders.
+  // Example of the correct builder: chunks.map(drawLabel).join(''), not '+=chunks.forEach(drawLabel)'.
+  const brokenPlaceholder=/(?:^|>)\s*(?:undefined|NaN|\[object Object\])\s*(?:<|$)/i;
+  if(brokenPlaceholder.test(lesson.hero||''))fail(slug,'Hero contains a rendered JavaScript placeholder such as undefined');
   const q=lesson.questions;
   if(!Array.isArray(q)||q.length<1){fail(slug,'Missing questions');continue}
   const scenes=[],figs=[];
@@ -35,6 +40,7 @@ for(const slug of slugs) {
     if(!match)fail(slug,'Q'+(i+1)+' missing unique composition fingerprint (data-scene)');
     else scenes.push(match[1]);
     figs.push(item.figure);
+    if(brokenPlaceholder.test(item.figure))fail(slug,'Q'+(i+1)+' contains a rendered JavaScript placeholder (undefined/NaN/[object Object])');
     if(!item.figure.includes('<svg '))fail(slug,'Q'+(i+1)+' needs substantial visual illustration (SVG)');
     if(!item.figure.includes('aria-label='))fail(slug,'Q'+(i+1)+' visual needs an accessible description');
     const shapes=(item.figure.match(/<(?:path|circle|rect|line|polygon|polyline|ellipse)\b/g)||[]).length;
