@@ -123,14 +123,15 @@ The original root `index.html` includes a distinctive illustrated hero titled "F
 
 For a default eight-question module, distribute correct answers **two each across A, B, C, D**, without a predictable A-B-C-D cycle. For a user-supplied non-eight count, keep distribution as even as reasonably possible. The correctness of the choices is more important than distribution; never rearrange into a wrong key merely to balance letters.
 
-### 3.5 Explanation constraint
+### 3.5 Explanation constraint — mandatory beginner-first rule (2026-10-30)
 
-- Target **50 words** after revealing an answer, with an acceptable working range of **40–60 words**, unless the user requests a different limit.
-- Include: (a) the correct underlying idea; (b) one mechanism, distinction, or realistic example; and (c) why it matters.
-- Do not restate the entire question or repeat the right option word for word.
-- No essay-length explanation, redundant introduction, large table, or lengthy “why every other option is wrong” section by default.
-- When an edge case truly needs more words, simplify the thought without sacrificing accuracy; disclose a necessary qualification in the diagram if useful.
-- Never claim educational toy scores, token probabilities, vectors, or generated outputs were measured from an actual model unless verified.
+- **The default visible explanation should be 18–30 words** (allow **12–42 words** for clarity and technical correctness), written in **one to three short, everyday sentences**.
+- Teach **one core idea** and, where useful, **one tiny, relatable example**. Explain jargon in simple words instead of stacking advanced terminology.
+- Start the concise `explanation` value with `<strong>In simple words:</strong>`. The short body must explain **why** the correct option is right, not restate the option or the question.
+- Preserve the original more detailed answer in `technicalExplanation`. Render it in a **closed-by-default `<details>`** labeled “Read the detailed explanation.” Do not automatically expand it on scoring.
+- **Never** make the default explanation a dense paragraph, formula derivation, long checklist, table, code listing, or discussion of all incorrect choices. Put such material in the diagram or optional technical disclosure.
+- Do not add distracting warning text or repeated answer-letter labels: the quiz already marks the correct option. Do not pretend toy values, scores, or examples were actually measured.
+- Run `node study-engine/verify-explanation-quality.mjs` against every module. A passing word-count audit is **not** a substitute for manually asking whether a newcomer can explain the idea after one read.
 
 ### 3.6 Strict zero-redundancy policy (mandatory for every module)
 
@@ -347,7 +348,7 @@ After every new module, update `../KEYWORD_INDEX.md` and `../QUESTION_REGISTRY.m
 1. **Inspect:** Read this standard and [VISUAL_GOLD_STANDARD.md](VISUAL_GOLD_STANDARD.md); visually study all seven actual original Multimodal `index.html` question-card diagrams, corrected Web API module, and current theme guide.
 2. **Scope:** Determine subject, domain, keyword, supplied source constraints and whether questions must be preserved verbatim.
 3. **Blueprint:** Map each question to one distinct learning objective, one answer concept, and one diagram mechanism. Look for repetition or missing prerequisites.
-4. **Draft content:** Write/retain the question stems, four alternatives, answer keys, and 40–60-word explanations.
+4. **Draft content:** Keep the question stems, four alternatives and answer keys, then write 18–30-word beginner explanations with optional, collapsed technical detail.
 5. **Audit distractors:** Check technical truth, plausibility, length balance, language accessibility, one best answer and answer-letter distribution.
 6. **Design scenes:** Build the diagrams using content-driven layout and purposeful art. Add optional interaction only where it teaches.
 7. **Assemble:** Plug topic content into the existing approved UI; embed all styles, scripts, diagrams and theme definitions in one file.
@@ -367,7 +368,7 @@ For a batch, repeat these gates **for each module**, not just the first sample.
 - [ ] Correct count, exact original wording if supplied, and visible numbers start at 1 with no skips.
 - [ ] Default keyword-only module has exactly eight MCQs and one final interview question.
 - [ ] Exactly four choices per question, unique input names, and exactly one valid correct key.
-- [ ] Each explanation is 40–60 words by default.
+- [ ] Each immediately visible explanation is beginner-friendly (normally 18–30 words; permitted 12–42), with advanced detail collapsed.
 - [ ] For eight questions, two correct answers per A/B/C/D, unless doing so creates an incorrect key.
 - [ ] No conspicuous answer-length patterns or trivial distractors.
 - [ ] No semantically repeated learning objective within this module or compared with published curriculum modules, even when wording changes.
@@ -488,7 +489,7 @@ Before saying “done,” answer all of these **yes**:
 2. Did I preserve every supplied question exactly?
 3. Are all options genuinely plausible and close in length?
 4. Are correct answers accurate and the key properly wired?
-5. Are explanations concise, substantive and around 50 words, and are all question objectives semantically nonredundant?
+5. Does every explanation teach one useful idea in plain language (normally 18–30 words), without repeating question objectives?
 6. Does each diagram teach something visibly **different** and worthwhile?
 7. Have I checked SVG icon sizes, text wrapping and mobile overflow?
 8. Does the page match the original question UI and top theme dropdown?
