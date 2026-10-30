@@ -23,6 +23,8 @@ This repository creates premium visual MCQ study modules. **Before creating, edi
 
 14. **Folder organization:** Keep the repository root clean: place keyword HTML under `lessons/llm-foundations/`, `lessons/text-processing/`, or another appropriate topic folder. Keep full manuals in `docs/`, standalone theme examples in `templates/`, and old prototypes in `archive/`. `index.html`, `lab-v3.css`, and `lab-v3.js` remain in root because the original homepage needs them. Do not copy lesson HTML manually into root: the Pages deployment workflow creates complete root-URL compatibility copies automatically. Update source-code links to actual nested paths while retaining historical root browser-preview URLs.
 
+15. **Mandatory illustrated intro map:** Every keyword module requires a premium illustrated overview hero before Q1, matching the original Multimodal Training module map in visual teaching quality. Create **one distinct hero + eight individually distinct card diagrams**; never use the same intro-map skeleton across keyword modules. Do not approve missing or text-box-led hero diagrams. Inspect all nine rendered visuals.
+
 **Authoritative reference order:** user requirements and supplied questions > `docs/STUDY_MODULE_BUILD_STANDARD.md` > current templates/examples.
 
 **Default eight-stage progression:** Introduction; Fundamentals; Working Mechanism; Technical Understanding; Practical Application; Advanced Understanding; Smart-Level Reasoning; Interview Question.
