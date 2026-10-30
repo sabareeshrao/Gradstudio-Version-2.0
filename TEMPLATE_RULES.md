@@ -22,6 +22,13 @@
 - Keep the approved Multimodal question UI, normal small radio circles, scoring, Reset, progress and sticky 15-theme dropdown.
 - Every finished module is **one complete HTML file** with inline CSS, JS, SVG and all educational content. No companion assets or network connection required.
 
+## Ranked curriculum and no-repetition tracking
+
+- **Central ranked file:** [KEYWORD_INDEX.md](KEYWORD_INDEX.md) lists all 265 keywords in exactly the order of the [attached ranked PDF](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf), with topic, importance, completion status and committed HTML links.
+- **Question audit:** [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md) records published question stems. Wording changes, synonyms and new scenarios do not make repeated learning objectives unique.
+- Before starting, read the index, PDF, registry and full build standard. Default to the **earliest pending rank**, unless the user explicitly requests a different term.
+- After creating and verifying the HTML, update the same ranked row, add the module link, append its eight question stems to the registry and refresh the README progress. A module with an unupdated central tracker is not considered finished.
+
 ## Quality gate
 
 Check the eight original question stages, source grounding, option plausibility and answer keys, unique diagrams, theme switching, keyboard usability, 360/390/768/1280/1440px layout, text wrapping, icon sizing, reset and quiz logic, and offline opening. Never claim browser-verified visual quality on the basis of source inspection alone.
