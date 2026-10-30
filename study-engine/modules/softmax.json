@@ -16,7 +16,8 @@
         "It changes input text into numbers before the model starts making predictions."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> Softmax converts numbers from an AI model into chances for its choices. Think of an AI guessing “cat,” “dog,” or “bird.” Softmax can give each one a percentage. The three percentages add up to 100%."
+      "explanation": "<strong>In simple words:</strong> Softmax turns a model’s scores into chances. If it considers cat, dog, and bird, those chances add up to 100%.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Softmax converts numbers from an AI model into chances for its choices. Think of an AI guessing “cat,” “dog,” or “bird.” Softmax can give each one a percentage. The three percentages add up to 100%."
     },
     {
       "tag": "Why it exists",
@@ -29,7 +30,8 @@
         "It deletes lower-scoring choices so the model has fewer options to consider."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> Models produce scores that may be large, small, or negative. You cannot read them directly as percentages. Softmax transforms them into a probability distribution, so the choices can be compared. It does not guarantee accuracy."
+      "explanation": "<strong>In simple words:</strong> A score of 5 does not mean a 5% chance. Softmax converts scores into probabilities that are easier to compare.",
+      "technicalExplanation": "<strong>Correct: A.</strong> Models produce scores that may be large, small, or negative. You cannot read them directly as percentages. Softmax transforms them into a probability distribution, so the choices can be compared. It does not guarantee accuracy."
     },
     {
       "tag": "Raw scores to chances",
@@ -42,7 +44,8 @@
         "Logits are preselected labels; Softmax chooses just one before the model responds."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> A <strong>logit</strong> is a raw score before Softmax. If the logits are <code>[2, 1, 0]</code>, Softmax turns them into approximately <code>[66.5%, 24.5%, 9.0%]</code>. Higher logit means higher probability, but the raw numbers themselves are not percentages."
+      "explanation": "<strong>In simple words:</strong> Logits are raw scores. If the scores are 2, 1, and 0, Softmax gives the first choice the biggest probability.",
+      "technicalExplanation": "<strong>Correct: C.</strong> A <strong>logit</strong> is a raw score before Softmax. If the logits are <code>[2, 1, 0]</code>, Softmax turns them into approximately <code>[66.5%, 24.5%, 9.0%]</code>. Higher logit means higher probability, but the raw numbers themselves are not percentages."
     },
     {
       "tag": "Worked example",
@@ -55,7 +58,8 @@
         "For logits 2, 1, 0, subtract the smallest value and normalize afterward."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> Step 1: Start with <code>[2, 1, 0]</code>. Step 2: Exponentiate to get about <code>[7.39, 2.72, 1]</code>. Step 3: Add them: <code>11.11</code>. Step 4: Divide each by the total. You get approximately <code>66.5%, 24.5%, 9.0%</code>."
+      "explanation": "<strong>In simple words:</strong> Softmax changes each score using an exponential, then divides by the total. This makes the probabilities add up to 100%.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Step 1: Start with <code>[2, 1, 0]</code>. Step 2: Exponentiate to get about <code>[7.39, 2.72, 1]</code>. Step 3: Add them: <code>11.11</code>. Step 4: Divide each by the total. You get approximately <code>66.5%, 24.5%, 9.0%</code>."
     },
     {
       "tag": "Python &amp; neural nets",
@@ -68,7 +72,8 @@
         "Apply torch.softmax(image, dim=0) before the neural network extracts input features."
       ],
       "answer": "a",
-      "explanation": "<strong>Correct: A.</strong> In PyTorch, <code>torch.softmax(scores, dim=0)</code> turns this one-dimensional score list into probabilities. A simple classifier computes features, makes final class scores, and can then apply Softmax. During training, <code>CrossEntropyLoss</code> normally takes the raw logits directly (it handles the required normalization internally), so do not apply Softmax first."
+      "explanation": "<strong>In simple words:</strong> In PyTorch, torch.softmax turns a list of model scores into probabilities. For three animal labels, you get three comparable chances.",
+      "technicalExplanation": "<strong>Correct: A.</strong> In PyTorch, <code>torch.softmax(scores, dim=0)</code> turns this one-dimensional score list into probabilities. A simple classifier computes features, makes final class scores, and can then apply Softmax. During training, <code>CrossEntropyLoss</code> normally takes the raw logits directly (it handles the required normalization internally), so do not apply Softmax first."
     },
     {
       "tag": "Transformers &amp; LLMs",
@@ -81,7 +86,8 @@
         "Softmax is used to train models but is disabled during token generation."
       ],
       "answer": "c",
-      "explanation": "<strong>Correct: C.</strong> Transformer <strong>attention</strong> applies Softmax to attention scores to determine how strongly a token attends to positions. Separately, the model produces a logit for each vocabulary token; Softmax can turn those logits into next-token probabilities. A decoder might sample a lower-probability token; Softmax does not force the top one to be chosen."
+      "explanation": "<strong>In simple words:</strong> In attention, Softmax decides how much each word matters to another word. During text generation, it also assigns chances to possible next tokens.",
+      "technicalExplanation": "<strong>Correct: C.</strong> Transformer <strong>attention</strong> applies Softmax to attention scores to determine how strongly a token attends to positions. Separately, the model produces a logit for each vocabulary token; Softmax can turn those logits into next-token probabilities. A decoder might sample a lower-probability token; Softmax does not force the top one to be chosen."
     },
     {
       "tag": "Training &amp; inference",
@@ -94,7 +100,8 @@
         "Temperature chooses labels; cross-entropy changes context length; backpropagation directly generates each predicted token."
       ],
       "answer": "b",
-      "explanation": "<strong>Correct: B.</strong> <strong>Temperature</strong> changes the shape of probabilities during decoding: lower means sharper, higher means flatter. <strong>Cross-entropy loss</strong> measures how poorly a prediction matches the correct token. <strong>Backpropagation</strong> computes gradients so training can update weights. <strong>Numerical stability</strong> prevents overflow by subtracting the largest logit before exponentiation; this leaves Softmax probabilities unchanged. In practical training, loss is computed from logits using a stable implementation."
+      "explanation": "<strong>In simple words:</strong> Temperature controls how spread out the chances are. Loss measures prediction error; backpropagation helps correct it. Stable calculations avoid number overflow.",
+      "technicalExplanation": "<strong>Correct: B.</strong> <strong>Temperature</strong> changes the shape of probabilities during decoding: lower means sharper, higher means flatter. <strong>Cross-entropy loss</strong> measures how poorly a prediction matches the correct token. <strong>Backpropagation</strong> computes gradients so training can update weights. <strong>Numerical stability</strong> prevents overflow by subtracting the largest logit before exponentiation; this leaves Softmax probabilities unchanged. In practical training, loss is computed from logits using a stable implementation."
     }
   ],
   "diagramStyle": null,
