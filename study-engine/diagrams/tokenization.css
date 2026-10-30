@@ -1,0 +1,33 @@
+/* Tokenization lesson: bespoke graphic styling only. Quiz shell/themes are shared. */
+.tk-hero,.tk-fig{min-width:0;color:#284459;font-family:inherit}
+.tk-hero{margin:0 0 24px;border:1px solid #cbe0e1;border-radius:20px;padding:clamp(17px,2.8vw,28px);background:radial-gradient(circle at 8% 12%,#e6f4ed,transparent 47%),linear-gradient(125deg,#f4fafc,#fff9ee);box-shadow:0 9px 22px #284c6412}
+.tk-hero h2{font-size:clamp(1.2rem,2.5vw,1.8rem);line-height:1.27;color:#2b5465;margin:7px 0}
+.tk-hero p{font-size:.87rem;max-width:72ch;color:#5a7483;line-height:1.55;margin:3px 0 15px}
+.tk-kicker{display:inline-block;font-size:.69rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#32816e}
+.tk-fig{padding:clamp(14px,2.6vw,25px);background:radial-gradient(ellipse at 90% 5%,#e4f4ed,transparent 48%),linear-gradient(145deg,#f8fbfe,#fffdf7)}
+.tk-fig h3{font-size:clamp(1.01rem,2vw,1.21rem);line-height:1.36;margin:7px 0 15px;font-weight:850;color:#31516a}
+.tk-scene{overflow-x:auto;overflow-y:hidden;max-width:100%;border:1px solid #d9e7eb;border-radius:13px;background:linear-gradient(#fff,#f8fbfc);scrollbar-color:#b0cad3 transparent}
+.tk-scene svg{display:block;max-width:none;width:100%;min-width:780px;height:auto}
+.tk-hero .tk-scene svg{min-width:780px}
+.tk-scene svg text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.tk-note{font-size:.81rem;line-height:1.65;color:#5f7888;margin:13px 0 0}
+.tk-code-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(215px,.75fr);gap:12px;margin-top:13px;align-items:stretch}
+.tk-code{min-width:0;background:#17273a;color:#e7eef7;border:1px solid #304a61;overflow:hidden;border-radius:12px}
+.tk-code-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap;background:#263b51;color:#cad9e7;font-size:.75rem;font-weight:850;padding:10px 12px}
+.tk-code-head i{width:8px;height:8px;border-radius:50%;background:#ec9785;box-shadow:13px 0 #f1c77e,26px 0 #83c9a0;margin-right:30px}
+.tk-code-head span{font-size:.67rem;color:#9db4c8;font-weight:550;margin-left:auto}
+.tk-code pre{padding:15px 15px;margin:0;overflow-x:auto;tab-size:2;white-space:pre;line-height:1.58;font-size:clamp(.66rem,1.3vw,.8rem)}
+.tk-code code{background:none;border:0;font-size:inherit;color:inherit;padding:0}
+.tk-pykw{color:#d9b6fb}.tk-pyc{color:#93b5a3}.tk-pystr{color:#b8e9c4}.tk-pyfn{color:#9bd7ff}
+.tk-code-aside{border:1px solid #dbe7e9;background:#fff;display:flex;flex-direction:column;gap:7px;justify-content:center;min-width:0;padding:16px;border-radius:12px}
+.tk-code-aside strong{font-size:.93rem;color:#2a6372;margin-bottom:5px}
+.tk-code-aside>span{font-weight:850;color:#607b8a;font-size:.75rem;letter-spacing:.02em}
+.tk-code-aside>b{display:block;font-size:.77rem;overflow-wrap:anywhere;color:#42627a;background:#edf5f8;border-radius:8px;padding:9px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.tk-code-aside small{font-size:.72rem;color:#768899}
+.tk-references{background:#fff;border:1px solid #d9e4e9;border-radius:12px;padding:13px 17px;margin-top:20px;color:#5a7180;font-size:.8rem}
+.tk-references summary{font-weight:850;color:#376c7e;cursor:pointer}
+.tk-references li{margin:8px 0;overflow-wrap:anywhere}
+.tk-references a{color:#146c92}
+@media(max-width:940px){.tk-code-layout{grid-template-columns:1fr}.tk-code-aside{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;justify-content:start}.tk-code-aside>strong,.tk-code-aside>small{grid-column:1/-1}}
+@media(max-width:650px){.tk-hero{padding:16px 12px}.tk-fig{padding:13px}.tk-fig h3{font-size:1.02rem}.tk-scene svg,.tk-hero .tk-scene svg{min-width:760px}.tk-code-aside{grid-template-columns:1fr}.tk-code pre{font-size:.69rem}.tk-note:after{content:"  Swipe the illustration sideways on narrow screens.";font-weight:700;color:#577d91}}
+@media(prefers-reduced-motion:reduce){.tk-hero *,.tk-fig *{transition:none!important;animation:none!important}}
