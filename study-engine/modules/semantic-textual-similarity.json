@@ -7,7 +7,7 @@
   "hero": "<section class=\"sts-hero\" aria-label=\"Semantic textual similarity concept\"><span class=\"sts-eyebrow\">SEMANTIC TEXTUAL SIMILARITY · VISUAL OVERVIEW</span><h2>Different words. Similar idea.</h2><p>STS compares what sentences <strong>mean</strong>, not only the words they share.</p><div class=\"sts-hero-stage\"><div class=\"sts-hero-sentence\">“The movie was fantastic.”<small>Sentence A</small></div><div class=\"sts-hero-center\"><div class=\"sts-hero-link\">≈</div><span>similar meaning</span></div><div class=\"sts-hero-sentence sts-hero-alt\">“The film was wonderful.”<small>Sentence B</small></div></div><div class=\"sts-hero-caption\">One concept, two phrasings. A similarity model can compare their numeric representations.</div></section>",
   "questions": [
     {
-      "stem": "Layer 1: What is Semantic Textual Similarity (STS) in Natural Language Processing?",
+      "stem": "What is Semantic Textual Similarity (STS) in Natural Language Processing?",
       "tag": "The everyday idea",
       "options": [
         "STS counts how many letters two sentences share.",
@@ -20,7 +20,7 @@
       "explanation": "<strong>Correct: B.</strong> STS asks, “Do these sentences express a similar idea?” For example, “A kid pedals a bike” and “A child rides a bicycle” have different wording but much the same meaning. A similarity score summarizes that relationship; it is not a guarantee that the sentences are equivalent in every detail."
     },
     {
-      "stem": "Layer 2: Why is Semantic Textual Similarity needed, and what problems does it solve when comparing text?",
+      "stem": "Why is Semantic Textual Similarity needed, and what problems does it solve when comparing text?",
       "tag": "Why STS matters",
       "options": [
         "It catches paraphrases and avoids being fooled by shared words.",
@@ -33,7 +33,7 @@
       "explanation": "<strong>Correct: A.</strong> Keyword overlap can fail in two directions: “bought a bike” and “purchased a bicycle” share few important words despite similar meaning, while two uses of “bank” can mean different things. STS helps semantic search, duplicate detection, and matching similar questions, but model mistakes are still possible."
     },
     {
-      "stem": "Layer 3: How does Semantic Textual Similarity measure the similarity in meaning between sentences, even when they use different words or sentence structures?",
+      "stem": "How does Semantic Textual Similarity measure the similarity in meaning between sentences, even when they use different words or sentence structures?",
       "tag": "From wording to meaning",
       "options": [
         "It ignores every word except the longest one.",
@@ -46,7 +46,7 @@
       "explanation": "<strong>Correct: D.</strong> A sentence embedding model transforms an entire sentence into a vector learned to capture useful semantic relationships. Sentences describing similar ideas tend to receive vectors that are closer under the model’s similarity measure. This is learned statistical behavior—not perfect human understanding—and the score depends on the model and task."
     },
     {
-      "stem": "Layer 4: How is Semantic Textual Similarity calculated using sentence embeddings, cosine similarity, vector representations, and similarity scores?",
+      "stem": "How is Semantic Textual Similarity calculated using sentence embeddings, cosine similarity, vector representations, and similarity scores?",
       "tag": "Cosine similarity math",
       "options": [
         "Multiply the number of words in the two sentences.",
@@ -59,7 +59,7 @@
       "explanation": "<strong>Correct: C.</strong> Sentence embeddings are numeric vectors. Cosine similarity compares their directions: the dot product divided by the product of their lengths. For illustrative vectors A = [3,4] and B = [4,3], the dot product is 24, both lengths are 5, and cosine similarity is 24/25 = <strong>0.96</strong>. These are hand-chosen teaching vectors, not actual sentence embeddings. Cosine scores range from −1 to 1; their real-world interpretation needs calibration."
     },
     {
-      "stem": "Layer 5: How is Semantic Textual Similarity implemented in Python using Sentence Transformers, embedding generation, and cosine similarity calculations?",
+      "stem": "How is Semantic Textual Similarity implemented in Python using Sentence Transformers, embedding generation, and cosine similarity calculations?",
       "tag": "Python implementation",
       "options": [
         "Use <code>sorted()</code> on both sentences and count matching letters.",
@@ -72,7 +72,7 @@
       "explanation": "<strong>Correct: B.</strong> Sentence Transformers can generate embeddings for both sentences. The <code>util.cos_sim</code> function computes cosine similarity between their vectors. The code uses <code>all-MiniLM-L6-v2</code> from the Sentence Transformers documentation. The numeric output depends on the chosen model and text; no specific score is promised."
     },
     {
-      "stem": "Layer 6: How do bi-encoders, cross-encoders, Siamese networks, and transformer-based embedding models perform Semantic Textual Similarity, and how are they trained using contrastive learning?",
+      "stem": "How do bi-encoders, cross-encoders, Siamese networks, and transformer-based embedding models perform Semantic Textual Similarity, and how are they trained using contrastive learning?",
       "tag": "Model architectures & training",
       "options": [
         "A cross-encoder computes separate vectors for each sentence, stores them, and searches a vector index.",
@@ -85,7 +85,7 @@
       "explanation": "<strong>Correct: D.</strong> <strong>Bi-encoders</strong> use a sentence model on each input separately, so vectors can be precomputed and indexed. <strong>Cross-encoders</strong> read both texts together and directly score the pair, often for reranking. <strong>Siamese</strong> typically means two branches share model weights. <strong>Contrastive learning</strong> trains embeddings so positive pairs become more similar than negative pairs. Not every cross-encoder is trained with contrastive loss."
     },
     {
-      "stem": "Layer 7: How are Semantic Textual Similarity systems evaluated and optimized in production, including STS benchmarks, Pearson and Spearman correlations, semantic search, model fine-tuning, multilingual similarity, latency, and scalability?",
+      "stem": "How are Semantic Textual Similarity systems evaluated and optimized in production, including STS benchmarks, Pearson and Spearman correlations, semantic search, model fine-tuning, multilingual similarity, latency, and scalability?",
       "tag": "Evaluation & production",
       "options": [
         "Compare human STS ratings, retrieval quality, languages and speed.",
