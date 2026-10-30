@@ -4,6 +4,12 @@
 
 **Curriculum progress: 15 / 265 keywords completed.** Next in PDF rank order: **016 — Context length**.
 
+### New: reusable browser-hosted study engine
+
+- **[Shared study library (GitHub Pages)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/)** — Softmax, Masking, and Positional Encoding are migrated as seven-layer modules, with their original custom diagrams.
+- **[Engine source and instructions](study-engine/README.md)** — shared `index.html`, `core.css`, `quiz-theme.js`, `app.js`; each new keyword is a unique JSON lesson plus optional diagram-specific CSS.
+- **Direct lesson example:** [Positional Encoding](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding). The browser-hosted version uses shared files; older independent HTML lessons remain available. Pages URLs depend on a successful GitHub Actions deployment.
+
 ### Start here
 
 - **[Ranked keyword index](KEYWORD_INDEX.md)** — complete 265-keyword curriculum in PDF order, with progress and working lesson links.
