@@ -1,0 +1,32 @@
+/* Self-Attention — distinct SVG lessons built around token flows, sequence processing, QKV algebra, learned attention and inference engineering. */
+.sa-hero,.sa-fig{color:#243e50;font-family:inherit;min-width:0}
+.sa-hero{padding:clamp(17px,2.7vw,29px);background:radial-gradient(ellipse at 0% 0%,#e1f8f3,transparent 53%),linear-gradient(130deg,#f4fafc,#fff9ed);border:1px solid #cee5e7;border-radius:19px;margin:0 0 24px}
+.sa-hero h2{font-size:clamp(1.15rem,2.4vw,1.78rem);line-height:1.26;color:#28576a;margin:6px 0}
+.sa-hero p{font-size:.88rem;color:#5b7281;line-height:1.52;margin:0 0 14px}
+.sa-kicker{display:block;font-size:.71rem;font-weight:850;color:#248c7a;letter-spacing:.12em;text-transform:uppercase}
+.sa-fig{padding:clamp(14px,2.65vw,25px);background:radial-gradient(ellipse at 100% 0%,#e4f7f0,transparent 47%),linear-gradient(140deg,#f7fcfe,#fffefa)}
+.sa-fig h3{font-size:clamp(1.01rem,1.9vw,1.24rem);color:#2c5467;margin:7px 0 14px;line-height:1.32}
+.sa-scene{border-radius:13px;border:1px solid #d7e7ea;background:linear-gradient(#fff,#f9fcfe);max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-color:#bad3dc transparent}
+.sa-scene svg{display:block;width:100%;height:auto;min-width:660px;max-width:none}
+.sa-hero .sa-scene svg{min-width:690px}
+.sa-scene svg text{font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+.sa-note{margin:13px 0 0;color:#5c7485;font-size:.82rem;line-height:1.6}
+.sa-note strong{color:#217e70}
+.sa-formula{display:inline-block;font-weight:750;white-space:nowrap;color:#266e77}
+.sa-code-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:12px;align-items:stretch}
+.sa-code{background:#14283c;color:#e8f1f8;border-radius:12px;border:1px solid #30465a;overflow:hidden;min-width:0}
+.sa-code-head{padding:10px 13px;font-size:.74rem;font-weight:850;background:#253e52;color:#c4dcea}
+.sa-code-head i{display:inline-block;width:8px;height:8px;background:#f2a078;border-radius:50%;box-shadow:14px 0 #e9cd7d,28px 0 #8cd6aa;margin-right:34px}
+.sa-code pre{overflow:auto;margin:0;padding:13px 15px;font-size:clamp(.64rem,1.2vw,.76rem);line-height:1.5;white-space:pre;tab-size:2}
+.sa-code code{background:none;border:0;padding:0;color:inherit;font-size:inherit}
+.sa-kw{color:#d9b6f6}.sa-fn{color:#94d4f7}.sa-str{color:#c5e7a6}.sa-cm{color:#a2b4c3}.sa-nm{color:#f6d48e}
+.sa-inset{border:1px solid #d7e5e9;background:#fff;border-radius:12px;padding:11px;min-width:0}
+.sa-inset strong{font-size:.83rem;color:#386076}
+.sa-inset .sa-scene{margin-top:9px}.sa-inset .sa-scene svg{min-width:0}
+.sa-math-strip{background:#f0f4ff;border:1px solid #d5ddf0;border-radius:12px;padding:11px 13px;color:#3a5785;font-size:.86rem;font-weight:750;line-height:1.7;margin-top:12px}
+.sa-source{border-radius:13px;border:1px solid #d6e8e9;background:#fff;padding:13px 16px;margin-top:22px;font-size:.8rem;color:#5d7585}
+.sa-source summary{cursor:pointer;font-weight:850;color:#326b82}
+.sa-source li{margin:6px 0;overflow-wrap:anywhere}.sa-source a{color:#156e93}
+@media(max-width:860px){.sa-code-layout{grid-template-columns:1fr}.sa-inset .sa-scene svg{width:100%}}
+@media(max-width:650px){.sa-hero{padding:17px 12px}.sa-fig{padding:15px 10px}.sa-scene svg,.sa-hero .sa-scene svg{min-width:630px}.sa-code pre{font-size:.67rem}}
+@media(prefers-reduced-motion:reduce){.sa-hero *,.sa-fig *{animation:none!important;transition:none!important}}
