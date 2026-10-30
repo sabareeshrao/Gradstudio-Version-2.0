@@ -608,6 +608,55 @@ body{transition:background-color .15s}
 @media(max-width:640px){.api-retry-compare{grid-template-columns:1fr}.api-arch-foot span{width:100%}}
 @media(max-width:400px){.api-arch-services,.api-arch-foundation{gap:5px}.api-arch-services>div,.api-arch-foundation>div{padding:10px 5px}.api-arch-services b,.api-arch-foundation b{font-size:.7rem}.api-arch-clients>strong{display:none}}
 
+
+/* SVG containment repair: original Multimodal rule '.q-fig svg{width:100%}'
+   is for full-width illustrations, NOT small inline icons. */
+#quiz .q-fig .api-diagram svg.api-icon{
+ display:inline-block;
+ width:22px;
+ height:22px;
+ min-width:22px;
+ max-width:22px;
+ min-height:22px;
+ max-height:22px;
+ flex:0 0 22px;
+ vertical-align:middle;
+}
+#quiz .q-fig .api-diagram .api-device svg.api-icon{
+ width:33px;height:33px;min-width:33px;max-width:33px;min-height:33px;max-height:33px;flex-basis:33px;
+}
+#quiz .q-fig .api-diagram .api-shop-top svg.api-icon,
+#quiz .q-fig .api-diagram .api-retry-break svg.api-icon{
+ width:16px;height:16px;min-width:16px;max-width:16px;min-height:16px;max-height:16px;flex-basis:16px;
+}
+#quiz .q-fig .api-diagram .api-outcome svg.api-icon,
+#quiz .q-fig .api-diagram .api-retry-result svg.api-icon,
+#quiz .q-fig .api-diagram .api-arch-foot svg.api-icon{
+ width:18px;height:18px;min-width:18px;max-width:18px;min-height:18px;max-height:18px;flex-basis:18px;
+}
+#quiz .q-fig .api-diagram .api-arch-gateway>div>svg.api-icon,
+#quiz .q-fig .api-diagram .api-error-side>svg.api-icon{
+ width:28px;height:28px;min-width:28px;max-width:28px;min-height:28px;max-height:28px;flex-basis:28px;
+}
+#quiz .q-fig .api-diagram .api-process{
+ display:flex;align-items:center;min-width:0;gap:9px;
+}
+#quiz .q-fig .api-diagram .api-process>span,
+#quiz .q-fig .api-diagram .api-pane,
+#quiz .q-fig .api-diagram .api-retry-node,
+#quiz .q-fig .api-diagram .api-step{
+ min-width:0;overflow-wrap:break-word;word-break:normal;
+}
+#quiz .q-fig .api-diagram .api-process>span{flex:1;line-height:1.5;}
+#quiz .q-fig .api-diagram .api-pane-title,
+#quiz .q-fig .api-diagram .api-lane-title{min-width:0;}
+#quiz .q-fig .api-diagram .api-shop-top>span{
+ display:inline-flex;align-items:center;gap:7px;
+}
+/* Product artwork remains deliberately responsive, not icon-sized. */
+#quiz .q-fig .api-diagram .api-art svg{
+ width:100%;height:auto;min-width:0;max-width:155px;max-height:100px;
+}
 </style></head><body><div class="topbar">
   <div class="topbar-inner">
     <div class="brand">Web API Study<small>Software Engineering · API Design</small></div>
