@@ -29,6 +29,11 @@
       "slug": "rag",
       "title": "Retrieval-Augmented Generation (RAG)",
       "domain": "LLM Architecture · Large Language Models (LLMs)"
+    },
+    {
+      "slug": "turing-test",
+      "title": "Turing Test",
+      "domain": "Foundations of Artificial Intelligence · Artificial Intelligence (AI)"
     }
   ]
 }
