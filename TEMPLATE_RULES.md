@@ -14,6 +14,7 @@
 - Show only **Subject, Domain, Keyword** in the metadata.
 - If only a keyword is given, create **eight progressively harder questions**, ending with exactly one scenario-based interview question.
 - If questions are supplied, preserve their exact wording and order, even if the count is not eight. Number visibly from 1 without altering the question sentence.
+- **Strict zero-repetition:** Audit all questions against each other and existing curriculum modules. A reworded question that asks for the same concept, reasoning, or answer is still a duplicate. Define one unique tested learning objective per question; compare semantics, not just exact wording. Preserve any user-supplied stems and flag conflicts rather than editing them.
 - Four genuinely plausible, similarly sized options per MCQ, exactly one correct. Avoid easy answer-length clues, predictable patterns, and jargon-heavy reading fatigue.
 - Explain each answer in approximately **50 words** (normally 40–60).
 - Use **one high-quality, concept-specific diagram per question**. Real mechanisms, real objects, varied visual forms; never just boxes of text.
