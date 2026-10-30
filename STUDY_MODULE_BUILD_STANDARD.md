@@ -295,6 +295,28 @@ Choose a safe slug and avoid collisions. If revising an existing module, update 
 
 Escape user-provided text before adding it to HTML. Prevent untrusted question text from becoming executable markup. Avoid unsafe dynamic HTML insertion for untrusted content. Keep scripts scoped so multiple interactive labs don't collide over global IDs or event handlers. No hidden external network calls, analytics, or tracking.
 
+## 6.3 Central ranked curriculum index and attached source PDF — mandatory
+
+The repository contains a **canonical ranked keyword curriculum**:
+
+- [KEYWORD_INDEX.md](KEYWORD_INDEX.md): the **single central file** listing every keyword in rank order, with importance, exact topic, completion status, and clickable links to completed standalone HTML files.
+- [references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf): an **identical copy of the ranked 265-term PDF** used as the source of truth.
+- [QUESTION_REGISTRY.md](QUESTION_REGISTRY.md): the existing exact MCQ stems for semantic no-repetition checks, with links back to their HTML modules.
+- [README.md](README.md): repository landing page pointing to all three.
+
+**Required AI workflow for any future keyword:**
+
+1. Read the source PDF and central index first. Preserve its **rank, exact keyword, exact topic, and importance tier**. The source PDF controls ranking; do not alphabetize or reorder.
+2. Unless the user explicitly asks for another rank, pick the **earliest Pending item** in `KEYWORD_INDEX.md`. User-requested keywords and ranks always take precedence.
+3. Check the question registry and existing modules for **semantic duplication**. Reworded or recontextualized questions count as duplicates, even across module boundaries.
+4. Create and independently verify the complete monolithic HTML module. Link only to an actual committed file; never mark a draft as Complete.
+5. **Immediately after a successful module commit**, update the matching row in `KEYWORD_INDEX.md` from Pending → Complete, add its verified relative HTML link, append the question stems and lesson link to `QUESTION_REGISTRY.md`, and update completion counts and the next pending rank in both the central index and README.
+6. **Never** silently delete old rows, duplicate ranks, change the canonical 265-term order, or substitute guesses for source PDF content. If the PDF is updated, audit changed ranks and regenerate the list with an explicit reconciliation.
+7. If the index and PDF disagree, pause the index edit, inspect the actual PDF rank and reconcile the discrepancy before claiming completion. If the question registry lacks a published module, backfill it before generating further content.
+8. Use relative GitHub links to actual committed files; keep filenames stable. The central index is the human/AI navigation source, not a separate runtime dependency of standalone HTML modules.
+
+**Hard-fail rule:** A new lesson is **not fully delivered** if its HTML was pushed but the central ranked index and exact-question registry were not updated. Conversely, an index link is not valid until the HTML file exists.
+
 ## 7. Required build workflow for every keyword
 
 1. **Inspect:** Read this standard, `TEMPLATE_RULES.md`, latest original Multimodal `index.html`, corrected Web API module, and current theme guide.
