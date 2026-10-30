@@ -1,11 +1,11 @@
 # Gradstudio — AI Module Build & Quality Standard
 
-**Version:** 1.3  
+**Version:** 1.4  
 **Status:** Required standard for future keyword-study modules  
 **Repository:** https://github.com/sabareeshrao/Gradstudio-Version-2.0  
 **Audience:** Any AI assistant, coding agent, developer, reviewer, or maintainer creating or fixing a module.
 
-> **Operating rule: Develop modularly. Deliver monolithically. Preserve questions. Teach through excellent diagrams. Do not redesign the approved UI.**
+> **Operating rule: Develop modularly. Deliver monolithically. Preserve questions. The original seven Multimodal Training diagrams—not generic boxes—are the mandatory visual gold standard. No two question-card diagrams may share a composition.**
 
 ## 0. Purpose, scope, and order of authority
 
@@ -26,7 +26,7 @@ Never “fix,” summarize, simplify, or paraphrase supplied question wording un
 
 | Repository path | Use | Important limitation |
 |---|---|---|
-| `index.html` | Original Multimodal Training visual design: page width, question card, ordinary circular radio inputs, score/progress/reset behavior, sticky header, and 15-theme selector | This source may reference separate Concept Lab files. Do **not** deliver a module with those dependencies. |
+| `index.html` | **Mandatory original visual gold standard:** inspect ALL SEVEN question-card diagrams (`d-scale`, `d-space`, `d-dual`, `d-hub`, `d-retail`, `d-paths`, `interview-section`), as well as UI and 15 themes | Never treat it merely as a CSS/quiz-shell reference. Reproduce its craftsmanship, not the same topic imagery. |
 | `lessons/api-design/Web-API-Keyword-Study-008.html` | Corrected standalone baseline for options, responsive figures, diagrams, and the **small SVG icon sizing repair** | Web API content is an example, not content to copy to unrelated topics. |
 | `lessons/llm-foundations/GPT-LLM-Foundation-Keyword-Study-008.html` | Example of topic-specific questions, explanatory diagrams, and small interactive demonstrations | Do not copy GPT content, interaction scenarios, or illustrative probabilities into other topics. |
 | `THEME_GUIDE.md` | Authoritative names and IDs of the 15 existing palettes | Do not silently add, rename, duplicate, or delete themes. |
@@ -149,9 +149,19 @@ This is an **intent-level and learning-objective check**, not merely a text-stri
 
 **Pass condition:** Eight nonredundant, independently defensible learning objectives, with no semantic duplicates within the module or substantially equivalent repeats of existing curriculum questions. If existing curriculum already has redundant questions, note that debt without silently rewriting unrelated modules.
 
+## 3.7 Non-negotiable visual-reference gate
+
+**Mandatory companion standard:** [VISUAL_GOLD_STANDARD.md](VISUAL_GOLD_STANDARD.md). Before building ANY keyword module, inspect the **actual seven diagrams in the original root [Multimodal Training `index.html`](../index.html)**. Reading CSS declarations is not enough. That original is the benchmark for diagram quality, visual inventiveness, and use of concrete objects—not merely the approved quiz UI.
+
+**Every question card must be individually top-notch.** No two diagrams in a module or adjacent keyword batch may reuse the same dominant composition, even when titles, colors, examples, text, icons or arrows change. Reusing a uniform `studio-story-1 … -8` or `tkfigure` storyboard for a new keyword is a hard fail. Share the boilerplate quiz shell, NEVER the eight visual compositions.
+
+**No text in boxes masquerading as diagrams.** Never use panels of sentences, generic feature cards, or simple colored rectangles connected by arrows as the teaching visual. Small technical labels, token strings, axes, code or text inside a depicted realistic UI may be necessary; those are not explanatory text-box substitutes. If removing explanatory prose leaves only empty cards and arrows, the diagram fails.
+
+**Approval requires rendered visual evidence.** Inspect all eight actual diagrams on desktop and mobile and compare them as a visual set to the seven original Multimodal diagrams. If not reviewed in a browser, report "visual QA not performed" and do not claim a premium or fully finished diagram set. Follow the explicit hard-fail rubric and sign-off in the companion standard.
+
 ## 4. Diagram quality is the primary selling point
 
-**A diagram is a teaching instrument, not decoration. Every question gets one distinct, polished visual.**
+**A diagram is a teaching instrument, not decoration. Every question gets one visually unique, bespoke composition at least as instructive and polished as the original Multimodal Training's seven different diagrams. See [VISUAL_GOLD_STANDARD.md](VISUAL_GOLD_STANDARD.md).**
 
 ### 4.1 Design the learning mechanism before drawing
 
@@ -163,7 +173,7 @@ For each question, write an internal design brief:
 - **Visible outcome:** What becomes clearer after studying it?
 - **Test:** Can a learner explain the key idea from the visual without reading an essay?
 
-Only then choose the visual form. Don't use eight nearly identical flowcharts.
+Only then choose the visual form. Do not reuse the original diagrams' exact subject artwork, but the resulting composition and craft must meet their benchmark. Eight nearly identical flowcharts/cards are forbidden.
 
 ### 4.2 Recommended visual forms
 
@@ -182,7 +192,7 @@ Use screenshots or real-world-style illustrations only when necessary and approp
 
 ### 4.3 Visual craft rules
 
-- Every question's diagram has a **different instructional job**. Repetition is allowed only where it creates a clear, useful visual comparison.
+- Every question's diagram has a **different instructional job AND a unique dominant visual composition**. Two diagrams with the same skeleton and changed labels are forbidden, even when they compare different concepts.
 - Prefer layered scenes, miniature interfaces, traces, timelines, token paths, charts, realistic object illustrations, and before/after states.
 - Use a coherent design system: consistent corner radii, strokes, spacing, typography, connector thickness, and color semantics.
 - Avoid giant icons, bulky arrowheads, meaningless shadows, heavy borders, unnecessary labels, and empty decorative space.
@@ -327,14 +337,14 @@ After every new module, update `../KEYWORD_INDEX.md` and `../QUESTION_REGISTRY.m
 
 ## 7. Required build workflow for every keyword
 
-1. **Inspect:** Read this standard, `TEMPLATE_RULES.md`, latest original Multimodal `index.html`, corrected Web API module, and current theme guide.
+1. **Inspect:** Read this standard and [VISUAL_GOLD_STANDARD.md](VISUAL_GOLD_STANDARD.md); visually study all seven actual original Multimodal `index.html` question-card diagrams, corrected Web API module, and current theme guide.
 2. **Scope:** Determine subject, domain, keyword, supplied source constraints and whether questions must be preserved verbatim.
 3. **Blueprint:** Map each question to one distinct learning objective, one answer concept, and one diagram mechanism. Look for repetition or missing prerequisites.
 4. **Draft content:** Write/retain the question stems, four alternatives, answer keys, and 40–60-word explanations.
 5. **Audit distractors:** Check technical truth, plausibility, length balance, language accessibility, one best answer and answer-letter distribution.
 6. **Design scenes:** Build the diagrams using content-driven layout and purposeful art. Add optional interaction only where it teaches.
 7. **Assemble:** Plug topic content into the existing approved UI; embed all styles, scripts, diagrams and theme definitions in one file.
-8. **Run static validation:** Test every invariant in section 8 before committing.
+8. **Run static validation:** Test every invariant in section 8, including a unique figure-composition fingerprint, before committing.
 9. **Run browser validation:** Actually open the HTML in a browser at desktop and mobile sizes. Check critical interactions and each diagram, then fix any bugs.
 10. **Commit safely:** Create or update only the intended keyword file in the correct repo; confirm the resulting GitHub file content.
 11. **Verify delivery:** Check the raw file and the Pages address when accessible, and distinguish repository success from Pages deployment success.
@@ -354,7 +364,8 @@ For a batch, repeat these gates **for each module**, not just the first sample.
 - [ ] For eight questions, two correct answers per A/B/C/D, unless doing so creates an incorrect key.
 - [ ] No conspicuous answer-length patterns or trivial distractors.
 - [ ] No semantically repeated learning objective within this module or compared with published curriculum modules, even when wording changes.
-- [ ] One meaningful figure per question, with no repeated unrelated content.
+- [ ] One **unique dominant visual composition** per question, different from the other seven and nearby modules; all scenes benchmarked against the original seven figures.
+- [ ] No text-in-box substitutes; removing explanatory labels must leave a meaningful graphic mechanism. No cloned eight-scene storyboard.
 - [ ] No duplicated element IDs or missing IDs used by JavaScript.
 - [ ] JavaScript parses and does not report console errors at load or interaction.
 - [ ] No missing or externally required CSS, JS, image, font, data or network dependency.
@@ -373,7 +384,7 @@ Open the actual standalone HTML in Chromium or another real browser at **360, 39
 - [ ] Arrowheads are modest, directions are meaningful, and lines don't cross text.
 - [ ] Layout reflows logically at narrow widths instead of shrinking a desktop diagram to unreadability.
 - [ ] Light and dark backgrounds still show sufficient text and control contrast.
-- [ ] Diagrams feel distinct and professionally composed, not like the same boxes eight times.
+- [ ] The eight diagrams are visually distinct from one another AND nearby modules, show technical mechanisms or concrete scenes, and match the original Multimodal benchmark in craftsmanship; no text-box-led compositions.
 
 Take actual screenshots or inspect a rendered browser view. HTML validity and JavaScript syntax **alone do not prove visual quality**.
 
@@ -413,7 +424,7 @@ Score each module on a **100-point internal rubric**:
 | Original template fidelity and accessibility | 10 | Correct UI, keyboard behavior, focus and contrast |
 | Monolithic completeness and working interactions | 15 | Runs without any companion file or external service |
 
-**Release target: at least 90/100, with zero critical failures.** This is a reviewer checklist, not an automatically computed grade. A single broken diagram, wrong answer key, altered supplied question, broken theme control, or missing offline dependency is a **hard fail regardless of score**.
+**Release target: at least 90/100, with zero critical failures. Any cloned diagram skeleton or text-box-led illustration automatically fails regardless of points; the seven original Multimodal figures and [VISUAL_GOLD_STANDARD.md](VISUAL_GOLD_STANDARD.md) are the visual acceptance reference.** This is a reviewer checklist, not an automatically computed grade. A single broken diagram, wrong answer key, altered supplied question, broken theme control, or missing offline dependency is a **hard fail regardless of score**.
 
 If visual QA is unavailable, **do not assign the visual portion as “passed”**; report provisional structural completion instead.
 
