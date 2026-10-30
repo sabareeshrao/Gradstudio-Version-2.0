@@ -22,14 +22,37 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout 15-theme website
+      - name: Checkout organized Gradstudio repository
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Build website and preserve existing browser links
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp index.html lab-v3.css lab-v3.js _site/
+          cp -R lessons _site/lessons
+          cp -R templates _site/templates
+          cp -R archive _site/archive
+
+          # Historical root preview URLs continue to serve COMPLETE HTML.
+          while IFS= read -r -d '' file; do
+            name="$(basename "$file")"
+            if [[ -e "_site/$name" ]]; then
+              echo "Filename collision in Pages output: $name" >&2
+              exit 1
+            fi
+            cp "$file" "_site/$name"
+          done < <(find lessons templates archive -type f -name '*.html' -print0)
+
+          touch _site/.nojekyll
+          test -s _site/index.html
+          test -s _site/Large-Language-Models-LLMs-Keyword-Study-008.html
       - name: Upload static website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: '.'
+          path: _site
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
