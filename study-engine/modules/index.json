@@ -69,6 +69,11 @@
       "slug": "artificial-intelligence",
       "title": "Artificial Intelligence (AI)",
       "domain": "Foundations and Evolution of Artificial Intelligence · AI Foundations"
+    },
+    {
+      "slug": "self-attention",
+      "title": "Self-Attention",
+      "domain": "Self-Attention and Contextual Representation Learning · Transformers and LLM Architecture"
     }
   ]
 }
