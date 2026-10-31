@@ -39,7 +39,7 @@
       "stem": "How can a simple, poorly written prompt be transformed into a well-structured prompt, and what differences can be observed in the accuracy, relevance, completeness, and consistency of the generated answers?",
       "answer": "d",
       "options": [
-        "Make the original prompt longer by adding unrelated stories and background details. More text can distract the model from the actual task instead of improving completeness.",
+        "Make the original prompt longer by adding unrelated stories and background details. More text can distract the model from the actual task instead of improving completeness or accuracy.",
         "Remove the intended reader and output format so every response follows the model's default style. That makes it harder to compare the quality of different answers.",
         "Replace ordinary task words with highly technical language even when the audience is new to the subject. Complex terms do not automatically make outputs more accurate.",
         "Rewrite the prompt with a specific task, target reader, important constraints, and output format, then compare both responses against the same accuracy and relevance checks."
@@ -96,7 +96,7 @@
       "answer": "d",
       "options": [
         "Release a prompt after one impressive example, without testing other users or situations. A single success cannot show whether its responses stay accurate or safe in production.",
-        "Trust the instruction hierarchy to stop all malicious text inside documents, and remove tool permissions from the security design. Prompts alone cannot enforce authorization.",
+        "Trust the strict model instruction hierarchy to stop all malicious text inside documents, and remove tool permissions from the security design. Prompts alone cannot enforce authorization.",
         "Optimize only for shorter token counts because cheaper responses are automatically more truthful and stable. Cost matters, but it cannot replace testing answer quality.",
         "Version prompts, test normal and hostile inputs, measure correctness and response time, validate outputs, and enforce permissions in the application rather than trusting prompts alone."
       ],
