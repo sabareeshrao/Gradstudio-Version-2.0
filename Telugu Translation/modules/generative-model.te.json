@@ -70,7 +70,7 @@
       "options": [
         "GANs Noise Remove చేస్తాయి; Diffusion Models Discriminatorతో Compete చేస్తాయి; Flows Sequential Tokens Predict చేస్తాయి.",
         "VAEs Adversarial Game Use చేస్తాయి; GANs Exact Likelihood Fit చేస్తాయి; Autoregression Flow Invert చేస్తుంది.",
-        "GANs Compete; VAEs Latents Use; Autoregression Tokens Predict; Diffusion Denoises; Flows Transform Data.",
+        "GANs Compete; VAEs Latents Use; Autoregression Tokens Predict; Diffusion Denoises; Flows Transform చేస్తాయి.",
         "All Five Methods Identical Training Objectives Use చేస్తాయి; Only Dataset Size Different ఉంటుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> GANs Competitionతో, VAEs Hidden Codesతో, Autoregressive Models Sequence Predictionsతో, Diffusion Noise Removalతో New Data Generate చేస్తాయి.",
@@ -82,7 +82,7 @@
       "tag": "Advanced · Architecture",
       "answer": "a",
       "options": [
-        "Likelihood Data Fit; ELBO VAEs Guide; GANs Compete; Diffusion Denoises; Next Tokens Predict.",
+        "Likelihood Fit, ELBO VAEs Guide, GANs Compete, Diffusion Denoises, Next Tokens Predict చేస్తుంది.",
         "All Objectives Image Brightness మాత్రమే Match చేస్తాయి; Sample Quality, Diversity Sameగా ఉంటాయి.",
         "Likelihood Distribution Ignore చేస్తుంది; ELBO Latents Remove చేస్తుంది; GANs Exact Densities Calculate చేస్తాయి.",
         "Next-Token Training Tokens Random Shuffle చేస్తుంది; Denoising Ground-Truth Dataని Ignore చేస్తుంది."
