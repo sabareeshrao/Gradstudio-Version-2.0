@@ -1,0 +1,18 @@
+/* Activation Function | illustrated-v2 scoped to custom drawings */
+.af-hero,.af-figure{min-width:0;color:#29495c;font-family:inherit}
+.af-kicker{display:block;font-size:.69rem;font-weight:900;letter-spacing:.105em;text-transform:uppercase;color:#208b78}
+.af-hero{background:radial-gradient(ellipse at 7% 0%,#def6e9,transparent 52%),linear-gradient(150deg,#f4fbff,#fff9ef);border:1px solid #c8dfe8;border-radius:20px;padding:clamp(17px,3vw,30px);margin:0 0 24px;box-shadow:0 8px 25px #31556e12}
+.af-hero h2{font-size:clamp(1.22rem,2.5vw,1.84rem);line-height:1.25;margin:8px 0;color:#2b6376}
+.af-hero p{font-size:.91rem;line-height:1.62;color:#58778a;max-width:72ch;margin:0 0 18px}
+.af-figure{padding:clamp(16px,2.7vw,26px);background:radial-gradient(ellipse at 95% 0%,#e6f7ed,transparent 50%),linear-gradient(149deg,#f7fcff,#fffbf4);border-radius:16px}
+.af-figure h3{margin:7px 0 13px;font-size:clamp(1.04rem,1.8vw,1.2rem);line-height:1.32;font-weight:850;color:#315f76}
+.af-art{max-width:100%;overflow-x:auto;overflow-y:hidden;border:1px solid #d4e5eb;background:#fff;border-radius:14px;scrollbar-color:#adcbd6 transparent}
+.af-svg{display:block;width:100%;min-width:755px;height:auto;max-width:none}
+.af-hero .af-svg{min-width:730px}
+.af-svg text{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+.af-note{color:#607d8c;font-size:.82rem;line-height:1.58;margin:12px 0 0}
+.af-sources{background:#fff;border:1px solid #d3e4ea;border-radius:13px;padding:14px 17px;color:#5a7888;font-size:.81rem;margin:20px 0}
+.af-sources summary{font-weight:850;color:#336f84;cursor:pointer}
+.af-sources a{color:#176f97}
+@media(max-width:670px){.af-hero{padding:17px 12px}.af-figure{padding:14px 10px}.af-svg,.af-hero .af-svg{min-width:750px}}
+@media(prefers-reduced-motion:reduce){.af-hero *,.af-figure *{animation:none!important;transition:none!important}}
