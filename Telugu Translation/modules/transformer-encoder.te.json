@@ -12,7 +12,7 @@
       "tag": "Beginner · Concept",
       "options": [
         "Encoder Every Layerలో Future Tokensని Mask చేసి Only Next Token Predict చేస్తుంది.",
-        "Encoder Surrounding Tokens Use చేసి Context-Aware Meaning, Relationships Represent చేస్తుంది.",
+        "Encoder Surrounding Wordsతో Contextual Meaning, Relations Learn చేస్తుంది.",
         "Encoder Each Wordని Separate Translate చేసి Distant Contextని Never Use చేస్తుంది.",
         "Encoder Whole Sentences Memorize చేసి Matching Textని మాత్రమే Retrieve చేస్తుంది."
       ],
@@ -28,7 +28,7 @@
         "Self-Attention Context Remove; Feed-Forward Only Tokenizes; Residuals Previous Signals Erase చేస్తాయి.",
         "LayerNorm Dictionary Meaning Select చేసి Attention Direct Final Vocabulary Probabilities ఇస్తుంది.",
         "Feed-Forward Attentionని Replace చేస్తుంది; Residual Connections Tokens Share కాకుండా Block చేస్తాయి.",
-        "Attention Token Context Mix; Feed-Forward Transform; Residuals Preserve; LayerNorm Stabilizes చేస్తుంది."
+        "Attention Mix; FFN Transform; Residuals Preserve; LayerNorm Stabilize చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Attention Words మధ్య Information Exchange చేస్తుంది. Feed-Forward Features Transform; Residuals Earlier Signal Keep; LayerNorm Stabilize చేస్తుంది.",
@@ -82,8 +82,8 @@
       "tag": "Advanced · Deep Dive",
       "options": [
         "Encoders Future Tokens Hide చేస్తాయి; Bidirectional Context Trainingలో Possible కాదు.",
-        "Decoder-Only Models Future Tokens Read; Encoders Only One Token at a Time Read చేస్తాయి.",
-        "BERT Classification కోసం Always Left-to-Right Text Generate చేయాలి.",
+        "Decoder-Only Future Tokens Read; Encoders One Token At Time Read చేస్తాయి.",
+        "BERT Classificationలో Words Left-to-Right Generate చేసి Both-Side Context Block చేయాలి.",
         "Encoder Both Directions Context Use; Causal Decoder Future Positions Mask చేస్తుంది."
       ],
       "answer": "d",
@@ -95,7 +95,7 @@
       "stem": "Long Input Encoderలో Quadratic Attention, Memory, Position Challengesని Sparse Attention, FlashAttention, Gradient Checkpointing, Efficient Designs ఎలా Handle చేస్తాయి?",
       "tag": "Advanced · Production",
       "options": [
-        "Long Sequences Attention Cost Increase; Sparse, FlashAttention, Checkpointing Different Bottlenecks Reduce చేస్తాయి.",
+        "Long Attention Cost; Sparse, FlashAttention, Checkpointing Different Bottlenecks Target చేస్తాయి.",
         "FlashAttention Entire Attention Compute Eliminate చేసి Unlimited Context Freeగా Support చేస్తుంది.",
         "Checkpointing Activations Recompute చేయకుండా Positional Information Accuracy Automatically Raise చేస్తుంది.",
         "Sparse Attention Every Pairwise Interaction Preserve చేస్తుంది; Normalization Quadratic Cost Remove చేస్తుంది."
