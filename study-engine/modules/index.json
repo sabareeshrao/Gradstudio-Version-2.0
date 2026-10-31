@@ -164,6 +164,11 @@
       "slug": "activation-function",
       "title": "Activation Function",
       "domain": "Introducing Nonlinearity and Controlling Neuron Outputs · Deep Learning Foundations"
+    },
+    {
+      "slug": "rotary-position-embedding",
+      "title": "Rotary Position Embedding (RoPE)",
+      "domain": "Rotary Position Encoding and Relative Position Awareness · Transformers and LLM Architecture"
     }
   ]
 }
