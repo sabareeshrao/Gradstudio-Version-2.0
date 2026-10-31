@@ -4,9 +4,9 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (44 modules)
+## Hosted lesson directory (46 modules)
 
-These links are generated from the canonical [module manifest](modules/index.json); every keyword uses the shared HTML, CSS, and JavaScript engine.
+These links are generated from the canonical [module manifest](modules/index.json); each lesson uses the shared HTML/CSS/JS engine.
 
 | # | Keyword | Module slug |
 |---:|---|---|
@@ -54,10 +54,12 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 42 | [Context Window](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) | `context-window` |
 | 43 | [Transformer Encoder](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-encoder) | `transformer-encoder` |
 | 44 | [Next-Token Prediction](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=next-token-prediction) | `next-token-prediction` |
+| 45 | [Neural Network Pruning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network-pruning) | `neural-network-pruning` |
+| 46 | [Quantization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=quantization) | `quantization` |
 
 ### Latest additions
 
-New illustrated lessons include Context Window, Value Projection, Query Projection, and Key Projection. These lessons use beginner-first explanations, balanced options and distinct instructional diagrams.
+Recent illustrated lessons include Quantization, Context Window, Value Projection, Query Projection, and Transformer Encoder. All new lessons follow the beginner-first explanation, MCQ balance, and unique diagram rules.
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
