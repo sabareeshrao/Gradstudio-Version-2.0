@@ -54,7 +54,7 @@
     {
       "stem": "PyTorch nn.Linearతో Query Projection, Multiple Attention Heads Reshape ఎలా చేస్తాం?",
       "options": [
-        "nn.Linearతో Query Features Create చేసి Reshape, Transposeతో Headsగా Arrange చేస్తాం.",
+        "nn.Linear Queries Create; Reshape, Transpose Headsగా Arrange చేస్తాం.",
         "Pythonలో Word IDsని Headsలో Loop చేసి Learned Matrices Avoid చేస్తాం.",
         "Raw Token IDsపై Softmax Run చేసి తర్వాత Query Projection చేస్తాం.",
         "Embeddings Reshape చేసి Query Weightsని Permanently Zeroగా Freeze చేస్తాం."
@@ -70,7 +70,7 @@
         "RoPE Learned Query Weights Remove చేస్తుంది; Scaling Logitsని Largeగా Multiply చేస్తుంది.",
         "Softmax Values నుంచి Queries, Keys Create చేసి Token IDs Change చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> RoPE Positionsని Q/Kలో Add చేస్తుంది. Dot Product, Scaling, Softmaxతో Attention Weights వస్తాయి.",
+      "explanation": "<strong>Simple Explanation:</strong> RoPE Q/K Pairs Rotate చేసి Position Clues ఇస్తుంది. Dot Product, Scaling, Softmax Weights Calculate చేస్తాయి.",
       "technicalExplanation": "Projected Q/K Pairsకి RoPE Rotation; Q_rot K_rotᵀ/√d_head. Mask, Softmax తర్వాత Weights Valuesతో Mix అవుతాయి."
     },
     {
