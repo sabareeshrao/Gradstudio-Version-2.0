@@ -11,7 +11,7 @@
       "stem": "What is Query Projection in Transformer models, and how does it transform a token's representation into a Query vector that helps the model determine which other tokens are relevant?",
       "tag": "Beginner · Query basics",
       "options": [
-        "Query projection applies a learned matrix to a token's representation, producing a Query vector that can be compared with Keys from other tokens during attention.",
+        "Query projection uses learned weights to turn a token representation into a Query vector for matching with Keys during attention.",
         "Query projection copies complete sentences into a database and searches for exact phrases, without learning numerical matching features from the model's input representations.",
         "Query projection chooses the next output word directly from the vocabulary, without using Key comparisons or the attention mechanism to gather relevant context.",
         "Query projection converts token vectors into pictures so attention can recognize visible objects, rather than working with learned features inside a text sequence."
@@ -56,7 +56,7 @@
         "Query weights multiply vocabulary word counts into token identifiers, so tensor dimensions and learned features have no impact on the resulting attention vectors.",
         "The Query matrix controls the original batch size, while sentence length determines how many heads exist; those shapes instead come from model design and input.",
         "Every Query must be an unchanged copy of its embedding, making it impossible for learned projection weights to change its feature dimension or matching behavior.",
-        "Multiplying an input matrix X of shape [T,8] by learned weights WQ of shape [8,4] creates Queries of shape [T,4], keeping T tokens."
+        "Multiplying X[T,8] by WQ[8,4] produces Q[T,4], keeping T token positions but changing the feature width from eight to four."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Suppose a Transformer processes T positions, each represented by eight numbers. Write the input as <code>X[T,8]</code>. A learned Query matrix <code>WQ[8,4]</code> transforms each eight-number representation into four numbers. Matrix multiplication produces <code>Q[T,4]</code>. The <strong>number of token positions stays T</strong>; only the feature width changes. This is what a projection means: a trainable transformation of features, not converting words into labels or changing the sentence length.",
@@ -67,7 +67,7 @@
       "stem": "How can Query Projection be implemented using Python and PyTorch, including creating a linear projection layer, transforming batched token embeddings into Query tensors, reshaping them for multiple Attention Heads, and examining the resulting tensor dimensions?",
       "tag": "Medium · PyTorch head shapes",
       "options": [
-        "Use a PyTorch linear layer to create learned Query features, then reshape and transpose the tensor so separate attention heads receive correctly sized Query vectors.",
+        "Use PyTorch nn.Linear to form Queries, then reshape and transpose the result into suitable dimensions for several independent attention heads.",
         "Create one Python list of raw token IDs per attention head, then compare those IDs directly without projecting the embeddings through learnable parameters.",
         "Apply Softmax to token IDs before producing Query vectors, even though attention probabilities are normally calculated after Query and Key projections.",
         "Split embeddings into heads and permanently set all Query weights to zero, which prevents the projected vectors from learning meaningful matching features."
