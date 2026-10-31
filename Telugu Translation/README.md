@@ -1,6 +1,6 @@
 # Telugu + English Lesson Library
 
-[**Master list: all 30 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
+[**Master list: all 33 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
 
 **Separate bilingual copies of the numbered English lessons in [lessons/](../lessons/).** The English originals and original technical diagrams are unchanged. The last column links to the **live English lesson**, not the GitHub source code.
 
@@ -41,7 +41,11 @@
 | 29 | Positional Encoding · AI-00931 | [Open Telugu](29-positional-encoding.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding) |
 | 30 | Rotary Position Embedding (RoPE) · AI-00935 | [Open Telugu](30-rotary-position-embedding.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) |
 
-[**View all 30 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
+| 31 | Query Projection · AI-00891 | [Open Telugu](31-query-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection) |
+| 32 | Key Projection · AI-00892 | [Open Telugu](32-key-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection) |
+| 33 | Value Projection · AI-00893 | [Open Telugu](33-value-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) |
+
+[**View all 33 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
 ## Translation rules
 
@@ -52,4 +56,4 @@
 5. Preserve working quiz scoring, reset and all 15 themes. Do not touch original English module files.
 6. Run the quality verification: `node "Telugu Translation/verify-translation.mjs"`.
 
-Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–30 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those twenty in `lessons/`). The bilingual index page is `index.html` here.
+Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–33 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those twenty-three in `lessons/`). The bilingual index page is `index.html` here.
