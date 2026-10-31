@@ -28,7 +28,7 @@
         "Every Image One Color Number మాత్రమే; Width, Channels Processingపై Effect ఉండదు.",
         "RGBలో Brightness Only Store అవుతుంది; Resolution Object Labels Direct Decide చేస్తుంది.",
         "Cameras Color Names Only Store చేస్తాయి; Numeric Pixel Arrays Use చేయవు.",
-        "Pixels Numeric Gridగా ఉంటాయి; RGB Channels Colors, Resolution Pixel Count Define చేస్తుంది."
+        "Pixels Numeric Gridలో ఉంటాయి; RGB Colors, Resolution Pixel Count Define చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Image Pixels అనే Small Color Values Grid. RGBలో Three Color Channels ఉంటాయి; Resolution పెరిగితే More Pixels Process చేయాలి.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Image Height×Width Numeric Grid, Usually Three RGB Channels. Higher Resolution More Detail, Memory/Compute Cost Increase చేస్తుంది. OpenCV Often BGR Read చేస్తుంది; Pretrained Modelకి Correct Normalize/Channel Order అవసరం.",
@@ -39,7 +39,7 @@
       "tag": "Beginner · Flow",
       "answer": "a",
       "options": [
-        "Classification Scene Label; Detection Object Location; Segmentation Pixels; Tracking Video Motion Follow చేస్తాయి.",
+        "Classification Labels, Detection Locations, Segmentation Pixels, Tracking Video Objects Follows.",
         "Classification Every Object Outline Marks చేస్తుంది; Tracking Whole Imageకి One Label ఇస్తుంది.",
         "Detection Framesలో Object Follow చేస్తుంది; Segmentation Overall Image Class Only Predict చేస్తుంది.",
         "Tracking Automatically Each Object Pixel Separate చేస్తుంది; Classification Bounding Boxes Only Draw చేస్తుంది."
@@ -55,7 +55,7 @@
       "options": [
         "Convolution Filters Entire Training Set Memorize చేస్తాయి; Pooling New Labels Create చేస్తుంది.",
         "Stride Color Channel Control చేస్తుంది; Padding Number of Classes Change చేస్తుంది.",
-        "Kernels Local Pixels Scan చేసి Maps Build చేస్తాయి; Deeper Layers Complex Patterns Learn చేస్తాయి.",
+        "Kernels Local Pixels Scan; Deeper Layers Complex Patterns Learn చేస్తాయి.",
         "CNN Nearby Pixels Link చేయకుండా Image Positionsని Entirely Independentగా Process చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> CNN Small Filtersతో Edges, Textures Detect చేస్తుంది. Deeper Layers వాటిని Combine చేసి Shapes, Objects Recognize చేస్తాయి.",
@@ -68,7 +68,7 @@
       "answer": "b",
       "options": [
         "OpenCV Image Pathsతో Modelని Direct Scratch నుంచి Train చేసి Labels Generate చేస్తుంది.",
-        "OpenCV Image Load చేస్తుంది; PyTorch Preprocess, Pretrained Model, Validationతో Predictions Evaluate చేస్తాం.",
+        "OpenCV Image Load; PyTorch Model Predict; Validation Resultsతో Accuracy Check చేస్తాం.",
         "Pretrained PyTorch Modelsకి Any Pixel Range Work అవుతుంది; Normalization Need లేదు.",
         "Single Prediction చూసి Model Accuracy Confirm చేసి Labeled Test Examples Skip చేస్తాం."
       ],
@@ -98,7 +98,7 @@
         "High Validation Score ఉంటే Blur, Lighting Shiftలో Performance Always Guaranteed అవుతుంది.",
         "Real-Time Visionలో Frame Rate Only Important; Accuracy, Memory Need కాదు.",
         "One Clean Dataset Every Domain Shift, Adversarial Attacksని Automatically Prevent చేస్తుంది.",
-        "Hard Conditions Test చేసి Failures Monitor చేస్తూ Speed, Memory, Accuracy Balance చేస్తాం."
+        "Hard Conditions Test చేసి Failures Monitor, Speed, Memory, Accuracy Balance చేస్తాం."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Darkness, Blur, New Cameras వల్ల Vision Fail కావచ్చు. Real Deviceలో Difficult Cases Test చేసి Accuracyతో పాటు Speed Check చేయాలి.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Lighting Variations, Occlusion, Motion Blur, Different Cameras, Distribution Shiftపై Validation Sets Build చేయాలి. Device Latency, Model Memory, Frame Rate, Accuracy Measure చేసి Quantization/Optimization Trade-offs Test చేయాలి. Attacks, Data Limitsకి Monitoring Needed.",
