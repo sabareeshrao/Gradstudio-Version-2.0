@@ -1,0 +1,21 @@
+/* K-Means Clustering — custom visual scenes only. Quiz, scoring and 15 themes remain in the shared Gradstudio renderer. */
+.km-hero,.km-fig{font-family:inherit;color:#2d4c5f;min-width:0}
+.km-hero{border-radius:19px;border:1px solid #d6e5e9;background:radial-gradient(circle at 6% 3%,#e6f6f0,transparent 50%),linear-gradient(135deg,#f3f9ff,#fff9f1);margin-bottom:23px;padding:clamp(16px,2.8vw,27px);box-shadow:0 8px 24px #214b630a}
+.km-hero h2{font-size:clamp(1.22rem,2.6vw,1.76rem);color:#285873;margin:7px 0 9px;line-height:1.24}
+.km-hero p{color:#5a7888;font-size:.9rem;line-height:1.55;max-width:70ch;margin:0 0 15px}
+.km-kicker{display:inline-block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#24836d;font-weight:900}
+.km-fig{background:radial-gradient(circle at 96% 2%,#e7f6ec,transparent 49%),linear-gradient(155deg,#f8fcfe,#fff);padding:clamp(14px,2.8vw,24px)}
+.km-fig h3{margin:7px 0 13px;font-size:clamp(1rem,2vw,1.24rem);line-height:1.38;color:#31576c}
+.km-stage{background:#fff;max-width:100%;min-width:0;overflow-x:auto;overflow-y:hidden;border:1px solid #d9e6ed;border-radius:13px;scrollbar-color:#bdd6df transparent}
+.km-stage svg{display:block;min-width:705px;width:100%;height:auto}
+.km-hero .km-stage svg{min-width:780px}
+.km-stage svg text{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.km-note{font-size:.81rem;color:#617c8b;line-height:1.6;margin:12px 0 0}
+.km-code{margin-top:13px;border:1px solid #d5e5ec;border-radius:12px;background:#f6fafc;overflow:hidden}
+.km-code summary{padding:11px 14px;font-size:.81rem;font-weight:820;color:#456c80;cursor:pointer}
+.km-code[open]{background:#192d42}
+.km-code[open] summary{background:#2a435a;color:#e9f5fc}
+.km-code pre{padding:14px 16px;margin:0;color:#e9f4fc;font-size:clamp(.68rem,1.26vw,.82rem);line-height:1.59;tab-size:4;overflow-x:auto}
+.km-code code{font:inherit;white-space:pre;color:inherit;background:transparent;border:0;padding:0}
+@media(max-width:700px){.km-hero{padding:15px}.km-stage svg{min-width:645px}.km-hero .km-stage svg{min-width:715px}.km-code pre{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.km-stage{scroll-behavior:auto}.km-hero *, .km-fig *{animation:none!important;transition:none!important}}
