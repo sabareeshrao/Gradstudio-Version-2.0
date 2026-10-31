@@ -1,0 +1,24 @@
+
+/* Query Projection visual design; shared quiz engine, progress tracking and themes are untouched. */
+.qp-hero,.qp-fig{box-sizing:border-box;min-width:0;color:#29485b}
+.qp-hero{background:radial-gradient(circle at 12% 10%,#d9f4e7,transparent 45%),linear-gradient(145deg,#f8fcff,#fff7ee);border:1px solid #cee1e5;padding:clamp(16px,2.5vw,27px);border-radius:20px;margin:0 0 22px}
+.qp-hero h2{font-size:clamp(1.2rem,2.5vw,1.8rem);color:#285d74;line-height:1.25;margin:7px 0}
+.qp-hero p{font-size:.88rem;color:#5f7d8e;margin:7px 0 15px;line-height:1.6}
+.qp-fig{padding:clamp(15px,2.4vw,24px);border-radius:13px;background:radial-gradient(circle at 91% 5%,#e5f4ec,transparent 45%),linear-gradient(137deg,#f7fbff,#fffaf3);overflow-wrap:anywhere}
+.qp-kicker{color:#2d877a;font-size:.71rem;text-transform:uppercase;letter-spacing:.095em;font-weight:900}
+.qp-fig h3{font-size:clamp(1rem,1.8vw,1.2rem);line-height:1.36;color:#2d5670;margin:7px 0 14px}
+.qp-stage{border:1px solid #d3e6e9;border-radius:13px;background:#fff;overflow:hidden}
+.qp-stage svg{width:100%;height:auto;display:block}
+.qp-note{font-size:.79rem;color:#5d7b8c;line-height:1.6;margin:13px 0 0}
+.qp-note strong{color:#287b6d}
+.qp-tags{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0 0}
+.qp-tags span{font-size:.72rem;background:#e9f6f1;color:#347769;padding:6px 9px;border-radius:100px;border:1px solid #d0e4db;font-weight:800}
+.qp-formula{border:1px solid #d5e8e6;border-radius:10px;background:#f2f8fa;padding:11px 13px;color:#416c80;font-size:.84rem;line-height:1.58;margin-top:12px;overflow-wrap:anywhere}
+.qp-code-grid{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(200px,.72fr);gap:12px;margin-top:12px}
+.qp-code{background:#1d3044;color:#e8f3fb;font:12px/1.55 ui-monospace,Consolas,monospace;padding:15px;border-radius:11px;white-space:pre;overflow:auto;margin:0}
+.qp-code-help{background:#fff;border:1px solid #d4e6e9;border-radius:11px;padding:13px;color:#597c8d;font-size:.78rem;line-height:1.55}
+.qp-code-help strong{color:#347783}.qp-code-help p{margin:9px 0}
+.qp-ref{background:#fff;border:1px solid #d8e6e9;border-radius:12px;padding:13px 15px;margin:18px 0;color:#567586;font-size:.8rem}
+.qp-ref summary{cursor:pointer;font-weight:850}.qp-ref li{margin:7px 0}.qp-ref a{color:#236c8a}
+@media(max-width:750px){.qp-code-grid{grid-template-columns:1fr}.qp-stage{overflow-x:auto;overscroll-behavior-x:contain}.qp-stage svg{min-width:800px}.qp-stage:after{content:"Swipe to explore the complete diagram →";display:block;position:sticky;left:0;padding:5px;text-align:center;background:#f7fafb;color:#6e8896;font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.qp-hero *,.qp-fig *{animation:none!important;transition:none!important}}
