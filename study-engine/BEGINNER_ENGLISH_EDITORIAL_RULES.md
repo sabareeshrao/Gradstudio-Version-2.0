@@ -71,3 +71,12 @@ The remaining modules can be revised in subsequent user-selected batches.
 20. Diffusion Model (`diffusion-model`, AI-01205)
 
 **Verification:** Preserved 35 existing question stems, 35 answer keys, and all 35 original teaching figures. Rewrote 140 four-choice answers and 35 accessible explanations with distinct teaching examples; each visible explanation is labeled **Explanation:** and contains 65–79 words. Every question passes the answer-length heuristic (correct answer not uniquely longest by words or characters, word-count ratio ≤ 1.15). Preserved advanced technical explanations, common study-engine styling, and Telugu assets.
+
+## Batch 5 — completed English modules
+21. Large Vision-Language Model (LVLM) (`large-vision-language-model`)
+22. Multimodal Learning (`multimodal-learning`)
+23. Generative Adversarial Network (GAN) (`generative-adversarial-network`)
+24. Training Step (`training-step`)
+25. Loss Function (`loss-function`)
+
+**Verification:** All five committed English modules retain their original 35 question stems, answer keys, technical explanations, and 35 unique figure strings. All 140 options were rewritten as full teaching sentences with related distractors and passed the answer-length guardrail: longest-to-shortest option word ratio at most 1.15, with the correct choice never uniquely longest by words or characters. The 35 beginner explanations use distinct practical scenarios, the plain **Explanation:** heading, and 68–84 words apiece. No Telugu lessons, shared theme files, quiz behavior, or unrelated English modules were edited.
