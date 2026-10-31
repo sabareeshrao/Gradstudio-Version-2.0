@@ -1,0 +1,19 @@
+/* Original loss-function illustrated-v2 teaching scenes */
+.loss-hero,.loss-diagram{min-width:0;color:#2d4c5d;font-family:inherit}
+.loss-hero{margin-bottom:23px;padding:clamp(18px,2.8vw,29px);background:radial-gradient(circle at 4% 0%,#e5f6ed,transparent 47%),linear-gradient(136deg,#f5fbff,#fff8ec);border:1px solid #d0e3e3;border-radius:20px;box-shadow:0 9px 27px #2d5c6b12}
+.loss-eyebrow{font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#2a8471}
+.loss-hero h2{font-size:clamp(1.2rem,2.6vw,1.82rem);margin:9px 0;line-height:1.25;color:#30596f}
+.loss-hero p{font-size:.87rem;line-height:1.6;color:#637c8a;max-width:78ch}
+.loss-diagram{padding:clamp(15px,2.6vw,26px);background:radial-gradient(ellipse at top right,#e9f7ef,transparent 48%),linear-gradient(136deg,#f9fcff,#fffaf4)}
+.loss-diagram h3{font-size:clamp(1.03rem,2vw,1.23rem);font-weight:850;line-height:1.36;margin:8px 0 15px;color:#305569}
+.loss-svg{max-width:100%;overflow-x:auto;overflow-y:hidden;border:1px solid #d9e8e9;border-radius:12px;background:white;scrollbar-color:#bad5db transparent}
+.loss-svg svg{width:100%;min-width:650px;height:auto;display:block;max-width:none}
+.loss-note{font-size:.82rem;color:#617985;line-height:1.58;margin:13px 0 0}
+.loss-note strong{color:#29806a}
+.loss-code-note{background:#edf7f9;border:1px solid #d5e7ed;border-radius:10px;margin-top:10px;padding:10px 13px;font-size:.77rem;color:#587888}
+.loss-code-note strong{color:#337989}
+.loss-code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.75rem;line-height:1.48;background:#1d3042;color:#e9f4fb;overflow-x:auto;white-space:pre;border-radius:10px;padding:14px}
+.loss-sources{border:1px solid #d9e7ea;border-radius:12px;background:#fff;padding:13px 15px;font-size:.8rem;color:#66808c;margin:20px 0}
+.loss-sources summary{cursor:pointer;font-weight:850;color:#38788a}.loss-sources li{margin:7px 0}.loss-sources a{color:#1e759b}
+@media(max-width:650px){.loss-hero{padding:15px 12px}.loss-diagram{padding:13px 9px}.loss-svg svg{min-width:650px}}
+@media(prefers-reduced-motion:reduce){.loss-hero *,.loss-diagram *{animation:none!important;transition:none!important}}
