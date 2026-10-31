@@ -73,7 +73,7 @@
       "answer": "b",
       "options": [
         "Large Dot Product Always Semantic Similarity Prove చేస్తుందని అంటుంది. One Vector Magnitude Large అయితే Score Increase కావచ్చు.",
-        "Dot Product Lengths, Alignment Capture చేస్తుంది; Cosine Directions Compare చేస్తుంది; Euclidean Distance Endpoints Separation Measure చేస్తుంది.",
+        "Dot Product Length, Alignment Measures; Cosine Direction, Euclidean Endpoint Distanceని Measure చేస్తాయి.",
         "Cosine Endpoints Physical Distance, Euclidean Only Direction Compare చేస్తాయని అంటుంది. Normal Definitions Opposite.",
         "Normalized Vectorsతో All Similarity Metrics Always Identical అంటుంది. Rankings Metric, Setupపై Still Depend కావచ్చు."
       ],
@@ -90,7 +90,7 @@
         "PCA Two Dimensionsకి Reduce చేస్తే All Semantic Relationships Exactly Preserve అవుతాయంటుంది. Projection Distances Change చేయవచ్చు.",
         "t-SNE, UMAP Every Global Distance Exactly Preserve చేస్తాయని అంటుంది. 2D Plot Relationshipsని Distort చేయవచ్చు.",
         "Anisotropy అంటే Vectors Every Directionలో Evenly Spread అంటుంది. Actual Embeddings Few Directionsలో Unevenly Concentrate కావచ్చు.",
-        "High Dimensionsలో Distances Understand చేయడం Hard; PCA, t-SNE, UMAP Simplified Views ఇస్తాయి, కానీ Original Relations Distort కావచ్చు."
+        "High Dimensionsలో Distances Difficult; PCA, t-SNE, UMAP 2D Views ఇస్తాయి, Original Relations Distort కావచ్చు."
       ],
       "explanation": "<strong>Explanation:</strong> Different Ocean Vessels Sonar Signalsని Hundreds of Dimensionsలో Embeddingsగా Plot చేయాలనుకుంటున్నారని Imagine చేయండి. Directగా Draw చేయడం కష్టం. <strong>PCA, t-SNE, UMAP</strong> వాటిని Two Dimensionsకి Project చేసి Possible Groups Reveal చేస్తాయి. కానీ Chart Approximation మాత్రమే: Plotలో Nearby Points Original High-Dimensional Spaceలో Equally Close అవుతాయని Guarantee లేదు. High-Dimensional Geometry Unexpectedగా Behave చేయవచ్చు; Vectors Certain Directionsలో Unevenly Cluster కావచ్చు. Visualizations Exploration కోసం; Accuracyకి Proof కాదు.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> Anisotropy వల్ల Vector Directions Uneven Distributionలో ఉండవచ్చు. High Dimensionsలో Distance Concentration Nearest Neighbor Interpretation Complicate చేస్తుంది. PCA High Variance Linear Directionsకి Project చేస్తుంది; t-SNE, UMAP Nonlinear Local Neighborhoods Focus చేస్తాయి. None All Global Distances Preserve చేస్తామని Guarantee ఇవ్వదు.",
