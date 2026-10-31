@@ -20,7 +20,7 @@
       "stem": "Artificial Intelligence (AI) అంటే ఏమిటి? Reasoning, Learning, Perception, Decision-Making వంటి Human Intelligence అవసరమయ్యే Tasksని Machines ఎలా Perform చేస్తాయి?",
       "tag": "Beginner · Basics",
       "options": [
-        "Written Instructions Follow చేసే Every Programని AI అంటుంది; Patterns Recognize చేయకపోయినా Automatically Intelligent అని Treat చేస్తుంది. Ordinary Rules Alone AIని Define చేయవు.",
+        "Written Instructions Follow చేసే Every Programని AI అంటుంది; Patterns Recognize చేయకపోయినా Automatically Intelligent అని Treat చేస్తుంది. Ordinary Rules Alone AIని Define చేయవు. Fixed Rulesని AIగా Assume చేస్తుంది.",
         "Machines Learning, Language Understanding, Object Recognition, Reasoning, Decisions వంటి Intelligent Tasks Perform చేస్తాయి. Inputs నుంచి Patterns Understand చేసి Useful Output ఇస్తాయి.",
         "AI అంటే Walk, Lift, Move చేసే Physical Robots మాత్రమే అంటుంది. కానీ Softwareలో Chatbots, Image Recognition వంటి AI కూడా Exist అవుతుంది.",
         "Website Documents Store చేసి Click చేస్తే Display చేయడమే AI అంటుంది. Information Storage Alone Learning లేదా Reasoningని Guarantee చేయదు."
@@ -51,7 +51,7 @@
       "tag": "Beginner · How",
       "options": [
         "AI Input Receive చేసి Learned Patterns లేదా Rulesతో Process చేస్తుంది. తర్వాత Prediction, Response, Action Produce చేస్తుంది; Traditional Programs Often Explicit Instructions Follow చేస్తాయి.",
-        "Incoming Informationని Unchanged Store చేసి User Choice కోసం Wait చేస్తుంది. Storage/Retrieval మాత్రమే Learned Predictionsకి Equal కాదు; Traditional Software కూడా Store చేస్తుంది.",
+        "Incoming Informationని Unchanged Store చేసి User Choice కోసం Wait చేస్తుంది. Storage/Retrieval మాత్రమే Learned Predictionsకి Equal కాదు; Traditional Software కూడా Store చేస్తుంది. Real Predictions అన్నిటినీ ఇది Exclude చేస్తుంది.",
         "Every Inputకి Written Paragraph Output మాత్రమే Generate చేయాలి అని Assume చేస్తుంది. Actually AI Labels, Scores, Numerical Predictions, Device Actions కూడా Return చేయగలదు.",
         "AI Photographs మాత్రమే Process చేస్తుంది; Text, Sensors Ordinary Softwareకి మాత్రమే అంటుంది. Real AI Text, Audio, Numbers, Images Support చేస్తుంది."
       ],
@@ -66,7 +66,7 @@
       "tag": "Medium · Technical",
       "options": [
         "Symbolic AI Neural Weightsతో Everything Learn చేస్తుంది; Deep Learning Written Rules మాత్రమే Use చేస్తుందని Suggest చేస్తుంది. ఈ రెండు Methods Main Rolesని Reverse చేస్తుంది.",
-        "All AI Methods Neural Networks మాత్రమే Use చేస్తాయి; Layers Numberతో Only Differ అవుతాయని Assume చేస్తుంది. Symbolic, Probabilistic Systems Deep Networks లేకుండానే Work చేయవచ్చు.",
+        "All AI Methods Neural Networks మాత్రమే Use చేస్తాయి; Layers Numberతో Only Differ అవుతాయని Assume చేస్తుంది. Symbolic, Probabilistic Systems Deep Networks లేకుండానే Work చేయవచ్చు. Other Mathematical Approachesని Entirely Dismiss చేస్తుంది.",
         "Rule Systems Written Logic Follow చేస్తాయి; ML Examples నుంచి Patterns Learn చేస్తుంది; Probabilistic Methods Uncertainty Represent చేస్తాయి; Hybrid Models Approaches Combine చేస్తాయి.",
         "Probabilistic AI Uncertainty Handle చేయదని, Hybrid Systems One Methodకే Limit అవుతాయని Claim చేస్తుంది. Probabilities, Hybrid Combinations అసలు Oppositeగా Help చేస్తాయి."
       ],
@@ -80,7 +80,7 @@
       "stem": "Pythonలో Simple AI System Build చేయడానికి Problem Define, Data Collect, AI Method Choose, Train, Test, Evaluate Steps ఎలా Follow అవుతాయి?",
       "tag": "Medium · Python",
       "options": [
-        "Largest AI Model First Choose చేసి Wrong Predictions కనిపిస్తేనే Data Collect చేస్తుంది. Clear Problem, Evaluation Plan లేకుండా Model Size Alone Help కాదు.",
+        "Largest AI Model First Choose చేసి Wrong Predictions కనిపిస్తేనే Data Collect చేస్తుంది. Clear Problem, Evaluation Plan లేకుండా Model Size Alone Help కాదు. Task-Specific Evaluationని కూడా Ignore చేస్తుంది.",
         "Task, Success Metric Define చేసి Suitable Data Prepare చేస్తుంది. Appropriate Model/Rules Build చేసి Unseen Examplesపై Evaluate చేసిన Results Compare చేస్తుంది.",
         "First Product Interface Design చేసి Buttons Work అయితే AI Correctగా Work అవుతుందని Assume చేస్తుంది. UI Working, Prediction Quality Different.",
         "Python Code Errors లేకుండా Run అయ్యిందంటే AI Useful అని Assume చేసి Testing Skip చేస్తుంది. Correct Code కూడా Biased, Wrong Predictions ఇవ్వవచ్చు."
@@ -112,7 +112,7 @@
       "options": [
         "AI Unfamiliar Cases, Reliable Reasoning, Explainability, Safetyలో ఇంకా Struggle అవుతుంది. Researchers Failures Test చేసి Training, Evaluation, Safeguards Improve చేస్తున్నారు.",
         "Every AI Model Largerగా చేస్తే All Limitations Completely Disappear అవుతాయని Assume చేస్తుంది. కానీ Big Models కూడా Wrong Answers, Biases Generate చేయగలవు.",
-        "AGI Already Universally Achieved, Tests Settled, Open Research Questions None అని Claim చేస్తుంది. Reliable Reasoning, General Intelligenceపై ఇంకా Research Debate ఉంది.",
+        "AGI Already Universally Achieved, Tests Settled, Open Research Questions None అని Claim చేస్తుంది. Reliable Reasoning, General Intelligenceపై ఇంకా Research Debate ఉంది. General Intelligence Debateను కూడా Closedగా Treat చేస్తుంది.",
         "Research Hardware Chips Speedపైనే Focus చేస్తుంది; Language, Generalization, Alignment Problems Entirely Solved అని Assume చేస్తుంది. అవి Still Open Challenges."
       ],
       "answer": "a",
