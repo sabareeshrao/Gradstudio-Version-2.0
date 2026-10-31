@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (48 modules)
+## Hosted lesson directory (50 modules)
 
 All listed keywords run in the [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/) with the canonical [module manifest](modules/index.json), seven concept-specific diagrams, beginner-first explanations and the 15 themes.
 
