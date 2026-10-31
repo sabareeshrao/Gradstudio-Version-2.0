@@ -56,7 +56,7 @@
         "Token Positions Aloneతో Probabilities Calculate; Context Ignore చేస్తుంది.",
         "Full Answer Generate అయ్యాక Past Wordsకి Probabilities Assign చేస్తుంది.",
         "Softmax First Embeddings Create చేసి Decoderకి Prompt Before Sends చేస్తుంది.",
-        "Embeddings, Position, Causal Attention, Logits, Softmax కలిసి Chances Create చేస్తాయి."
+        "Embeddings, Position, Attention, Logits, Softmaxతో Chances వస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Embeddings, Position Decoderలో Context Build చేస్తాయి. Softmax Output Scoresని Probabilitiesగా Changes చేస్తుంది.",
@@ -95,7 +95,7 @@
       "stem": "KV Cache, Prefill, Decode, Speculative Decoding Production Latencyకి ఎలా Help చేస్తాయి?",
       "tag": "Advanced · production inference",
       "options": [
-        "Prefill Prompt; Decode New Tokens; KV Reuse; Draft Predictions Verify చేస్తాం.",
+        "Prefill Prompt; Decode Tokens; KV Reuse; Drafts Verify చేస్తాం.",
         "KV Cache Old Queries Only Store; Keys, Values Every Step Recompute చేస్తుంది.",
         "Prefill Full Reply; Decode Without Generating Again Prompt Process చేస్తుంది.",
         "Speculative Decoding All Drafts Accept చేసి Speed Always Guarantee చేస్తుంది."
