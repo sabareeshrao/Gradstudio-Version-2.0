@@ -72,7 +72,7 @@
       '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
       '<div class="actions"><button id="checkBtn" type="button">Check Answers</button><button id="resetBtn" type="button">Reset</button></div>'+
       (data.sources||'')+'<p class="footer">'+esc(data.footer||data.keyword+' · Visual study module · 15 themes')+'</p>';
-    await import('./quiz-theme.js?v=20261031-reveal-toggle');
+    await import('./quiz-theme.js?v=20261031-reveal-hide');
   }catch(error){
     document.getElementById('themeMenu').style.display='none';
     root.innerHTML='<h1>Unable to open lesson</h1><p class="sub">'+esc(error.message)+'</p><p><a href="./">Back to the study library</a></p>';
