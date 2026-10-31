@@ -29,26 +29,26 @@
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Compact Model Storage, Memory, Latency Reduce చేయవచ్చు. Actual Quality, Hardware Speedపై Test చేయాలి."
     },
     {
-      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "stem": "Teacher Cat, Dog, Rabbit Probability Scores Studentకి Hard Labelకంటే More Information ఎలా ఇస్తాయి?",
       "options": [
-        "Teacher Model నుంచి Student Learn చేస్తుంది.",
-        "Modelలో Weights Trainingతో Update చేస్తాయి.",
-        "Input Dataని Teacher Process చేస్తుంది.",
-        "Model Parameters Differentగా Represent అవుతాయి."
+        "Soft Scores Alternative Animal Similarities, Class Chances Studentకి Show చేస్తాయి.",
+        "Teacher Highest Label Only Keep చేసి All Other Probabilities Discard చేస్తుంది.",
+        "Student Teacher Every Weight Copy చేసి Training Entirely Avoid చేస్తుంది.",
+        "Class Probabilities Dataset Animal Image Counts Only Indicate చేస్తాయి."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+      "explanation": "<strong>Simple Explanation:</strong> Teacher Cat 70%, Dog 20%, Rabbit 10% అనవచ్చు. Student Alternatives కూడా Learn చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> Hard Label Correct Class Shows; Soft Scores Plausible Alternatives Reveal చేస్తాయి. Percentages Illustrative."
     },
     {
-      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "stem": "Soft Targets, Hard Labels, Temperature, KL Distillation Loss కలిసి Student Trainingలో ఎలా Work చేస్తాయి?",
       "options": [
-        "Teacher Model నుంచి Student Learn చేస్తుంది.",
-        "Modelలో Weights Trainingతో Update చేస్తాయి.",
-        "Input Dataని Teacher Process చేస్తుంది.",
-        "Model Parameters Differentగా Represent అవుతాయి."
+        "Temperature Hard Labels Change; KL Teacher Accuracy Only Measure చేస్తుంది.",
+        "Hard Labels Confidence Scores; Soft Targets One Correct Category Only Hold చేస్తాయి.",
+        "Hard Labels Correct Class Teach; Soft Teacher Scores KLతో Guide చేస్తాయి.",
+        "KL All True Labels Remove; Temperature Student Parameter Count Set చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+      "explanation": "<strong>Simple Explanation:</strong> Real Label Correct Answer Shows. Teacher Soft Probabilities Similar Choices Teach చేస్తాయి.",
+      "technicalExplanation": "<strong>Correct Answer: C.</strong> Hard Label Cross-Entropy + Temperature-Softened Teacher/Student KL Loss Combine చేస్తాం. Typical Loss α·CE+(1−α)·T²·KL."
     },
     {
       "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
