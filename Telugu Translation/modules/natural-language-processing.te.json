@@ -89,7 +89,7 @@
         "BERT Next Word Causally Predict, GPT Future See, T5 Output Generate చేయలేదు అంటుంది. Roles Reverse.",
         "T5 Encoder Only Classify, BERT Decoder Only Generate అంటుంది. Transformer Structures, Common Uses Different.",
         "All Transformer Masks, Training Objectives Identical అంటుంది. BERT, GPT, T5 Task Suitability Different.",
-        "BERT Bidirectional Encoder, GPT Causal Decoder, T5 Text-to-Text Encoder–Decoder; Fine-Tuning Adapts చేస్తుంది."
+        "BERT Bidirectional Encoder, GPT Causal Decoder, T5 Text-to-Text Encoder–Decoder; Fine-Tuning Helps."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> BERT Bidirectional Encoder Context, Masked-Token Learning; GPT Causal Decoder Next-Token Prediction; T5 Encoder–Decoder Text-to-Text Objectives Use చేస్తాయి. Fine-Tuning Pretrained Representations Adapt చేస్తుంది. Public Meeting Transcriptని Imagine చేయండి. <strong>BERT-style Encoder</strong> Left/Right Contextతో Statement Classify చేస్తుంది. <strong>GPT-style Decoder</strong> Future చూడకుండా Next Token Predict చేసి Transcript Continue చేస్తుంది. <strong>T5-style Encoder–Decoder</strong> Passage Read చేసి Summary Generate చేస్తుంది. All Transformers అయినా Masks, Objectives Different.",
@@ -101,7 +101,7 @@
       "stem": "Advanced NLPలో Ambiguity, Long Context, Multilingual Language, Code-Switching, Domain Terms, Hallucinations, Bias వంటి Challenges ఎలా Handle చేస్తాం? Instruction Tuning, RAG, Domain Adaptation, Evaluation Benchmarks ఎలా Help చేస్తాయి?",
       "tag": "Advanced · Reliability",
       "options": [
-        "Ambiguity, Code-Switching, Domain Terms, Bias, Hallucinations Evaluate; RAG, Instruction Tuning, Adaptation Help, Guarantees కాదు.",
+        "Ambiguity, Code-Switching, Domain Terms, Bias, Hallucinations Test; RAG, Tuning, Adaptation Help, Guarantee కాదు.",
         "Bigger Models All Mixed-Language Errors, Hallucinations Remove చేస్తాయంటుంది. Size Alone Perfect Reliability కాదు.",
         "Technical Vocabulary Remove చేయాలంటుంది. Domain Adaptation Specialist Language Handle చేయడంలో Help చేస్తుంది.",
         "One English Test Set Telugu, Mixed Language, Long Docsకి Proof అంటుంది. Each Settingపై Specific Tests అవసరం."
