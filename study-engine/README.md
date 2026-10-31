@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (43 modules)
+## Hosted lesson directory (44 modules)
 
 These links are generated from the canonical [module manifest](modules/index.json); every keyword uses the shared HTML, CSS, and JavaScript engine.
 
@@ -53,6 +53,7 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 41 | [Transformer Decoder](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-decoder) | `transformer-decoder` |
 | 42 | [Context Window](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) | `context-window` |
 | 43 | [Transformer Encoder](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-encoder) | `transformer-encoder` |
+| 44 | [Next-Token Prediction](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=next-token-prediction) | `next-token-prediction` |
 
 ### Latest additions
 
