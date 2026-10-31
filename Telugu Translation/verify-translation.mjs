@@ -57,6 +57,16 @@ const translations=[
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
+const sourceTrackedLessons=new Set(["transformer","rag","deep-learning","neural-network","artificial-intelligence"]);
+// Match the translation to the latest English choices and explanation wording.
+// A changed English question invalidates its translation until reviewed again.
+function englishSourceDigest(q){
+ let h=2166136261;
+ for(const ch of JSON.stringify([q.stem,q.options,q.answer,q.explanation,q.technicalExplanation])){
+  h=Math.imul(h^ch.charCodeAt(0),16777619)>>>0;
+ }
+ return h.toString(16).padStart(8,"0");
+}
 function validate(slug,entry,filename){
  const translationPath=resolve(folder,filename);
  const entryPath=resolve(folder,entry);
@@ -104,6 +114,7 @@ function validate(slug,entry,filename){
   if(!q||!p){errors.push(slug+": question "+(i+1)+" missing");continue;}
   if(q.figure!==p.figure)errors.push(slug+": English diagram "+(i+1)+" changed");
   if(q.answer!==p.answer)errors.push(slug+": question "+(i+1)+" correct answer changed");
+  if(sourceTrackedLessons.has(slug)&&q.englishSourceDigest!==englishSourceDigest(p))errors.push(slug+": English options/explanations changed since translation in Q"+(i+1));
   if(!te.test(q.stem)||!en.test(q.stem))errors.push(slug+": bilingual question "+(i+1)+" missing");
   if(!Array.isArray(q.options)||q.options.length!==4){errors.push(slug+": four answer choices required for Q"+(i+1));continue;}
   if(q.options.some(x=>!te.test(x)||!en.test(x)))errors.push(slug+": bilingual option missing Q"+(i+1));
