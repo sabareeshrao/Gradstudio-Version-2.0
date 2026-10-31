@@ -11,8 +11,8 @@
       "stem": "What is Natural Language Processing (NLP) in Artificial Intelligence, and how does it enable computers to read, understand, interpret, and generate human language such as English, Telugu, and other languages?",
       "tag": "Beginner · NLP fundamentals",
       "options": [
-        "NLP only saves human language as text files and searches for matching words. Storage and lookup can help, but they do not cover interpreting or generating language.",
-        "NLP enables software to process human language, recognizing meaning and patterns in text or speech and generating useful responses across different languages.",
+        "NLP saves human language as text files and searches for matching words. Storage and lookup help, but do not cover interpreting or generating human language.",
+        "NLP enables software to process human language, recognizing meaning and patterns in text or speech and generating useful responses across several different languages.",
         "NLP always translates every message into English before a computer can understand it. Multilingual models can work with text in many languages without mandatory translation.",
         "NLP is limited to converting a spoken recording into written words. Speech recognition is one application, but NLP also analyzes and produces written language."
       ],
@@ -26,9 +26,9 @@
       "tag": "Beginner · tasks and uses",
       "options": [
         "NLP mainly fixes spelling and shortens documents, while classification and language translation belong only to computer vision. NLP covers a much wider set of language tasks.",
-        "NLP groups documents only by length and word count, without finding names or opinions. Those numerical features alone do not describe the full range of NLP tasks.",
+        "NLP groups documents only by length and word count, without finding names or opinions. Those features alone do not describe the full range of NLP tasks.",
         "NLP translates and answers questions but cannot find named entities or classify customer comments. Text labels and information extraction are also common NLP applications.",
-        "NLP can label messages, detect expressed sentiment, identify names and places, translate between languages, answer questions, and summarize longer documents."
+        "NLP can label text messages, detect expressed sentiment, identify names and places, translate between languages, answer questions, and summarize long reports for readers."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Think of a travel website receiving thousands of customer reviews. NLP can <strong>classify</strong> reviews by topic, estimate whether the comments are positive or negative, and identify names of cities or hotels. It can translate a review into another language, answer a question about the comments, or summarize common complaints. These are different tasks using the same type of input: human language. One application might combine several tasks, but each has a specific goal and output.",
@@ -39,7 +39,7 @@
       "stem": "What happens when a computer processes a human sentence, starting with raw text and progressing through tokenization, text normalization, numerical representation, and language understanding to produce a meaningful result?",
       "tag": "Beginner · processing steps",
       "options": [
-        "A system splits raw text into tokens, applies suitable normalization, represents the tokens numerically, and lets a trained model produce a label, answer, or other useful result.",
+        "A system splits text into tokens, applies suitable normalization, represents tokens numerically, and lets a trained model produce a label, answer, or other useful result.",
         "A system translates the sentence directly into programming instructions, sorts the words alphabetically, and returns the reordered text. That does not preserve its intended meaning.",
         "A system always deletes punctuation and word order before identifying meaning. Removing too much information can change the sentence and harm downstream language understanding.",
         "A system understands the sentence before converting any input to numbers, so token IDs and embeddings are unnecessary. Neural language models normally process numerical representations."
@@ -68,7 +68,7 @@
       "tag": "Medium · Python NLP",
       "options": [
         "NLTK can prepare text, spaCy can find named entities, and a Hugging Face model can classify sentiment; labeled examples are needed to check the resulting predictions.",
-        "NLTK automatically hosts a sentiment service, while spaCy and Transformers are used only to remove extra spaces. Those libraries support different language-processing tools and models.",
+        "NLTK can prepare text, spaCy can find entities, and a Hugging Face model can classify sentiment; labeled evaluation examples check the resulting predictions.",
         "A Python program can count tokens and assign sentiment labels by hand, without testing the labels. A working script does not prove its predictions are accurate.",
         "spaCy stores every possible entity name, while Transformers measure accuracy without correct test answers. Both methods need appropriate models and labeled evaluation examples."
       ],
