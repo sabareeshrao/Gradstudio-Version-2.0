@@ -299,6 +299,11 @@
       "slug": "overfitting",
       "title": "Overfitting",
       "domain": "Model Generalization and Training Performance · Supervised Machine Learning"
+    },
+    {
+      "slug": "cross-validation-evaluation",
+      "title": "Cross-Validation Evaluation",
+      "domain": "Model Evaluation and Performance Reliability · AI Evaluation and Benchmarking"
     }
   ]
 }
