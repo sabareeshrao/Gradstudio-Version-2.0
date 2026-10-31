@@ -43,3 +43,109 @@
 }
 .dl-fig .dl-code-heading,.dl-fig .dl-code-heading span{color:#e6f3f8;}
 @media(max-width:700px){.dl-fig .dl-code-panel pre{font-size:12.5px;}}
+
+
+/* Illustrated v3 — fidelity upgrade: editorial headings, layered SVG scenes,
+   custom spatial compositions and comfortable navigation on small screens.
+   Preserve Q5's dark, high-contrast code block unchanged. */
+.dl-illustrated-v3{
+  --dl-outline:#d5e6ed;
+  position:relative;
+  isolation:isolate;
+  border:1px solid var(--dl-outline);
+  border-radius:20px;
+  background:radial-gradient(circle at 87% 4%,#dceeed 0,transparent 33%),
+             radial-gradient(circle at 1% 100%,#fff0df 0,transparent 35%),
+             #fbfdff;
+  box-shadow:0 7px 22px rgba(35,79,95,.055);
+  padding:clamp(16px,2.9vw,29px);
+}
+.dl-illustrated-v3:before{
+  content:"";position:absolute;inset:0 auto 0 0;width:4px;
+  border-radius:20px 0 0 20px;
+  background:linear-gradient(180deg,var(--accent-mid,#78b8a6),#68a6b4);
+  opacity:.72;
+}
+.dl-illustrated-v3 .dl-storytop{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  margin:1px 0 9px;
+}
+.dl-illustrated-v3 .dl-kicker{
+  font-size:.71rem;font-weight:850;letter-spacing:.12em;color:#397c88;
+}
+.dl-illustrated-v3 .dl-figure-count{
+  border:1px solid #d4e3ea;border-radius:999px;
+  background:rgba(255,255,255,.8);color:#7890a0;
+  padding:5px 10px;font:800 .68rem/1.2 system-ui,Arial,sans-serif;
+  white-space:nowrap;letter-spacing:.09em;
+}
+.dl-illustrated-v3 h3{
+  font-size:clamp(1.18rem,2.5vw,1.57rem);
+  font-weight:850;letter-spacing:-.028em;line-height:1.28;
+  color:#21465f;margin:0 0 6px;
+}
+.dl-illustrated-v3 .dl-intro{
+  font-size:.9rem;line-height:1.56;color:#536f7e;
+  max-width:75ch;margin:0 0 17px;
+}
+.dl-illustrated-v3 .dl-canvas{
+  position:relative;max-width:100%;overflow-x:auto;
+  overscroll-behavior-x:contain;overflow-y:hidden;
+  border:1px solid #d4e6ed;border-radius:17px;
+  background:linear-gradient(140deg,#fdfefe,#f2f8f9);
+  padding:8px;
+  box-shadow:0 9px 23px rgba(41,86,108,.075);
+  scrollbar-width:thin;
+  scrollbar-color:#a8c6d1 transparent;
+}
+.dl-illustrated-v3 .dl-canvas .dl-illustration{
+  display:block;width:100%;height:auto;
+  max-width:none;min-width:700px;
+  background:transparent;border:0;
+  border-radius:14px;
+  vertical-align:middle;
+  filter:drop-shadow(0 2px 2px rgba(27,57,75,.025));
+}
+.dl-illustrated-v3 .dl-foot{
+  font-size:.83rem;line-height:1.65;
+  color:#4f6d7b;margin:16px 2px 1px;
+  padding:11px 14px;
+  background:rgba(239,247,248,.82);
+  border-left:3px solid #6eb5aa;
+  border-radius:0 10px 10px 0;
+}
+.dl-hero.dl-illustrated-v3{margin-bottom:25px}
+.dl-hero.dl-illustrated-v3 .dl-canvas{background:#fff}
+.dl-illustrated-v3 .dl-code-panel{
+  position:relative;z-index:1;
+  margin-top:17px;
+  box-shadow:0 14px 29px rgba(23,43,59,.16);
+}
+.dl-illustrated-v3 .dl-code-heading{letter-spacing:.01em}
+.dl-illustrated-v3 .dl-code-panel pre code{
+  background:transparent!important;color:#f4f9ff!important;
+  font-size:inherit!important;
+}
+.dl-illustrated-v3[data-scene="leakage-3"] .dl-canvas{border-top:3px solid #62a990}
+.dl-illustrated-v3[data-scene="leakage-4"] .dl-canvas{border-top:3px solid #a586c5}
+.dl-illustrated-v3[data-scene="leakage-5"] .dl-canvas{border-top:3px solid #749acb}
+.dl-illustrated-v3[data-scene="leakage-7"] .dl-canvas{border-top:3px solid #68b09a}
+@media(max-width:760px){
+ .dl-illustrated-v3{padding:14px}
+ .dl-illustrated-v3 .dl-canvas{padding:6px}
+ .dl-illustrated-v3 .dl-canvas .dl-illustration{min-width:780px}
+ .dl-illustrated-v3 .dl-canvas:after{
+   content:"⇆ Swipe horizontally to inspect the entire diagram";
+   display:block;position:sticky;left:7px;
+   width:max-content;max-width:calc(100vw - 95px);
+   padding:4px 8px;margin-top:5px;
+   color:#587787;background:#edf6f7;border:1px solid #d3e4e9;
+   border-radius:8px;font:650 .68rem/1.4 system-ui,Arial,sans-serif;
+ }
+ .dl-illustrated-v3 .dl-code-panel pre{font-size:12.5px!important}
+ .dl-illustrated-v3 h3{font-size:1.18rem}
+ .dl-illustrated-v3 .dl-foot{padding:10px 11px}
+}
+@media(prefers-reduced-motion:reduce){
+ .dl-illustrated-v3 .dl-illustration{transition:none}
+}
