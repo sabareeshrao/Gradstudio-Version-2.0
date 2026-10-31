@@ -40,7 +40,7 @@
       "answer": "d",
       "options": [
         "Gradient descent leaves the weights unchanged while recording how loss moves over time. Monitoring loss is useful, but improvement requires actual parameter updates.",
-        "Gradient descent adds the same fixed amount to every parameter regardless of the loss slope. The direction and size of the gradient are important for each update.",
+        "Gradient descent adds a fixed amount to every parameter regardless of the loss slope. The direction and size of the gradient are important for each update.",
         "Gradient descent picks new weights randomly each round and hopes to find a better result. Random exploration is different from following the calculated loss gradient.",
         "Gradient descent repeats a cycle of calculating loss and gradients, updating parameters opposite the gradient, and checking the new loss on later training steps."
       ],
