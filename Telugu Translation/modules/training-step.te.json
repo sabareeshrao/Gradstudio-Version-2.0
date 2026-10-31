@@ -12,7 +12,7 @@
       "stem": "Deep Learningలో Training Step అంటే ఏమిటి? Neural Network ఒక Mini-Batch Process చేసి Prediction Error నుంచి ఎలా Learn చేస్తుంది?",
       "options": [
         "Batch Predictionsని Only Store చేసి Model Parametersని Update చేయని Process.",
-        "Batchపై Predictions, Loss, Gradients Calculate చేసి Weights Update చేసే Learning Process.",
+        "Batchపై Predict, Loss, Gradients Compute చేసి Weights Update చేస్తాం.",
         "Full Dataset Evaluate చేసి Every Pass తర్వాత Only Target Labels Change చేసే Method.",
         "New Examples Memoryలో Collect చేసి Final Epoch వరకు All Updates Postpone చేసే Process."
       ],
@@ -28,7 +28,7 @@
         "Batch, Epoch Same Unit; Iterations Model Layers Count మాత్రమే Indicate చేస్తాయి.",
         "Every Exampleకి One Training Step; Epoch Individual Gradient Only Measure చేస్తుంది.",
         "One Epoch One Optimizer Update; Batch Always Entire Dataset Represent చేస్తుంది.",
-        "Batch Examples Group; Iteration Batch Process; Epoch Full Data Pass; Step Weights Update చేస్తుంది."
+        "Batch Group; Iteration Batch; Epoch Dataset Pass; Step Update చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Batch అంటే Examples Group. Epoch అంటే Entire Dataset One Pass. Optimizer Step అంటే Actual Weight Update; Many Steps Training Improve చేస్తాయి.",
@@ -39,7 +39,7 @@
       "tag": "Beginner · Step by Step",
       "stem": "Complete Training Stepలో Mini-Batch Load, Forward Propagation, Loss Calculation, Backpropagation, Optimizer Update ఏ Orderలో జరుగుతాయి?",
       "options": [
-        "Mini-Batch Load, Forward Predict, Loss Compute, Backward Gradients, Optimizer Update చేస్తాం.",
+        "Load Batch, Predict, Loss, Backward, Optimizerతో Weights Update చేస్తాం.",
         "Mini-Batch Load, Random Weights Update, తర్వాత Predictions, Loss Calculate చేస్తాం.",
         "Labels Load చేసి Predictionకి ముందే Backward Pass, తర్వాత Loss Compute చేస్తాం.",
         "Predictions Calculate చేసి Targets Change, Gradients Reset; Weights Update Skip చేస్తాం."
@@ -55,7 +55,7 @@
       "options": [
         "Larger Learning Rate ఉంటే Any Batch, Optimizerతో Fast Convergence Guaranteed అవుతుంది.",
         "Batch Size Storage మాత్రమే Affect చేస్తుంది; Loss Function Direct Update Speed Decide చేస్తుంది.",
-        "Batch Size Gradient Noise Affect; Learning Rate, Optimizer Update Size, Direction Control చేస్తాయి.",
+        "Batch Gradient Noise; Learning Rate, Optimizer Weight Updatesని Control చేస్తాయి.",
         "SGD, Adam Identical Updates; Learning Rate Evaluationలో మాత్రమే Important ఉంటుంది."
       ],
       "answer": "c",
@@ -68,7 +68,7 @@
       "stem": "Python, PyTorchలో model.train(), optimizer.zero_grad(), model(inputs), loss.backward(), optimizer.step()తో Training Step ఎలా Implement చేస్తాం? Before/After Weights ఎలా Check చేస్తాం?",
       "options": [
         "optimizer.step() First Call చేసి, Forward/Backward Skip చేసి Predictions Save చేస్తాం.",
-        "Train Mode, Zero Grad, Forward, Loss, Backward, Optimizer Step Correct Orderలో Run చేస్తాం.",
+        "Train Mode, Zero Grad, Forward, Loss, Backward, Optimizer Step చేస్తాం.",
         "Evaluation Mode Activate చేసి Labels Update, Weights Change తర్వాత Backward Call చేస్తాం.",
         "Loss.backward()కు ముందు Optimizer Step Run చేసి Gradients Epochsలో Only Clear చేస్తాం."
       ],
