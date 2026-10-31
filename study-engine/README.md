@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (38 modules)
+## Hosted lesson directory (41 modules)
 
 These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
 
@@ -50,6 +50,8 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 38 | [Value Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) | `value-projection` |
 
 ### Latest additions — October 30, 2026
+
+- [Autoregressive Language Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) — sequential decoding, causal training, probability chains, and inference serving, illustrated in seven learning scenes.
 
 - [Multi-Head Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multi-head-attention) — seven unique visual scenes, PyTorch causal-attention verification, beginner explanations, and modern KV-cache architectures.
 
