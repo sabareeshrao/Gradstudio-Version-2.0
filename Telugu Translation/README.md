@@ -1,6 +1,6 @@
 # Telugu + English Lesson Library
 
-[**Master list: all 42 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
+[**Master list: all 46 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
 
 **Separate bilingual copies of the numbered English lessons in [lessons/](../lessons/).** The English originals and original technical diagrams are unchanged. The last column links to the **live English lesson**, not the GitHub source code.
 
@@ -58,7 +58,12 @@
 
 **Lesson IDs 39–42 have not yet been translated into this folder.** The original numbering is preserved.
 
-[**View all 42 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
+| 47 | Decision Tree Classifier · AI-00514 | [Open Telugu](47-decision-tree-classifier.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=decision-tree-classifier) |
+| 48 | Logistic Regression · AI-00497 | [Open Telugu](48-logistic-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression) |
+| 49 | Linear Regression · AI-00491 | [Open Telugu](49-linear-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression) |
+| 50 | K-Means Clustering · AI-00592 | [Open Telugu](50-k-means-clustering.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) |
+
+[**View all 46 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
 ## Translation rules
 
@@ -69,4 +74,4 @@
 5. Preserve working quiz scoring, reset and all 15 themes. Do not touch original English module files.
 6. Run the quality verification: `node "Telugu Translation/verify-translation.mjs"`.
 
-Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–38 and 43–46 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those thirty-two in `lessons/`). The bilingual index page is `index.html` here.
+Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–38 and 43–50 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those thirty-six in `lessons/`). The bilingual index page is `index.html` here.
