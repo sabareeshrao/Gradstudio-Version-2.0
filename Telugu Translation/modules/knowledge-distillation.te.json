@@ -31,7 +31,7 @@
     {
       "stem": "Teacher Cat, Dog, Rabbit Probability Scores Studentకి Hard Labelకంటే More Information ఎలా ఇస్తాయి?",
       "options": [
-        "Soft Scores Alternative Animal Similarities, Class Chances Studentకి Show చేస్తాయి.",
+        "Soft Predictions Other Animal Classes గురించి Studentకి Clues ఇస్తాయి.",
         "Teacher Highest Label Only Keep చేసి All Other Probabilities Discard చేస్తుంది.",
         "Student Teacher Every Weight Copy చేసి Training Entirely Avoid చేస్తుంది.",
         "Class Probabilities Dataset Animal Image Counts Only Indicate చేస్తాయి."
