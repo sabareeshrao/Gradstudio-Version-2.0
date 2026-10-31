@@ -7,9 +7,12 @@ For every future update, **translate instead of rewrite**. The source English le
 - Translate every answer option **in place (A→A, B→B, C→C, D→D)**, including its specific reason for being correct/incorrect; never invent padding to balance lengths.
 - Keep Questions, Options and Explanations in clear modern Telugu + English terminology. Keep English-only diagram headings, tiles, SVGs, captions, code, formulas and the original answer key unchanged.
 - If the English source adopts a new explanation structure, **copy that structure before translating**. Never silently enforce an old template on new material.
-- For modules 01–05, `verify-translation.mjs` checks English-source fingerprints, the source-format explanation labels and main-text depth. Future changes should be reviewed sentence by sentence, not just pass automated checks.
+- For modules 01–30, `verify-translation.mjs` checks English-source fingerprints, the source-format explanation labels and main-text depth. Future changes should be reviewed sentence by sentence, not just pass automated checks.
 
 # Telugu + English Lesson Library
+
+**Current translation audit:** Lessons 01–30 have been updated to the latest English source and checked for example/section order, source diagrams, answer keys, balanced options, and unchanged code. Lessons 31–50 remain accessible but are awaiting the same source-faithfulness review.
+
 
 [**Master list: all 50 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
 
