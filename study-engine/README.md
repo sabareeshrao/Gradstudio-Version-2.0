@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (22 modules)
+## Hosted lesson directory (23 modules)
 
 These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
 
@@ -38,6 +38,7 @@ These links are generated from the canonical [module manifest](modules/index.jso
 Recent modules include Tokenization, Vector Database, Generative Model, Embedding Vector, and Reinforcement Learning, each with seven teaching questions and their own illustrations. Lesson JSON is stored in [`modules/`](modules/) and per-keyword visual styling in [`diagrams/`](diagrams/).
 
 - Computer Vision: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=computer-vision
+| 23 | [AI Agent Framework](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=ai-agent-framework) | `ai-agent-framework` |
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
