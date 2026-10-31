@@ -81,6 +81,11 @@
       "domain": "Attention Mechanisms and Contextual Information Processing · Transformers and LLM Architecture"
     },
     {
+      "slug": "multi-head-attention",
+      "title": "Multi-Head Attention",
+      "domain": "Parallel Attention Heads and Contextual Representation Learning · Transformers and LLM Architecture"
+    },
+    {
       "slug": "prompt-engineering",
       "title": "Prompt Engineering",
       "domain": "Prompt Design, Instruction Optimization, and LLM Behavior Control · Prompt Engineering"
