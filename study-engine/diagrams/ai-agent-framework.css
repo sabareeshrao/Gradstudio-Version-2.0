@@ -1,0 +1,25 @@
+/* AI Agent Framework — concept-specific illustrated module only; shared quiz/theme engine is reused */
+.af-hero,.af-fig{color:#294458;box-sizing:border-box}
+.af-hero{border:1px solid #c7dfdf;border-radius:20px;padding:clamp(17px,2.5vw,27px);background:radial-gradient(circle at 10% 10%,#d9f3ee,transparent 40%),linear-gradient(140deg,#f8fbfe,#fff9f1);margin-bottom:24px}
+.af-hero h2{font-size:clamp(1.2rem,2.5vw,1.75rem);color:#245b73;margin:6px 0;line-height:1.25}
+.af-hero p{font-size:.89rem;color:#58788a;line-height:1.65;margin:8px 0 15px}
+.af-fig{border-radius:12px;padding:clamp(15px,2.5vw,24px);background:radial-gradient(circle at 90% 10%,#e5f4f0,transparent 44%),linear-gradient(135deg,#f8fbfe,#fffaf3);min-width:0;overflow-wrap:anywhere}
+.af-kicker{font-size:.71rem;letter-spacing:.11em;text-transform:uppercase;color:#267b79;font-weight:900}
+.af-fig h3{font-size:clamp(1.03rem,1.85vw,1.18rem);line-height:1.35;margin:7px 0 14px;color:#2d536b}
+.af-scene{background:#fff;border:1px solid #d4e4e9;border-radius:14px;overflow:hidden}
+.af-scene svg{width:100%;height:auto;display:block}
+.af-note{font-size:.8rem;color:#637d8e;margin:13px 0 0;line-height:1.55}
+.af-note strong{color:#277766}
+.af-key{display:flex;gap:9px;flex-wrap:wrap;margin:11px 0 0}
+.af-key span{font-size:.73rem;font-weight:750;border:1px solid #cee7e2;background:#e9f7f3;color:#2d766d;padding:6px 9px;border-radius:99px}
+.af-tech{background:#f1f6fb;border:1px solid #d7e6f0;border-radius:11px;padding:11px 13px;margin-top:11px;color:#4d6d82;font-size:.78rem;line-height:1.5}
+.af-code{display:grid;grid-template-columns:1.3fr .7fr;gap:11px;margin-top:12px}
+.af-code pre{margin:0;padding:13px 15px;background:#1e3044;color:#e8f1fa;overflow:auto;border-radius:10px;line-height:1.6;font-size:.77rem;font-family:ui-monospace,Menlo,Consolas,monospace}
+.af-code-side{padding:12px;border:1px solid #d5e7eb;background:#fff;border-radius:10px}
+.af-code-side strong{display:block;color:#335c74;margin-bottom:10px;font-size:.81rem}
+.af-code-side span{display:block;padding:6px 9px;margin:7px 0;border:1px solid #d2e7e3;border-radius:8px;background:#eef8f5;color:#45766e;font-size:.78rem}
+.af-ref{padding:12px 14px;border:1px solid #d6e6e9;background:#fff;border-radius:13px;font-size:.8rem;margin:18px 0;color:#476a7d}
+.af-ref summary{font-weight:800;cursor:pointer}
+.af-ref li{margin:7px 0}.af-ref a{color:#1b668a}
+@media(max-width:750px){.af-code{grid-template-columns:1fr}.af-scene{overflow-x:auto}.af-scene svg{min-width:690px}.af-scene:after{content:"Swipe sideways to see the entire diagram →";display:block;position:sticky;left:0;background:#f5fbfc;font-size:.71rem;padding:5px;color:#6b8794;text-align:center}}
+@media(prefers-reduced-motion:reduce){.af-hero *,.af-fig *{animation:none!important;transition:none!important}}
