@@ -284,6 +284,11 @@
       "slug": "stochastic-gradient-descent",
       "title": "Stochastic Gradient Descent (SGD)",
       "domain": "Iterative Optimization and Model Training · Optimization"
+    },
+    {
+      "slug": "learning-rate",
+      "title": "Learning Rate",
+      "domain": "Step Size Control and Optimization During Model Training · Optimization"
     }
   ]
 }
