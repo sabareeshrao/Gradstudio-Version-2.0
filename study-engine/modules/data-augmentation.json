@@ -42,7 +42,7 @@
         "Image augmentation uses flipping, rotation, and cropping. Text augmentation uses word replacement or paraphrasing, while audio augmentation uses noise addition or speed changes. These techniques create varied training inputs when they preserve the correct labels.",
         "Image augmentation uses flipping and cropping, text uses paraphrasing, and audio uses added noise. These changes are valid whenever the input remains recognizable to people, even if the correct task label changes significantly in reality.",
         "Image augmentation can rotate or crop pictures, text can replace words, and audio can change speed. Each transformation is useful only when it produces a new class label different from the original example.",
-        "Image augmentation changes viewpoints, text augmentation rephrases sentences, and audio augmentation modifies recordings. Those methods should be applied to validation and test sets before evaluation to make the measured accuracy more representative."
+        "Image augmentation changes viewpoints, text augmentation rephrases sentences, and audio augmentation modifies recordings. Those methods should be applied to validation and test sets before evaluation to make the measured accuracy more representative of deployment performance."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> Different data types need different transformations. Images can be cropped, rotated, or flipped; text can be carefully paraphrased; and audio can be given mild noise or a small speed change. The important check is whether the label is still correct. For example, a recording of the spoken command “stop” with quiet background noise is still “stop.” But replacing “stop” with “go” in a text command changes its meaning and should not keep the same label.",
@@ -53,7 +53,7 @@
       "tag": "Medium · When a transformation is valid",
       "stem": "How do label-preserving transformations and task-specific constraints determine whether an augmented training example is valid?",
       "options": [
-        "A valid augmentation keeps the original label even when a transformation removes the feature that determines the answer. Matching labels and file formats are sufficient checks for validity.",
+        "A valid augmentation keeps the original label even when an alteration removes information essential to predicting the category correctly. Matching labels and image formats are sufficient tests of validity.",
         "A valid augmentation may change the example's meaning if the modified sample looks realistic and resembles the original. Task-specific rules mainly determine the allowed image resolution.",
         "A valid augmentation changes the input without changing its correct label or important meaning. Task-specific constraints ensure transformations do not remove information needed for accurate predictions.",
         "A valid augmentation must challenge the model even when the original label becomes uncertain. Keeping such difficult examples encourages the network to recover the correct class."
@@ -69,7 +69,7 @@
       "options": [
         "Online augmentation makes modified samples once before training starts and stores them on disk for every epoch. Offline augmentation generates new variations inside the training loop without keeping extra files.",
         "Online augmentation generates modified samples during training, providing fresh variations while using less storage. Offline augmentation creates and saves modified samples before training, making them reusable but requiring additional storage.",
-        "Online augmentation creates fresh variations during training but must save every resulting sample permanently, so it normally uses more disk space. Offline augmentation stores just the original files and regenerates modifications.",
+        "Online augmentation creates fresh variations during training but must save every transformed sample permanently, so it normally consumes more storage capacity. Offline augmentation stores the original files and regenerates modifications instead.",
         "Online and offline augmentation both create transformations before model training begins. Their main difference is that online methods change labels automatically, while offline methods keep the labels from original data."
       ],
       "answer": "b",
@@ -82,9 +82,9 @@
       "stem": "How do advanced Data Augmentation techniques such as Mixup, CutMix, and synthetic data generation influence model generalization and decision boundaries?",
       "options": [
         "Mixup combines training inputs and labels, while CutMix combines image regions and their corresponding label proportions. Synthetic data generation creates new training samples. These techniques can improve generalization by increasing training diversity and encouraging more robust decision boundaries.",
-        "Mixup combines training inputs but keeps the label from the first example, while CutMix pastes image regions without adjusting label proportions. Both methods improve boundaries because mixing the inputs alone supplies enough supervision for every blended example actually.",
-        "Mixup combines the correct labels while leaving training inputs unchanged, and CutMix exchanges equal image regions only between identical classes. Synthetic generation simply duplicates real examples to increase the number of rows in training.",
-        "Mixup creates synthetic samples by joining two predictions after training, while CutMix combines model weights from different runs. Both methods make decision boundaries smoother without changing the training examples or their labels in actual training."
+        "Mixup combines training inputs but retains the label from the first sample; CutMix pastes image regions while leaving original label proportions unchanged. These approaches automatically improve generalization because the visual combinations provide sufficient supervision for the resulting training examples.",
+        "Mixup combines the correct labels while leaving training inputs unchanged, and CutMix exchanges equal image regions only between identical classes. Synthetic generation simply duplicates real examples to increase the number of rows used during model training.",
+        "Mixup creates synthetic samples by joining two predictions after training, while CutMix combines model weights from different runs. Both methods supposedly make decision boundaries smoother without changing the actual training examples or their corresponding labels."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> Mixup blends two examples and their labels. CutMix replaces part of one image with a region from another and adjusts the label proportions accordingly. Synthetic generation creates additional samples using a data-generating process or model. For example, combining two flower classes during training can encourage a classifier to change its predictions smoothly rather than drawing an overly sharp boundary around individual pictures. The mixing rules and synthetic samples must remain appropriate for the task.",
@@ -95,7 +95,7 @@
       "tag": "Advanced · Reliable evaluation and leakage",
       "stem": "How can Data Augmentation be evaluated and optimized to improve model robustness while preventing data leakage, unrealistic samples, and harmful changes to training labels?",
       "options": [
-        "Data Augmentation should be evaluated on modified copies of its own training examples, since these measure how well the model handles the selected transformations. Independent test results are less useful for choosing augmentation strength.",
+        "Data Augmentation should be evaluated on transformed duplicates of its training examples, since these directly measure how the model handles the selected transformations. Independent test results are less useful for choosing the appropriate augmentation intensity.",
         "Data Augmentation can be optimized by producing the widest possible transformations and checking training accuracy first. The label can be retained whenever the result is visually plausible, even if task-specific evidence disappears.",
         "Data Augmentation should be applied to the complete dataset before separating training, validation, and testing records. Later splitting is reliable when transformed copies differ enough in appearance to avoid exact duplicates.",
         "Data Augmentation is evaluated by comparing performance on independent validation and test data. Effective strategies preserve label correctness, produce realistic variations, and apply training augmentations without leaking information across dataset splits."
