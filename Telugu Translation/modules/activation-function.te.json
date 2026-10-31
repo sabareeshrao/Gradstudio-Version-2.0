@@ -11,7 +11,7 @@
       "tag": "Beginner · Basics",
       "options": [
         "Activation Prediction Loss Measure చేసి Each Example తర్వాత Weights Direct Adjust చేస్తుందంటుంది. Optimization Separate Stage.",
-        "Activation Weighted Neuron Inputని Output Signalగా Transform చేసి Often Nonlinearity Add చేస్తుంది; Deeper Networks Rich Patterns Learn చేస్తాయి.",
+        "Activation Neuron Weighted Inputని Outputగా Transform చేసి Nonlinearityతో Deeper Layers Rich Patterns Learn చేయిస్తుంది.",
         "Activation Input Features Order Only Change చేసి Values Preserve చేస్తుందంటుంది. Signals Transform అవుతాయి.",
         "Each Neuron Outputని New Training Labelగా Save చేస్తుందంటుంది. Activation Numerical Function."
       ],
@@ -27,7 +27,7 @@
       "options": [
         "Many Linear Layers Automatically Curves Create చేస్తాయంటుంది. Multiple Affine Maps Still One Affine Map.",
         "Nonlinear Activations లేకున్నా Any Curved Boundary Memorize అవుతుందంటుంది. Depth Alone Nonlinearity Create చేయదు.",
-        "Nonlinearities లేకుండా Stacked Affine Layers One Affine Transformకి Collapse; Nonlinear Decision Boundary Depth Alone Achieve కాదు.",
+        "Without Nonlinearity Stacked Affine Layers One Affine Map; Curved Boundaries Depth Alone Learn చేయలేదు.",
         "Activations Remove చేస్తే Accuracy Always Better, Gradients Never Vanish అంటుంది. Simpler Math Expressiveness Guarantee కాదు."
       ],
       "answer": "c",
@@ -58,7 +58,7 @@
         "All Activations Same Slope, Derivatives Training Affect చేయవంటుంది. Gradient Behavior Differs.",
         "ReLU Expensive Exponentials, GELU/SiLU Constant Slopes అంటుంది. Their Formulas Different.",
         "Derivatives Final Outputలో Only Matter, Hidden Layersలో కాదు అంటుంది. Backprop Every Layer Derivatives Use చేస్తుంది.",
-        "Sigmoid/Tanh Extremes Saturate; ReLU Negative Zero Gradient; Leaky Small Gradient; GELU/SiLU Smooth, Training Affect చేస్తాయి."
+        "Sigmoid/Tanh Saturate; ReLU Negative Zero, Leaky Small Slope; GELU/SiLU Smooth; Gradients Affect అవుతాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Sigmoid, Tanh Extremesలో Saturate అయ్యి Derivatives Small; ReLU Negative Inputsపై Zero Slope; Leaky ReLU Small Negative Slope; GELU/SiLU Smooth. Gradients Training Stability Affect చేస్తాయి. Automated Greenhouse Controller Many Neural Layersతో Tune చేస్తున్నట్టు Imagine చేయండి. Backpropలో <strong>Derivative</strong> Small Input Changeకు Activation Output ఎంత Sensitiveో Shows. Sigmoid/Tanh Extreme Valuesలో Tiny Slopes; ReLU Negativeకు Zero. Leaky ReLU Negative Sideకి Small Gradient Keep; GELU, SiLU Smooth Signal Changes Provide.",
@@ -71,7 +71,7 @@
       "tag": "Medium · Python",
       "options": [
         "Matplotlib Plotting Direct Weights Update చేసి Derivative Checks Unnecessary అంటుంది. Graph Optimization కాదు.",
-        "NumPy Activations, Derivatives Plot; PyTorch Autograd Gradients Check; Matched Data/Settingsతో Train/Validate Compare చేస్తాం.",
+        "NumPy Activation/Derivative Curves, PyTorch Autograd Check; Matched Settingsలో Train/Validation Compare చేస్తాం.",
         "One Forward Output Biggest Numberని Accuracyగా Treat చేస్తుందంటుంది. Labels, Evaluation Needed.",
         "Each Activationకి Different Data/Seeds/Optimizer Use చేసి Compare చేస్తుందంటుంది. Fair Comparison Impossible."
       ],
@@ -87,7 +87,7 @@
       "options": [
         "ReLU Negative Outputs Create చేసి Sparse, Transformer Gates Never Multiply అంటుంది. Both False.",
         "Smooth Functions All Vanishing Gradients Remove, Normalization Unnecessary అంటుంది. Stable Training Still Important.",
-        "ReLU Simple Sparse Zeros; GELU Smooth; SwiGLU Transformer Feature Branch Gating; Compute, Gradient Properties Differ.",
+        "ReLU Sparse Zeros; GELU Smooth; SwiGLU Transformer Gates; Gradients, Compute Differ.",
         "All Activations Same Cost/Sparsity Every Architectureలో అంటుంది. Input Distribution, Depth Change Behavior."
       ],
       "answer": "c",
@@ -100,7 +100,7 @@
       "stem": "Vanishing Gradients, Dying ReLU, Saturation, Non-Zero-Centered Outputs, Numerical Instability వంటి Problemsకి Initialization, Normalization, Gated Activations, Architecture-Specific Choices ఎలా Help చేస్తాయి?",
       "tag": "Advanced · Training",
       "options": [
-        "Saturation, Dying ReLU, Nonzero-Centered Outputs Weak Learning; Initialization, Normalization, Leaky/Gated Methods Help, Validate చేయాలి.",
+        "Saturation, Dead ReLU, Nonzero-Centered Outputsకి Initialization, Normalization, Leaky/Gated Options Help; Validation Needed.",
         "Sigmoid Saturated Outputs Near 0/1లో Large Gradient ఉంటుందని, Every Layer Best అంటుంది. Actually Slopes Tiny.",
         "All ReLU Outputs Permanently Zero చేస్తే Learning Better అంటుంది. Dead Neurons Update Stop.",
         "Exponential Overflow Checks Unnecessary, Activations Monitoring Needed కాదంటుంది. Numerical Instability Real."
