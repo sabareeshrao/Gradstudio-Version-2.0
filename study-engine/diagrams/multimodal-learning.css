@@ -1,0 +1,18 @@
+/* Multimodal Learning — illustrated-v2 keyword-owned art only. Keep the quiz and themes shared. */
+.mm-hero,.mm-figure{color:#2c4c5f;font-family:inherit;min-width:0}
+.mm-kicker{font-size:.69rem;color:#27877b;letter-spacing:.095em;font-weight:900;text-transform:uppercase;display:block}
+.mm-hero{padding:clamp(16px,3vw,30px);margin:0 0 24px;background:radial-gradient(ellipse at 7% 0%,#dff5ed,transparent 52%),linear-gradient(145deg,#f7fcff,#fff9ee);border:1px solid #c8dfe7;border-radius:20px;box-shadow:0 10px 28px #28556b10}
+.mm-hero h2{font-size:clamp(1.23rem,2.6vw,1.82rem);margin:8px 0;line-height:1.28;color:#2d6473}
+.mm-hero p{font-size:.9rem;color:#597a8a;line-height:1.55;max-width:73ch;margin:0 0 18px}
+.mm-figure{background:radial-gradient(ellipse at 94% 0%,#e3f7ed,transparent 47%),linear-gradient(150deg,#f8fcff,#fffaf4);border-radius:15px;padding:clamp(15px,2.7vw,25px)}
+.mm-figure h3{color:#325c72;font-weight:850;line-height:1.32;margin:7px 0 14px;font-size:clamp(1.02rem,1.8vw,1.22rem)}
+.mm-art{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;border-radius:14px;border:1px solid #d4e6eb;background:white;scrollbar-color:#afccd6 transparent}
+.mm-svg{display:block;width:100%;min-width:765px;max-width:none;height:auto}
+.mm-hero .mm-svg{min-width:750px}
+.mm-svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.mm-note{font-size:.82rem;color:#607e8b;line-height:1.58;margin:12px 0 0}
+.mm-sources{border:1px solid #d3e5eb;border-radius:13px;background:#fff;padding:13px 16px;margin:20px 0;color:#587888;font-size:.82rem}
+.mm-sources summary{font-weight:850;cursor:pointer;color:#336d80}
+.mm-sources a{color:#176b95}
+@media(max-width:700px){.mm-hero{padding:18px 12px}.mm-figure{padding:14px 10px}.mm-svg,.mm-hero .mm-svg{min-width:750px}.mm-art{scrollbar-width:thin}}
+@media(prefers-reduced-motion:reduce){.mm-figure *,.mm-hero *{animation:none!important;transition:none!important}}
