@@ -13,7 +13,7 @@
       "options": [
         "ఒక్కో Tokenని Previous Token తర్వాతే Hidden State ద్వారా Process చేస్తుంది. ఇది RNN Processing విధానం; Transformerలో Attentionతో Many Positions Connect అవుతాయి.",
         "Attention ద్వారా Sequenceలో Relevant Tokensని Connect చేస్తుంది. ప్రతి Token ఇతర Positions నుంచి Context Learn చేసి, ఆ Informationతో Model Better Predictions Build చేస్తుంది.",
-        "Saved Sentences Collectionలో Closest Responseని Search చేసి Return చేస్తుంది. ఇది Retrieval Method; Transformer Attention మాత్రం Contextలో Tokens మధ్య Relationships Learn చేస్తుంది.",
+        "Saved Sentences Collectionలో Closest Responseని Search చేసి Return చేస్తుంది. ఇది Retrieval Method; Transformer Attention మాత్రం Contextలో Tokens మధ్య Relationships Learn చేస్తుంది. ఇది Context Understandingని Replace చేయలేని Shortcut మాత్రమే.",
         "ప్రతి Tokenకి Position Number ఇచ్చి, ఆ Numbers నుంచే Meaning Understand చేస్తుంది. Position Orderని చూపుతుంది కానీ Word Relationships నేర్చుకోవడానికి అదొక్కటే సరిపోదు."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Transformerలో Attention వల్ల Related Words ఒకదానితో ఒకటి Connect అవుతాయి. Example: “The key was under the vase. It was missing”లో “it” దేనిని సూచిస్తుందో Context Help చేస్తుంది.",
@@ -42,7 +42,7 @@
       "answer": "a",
       "options": [
         "Textని Tokensగా Split చేసి Embeddings, Position Information Add చేస్తుంది. Attention, Learned Layers Process చేసిన Representations నుంచి Final Predictions Generate చేస్తుంది.",
-        "Sentenceని Tokenize చేయకముందే Final Probabilities Generate చేస్తుంది. Softmax Probabilities ఇవ్వగలదు కానీ Tokenization, Embedding Stepsని Replace చేయలేదు.",
+        "Sentenceని Tokenize చేయకముందే Final Probabilities Generate చేస్తుంది. Softmax Probabilities ఇవ్వగలదు కానీ Tokenization, Embedding Stepsని Replace చేయలేదు. Original Tokenization Pipelineని Skip చేయడమే Wrong Assumption.",
         "Word Embeddings లేకుండా Position Numbersతోనే Input Meaning Learn చేస్తుంది. Positions Word Orderని చెప్పినా Actual Word Contentని Provide చేయలేవు.",
         "Input Process చేయకముందే Complete Answer Generate చేసి Attentionతో Verify చేస్తుంది. Informed Predictionకి ముందుగా Token Representations Build చేయాల్సిందే."
       ],
@@ -71,7 +71,7 @@
       "stem": "Python, PyTorchతో Simple Transformerని Scratch నుంచి ఎలా Implement చేయవచ్చు? Token Embeddings, Positional Encoding, Multi-Head Self-Attention, Feed-Forward Layers, Attention Masks, Basic Training Loopని ఎలా Build చేస్తాం?",
       "answer": "b",
       "options": [
-        "RNNలా Tokensని One by One Read చేసే Recurrent Loop Build చేసి Hidden State మాత్రమే Train చేస్తుంది. ఇందులో Transformer Attention Mechanism Missing అవుతుంది.",
+        "RNNలా Tokensని One by One Read చేసే Recurrent Loop Build చేసి Hidden State మాత్రమే Train చేస్తుంది. ఇందులో Transformer Attention Mechanism Missing అవుతుంది. దాంతో Multi-Head Attention కూడా ఉండదు.",
         "Token Embeddings, Positions, Multi-Head Attention, Masks, Feed-Forward Layers Build చేస్తుంది. Loss, Optimizerతో Modelని Train చేస్తే Basic Transformer Workflow వస్తుంది.",
         "ప్రతి Tokenని Direct Class Labelగా Map చేసి Complete Networkగా Use చేస్తుంది. ఇలా చేస్తే Contextual Token Representations, Attention Blocks Skip అవుతాయి.",
         "Position Tableకి Only Training ఇచ్చి Main Network Build చేసే ముందే Freeze చేస్తుంది. Position Values Alone Word Meanings మధ్య Relationships Learn చేయలేవు."
@@ -87,7 +87,7 @@
       "answer": "d",
       "options": [
         "BERT Earlier Words మాత్రమే Understand చేస్తుంది; GPT Generationలో Future Words Freely Sees చేస్తుంది. Normally వాటి Attention Visibility Exactly Reverseగా ఉంటుంది.",
-        "T5 Decoderతోనే Input Process చేసి Encoder Representations Never Build చేస్తుంది. Actually T5 Encoder Source Process చేసి Decoderకి Cross-Attention Information Provides చేస్తుంది.",
+        "T5 Decoderతోనే Input Process చేసి Encoder Representations Never Build చేస్తుంది. Actually T5 Encoder Source Process చేసి Decoderకి Cross-Attention Information Provides చేస్తుంది. Source Context Process కూడా అప్పుడు Missing అవుతుంది.",
         "BERT, GPT, T5 Same Masks, Training Objectives Use చేస్తాయి కాబట్టి Interchangeable. కానీ Different Tasksకి Visibility Rules, Learning Goals Differ అవుతాయి.",
         "BERT Bidirectional Encoder Attention Use చేస్తుంది; GPT Causal Decoderతో Next Tokens Predict చేస్తుంది; T5 Encoder, Decoderతో Input Textని Output Textగా Transform చేస్తుంది."
       ],
