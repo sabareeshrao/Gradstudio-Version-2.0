@@ -17,8 +17,8 @@
         "Human Experts Select చేసిన Featuresపైనే Statistics Run చేస్తుంది; Layered Features Learn చేయదు. కొన్ని Classical ML Methods ఇలా Work చేస్తాయి."
       ],
       "answer": "b",
-      "explanation": "<strong>Simple Explanation:</strong> Musicలో Piano, Trumpet Identify చేసే Appలో First Layers Simple Sound Patterns Learn చేస్తాయి. Deeper Layers వాటిని Combine చేసి Instrument Recognize చేస్తాయి.",
-      "technicalExplanation": "<strong>Correct Answer: B.</strong> Music Recognition App Imagine చేయండి. Early Neural Layers Simple Sound Frequencies Detect చేయవచ్చు; Deeper Layers Piano లేదా Trumpet Sound Clues Combine చేస్తాయి. Deep Learning Handwritten Rules కాకుండా Training Examples నుంచి Layered Features Learn చేస్తుంది. Learnable Weights, Multiple Transformations, Nonlinear Activationsతో Network Hierarchical Representations Build చేస్తుంది. Layers ఎప్పుడూ Fixed Feature Roles Follow అవ్వాలని అవసరం లేదు.",
+      "explanation": "<strong>Explanation:</strong> Music వినిపిస్తే Instruments Identify చేసే Appని Imagine చేయండి. First Neural Layers Simple Sound Patternsని Notice చేయవచ్చు; Deeper Layers వాటిని Combine చేసి Piano లేదా Trumpet గురించి Clues Find చేస్తాయి. Deep Learning Examples నుంచి Patterns Build చేయడానికి <strong>many learned layers</strong> Use చేస్తుంది. ప్రతి Instrumentకి Human Manual Rules Write చేయాల్సిన System కాదు. Modelకి Good Training Data, Evaluation మాత్రం Still అవసరం. Layers Manual Feature Design తగ్గేలా Useful Representations Learn చేయగలవు.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Learnable Weights, Multiple Transformations, Nonlinear Activationsతో Network Hierarchical Representations Build చేస్తుంది. Layers Always Fixed Feature Roles Follow కావాల్సిన అవసరం లేదు.",
       "englishSourceDigest": "ff6250e5"
     },
     {
@@ -32,8 +32,8 @@
         "Every Featureని Human Design చేయాల్సిన అవసరం తగ్గేలా Examples నుంచి Useful Features Learn చేస్తుంది. Images, Audio వంటి Complex Inputsకి ఇది Helpful."
       ],
       "answer": "d",
-      "explanation": "<strong>Simple Explanation:</strong> Fabric Factoryలో Defects Detect చేయాలంటే Every Shape Rule Manually Write చేయడం Difficult. Deep Model Labeled Images నుంచి Useful Texture Features Learn చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer: D.</strong> Woven Fabric Factoryలో Small Defects Detect చేస్తున్నట్టు Imagine చేయండి. Older Pipelineలో Engineer Specific Lines, Textures Define చేస్తాడు. Deep Model Labeled Examples నుంచి Features Learn చేస్తుంది; అయినా Good Data, Clear Goal, Careful Evaluation అవసరం. Raw Data నుంచి Features Learn కావడం Manual Engineeringని Reduce చేస్తుంది. అయినప్పటికీ Good Data, Model Choice, Objective, Validation అవసరం. Deep Learning ప్రతి Problemకి Best కాదు.",
+      "explanation": "<strong>Explanation:</strong> Woven Fabricలో Tiny Defects Check చేసే Factoryని Picture చేయండి. Older Methodsలో Engineer Each Suspicious Line, Shape, Textureని Specify చేయాల్సి రావచ్చు. Deep Model Labeled Examples నుంచి Many Visual Cluesని Learn చేయగలదు. దీన్నే <strong>feature learning</strong> అంటారు. దీని Advantage అంటే Human Help అసలు అవసరం లేదని కాదు: Data Collect చేయడం, Goal Choose చేయడం, Results Check చేయడం ఇంకా మనుషులే చేస్తారు. ముఖ్యమైన Features అన్నింటినీ Hand-Design చేయాల్సిన అవసరం తగ్గుతుంది.",
+      "technicalExplanation": "<strong>Correct: D.</strong> Raw Data నుంచి Useful Features Learn చేయడం Manual Engineeringని Reduce చేస్తుంది. అయినా Good Data, Model Choice, Objective, Validation అవసరం. Deep Learning ప్రతి Problemకి Best Solution కాదు.",
       "englishSourceDigest": "df377221"
     },
     {
@@ -47,8 +47,8 @@
         "First Final Prediction Select చేసి, తర్వాత Hidden Layersతో Original Input Reconstruct చేస్తుంది. ఇది Normal Forward Processing Directionకి Opposite."
       ],
       "answer": "a",
-      "explanation": "<strong>Simple Explanation:</strong> Voice Recordingలో First Sound Changes Detect అవుతాయి. Later Layers Pitch, Rhythm, Voice Features Combine చేసి Speakerని Predict చేయవచ్చు.",
-      "technicalExplanation": "<strong>Correct Answer: A.</strong> Speaker Recognitionలో Early Layers Basic Sound Variations Find చేస్తాయి; Later Layers Pitch, Rhythm, Identity Clues Combine చేయవచ్చు. ఇది Learning Hierarchy Example మాత్రమే; Every Layer Strict Simple-to-Complexగా Work కావాల్సిన అవసరం లేదు. Forward Passలో Weights, Activations ద్వారా Representations Transform అవుతాయి. Vision Exampleలో Earlier Layers Edges, Deeper Layers Shapes/Objects Recognize చేయవచ్చు; ఇది Illustrative.",
+      "explanation": "<strong>Explanation:</strong> Short Voice Recording నుంచి Speaker Recognize చేసే Example Consider చేయండి. Early Layers Simple Sound Changesని Detect చేయవచ్చు. Later Layers వాటిని Combine చేసి Pitch, Rhythm, Voice Characteristicsలాంటి Patterns Build చేస్తాయి. Final Layers ఆ Informationతో Speaker ఎవరో Predict చేస్తాయి. Core Idea <strong>learning hierarchy</strong>: Later Layers Earlier Layers Build చేసిన Patternsతో Work చేస్తాయి. ఇది ప్రతి సందర్భంలో Perfect Simple-to-Complex Staircase కానప్పటికీ Multiple Hidden Layers Function అర్థం చేసుకోవడానికి Useful Picture.",
+      "technicalExplanation": "<strong>Correct: A.</strong> Forward Passలో Weights, Activations Representationsని Transform చేస్తాయి. Vision Exampleలో Early Layers Edges, Deeper Layers Shapes/Objects Recognize చేయవచ్చు; ఇది Illustrative Example.",
       "englishSourceDigest": "396ad1bc"
     },
     {
@@ -62,8 +62,8 @@
         "Training Rounds తర్వాత Correct Labelsని Model Guessesకి Match అయ్యేలా Change చేస్తుంది. Scores Improve అయినట్టు కనిపించినా Correct Task Learn కాదు."
       ],
       "answer": "c",
-      "explanation": "<strong>Simple Explanation:</strong> Greenhouseకి Tomorrow Water Requirement Predict చేస్తూ Lossతో Mistake Measure చేస్తాం. Backprop Gradients Find చేసి Optimizer Mini-Batchesపై Weights Update చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer: C.</strong> Greenhouse Water Predictionలో Temperature, Soil Moisture Inputsతో Model Amount Guess చేస్తుంది. Actual Waterతో Compare చేసి Loss Calculate చేస్తాం. Backprop Gradients, Optimizer Updates Repeat అవుతాయి. Depth, Width, Parameter Initialization Stabilityని Affect చేస్తాయి. Forward Pass Predictions ఇస్తుంది; Loss Targetతో Compare చేస్తుంది; Backpropagation Gradients Compute చేస్తుంది; Optimizer Mini-Batchesపై Updates చేస్తుంది. Activation Nonlinearity, Initialization, Depth, Width Trainingపై Affect చేస్తాయి.",
+      "explanation": "<strong>Explanation:</strong> Tomorrow Greenhouseకి ఎంత Water అవసరమో Predict చేసే Modelని Imagine చేయండి. Temperature, Soil Moistureలాంటివి Inputsగా తీసుకుని Amount Predict చేస్తుంది. <strong>Loss Function</strong> Predictionకి Recorded Actual Amountకి ఎంత Difference ఉందో Measure చేస్తుంది. Backpropagation Gradients Find చేస్తుంది; అవి Parameters Lossపై ఎలా Affect చేస్తాయో చూపిస్తాయి. Optimizer Small Weight Updates చేస్తుంది. Mini-Batchesతో ఇదే Process Repeat అవుతుంది; Model Improve కావచ్చు. Depth, Layer Width, Starting Weights Learning Stableగా ఉంటుందా అనే విషయాన్ని Affect చేస్తాయి.",
+      "technicalExplanation": "<strong>Correct: C.</strong> Forward Pass Predictions ఇస్తుంది; Loss Targetsతో Compare చేస్తుంది; Backpropagation Gradients Compute చేస్తుంది; Optimizer Mini-Batchesపై Updates చేస్తుంది. Activation Nonlinearity, Initialization, Depth, Width Trainingని Affect చేస్తాయి.",
       "englishSourceDigest": "9139df0a"
     },
     {
@@ -77,8 +77,8 @@
         "Test Labelsతో Every Weight Update చేసి Same Test Scoreని Independent Evaluationగా Report చేస్తుంది. ఇది Data Leakageకి దారి తీస్తుంది."
       ],
       "answer": "b",
-      "explanation": "<strong>Simple Explanation:</strong> Next Hour Electricity Usage కోసం PyTorchలో Data Tensors, Model, Loss, Optimizer Build చేస్తాం. Training తర్వాత Separate Validationపై Predictions Check చేస్తాం.",
-      "technicalExplanation": "<strong>Correct Answer: B.</strong> Electricity Forecast Exampleలో Past Readingsని Tensorsగా Convert చేసి PyTorch Model Define చేస్తాం. ప్రతి Batch: Forward → Loss → backward() → optimizer.step(). Epoch తర్వాత Validation Set Check చేయాలి; Unseen Examples Final Performance Measure చేయాలి. nn.Module Model Define చేసి Data Batchesపై zero_grad(), backward(), step() Use చేస్తాం. Validationలో model.eval(), torch.no_grad() Use చేసి Unseen Data Performance Check చేస్తాం.",
+      "explanation": "<strong>Explanation:</strong> Next Hour Electricity Usage Predict చేయాలనుకుంటున్నారని Suppose చేయండి. PyTorchలో Past Readingsని Tensorsగా Convert చేసి Neural Network Define చేసి Loss Function, Optimizer Choose చేయండి. ప్రతి Batchకి Predictions Make చేసి Loss Calculate చేసి backward Call చేసి Weights Update చేయండి. Epoch తర్వాత Separate <strong>Validation Set</strong>లో Model New Examplesకి Generalize అవుతుందా Check చేయండి. Training Finish అయ్యాక Unseen Readingsపై Try చేయండి. Evaluation Dataని Separateగా ఉంచడం Model Code రాయడంత Important.",
+      "technicalExplanation": "<strong>Correct: B.</strong> PyTorch nn.Moduleలో Model Define చేసి Data Batchesపై zero_grad(), backward(), step() Use చేస్తాం. Validationలో model.eval(), torch.no_grad()తో Unseen Data Performance Check చేస్తాం.",
       "englishSourceDigest": "d98b3737"
     },
     {
@@ -92,8 +92,8 @@
         "Model Optimizer Choice మాత్రమే Architectureకి Difference అని Assume చేస్తుంది. CNNs, RNNs, Transformers Processing Structures Actually Differentగా Work చేస్తాయి."
       ],
       "answer": "a",
-      "explanation": "<strong>Simple Explanation:</strong> Satellite Image Roadsకి CNN, Temperature Sequenceకి RNN, Long Transcriptకి Transformer Useful. Autoencoder, GAN, Diffusion Data Reconstruct లేదా Generate చేస్తాయి.",
-      "technicalExplanation": "<strong>Correct Answer: A.</strong> Satellite Road Detectionలో CNN Spatial Kernels Use చేస్తుంది; Temperature Readingsలో RNN State Carry చేస్తుంది; Long Transcriptలో Transformer Attention Useful. Autoencoder Compressed Data Reconstruct, GAN Generator–Discriminator Compete, Diffusion Noise Reverse Learn చేస్తాయి. CNN Spatial Filters, RNN Time-State, Transformer Attention Use చేస్తాయి. Autoencoder Compress/Reconstruct చేస్తుంది; GAN Generator/Discriminatorతో Train అవుతుంది; Diffusion Noise Remove చేయడం Learn చేస్తుంది.",
+      "explanation": "<strong>Explanation:</strong> Different Jobsకి Different Network Designs Useful. <strong>CNN</strong> Satellite Pictureలో Roadsని Scan చేయవచ్చు. <strong>RNN</strong> Temperature Readings Sequenceని Follow చేయవచ్చు. <strong>Transformer</strong> Long Transcriptలో Distant Partsని Attentionతో Connect చేస్తుంది. <strong>Autoencoder</strong> Compressed Representation Learn చేసి Data Reconstruct చేస్తుంది. <strong>GAN</strong> Generatorని Discriminatorకి Againstగా Train చేస్తుంది; <strong>Diffusion Model</strong> Noiseని Reverse చేయడం Learn చేస్తుంది. ఇవి Different Structures, Learning Goals; Same Networkకి Different Names మాత్రమే కాదు.",
+      "technicalExplanation": "<strong>Correct: A.</strong> CNN Spatial Filters, RNN Time-State, Transformer Attention Use చేస్తాయి. Autoencoder Compress/Reconstruct చేస్తుంది; GAN Generator/Discriminatorతో Train అవుతుంది; Diffusion Noise Removal Learn చేస్తుంది.",
       "englishSourceDigest": "c3f71320"
     },
     {
@@ -107,8 +107,8 @@
         "Stable Gradients, Memory-Saving Techniques, Distributed Compute, Regularization, Careful Evaluation Use చేస్తుంది. Larger Modelsని Efficientగా Train చేసి Generalization Check చేస్తుంది."
       ],
       "answer": "d",
-      "explanation": "<strong>Simple Explanation:</strong> Millions of Astronomy Imagesతో Big Network Train చేస్తే Memory, Gradient Problems రావచ్చు. Residuals, Normalization, Mixed Precision, Distributed Training Help చేస్తాయి.",
-      "technicalExplanation": "<strong>Correct Answer: D.</strong> Astronomy Image Trainingలో Layers, Parameters Increase అయితే Compute/Memory Demand పెరుగుతుంది. Vanishing/Exploding Gradients Trainingని Hurt చేస్తాయి. Residuals, Normalization Stabilize చేయవచ్చు; Regularization Overfitting Reduce చేస్తుంది; Mixed Precision Memory Save, Distributed Training Work Share చేస్తుంది. Unseen Image Evaluation Required. Residual Connections, Normalization Gradient Flowని Improve చేయవచ్చు. Regularization Generalizationకి, Mixed Precision/Checkpointing Memoryకి, Distributed Training Scaleకి Help చేస్తాయి. Metrics Monitor చేయడం తప్పనిసరి.",
+      "explanation": "<strong>Explanation:</strong> Millions of Astronomy Imagesపై Model Train చేస్తున్నట్టు Imagine చేయండి. More Layers, Parametersకి Extra Memory, Computation అవసరం. Very Small లేదా Very Large Gradients Trainingని Difficult చేయవచ్చు. <strong>Residual Connections</strong>, Normalization Optimizationకి Help చేయవచ్చు; Regularization Overfitting Reduce చేయడానికి Useful. Mixed Precision Memory Save చేయవచ్చు; Distributed Training Workని Devices మధ్య Spread చేస్తుంది. New Imagesపై Evaluation ద్వారా Bigger Model Dataset Memorize చేయకుండా Useful Patterns Learn చేసిందా Check చేస్తాం. Scaling ఒక Modeling Problem మాత్రమే కాదు, Engineering Problem కూడా.",
+      "technicalExplanation": "<strong>Correct: D.</strong> Residual Connections, Normalization Gradient Flow Improve చేయవచ్చు. Regularization Generalizationకి, Mixed Precision లేదా Checkpointing Memoryకి, Distributed Training Scaleకి Help చేస్తాయి. Metrics Monitor చేయాలి.",
       "englishSourceDigest": "1a6595fa"
     }
   ],
@@ -130,6 +130,8 @@
   "translationSource": {
     "module": "deep-learning",
     "sourceVersion": "English revised options and example-based explanations",
-    "updatedAgainstBlobSha": "1afed1e740e9a0fef75748b15fa5f92851766e71"
+    "updatedAgainstBlobSha": "1afed1e740e9a0fef75748b15fa5f92851766e71",
+    "preserveEnglishExplanationStructure": true,
+    "translationRule": "Translate English explanation and technical section in place; no rearrangement or new material"
   }
 }
