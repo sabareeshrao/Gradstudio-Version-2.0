@@ -12,8 +12,8 @@
       "stem": "Logistic Regression పేరు Regression అయినా Classificationకి ఎందుకు Use చేస్తాం? Input Features నుంచి Class Probability ఎలా Predict చేస్తుంది?",
       "options": [
         "Logistic Regression Continuous Target Only Predict చేసి Class Probabilities Calculate చేయదు.",
-        "Logistic Regression Unlabeled Pointsని Distanceతో Cluster చేస్తుంది.",
-        "Logistic Regression Weighted Features నుంచి Class Probability Estimate చేసి Classification చేస్తుంది.",
+        "Logistic Regression Unlabeled Examplesని Similarity Distanceతో Only Cluster చేస్తుంది.",
+        "Logistic Regression Weighted Features నుంచి Class Probability Estimate చేస్తుంది.",
         "Logistic Regression New Training Samples Generate చేసి Input Features Reconstruct చేస్తుంది."
       ],
       "answer": "c",
@@ -42,7 +42,7 @@
         "Bank Income, Debt Simply Add చేసి Totalనే Default Probabilityగా Treat చేస్తుంది.",
         "Low Income ఉన్న ప్రతి Person Default Guaranteed అని Model Assume చేస్తుంది.",
         "Model Default Labels Randomly Select చేసి Credit Historyని Labelsకి Match చేస్తుంది.",
-        "Income, Debt, Credit History Learned Weights Combine చేసి Default Risk Estimate చేస్తుంది."
+        "Income, Debt, Credit History Weightsతో Default Risk Estimate చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Bank Historical Loans నుంచి Weights Learn చేస్తుంది. Income, Debt, Credit Historyతో Default Risk Estimate చేస్తుంది.",
