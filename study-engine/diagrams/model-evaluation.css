@@ -1,0 +1,22 @@
+/* Model Evaluation · seven distinct SVG instructional scenes.
+   Self-contained module design; the shared Gradstudio CSS/15 themes remain unchanged. */
+.me-hero,.me-fig{--me-ink:#274e63;--me-accent:#3b8b7a;--me-blue:#6e9ebe;--me-orange:#bd7654;color:var(--me-ink);background:radial-gradient(circle at 90% 0%,#e2f3ed,transparent 42%),linear-gradient(155deg,#f8fcff,#fffdf9);border:1px solid #d7e5e9;border-radius:17px;min-width:0;padding:clamp(16px,2.7vw,27px);overflow:hidden;}
+.me-hero{margin:0 0 24px;background:linear-gradient(124deg,#eaf8f2,#f7fbff 65%,#fff6ed);box-shadow:0 10px 28px #2f638912;}
+.me-kicker{font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em;color:#338b87;display:block}
+.me-fig h3,.me-hero h2{font-size:clamp(1.1rem,2.35vw,1.46rem);font-weight:860;line-height:1.28;color:#264e67;margin:9px 0 8px}
+.me-hero h2{font-size:clamp(1.24rem,2.7vw,1.7rem)}
+.me-intro,.me-hero>p{font-size:.88rem;color:#547384;line-height:1.55;margin:0 0 14px}
+.me-canvas{border:1px solid #dae7ea;background:#fff;border-radius:13px;padding:8px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;box-shadow:0 6px 18px #234a5810}
+.me-canvas svg{width:100%;height:auto;min-width:640px;max-width:none;display:block;background:#fff;border-radius:9px}
+.me-canvas svg text{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+.me-foot{font-size:.82rem;color:#587987;line-height:1.57;margin:13px 2px 0}
+.me-f1 .me-canvas{border-top:4px solid #db9c70}.me-f2 .me-canvas{border-top:4px solid #69af9a}
+.me-f3 .me-canvas{border-top:4px solid #78a6c3}.me-f4 .me-canvas{border-top:4px solid #b9a4d2}
+.me-f5 .me-canvas{border-top:4px solid #d0a773}.me-f6 .me-canvas{border-top:4px solid #75b7ba}
+.me-f7 .me-canvas{border-top:4px solid #78aa86}
+.me-sources{margin-top:18px;padding:13px 16px;background:#fff;border:1px solid #d7e5e9;border-radius:12px;font-size:.82rem;color:#587180}
+.me-sources summary{font-weight:800;color:#315e76;cursor:pointer}
+.me-sources a{color:#166c8d;text-decoration:underline}
+.me-hero .me-foot{font-weight:650}
+@media(max-width:700px){.me-hero,.me-fig{padding:13px}.me-canvas{padding:5px}.me-canvas svg{min-width:680px}.me-intro,.me-foot{font-size:.8rem}}
+@media(prefers-reduced-motion:no-preference){.me-canvas svg{transition:filter .2s ease}.me-canvas:hover svg{filter:saturate(1.06)}}
