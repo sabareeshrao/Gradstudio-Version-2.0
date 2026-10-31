@@ -1,0 +1,16 @@
+/* Linear Regression illustrated-v2: responsive original SVGs */
+.lr-hero,.lr-figure{font-family:inherit;min-width:0;color:#2e4c5d}
+.lr-hero{margin:0 0 24px;padding:clamp(18px,2.7vw,28px);border:1px solid #cfe4e7;border-radius:19px;background:linear-gradient(135deg,#e8f6ed,#f5fbff,#fff9ef)}
+.lr-kicker{font-size:.71rem;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:#278370}
+.lr-hero h2{font-size:clamp(1.2rem,2.6vw,1.8rem);line-height:1.25;color:#315b70;margin:9px 0}
+.lr-hero p{font-size:.89rem;line-height:1.58;color:#607b88}
+.lr-figure{padding:clamp(14px,2.7vw,25px);background:radial-gradient(ellipse at top right,#e7f6ef,transparent 48%),linear-gradient(135deg,#f9fcff,#fffbf5)}
+.lr-figure h3{font-size:clamp(1.05rem,1.95vw,1.24rem);line-height:1.36;color:#31576d;font-weight:850;margin:8px 0 14px}
+.lr-svg-wrap{max-width:100%;overflow-x:auto;overflow-y:hidden;border:1px solid #d9e7eb;border-radius:13px;background:#fff;scrollbar-color:#bad3db transparent}
+.lr-svg-wrap svg{display:block;width:100%;min-width:650px;height:auto;max-width:none}
+.lr-note{font-size:.83rem;line-height:1.58;color:#5f7b89;margin:12px 0 0}.lr-note strong{color:#27816d}
+.lr-code{font-family:ui-monospace,Consolas,monospace;font-size:.74rem;line-height:1.49;color:#e8f3fa;background:#1d3043;padding:14px;white-space:pre;overflow-x:auto;border-radius:10px}
+.lr-sources{margin:22px 0;padding:13px 15px;border:1px solid #d9e7e9;border-radius:12px;background:#fff;color:#617b8b;font-size:.8rem}
+.lr-sources summary{cursor:pointer;font-weight:850}.lr-sources li{margin:7px 0}.lr-sources a{color:#17729a}
+@media(max-width:650px){.lr-hero{padding:15px 12px}.lr-figure{padding:13px 10px}.lr-svg-wrap svg{min-width:650px}}
+@media(prefers-reduced-motion:reduce){.lr-hero *,.lr-figure *{animation:none!important;transition:none!important}}
