@@ -1,0 +1,23 @@
+/* Principal Component Analysis: concept-specific illustrated-v2 diagrams. Shared Gradstudio handles UI, scoring, and 15 themes. */
+.pca-hero,.pca-fig{font-family:inherit;color:#28465a;min-width:0}
+.pca-hero{border:1px solid #d0e3e7;border-radius:21px;padding:clamp(14px,2.7vw,25px);margin:0 0 24px;background:radial-gradient(circle at 13% 7%,#e6f7f0,transparent 44%),linear-gradient(128deg,#f5faff,#fffaf0);box-shadow:0 10px 24px rgba(24,78,103,.06)}
+.pca-kicker{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#27857a}
+.pca-hero h2{font-size:clamp(1.2rem,2.4vw,1.8rem);color:#295773;line-height:1.24;margin:8px 0 10px}
+.pca-hero p{font-size:.9rem;max-width:75ch;color:#58788a;margin:0 0 15px}
+.pca-fig{padding:clamp(14px,2.7vw,23px);background:radial-gradient(circle at 95% 6%,#edf9ef,transparent 50%),linear-gradient(155deg,#f6fbff,#fffdf8);border-radius:13px}
+.pca-fig h3{font-size:clamp(1.02rem,2vw,1.24rem);line-height:1.35;margin:8px 0 13px;color:#28546b}
+.pca-canvas{background:#fff;border:1px solid #dce8ed;border-radius:13px;max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-color:#b2d3dc transparent}
+.pca-canvas svg{display:block;width:100%;min-width:700px;height:auto}
+.pca-hero .pca-canvas svg{min-width:750px}
+.pca-note{font-size:.82rem;line-height:1.57;color:#617f8c;margin:12px 0 0}
+.pca-code{margin-top:14px;border:1px solid #cddde5;border-radius:13px;overflow:hidden}
+.pca-code summary{background:#eef6fa;padding:11px 15px;cursor:pointer;font-size:.82rem;color:#426e82;font-weight:800}
+.pca-code[open]{background:#162a3e;border-color:#314b5d}
+.pca-code[open] summary{background:#2e465c;color:#eff9ff}
+.pca-code pre{margin:0;padding:15px;color:#ecf7ff;font-size:.76rem;line-height:1.55;overflow-x:auto;tab-size:4}
+.pca-code code{font:inherit;color:inherit;border:0;background:none;padding:0;white-space:pre}
+.pca-sources{margin:18px 0;padding:12px 17px;border-radius:13px;border:1px solid #dbe8ec;background:#fff}
+.pca-sources summary{cursor:pointer;color:#376b7c;font-size:.84rem;font-weight:800}
+.pca-sources li{margin:6px 0;color:#607a8a;font-size:.83rem}
+@media(max-width:650px){.pca-hero,.pca-fig{padding:14px}.pca-canvas svg{min-width:650px}.pca-hero .pca-canvas svg{min-width:700px}.pca-code pre{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.pca-fig *, .pca-hero *{animation:none!important;transition:none!important}}
