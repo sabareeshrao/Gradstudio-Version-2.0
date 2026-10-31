@@ -324,6 +324,11 @@
       "slug": "model-evaluation",
       "title": "Model Evaluation",
       "domain": "Measuring and Comparing Machine Learning Model Performance · AI Evaluation and Benchmarking"
+    },
+    {
+      "slug": "feature-selection",
+      "title": "Feature Selection",
+      "domain": "Selecting Relevant Features for Machine Learning · Data Preprocessing and Feature Engineering"
     }
   ]
 }
