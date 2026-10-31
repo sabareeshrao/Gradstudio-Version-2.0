@@ -25,7 +25,7 @@
       "tag": "Beginner · probabilities and thresholds",
       "stem": "How does Logistic Regression estimate the probability of an outcome belonging to a particular class, and how does it convert that probability into a final Yes/No or 0/1 prediction?",
       "options": [
-        "Logistic Regression uses Sigmoid to turn a weighted score into a probability, then compares that probability with a chosen classification threshold.",
+        "Logistic Regression maps a weighted score to probability using Sigmoid, then applies a chosen threshold to predict a category.",
         "Logistic Regression simply counts how many training examples belong to the largest class, then always predicts that class for new inputs.",
         "Logistic Regression first changes every feature into a separate Yes/No vote, then ignores the weighted scores when estimating probability.",
         "Logistic Regression treats its computed probability as absolute certainty and never uses a threshold to assign a final class label."
@@ -54,7 +54,7 @@
       "stem": "How does Logistic Regression mathematically transform a linear combination of input features, weights, and bias into a probability using the Sigmoid Function, and how does the classification threshold determine the decision boundary?",
       "options": [
         "Sigmoid produces a straight-line probability curve, and changing the classification threshold automatically changes the learned coefficients and bias.",
-        "The linear score z = w·x + b passes through Sigmoid to become a probability; the threshold defines which score region predicts each class.",
+        "The weighted feature sum passes through Sigmoid; a threshold picks a class and defines the decision boundary.",
         "Every feature uses its own independent class threshold, so no combined weighted sum is needed to calculate a prediction.",
         "Negative weighted scores become negative probabilities that are interpreted directly as class zero, without using any nonlinear transformation."
       ],
@@ -67,7 +67,7 @@
       "tag": "Medium · training and evaluation",
       "stem": "How does Logistic Regression learn optimal coefficients from labeled training data using Maximum Likelihood Estimation, Binary Cross-Entropy Loss, and gradient-based optimization, and how can its performance be measured using a confusion matrix, precision, recall, and ROC-AUC?",
       "options": [
-        "Training fits the coefficients by minimizing binary cross-entropy, related to maximum likelihood, and evaluates predictions using confusion-matrix and ranking metrics.",
+        "Training minimizes binary cross-entropy under maximum likelihood, then evaluates errors, precision, recall, and class ranking on held-out examples.",
         "Training maximizes classification accuracy through gradients directly, while ROC-AUC reports only the fraction of predictions assigned the correct label.",
         "Precision measures false negatives alone, while recall ignores actual positive outcomes, so neither metric needs a confusion matrix.",
         "Training derives feature coefficients directly from confusion-matrix counts, without a likelihood function or numerical optimization over labeled records."
@@ -83,7 +83,7 @@
       "options": [
         "Logistic Regression assumes input features have no correlations, making any dataset with related features mathematically unusable for prediction.",
         "L1 and L2 penalties eliminate all extreme observations, while class weighting guarantees that predicted probabilities are perfectly calibrated.",
-        "Class imbalance can only be handled by removing training records, regardless of the costs of missed positives or available weighting methods.",
+        "Class imbalance can only be solved by deleting training examples, regardless of costs or available weighting methods.",
         "Logistic Regression is linear in log-odds; feature design, regularization, and class weights address different modeling and imbalance challenges."
       ],
       "answer": "d",
@@ -97,7 +97,7 @@
       "options": [
         "One-vs-Rest fits one combined Softmax classifier across all classes, while multinomial classification trains entirely separate binary models.",
         "Probability calibration changes the feature weights automatically, and adjusting the decision threshold necessarily improves ROC-AUC on every dataset.",
-        "One-vs-Rest trains separate binary classifiers; multinomial logistic regression uses Softmax jointly, with calibration and threshold checks for deployment.",
+        "One-vs-Rest trains separate binary models; multinomial Softmax treats classes jointly, with calibration and threshold checks for deployment.",
         "Softmax guarantees every predicted probability matches the actual event frequency, so multiclass models never require validation or calibration."
       ],
       "answer": "c",
