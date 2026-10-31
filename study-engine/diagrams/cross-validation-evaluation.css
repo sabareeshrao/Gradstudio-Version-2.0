@@ -1,0 +1,44 @@
+
+/* Cross-Validation Evaluation: seven visual-first, distinct scenes */
+.cv-hero,.cv-scene{box-sizing:border-box;color:#27445b;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.cv-hero *,.cv-scene *{box-sizing:border-box}
+.cv-hero{padding:clamp(17px,3vw,27px);border:1px solid #d6e4e8;border-radius:18px;background:radial-gradient(circle at 93% 0%,#e1f5ee,transparent 45%),linear-gradient(135deg,#f4faff,#fff7ee);margin-bottom:24px}
+.cv-kicker{display:block;color:#277f79;font-weight:850;letter-spacing:.11em;text-transform:uppercase;font-size:.7rem;margin-bottom:7px}
+.cv-hero h2,.cv-scene h3{line-height:1.25;color:#275a6e;margin:0 0 12px;font-size:clamp(1.1rem,2.2vw,1.62rem)}
+.cv-hero p,.cv-caption{font-size:.83rem;color:#607b88;line-height:1.6;margin:11px 0}
+.cv-hero svg,.cv-scene svg{width:100%;height:auto;display:block;border-radius:12px;background:#fff;border:1px solid #dae8ec}
+.cv-scene{padding:clamp(14px,2.6vw,24px);background:radial-gradient(circle at 100% 0%,#f6f5e3,transparent 55%),linear-gradient(136deg,#f5fbff,#fff)}
+.cv-sub{font-weight:700;color:#397280;font-size:.78rem;margin:7px 0 10px}
+.cv-bands{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:12px 0}
+.cv-bands span{background:#e1f3ec;border:1px solid #b8dbd1;border-radius:8px;text-align:center;padding:10px 4px;font-weight:800;font-size:.78rem;color:#387967}
+.cv-bands .cv-hold{background:#ffe8cb;border-color:#ecc691;color:#92643b}
+.cv-bands span small{display:block;font-size:.65rem;color:inherit;opacity:.78}
+.cv-legend{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0 0}
+.cv-legend span{font-size:.73rem;color:#506f80;display:flex;align-items:center;gap:6px}
+.cv-legend i{display:inline-block;width:13px;height:13px;border-radius:4px;background:#6fb6aa}
+.cv-legend i.cv-amber{background:#e8a765}.cv-legend i.cv-red{background:#d86f68}.cv-legend i.cv-blue{background:#659dbb}
+.cv-two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.cv-pane{border:1px solid #dce8ec;background:#fff;border-radius:12px;padding:12px}
+.cv-pane strong{font-size:.85rem;color:#356478}
+.cv-pane p{font-size:.75rem;color:#5e7a8d;margin:8px 0 2px}
+.cv-metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:13px 0}
+.cv-metric-grid div{background:white;border:1px solid #d5e5ea;border-radius:11px;padding:11px;text-align:center}
+.cv-metric-grid strong{display:block;font-size:.8rem;color:#43758a}
+.cv-metric-grid b{display:block;font-size:1.12rem;color:#2d866e;margin-top:4px}
+.cv-terminal{background:#182b3f;color:#e6f5ff;padding:14px;border-radius:13px;overflow-x:auto;font-size:clamp(.69rem,1.3vw,.79rem);line-height:1.62;white-space:pre;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.cv-terminal .cv-keyword{color:#f3be85}.cv-terminal .cv-name{color:#9bd7cd}
+.cv-code-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:13px}
+.cv-code-layout .cv-pane svg{margin:8px 0}
+.cv-pillrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.cv-pillrow span{background:#e6f2f6;color:#436b7b;border:1px solid #d4e7ef;border-radius:99px;padding:5px 9px;font-size:.72rem;font-weight:750}
+.cv-alert{margin-top:13px;background:#fef1e9;color:#976446;border:1px solid #f4d5c4;border-radius:10px;padding:11px 13px;font-size:.78rem;line-height:1.55}
+.cv-safe{margin-top:13px;background:#e7f7ef;color:#336f56;border:1px solid #cae6d8;border-radius:10px;padding:11px 13px;font-size:.78rem;line-height:1.55}
+.cv-guides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cv-guide{padding:11px;background:#fff;border:1px solid #dce8e9;border-radius:12px;min-width:0}
+.cv-guide strong{display:block;font-size:.82rem;color:#396b7b;margin-bottom:8px}
+.cv-guide p{margin:7px 0 0;font-size:.74rem;line-height:1.5;color:#64818d}
+.cv-pipeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:11px 0}
+.cv-pipeline span{font-weight:750;font-size:.73rem;line-height:1.45;text-align:center;background:#eaf6f2;border:1px solid #cce8de;border-radius:9px;color:#397968;padding:10px 4px}
+.cv-note{font-size:.78rem;line-height:1.6;color:#5e7b88;margin:12px 0 0}
+@media(max-width:800px){.cv-code-layout,.cv-two{grid-template-columns:1fr}.cv-metric-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cv-guides{grid-template-columns:1fr}.cv-scene{padding:13px}.cv-pipeline{grid-template-columns:repeat(2,1fr)}}
