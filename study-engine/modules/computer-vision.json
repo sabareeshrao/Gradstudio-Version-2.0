@@ -39,10 +39,10 @@
       "tag": "Beginner · different outputs",
       "answer": "a",
       "options": [
-        "Classification labels scenes; detection draws boxes; segmentation marks pixels; tracking follows objects through videos.",
+        "Classification names scenes; detection locates cars; segmentation marks pixels; tracking follows objects in video.",
         "Classification finds every object's exact outline, while tracking chooses one label for the whole image.",
         "Detection follows moving objects across frames, while segmentation predicts only the image's overall class.",
-        "Tracking separates all object pixels automatically, while classification marks each object with bounding rectangles in practical applications."
+        "Tracking separates all object pixels automatically, while classification marks each object with bounding rectangles."
       ],
       "explanation": "<strong>In simple words:</strong> Classification names the scene. Detection shows where objects are. Segmentation identifies their pixels, while tracking follows them across video frames.",
       "technicalExplanation": "<strong>Correct: A.</strong> Classification assigns scene labels; detection returns bounding boxes; segmentation identifies pixels belonging to objects; tracking links object identities across video frames. Each solves a different part of visual understanding.",
