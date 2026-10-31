@@ -37,6 +37,8 @@ These links are generated from the canonical [module manifest](modules/index.jso
 
 Recent modules include Tokenization, Vector Database, Generative Model, Embedding Vector, and Reinforcement Learning, each with seven teaching questions and their own illustrations. Lesson JSON is stored in [`modules/`](modules/) and per-keyword visual styling in [`diagrams/`](diagrams/).
 
+- Computer Vision: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=computer-vision
+
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
 - `core.css`: reused layout, responsive behavior and theme-related styling.
