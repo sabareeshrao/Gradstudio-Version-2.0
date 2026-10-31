@@ -314,6 +314,11 @@
       "slug": "train-validation-test-split",
       "title": "Train-Validation-Test Split",
       "domain": "Dataset Partitioning and Model Evaluation · Data Preprocessing and Feature Engineering"
+    },
+    {
+      "slug": "data-leakage",
+      "title": "Data Leakage",
+      "domain": "Preventing Information Leakage in Machine Learning · Data Preprocessing and Feature Engineering"
     }
   ]
 }
