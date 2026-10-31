@@ -130,3 +130,11 @@ The remaining modules can be revised in subsequent user-selected batches.
 
 ## 50-topic semantic correction audit (2026-10-31)
 All 50 planned English modules received a question-to-answer completeness pass. The earlier 1.15 mechanical length rule had encouraged overly short correct choices that omitted definitions or subparts of questions. Correct options now foreground the direct answer, and learner explanations begin with that answer before a practical example. This revision keeps stems, stored answer keys, diagrams, advanced explanations and Telugu files unchanged. Length parity is still important but must be reviewed without truncating correct content. See `ENGLISH_SEMANTIC_AUDIT_50_TOPICS.md` for translation-review guidance.
+
+## New modules with user-supplied correct answers (Data Leakage standard)
+- When the user provides the complete correct answer for each question, preserve that answer **verbatim** as the correct option. Do not shorten it for answer-length balance.
+- Incorrect options should each teach a nearby concept or a realistic misconception, using the same plain technical English as the correct option. The wrong choices must not also be correct for the wording of the question.
+- Match all four option **word counts** as closely as possible, ideally exactly, by editing the *distractors*, not the supplied answer. Also review visible character lengths and obvious style clues.
+- Every explanation directly addresses all parts of the question first; then teach with a different concrete scenario. Keep the learner-facing explanation under 100 words and label it only **Explanation:**.
+- Preserve the question stem but omit redundant "Question:" and "Layer N:" labels from display. Build seven visually distinct teaching diagrams (including a code panel for an implementation question), validate numerical examples, and reuse the shared engine.
+- For Data Leakage, the supplied seven answer texts are the single source of truth. The source-level checks verify answer text, length parity, HTML/SVG structure and availability in GitHub; browser rendering and educational correctness still require editorial review.
