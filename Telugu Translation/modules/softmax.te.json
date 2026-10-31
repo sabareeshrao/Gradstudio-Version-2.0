@@ -27,7 +27,7 @@
       "tag": "Beginner · Why",
       "options": [
         "Cat Score Alone Labelగా Convert చేసి Dog/Bird Compare చేయదంటుంది. Multiclass Distribution Needs All Scores.",
-        "Cat, Dog, Bird Logitsని One Distributionగా Softmax Normalize చేస్తుంది; Top Probability Prediction, Confidence Not Proof.",
+        "Cat/Dog/Bird Logits Softmax One Distributionగా Normalize; Highest Prediction, Confidence Accuracy Proof కాదు.",
         "Cat Alphabetically First కాబట్టి Always Win అంటుంది. Probabilities Numerical Logitsపై Depend.",
         "Photo Brightness, Pixel Count నుంచి Direct Probabilities అంటుంది. Softmax Logitsపై Operate చేస్తుంది."
       ],
@@ -72,7 +72,7 @@
       "tag": "Medium · Python",
       "options": [
         "Very Large Logits Direct Exponentiate చేస్తే More Accurate అంటుంది. exp Overflow Risk.",
-        "Max(logits) Subtract చేసి Exp, Sum Normalize; NumPy/PyTorch Stable, Common Shift Probabilities Unchanged.",
+        "Max(logits) Subtract → Exp → Sum Normalize; Stable NumPy/PyTorch, Shift Unchanged.",
         "Minimum Score Subtract చేస్తే All Inputs Zero, Uniform Probabilities అంటుంది. Differences Remain.",
         "PyTorch Softmax One Scalar Only, Vector/Batch Normalize చేయలేదంటుంది. Tensor Dimensions Supported."
       ],
@@ -89,7 +89,7 @@
         "Cross-Entropy Correct Class Probability Only Change, Others Zero Gradients అంటుంది. Softmax Classes Coupled.",
         "Softmax Jacobian Identity Matrix అని అంటుంది. Shared Denominator Cross-Class Derivatives Create చేస్తుంది.",
         "Backprop Probabilities Direct Change, Network Weights Unchanged అంటుంది. Optimizer Weights Learn చేస్తుంది.",
-        "Cross-Entropy Correct-Class Probability Measure; Jacobian Class Coupling, Backprop Logits/Weights Gradients; Libraries Fuse Operations."
+        "Cross-Entropy Correct-Class Probability Measure; Jacobian Coupling, Backprop Logit/Weight Gradients; Libraries Fuse."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Cross-Entropy Correct Labelsకి Assigned Probability ఎంత ఉందో Measure చేస్తుంది. Softmax Jacobian Class Probabilities Couple చేస్తుంది; Backprop Logits, Earlier Weightsకి Derivatives Send చేస్తుంది; Libraries Often Both Fuse చేస్తాయి. Recycling Itemకి Four Binsలో Best Bin Choose చేసే Modelని Imagine చేయండి. <strong>Softmax</strong> Class Logitsని Probabilitiesగా Convert; <strong>Cross-Entropy</strong> Correct Binకి Probability Evaluate. Backprop Loss Derivatives All Logits, Weightsకి Link చేస్తుంది. <strong>Softmax Jacobian</strong> One Score Change Others Probabilitiesని Affect చేస్తుందని Express చేస్తుంది, Shared Denominator వల్ల.",
@@ -101,7 +101,7 @@
       "stem": "Transformer Attention, LLM Next-Token Predictionలో Softmax ఎలా Use అవుతుంది? Large Vocabulary, Numerical Precision, Calibration, Compute Cost Challenges ఏమిటి?",
       "tag": "Advanced · Production",
       "options": [
-        "Attention Softmax Positions; Output Softmax Vocabulary Tokens Normalize; Large Vocab, Precision, Calibration Costs Matter.",
+        "Attention Softmax Positions, Output Softmax Vocabulary Normalize; Large Vocab, Precision, Calibration Trade-offs.",
         "Attention Softmax Permanent Chat Memory Store, Output Softmax Image Pixels Generate అంటుంది. Actual Roles Different.",
         "Softmax Confidence Always Calibrated Guarantees అంటుంది. Real Accuracy Against Evaluation Needed.",
         "Softmax Every Tokenకి Equal Attention Weights Assign చేసి Comparisons Remove అంటుంది. Scores Important."
