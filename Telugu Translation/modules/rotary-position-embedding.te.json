@@ -40,7 +40,7 @@
       "stem": "RoPE Step by Step ఎలా Work చేస్తుంది? Token Embeddings నుంచి Q, K Create చేసి Coordinate Pairs, Position Angles, Attention Scores ఎలా Calculate చేస్తాం?",
       "tag": "Beginner · Steps",
       "options": [
-        "Token Embeddings → Q/K Projections → Pairs → Position-Based Rotate → Attention Scores.",
+        "Embeddings → Q/K Projection → Pairs → Position Rotate → Attention Scores.",
         "Values Only Rotate చేసి Q/K Product Skip చేస్తుందంటుంది. Standard RoPE Q/Kపై Apply.",
         "Softmax First, Position IDs Later, Q/K After అంటుంది. Actual RoPE Earlier Stage.",
         "Word Letters, Vocabulary IDs Rotate చేస్తుందంటుంది. RoPE Numerical Vector Componentsపై Work."
@@ -100,7 +100,7 @@
       "stem": "Standard RoPE Training Window కంటే Longer Contextలో ఎందుకు Struggle కావచ్చు? Position Interpolation, NTK-Aware Scaling, YaRN, LongRoPE Accuracy, Memory, Efficiencyపై ఎలా Affect చేస్తాయి?",
       "tag": "Advanced · Production",
       "options": [
-        "Long Contextsకు Interpolation, NTK, YaRN, LongRoPE Position Scales Modify; Accuracy, Stability, Memory Check.",
+        "Long Contextకు Interpolation, NTK, YaRN, LongRoPE Scales Modify; Accuracy, Stability, Memory Test.",
         "Standard RoPE All Sequence Lengthsపై Same Accuracy Guarantee అంటుంది. Unseen Positions Unreliable.",
         "Interpolation Positions Larger, YaRN Position Attention Remove అంటుంది. Both Modify Scaling.",
         "LongRoPE Q/K Rotation Disable చేసి Vocab Embeddings Enlarge అంటుంది. Context Extension Position Handlingపై."
