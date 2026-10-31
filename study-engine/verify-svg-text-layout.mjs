@@ -9,7 +9,10 @@ import { resolve } from 'node:path';
 const slug = process.argv[2] || 'attention-mechanism';
 const mod = JSON.parse(readFileSync(resolve('study-engine/modules', slug + '.json'),'utf8'));
 let problems=0;
-const figs=[['hero',mod.hero],...mod.questions.map((q,i)=>['Q'+(i+1),q.figure])];
+const allFigs=[['hero',mod.hero],...mod.questions.map((q,i)=>['Q'+(i+1),q.figure])];
+const section=process.argv[3];
+const figs=section?allFigs.filter(([name])=>name===section):allFigs;
+if(section&&!figs.length){console.error('Unknown diagram section: '+section);process.exit(1)}
 for(const [label,html] of figs){
   const s=html.match(/<svg\b[^>]*>[\s\S]*?<\/svg>/)?.[0];
   if(!s){console.error('FAIL '+label+': missing SVG');problems++;continue}
