@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (58 modules)
+## Hosted lesson directory (59 modules)
 
 All lessons use the shared [Gradstudio study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/), the canonical [module manifest](modules/index.json), and the 15 themes.
 
@@ -69,6 +69,7 @@ All lessons use the shared [Gradstudio study engine](https://sabareeshrao.github
 | 56 | [Adam Optimizer](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=adam-optimizer) | `adam-optimizer` |
 | 57 | [Stochastic Gradient Descent (SGD)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-gradient-descent) | `stochastic-gradient-descent` |
 | 58 | [Learning Rate](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=learning-rate) | `learning-rate` |
+| 59 | [Principal Component Analysis (PCA)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=principal-component-analysis) | `principal-component-analysis` |
 
 ### Latest additions
 
