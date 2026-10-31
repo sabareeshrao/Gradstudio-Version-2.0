@@ -12,7 +12,7 @@
       "answer": "b",
       "options": [
         "Random Forest One Large Tree Train చేసి Every Prediction తర్వాత Only That Tree Change చేస్తుంది.",
-        "Random Forest Multiple Diverse Trees Predictions Combine చేసి Individual Mistakes Reduce చేయవచ్చు.",
+        "Forest Diverse Trees Predictions Combine చేసి Individual Tree Mistakes Reduce చేయవచ్చు.",
         "Random Forest Every Decision Ruleని Distance Similarity Metricతో Replace చేస్తుంది.",
         "Random Forest Trees Grow చేయకుండా All Training Rowsని One Summaryగా Merge చేస్తుంది."
       ],
@@ -28,7 +28,7 @@
         "Every Tree Identical Decisions చేస్తుంది; Regression Most Frequent Class Label Use చేస్తుంది.",
         "Forest Best One Treeని Select చేసి All Other Tree Predictions Ignore చేస్తుంది.",
         "Classification Numeric Feature Means Use; Regression Class Vote Counts Calculate చేస్తుంది.",
-        "Classification Trees Vote లేదా Class Probabilities Average; Regression Numeric Outputs Average చేస్తుంది."
+        "Classification Trees Vote/Probabilities Average; Regression Numeric Values Average చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Classificationలో Trees Different Classes Support చేస్తాయి. Regressionలో Numeric Estimates Average చేస్తాం.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Classification Intuitive Majority Vote; Scikit-learn RandomForestClassifier Actually Tree Class Probabilities Average చేసి Highest Probability Class Choose చేస్తుంది. Regression Tree Numeric Predictions Arithmetic Mean.",
@@ -39,7 +39,7 @@
       "tag": "Beginner · Example",
       "answer": "a",
       "options": [
-        "Bootstrap, Feature Randomness వల్ల Trees Disagree; Combined Majority Decisionకి Support ఇస్తుంది.",
+        "Trees Random Samples, Features వల్ల Disagree; Forest Voting Combine చేస్తుంది.",
         "All Trees Same Dataset నుంచి Train అవుతాయి కాబట్టి Identical Predictions Mandatory.",
         "Deepest Tree Always Trusted; Other Tree Predictions Completely Discard చేస్తారు.",
         "Tree Disagreement Training Failed అని Prove చేస్తుంది; Minority Trees Remove చేస్తారు."
@@ -55,7 +55,7 @@
       "options": [
         "Every Tree Identical Rows, All Features Use చేసి Same Splits Create చేయాలి.",
         "Bootstrap Rows Repeat కాకుండా Remove చేస్తుంది; Bagging Full Dataset Only Use చేస్తుంది.",
-        "Different Row Samples, Split Feature Subsets Trees Correlation, Variance Reduce చేయవచ్చు.",
+        "Random Rows, Split Features Tree Correlation, Variance Reduce చేస్తాయి.",
         "Every Treeకి One Permanent Feature Select చేసి All Remaining Features Ignore చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Each Tree Different Training Rows, Some Featuresతో Learn చేస్తుంది. Variety వల్ల One Tree Mistakes Others Repeat చేసే Chance తగ్గవచ్చు.",
@@ -68,7 +68,7 @@
       "answer": "b",
       "options": [
         "Test Setతో Model Train చేసి Same Test Accuracyని Unbiased Performanceగా Report చేస్తాం.",
-        "Train/Test Split, RandomForestClassifier, Validation Tuning, Held-Out Metrics Check చేస్తాం.",
+        "Train/Test Split, Forest Fit, Validation Tune, Held-Out Metrics Evaluate చేస్తాం.",
         "Trees Train చేయడానికి Neural Optimizerతో All Features Scale చేసి Token Loss Use చేస్తాం.",
         "All Test Labels చూసిన తర్వాత Hyperparameters Choose చేసి Accuracy Only Report చేస్తాం."
       ],
@@ -95,7 +95,7 @@
       "tag": "Advanced · Production",
       "answer": "a",
       "options": [
-        "Forest Trees Parallel Train; Boosting Sequential Stages Fits; Production Metricsతో Compare చేస్తాం.",
+        "Forest Trees Parallel; Boosting Staged; Production Accuracy, Speed Compare చేస్తాం.",
         "Boosting Every Datasetపై Less Compute, Latency Always Guarantee చేస్తుంది.",
         "Random Forest Trees Sequential; Boosting Trees All Completely Independent Train చేస్తుంది.",
         "All Ensembles Identical Bias, Variance, Hardware Costs, Hyperparameter Sensitivity కలిగి ఉంటాయి."
