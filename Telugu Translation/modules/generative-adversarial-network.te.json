@@ -13,7 +13,7 @@
       "options": [
         "GAN Saved Pictures Copy చేసి New Examplesగా Label చేస్తుందంటుంది. Copying, Learned Generation Different.",
         "GAN Known Image Categories Classify మాత్రమే, New Examples Generate చేయదంటుంది. Generator Role Missing.",
-        "GAN Generator Synthetic Samples Create, Discriminator Real/Fake Detect; Competition Generator Improve చేస్తుంది.",
+        "GAN Generator Fake Samples, Discriminator Real/Fake Check; Competition Improves Generator.",
         "GAN Fixed Image Filter మాత్రమే Apply చేస్తుందంటుంది. Trainable Patterns Learn చేయదు."
       ],
       "answer": "c",
@@ -44,7 +44,7 @@
         "First Round తర్వాత Real Images Discard, Discriminator Feedback Skip చేస్తుందంటుంది. Learning Signal Missing.",
         "Discriminator Random Noise Create, Generator Real/Fake Judge అంటుంది. Actual Data Flow Reverse.",
         "One Fixed Fake Forever Use చేసి Discriminator మాత్రమే Train చేస్తుందంటుంది. Both Networks Update అవుతాయి.",
-        "Random Latent → Generator Sample → Discriminator Real/Fake Compare → D Update → G Update."
+        "Random Latent → Generator Sample → D Real/Fake Compare → D Update → G Update."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Random Latent Vectorతో Start చేసి Generator Sample Create, Discriminator Real/Fake Samples Compare చేసి Its Classifier Update; Then Generator Discriminatorని Fool చేయడానికి Train. Decorative Floor Tiles Generate చేసే Artist AI Toolని Imagine చేయండి. <strong>Generator</strong> Random Noise నుంచి Pattern Create చేస్తుంది. <strong>Discriminator</strong> Real, Fake Tiles Compare చేసి Separate చేయడం Learn చేస్తుంది. First Discriminator Update, తర్వాత Feedback Use చేసి Generator Update. Many Rounds Repeat చేస్తే Designs Improve కావచ్చు.",
@@ -89,7 +89,7 @@
         "DCGAN Convolutions Remove, cGAN Labels Ignore, WGAN Competition Stop అంటుంది. Variant Features Reverse.",
         "CycleGAN Exact Pairs Require, StyleGAN Label Classifier, WGAN Same BCE అంటుంది. Their Goals Different.",
         "Every GAN Variant Next-Token Text Model అయిపోతుందంటుంది. Image Adversarial Generation Still Central.",
-        "DCGAN Convolutions, cGAN Labels, WGAN Critic, CycleGAN Unpaired Translation, StyleGAN Appearance Controls."
+        "DCGAN Conv, cGAN Labels, WGAN Critic, CycleGAN Unpaired Transfer, StyleGAN Styles."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> DCGAN Convolutions; Conditional GAN Labels; WGAN Critic; CycleGAN Unpaired Domain Translation; StyleGAN Style Controls Use చేస్తాయి. Stability, Guidance, Visual Detailకు Different Improvements. Illustrated Postcards Design చేసే Studioని Imagine చేయండి. <strong>DCGAN</strong> Spatial Patternsకి Convolutions; <strong>cGAN</strong> Labelsతో Guide; <strong>WGAN</strong> Critic Objective; <strong>CycleGAN</strong> Paired Examples లేకుండా Image Styles Transfer; <strong>StyleGAN</strong> Appearanceపై Controls. Each Variant Different Problem Address చేస్తుంది: Stability, Detail, Controllability, Translation.",
