@@ -11,7 +11,7 @@
       "tag": "Beginner · Concept",
       "options": [
         "RoPE Token Embeddingsకి Fixed Vectors Add చేసి Q/K Rotation Skip చేస్తుందంటుంది. Additive Position Method.",
-        "RoPE Q/K Pairs Position Anglesతో Rotate చేస్తుంది; Relative Distance, Order Attention Scoresలో Reflect అవుతాయి.",
+        "RoPE Q/K Pairs Position-Based Rotate చేసి Attentionలో Relative Distance/Order Reflect చేస్తుంది.",
         "Token Embeddings Random Vocabulary Numbersతో Replace చేస్తుందంటుంది. Content Information Lost అవుతుంది.",
         "Q/K Unchangedగా Pass చేసి Position Comparison Adjust చేయదంటుంది. Position Rotation Missing."
       ],
@@ -28,7 +28,7 @@
         "Position Add, Rotation Every Q/Kకి Same Scores ఇస్తాయంటుంది. RoPE Different Position Behavior.",
         "Rotation All Position Information Remove చేసి Identity Only Compare అంటుంది. Actually Relative Position Encode.",
         "Distanceతో Vector Length Increase చేసి Far Tokens Always More Attention అంటుంది. Rotation Length Preserve.",
-        "RoPE Q/K Features Rotate చేస్తుంది; Dot Product Position Differenceపై Depend చేసి Relative Spacing Encode చేస్తుంది."
+        "RoPE Q/K Rotate; Dot Product Position Differenceపై Depend చేసి Relative Spacing Encode చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> RoPE Absolute Position Vectors Embeddingsకి Add చేయడం బదులు Q/K Featuresని Rotate చేస్తుంది. Both Rotate అవుతాయి కాబట్టి Dot Product Position Differenceపై Depend అవుతుంది, Relative Spacing Encode అవుతుంది. Dance Performanceలో Different Momentsకి Turn అయ్యే Two Dancersని Imagine చేయండి. Turning Facing Direction Change చేస్తుంది, Center నుంచి Distance Not Necessarily. <strong>Query–Key Vector Pairs</strong> కూడా Position-Based Angleతో Rotate అవుతాయి. Comparing Both Vectors Angle Differenceని Reflect చేస్తుంది; అది <strong>Relative Token Distance</strong>.",
@@ -40,7 +40,7 @@
       "stem": "RoPE Step by Step ఎలా Work చేస్తుంది? Token Embeddings నుంచి Q, K Create చేసి Coordinate Pairs, Position Angles, Attention Scores ఎలా Calculate చేస్తాం?",
       "tag": "Beginner · Steps",
       "options": [
-        "Embeddings నుంచి Q/K Projections, Pairs, Position/Frequency Rotation, Rotated Q–K Scores Compute చేస్తాం.",
+        "Token Embeddings → Q/K Projections → Pairs → Position-Based Rotate → Attention Scores.",
         "Values Only Rotate చేసి Q/K Product Skip చేస్తుందంటుంది. Standard RoPE Q/Kపై Apply.",
         "Softmax First, Position IDs Later, Q/K After అంటుంది. Actual RoPE Earlier Stage.",
         "Word Letters, Vocabulary IDs Rotate చేస్తుందంటుంది. RoPE Numerical Vector Componentsపై Work."
@@ -57,7 +57,7 @@
       "options": [
         "Sin/Cos Bదులు One Learned Scalarతో All Probabilities Multiply చేస్తుందంటుంది. Position-Specific 2D Rotation కాదు.",
         "One Token Angle Alone Every Attention Score Decide చేస్తుందంటుంది. Relative Position Both Locationsపై Depend.",
-        "2D Sine/Cosine Rotation Pair Length Preserve; Shared Phase Dot Productలో Cancel అయ్యి Position Difference Remains.",
+        "2D Sine/Cosine Rotation Length Preserve; Q–K Dot Productలో Position Difference Remains.",
         "All Pairs Every Position Same Fixed Angle Rotate అంటుంది. Multi-Frequency Position Differences Lost."
       ],
       "answer": "c",
@@ -71,7 +71,7 @@
       "tag": "Medium · Python",
       "options": [
         "RoPE NumPyలో Only Possible; PyTorch Tensors Rotation Support చేయదంటుంది. PyTorch Supports Sin/Cos Operations.",
-        "PyTorch Frequencies, Position Angles Compute చేసి Q/K Pairs Rotate; Equal Separation Scores Consistentనా Test చేస్తాం.",
+        "PyTorch Frequencies/Angles, Q/K Pair Rotations Compute; Equal-Offset Scores Compare చేస్తాం.",
         "Only Value Vectors Rotate చేసి Softmax Positions Handle చేస్తుందంటుంది. RoPE Q/K Matching Before Softmax.",
         "Each Batch Random Frequencies Generate చేస్తుందంటుంది. KV Cache Phases Inconsistent అవుతాయి."
       ],
@@ -88,7 +88,7 @@
         "High Frequencies Word Meaning Only, Low Positions Ignore అంటుంది. Frequency Position Rotation Speed.",
         "RoPE Base Vocabulary Size Change మాత్రమే అంటుంది. Base Rotation Schedule Affect చేస్తుంది.",
         "All Coordinate Pairs Same Speed Rotate అంటుంది. RoPE Multiple Wavelengths Use చేస్తుంది.",
-        "High Pairs Faster, Low Pairs Slower; Base θ, Rotary Width Frequencies Decide చేసి Local/Long Position Resolution Affect."
+        "Fast/Slow Rotary Frequencies Base θ, Widthపై Depend; Local/Long Position Resolution Change చేస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> High-Frequency Pairs Fast Rotate, Low-Frequency Slow; Base θ, Rotary Dimension Frequencies Distribution Control చేస్తాయి. Local vs Long-Range Resolutionపై Effect; Vocabulary Sizeపై కాదు. Different Speedsలో Move అయ్యే Clock Handsని Imagine చేయండి. One Quick Revolution, Another Slow. RoPE Similar <strong>Frequency Spectrum</strong> Different Coordinate Pairsపై Use చేస్తుంది. Fast Rotation Short Position Changes, Slow Rotation Longer-Scale Differences Represent చేయవచ్చు. <strong>Base Parameter</strong>, Rotary Dimensions Number Speeds Control చేస్తాయి.",
@@ -100,7 +100,7 @@
       "stem": "Standard RoPE Training Window కంటే Longer Contextలో ఎందుకు Struggle కావచ్చు? Position Interpolation, NTK-Aware Scaling, YaRN, LongRoPE Accuracy, Memory, Efficiencyపై ఎలా Affect చేస్తాయి?",
       "tag": "Advanced · Production",
       "options": [
-        "Long Context Training Range Beyond; Interpolation, NTK, YaRN, LongRoPE Position Scales Modify; Accuracy, Memory Test చేయాలి.",
+        "Long Contextsకు Interpolation, NTK, YaRN, LongRoPE Position Scales Modify; Accuracy, Stability, Memory Check.",
         "Standard RoPE All Sequence Lengthsపై Same Accuracy Guarantee అంటుంది. Unseen Positions Unreliable.",
         "Interpolation Positions Larger, YaRN Position Attention Remove అంటుంది. Both Modify Scaling.",
         "LongRoPE Q/K Rotation Disable చేసి Vocab Embeddings Enlarge అంటుంది. Context Extension Position Handlingపై."
