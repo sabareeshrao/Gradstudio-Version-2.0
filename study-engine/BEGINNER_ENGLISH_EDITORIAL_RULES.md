@@ -80,3 +80,12 @@ The remaining modules can be revised in subsequent user-selected batches.
 25. Loss Function (`loss-function`)
 
 **Verification:** All five committed English modules retain their original 35 question stems, answer keys, technical explanations, and 35 unique figure strings. All 140 options were rewritten as full teaching sentences with related distractors and passed the answer-length guardrail: longest-to-shortest option word ratio at most 1.15, with the correct choice never uniquely longest by words or characters. The 35 beginner explanations use distinct practical scenarios, the plain **Explanation:** heading, and 68–84 words apiece. No Telugu lessons, shared theme files, quiz behavior, or unrelated English modules were edited.
+
+## Batch 6 — completed English modules
+26. Activation Function (`activation-function`)
+27. Softmax (`softmax`)
+28. Residual Connection (`residual-connection`)
+29. Positional Encoding (`positional-encoding`)
+30. Rotary Position Embedding (RoPE) (`rotary-position-embedding`)
+
+**Verification:** All 35 question stems and answer keys, their original 35 distinct diagram figures, and their optional technical explanations were preserved. Rewrote 140 A–D choices in beginner-friendly technical English and replaced 35 visible explanations with concrete topic-specific examples. Each visible explanation is labeled **Explanation:** and contains 70–82 words. Every question passes the 1.15 maximum option word-ratio check, and the correct answer is never uniquely longest by word count or character count. The five source JSON modules were committed and read back from GitHub for final verification; no Telugu files, shared themes, quiz code, or unrelated modules were edited.
