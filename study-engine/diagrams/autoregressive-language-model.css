@@ -1,0 +1,15 @@
+/* Custom Autoregressive Language Model visuals — shared engine handles quiz, typography, themes and scoring. */
+.ar-hero,.ar-fig{font-family:inherit;color:#27465b;min-width:0}
+.ar-hero{padding:clamp(17px,3vw,28px);border:1px solid #cee1e8;border-radius:19px;margin-bottom:24px;background:radial-gradient(circle at 0% 0%,#e2f7f0,transparent 56%),linear-gradient(145deg,#f3f9fe,#fff9ef);box-shadow:0 8px 26px #164f5b0a}
+.ar-hero h2{font-size:clamp(1.2rem,2.5vw,1.8rem);line-height:1.23;margin:7px 0 8px;color:#28556f}
+.ar-hero p{color:#587486;font-size:.9rem;line-height:1.56;margin:0 0 16px;max-width:67ch}
+.ar-eyebrow{font-size:.71rem;font-weight:900;color:#258475;letter-spacing:.1em;text-transform:uppercase}
+.ar-fig{padding:clamp(14px,2.7vw,24px);background:radial-gradient(circle at 95% 0%,#eaf6ef,transparent 50%),linear-gradient(145deg,#f7fcff,#fffef9)}
+.ar-fig h3{margin:7px 0 14px;font-size:clamp(1rem,2vw,1.22rem);line-height:1.35;color:#2d5269}
+.ar-stage{background:white;border:1px solid #dbe6ea;border-radius:13px;max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-color:#bdd4dc transparent}
+.ar-stage svg{display:block;min-width:695px;width:100%;height:auto}
+.ar-hero .ar-stage svg{min-width:755px}
+.ar-stage svg text{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.ar-note{font-size:.81rem;line-height:1.58;color:#5b7484;margin:12px 0 0}
+@media(max-width:670px){.ar-hero{padding:15px}.ar-stage svg{min-width:620px}.ar-hero .ar-stage svg{min-width:700px}.ar-stage{scroll-snap-type:x proximity}}
+@media(prefers-reduced-motion:reduce){.ar-stage{scroll-behavior:auto}.ar-fig *,.ar-hero *{transition:none!important;animation:none!important}}
