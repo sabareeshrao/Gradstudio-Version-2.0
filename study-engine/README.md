@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (30 modules)
+## Hosted lesson directory (32 modules)
 
 These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
 
@@ -40,6 +40,8 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 28 | [Natural Language Processing (NLP)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=natural-language-processing) | `natural-language-processing` |
 | 29 | [Multimodal Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multimodal-learning) | `multimodal-learning` |
 | 30 | [Loss Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-function) | `loss-function` |
+| 31 | [Training Step](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=training-step) | `training-step` |
+| 32 | [Generative Adversarial Network (GAN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-adversarial-network) | `generative-adversarial-network` |
 
 ### Latest additions — October 30, 2026
 
