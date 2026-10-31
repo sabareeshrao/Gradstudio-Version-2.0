@@ -71,7 +71,7 @@
       "tag": "Medium · Python",
       "options": [
         "Matplotlib Plotting Direct Weights Update చేసి Derivative Checks Unnecessary అంటుంది. Graph Optimization కాదు.",
-        "NumPy Activation/Derivative Curves, PyTorch Autograd Check; Matched Settingsలో Train/Validation Compare చేస్తాం.",
+        "NumPy Activations, Derivative Curves; PyTorch Autograd; Matched Settingsలో Train/Validation Compare చేస్తాం.",
         "One Forward Output Biggest Numberని Accuracyగా Treat చేస్తుందంటుంది. Labels, Evaluation Needed.",
         "Each Activationకి Different Data/Seeds/Optimizer Use చేసి Compare చేస్తుందంటుంది. Fair Comparison Impossible."
       ],
@@ -100,7 +100,7 @@
       "stem": "Vanishing Gradients, Dying ReLU, Saturation, Non-Zero-Centered Outputs, Numerical Instability వంటి Problemsకి Initialization, Normalization, Gated Activations, Architecture-Specific Choices ఎలా Help చేస్తాయి?",
       "tag": "Advanced · Training",
       "options": [
-        "Saturation, Dead ReLU, Nonzero-Centered Outputsకి Initialization, Normalization, Leaky/Gated Options Help; Validation Needed.",
+        "Saturation, Dying ReLUకి Initialization, Norm, Leaky/Gated Activations Help; Validation అవసరం.",
         "Sigmoid Saturated Outputs Near 0/1లో Large Gradient ఉంటుందని, Every Layer Best అంటుంది. Actually Slopes Tiny.",
         "All ReLU Outputs Permanently Zero చేస్తే Learning Better అంటుంది. Dead Neurons Update Stop.",
         "Exponential Overflow Checks Unnecessary, Activations Monitoring Needed కాదంటుంది. Numerical Instability Real."
