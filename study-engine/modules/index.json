@@ -169,6 +169,11 @@
       "slug": "rotary-position-embedding",
       "title": "Rotary Position Embedding (RoPE)",
       "domain": "Rotary Position Encoding and Relative Position Awareness · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "residual-connection",
+      "title": "Residual Connection",
+      "domain": "Skip Connections and Information Flow in Deep Neural Networks · Transformers and LLM Architecture"
     }
   ]
 }
