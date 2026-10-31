@@ -43,6 +43,8 @@ These links are generated from the canonical [module manifest](modules/index.jso
 
 New visual lessons include Reinforcement Learning, Computer Vision, AI Agent Framework, Supervised Learning, and Large Vision-Language Model (LVLM). The shared rendering engine stays separate from each lesson's questions and custom SVG illustrations.
 
+- Multimodal Learning: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multimodal-learning
+
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
 - `core.css`: reused layout, responsive behavior and theme-related styling.
