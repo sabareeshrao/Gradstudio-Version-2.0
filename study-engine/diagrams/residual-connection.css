@@ -1,0 +1,18 @@
+
+/* Residual Connection: diagram-only styles. The core engine handles quizzes, scoring, and 15 themes. */
+.rc-hero,.rc-visual{min-width:0;border:1px solid #d7e6e9;border-radius:15px;padding:clamp(13px,2.4vw,22px);color:#34566c;background:radial-gradient(circle at 84% 10%,#e9f6ef,transparent 45%),linear-gradient(160deg,#f7fbff,#fff9f5)}
+.rc-hero{margin-bottom:22px;background:linear-gradient(132deg,#e7f5ed,#f7fbff 66%,#fff5ed)}
+.rc-hero h2{font-size:clamp(1.1rem,2vw,1.48rem);color:#31556b;line-height:1.3;margin:6px 0 14px}
+.rc-visual h3{font-size:clamp(1rem,1.9vw,1.2rem);color:#31556a;line-height:1.4;margin:5px 0 12px}
+.rc-kicker{display:block;color:#287c80;text-transform:uppercase;letter-spacing:.1em;font-weight:850;font-size:.69rem}
+.rc-canvas{max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;border:1px solid #dbe8ec;border-radius:11px;background:#fff}
+.rc-canvas:focus-visible{outline:2px solid #468db6;outline-offset:2px}
+.rc-svg{width:100%;height:auto;display:block;max-width:none}
+.rc-foot{font-size:.81rem;line-height:1.56;color:#5e7787;margin:12px 0 0}
+.rc-sources{font-size:.8rem;color:#486a7d;border:1px solid #d7e8e9;border-radius:12px;background:#fff;padding:13px 15px;margin:16px 0}
+.rc-sources summary{cursor:pointer;font-weight:850;color:#2b7379}
+.rc-sources li{margin:6px 0}.rc-sources a{color:#256b9a}
+.explanation-deep-content pre{max-width:100%;overflow-x:auto;border-radius:9px;padding:14px;background:#182c40;color:#dfebf9;font-size:.76rem;line-height:1.55;white-space:pre;tab-size:2}
+.explanation-deep-content pre code{white-space:pre;background:transparent;color:inherit;border:0;font-size:inherit;padding:0}
+@media(max-width:680px){.rc-hero,.rc-visual{padding:12px}.rc-svg{width:760px}.rc-foot{font-size:.76rem}}
+@media(prefers-reduced-motion:reduce){.rc-canvas{scroll-behavior:auto}}
