@@ -38,7 +38,7 @@
       "stem": "RoPE Step by Step ఎలా Work చేస్తుంది? Token Embeddings నుంచి Q, K Create చేసి Coordinate Pairs, Position Angles, Attention Scores ఎలా Calculate చేస్తాం?",
       "tag": "Beginner · Steps",
       "options": [
-        "Q/K Create చేసి Coordinate Pairs Rotate చేసి Attention Scores Compute చేస్తాం.",
+        "Q/K Create, Pair Components Rotate చేసి Attention Scores Compute చేస్తాం.",
         "Value Vectors First Rotate చేసి Query-Key Dot Product Entirely Skip చేస్తాం.",
         "Softmax Outputకి Position IDs Add చేసి తర్వాత Query, Key Create చేస్తాం.",
         "Tokens Charactersగా Split చేసి Labels Rotate, Scores Average చేస్తాం."
@@ -67,7 +67,7 @@
       "tag": "Medium · Python",
       "options": [
         "Only NumPyతో RoPE Create చేయాలి; PyTorch Tensor Rotation Possible కాదు.",
-        "PyTorch Frequencies, Angles Compute చేసి Q, K Pairs Rotate, Scores Check చేస్తాం.",
+        "PyTorchలో Q/K Rotate చేసి Frequencies, Angles, Scores Check చేస్తాం.",
         "Only Value Vectors Rotate చేసి Softmax Positions Automatically Recover చేస్తుంది.",
         "Every Batch Random Frequencies Generate చేసి Cached Keys Consistentగా ఉంచుతాం."
       ],
@@ -83,7 +83,7 @@
         "Fast Frequencies Meaning Only Encode చేస్తాయి; Slow Frequencies Position Ignore చేస్తాయి.",
         "Base Parameter Change చేస్తే Token Vocabulary Size మాత్రమే Change అవుతుంది.",
         "All Q/K Dimensions Same Speed Rotate అయితే Only Relative Positions Work చేస్తాయి.",
-        "Frequency Speeds, Rotary Dimensions Local, Long-Range Position Resolution Affect చేస్తాయి."
+        "Frequency Speeds, Rotary Dimensions Local, Long-Range Resolution Affect చేస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Some Pairs Quickly, Some Slowly Rotate అవుతాయి. Base, Number of Rotary Dimensions Short, Long Position Differencesని Represent చేయడంపై Affect చేస్తాయి.",
