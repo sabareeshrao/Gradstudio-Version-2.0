@@ -1,0 +1,19 @@
+/* Dataset-splitting lesson: seven SVG storyboards and a real Python panel */
+.tvt-hero,.tvt-fig{--tvt-ink:#2f5364;--tvt-green:#398e77;--tvt-blue:#5285bc;--tvt-orange:#d4a061;font-family:inherit;color:var(--tvt-ink)}
+.tvt-hero{padding:clamp(18px,3vw,28px);background:linear-gradient(120deg,#e9f5ed,#eff8fc 72%,#fff6e9);border:1px solid #d1e3dd;border-radius:18px;margin-bottom:25px;box-shadow:0 8px 22px rgba(35,85,95,.06)}
+.tvt-hero h2{font-size:clamp(1.28rem,2.4vw,1.8rem);line-height:1.24;color:#2e5260;margin:8px 0 10px}
+.tvt-hero p{color:#5b7180;font-size:.88rem;margin:0;line-height:1.6}
+.tvt-fig{padding:clamp(13px,2.2vw,23px);background:linear-gradient(125deg,#f7fbfd,#eff7f4);border:1px solid #d4e6e5;border-radius:15px;overflow:hidden}
+.tvt-kicker{display:block;color:#257b78;font-weight:900;text-transform:uppercase;letter-spacing:.11em;font-size:.7rem;line-height:1.45}
+.tvt-fig h3{color:#345971;line-height:1.4;font-size:clamp(1.02rem,2.2vw,1.25rem);font-weight:850;margin:7px 0 14px}
+.tvt-art{display:block;width:100%;height:auto;max-height:340px;border-radius:14px;overflow:visible}
+.tvt-note{background:#fff;border-left:4px solid #6fb4a2;border-radius:4px 10px 10px 4px;color:#56707b;margin:14px 0 0;padding:10px 13px;font-size:.8rem;line-height:1.65}
+.tvt-code-panel{margin:13px 0 0;border-radius:12px;background:#142d40;color:#e2f3f5;overflow:hidden;border:1px solid #3d6071}
+.tvt-code-heading{background:#24485d;padding:11px 14px;color:#c3e9df;font-size:.76rem;font-weight:800;letter-spacing:.02em}
+.tvt-code-panel pre{margin:0;padding:14px 17px;white-space:pre;overflow:auto;line-height:1.58;font-size:clamp(.66rem,1.35vw,.81rem);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:4}
+.tvt-code-panel code{color:inherit;background:none;padding:0;border:0;white-space:pre;font:inherit}
+.tvt-sources{border:1px solid #d8e6e6;border-radius:12px;background:#f6fbfa;padding:12px 15px;margin-top:22px;color:#486675;font-size:.85rem}
+.tvt-sources summary{font-weight:800;cursor:pointer;color:#276c74}
+.tvt-sources a{color:#267aa1}
+@media(max-width:760px){.tvt-fig{overflow-x:auto}.tvt-fig .tvt-art{min-width:560px;width:100%;max-width:none}.tvt-hero{padding:16px}.tvt-code-panel pre{font-size:.71rem}.tvt-fig h3{font-size:1rem}}
+@media(max-width:420px){.tvt-fig .tvt-art{min-width:520px}.tvt-code-panel pre{font-size:.66rem}.tvt-note{font-size:.76rem}}
