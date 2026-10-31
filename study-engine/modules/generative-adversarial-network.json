@@ -25,10 +25,10 @@
       "stem": "Why does a GAN contain two competing neural networks called the Generator and Discriminator, and how does their competition resemble a counterfeiter trying to create convincing fake images while a detective learns to identify them?",
       "tag": "Beginner · two competitors",
       "options": [
-        "The Generator creates candidate images, while the Discriminator learns to tell generated examples from real ones, giving the Generator useful feedback during training.",
+        "The Generator creates candidate images, while the Discriminator learns to tell generated examples from real ones, giving the Generator feedback during training.",
         "The Generator checks which images are fake, while the Discriminator builds new pictures from random noise. This reverses their roles in ordinary adversarial training.",
         "Both networks create images independently and combine their outputs without checking whether either looks realistic. A normal GAN needs a judging component.",
-        "One network memorizes a library of images, while the other returns the nearest file when asked to generate a picture. That describes retrieval, not adversarial learning."
+        "One network memorizes images, while the other returns the nearest file when asked to generate a picture. That describes retrieval, not adversarial learning."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> Imagine a counterfeiter printing fake banknotes while a detective studies real and fake examples. The counterfeiter improves the prints; the detective gets better at spotting mistakes. A GAN uses a similar training game. The <strong>Generator</strong> makes synthetic images, and the <strong>Discriminator</strong> scores how likely each is to resemble real training data. The Generator learns from that feedback. The two networks have different jobs, and their competition drives learning.",
@@ -69,7 +69,7 @@
       "options": [
         "Build one image encoder with labels for each generated digit, and remove the Discriminator. That does not create a two-network adversarial training process.",
         "Copy MNIST digits into a new folder and call those copies newly generated images. This needs no learning and cannot demonstrate a GAN's Generator.",
-        "Create Generator and Discriminator networks in PyTorch, alternate their loss-based updates on MNIST, and inspect generated digit grids as training progresses over time.",
+        "Create Generator and Discriminator networks in PyTorch, alternate their loss-based updates on MNIST, and inspect generated digit grids as training progresses.",
         "Train a handwritten-digit classifier, then rotate the training pictures until they look different. Image augmentation is not the same as learning to generate samples."
       ],
       "answer": "c",
@@ -95,7 +95,7 @@
       "stem": "Why do GANs encounter challenges such as mode collapse, vanishing gradients, discriminator overpowering, training instability, and limited output diversity, and how do techniques such as Wasserstein distance, gradient penalty, spectral normalization, feature matching, and evaluation metrics like Fréchet Inception Distance (FID) help diagnose and address these problems?",
       "tag": "Advanced · stability and evaluation",
       "options": [
-        "Mode collapse causes repeated outputs; Wasserstein-based objectives and regularization can improve training, while FID compares generated and reference image feature distributions.",
+        "Mode collapse causes repeated outputs; Wasserstein-based objectives and regularization can improve training, and FID compares generated and reference image feature distributions.",
         "Mode collapse increases image variety, while spectral normalization directly proves every sample is realistic. These statements confuse diversity problems with evaluation methods.",
         "Vanishing gradients give the Generator stronger updates, and feature matching forces it to copy one stored image. These methods have different intended effects.",
         "FID confirms whether each picture is individually real, so human inspection and tests of diversity become unnecessary. Distribution metrics do not guarantee individual quality."
