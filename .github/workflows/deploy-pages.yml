@@ -52,6 +52,8 @@ jobs:
         run: node study-engine/verify-svg-text-layout.mjs next-token-prediction
       - name: Verify CNN SVG label layout and viewBox boundaries
         run: node study-engine/verify-svg-text-layout.mjs convolutional-neural-network
+      - name: Verify Decision Tree Classifier SVG text layout
+        run: node study-engine/verify-svg-text-layout.mjs decision-tree-classifier
       - name: Preserve English diagrams and modern Telugu-English study copy
         run: node "Telugu Translation/verify-translation.mjs"
       - name: Configure Pages
