@@ -1,0 +1,16 @@
+/* Logistic Regression scene styles only — shared engine owns quiz, themes, and answer interactions. */
+.logreg-hero,.logreg-figure{box-sizing:border-box;min-width:0;border:1px solid #d7e7e9;border-radius:15px;padding:clamp(13px,2.3vw,22px);color:#30536b;background:radial-gradient(circle at 88% 12%,#e7f6ec,transparent 45%),linear-gradient(154deg,#f7fbff,#fffaf5)}
+.logreg-hero{margin:0 0 22px;background:linear-gradient(129deg,#e6f5ec,#f7faff 63%,#fff5e9)}
+.logreg-hero h2{font-size:clamp(1.09rem,2vw,1.47rem);color:#30546b;line-height:1.32;margin:6px 0 14px}
+.logreg-figure h3{font-size:clamp(1rem,1.85vw,1.19rem);color:#30546b;line-height:1.4;margin:5px 0 12px}
+.logreg-kicker{display:block;text-transform:uppercase;letter-spacing:.1em;color:#2c7b80;font-size:.69rem;font-weight:850}
+.logreg-stage{max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;background:#fff;border:1px solid #d9e7eb;border-radius:11px}
+.logreg-stage:focus-visible{outline:2px solid #418fbc;outline-offset:2px}
+.logreg-svg{width:100%;height:auto;max-width:none;display:block}
+.logreg-note{color:#5b7788;font-size:.81rem;line-height:1.59;margin:12px 0 0}
+.logreg-sources{padding:13px 16px;margin:16px 0;border:1px solid #d6e7e9;border-radius:12px;background:#fff;color:#46697b;font-size:.81rem}
+.logreg-sources summary{cursor:pointer;color:#30747b;font-weight:850}.logreg-sources li{margin:6px 0}.logreg-sources a{color:#246b98}
+.explanation-deep-content pre{max-width:100%;overflow-x:auto;white-space:pre;tab-size:2;background:#172c40;color:#dfedfa;border-radius:9px;padding:14px;font-size:.77rem;line-height:1.55}
+.explanation-deep-content pre code{white-space:pre;color:inherit;font-size:inherit;background:transparent;border:0;padding:0}
+@media(max-width:680px){.logreg-hero,.logreg-figure{padding:12px}.logreg-svg{width:780px}.logreg-note{font-size:.76rem}}
+@media(prefers-reduced-motion:reduce){.logreg-stage{scroll-behavior:auto}}
