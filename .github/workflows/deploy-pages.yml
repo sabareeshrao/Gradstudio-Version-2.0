@@ -70,6 +70,12 @@ jobs:
       - name: Preserve English diagrams and modern Telugu-English study copy
         continue-on-error: true
         run: node "Telugu Translation/verify-translation.mjs"
+      - name: Verify math syntax, readable fallback and every lesson formula
+        run: |
+          node --check study-engine/math-render.js
+          node --check study-engine/app.js
+          node --check "Telugu Translation/app-te.js"
+          node study-engine/verify-math-rendering.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Build website and preserve existing browser links
