@@ -4,11 +4,9 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (54 modules)
+## Hosted lesson directory (55 modules)
 
-- [K-Means Clustering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) — seven visual lessons on cluster discovery, centroids, WCSS, elbow and silhouette methods, clustering limitations, and production scaling.
-
-All listed keywords run in the [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/) with the canonical [module manifest](modules/index.json), seven concept-specific diagrams, beginner-first explanations and the 15 themes.
+All lessons use the shared [Gradstudio study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/), the canonical [module manifest](modules/index.json), and the 15 themes.
 
 | # | Keyword | Module slug |
 |---:|---|---|
@@ -66,10 +64,11 @@ All listed keywords run in the [shared study engine](https://sabareeshrao.github
 | 52 | [Logistic Regression](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression) | `logistic-regression` |
 | 53 | [K-Means Clustering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) | `k-means-clustering` |
 | 54 | [Decision Tree Classifier](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=decision-tree-classifier) | `decision-tree-classifier` |
+| 55 | [Linear Regression](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression) | `linear-regression` |
 
 ### Latest additions
 
-Long Short-Term Memory (LSTM) adds seven illustrated explanations of gated memory, vanishing gradients, France-to-French context, worked gate equations, BPTT and recurrent architecture comparisons. Other recent additions include Knowledge Distillation, Quantization and Neural Network Pruning.
+Linear Regression covers numerical prediction, features and targets, house-price best fit, OLS residuals, verified Scikit-learn training, diagnostics, and regularization. Recent additions also include Random Forest, Recurrent Neural Network, and Convolutional Neural Network.
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
