@@ -95,9 +95,9 @@
       "tag": "Advanced · Benchmarks and monitoring",
       "stem": "How can Model Evaluation be designed to ensure reliable benchmark comparisons, prevent data leakage, and measure model performance after deployment?",
       "options": [
-        "Reliable benchmarks permit different evaluation datasets and metrics for each model because customized conditions provide a clearer comparison. After deployment, monitoring training loss alone tracks deteriorating prediction quality.",
-        "Reliable evaluation repeatedly uses the final benchmark to optimize model settings, then treats the resulting score as representative future performance. After deployment, monitoring becomes unnecessary once benchmark accuracy is strong.",
-        "Reliable comparisons combine training and testing observations during preprocessing to improve statistical consistency. After deployment, monitoring focuses on computational response times rather than whether predictions remain accurate.",
+        "Reliable benchmarks permit different evaluation datasets and metrics for each model because customized testing conditions provide a clearer comparison. After deployment, monitoring training loss alone tracks deteriorating prediction quality.",
+        "Reliable evaluation repeatedly uses the final benchmark to optimize model settings, then treats the resulting score as representative real-world future performance. After deployment, monitoring becomes unnecessary once benchmark accuracy is strong.",
+        "Reliable comparisons combine training and testing observations during preprocessing to improve statistical consistency across datasets. After deployment, monitoring focuses on computational response times rather than whether predictions remain accurate.",
         "Reliable evaluation uses independent test data, consistent metrics, representative benchmarks, and leakage-free validation. After deployment, monitoring tracks prediction quality, data drift, and performance changes to identify model degradation."
       ],
       "answer": "d",
