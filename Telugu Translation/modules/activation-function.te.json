@@ -55,7 +55,7 @@
         "All Six Activations Same Derivative, Same Gradient Flow Trainingలో Produce చేస్తాయి.",
         "ReLU, Leaky ReLU Exponentials Need; GELU, SiLU Constant Slopes మాత్రమే Use చేస్తాయి.",
         "Derivatives Final Layerకి మాత్రమే Matter; Hidden Layers Backpropని Affect చేయవు.",
-        "Different Activation Curves, Derivatives Saturation, Gradient Flow, Trainingని Affect చేస్తాయి."
+        "Activation Curves, Derivatives Gradient Flow, Trainingని Affect చేస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Each Activation Curveకి Different Slope ఉంటుంది. Backpropagationలో ఆ Slope Gradients Strengthని Change చేసి Learningపై Effect చూపుతుంది.",
@@ -67,7 +67,7 @@
       "tag": "Medium · Python",
       "options": [
         "Matplotlib Automatically Model Weights Update చేస్తుంది; Gradients Inspect చేయాల్సిన Need లేదు.",
-        "NumPy Curves Plot, PyTorch Gradients Calculate చేసి Fair Training Conditionsలో Compare చేస్తాం.",
+        "NumPy Curves, PyTorch Gradients Compare చేసి Fair Training Test చేస్తాం.",
         "Different Activations One Forward Passతో Accuracy Finalగా Prove చేయవచ్చు.",
         "Different Datasets, Optimizers, Seeds Use చేసి Fair Activation Comparison Conduct చేస్తాం."
       ],
