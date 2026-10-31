@@ -139,6 +139,11 @@
       "slug": "natural-language-processing",
       "title": "Natural Language Processing (NLP)",
       "domain": "Understanding, Processing, and Generating Human Language · Natural Language Processing"
+    },
+    {
+      "slug": "multimodal-learning",
+      "title": "Multimodal Learning",
+      "domain": "Learning from Multiple Types of Data and Cross-Modal Information · Multimodal AI"
     }
   ]
 }
