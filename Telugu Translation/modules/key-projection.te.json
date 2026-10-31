@@ -11,12 +11,12 @@
       "stem": "Key Projection Transformerలో ఏంటి? Queryతో Match అయ్యే Key Vectors ఎలా Create అవుతాయి?",
       "options": [
         "Keys Fixed Labels మాత్రమే; Learned Projection అవసరం ఉండదు.",
-        "Learned Key Features Queriesతో Match అయ్యి Relevance Scores ఇస్తాయి.",
+        "Key Projection Learned Features Create; Queries Compare చేస్తాయి.",
         "Key Projection Final Word Predict చేస్తుంది; Matching అవసరం లేదు.",
         "Keys Attention Finish తర్వాత Generated Words నుంచి Copy అవుతాయి."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+      "explanation": "<strong>Simple Explanation:</strong> Key అంటే ఒక Token దగ్గర ఉన్న Matching Clue. Query ఈ Clueతో Match అవుతుందా అని Model Compare చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> K=XW_K, where W_K Learned Matrix. Every Key Source Token Matching Features Represent చేస్తుంది. Q/K Similarity నుంచి Attention Weights వస్తాయి; Values Actual Content Supply చేస్తాయి."
     },
     {
       "stem": "Query, Key Different Roles ఎందుకు? Available Informationతో Matching ఎలా Work చేస్తుంది?",
@@ -24,21 +24,21 @@
         "Queries Original Values Store; Keys Final Sentences Choose చేస్తాయి.",
         "Queries, Keys Same Matrices Use చేస్తాయి; Names మాత్రమే Different.",
         "Keys Search Ask చేస్తాయి; Queries Available Content Describe చేస్తాయి.",
-        "Query Information Seeks; Key Available Matching Features Describe చేస్తుంది."
+        "Query Seeks Information; Key Matching Features Offer చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+      "explanation": "<strong>Simple Explanation:</strong> Query ఏం కావాలో Search చేస్తుంది; Key ఏ Matching Information Availableగా ఉందో Shows చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> qᵢ=xᵢW_Q and kⱼ=xⱼW_K. Separate Learned Matrices Matching Roles Define చేస్తాయి. Their Dot Product Score, Values Weighted Context Build చేయడానికి Use అవుతాయి."
     },
     {
       "stem": "“it” Pronoun, Earlier “animal” Token మధ్య Query–Key Match ఎలా Help చేస్తుంది?",
       "options": [
-        "“it” Query, “animal” Key Matchతో Earlier Noun Context Use అవుతుంది.",
+        "“it” Query, “animal” Key Matchతో Context Use అవుతుంది.",
         "“it” Key “animal” Word Replace చేసి Attention Skip చేస్తుంది.",
         "“animal” Valueగా Change అయ్యేవరకు Key Matching Impossible.",
         "Every Pronoun Highest Score Receives చేస్తుంది; Context Matter కాదు."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+      "explanation": "<strong>Simple Explanation:</strong> “it”కి “animal” Earlier Noun Relevant అయి ఉండవచ్చు. Query–Key Match Context Connect చేయడంలో Help చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> q_it and k_animal Match High అయితే v_animalపై Attention Increase కావచ్చు. This is illustrative; Every Head Coreference Resolve చేయాలని Guarantee లేదు."
     },
     {
       "stem": "K=XW_K, QKᵀ/√d_k Formulasలో Key Projection, Scores ఎలా Compute చేస్తాం?",
@@ -48,30 +48,30 @@
         "K=XW_K Learned Map; Scaled QKᵀ Matching Scores Calculate చేస్తుంది.",
         "Key Projection Sequence Lengthతో Divide చేస్తుంది; Query Weights Ignore చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+      "explanation": "<strong>Simple Explanation:</strong> Learned W_K Input Hidden Statesని Keysగా Map చేస్తుంది. Q, K Dot Product Scoresని Scale చేస్తాం.",
+      "technicalExplanation": "<strong>Correct Answer: C.</strong> X[T,d_model] W_K[d_model,H_k*d_k] → K[T,H_k*d_k]. Reshaped Keys, Compatible Q Heads QKᵀ/√d_k Scores Compute చేస్తాయి."
     },
     {
       "stem": "PyTorchలో Key Projection, Heads Reshape, Q×Kᵀ Scores ఎలా Implement చేస్తాం?",
       "options": [
         "Every Tokenకి Same Constant Key Tensor Always Use చేస్తాం.",
-        "nn.Linear Keys Create; Heads Reshape చేసి Q×Kᵀ Scores Compute చేస్తాం.",
+        "nn.Linear Keys Create; Heads Reshape, Q×Kᵀ Scores Compute చేస్తాం.",
         "Raw Token IDs Keysగా Use చేసి Queriesకి Direct Add చేస్తాం.",
         "Input Softmaxతో Keys Create చేసి Projection Weights Freeze చేస్తాం."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+      "explanation": "<strong>Simple Explanation:</strong> PyTorch Linear Layer Keys Create చేస్తుంది. Head Shapes Arrange చేసి Queriesతో Score Matrix Compute చేస్తాం.",
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> nn.Linear(d_model,H*d_k)తో Keys Generate; Reshape [B,H,T,d_k], Q@K.transpose(-2,-1) → [B,H,T,T]. Head Dimensions Correct ఉండాలి."
     },
     {
       "stem": "RoPEలో Query, Key Rotation Relative Positionsని Attentionలో ఎలా Represent చేస్తుంది?",
       "options": [
-        "Compatible Q/K Rotations Relative Distanceని Attention Scoresలో Reflect చేస్తాయి.",
+        "Q/K Rotations Relative Distanceని Attention Scoresలో Reflect చేస్తాయి.",
         "Only Keys Rotate చేస్తే Scores Content Entirely Ignore చేస్తాయి.",
         "Softmax తర్వాత Values Rotate చేస్తే Queries Automatically Position Aware.",
         "Key Lengthకి Position Add చేస్తే Token Order Completely Remove అవుతుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+      "explanation": "<strong>Simple Explanation:</strong> RoPE Q, K Pairsని Position-Based Anglesతో Rotate చేస్తుంది. Relative Distance Attention Scoresలో Reflect అవచ్చు.",
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> RoPE Q/K Coordinate Pairs Rotate చేస్తుంది: R(mω)ᵀR(nω)=R((n−m)ω). Dot Product Relative Offsetతో పాటు Learned Contentపై Depend అవుతుంది."
     },
     {
       "stem": "LLM Generationలో KV Cache, MQA, GQA Memory, Speedని ఎలా Affect చేస్తాయి?",
@@ -81,8 +81,8 @@
         "MQA Separate KV per Query; GQA All Heads Independent Keep చేస్తుంది.",
         "Past K/V Cache Reuse; MQA/GQA Shared Headsతో Memory Save చేస్తాయి."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+      "explanation": "<strong>Simple Explanation:</strong> LLM Previous Keys, Values Cache చేస్తుంది. MQA, GQA Shared Heads ద్వారా Cache Memory Reduce చేయగలవు.",
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> Autoregressive KV Cache Past Keys, Values Recompute చేయకుండా Store చేస్తుంది. MQA One Shared KV Head; GQA Groups. New Query Still Cached Keysతో Attention Computes."
     }
   ]
 }
