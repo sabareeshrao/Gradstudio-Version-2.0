@@ -1,44 +1,57 @@
 #!/usr/bin/env node
-// Review gates for Telugu + English lessons. Keeps all original technical diagrams in English.
-import { readFileSync, readdirSync } from "node:fs";
-import { resolve } from "node:path";
-
-const root=resolve(import.meta.dirname,"..");
-const folder=resolve(import.meta.dirname);
-const files=readdirSync(folder).filter(f=>f.endsWith(".te.json"));
-if(!files.length)throw Error("Missing Telugu-English lessons");
-const Telugu=/[\u0C00-\u0C7F]/u;
-const English=/[A-Za-z]/u;
+// Validate all bilingual copies against their original English source lessons.
+import {readFileSync, readdirSync, existsSync} from "node:fs";
+import {resolve} from "node:path";
+const folder=import.meta.dirname, root=resolve(folder,"..");
+const translations=[
+  ["transformer","01-transformer.html","transformer.te.json"],
+  ["rag","02-rag.html","modules/rag.te.json"],
+  ["deep-learning","03-deep-learning.html","modules/deep-learning.te.json"],
+  ["neural-network","04-neural-network.html","modules/neural-network.te.json"],
+  ["artificial-intelligence","05-artificial-intelligence.html","modules/artificial-intelligence.te.json"],
+  ["prompt-engineering","06-prompt-engineering.html","modules/prompt-engineering.te.json"],
+  ["attention-mechanism","07-attention-mechanism.html","modules/attention-mechanism.te.json"],
+  ["self-attention","08-self-attention.html","modules/self-attention.te.json"],
+  ["backpropagation","09-backpropagation.html","modules/backpropagation.te.json"],
+  ["gradient-descent","10-gradient-descent.html","modules/gradient-descent.te.json"]
+];
+const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
-for(const f of files){
-  const translated=JSON.parse(readFileSync(resolve(folder,f),"utf8"));
-  const slug=f.replace(/\.te\.json$/,"");
-  const original=JSON.parse(readFileSync(resolve(root,"study-engine","modules",slug+".json"),"utf8"));
-  const name=f;
-  if(translated.diagramLanguage!=="en" || translated.contentLanguage!=="te-en") errors.push(name+": language metadata missing");
-  if(translated.hero!==original.hero)errors.push(name+": hero must exactly match English original");
-  if(translated.questions?.length!==original.questions?.length)errors.push(name+": question count changed");
-  translated.questions?.forEach((q,i)=>{
-    const en=original.questions[i];
-    if(!en)return;
-    if(q.figure!==en.figure)errors.push(name+": diagram "+(i+1)+" differs from English original");
-    if(q.answer!==en.answer)errors.push(name+": correct answer changed in question "+(i+1));
-    if(!Array.isArray(q.options)||q.options.length!==4)errors.push(name+": question "+(i+1)+" needs four options");
-    if(!Telugu.test(q.stem)||!English.test(q.stem))errors.push(name+": question "+(i+1)+" must combine Telugu and English");
-    if(!q.options?.every(v=>Telugu.test(v)&&English.test(v)))errors.push(name+": answers "+(i+1)+" must combine Telugu and English");
-    if(!q.explanation?.includes("Simple Explanation:")||!Telugu.test(q.explanation))errors.push(name+": easy explanation missing for "+(i+1));
-    if(!q.technicalExplanation?.includes("Correct Answer:")||!Telugu.test(q.technicalExplanation))errors.push(name+": detailed explanation missing for "+(i+1));
-    if(q.options?.length===4){
-       const wc=q.options.map(s=>s.trim().split(/\s+/).length),ch=q.options.map(s=>s.length);
-       const idx="abcd".indexOf(q.answer);
-       if(idx>=0){
-         if(wc[idx]>Math.max(...wc.filter((_,j)=>j!==idx)))errors.push(name+": correct answer uniquely longest by words in "+(i+1));
-         if(ch[idx]>Math.max(...ch.filter((_,j)=>j!==idx)))errors.push(name+": correct answer uniquely longest by characters in "+(i+1));
-       }
-       if(Math.max(...wc)/Math.min(...wc)>1.5)errors.push(name+": word length ratio too high in "+(i+1));
-    }
-  });
-  console.log("Checked",name,"—",translated.questions?.length,"questions");
+function validate(slug,entry,filename){
+ const translationPath=resolve(folder,filename);
+ const entryPath=resolve(folder,entry);
+ const englishEntry=resolve(root,"lessons",entry);
+ const englishModule=resolve(root,"study-engine/modules",slug+".json");
+ if(!existsSync(translationPath)||!existsSync(entryPath)||!existsSync(englishEntry)||!existsSync(englishModule)){
+  errors.push(slug+": missing translated HTML, data or original English lesson");return;
+ }
+ const d=JSON.parse(readFileSync(translationPath,"utf8"));
+ const source=JSON.parse(readFileSync(englishModule,"utf8"));
+ const html=readFileSync(entryPath,"utf8");
+ if(slug!=="transformer"&&!html.includes('data-module="'+slug+'"'))errors.push(slug+": HTML data-module missing");
+ if(d.contentLanguage!=="te-en"||d.diagramLanguage!=="en")errors.push(slug+": incorrect language markers");
+ if(d.hero!==source.hero)errors.push(slug+": English overview illustration changed");
+ if(d.questions.length!==7)errors.push(slug+": require exactly 7 questions");
+ for(let i=0;i<7;i++){
+  const q=d.questions[i],p=source.questions[i];
+  if(!q||!p){errors.push(slug+": question "+(i+1)+" missing");continue;}
+  if(q.figure!==p.figure)errors.push(slug+": English diagram "+(i+1)+" changed");
+  if(q.answer!==p.answer)errors.push(slug+": question "+(i+1)+" correct answer changed");
+  if(!te.test(q.stem)||!en.test(q.stem))errors.push(slug+": bilingual question "+(i+1)+" missing");
+  if(!Array.isArray(q.options)||q.options.length!==4){errors.push(slug+": four answer choices required for Q"+(i+1));continue;}
+  if(q.options.some(x=>!te.test(x)||!en.test(x)))errors.push(slug+": bilingual option missing Q"+(i+1));
+  if(!q.explanation?.includes("Simple Explanation:")||!te.test(q.explanation))errors.push(slug+": beginner explanation missing Q"+(i+1));
+  if(!q.technicalExplanation?.includes("Correct Answer:")||!te.test(q.technicalExplanation))errors.push(slug+": technical detail missing Q"+(i+1));
+  const words=q.options.map(x=>x.trim().split(/\s+/).length),chars=q.options.map(x=>x.length),idx="abcd".indexOf(q.answer);
+  if(idx<0){errors.push(slug+": invalid answer Q"+(i+1));continue;}
+  if(words[idx]>Math.max(...words.filter((_,j)=>j!==idx)))errors.push(slug+": correct answer longest by words Q"+(i+1));
+  if(chars[idx]>Math.max(...chars.filter((_,j)=>j!==idx)))errors.push(slug+": correct answer longest by characters Q"+(i+1));
+  if(Math.max(...words)/Math.min(...words)>1.5)errors.push(slug+": option length ratio exceeds 1.5 Q"+(i+1));
+ }
+ console.log("Checked "+slug+": "+d.questions.length+" questions / "+(d.questions.length*4)+" options / unchanged English diagrams");
 }
-if(errors.length){for(const e of errors)console.error("ERROR:",e);process.exit(1)}
-console.log("PASS: bilingual learner copy, seven original English diagrams, preserved answers, simple explanations and balanced choices.");
+translations.forEach(row=>validate(...row));
+const index=readFileSync(resolve(folder,"index.html"),"utf8");
+for(const [slug,entry] of translations)if(!index.includes('./'+entry))errors.push(slug+": missing from index.html link table");
+if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
+console.log("PASS: 10 bilingual lessons, 70 questions, 280 options, 70 original English diagrams, answer keys, translations, and index links.");
