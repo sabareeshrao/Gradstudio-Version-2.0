@@ -1,0 +1,19 @@
+/* RoPE illustrated-v2: custom scene styles; shared quiz/themes unchanged. */
+.rp-hero,.rp-figure{font-family:inherit;min-width:0;color:#2b4e62}
+.rp-eyebrow{display:block;font-size:.69rem;font-weight:900;text-transform:uppercase;letter-spacing:.11em;color:#298778}
+.rp-hero{border:1px solid #c7e0e6;border-radius:20px;padding:clamp(17px,3vw,31px);margin:0 0 24px;background:radial-gradient(ellipse at 10% 4%,#e0f5ec,transparent 51%),linear-gradient(144deg,#f7fcff,#fff9f0);box-shadow:0 12px 26px #35566e10}
+.rp-hero h2{font-size:clamp(1.25rem,2.65vw,1.85rem);line-height:1.28;color:#285d72;margin:8px 0}
+.rp-hero p{max-width:75ch;font-size:.92rem;color:#58798b;line-height:1.62;margin:0 0 18px}
+.rp-figure{background:radial-gradient(ellipse at 95% 2%,#e7f6ed,transparent 48%),linear-gradient(148deg,#f7fcff,#fffbf5);border-radius:15px;padding:clamp(15px,2.7vw,26px)}
+.rp-figure h3{color:#315f76;font-size:clamp(1.03rem,1.8vw,1.24rem);font-weight:850;margin:6px 0 15px;line-height:1.35}
+.rp-art{border:1px solid #d5e6ec;border-radius:14px;max-width:100%;overflow-x:auto;overflow-y:hidden;background:white;scrollbar-color:#adcbd4 transparent}
+.rp-svg{display:block;width:100%;height:auto;min-width:760px;max-width:none}
+.rp-svg text{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+.rp-hero .rp-svg{min-width:730px}
+.rp-note{color:#607c8c;font-size:.82rem;line-height:1.6;margin:12px 0 0}
+.rp-sources{background:#fff;border:1px solid #d3e5eb;border-radius:13px;padding:13px 17px;margin:22px 0;color:#5c7789;font-size:.81rem}
+.rp-sources summary{font-weight:850;color:#316b82;cursor:pointer}
+.rp-sources a{color:#176d95}
+.rp-technical-code{white-space:pre;overflow:auto;max-width:100%;padding:15px;background:#14283b;border-radius:12px;color:#dcecf5;font:12px/1.6 ui-monospace,Consolas,monospace}
+@media(max-width:670px){.rp-hero{padding:17px 12px}.rp-figure{padding:14px 10px}.rp-svg,.rp-hero .rp-svg{min-width:755px}}
+@media(prefers-reduced-motion:reduce){.rp-hero *,.rp-figure *{animation:none!important;transition:none!important}}
