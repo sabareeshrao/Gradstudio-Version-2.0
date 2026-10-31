@@ -12,7 +12,7 @@
       "answer": "b",
       "options": [
         "A single-input system reads one type of data and turns other information into file names, without learning from the signals provided by those different sources.",
-        "Multimodal learning combines information from images, words, sounds, video, or sensors so a model can learn useful relationships across more than one kind of input.",
+        "Multimodal learning combines information from images, words, sounds, video, or sensors so a model can learn relationships across more than one kind of input.",
         "A storage system keeps text, pictures, and audio in separate folders without connecting them, which does not teach a model how those signals relate.",
         "A video-only system uses a series of pictures but ignores words, sounds, and sensors, so it does not represent the broader idea of multimodal learning."
       ],
@@ -28,7 +28,7 @@
         "Adding extra inputs always makes predictions correct, even when some sources are noisy or misleading. More data does not automatically mean more useful information.",
         "Multiple inputs only reduce the number of files needed for storage, because every source must provide exactly the same information for a multimodal model.",
         "Images and speech must be analyzed separately without sharing information, since combining the two always destroys the meaning present in each input.",
-        "Images, speech, and text can offer different clues about the same event, allowing a system to resolve uncertainty when one input alone is incomplete or unclear."
+        "Images, speech, and text provide different clues about the same event, helping a system resolve uncertainty when one input is incomplete or unclear."
       ],
       "explanation": "<strong>Explanation:</strong> Picture a firefighter reviewing a building's security video. The camera shows smoke near a door, while a microphone captures an alarm and a written message identifies the floor. Each input provides a different clue. A multimodal system can combine them to form a fuller view, rather than treating each signal as unrelated. <strong>Complementary evidence</strong> helps when part of a scene is hidden. It is still possible for inputs to disagree, so more modalities do not guarantee a correct prediction.",
       "technicalExplanation": "<strong>Correct: D.</strong> Images provide visual details; spoken audio reveals speech or off-camera sounds; text can clarify context. Their combination often reduces uncertainty, though noisy or contradictory inputs can also create errors. The model must learn which evidence helps each task.",
@@ -39,7 +39,7 @@
       "tag": "Beginner · spoken visual question",
       "answer": "a",
       "options": [
-        "An image encoder collects visual features, a speech system represents the spoken question, and a fusion component links those signals before the model produces a relevant response.",
+        "An image encoder extracts visual clues, a speech system processes the spoken question, and fusion connects both signals before the model produces an answer.",
         "A model discards the picture after the question is spoken, then selects an answer based only on memorized phrases without checking the visual content.",
         "The spoken question must first become another image, because text or audio representations cannot be connected directly to visual features in a multimodal model.",
         "The picture goes to an unrelated classifier, while speech is ignored, so the model returns a generic label instead of answering the question that was asked."
@@ -55,7 +55,7 @@
       "options": [
         "Early fusion combines only final decisions after separate models finish, while late fusion joins raw inputs before processing. This reverses the usual timing of fusion.",
         "Cross-attention gives fixed class labels to every modality, while shared embedding spaces prevent related information from connecting. Both descriptions miss learned cross-modal relationships.",
-        "Early fusion joins inputs or early features; intermediate fusion mixes learned features; late fusion combines decisions, while cross-attention and shared embeddings connect related information.",
+        "Early fusion joins initial inputs; intermediate fusion mixes learned features; late fusion combines final decisions, while cross-attention and shared embeddings connect related information.",
         "All fusion methods perform identical operations at identical points in a network, so selecting between them has no effect on memory, computation, or available context."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine designing a railway safety system with camera images and vibration sensors. <strong>Early fusion</strong> can combine initial signals, while <strong>intermediate fusion</strong> connects learned features from each stream. <strong>Late fusion</strong> merges decisions made by separate models. Cross-attention can let one stream focus on useful information from another, and a shared embedding space can bring related signals closer. Different fusion stages have different costs and strengths, so choose a method based on the data and the task.",
