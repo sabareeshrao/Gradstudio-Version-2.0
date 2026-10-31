@@ -13,7 +13,7 @@
       "answer": "b",
       "options": [
         "It groups examples without labels by finding similarities between them. This unsupervised approach can discover groups but does not learn from known correct target values.",
-        "It studies labeled examples with features and known outcomes, then learns a relationship that helps it predict answers for new input data not seen during training.",
+        "It studies labeled examples with features and known outcomes, then learns a relationship that helps it predict answers for input data not seen during training.",
         "It memorizes every labeled example and only recognizes identical records later. This kind of lookup does not learn patterns that help with unfamiliar examples.",
         "It follows fixed rules written by a programmer for every possible situation. Such rule-based programs do not learn a prediction function from labeled examples."
       ],
@@ -40,10 +40,10 @@
       "stem": "How does a Supervised Learning model learn from a labeled dataset, starting with features and target labels, making initial predictions, measuring errors, and gradually improving its predictions through training?",
       "answer": "a",
       "options": [
-        "It uses input features to predict a result, measures loss against the correct label, then updates model parameters over many training examples to improve future predictions.",
+        "It uses input features to predict a result, measures loss against the correct label, then updates model parameters across training examples to improve future predictions.",
         "It removes difficult examples before training and treats its first guesses as final answers. This prevents learning from errors that could reveal important patterns.",
         "It uses features only during testing and invents the target labels after predictions. Supervised training needs correct labels available alongside training inputs from the beginning.",
-        "It changes confidence randomly without checking whether predictions match known labels. Increasing confidence is not the same as actually improving prediction accuracy."
+        "It changes confidence randomly without checking whether its predictions match the known labels. Increasing confidence is not the same as actually improving prediction accuracy."
       ],
       "explanation": "<strong>Explanation:</strong> Suppose a recycling plant records sensor readings and whether each bottle is glass or plastic. A model receives the readings as <strong>features</strong> and predicts the material. During training, its prediction is compared with the correct label. A loss function measures the error, and an optimizer adjusts the model to improve future predictions. The cycle repeats across many bottles. After training, the model can classify a new bottle it has not seen before.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> A labeled dataset supplies features and targets. The model produces predictions and a loss measures the mismatch. During training, the model adjusts parameters to lower this loss, using backpropagation for gradient-based models or splitting rules for tree algorithms. Training over multiple rounds can improve fit, but validation on separate samples is needed to check that the improvements transfer beyond the practice examples.",
@@ -82,7 +82,7 @@
       "stem": "How do mathematical principles such as Empirical Risk Minimization (ERM), loss functions, regularization, the bias-variance trade-off, and generalization explain why a Supervised Learning model performs well on training data but may fail on unseen examples?",
       "answer": "a",
       "options": [
-        "A model can overfit training examples, so regularization and validation help check whether its learned relationships still work on new data it has not seen.",
+        "A model can overfit training examples, so regularization and validation help check whether its learned relationships still work on unseen data.",
         "Low training error proves a model will perform equally well on new datasets. Future inputs may have patterns the training examples did not represent.",
         "Bias and variance disappear when a model predicts every training label correctly. Perfect training accuracy can still hide overfitting and poor generalization.",
         "Regularization guarantees accurate predictions even when the data changes completely. It limits model complexity but cannot remove every problem caused by distribution shift."
@@ -99,7 +99,7 @@
         "After deployment, check only total accuracy and retrain on a fixed weekly schedule. That can miss changes in confidence, rare classes, and real-world input patterns.",
         "Fix rare categories by copying their examples into both training and testing data. That creates leakage and makes evaluation more optimistic than real performance.",
         "Change the live model using every new test label, without keeping independent evaluation results. This makes it difficult to tell if updates improve predictions.",
-        "Monitor shifts, class imbalance, label quality, confidence, and errors; keep evaluation separate; and retrain only when measured tests show meaningful improvement."
+        "Monitor shifts, rare classes, label quality, confidence, and errors; keep evaluation separate; and retrain only when tests clearly show a genuine improvement."
       ],
       "explanation": "<strong>Explanation:</strong> Picture a payment-fraud system after a busy shopping season. Transaction sizes and fraud patterns may change. Engineers watch for <strong>data drift</strong>, inaccurate confidence scores, class imbalance, and rising errors. They inspect noisy labels and prevent leakage between training and evaluation. If performance drops, they investigate and test a revised model before replacing the live one. A model is not finished when deployed; it needs checks as real-world behavior changes.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> Prevent leakage by keeping test samples and future-only fields out of feature preprocessing and training. For imbalanced data, use class weights or training-only resampling and report per-class recall or PR-AUC. Check label noise, monitor feature and target drift, and test confidence calibration on representative labeled data. A shift alert is a reason to investigate, not automatically retrain. Retrain if representative recent evaluations demonstrate a measurable improvement; validate the candidate before deployment and keep rollback controls.",
