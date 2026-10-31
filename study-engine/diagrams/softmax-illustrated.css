@@ -1,0 +1,23 @@
+/* Softmax illustrated-v2; shared quiz, engine and 15 themes stay unchanged. */
+.sm-hero,.sm-fig{box-sizing:border-box;min-width:0;color:#2b455b}
+.sm-hero{margin-bottom:24px;padding:clamp(17px,2.5vw,28px);border-radius:20px;border:1px solid #cde3df;background:radial-gradient(circle at 13% 5%,#d9f3eb,transparent 42%),linear-gradient(145deg,#f8fcff,#fff7ef)}
+.sm-hero h2{font-size:clamp(1.2rem,2.4vw,1.75rem);line-height:1.22;margin:7px 0;color:#2f6075}
+.sm-hero p{font-size:.9rem;color:#5b7888;margin:7px 0 16px;line-height:1.6}
+.sm-fig{padding:clamp(14px,2.4vw,24px);border-radius:13px;background:radial-gradient(circle at 88% 8%,#e1f4ed,transparent 40%),linear-gradient(140deg,#f8fbfd,#fffaf3)}
+.sm-kicker{font-size:.71rem;letter-spacing:.10em;color:#2d8074;font-weight:900;text-transform:uppercase}
+.sm-fig h3{font-size:clamp(1.02rem,1.75vw,1.18rem);line-height:1.38;color:#30576b;margin:7px 0 13px}
+.sm-canvas{overflow:hidden;border:1px solid #d6e6e9;border-radius:13px;background:#fff}
+.sm-canvas svg{display:block;width:100%;height:auto}
+.sm-note{font-size:.81rem;color:#5f7987;line-height:1.58;margin:13px 0 0}
+.sm-note strong{color:#317968}
+.sm-formula{margin-top:11px;border:1px solid #d3e5e9;border-radius:10px;background:#f2f9fa;padding:12px 14px;color:#366a7a;font-size:.86rem;line-height:1.6;overflow-wrap:anywhere}
+.sm-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.sm-pills span{border:1px solid #d4e4e9;background:#eef7f7;color:#427d83;border-radius:999px;padding:5px 9px;font-size:.73rem;font-weight:760}
+.sm-code-row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:12px;margin-top:13px}
+.sm-code{background:#192d42;color:#e6f2ff;border-radius:11px;font:12px/1.6 ui-monospace,Consolas,Menlo,monospace;white-space:pre;overflow:auto;padding:15px;margin:0}
+.sm-code-result{background:#fff;border:1px solid #d5e6e8;padding:13px;border-radius:11px;font-size:.79rem;color:#537587;line-height:1.5}
+.sm-code-result strong{color:#307e73}.sm-code-result p{margin:8px 0}
+.sm-sources{background:#fff;border:1px solid #d4e4e8;border-radius:11px;padding:12px 14px;margin:18px 0;font-size:.79rem;color:#527083}
+.sm-sources summary{cursor:pointer;font-weight:850}.sm-sources li{margin:7px 0}.sm-sources a{color:#226c8b}
+@media(max-width:760px){.sm-code-row{grid-template-columns:1fr}.sm-canvas{overflow-x:auto;overscroll-behavior-x:contain}.sm-canvas svg{min-width:770px}.sm-canvas:after{content:"Swipe to see the full illustrated diagram →";display:block;position:sticky;left:0;background:#f7fafb;color:#6f8797;text-align:center;font-size:.7rem;padding:4px}}
+@media(prefers-reduced-motion:reduce){.sm-hero *,.sm-fig *{animation:none!important;transition:none!important}}
