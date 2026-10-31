@@ -134,6 +134,11 @@
       "slug": "diffusion-model",
       "title": "Diffusion Model",
       "domain": "Noise-Based Generative Models and Data Generation · Generative Modeling"
+    },
+    {
+      "slug": "natural-language-processing",
+      "title": "Natural Language Processing (NLP)",
+      "domain": "Understanding, Processing, and Generating Human Language · Natural Language Processing"
     }
   ]
 }
