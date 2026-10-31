@@ -249,6 +249,11 @@
       "slug": "random-forest",
       "title": "Random Forest",
       "domain": "Ensemble Learning Using Multiple Decision Trees · Supervised Machine Learning"
+    },
+    {
+      "slug": "convolutional-neural-network",
+      "title": "Convolutional Neural Network (CNN)",
+      "domain": "Learning Visual Features Through Convolutional Layers · Neural Network Architectures"
     }
   ]
 }
