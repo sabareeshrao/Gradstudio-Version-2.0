@@ -79,7 +79,7 @@
       "options": [
         "PyTorch first groups tokens by alphabetic order, then assigns each group a single shared attention vector. This omits learned Query, Key, and Value projections.",
         "PyTorch uses learned layers to make Q, K, and V, calculates scaled Query-Key scores, applies masks and Softmax, then multiplies attention weights by Values.",
-        "PyTorch computes attention by adding token IDs together without using learned projections or similarity scores. Token IDs alone cannot explain context-dependent attention.",
+        "PyTorch computes attention simply by adding token IDs together without using learned projections or similarity scores. Token IDs alone cannot explain context-dependent attention across a sequence.",
         "PyTorch creates each attention score directly from the correct target label rather than comparing queries with keys. That is not how a normal inference-time attention head works."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine a small program that studies short descriptions of planets. In PyTorch, start with token embeddings and apply three learned linear layers to get <strong>Q, K, and V</strong>. Compute scaled Q–K scores, apply a mask if needed, then use Softmax to create attention weights. Multiply those weights by V to get the context vectors. You can display the weight matrix as a heatmap to see which positions receive attention. The picture is a diagnostic, not a full explanation of the model's reasoning.",
@@ -91,8 +91,8 @@
       "stem": "How do Additive Attention, Multiplicative Attention, Self-Attention, Cross-Attention, Causal Attention, and Multi-Head Attention differ in their mathematical operations, information flow, and applications within Transformer Encoder-Decoder architectures and modern Large Language Models?",
       "answer": "a",
       "options": [
-        "Additive attention uses learned nonlinear scoring, self-attention connects positions within one sequence, cross-attention connects two streams, and multi-head attention learns several relationships in parallel.",
-        "Multiplicative attention works only when Query and Key are the same token, while causal attention reveals all later output tokens. Both statements confuse attention scoring and visibility.",
+        "Additive attention learns nonlinear scores; self-attention links tokens in one sequence, cross-attention links two streams, and multi-head attention learns several relationships at once.",
+        "Multiplicative attention works only when Query and Key are the same token, while causal attention reveals future tokens. Both statements confuse attention scoring and visibility.",
         "Self-attention can only read external memory, while multi-head attention averages all tokens before making its projections. Self-attention normally uses tokens from its own sequence.",
         "Cross-attention must use one shared sequence, and additive attention cannot learn scoring weights. In practice, cross-attention links streams and additive scoring uses learned parameters."
       ],
