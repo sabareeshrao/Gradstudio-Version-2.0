@@ -1,0 +1,17 @@
+/* Original, responsive LVLM multimodal instructional scenes */
+.vl-hero,.vl-figure{min-width:0;color:#2c4a5d;font-family:inherit}
+.vl-hero{padding:clamp(18px,2.7vw,28px);margin-bottom:25px;border:1px solid #cee1e6;border-radius:20px;background:radial-gradient(circle at 0% 0%,#e2f5ee,transparent 53%),linear-gradient(130deg,#f2fbff,#fffaee);box-shadow:0 8px 24px #325a6b12}
+.vl-eyebrow{font-size:.7rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:#2b8878}
+.vl-hero h2{font-size:clamp(1.18rem,2.5vw,1.78rem);color:#2e5a71;line-height:1.2;margin:9px 0}
+.vl-hero p{font-size:.87rem;line-height:1.56;color:#617888;max-width:78ch}
+.vl-figure{padding:clamp(14px,2.7vw,25px);background:radial-gradient(ellipse at top right,#e6f5ee,transparent 51%),linear-gradient(135deg,#f7fcff,#fffbf6)}
+.vl-figure h3{margin:7px 0 14px;line-height:1.35;font-size:clamp(1.02rem,2vw,1.21rem);color:#30566e;font-weight:850}
+.vl-viewport{max-width:100%;overflow-x:auto;overflow-y:hidden;border:1px solid #d9e7eb;border-radius:12px;background:#fff;scrollbar-color:#b5d2da transparent}
+.vl-viewport svg{display:block;width:100%;height:auto;min-width:630px;max-width:none}
+.vl-note{font-size:.83rem;line-height:1.58;color:#5d7683;margin:12px 0 0}
+.vl-note strong{color:#2a8170}
+.vl-code{font-size:.75rem;line-height:1.49;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#1d3044;color:#edf4fb;overflow-x:auto;white-space:pre;border-radius:10px;padding:13px}
+.vl-sources{background:#fff;border:1px solid #d9e7eb;border-radius:12px;padding:13px 15px;color:#678090;font-size:.79rem;margin:20px 0}
+.vl-sources summary{font-weight:850;color:#376b82;cursor:pointer}.vl-sources li{margin:7px 0}.vl-sources a{color:#18729b}
+@media(max-width:650px){.vl-hero{padding:15px 12px}.vl-figure{padding:13px 10px}.vl-viewport svg{min-width:630px}}
+@media(prefers-reduced-motion:reduce){.vl-hero *,.vl-figure *{animation:none!important;transition:none!important}}
