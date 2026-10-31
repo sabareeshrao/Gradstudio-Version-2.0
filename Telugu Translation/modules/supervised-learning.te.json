@@ -30,7 +30,7 @@
         "Classification Pricesలాంటి Numerical Values, Regression Categories Predict చేస్తాయని అంటుంది. Actual Output Types Reverse.",
         "Both Classification, Regression Named Categories Predict చేస్తాయంటుంది. Regression Continuous Numbers Estimate చేస్తుంది.",
         "Classification Missing Fields Fix, Regression Training Labels Select చేస్తుందంటుంది. అవి Data Preparation Tasks.",
-        "Classification Spam/Digit Categories, Regression House Pricesలాంటి Numbers Predict చేస్తుంది; Labels నుంచి Learn అయినా Evaluation, Losses Differ."
+        "Classification Categories, Regression Numbers Predict; Labeled Data నుంచి Learn అయినా Metrics, Loss Different."
       ],
       "explanation": "<strong>Explanation:</strong> Classification Spam/Not Spam లేదా Digit Categories Predict చేస్తుంది; Regression House Priceలాంటి Numbers Predict చేస్తుంది. Both Labeled Feature–Target Pairs నుంచి Learn అయినా Losses, Evaluation Metrics Differ. Parcel Sorting Centerని Imagine చేయండి. One Model Packageకి <strong>Fragile Handling</strong> అవసరమా Standard Handlingనా Decide చేస్తుంది — Category కాబట్టి Classification. Another Model Deliveryకి ఎన్ని Hours పడతాయో Predict చేస్తుంది — Number కాబట్టి Regression. రెండూ Known Outcomes ఉన్న Examples నుంచి Learn అవుతాయి.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> Classification Discrete Target Category (Spam, Handwritten Digit); Regression Numeric Target (House Price). Classification Precision, Recall, F1, ROC-AUC; Regression MAE, RMSE, R² వంటి Metrics Use చేస్తారు. Digitsలో Image Pixels Features, Known Digit Class Target.",
@@ -59,7 +59,7 @@
       "options": [
         "All Algorithms Identical Equations Use చేస్తాయని అంటుంది. Different Assumptions, Patterns వల్ల Model Choice Important.",
         "Neural Networks Every Datasetలో Best అంటుంది. Some Tasksలో Simpler Models More Accurate, Interpretable కావచ్చు.",
-        "Linear Regression Numbers; Logistic, Trees, Forests, SVMs, Neural Nets Different Relations Learn చేస్తాయి. Task, Data, Explainabilityతో Choose చేస్తాం.",
+        "Linear Regression Numbers; Other Models Patterns Differ; Task, Data, Interpretability, Validationతో Choose చేస్తాం.",
         "Only Fastest Training Method Choose చేసి Errors, Explanation Needs Ignore చేస్తుందంటుంది. Reliability, Interpretability Also Matter."
       ],
       "explanation": "<strong>Explanation:</strong> Linear Regression Numbers Estimate చేస్తుంది; Logistic Regression, Trees, Forests, SVMs, Neural Networks Different Methodsతో Predictive Relationships Learn చేస్తాయి. Task, Dataset Size, Nonlinearity, Interpretability, Validation Performance బట్టి Choose చేయాలి. Small Insurance Team Vehicle Recordsతో Repair Costs Estimate చేస్తున్నట్టు Imagine చేయండి. Numeric Targetకి <strong>Linear Regression</strong> Simple Starting Point. Trees, Random Forests Complicated Patterns Capture చేయవచ్చు. Rich Dataకి Neural Network Help అయినా Careful Training Needed. Categories కోసం Logistic Regression లేదా SVM Fit కావచ్చు.",
@@ -73,7 +73,7 @@
       "answer": "b",
       "options": [
         "Missing-Value Rules Test Setతో Fit చేసి Best Test Score వచ్చే వరకు Tune చేస్తుందంటుంది. ఇది Data Leakage.",
-        "Scikit-learnలో First Split; Pipelineలో Impute/Encode; Cross-Validation Tune; Held-Out Dataపై Appropriate Classification లేదా Regression Metrics Report చేస్తాం.",
+        "Scikit-learn First Split, Pipelineలో Impute/Encode, CV Tune చేసి Held-Out Classification/Regression Metrics Report చేస్తాం.",
         "Full Dataset Categories Encode చేసి Regressionని Classification Accuracyతో Evaluate చేస్తుందంటుంది. Leakage, Wrong Metric.",
         "All Labelsపై Tune చేసి Same Samplesపై Evaluate చేస్తుందంటుంది. Training Score Independent Testకి Substitute కాదు."
       ],
@@ -87,7 +87,7 @@
       "stem": "Empirical Risk Minimization (ERM), Loss Functions, Regularization, Bias–Variance Trade-off, Generalization వల్ల Training Dataలో Good Accuracy ఉన్న Model New Dataలో ఎందుకు Fail కావచ్చు?",
       "answer": "a",
       "options": [
-        "ERM Training Loss Minimize; Overcomplex Models Overfit, Simple Models Underfit; Regularization, Validation Generalization Check చేస్తాయి.",
+        "ERM Loss Minimize; Complex Models Overfit, Simple Underfit; Regularization, Validation Generalization Check చేస్తాయి.",
         "Low Training Error New Datasetsపై Equal Performance Prove చేస్తుందంటుంది. New Data Different Patterns కలిగి ఉండవచ్చు.",
         "Every Training Label Correct అయితే Bias, Variance Disappear అంటుంది. Perfect Train Accuracy Overfitting Hide చేయవచ్చు.",
         "Regularization Distribution Completely Change అయినా Accuracy Guarantee చేస్తుందంటుంది. Distribution Shift All Problems Solve కాదు."
@@ -105,7 +105,7 @@
         "Deploy తర్వాత Accuracy Only Monitor, Every Week Fixed Retrain అంటుంది. Rare Classes, Calibration, Drift Miss కావచ్చు.",
         "Rare Class Examples Train, Test Bothలో Duplicate చేస్తుందంటుంది. Leakage వల్ల Results Artificially Optimistic అవుతాయి.",
         "Independent Evaluation లేకుండా Every New Test Labelతో Live Model Change చేస్తుందంటుంది. Actual Improvement Measure చేయలేం.",
-        "Leakage, Imbalance, Noisy Targets Prevent చేసి Drift, Calibration, Errors Track; Causes Examine, Independent Tests తర్వాత Retrain చేస్తాం."
+        "Leakage, Imbalance, Noise Prevent; Drift, Confidence, Errors Check చేసి Independent Testing తర్వాత Retrain చేస్తాం."
       ],
       "explanation": "<strong>Explanation:</strong> Productionలో Leakage Avoid చేసి Imbalanced Labels, Noisy Targets Handle చేయాలి; Drift, Confidence Calibration, Degrading Performance Monitor చేయాలి. Causes Investigate చేసి Independent Dataపై Improvement Confirm అయిన తర్వాత Retrain చేయాలి. Busy Shopping Season తర్వాత Payment Fraud Systemని Imagine చేయండి. Transaction Amounts, Fraud Patterns Change కావచ్చు. Engineers <strong>Data Drift</strong>, Poor Confidence, Rare Classes, Rising Errors Track చేస్తారు. Wrong Labels Check చేసి Train/Test Leakage Prevent చేస్తారు. Performance Drop అయితే Revised Model Test చేసిన తర్వాతే Live Replace చేస్తారు. Deploymentతో Monitoring Work Finish కాదు.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> Future-Only Fields, Test Samples Preprocessing/Trainingకి Leak కాకుండా Check. Imbalanced Classesకి Class Weights లేదా Training-Only Resampling, Per-Class Recall/PR-AUC Use చేయాలి. Label Noise, Feature/Target Drift, Confidence Calibration Monitor చేయాలి. Drift Alert Automatic Retrain Command కాదు; Recent Dataపై Proven Improvement తర్వాత Candidate Deploy, Rollback Controls Keep చేయాలి.",
