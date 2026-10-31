@@ -1,0 +1,16 @@
+/* Recurrent Neural Network: diagram-only styles; Gradstudio's shared quiz and themes remain authoritative. */
+.rnn-hero,.rnn-figure{box-sizing:border-box;min-width:0;padding:clamp(13px,2.4vw,22px);border:1px solid #d7e6e9;border-radius:15px;color:#31556c;background:radial-gradient(circle at 85% 10%,#e6f4ec,transparent 45%),linear-gradient(156deg,#f7fbff,#fffaf6)}
+.rnn-hero{margin-bottom:22px;background:linear-gradient(131deg,#e7f5ef,#f8fbff 62%,#fff5e9)}
+.rnn-hero h2{font-size:clamp(1.1rem,2vw,1.48rem);line-height:1.32;color:#31576a;margin:6px 0 14px}
+.rnn-figure h3{color:#31566d;font-size:clamp(1rem,1.85vw,1.18rem);line-height:1.42;margin:5px 0 12px}
+.rnn-kicker{font-size:.69rem;letter-spacing:.1em;text-transform:uppercase;color:#2e7b7f;font-weight:850;display:block}
+.rnn-viewport{max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;border-radius:11px;border:1px solid #d9e8eb;background:#fff}
+.rnn-viewport:focus-visible{outline:2px solid #438db7;outline-offset:2px}
+.rnn-svg{width:100%;height:auto;max-width:none;display:block}
+.rnn-note{font-size:.8rem;color:#5c7788;line-height:1.58;margin:12px 0 0}
+.rnn-sources{margin:16px 0;background:#fff;border:1px solid #d7e8eb;border-radius:12px;padding:13px 16px;font-size:.81rem;color:#45697a}
+.rnn-sources summary{cursor:pointer;color:#2d747c;font-weight:850}.rnn-sources li{margin:6px 0}.rnn-sources a{color:#246d9b}
+.explanation-deep-content pre{max-width:100%;overflow-x:auto;white-space:pre;tab-size:2;background:#182c40;color:#dceaf9;border-radius:9px;padding:14px;font-size:.76rem;line-height:1.55}
+.explanation-deep-content pre code{background:transparent;color:inherit;white-space:pre;border:0;padding:0;font-size:inherit}
+@media(max-width:680px){.rnn-hero,.rnn-figure{padding:12px}.rnn-svg{width:780px}.rnn-note{font-size:.76rem}}
+@media(prefers-reduced-motion:reduce){.rnn-viewport{scroll-behavior:auto}}
