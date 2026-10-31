@@ -16,8 +16,8 @@
         "Human-Written Fixed Logic Rules Connect చేసి Numerical Weights Learn చేయదు. Rule-Based Systems Useful అయినా Trainable Neural Network Structure Different."
       ],
       "answer": "b",
-      "explanation": "<strong>Simple Explanation:</strong> Approaching Personని Recognize చేసే Automatic Doorలో Sensor Readings Neural Networkకి Inputs. Trainable Weights Learn అయ్యి “Open now” వంటి Prediction ఇవ్వగలవు.",
-      "technicalExplanation": "<strong>Correct Answer: B.</strong> Automatic Door Sensors Person దగ్గరపడుతున్నట్లు Signal ఇస్తాయి. Neural Network Mathematical Units ద్వారా Readings Combine చేసి Open/Close Prediction ఇస్తుంది; Each Connection Weight Trainingలో Adjust అవుతుంది. Human Brain నుంచి Loose Inspiration మాత్రమే, Biological Cell Copy కాదు. Typical Artificial Neuron Weighted Sum + Bias + Activation Compute చేస్తుంది. ఇది Biological Cell Chemistryని Exactగా Simulate చేయదు; Brain Connections నుంచి Loose Inspiration మాత్రమే.",
+      "explanation": "<strong>Explanation:</strong> Person దగ్గరికి వస్తున్నప్పుడు Learn చేసి Open అయ్యే Automatic Doorని Imagine చేయండి. Neural Network Sensor Readings Receive చేసి Connected Mathematical Units ద్వారా Combine చేస్తుంది; “open now” వంటి Prediction ఇస్తుంది. ప్రతి Connectionకి Trainingలో Adjust చేయగల <strong>weight</strong> ఉంటుంది. Connected Units అనే Idea Biology నుంచి Inspired అయినా Artificial Neurons Real Brain Cells కంటే Much Simpler. Remember: Core Idea Trainable Connections ఉన్న Network; Miniature Digital Brain కాదు.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Typical Artificial Neuron Weighted Sum + Bias + Activation Compute చేస్తుంది. Biological Cell Chemistryని Exactly Simulate చేయదు; Brain Connections నుంచి Loose Inspiration మాత్రమే.",
       "englishSourceDigest": "d04d7768"
     },
     {
@@ -31,8 +31,8 @@
         "Input Features Weighted Connections, Biasesతో Hidden Layersలో Transform అవుతాయి. Output Units Prediction Generate చేస్తాయి; Training తర్వాత Parameters Improve అవుతాయి."
       ],
       "answer": "d",
-      "explanation": "<strong>Simple Explanation:</strong> Garden Watering Modelలో Inputs Soil Moisture, Temperature, Sunlight. Hidden Layers Weights, Biasesతో Patterns Build చేసి Output Water Amount Predict చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer: D.</strong> Soil Moisture, Air Temperature, Sunlight Inputsని Input Layer Receive చేస్తుంది. Weights Connections Strength Set చేస్తాయి; Biases Activation Shift చేస్తాయి. Hidden Layers Patterns Combine చేసి Output Layer Gardenకి Water Amount Predict చేస్తుంది. Training Weights, Biases Update చేస్తుంది. Input Features, Weight Strength, Bias Shift, Hidden Activations ద్వారా Final Output వస్తుంది. Layers, Neurons Count మన Design Choice.",
+      "explanation": "<strong>Explanation:</strong> Garden Watering Systemని Picture చేయండి. Inputsగా Soil Moisture, Air Temperature, Sunlight ఉండవచ్చు. ఆ Numbers <strong>Input Layer</strong>లో Enter అవుతాయి. Connections Signalsని Weightsతో Multiply చేస్తాయి; Biases Hidden Neurons ఎప్పుడు Activate అవుతాయో Shift చేయడంలో Help చేస్తాయి. Hidden Layers Readingsని Useful Patternsగా Combine చేస్తాయి. <strong>Output Layer</strong> Gardenకి ఎంత Water అవసరమో Predict చేయవచ్చు. Training Weights, Biasesని Change చేస్తుంది; Structure Information ఎక్కడ Enter అవుతుంది, Process అవుతుంది, Prediction వస్తుందో చూపిస్తుంది.",
+      "technicalExplanation": "<strong>Correct: D.</strong> Input Features, Weight Strength, Bias Shift, Hidden Activations ద్వారా Final Output వస్తుంది. Layers, Neurons Count అనేవి Design Choices.",
       "englishSourceDigest": "1e582387"
     },
     {
@@ -46,8 +46,8 @@
         "Model Current Input Receive చేయకముందే Prediction Error Measure చేసి Lossని New Inputగా Use చేస్తుంది. Loss Usually Forward Prediction తర్వాత Calculate అవుతుంది."
       ],
       "answer": "a",
-      "explanation": "<strong>Simple Explanation:</strong> Bike-Share Station Crowd Predict చేయడానికి Time, Events Inputs ఇస్తాం. Neurons Weights, Bias, Activationతో Signals Process చేసి Final Estimate Generate చేస్తాయి.",
-      "technicalExplanation": "<strong>Correct Answer: A.</strong> Bike-Share Station Forecastలో Time, Nearby Event Features Input. Neuron Weighted Sum + Bias Calculate చేసి Activation Apply చేస్తుంది. Later Neurons Combine చేసి Output Busy Level Predict చేస్తాయి. Trainingలో Prediction తర్వాత Loss Measure చేసి Parameters Update చేస్తాం. Neuron z = Σ(wᵢxᵢ)+b Compute చేసి Activation Apply చేస్తుంది. Example: 2×0.6 + 1×0.4 − 0.5 = 1.1; Sigmoid(1.1) సుమారు 0.750.",
+      "explanation": "<strong>Explanation:</strong> Bike-Share Station ఎంత Busyగా ఉంటుందో Estimate చేసే Small Networkని Imagine చేయండి. Time, Nearby Eventsలాంటివి Inputsగా తీసుకుంటుంది. Neuron ప్రతి Inputకి Different <strong>Weight</strong> Apply చేసి Weighted Values, Bias Add చేసి <strong>Activation Function</strong>తో Signal Produce చేస్తుంది. Later Neurons ఆ Signalsని Combine చేసి Final Estimate Generate చేస్తాయి. దీన్నే <strong>Forward Propagation</strong> అంటారు: Inputs నుంచి Hidden Layers ద్వారా Outputకి Information Flow అవుతుంది. Predictionని Targetతో Check చేసిన తర్వాతే Training Updates జరుగుతాయి.",
+      "technicalExplanation": "<strong>Correct: A.</strong> Neuron z = Σ(wᵢxᵢ)+b Compute చేసి Activation Apply చేస్తుంది. Example: 2×0.6 + 1×0.4 − 0.5 = 1.1; Sigmoid(1.1) సుమారు 0.750.",
       "englishSourceDigest": "f30260db"
     },
     {
@@ -61,8 +61,8 @@
         "Hidden Neurons Wrong Answers Memorize చేసి Gradientsతో Training Examples Remove చేస్తాయి. This Avoids Weight Updates, కానీ Normal Gradient Descent అలా Work కాదు. ఇది Incorrect."
       ],
       "answer": "c",
-      "explanation": "<strong>Simple Explanation:</strong> Bread Ovenకి Model 20 Minutes Predict చేసి Actual 28 Minutes అయితే Loss Difference Measure చేస్తుంది. Backprop Gradients, Optimizer Small Weight Changes చేస్తాయి.",
-      "technicalExplanation": "<strong>Correct Answer: C.</strong> Bread Bake Time Forecastలో Prediction 20 min, Actual 28 min అనుకుందాం. Loss Differenceని Measure చేస్తుంది; Backpropagation Weights Errorపై Impact Find చేస్తుంది; Optimizer Weights Small Stepsలో Update చేస్తుంది. Three Roles: Loss → Gradients → Updates. Forward Pass Prediction, Loss Error Measure, Backprop Gradients Compute, Optimizer Updates Repeat చేస్తుంది. Gradient Weight Change Lossపై ఎలా Affect చేస్తుందో చూపిస్తుంది.",
+      "explanation": "<strong>Explanation:</strong> Bread Ovenలో 20 Minutes పడుతుందని Model Predict చేసింది; Actual Recorded Time 28 Minutes అనుకుందాం. <strong>Loss Function</strong> ఆ Differenceని Measure చేస్తుంది. <strong>Backpropagation</strong> Network Weights Errorకి ఎలా Contribute చేశాయో Gradients Calculate చేస్తుంది. <strong>Optimizer</strong> Weightsని Small Stepsలో Change చేస్తుంది. Many Baking Recordsపై ఇదే Process Repeat చేస్తే Future Estimates Improve కావచ్చు. Roles గుర్తుంచుకోండి: Loss Mistakeని Measure చేస్తుంది; Backpropagation Gradients Find చేస్తుంది; Gradient Descent లేదా Another Optimizer వాటితో Model Update చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct: C.</strong> Forward Pass Prediction, Loss Error Measure, Backprop Gradients Compute, Optimizer Updates Repeat చేస్తుంది. Gradient Weight Change Lossపై ఎలా Affect చేస్తుందో చూపిస్తుంది.",
       "englishSourceDigest": "48eb2cbd"
     },
     {
@@ -76,8 +76,8 @@
         "Labels Alphabetically Sort చేసి Every Weightని Manually Adjust చేస్తుంది; Autograd, Optimizer Avoid చేస్తుంది. ఇది Standard PyTorch Training Workflow కాదు."
       ],
       "answer": "a",
-      "explanation": "<strong>Simple Explanation:</strong> XOR Taskలో Two Switches ఉంటాయి; Exactly One ON అయితే Lamp ON. PyTorch Tensors, Model, Loss, backward(), Optimizerతో Learn చేయవచ్చు.",
-      "technicalExplanation": "<strong>Correct Answer: A.</strong> Two Switches, One Lamp XOR Example Build చేయండి. Tensorsలో Input Combinations, Target Outputs Put చేసి Small Feedforward Model Define చేయండి. Each Step Forward → Loss → backward() → optimizer.step(). Trainingకి Use చేయని Examplesపై Evaluate చేయాలి. PyTorch nn.Module, Tensor Inputs, Loss, Optimizer, Autograd Use చేస్తాం. Exampleలో XOR Dataపై Two-Layer Model Train అవుతుంది; Evaluation Modeలో Separate Predictions Check చేస్తాం.",
+      "explanation": "<strong>Explanation:</strong> Two Switches ఒక Lampని Control చేసే Simple Lessonని Imagine చేయండి: Exactly One Switch ON ఉన్నప్పుడు Lamp ON అవుతుంది. PyTorchలో Switch Combinationsని Tensorsగా Put చేసి Small Feedforward Network Build చేసి Suitable Loss, Optimizer Choose చేయండి. ప్రతి Training Stepలో Model Call చేసి Loss Measure చేసి <code>backward()</code> Run చేసి Weights Update చేయండి. Updatesకి Use చేయని Examplesపై Networkని Check చేయండి. ఈ Small <strong>XOR</strong> Task Training Loopలో Parts ఎలా Fit అవుతాయో చూపిస్తుంది.",
+      "technicalExplanation": "<strong>Correct: A.</strong> PyTorch nn.Module, Tensor Inputs, Loss, Optimizer, Autograd Use చేస్తాం. Exampleలో XOR Dataపై Two-Layer Model Train అవుతుంది; Evaluation Modeలో Separate Predictions Check చేస్తాం.",
       "englishSourceDigest": "0654cc6f"
     },
     {
@@ -91,8 +91,8 @@
         "FNN Layers ద్వారా Features Transform చేస్తుంది; CNN Spatial Patterns Detect చేస్తుంది; RNN Sequence State Carry చేస్తుంది; Transformer Attentionతో Positions Connect చేస్తుంది."
       ],
       "answer": "d",
-      "explanation": "<strong>Simple Explanation:</strong> House Price Estimateకి FNN, Fabric Defect Imageకి CNN, Heart-Rate Sequenceకి RNN, Long Article Contextకి Transformer Use చేయవచ్చు.",
-      "technicalExplanation": "<strong>Correct Answer: D.</strong> Different Dataకి Different Architectures Useful: Table House Featuresకి FNN, Fabric Surface Imageకి CNN Filters, Heart-Rate Time Seriesకి RNN State, Long Article Wordsకి Transformer Attention. None Every Taskకి Automatically Best కాదు. FNN Layered Transformations, CNN Spatial Kernels, RNN Recurrent Hidden State, Transformer Attention Use చేస్తాయి. Data Type, Taskని బట్టి Structure Select చేస్తాం.",
+      "explanation": "<strong>Explanation:</strong> Different Dataకి Different Network Designs Useful. <strong>Feedforward Network</strong> House Features Table నుంచి Price Estimate చేయవచ్చు. <strong>CNN</strong> Fabric Imageలో Surface Patterns Scan చేయవచ్చు. <strong>RNN</strong> Heart-Rate Readings Sequenceని Track చేయవచ్చు. <strong>Transformer</strong> Long Articleలో Wordsని Attentionతో Connect చేయవచ్చు. వీటిలో ఏ ఒక్కటీ Every Taskకి Automatically Best కాదు. Different Structures వల్ల Informationని Different Waysలో Process చేస్తాయి.",
+      "technicalExplanation": "<strong>Correct: D.</strong> FNN Layered Transformations, CNN Spatial Kernels, RNN Recurrent Hidden State, Transformer Attention Use చేస్తాయి. Data Type, Taskకి Appropriate Structure Select చేస్తాం.",
       "englishSourceDigest": "11ad4712"
     },
     {
@@ -106,8 +106,8 @@
         "Training Loss Zero చేసే వరకు Validation Check చేయదు; Perfect Training Score New Dataపై Success Guarantee అని Assume చేస్తుంది. ఇది Overfitting Risk."
       ],
       "answer": "b",
-      "explanation": "<strong>Simple Explanation:</strong> Dry Trackపై Toy Car Model Goodగా Work చేసి Wet Trackపై Fail అయితే Generalization Problem. Validation, Residuals, Normalization, Regularization Help చేస్తాయి.",
-      "technicalExplanation": "<strong>Correct Answer: B.</strong> Toy Car Dry Trackపై Train అయి Wet Trackలో Fail అయితే Data Generalization Issue. Deep Modelలో Very Small/Large Gradients కూడా Problem. Residual Paths, Normalization, Learning Rate Tuning Stabilize చేస్తాయి; Regularization, Validation Overfitting Monitor చేయడానికి Use చేయాలి. Residual Paths, Normalization Gradient Flow Improve చేయవచ్చు; Clipping Large Gradients Limit చేస్తుంది. Regularization, Validation Overfitting Detect చేయడంలో Help; Underfittingకి Capacity, Training Choice కూడా Review చేయాలి.",
+      "explanation": "<strong>Explanation:</strong> Dry Trackపై Steer చేయడానికి Train చేసిన Toy Car Modelని Imagine చేయండి. అక్కడ Well Perform చేసి Wet Trackపై Fail అయితే అది <strong>Generalization</strong> Warning. Trainingలో Gradients Too Small లేదా Too Large అయినా Problems వస్తాయి. Residual Paths Deep Networksలో Gradients Travel చేయడానికి Help చేస్తాయి; Normalization, Careful Learning Rates Updatesని Stableగా ఉంచవచ్చు. Regularization Overfitting Limit చేయడంలో Help చేస్తుంది. Training, Validation Results Together Monitor చేయండి: Low Training Loss అంటే New Conditionsలో Success Guarantee కాదు.",
+      "technicalExplanation": "<strong>Correct: B.</strong> Residual Paths, Normalization Gradient Flow Improve చేయవచ్చు; Clipping Large Gradients Limit చేస్తుంది. Regularization, Validation Overfitting Detect చేయడానికి Help చేస్తాయి. Underfittingకి Capacity, Training Choices Review చేయాలి.",
       "englishSourceDigest": "f7743755"
     }
   ],
@@ -130,6 +130,8 @@
   "translationSource": {
     "module": "neural-network",
     "sourceVersion": "English revised options and example-based explanations",
-    "updatedAgainstBlobSha": "dfbd8fa67136cc7a2f878e9d7adbb1e4cdc259f8"
+    "updatedAgainstBlobSha": "dfbd8fa67136cc7a2f878e9d7adbb1e4cdc259f8",
+    "preserveEnglishExplanationStructure": true,
+    "translationRule": "One-to-one translation preserving examples and two-panel original order"
   }
 }
