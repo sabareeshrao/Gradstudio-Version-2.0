@@ -25,7 +25,7 @@
       "tag": "Beginner · no peeking forward",
       "stem": "Why does a Transformer Decoder use Causal Masking (Masked Self-Attention), and how does preventing a token from seeing future tokens allow the model to learn to generate text in the correct order?",
       "options": [
-        "Causal masking blocks positions to the right, letting each token learn from earlier context without reading words that would be unavailable during generation.",
+        "Causal masking blocks future positions so tokens learn from earlier context, without seeing words that are unavailable during generation.",
         "Causal masking hides all earlier words, forcing each position to use future tokens and preventing the decoder from learning left-to-right relationships.",
         "Causal masking deletes low-probability vocabulary words after Softmax, making output deterministic rather than controlling which input positions can be attended to.",
         "Causal masking prevents the decoder from seeing any input tokens during training, leaving it unable to learn relationships from the sequence."
@@ -81,8 +81,8 @@
       "tag": "Advanced · encoder vs decoder only",
       "stem": "How does the architecture of a decoder-only Transformer differ from the decoder in the original Encoder-Decoder Transformer, particularly regarding Cross-Attention, encoder outputs, causal masking, and information flow, and why are decoder-only architectures widely used for autoregressive language generation?",
       "options": [
-        "A decoder-only Transformer uses causal self-attention over one stream; an original encoder-decoder also uses cross-attention to the encoder's source representations.",
-        "Decoder-only models require encoder cross-attention for every generated word, while the original encoder-decoder design does not use causal masking at all.",
+        "Decoder-only models use causal self-attention in one stream; original encoder-decoder models also attend to the encoder's source representations.",
+        "Decoder-only models require encoder cross-attention to generate each word, while original encoder-decoders never use causal masks for any output token.",
         "Decoder-only Transformers can see their own future output tokens, while encoder-decoder Transformers cannot access source text during generation.",
         "Decoder-only and encoder-decoder architectures have identical attention blocks, and their only structural difference is the tokenizer chosen for each model."
       ],
