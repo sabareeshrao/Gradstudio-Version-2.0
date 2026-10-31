@@ -1,13 +1,13 @@
 # All Telugu + English Lesson HTML Links
 
-**18 lessons · 126 questions · 18 individual HTML pages**
+**22 lessons · 154 questions · 22 individual HTML pages**
 
-This is the master link directory for all published Telugu + English study pages in Gradstudio. Every **HTML Web URL** below is a complete GitHub Pages link that can be opened or copied directly. The **GitHub HTML** link opens the underlying HTML file in the repository.
+This is the master directory of all Telugu + English study pages. Each full **HTML Web URL** below opens a GitHub Pages lesson. **GitHub HTML Source** opens the source file. All URLs are copyable.
 
-- **[Open the Telugu lessons table online](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)**
-- **[Open the Telugu Translation GitHub folder](https://github.com/sabareeshrao/Gradstudio-Version-2.0/tree/main/Telugu%20Translation)**
+- **[Open Telugu + English lesson table online](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)**
+- **[View Telugu Translation GitHub folder](https://github.com/sabareeshrao/Gradstudio-Version-2.0/tree/main/Telugu%20Translation)**
 
-| No. | Lesson / Keyword | Live HTML Web URL | GitHub HTML Source |
+| No. | Lesson / Keyword | Full Live HTML Web URL | GitHub HTML Source |
 |---:|---|---|---|
 | 01 | Transformer | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/01-transformer.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/01-transformer.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/01-transformer.html) |
 | 02 | Retrieval-Augmented Generation (RAG) | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/02-rag.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/02-rag.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/02-rag.html) |
@@ -27,10 +27,12 @@ This is the master link directory for all published Telugu + English study pages
 | 16 | Supervised Learning | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/16-supervised-learning.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/16-supervised-learning.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/16-supervised-learning.html) |
 | 17 | Reinforcement Learning | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/17-reinforcement-learning.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/17-reinforcement-learning.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/17-reinforcement-learning.html) |
 | 18 | Computer Vision | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/18-computer-vision.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/18-computer-vision.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/18-computer-vision.html) |
+| 19 | Natural Language Processing (NLP) | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/19-natural-language-processing.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/19-natural-language-processing.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/19-natural-language-processing.html) |
+| 20 | Diffusion Model | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/20-diffusion-model.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/20-diffusion-model.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/20-diffusion-model.html) |
+| 21 | Large Vision-Language Model (LVLM) | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/21-large-vision-language-model.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/21-large-vision-language-model.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/21-large-vision-language-model.html) |
+| 22 | Multimodal Learning | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/22-multimodal-learning.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/22-multimodal-learning.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/22-multimodal-learning.html) |
 
-## Copy and share
-
-Below are all 18 direct HTML web links as plain URLs, one per line:
+## Copy-ready HTML links
 
 ```text
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/01-transformer.html
@@ -51,8 +53,10 @@ https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/15-ai
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/16-supervised-learning.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/17-reinforcement-learning.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/18-computer-vision.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/19-natural-language-processing.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/20-diffusion-model.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/21-large-vision-language-model.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/22-multimodal-learning.html
 ```
 
-**Notes:** The diagrams, tiles, code, labels and formulas remain in English; questions and explanations use modern Telugu + English. The English originals are unchanged.
-
-Last updated: 2026-10-30.
+Technical diagram artwork, SVG labels, charts, code, and formulas remain in English. Questions, answer choices and explanations use natural Telugu + English. The original English source modules have not been changed.
