@@ -8,7 +8,24 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 try{
   const res=await fetch(new URL(contentFile,import.meta.url),{cache:'no-cache'});
   if(!res.ok)throw new Error('పాఠం దొరకలేదు (HTTP '+res.status+')');
-  const data=await res.json();
+  let data=await res.json();
+  // New lessons keep translation text separate from the canonical English figures.
+  if(data.translationOverlay===true){
+    const translated=data;
+    const sourceRes=await fetch(new URL('../study-engine/modules/'+slug+'.json',import.meta.url),{cache:'no-cache'});
+    if(!sourceRes.ok)throw new Error('Original English diagram data could not load (HTTP '+sourceRes.status+')');
+    const source=await sourceRes.json();
+    if(!Array.isArray(source.questions)||source.questions.length!==7||
+       !Array.isArray(translated.questions)||translated.questions.length!==7)
+      throw new Error('English/translated question count mismatch');
+    data={...source,...translated,
+      diagramStyle:'../study-engine/'+source.diagramStyle,
+      hero:source.hero,
+      questions:source.questions.map((original,i)=>({
+        ...original,...translated.questions[i],answer:original.answer,figure:original.figure
+      }))
+    };
+  }
   if(data.language!=='te'||!Array.isArray(data.questions)||data.questions.length!==7||
      data.questions.some(q=>q.options?.length!==4||!['a','b','c','d'].includes(q.answer)||!q.figure))
     throw new Error('Lessonలో Q data సరిగా లేదు.');
