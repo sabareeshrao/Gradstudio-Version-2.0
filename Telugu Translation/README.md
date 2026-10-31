@@ -1,6 +1,6 @@
 # Telugu + English Lesson Library
 
-[**Master list: all 38 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
+[**Master list: all 42 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
 
 **Separate bilingual copies of the numbered English lessons in [lessons/](../lessons/).** The English originals and original technical diagrams are unchanged. The last column links to the **live English lesson**, not the GitHub source code.
 
@@ -51,7 +51,14 @@
 | 37 | Context Window · AI-00942 | [Open Telugu](37-context-window.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) |
 | 38 | Autoregressive Language Model · AI-00966 | [Open Telugu](38-autoregressive-language-model.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) |
 
-[**View all 38 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
+| 43 | Convolutional Neural Network (CNN) · AI-00796 | [Open Telugu](43-convolutional-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network) |
+| 44 | Recurrent Neural Network (RNN) · AI-00820 | [Open Telugu](44-recurrent-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) |
+| 45 | Long Short-Term Memory (LSTM) · AI-00822 | [Open Telugu](45-long-short-term-memory.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) |
+| 46 | Random Forest · AI-00520 | [Open Telugu](46-random-forest.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest) |
+
+**Lesson IDs 39–42 have not yet been translated into this folder.** The original numbering is preserved.
+
+[**View all 42 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
 ## Translation rules
 
@@ -62,4 +69,4 @@
 5. Preserve working quiz scoring, reset and all 15 themes. Do not touch original English module files.
 6. Run the quality verification: `node "Telugu Translation/verify-translation.mjs"`.
 
-Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–38 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those twenty-eight in `lessons/`). The bilingual index page is `index.html` here.
+Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–38 and 43–46 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those thirty-two in `lessons/`). The bilingual index page is `index.html` here.
