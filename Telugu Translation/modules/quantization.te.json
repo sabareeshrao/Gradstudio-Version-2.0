@@ -1,0 +1,87 @@
+{
+  "translationOverlay": true,
+  "language": "te",
+  "contentLanguage": "te-en",
+  "diagramLanguage": "en",
+  "title": "Quantization — Telugu + English Learning",
+  "subtitle": "Original English diagrams and code remain unchanged",
+  "questions": [
+    {
+      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "options": [
+        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
+        "Model Features Read చేసి Process చేస్తుంది.",
+        "Model Parameters Trainingలో Update చేస్తుంది.",
+        "Model Input Dataతో Prediction చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+    },
+    {
+      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "options": [
+        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
+        "Model Features Read చేసి Process చేస్తుంది.",
+        "Model Parameters Trainingలో Update చేస్తుంది.",
+        "Model Input Dataతో Prediction చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+    },
+    {
+      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "options": [
+        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
+        "Model Features Read చేసి Process చేస్తుంది.",
+        "Model Parameters Trainingలో Update చేస్తుంది.",
+        "Model Input Dataతో Prediction చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+    },
+    {
+      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "options": [
+        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
+        "Model Features Read చేసి Process చేస్తుంది.",
+        "Model Parameters Trainingలో Update చేస్తుంది.",
+        "Model Input Dataతో Prediction చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+    },
+    {
+      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "options": [
+        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
+        "Model Features Read చేసి Process చేస్తుంది.",
+        "Model Parameters Trainingలో Update చేస్తుంది.",
+        "Model Input Dataతో Prediction చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+    },
+    {
+      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "options": [
+        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
+        "Model Features Read చేసి Process చేస్తుంది.",
+        "Model Parameters Trainingలో Update చేస్తుంది.",
+        "Model Input Dataతో Prediction చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+    },
+    {
+      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "options": [
+        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
+        "Model Features Read చేసి Process చేస్తుంది.",
+        "Model Parameters Trainingలో Update చేస్తుంది.",
+        "Model Input Dataతో Prediction చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+    }
+  ]
+}
