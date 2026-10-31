@@ -149,6 +149,11 @@
       "slug": "loss-function",
       "title": "Loss Function",
       "domain": "Measuring Prediction Errors and Guiding Model Learning · Deep Learning Foundations"
+    },
+    {
+      "slug": "training-step",
+      "title": "Training Step",
+      "domain": "Neural Network Training and Parameter Updates · Deep Learning Foundations"
     }
   ]
 }
