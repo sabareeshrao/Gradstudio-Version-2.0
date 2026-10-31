@@ -29,7 +29,7 @@
         "Residual Every Training Error Remove, Deep Models Always Beat Shallow అంటుంది. Optimization Help Only.",
         "Residual All Deep Weights Freeze చేసి Learning Stop చేస్తుందంటుంది. Branch Weights Trainable.",
         "Difficult Layers Delete చేసి Depth Irrelevant చేస్తుందంటుంది. Residual Blocks Layers Keep.",
-        "Deep Network Degradationకి Shortcut Input Preserve, Small Correction, Better Gradient Path; Accuracy Guarantee కాదు."
+        "Deep Degradationకి Shortcut Preserves Input, Adds Corrections, Helps Gradients; Accuracy Guarantee కాదు."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Very Deep Plain Networksలో Added Layers Optimize చేయడం Hard అయ్యే Degradation Problem రావచ్చు. Residual Shortcuts Preserved Inputపై Small Corrections Learn చేయడానికి Allow చేసి Gradient Flow Improve చేస్తాయి, Accuracy Guarantee కాదు. Many Stations ఉన్న Conveyor Systemని Imagine చేయండి. Every Station Signal Entirely Replace చేస్తే Important Details Preserve చేయడం Hard. Residual Direct Path Learned Transformationతో Parallel. Deep Network <strong>Correction</strong> Learn చేయడంపై Focus చేయవచ్చు; F(x) Small అయినా Original Signal Pass అవుతుంది.",
