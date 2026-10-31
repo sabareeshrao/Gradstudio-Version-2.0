@@ -100,7 +100,7 @@
       "stem": "Very Deep Networksలో Vanishing/Exploding Gradients, Numerical Instability, Activation Memory Problemsని Residual Connections, Normalization, Gradient Clipping, Checkpointing, Mixed Precision ఎలా Reduce చేస్తాయి?",
       "tag": "Advanced · Production",
       "options": [
-        "Residuals Gradient Paths Shorten; Normalization Stability Help; Clipping Large Gradients Limit; Checkpointing, Mixed Precision Memory Pressure Reduce చేయవచ్చు.",
+        "Residuals Short Paths; Normalization Stabilizes; Clipping Large Gradients Limits; Checkpointing, Mixed Precision Memory Save చేస్తాయి.",
         "Clipping Vanished Gradients Restore, Checkpointing All Activations Forever Store చేస్తుందంటుంది. Clipping Limits Large, Checkpointing Recomputes.",
         "Normalization Every Architectureకి Perfect Stability, Mixed Precision Overflow Impossible చేస్తాయంటుంది. Settings, Monitoring Still Needed.",
         "Residuals Every Numerical Error Prevent, Clipping Automatically Memory Halve చేస్తుందంటుంది. Techniques Different Problems Solve చేస్తాయి."
