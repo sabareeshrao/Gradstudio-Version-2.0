@@ -1,3 +1,14 @@
+## Translation fidelity rule — preserve the English original
+
+For every future update, **translate instead of rewrite**. The source English lesson is canonical.
+
+- Keep the **same order**: original English main `Explanation:` maps to the Telugu-English main `Explanation:`; original `Correct: X.` technical paragraph maps to Telugu-English technical detail in the *same expandable panel*.
+- Translate **all** main-explanation sentences in sequence. Preserve the story, characters, quotations, examples, comparisons, caveats, definitions and concluding takeaway. Do not replace it with a shortened summary or shift examples into the detailed section.
+- Translate every answer option **in place (A→A, B→B, C→C, D→D)**, including its specific reason for being correct/incorrect; never invent padding to balance lengths.
+- Keep Questions, Options and Explanations in clear modern Telugu + English terminology. Keep English-only diagram headings, tiles, SVGs, captions, code, formulas and the original answer key unchanged.
+- If the English source adopts a new explanation structure, **copy that structure before translating**. Never silently enforce an old template on new material.
+- For modules 01–05, `verify-translation.mjs` checks English-source fingerprints, the source-format explanation labels and main-text depth. Future changes should be reviewed sentence by sentence, not just pass automated checks.
+
 # Telugu + English Lesson Library
 
 [**Master list: all 50 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
