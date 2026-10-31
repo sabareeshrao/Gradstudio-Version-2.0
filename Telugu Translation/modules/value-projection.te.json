@@ -16,7 +16,7 @@
         "Value Projection Token Positions Assign చేసి All Content Unchangedగా Keep చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Value ఒక Token నుంచి Transfer అయ్యే Informationని Represent చేసే Vector.",
-      "technicalExplanation": "<strong>Correct Answer: B.</strong> V=XW_V, a learned linear map. Queries/Keys decide weights; Values provide features to aggregate."
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> V=XW_V, a learned linear map. Queries/Keys decide weights; Values provide features to aggregate. Value Projection Token Hidden Stateని Learned Feature Vectorగా Convert చేస్తుంది. Query, Key Scores Decide చేసిన తర్వాత ఈ Valuesని Weighted Sumలో Combine చేస్తారు."
     },
     {
       "stem": "Query, Key Tokens Match చేస్తే Value Vectors Outputకి ఏమి Contribute చేస్తాయి?",
@@ -38,7 +38,7 @@
         "Highest Scoreతో All Other Values Delete చేసి One Word Information Only Return చేస్తాం."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Each Word Valueకి Attention Weight Multiply చేసి Add చేస్తాం; Higher Weight More Influence.",
-      "technicalExplanation": "<strong>Correct Answer: C.</strong> Example Weights [0.2,0.3,0.5] and Values [1,0],[0,2],[2,1] give weighted output [1.2,1.1]."
+      "technicalExplanation": "<strong>Correct Answer: C.</strong> Example Weights [0.2,0.3,0.5] and Values [1,0],[0,2],[2,1] give weighted output [1.2,1.1]. ఈ Exampleలో Source Valuesని Weightsతో Multiply చేసి Add చేస్తాం. Larger Weight ఉన్న Token Outputకి ఎక్కువ Information Contribute చేస్తుంది."
     },
     {
       "stem": "V=XW_V, Attention(Q,K,V) Formulas Context-Aware Output ఎలా Compute చేస్తాయి?",
@@ -49,7 +49,7 @@
         "Attention Raw Scores Valuesతో Direct Multiply; Softmax Normalization Skip చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> W_V Hidden Statesని Valuesగా Convert చేస్తుంది; Attention Weights వాటిని Combine చేస్తాయి.",
-      "technicalExplanation": "<strong>Correct Answer: A.</strong> A=softmax(QKᵀ/√d_k); Output=A V. V=XW_V; A Rows Sum 1 and Values Are Feature Coordinates."
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> A=softmax(QKᵀ/√d_k); Output=A V. V=XW_V; A Rows Sum 1 and Values Are Feature Coordinates. Query–Key Scores Softmax తర్వాత Weightsగా మారతాయి. Value Matrixని ఆ Weightsతో Multiply చేసి Context-Aware Output పొందుతాం."
     },
     {
       "stem": "PyTorchలో Value Projection, Head Reshape, Attention Output ఎలా Implement చేస్తాం?",
@@ -60,7 +60,7 @@
         "Attention Weights Q/K నుంచి Calculate కాకుండా Always Fixed Parametersగా ఉంటాయి."
       ],
       "explanation": "<strong>Simple Explanation:</strong> PyTorch Linear Creates Values; Each Head వాటిని Attention Weightsతో Mix చేస్తుంది.",
-      "technicalExplanation": "<strong>Correct Answer: B.</strong> V[B,H,T,d_v], weights[B,H,T,T]; torch.matmul(weights,V) gives [B,H,T,d_v]."
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> V[B,H,T,d_v], weights[B,H,T,T]; torch.matmul(weights,V) gives [B,H,T,d_v]. PyTorchలో Value Tensorని Headsగా Reshape చేస్తాం. Attention Matrixతో Multiply చేస్తే ప్రతి Target Tokenకి Mixed Value Features వస్తాయి."
     },
     {
       "stem": "RoPE Usually Valuesని ఎందుకు Rotate చేయదు? Multi-Head Value Outputs ఎలా Combine అవుతాయి?",
@@ -71,7 +71,7 @@
         "Output Projection Only Positions Add చేస్తుంది; Head Information Mix చేయదు."
       ],
       "explanation": "<strong>Simple Explanation:</strong> RoPE Q/K Scoresకి Position Adds; Values Content Carry చేస్తాయి. Different Heads Complementary Features Learn చేయవచ్చు.",
-      "technicalExplanation": "<strong>Correct Answer: A.</strong> Q/K RoPE Rotation normally; Values Typically Unrotated. Head Outputs Concatenate, W_O Projects Them."
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> Q/K RoPE Rotation normally; Values Typically Unrotated. Head Outputs Concatenate, W_O Projects Them. RoPE సాధారణంగా Queries, Keysని Rotate చేస్తుంది; Valuesని కాదు. Different Heads నుంచి వచ్చిన Contentని Output Projection Combine చేస్తుంది."
     },
     {
       "stem": "MHA, MQA, GQA, MLAలో Value Caching Memory, Inference Speedపై ఎలా Affect చేస్తుంది?",
@@ -82,7 +82,7 @@
         "MHA Per-Head KV; GQA/MQA Shared KV; MLA Compressed Cache Uses చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> LLMs Previous Keys, Values Cache చేస్తాయి. Shared KV Heads లేదా Compression Memory Save చేయవచ్చు.",
-      "technicalExplanation": "<strong>Correct Answer: D.</strong> MHA KV Per Head, GQA Grouped KV, MQA Single KV. MLA May Cache Compressed Latents; Quality Trade-offs Need Testing."
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> MHA KV Per Head, GQA Grouped KV, MQA Single KV. MLA May Cache Compressed Latents; Quality Trade-offs Need Testing. KV Cacheలో Earlier Keys, Values Store అవుతాయి. Shared Heads, Compression వల్ల Memory తగ్గవచ్చు; Quality, Speed Trade-offsని Test చేయాలి."
     }
   ]
 }
