@@ -41,7 +41,8 @@ try{
   document.getElementById('moduleBrand').innerHTML=esc(data.keyword)+'<small>Telugu + English Study · '+data.questions.length+' Questions</small>';
   const renderCard=(q,i)=>{
     const options=q.options.map((opt,j)=>'<label><input name="q'+(i+1)+'" type="radio" value="'+('abcd'[j])+'"><span class="answer-text"><strong class="option-letter">'+('ABCD'[j])+'.</strong> '+opt+'</span></label>').join('');
-    const detail=q.technicalExplanation?'<details class="explanation-deep"><summary>Detailed Explanation · ఇంకా తెలుసుకోండి</summary><div class="explanation-deep-content">'+q.technicalExplanation+'</div></details>':'';
+    const detailLabel=data.translationSource?.preserveEnglishExplanationStructure?'Read the detailed explanation':'Detailed Explanation · ఇంకా తెలుసుకోండి';
+    const detail=q.technicalExplanation?'<details class="explanation-deep"><summary>'+detailLabel+'</summary><div class="explanation-deep-content">'+q.technicalExplanation+'</div></details>':'';
     return '<section class="question" data-answer="'+esc(q.answer)+'"><div class="q-head"><span class="q-badge">Q'+(i+1)+'</span><span class="q-tag">'+esc(q.tag)+'</span></div><figure class="q-fig">'+q.figure+'</figure><p class="q-text">'+esc(q.stem)+'</p><fieldset class="answer-choices"><legend class="sr-only">Q'+(i+1)+': Best Answer ఎంచుకోండి</legend>'+options+'</fieldset><div class="explanation" aria-live="polite"><div class="explanation-quick">'+q.explanation+'</div>'+detail+'</div></section>';
   };
   root.innerHTML='<h1>'+esc(data.title)+'</h1><p class="sub">'+esc(data.subtitle)+'</p>'+data.hero+
