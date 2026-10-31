@@ -28,6 +28,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify every hosted lesson link and bypass stale module indexes
+        run: node study-engine/verify-direct-lesson-links.mjs
       - name: Reject answer-length bias in all study modules
         run: node study-engine/verify-module-options.mjs
       - name: Reject overloaded or missing beginner explanations
