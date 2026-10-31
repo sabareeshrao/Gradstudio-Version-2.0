@@ -42,7 +42,7 @@
         "“France” Wordని Every Later Tokenలో Repeat చేస్తేనే LSTM Meaning Store చేయగలదు.",
         "LSTM Each Word తర్వాత All Memory Reset చేస్తుంది; Earlier Clues Cannot Survive.",
         "Output Gate Wordsని Alphabetically Sort చేసి France Clueని Later Use చేస్తుంది.",
-        "France Clue Cell Stateలో Remain; Gates Later Updates, Outputని Control చేస్తాయి."
+        "France Clue Cell Stateలో Stays; Gates Updates, Outputని Control చేస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> “France” అనే Earlier Clueని LSTM Cell Stateలో Retain చేసి Later “French”తో Connect చేయవచ్చు.",
@@ -69,7 +69,7 @@
       "options": [
         "Cell State All Previous Inputs Add మాత్రమే చేస్తుంది; Gates, Nonlinearity అవసరం లేదు.",
         "Gates Whole Sequenceపై Softmax Use చేసి Sum Exactly One Guarantee చేస్తాయి.",
-        "Forget Old Memory Scale; Input Candidate Add; Output Gate New Hidden State Reveal చేస్తుంది.",
+        "Forget Old Memory; Input Adds Candidate; Output Gate Reveals Hidden State చేస్తుంది.",
         "Sigmoid Outputs Negative; Tanh Values Always One కంటే Greaterగా వస్తాయి."
       ],
       "answer": "c",
@@ -98,7 +98,7 @@
         "Bidirectional LSTM Future Tokens Before Arriving Live Causal Predictionలో Use చేస్తుంది.",
         "Stacked LSTM Recurrence Remove చేసి All Sequence Steps Fully Parallel Compute చేస్తుంది.",
         "GRU Every Speech Taskలో LSTM, Transformer రెండింటినీ Always Outperforms చేస్తుంది.",
-        "Bidirectional Both Ways; Stacked Adds Depth; Attention Adds Context; Transformer Parallelizes చేస్తుంది."
+        "Bidirectional Ways; Stacked Depth; Attention Context; Transformer Parallel చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Bidirectional Both Sides Context Use; Stacked LSTM More Layers; Attention Earlier States Focus. Transformers More Parallel Train.",
