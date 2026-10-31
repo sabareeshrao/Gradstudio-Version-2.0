@@ -3,7 +3,7 @@
  * Gradstudio beginner-first explanation guardrail.
  * node study-engine/verify-explanation-quality.mjs [optional-slug ...]
  *
- * Every card must offer an immediately readable, jargon-light takeaway.
+ * Every card must use a concise takeaway or a bounded, example-led explanation.
  * Technical depth is kept in a collapsed disclosure by the shared renderer.
  * Word limits are a structural check, not a substitute for human clarity QA.
  */
@@ -26,11 +26,15 @@ for(const slug of slugs){
   for(const [j,q] of module.questions.entries()){
     const i=j+1; checked++;
     if(typeof q.explanation!=='string'){fail(slug,i,'Missing beginner explanation');continue}
-    if(!/^\s*<strong>In simple words:<\/strong>/i.test(q.explanation))
-      fail(slug,i,'Beginner explanation must start with “In simple words:”');
-    const body=q.explanation.replace(/^\s*<strong>In simple words:<\/strong>\s*/i,'');
+    const concise=/^\s*<strong>In simple words:<\/strong>/i.test(q.explanation);
+    const illustrated=/^\s*<strong>Explanation:<\/strong>/i.test(q.explanation);
+    if(!concise&&!illustrated)fail(slug,i,'Use “In simple words:” for concise takeaways or “Explanation:” for a plain-language example');
+    const body=q.explanation.replace(/^\s*<strong>(?:In simple words:|Explanation:)<\/strong>\s*/i,'');
     const words=countWords(body);
-    if(words<12||words>42)fail(slug,i,'Beginner takeaway must use 12–42 words, found '+words);
+    if(concise&&(words<12||words>42))fail(slug,i,'Concise beginner takeaway must use 12–42 words, found '+words);
+    // New English source lessons use an example-led 60–110 word explanation.
+    // Keep that format meaningful and bounded without altering author-approved answer text.
+    if(illustrated&&(words<45||words>150))fail(slug,i,'Example-led explanation must use 45–150 words, found '+words);
     if(/<(?:ul|ol|li|table|h[1-6]|pre|blockquote)\b/i.test(body))
       fail(slug,i,'Do not overwhelm the default answer with lists, tables, or code blocks');
     if(/\b(?:Correct answer\s*:|Correct:\s*[A-D]\b|Layer\s*[1-7]\b)/i.test(plain(body)))
