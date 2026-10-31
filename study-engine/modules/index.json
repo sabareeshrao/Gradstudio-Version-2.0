@@ -184,6 +184,11 @@
       "slug": "query-projection",
       "title": "Query Projection",
       "domain": "Query Vector Generation and Attention Computation · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "value-projection",
+      "title": "Value Projection",
+      "domain": "Value Vector Generation and Information Transfer in Attention · Transformers and LLM Architecture"
     }
   ]
 }
