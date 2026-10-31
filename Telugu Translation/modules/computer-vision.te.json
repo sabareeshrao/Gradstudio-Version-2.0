@@ -86,7 +86,7 @@
       "tag": "Advanced · Architecture",
       "answer": "a",
       "options": [
-        "ResNet CNN, ViT Attention, YOLO Detection, U-Net/SAM Masks; Transfer Pretrained, Self-Supervised Unlabeled Learn.",
+        "ResNet CNN, ViT Attention, YOLO Detection, U-Net/SAM Masks; Transfer Reuse, Self-Supervised Labels లేకుండా Learn.",
         "ResNet Masks Only, YOLO Photo Colors Improve చేస్తుందంటుంది. Recognition, Detection Roles Different.",
         "ViT Patches Ignore, File Names Only Read; SAM Every Imageకి Retrain అంటుంది. Learned Visual Representations Used.",
         "Self-Supervised Human Labels Require, Transfer Learning Pretrained Features Discard అంటుంది. Both Opposite."
