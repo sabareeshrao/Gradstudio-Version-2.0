@@ -55,7 +55,7 @@
       "options": [
         "Temperature Same Constantని Add చేసి Highest Category Rankingని Change చేస్తుంది.",
         "High Temperature Certainty Increase; Low Temperature Probabilities Equal చేస్తుంది.",
-        "Logitsని Tతో Divide చేస్తాం; Low T Sharper, High T Flatter Probabilities ఇస్తుంది.",
+        "Logitsని Tతో Divide; Low T Sharp, High T Flat Probabilities ఇస్తుంది.",
         "Exponentials Negative Scoresకి మాత్రమే Apply; Temperature Number of Classes Change చేస్తుంది."
       ],
       "answer": "c",
@@ -68,7 +68,7 @@
       "tag": "Medium · Python",
       "options": [
         "Large Logitని Direct Exponentiate చేస్తే Overflow Probability Accuracy Improve చేస్తుంది.",
-        "Max Logit Subtract చేస్తే Exponentials Safeగా Compute అవుతాయి; Probabilities Sameగా ఉంటాయి.",
+        "Max Logit Subtract చేస్తే Exponentials Safe; Final Probabilities Sameగా ఉంటాయి.",
         "Minimum Logit Subtract చేస్తే All Scores Zero అవుతాయి; Overflow ఇక Possible కాదు.",
         "PyTorch Softmax Single Scalarపై మాత్రమే Work చేస్తుంది; Arraysకి Support ఇవ్వదు."
       ],
@@ -84,7 +84,7 @@
         "Cross-Entropy Only Correct Classని Change చేస్తుంది; Other Logit Gradients Always Zero ఉంటాయి.",
         "Softmax Jacobian Identity Matrixలా ఉంటుంది; Probabilities Independentగా Change అవుతాయి.",
         "Backprop Weightsని Unchangedగా Keep చేసి Output Probabilitiesని Direct Update చేస్తుంది.",
-        "Cross-Entropy Wrong Predictions Measure; Gradients Softmax Through వెళ్లి Weights Adjust చేస్తాయి."
+        "Cross-Entropy Error Measure; Softmax Gradients Through Weights Update అవుతాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Cross-Entropy Prediction Error Measure చేస్తుంది. Backprop Gradients ద్వారా Earlier Weights ఎలా Change కావాలో Determine అవుతుంది.",
