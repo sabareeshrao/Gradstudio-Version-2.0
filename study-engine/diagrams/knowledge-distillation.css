@@ -1,0 +1,21 @@
+/* Knowledge Distillation: bespoke concept diagrams. Shared Gradstudio engine owns quiz controls and themes. */
+.kd-hero,.kd-fig{color:#2e4f63;font-family:inherit;min-width:0}
+.kd-hero{background:radial-gradient(circle at 5% 5%,#e9f6ee,transparent 50%),linear-gradient(125deg,#f3f9fd,#fff9ef);border:1px solid #d3e3e9;border-radius:19px;padding:clamp(16px,3vw,27px);margin-bottom:23px}
+.kd-hero h2{font-size:clamp(1.25rem,2.5vw,1.76rem);line-height:1.26;color:#315b70;margin:7px 0}
+.kd-hero p{font-size:.9rem;line-height:1.55;color:#587587;max-width:66ch;margin:5px 0 15px}
+.kd-kicker{color:#28836e;font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.kd-fig{padding:clamp(14px,2.7vw,23px);background:radial-gradient(circle at 92% 0%,#eaf6ed,transparent 49%),linear-gradient(145deg,#f8fbff,#fff)}
+.kd-fig h3{margin:7px 0 13px;font-size:clamp(1rem,2vw,1.22rem);line-height:1.37;color:#2c5971}
+.kd-stage{width:100%;min-width:0;max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-color:#b5d1dc transparent;background:#fff;border:1px solid #d9e6eb;border-radius:12px}
+.kd-stage svg{display:block;min-width:690px;width:100%;height:auto}
+.kd-hero .kd-stage svg{min-width:770px}
+.kd-stage svg text{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.kd-note{font-size:.81rem;color:#60798a;line-height:1.56;margin:11px 0 0}
+.kd-code{margin-top:12px;border:1px solid #d6e4ea;background:#f6f9fb;border-radius:11px;overflow:hidden}
+.kd-code summary{padding:10px 14px;cursor:pointer;font-size:.83rem;font-weight:850;color:#456d81}
+.kd-code[open]{background:#172b40}
+.kd-code[open] summary{background:#284156;color:#eaf6fc}
+.kd-code pre{color:#eaf3fa;padding:12px 15px;margin:0;overflow-x:auto;font-size:clamp(.67rem,1.2vw,.81rem);line-height:1.6;tab-size:4}
+.kd-code code{font:inherit;color:inherit;background:none;border:0;white-space:pre}
+@media(max-width:670px){.kd-hero{padding:15px}.kd-stage svg{min-width:640px}.kd-hero .kd-stage svg{min-width:710px}.kd-code pre{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.kd-stage{scroll-behavior:auto}.kd-fig *,.kd-hero *{transition:none!important;animation:none!important}}
