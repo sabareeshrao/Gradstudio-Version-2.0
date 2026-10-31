@@ -109,6 +109,11 @@
       "slug": "reinforcement-learning",
       "title": "Reinforcement Learning",
       "domain": "Learning Through Interaction, Rewards, and Sequential Decision-Making · Reinforcement Learning (RL)"
+    },
+    {
+      "slug": "computer-vision",
+      "title": "Computer Vision",
+      "domain": "Visual Understanding, Image Processing, and Machine Perception · Computer Vision"
     }
   ]
 }
