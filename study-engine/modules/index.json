@@ -86,6 +86,11 @@
       "domain": "Parallel Attention Heads and Contextual Representation Learning · Transformers and LLM Architecture"
     },
     {
+      "slug": "autoregressive-language-model",
+      "title": "Autoregressive Language Model",
+      "domain": "Next-Token Prediction and Sequential Language Generation · Transformers and LLM Architecture"
+    },
+    {
       "slug": "prompt-engineering",
       "title": "Prompt Engineering",
       "domain": "Prompt Design, Instruction Optimization, and LLM Behavior Control · Prompt Engineering"
