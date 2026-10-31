@@ -289,6 +289,11 @@
       "slug": "learning-rate",
       "title": "Learning Rate",
       "domain": "Step Size Control and Optimization During Model Training · Optimization"
+    },
+    {
+      "slug": "principal-component-analysis",
+      "title": "Principal Component Analysis (PCA)",
+      "domain": "Dimensionality Reduction and Feature Extraction · Unsupervised and Self-Supervised Learning"
     }
   ]
 }
