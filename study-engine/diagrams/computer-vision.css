@@ -1,0 +1,18 @@
+/* Computer Vision illustrated-v2 scenes. Shared themes and quiz layout remain centralized. */
+.cv-hero,.cv-figure{min-width:0;font-family:inherit;color:#2b4a5e}
+.cv-kicker{display:block;color:#2b897d;font-weight:900;font-size:.69rem;letter-spacing:.11em;text-transform:uppercase}
+.cv-hero{background:radial-gradient(ellipse at 8% 5%,#dbf4e8,transparent 52%),linear-gradient(140deg,#f4fbff,#fff9ef);border:1px solid #c6dfe8;border-radius:20px;padding:clamp(17px,3vw,30px);margin:0 0 24px;box-shadow:0 10px 25px #30536d10}
+.cv-hero h2{font-size:clamp(1.23rem,2.5vw,1.86rem);line-height:1.24;color:#2d6374;margin:8px 0}
+.cv-hero p{max-width:76ch;font-size:.9rem;line-height:1.62;color:#587789;margin:0 0 17px}
+.cv-figure{padding:clamp(15px,2.8vw,25px);background:radial-gradient(ellipse at 94% 0%,#e5f7ee,transparent 48%),linear-gradient(158deg,#f8fcff,#fffaf3);border-radius:15px}
+.cv-figure h3{font-size:clamp(1.04rem,1.8vw,1.25rem);margin:7px 0 15px;line-height:1.35;color:#315d73;font-weight:850}
+.cv-art{max-width:100%;overflow-x:auto;overflow-y:hidden;border:1px solid #d5e7ec;background:white;border-radius:14px;scrollbar-color:#b7cdd8 transparent}
+.cv-svg{display:block;width:100%;height:auto;min-width:755px;max-width:none}
+.cv-svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.cv-hero .cv-svg{min-width:730px}
+.cv-note{font-size:.82rem;color:#607d8d;line-height:1.6;margin:12px 0 0}
+.cv-sources{background:#fff;border:1px solid #d4e3eb;border-radius:13px;padding:14px 17px;color:#59798b;font-size:.81rem;margin:22px 0 8px}
+.cv-sources summary{font-weight:850;cursor:pointer;color:#316c85}
+.cv-sources a{color:#156c98}
+@media(max-width:650px){.cv-hero{padding:17px 12px}.cv-figure{padding:15px 10px}.cv-svg,.cv-hero .cv-svg{min-width:745px}}
+@media(prefers-reduced-motion:reduce){.cv-hero *,.cv-figure *{transition:none!important;animation:none!important}}
