@@ -62,15 +62,15 @@
       "technicalExplanation": "<strong>Correct Answer: B.</strong> PyTorch prune.l1_unstructured Mask Apply చేస్తుంది. Sparsity Count, Validation Accuracy, Target Hardware Latency Benchmark చేయాలి."
     },
     {
-      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "stem": "Advanced Pruning Strategiesలో Iterative, Global, Movement Methods ఎలా Work చేస్తాయి?",
       "options": [
-        "Modelలో Weights తగ్గుతాయి.",
-        "Modelలో Features Compare అవుతాయి.",
-        "Modelలో Data Process అవుతుంది.",
-        "Modelలో Signals Update అవుతాయి."
+        "Iterative Small Cuts; Global Cross-Layer Ranking; Movement Updates Track చేస్తుంది.",
+        "Global Equal Cuts Per Layer; Iterative Further Training Never Allows చేస్తుంది.",
+        "Movement Fixed Magnitude Only; Sparse Starting Weights Never Matter అంటుంది.",
+        "All Advanced Methods Every Sparsityపై Perfect Accuracy Guarantee చేస్తాయి."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Pruning Gradually చేయొచ్చు. Some Methods All Layers Compare చేస్తాయి; Others Training Changes Follow చేస్తాయి.",
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> Iterative Prune/Fine-Tune Cycles; Global Eligible Layers Across Rank; Movement Training Changes Use చేస్తుంది. Good Sparse Initializations Also Studied అవుతాయి."
     },
     {
       "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
