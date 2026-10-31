@@ -12,7 +12,7 @@
       "tag": "Beginner · Meaning",
       "options": [
         "CNN Whole Imageని One Vectorగా Process చేసి Local Spatial Patternsని Ignore చేస్తుంది.",
-        "CNN Learned Filters Image Regionsపై Apply చేసి Hierarchical Visual Features Build చేస్తుంది.",
+        "CNN Learned Filtersతో Local Image Patterns నుంచి Visual Features Build చేస్తుంది.",
         "CNN File Namesతో Images Classify చేసి Handwritten Feature Rules Only Follow చేస్తుంది.",
         "CNN Imageని Textగా First Convert చేసి Language Rulesతో Categories Choose చేస్తుంది."
       ],
@@ -39,7 +39,7 @@
       "stem": "Cat Photoని CNNకి ఇస్తే Convolution, ReLU, Pooling, Classifier గుండా Data ఎలా Travel అయి Cat Prediction వస్తుంది?",
       "tag": "Beginner · Example",
       "options": [
-        "Convolution Features; ReLU Negative Values Zero; Pooling Shrinks; Classifier Catని Predict చేస్తుంది.",
+        "Convolution Features; ReLU Clips; Pooling Shrinks; Classifier Catని Predict చేస్తుంది.",
         "Pooling Original Image Pixels Generate చేసి Convolution Direct Labels Assign చేస్తుంది.",
         "CNN Cat Labelని First Predict చేసి Feature Layers Later Confirm చేస్తాయి.",
         "ReLU Every Pixel Classify; Pooling Alone Final Category Decide చేస్తుంది."
@@ -84,7 +84,7 @@
         "LeNet Residual; AlexNet Compound Scaling; ResNet No Shortcuts; EfficientNet Only Shallow Layers.",
         "All CNN Families Same Depth, Layers, Budget Use చేస్తాయి; Names మాత్రమే Different.",
         "VGG, ResNet, EfficientNet Training Dataలో మాత్రమే Different; Architectures Identical ఉంటాయి.",
-        "LeNet Compact; AlexNet Deep CNN; VGG Stacked Conv; ResNet Skips; EfficientNet Scales చేస్తుంది."
+        "LeNet Compact; AlexNet Deeper; VGG Conv Stacks; ResNet Skips; EfficientNet Scales చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> LeNet Early Compact CNN; VGG Deep Stacks; ResNet Shortcuts; EfficientNet Balanced Scaling Use చేస్తుంది.",
@@ -95,7 +95,7 @@
       "stem": "Edge Devicesలో CNN Faster చేయడానికి Depthwise Convolution, Dilation, Quantization, Pruning, Distillation ఏ Trade-offs ఇస్తాయి?",
       "tag": "Advanced · Production",
       "options": [
-        "Depthwise Saves Compute; Dilation Expands View; Compression Speed–Accuracy Trade-offs ఇస్తుంది.",
+        "Depthwise Saves Compute; Dilation Expands View; Compression Speed Trade-offs ఇస్తుంది.",
         "Depthwise Convolution Every Deviceపై Higher Accuracy, Lower Latency Guarantee చేస్తుంది.",
         "Dilation Receptive Field Reduce; Pruning Every Weight Unchangedగా Keep చేస్తుంది.",
         "Distillation Teacher Weights Exact Copy చేస్తుంది; Deployment Testing Unnecessary అంటుంది."
