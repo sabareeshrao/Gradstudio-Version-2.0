@@ -66,6 +66,18 @@ function validate(slug,entry,filename){
   };
  }
  const html=readFileSync(entryPath,"utf8");
+ // Required static DOM controls: quiz-te.js dereferences these during startup.
+ // Prevent null.style crashes when a lesson is generated from an incomplete template.
+ const requiredControls=["moduleRoot","moduleBrand","progress","progressFill","counter",
+  "themeMenu","themeToggle","themeIndicator","themePanel","themeChoices","themeHint","copyThemeUrl"];
+ for(const id of requiredControls){
+  const matches=html.match(new RegExp('\\bid="'+id+'"','g'))||[];
+  if(matches.length!==1)errors.push(slug+": Required static DOM controls missing or duplicated: "+id);
+ }
+ if(!html.includes('src="./app-te.js"'))errors.push(slug+": missing shared bilingual lesson bootstrap");
+ if(!html.includes('class="theme-indicator" id="themeIndicator"'))
+  errors.push(slug+": missing theme indicator element needed by theme initialization");
+
  if(slug!=="transformer"&&!html.includes('data-module="'+slug+'"'))errors.push(slug+": HTML data-module missing");
  if(d.contentLanguage!=="te-en"||d.diagramLanguage!=="en")errors.push(slug+": incorrect language markers");
  if(d.hero!==source.hero)errors.push(slug+": English overview illustration changed");
