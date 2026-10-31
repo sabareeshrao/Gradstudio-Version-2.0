@@ -11,7 +11,7 @@
       "tag": "Beginner · teacher and student",
       "answer": "b",
       "options": [
-        "Knowledge distillation copies every layer and weight from a large model into another model of identical size, without changing the architecture or computing needs.",
+        "Knowledge distillation directly copies every layer and weight from a large model into another model of identical size, without changing the architecture or computing needs.",
         "Knowledge distillation trains a smaller Student model to learn useful behavior from a larger Teacher's predictions, rather than copying the Teacher's entire network.",
         "Knowledge distillation always retrains the Teacher from scratch using only mistakes made by the Student, with no guidance for improving Student predictions.",
         "Knowledge distillation uses a Teacher only to collect ordinary training labels, never using its confidence scores or learned features to guide the Student."
@@ -39,7 +39,7 @@
       "tag": "Beginner · animal example",
       "answer": "a",
       "options": [
-        "Teacher probabilities show that Dog is a more plausible alternative to Cat than Rabbit, giving the Student richer learning signals than one hard label.",
+        "Teacher probabilities show Dog is more plausible than Rabbit, giving the Student extra learning signals beyond one hard Cat label.",
         "Only the Teacher's highest-scoring animal matters, so the Student should discard every lower probability and learn from an ordinary category label alone.",
         "The Teacher's prediction probabilities directly replace the Student's weight matrices, making it unnecessary for the Student to train its own parameters.",
         "Teacher probabilities indicate the number of photos stored for each animal, rather than communicating the model's uncertainty about one specific picture."
@@ -55,7 +55,7 @@
       "options": [
         "Temperature changes the correct animal labels, while KL divergence measures only whether the Teacher itself was accurate on the training dataset.",
         "Hard labels store complete confidence distributions, while soft targets contain only one correct category, reversing the usual meaning of both terms.",
-        "Hard labels give correct classes; softened Teacher probabilities provide additional guidance, and KL divergence can compare the Teacher and Student distributions.",
+        "Hard labels give correct classes; softened Teacher probabilities guide learning, and KL divergence compares the two full probability distributions.",
         "KL divergence makes correct labels completely unnecessary, while temperature changes the Student's number of layers instead of its probability distribution."
       ],
       "explanation": "<strong>Explanation:</strong> Suppose a language-learning app distinguishes several similar pronunciation sounds. A <strong>hard label</strong> gives the correct sound; a Teacher's <strong>soft targets</strong> show which other sounds it considers similar. Raising <strong>temperature</strong> softens the predicted probability distribution and makes weaker alternatives easier to study. <strong>KL divergence</strong> can measure how closely the Student's distribution matches the Teacher's, while cross-entropy uses the correct labels. Training often combines these objectives so the Student learns from both kinds of evidence.",
@@ -68,8 +68,8 @@
       "answer": "b",
       "options": [
         "Train both Teacher and Student with gradients, calculate error on raw images alone, and freeze the Student so its parameters never improve.",
-        "Freeze the Teacher, calculate hard-label and soft-target losses, combine them, and update the Student's parameters using the resulting training gradients.",
-        "Apply KL divergence only to hard category labels, ignore Teacher predictions entirely, and update the Teacher's weights rather than the Student's.",
+        "Freeze the Teacher, combine hard-label and soft-target losses, then update the Student's trainable parameters using the resulting gradients from training.",
+        "Apply KL divergence only to hard category labels, ignore Teacher probabilities entirely, and update the Teacher's learned weights instead of the Student's.",
         "Train the Student only on Teacher argmax categories, avoiding soft probabilities and the combined learning objective described in the task."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine building a compact model to classify photos of handmade tools. In PyTorch, load a trained <strong>Teacher</strong> and set it to evaluation mode without computing its gradients. Run each training batch through both Teacher and Student. Calculate <strong>cross-entropy</strong> using the real labels and a <strong>KL-based distillation loss</strong> using softened predictions. Combine the losses, call backward, and update only Student weights. Finally evaluate the Student on held-out images. It should learn without modifying the Teacher.",
@@ -81,8 +81,8 @@
       "tag": "Advanced · transfer methods",
       "answer": "a",
       "options": [
-        "Response-based teaching matches output scores; feature-based teaching aligns hidden features; relation-based teaching preserves relationships; self-distillation uses related model guidance.",
-        "All four methods transfer only hard class labels and differ solely in training duration, not in the kind of knowledge passed to the Student.",
+        "Response methods match scores; feature methods match hidden states; relation methods capture similarities; self-distillation learns from previous AI models.",
+        "All four methods transfer only hard labels, differing in training duration rather than teaching hidden features or relations between examples.",
         "The methods transfer hardware specifications, model file names, number of dataset rows, and vocabulary order instead of learned predictions or representations.",
         "These approaches primarily match the Teacher's parameter count, processing speed, and memory layout, which would not transfer the intended prediction behavior."
       ],
@@ -97,8 +97,8 @@
       "options": [
         "Making the Student slightly larger always solves every capacity gap and ensures complex reasoning transfers fully, without changing data or evaluating performance.",
         "Training only on easy Teacher examples guarantees rare situations and complex reasoning abilities remain intact, even if the Student never practices them.",
-        "Copying unverified Teacher answers automatically preserves accuracy and prevents forgetting, so no separate Student evaluation is necessary after compression.",
-        "Use progressive training, carefully selected examples, and possibly several Teachers while measuring Student errors, lost capabilities, and changing-data performance."
+        "Copying unverified Teacher answers automatically preserves accuracy and prevents catastrophic forgetting, so no separate careful Student evaluation is necessary after compression.",
+        "Use staged teaching, carefully selected data, and several Teachers, then test Student errors, forgotten skills, and performance on changed inputs."
       ],
       "explanation": "<strong>Explanation:</strong> A city information assistant is being compressed for use in public kiosks. The Teacher sometimes makes mistakes, and a smaller Student may lose complex reasoning or forget uncommon policies. <strong>Progressive distillation</strong> introduces learning in stages; curated examples cover important cases, and <strong>multi-teacher training</strong> can combine different sources of guidance. None guarantees success. Test the Student on rare questions, unfamiliar wording, and new information to check whether compression reduced important capabilities.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> Capacity mismatch, teacher mistakes, changed data and catastrophic forgetting can reduce reasoning quality. Progressive distillation, targeted transfer data, multi-teacher signals and retention tests help, but full teacher capability cannot be guaranteed.",
