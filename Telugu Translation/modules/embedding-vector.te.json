@@ -69,7 +69,7 @@
       "answer": "b",
       "options": [
         "Large Dot Product Always Similar Meaning Guarantee చేస్తుంది, Magnitudes Different ఉన్నా.",
-        "Dot Product Size, Alignment; Cosine Direction; Euclidean Separation Measures.",
+        "Dot Product Size, Alignment; Cosine Direction; Euclidean Distance Measure చేస్తుంది.",
         "Cosine Absolute Distance Measures చేస్తుంది; Euclidean Only Direction Compare చేస్తుంది.",
         "Normalization తర్వాత All Metrics Identical అయి Every Candidate Same Rankలో ఉంటుంది."
       ],
