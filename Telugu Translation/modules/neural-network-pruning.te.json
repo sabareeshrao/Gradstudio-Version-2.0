@@ -78,7 +78,7 @@
         "Zero Weights Every Deviceపై Automatically Faster Runtime Guarantee చేస్తాయి.",
         "Quantization Always Accuracy Improve; Device Benchmarks Unnecessary అవుతాయి.",
         "Memory Bandwidth Sparse Modelsలో Never Matters; Overhead Zero అంటుంది.",
-        "Hardware-Supported Sparsity, Quantization Help చేస్తాయి; Speed, Accuracy Test చేయాలి."
+        "Sparse Support, Quantization Help; Deviceపై Speed, Accuracy Test చేయాలి."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Mobileలో Battery, RAM, Speed Matter. Pruned Model Betterనా Actual Hardwareపై Check చేయాలి.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Sparse Metadata, Unsupported Kernels Overhead Add చేయవచ్చు. Channel/Block Patterns, Quantization Support Check చేసి Accuracy, Memory, Energy, Latency Measure చేయాలి."
