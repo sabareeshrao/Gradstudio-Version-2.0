@@ -55,7 +55,7 @@
         "All activation functions have identical slopes at every input, so their derivatives cannot influence training. Different curve shapes create different gradient behavior.",
         "ReLU needs expensive exponentials to work, while GELU and SiLU have only constant slopes. Their formulas and smoothness properties are different from these claims.",
         "Derivatives matter only at the final output and do not affect the gradients of hidden layers. Backpropagation uses derivatives throughout the computational graph.",
-        "Sigmoid, Tanh, ReLU, Leaky ReLU, GELU, and SiLU have different formulas and derivatives, influencing saturation, gradient strength, and stable learning."
+        "Sigmoid, Tanh, ReLU, Leaky ReLU, GELU, and SiLU have different formulas and derivatives, influencing saturation, gradient strength, and stable learning in deep networks."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Picture adjusting an automated greenhouse controller through many neural layers. During backpropagation, the <strong>derivative</strong> of each activation tells training how sensitive the output is to a small input change. Sigmoid and Tanh can have tiny slopes at extreme values; ReLU has zero slope for negative inputs. Leaky ReLU keeps a small negative-side slope, while GELU and SiLU change signals smoothly. These differences affect whether useful gradients reach earlier layers. No single activation guarantees stable training in every architecture.",
@@ -67,7 +67,7 @@
       "tag": "Medium · Python and evaluation",
       "options": [
         "Plotting activations in Matplotlib directly updates network weights and removes the need to inspect derivatives. A plotted curve alone does not perform optimization.",
-        "Calculate activation outputs in NumPy, plot curves with Matplotlib, inspect derivatives using PyTorch, and compare networks under consistent training conditions.",
+        "Calculate activation outputs with NumPy, plot curves using Matplotlib, inspect PyTorch gradients, and compare trained networks under the same training conditions.",
         "Run one forward prediction with each activation and treat the largest output number as final accuracy. Useful evaluation requires labels and a broader test.",
         "Change datasets, random seeds, and optimizer settings for each activation, then compare performance. Those differences make it difficult to isolate activation effects."
       ],
