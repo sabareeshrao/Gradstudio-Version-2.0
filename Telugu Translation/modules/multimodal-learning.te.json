@@ -39,7 +39,7 @@
       "tag": "Beginner · Visual + Audio",
       "answer": "a",
       "options": [
-        "Image Features, Speech Question Features Extract చేసి Combine చేసి Context-Based Answer Generate చేస్తుంది.",
+        "Image, Speech Features Extract చేసి Combine చేసి Answer Generate చేస్తుంది.",
         "Image Discard చేసి Spoken Wordsని Fixed Responsesతో Match చేసి మాత్రమే Answer ఇస్తుంది.",
         "Speechని First Imageగా Convert చేస్తుంది; Language Features Visionకి Help చేయలేవు అంటుంది.",
         "Unrelated Classifierని Run చేసి Spoken Input, Visual Context ఏదీ Use చేయకుండా Answer ఇస్తుంది."
@@ -55,7 +55,7 @@
       "options": [
         "Early Fusion Final Decisions మాత్రమే Combine చేస్తుంది; Late Fusion Raw Inputsని First Merge చేస్తుంది.",
         "Cross-Attention Fixed Category Labels Assign చేస్తుంది; Shared Embeddings Meaning Relations Remove చేస్తాయి.",
-        "Fusion Raw, Middle, Final Representationsలో Combine చేస్తుంది; Attention, Shared Spaces Modalities Link చేస్తాయి.",
+        "Fusion Early, Middle, Late Stagesలో చేస్తారు; Attention, Shared Spaces Modalities Connect చేస్తాయి.",
         "All Fusion Approaches Identical Computation Use చేస్తాయి; Timing, Compute Costలో Differences ఉండవు."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Some Models Inputsని Earlyగా Combine చేస్తాయి, Some Laterగా. Cross-Attention Related Parts Connect చేస్తుంది; Shared Vectors Similar Meaningsని Near ఉంచుతాయి.",
@@ -68,7 +68,7 @@
       "answer": "b",
       "options": [
         "Text Classifier మాత్రమే Train చేసి Image Featuresని Constant Random Numbersతో Replace చేస్తాం.",
-        "CNN Image Features, Text Embeddings Extract చేసి Concatenate చేసి Joint Classifier Train చేస్తాం.",
+        "CNN Image, Text Encoder Features Combine చేసి Classifier Train చేస్తాం.",
         "Raw Image Pixels, Token IDsని Direct Same Tensorగా Merge చేసి Processing Skip చేస్తాం.",
         "Visual Features Never Use చేయకుండా Text Model Alone Final Predictions Generate చేస్తుంది."
       ],
