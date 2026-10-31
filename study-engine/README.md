@@ -4,11 +4,9 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (47 modules)
+## Hosted lesson directory (48 modules)
 
-- [Knowledge Distillation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=knowledge-distillation) — seven custom learning diagrams, temperature and KL examples, and tested PyTorch training code.
-
-These links are generated from the canonical [module manifest](modules/index.json); each lesson uses the shared HTML/CSS/JS engine.
+All listed keywords run in the [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/) with the canonical [module manifest](modules/index.json), seven concept-specific diagrams, beginner-first explanations and the 15 themes.
 
 | # | Keyword | Module slug |
 |---:|---|---|
@@ -58,10 +56,12 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 44 | [Next-Token Prediction](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=next-token-prediction) | `next-token-prediction` |
 | 45 | [Neural Network Pruning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network-pruning) | `neural-network-pruning` |
 | 46 | [Quantization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=quantization) | `quantization` |
+| 47 | [Knowledge Distillation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=knowledge-distillation) | `knowledge-distillation` |
+| 48 | [Long Short-Term Memory (LSTM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) | `long-short-term-memory` |
 
 ### Latest additions
 
-Recent illustrated lessons include Quantization, Context Window, Value Projection, Query Projection, and Transformer Encoder. All new lessons follow the beginner-first explanation, MCQ balance, and unique diagram rules.
+Long Short-Term Memory (LSTM) adds seven illustrated explanations of gated memory, vanishing gradients, France-to-French context, worked gate equations, BPTT and recurrent architecture comparisons. Other recent additions include Knowledge Distillation, Quantization and Neural Network Pruning.
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
