@@ -98,3 +98,12 @@ The remaining modules can be revised in subsequent user-selected batches.
 35. Transformer Encoder (`transformer-encoder`)
 
 **Verification:** Preserved all 35 original question stems, 35 answer keys, 35 unique diagrams, and original advanced technical explanations. Rewrote 140 multiple-choice answers into related, beginner-friendly teaching sentences and all 35 beginner explanations using distinct examples. Each explanation begins **Explanation:** and contains 66–81 words. Every question passes the same 1.15 maximum option word-ratio check, and correct answers are never uniquely longest by word or character length. All five JSON modules were committed and read back from GitHub. Telugu lessons, shared quiz code, themes, and unrelated modules were not edited.
+
+## Batch 8 — completed English modules
+36. Transformer Decoder (`transformer-decoder`)
+37. Context Window (`context-window`)
+38. Autoregressive Language Model (`autoregressive-language-model`)
+39. Next-Token Prediction (`next-token-prediction`)
+40. Neural Network Pruning (`neural-network-pruning`)
+
+**Verification:** All 35 original question stems, answer keys, distinct figures, and advanced technical explanations were preserved. Rewrote 140 A–D choices with full, teaching-oriented English and 35 beginner-facing explanations with different concrete scenarios. Each explanation starts with **Explanation:** and contains 68–81 words. Every question passes the existing maximum 1.15 option word-count ratio and the correct answer is not uniquely longest by words or characters. All five updated JSON files were committed and read back from GitHub; Telugu lessons and shared study-engine rendering, themes, and unrelated modules were unchanged.
