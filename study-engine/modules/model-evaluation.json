@@ -67,10 +67,10 @@
       "tag": "Medium · Trustworthy estimates",
       "stem": "How do cross-validation, baseline comparisons, and confidence intervals help determine whether a model's evaluation results are reliable?",
       "options": [
-        "Cross-validation checks several splits but reports only the best score, baseline comparisons are unnecessary for advanced models, and confidence intervals predict exact future results.",
-        "Cross-validation reuses the final test set for tuning, baseline comparisons measure model training speed, and confidence intervals describe uncertainty in the fitted weights.",
+        "Cross-validation checks performance across several shuffled data splits but publishes only the strongest result, baseline comparisons are unnecessary for sophisticated models, and confidence intervals predict exact future outcomes.",
+        "Cross-validation repeatedly reuses the final untouched test set for hyperparameter tuning, baseline comparisons measure computational training speed, and confidence intervals describe uncertainty in the model's fitted weights.",
         "Cross-validation measures performance across multiple data splits, baseline comparisons show whether the model improves on simpler approaches, and confidence intervals describe uncertainty in estimated performance.",
-        "Cross-validation measures only training scores, baseline comparisons compare a model with earlier versions, and confidence intervals guarantee deployment scores remain within fixed bounds."
+        "Cross-validation measures only training fold scores, baseline comparisons compare a model only with its own historical versions, and confidence intervals guarantee future deployment performance remains within fixed limits."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> Cross-validation evaluates a model across multiple training and validation splits, revealing how much results depend on one partition. A baseline shows whether the model beats a simpler approach, and a confidence interval expresses uncertainty in the estimated score. For restaurant demand forecasting, compare an advanced model with a simple same-day-last-week forecast. If its measured improvement is tiny and the uncertainty range is wide, the evidence for deploying the complex model is weak. Keep the final test set separate from model selection.",
@@ -82,9 +82,9 @@
       "stem": "How should Model Evaluation change when working with imbalanced datasets, distribution shifts, and models that produce probability predictions?",
       "options": [
         "Imbalanced datasets require metrics such as precision, recall, F1-score, and PR-AUC. Distribution shifts require testing on representative changed data, while probability predictions can be evaluated using calibration metrics and proper scoring rules.",
-        "Imbalanced datasets should be judged mainly by overall accuracy because it includes every example. Distribution shifts can be handled using the original test set, while predicted probability quality is measured by response speed.",
-        "Imbalanced datasets require the same overall accuracy metric for every class. Distribution shifts can be ignored once training converges, while probabilities are evaluated only after converting them into hard class labels.",
-        "Imbalanced datasets can be judged with F1-score alone without inspecting precision or recall. Distribution shifts are measured through training loss, while probabilities are reliable whenever their ranking places positives first."
+        "Imbalanced datasets should be judged mainly by overall accuracy because it includes every example under all conditions. Distribution shifts can be handled using the original test set, while predicted probability quality is measured by response speed.",
+        "Imbalanced datasets require the same overall accuracy metric for every class in every use case. Distribution shifts can be ignored once training converges, while probabilities are evaluated only after converting them into hard class labels.",
+        "Imbalanced datasets can be judged with F1-score alone without inspecting precision or recall. Distribution shifts are measured through training loss, while probabilities are reliable whenever their ranking places positives first regardless of calibration."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> With rare positive cases, overall accuracy can hide missed events, so inspect precision, recall, F1, and precision–recall AUC. When data changes, test on examples resembling the changed conditions. When predictions are probabilities, check whether those probabilities are well calibrated and use proper scoring rules. Imagine a factory searching for rare faulty batteries after a new production line opens. We care about finding defects, not just high overall accuracy, and whether a reported 80% risk is actually reliable.",
@@ -95,9 +95,9 @@
       "tag": "Advanced · Benchmarks and monitoring",
       "stem": "How can Model Evaluation be designed to ensure reliable benchmark comparisons, prevent data leakage, and measure model performance after deployment?",
       "options": [
-        "Reliable benchmarks allow different test splits and different metrics for each model because tailored conditions make comparisons fairer. After deployment, watching training loss alone is enough to notice falling live prediction quality.",
-        "Reliable evaluation repeatedly tunes models on the final benchmark until a strong result appears, then treats that score as guaranteed future accuracy. After deployment, monitoring is unnecessary when the original score was high.",
-        "Reliable comparisons may combine training and testing records during preprocessing because more data reduces noise. After deployment, monitoring can focus on server response speed rather than the true quality of model predictions.",
+        "Reliable benchmarks allow different test splits and different metrics for each model because tailored conditions make comparisons fairer. After deployment, watching training loss alone is enough to notice falling live prediction quality in real use.",
+        "Reliable evaluation repeatedly tunes models on the final benchmark until a strong result appears, then treats that score as guaranteed future accuracy. After deployment, monitoring is unnecessary when the original benchmark score was high.",
+        "Reliable comparisons may combine training and testing records during preprocessing because more data reduces noise. After deployment, monitoring can focus on server response speed rather than the true quality of model predictions over time.",
         "Reliable evaluation uses independent test data, consistent metrics, representative benchmarks, and leakage-free validation. After deployment, monitoring tracks prediction quality, data drift, and performance changes to identify model degradation."
       ],
       "answer": "d",
