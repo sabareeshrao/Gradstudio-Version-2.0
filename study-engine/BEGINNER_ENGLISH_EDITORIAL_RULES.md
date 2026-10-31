@@ -138,3 +138,10 @@ All 50 planned English modules received a question-to-answer completeness pass. 
 - Every explanation directly addresses all parts of the question first; then teach with a different concrete scenario. Keep the learner-facing explanation under 100 words and label it only **Explanation:**.
 - Preserve the question stem but omit redundant "Question:" and "Layer N:" labels from display. Build seven visually distinct teaching diagrams (including a code panel for an implementation question), validate numerical examples, and reuse the shared engine.
 - For Data Leakage, the supplied seven answer texts are the single source of truth. The source-level checks verify answer text, length parity, HTML/SVG structure and availability in GitHub; browser rendering and educational correctness still require editorial review.
+
+### Plausible wrong-answer guardrail (mandatory)
+- **No keyword giveaway:** If a question asks “What is X?”, do not make the correct option the only choice that discusses X while the other three define unrelated concepts. All four choices should address the question's same subject, process, and consequences.
+- **Near-miss distractors:** Each wrong option should make one realistic but meaningful error about timing, scope, assumptions, mechanism, or evaluation. It must remain clearly wrong on careful reading, not merely incomplete or technically equivalent to the correct answer.
+- **Test actual understanding:** A beginner should need to reason about the subject, not scan for the matching keyword, extreme wording, or the longest answer.
+- **Length is secondary:** Match reading effort closely, but do not pad options to a word-count target at the expense of plausibility or teaching quality. Preserve the user's supplied correct answer verbatim.
+- **Code-figure QA:** For questions with embedded code, verify a high-contrast code foreground/background, readable font size, preserved line breaks, and horizontal scrolling on mobile. The global stylesheet's default `code` styling must not make the snippet unreadable.
