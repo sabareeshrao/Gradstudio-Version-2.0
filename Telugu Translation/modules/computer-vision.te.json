@@ -39,7 +39,7 @@
       "tag": "Beginner · Flow",
       "answer": "a",
       "options": [
-        "Classification Labels, Detection Locations, Segmentation Pixels, Tracking Video Objects Follows.",
+        "Classification Labels, Detection Locations, Segmentation Pixels, Tracking Objectsని Videoలో Follow చేస్తాయి.",
         "Classification Every Object Outline Marks చేస్తుంది; Tracking Whole Imageకి One Label ఇస్తుంది.",
         "Detection Framesలో Object Follow చేస్తుంది; Segmentation Overall Image Class Only Predict చేస్తుంది.",
         "Tracking Automatically Each Object Pixel Separate చేస్తుంది; Classification Bounding Boxes Only Draw చేస్తుంది."
