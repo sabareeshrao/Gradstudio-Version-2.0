@@ -329,6 +329,11 @@
       "slug": "feature-selection",
       "title": "Feature Selection",
       "domain": "Selecting Relevant Features for Machine Learning · Data Preprocessing and Feature Engineering"
+    },
+    {
+      "slug": "data-augmentation",
+      "title": "Data Augmentation",
+      "domain": "Expanding Training Data Through Data Transformations · Data Preprocessing and Feature Engineering"
     }
   ]
 }
