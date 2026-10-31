@@ -1,3 +1,7 @@
+## Shared Reveal / Hide control
+
+Every Telugu HTML page loads `app-te.js` and `quiz-te.js`. Each question displays a bottom-right **Reveal** button that becomes **Hide** when the correct option and translated explanation are open. Revealing does not choose an answer or affect the score. **Check Answers** still grades selected answers, and **Reset Quiz** clears all reveals. Keep the logic in these shared files rather than copying it into individual lessons.
+
 ## Translation fidelity rule — preserve the English original
 
 For every future update, **translate instead of rewrite**. The source English lesson is canonical.

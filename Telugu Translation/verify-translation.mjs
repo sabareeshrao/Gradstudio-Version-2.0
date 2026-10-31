@@ -57,6 +57,12 @@ const translations=[
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
+// Shared Telugu Reveal/Hide UI must be present for all lesson wrappers.
+const sharedTeluguRenderer=readFileSync(resolve(folder,"app-te.js"),"utf8");
+const sharedTeluguQuiz=readFileSync(resolve(folder,"quiz-te.js"),"utf8");
+if(!sharedTeluguRenderer.includes('class="reveal-toggle"')||!sharedTeluguRenderer.includes('reveal-control-row'))errors.push("Telugu renderer missing shared Reveal control");
+if(!sharedTeluguQuiz.includes("function setQuestionReveal")||!sharedTeluguQuiz.includes("function updateRevealLabel"))errors.push("Telugu quiz missing shared Reveal/Hide handler");
+if(!sharedTeluguQuiz.includes("updateRevealLabel(q,false)"))errors.push("Telugu quiz reset does not close Reveal");
 const sourceTrackedLessons=new Set(["transformer","rag","deep-learning","neural-network","artificial-intelligence","generative-model","tokenization","embedding-vector","vector-database","ai-agent-framework","prompt-engineering","attention-mechanism","self-attention","backpropagation","gradient-descent","supervised-learning","reinforcement-learning","computer-vision","natural-language-processing","diffusion-model","large-vision-language-model","multimodal-learning","generative-adversarial-network","training-step","loss-function","activation-function","softmax","residual-connection","positional-encoding","rotary-position-embedding"]);
 // Match the translation to the latest English choices and explanation wording.
 // A changed English question invalidates its translation until reviewed again.
@@ -101,7 +107,7 @@ function validate(slug,entry,filename){
   const matches=html.match(new RegExp('\\bid="'+id+'"','g'))||[];
   if(matches.length!==1)errors.push(slug+": Required static DOM controls missing or duplicated: "+id);
  }
- if(!html.includes('src="./app-te.js"'))errors.push(slug+": missing shared bilingual lesson bootstrap");
+ if(!html.includes('src="./app-te.js"')&&!html.includes('src="./app-te.js?'))errors.push(slug+": missing shared bilingual lesson bootstrap");
  if(!html.includes('class="theme-indicator" id="themeIndicator"'))
   errors.push(slug+": missing theme indicator element needed by theme initialization");
 

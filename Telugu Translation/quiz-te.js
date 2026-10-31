@@ -3,8 +3,38 @@
 const quiz=document.getElementById('quiz'),questions=[...quiz.querySelectorAll('.question')],counter=document.getElementById('counter'),progressFill=document.getElementById('progressFill'),progress=document.getElementById('progress'),resultBox=document.getElementById('result');
 function updateProgress(){const n=questions.filter(q=>q.querySelector('input:checked')).length;counter.textContent=n+' / '+questions.length;progressFill.style.width=(n/questions.length*100)+'%';progress.setAttribute('aria-valuenow',String(n));}
 quiz.addEventListener('change',updateProgress);updateProgress();
-document.getElementById('checkBtn').addEventListener('click',()=>{let score=0,unanswered=0;questions.forEach(q=>{q.classList.remove('correct','incorrect');q.querySelectorAll('label').forEach(l=>l.classList.remove('correct-opt','incorrect-opt'));const selected=q.querySelector('input:checked'),correct=q.dataset.answer;const correctInput=[...q.querySelectorAll('input')].find(i=>i.value===correct);if(correctInput)correctInput.closest('label').classList.add('correct-opt');if(!selected){unanswered++;q.classList.add('incorrect');}else if(selected.value===correct){score++;q.classList.add('correct');}else{q.classList.add('incorrect');selected.closest('label').classList.add('incorrect-opt');}q.querySelector('.explanation-deep')?.removeAttribute('open');q.querySelector('.explanation').style.display='block';});const p=Math.round(score/questions.length*100);const msg=p===100?'Excellent! అన్ని 7 Qs complete చేశారు.':p>=71?'Good job! Miss అయిన Qs explanations మరోసారి చూడండి.':'Q1 నుంచి మరోసారి Try చేయండి.';resultBox.innerHTML='<div class="score">మీ స్కోరు: '+score+' / '+questions.length+' ('+p+'%)</div><div class="msg">'+msg+(unanswered?' '+unanswered+' Qs unanswered.':'')+'</div>';resultBox.style.display='block';resultBox.scrollIntoView({behavior:'smooth',block:'start'});});
-document.getElementById('resetBtn').addEventListener('click',()=>{quiz.reset();questions.forEach(q=>{q.classList.remove('correct','incorrect');q.querySelectorAll('label').forEach(l=>l.classList.remove('correct-opt','incorrect-opt'));q.querySelector('.explanation-deep')?.removeAttribute('open');q.querySelector('.explanation').style.display='none';});resultBox.style.display='none';resultBox.innerHTML='';updateProgress();window.scrollTo({top:0,behavior:'smooth'});});
+/* Per-question Reveal/Hide: never select inputs or alter the quiz score. */
+function updateRevealLabel(q,open){
+ const button=q.querySelector('.reveal-toggle');
+ if(!button)return;
+ const label=open?'Hide':'Reveal';
+ button.textContent=label;
+ button.setAttribute('aria-expanded',String(open));
+ button.setAttribute('aria-label',label+' answer for '+(q.querySelector('.q-badge')?.textContent||'question'));
+}
+function setQuestionReveal(q,open){
+ const explanation=q.querySelector('.explanation');
+ if(!explanation)return;
+ updateRevealLabel(q,open);
+ explanation.style.display=open?'block':'none';
+ q.querySelectorAll('label.revealed-opt').forEach(label=>label.classList.remove('revealed-opt'));
+ if(open){
+  const correct=[...q.querySelectorAll('input[type="radio"]')].find(input=>input.value===q.dataset.answer);
+  correct?.closest('label')?.classList.add('revealed-opt');
+ }else{
+  q.querySelector('.explanation-deep')?.removeAttribute('open');
+ }
+}
+quiz.addEventListener('click',event=>{
+ const button=event.target.closest('.reveal-toggle');
+ if(!button||!quiz.contains(button))return;
+ const q=button.closest('.question');
+ if(!q)return;
+ setQuestionReveal(q,button.getAttribute('aria-expanded')!=='true');
+});
+
+document.getElementById('checkBtn').addEventListener('click',()=>{let score=0,unanswered=0;questions.forEach(q=>{q.classList.remove('correct','incorrect');q.querySelectorAll('label').forEach(l=>l.classList.remove('correct-opt','incorrect-opt','revealed-opt'));const selected=q.querySelector('input:checked'),correct=q.dataset.answer;const correctInput=[...q.querySelectorAll('input')].find(i=>i.value===correct);if(correctInput)correctInput.closest('label').classList.add('correct-opt');if(!selected){unanswered++;q.classList.add('incorrect');}else if(selected.value===correct){score++;q.classList.add('correct');}else{q.classList.add('incorrect');selected.closest('label').classList.add('incorrect-opt');}q.querySelector('.explanation-deep')?.removeAttribute('open');q.querySelector('.explanation').style.display='block';updateRevealLabel(q,true);});const p=Math.round(score/questions.length*100);const msg=p===100?'Excellent! అన్ని 7 Qs complete చేశారు.':p>=71?'Good job! Miss అయిన Qs explanations మరోసారి చూడండి.':'Q1 నుంచి మరోసారి Try చేయండి.';resultBox.innerHTML='<div class="score">మీ స్కోరు: '+score+' / '+questions.length+' ('+p+'%)</div><div class="msg">'+msg+(unanswered?' '+unanswered+' Qs unanswered.':'')+'</div>';resultBox.style.display='block';resultBox.scrollIntoView({behavior:'smooth',block:'start'});});
+document.getElementById('resetBtn').addEventListener('click',()=>{quiz.reset();questions.forEach(q=>{q.classList.remove('correct','incorrect');q.querySelectorAll('label').forEach(l=>l.classList.remove('correct-opt','incorrect-opt'));q.querySelector('.explanation-deep')?.removeAttribute('open');q.querySelector('.explanation').style.display='none';q.querySelectorAll('label.revealed-opt').forEach(l=>l.classList.remove('revealed-opt'));updateRevealLabel(q,false);});resultBox.style.display='none';resultBox.innerHTML='';updateProgress();window.scrollTo({top:0,behavior:'smooth'});});
 const THEMES=[
 {id:'sunset',name:'సూర్యాస్తమయ నారింజ',a:'#bd511b',dark:'#783714',mid:'#e79a68',soft:'#fff0e5',border:'#f2cbb5',bg:'#fffaf6',surface:'#fde7d6',canvas:'#fff8f2',mode:'light'},
 {id:'forest',name:'అడవి ఆకుపచ్చ',a:'#23784b',dark:'#185534',mid:'#74ba8c',soft:'#e8f6ec',border:'#b9dfc2',bg:'#f7fcf8',surface:'#dff0e4',canvas:'#f2faf4',mode:'light'},
