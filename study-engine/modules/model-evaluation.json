@@ -26,9 +26,9 @@
       "stem": "What is the difference between training, validation, and test data, and how does each contribute to evaluating a Machine Learning model?",
       "options": [
         "Training data teaches the model patterns, validation data helps select models and tune settings, and test data measures final performance on unseen examples.",
-        "Training data teaches the model patterns, validation data provides the final unbiased performance estimate, and test data is used to repeatedly change model settings until the reported score improves.",
-        "Training data teaches the model patterns, validation data is combined with test data for feature selection, and test data then provides the score after influencing those feature choices.",
-        "Training data teaches the model patterns, validation data is only checked after deployment, and test data is used to choose the best model settings before reporting its final score."
+        "Training data teaches patterns, validation data provides the unbiased final score, and test data repeatedly selects model settings before predictions are released.",
+        "Training data teaches patterns, validation data mixes with test labels during feature selection, and test data reports performance after influencing those choices.",
+        "Training data teaches patterns, validation data is reserved for deployment, and test data tunes the model before reporting its final evaluation score."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> Training data is used to learn patterns. Validation data helps compare models and choose settings. Test data is held back for the final estimate of performance after those choices are made. Picture a factory predicting machine failures: past sensor readings train several models, a validation set helps choose one, and a separate test set checks how well that choice generalizes. Repeatedly tuning against the test set would make that final score less trustworthy.",
@@ -39,9 +39,9 @@
       "tag": "Beginner · Choosing metrics",
       "stem": "What are common evaluation metrics for classification and regression models, and what does each type of metric measure?",
       "options": [
-        "Classification metrics such as accuracy and F1-score measure how far predicted numbers are from their targets. Regression metrics such as MAE and RMSE count correctly assigned categories.",
-        "Classification accuracy, precision, recall, and F1-score all measure exactly the same share of correct predictions. Regression MAE, MSE, and RMSE measure the percentage of exact numeric matches.",
-        "Classification precision and recall measure only how confident the model feels about its choices. Regression MAE, MSE, and RMSE measure how well predicted class labels match actual categories.",
+        "Classification metrics such as accuracy, precision, and F1-score measure the distance between predicted continuous values and true numbers. Regression metrics such as MAE and RMSE count correctly classified categories.",
+        "Classification accuracy, precision, recall, and F1-score each measure the identical percentage of correctly predicted observations. Regression MAE, MSE, and RMSE measure the proportion of perfectly matched numerical values.",
+        "Classification precision and recall measure only the confidence level assigned to predicted categories. Regression MAE, MSE, and RMSE evaluate whether predicted categorical labels match observed class labels.",
         "Classification metrics include accuracy, precision, recall, and F1-score, which measure different aspects of prediction correctness. Regression metrics include MAE, MSE, and RMSE, which measure numerical prediction errors."
       ],
       "answer": "d",
@@ -67,10 +67,10 @@
       "tag": "Medium · Trustworthy estimates",
       "stem": "How do cross-validation, baseline comparisons, and confidence intervals help determine whether a model's evaluation results are reliable?",
       "options": [
-        "Cross-validation measures several data splits but reports only the strongest result, baseline comparisons are unnecessary when models are advanced, and confidence intervals state exactly how the model will perform on future data.",
-        "Cross-validation repeatedly changes a model using the final test set, baseline comparisons show which model trains fastest, and confidence intervals describe the possible values of the model's learned parameters.",
+        "Cross-validation checks several splits but reports only the best score, baseline comparisons are unnecessary for advanced models, and confidence intervals predict exact future results.",
+        "Cross-validation reuses the final test set for tuning, baseline comparisons measure model training speed, and confidence intervals describe uncertainty in the fitted weights.",
         "Cross-validation measures performance across multiple data splits, baseline comparisons show whether the model improves on simpler approaches, and confidence intervals describe uncertainty in estimated performance.",
-        "Cross-validation measures performance on training folds without separate validation folds, baseline comparisons check only newer versions of the same model, and confidence intervals guarantee deployment accuracy will stay within fixed bounds."
+        "Cross-validation measures only training scores, baseline comparisons compare a model with earlier versions, and confidence intervals guarantee deployment scores remain within fixed bounds."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> Cross-validation evaluates a model across multiple training and validation splits, revealing how much results depend on one partition. A baseline shows whether the model beats a simpler approach, and a confidence interval expresses uncertainty in the estimated score. For restaurant demand forecasting, compare an advanced model with a simple same-day-last-week forecast. If its measured improvement is tiny and the uncertainty range is wide, the evidence for deploying the complex model is weak. Keep the final test set separate from model selection.",
@@ -95,9 +95,9 @@
       "tag": "Advanced · Benchmarks and monitoring",
       "stem": "How can Model Evaluation be designed to ensure reliable benchmark comparisons, prevent data leakage, and measure model performance after deployment?",
       "options": [
-        "Reliable benchmarks allow different test splits and different metrics for each model because tailored conditions make comparisons fairer. After deployment, watching training loss alone is enough to notice falling prediction quality.",
-        "Reliable evaluation repeatedly tunes models on the final benchmark until a strong result appears, then treats that score as future accuracy. After deployment, monitoring is unnecessary if the original score was high.",
-        "Reliable comparisons may combine training and testing records during preprocessing because more data reduces noise. After deployment, monitoring can focus on server speed rather than the quality of model predictions.",
+        "Reliable benchmarks allow different test splits and different metrics for each model because tailored conditions make comparisons fairer. After deployment, watching training loss alone is enough to notice falling live prediction quality.",
+        "Reliable evaluation repeatedly tunes models on the final benchmark until a strong result appears, then treats that score as guaranteed future accuracy. After deployment, monitoring is unnecessary when the original score was high.",
+        "Reliable comparisons may combine training and testing records during preprocessing because more data reduces noise. After deployment, monitoring can focus on server response speed rather than the true quality of model predictions.",
         "Reliable evaluation uses independent test data, consistent metrics, representative benchmarks, and leakage-free validation. After deployment, monitoring tracks prediction quality, data drift, and performance changes to identify model degradation."
       ],
       "answer": "d",
