@@ -60,7 +60,7 @@
       ],
       "answer": "b",
       "explanation": "<strong>Simple Explanation:</strong> Forget Gate Old Memory ఎంత Keep చేయాలో, Input Gate ఏమి Add చేయాలో, Output Gate ఏమి Show చేయాలో Decide చేస్తాయి.",
-      "technicalExplanation": "<strong>Correct Answer: B.</strong> f_t=σ(W_f[x_t;h_(t−1)]+b_f), i_t Similar, o_t Similar; g_t=tanh(W_g[..]+b_g). c_t=f_t⊙c_(t−1)+i_t⊙g_t; h_t=o_t⊙tanh(c_t)."
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> f_t=σ(W_f[x_t;h_(t−1)]+b_f), i_t Similar, o_t Similar; g_t=tanh(W_g[..]+b_g). c_t=f_t⊙c_(t−1)+i_t⊙g_t; h_t=o_t⊙tanh(c_t). ఇక్కడ Forget Gate Old Cell Memoryని Scale చేస్తుంది; Input Gate New Candidate Add చేస్తుంది; Output Gate Hidden Stateని Control చేస్తుంది."
     },
     {
       "tag": "Medium · Python",
@@ -101,7 +101,7 @@
         "Bidirectional Ways; Stacked Depth; Attention Context; Transformer Parallel చేస్తుంది."
       ],
       "answer": "d",
-      "explanation": "<strong>Simple Explanation:</strong> Bidirectional Both Sides Context Use; Stacked LSTM More Layers; Attention Earlier States Focus. Transformers More Parallel Train.",
+      "explanation": "<strong>Simple Explanation:</strong> Bidirectional Both-Side Context Use చేస్తుంది; Stacked LSTM More Layers Add చేస్తుంది. Attention Earlier States Focus చేస్తుంది; Transformers More Parallel Train అవుతాయి.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Bidirectional LSTM Future Observed Context Use, Strict Streamingలో Unseen Future Read చేయలేదు. Stacked Layers Depth; Attention History Focus. GRU Single Hidden State Gates Simpler; Transformers Positionwise Parallel Training, Different Memory/Compute Trade-offs."
     }
   ],
