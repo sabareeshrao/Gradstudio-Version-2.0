@@ -72,7 +72,7 @@
       "tag": "Medium · Python",
       "options": [
         "Very Large Logits Direct Exponentiate చేస్తే More Accurate అంటుంది. exp Overflow Risk.",
-        "Max(logits) Subtract → Exp → Sum Normalize; Stable NumPy/PyTorch, Shift Unchanged.",
+        "Max(logits) Subtract → Exp → Normalize; NumPy/PyTorchలో Shift Probabilities Same.",
         "Minimum Score Subtract చేస్తే All Inputs Zero, Uniform Probabilities అంటుంది. Differences Remain.",
         "PyTorch Softmax One Scalar Only, Vector/Batch Normalize చేయలేదంటుంది. Tensor Dimensions Supported."
       ],
@@ -101,7 +101,7 @@
       "stem": "Transformer Attention, LLM Next-Token Predictionలో Softmax ఎలా Use అవుతుంది? Large Vocabulary, Numerical Precision, Calibration, Compute Cost Challenges ఏమిటి?",
       "tag": "Advanced · Production",
       "options": [
-        "Attention Softmax Positions, Output Softmax Vocabulary Normalize; Large Vocab, Precision, Calibration Trade-offs.",
+        "Attention Softmax Positions, Output Softmax Vocabulary Normalize; Precision, Calibrationను Test చేయాలి.",
         "Attention Softmax Permanent Chat Memory Store, Output Softmax Image Pixels Generate అంటుంది. Actual Roles Different.",
         "Softmax Confidence Always Calibrated Guarantees అంటుంది. Real Accuracy Against Evaluation Needed.",
         "Softmax Every Tokenకి Equal Attention Weights Assign చేసి Comparisons Remove అంటుంది. Scores Important."
