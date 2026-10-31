@@ -30,6 +30,12 @@ for(const slug of slugs) {
   // of Array.forEach() (undefined), or otherwise serializing invalid placeholders.
   // Example of the correct builder: chunks.map(drawLabel).join(''), not '+=chunks.forEach(drawLabel)'.
   const brokenPlaceholder=/(?:^|>)\s*(?:undefined|NaN|\[object Object\])\s*(?:<|$)/i;
+  // Catch the malformed SVG shape terminator that blanked all RoPE diagrams:
+  // <rect ... /<text ...  instead of  <rect ... /><text ...
+  // This needs to run against both the introductory hero and every question.
+  const malformedSvgPrimitive=/<(?:rect|circle|line|path|polygon|polyline|ellipse)\b[^<>]*\/(?=<)/i;
+  if(malformedSvgPrimitive.test(lesson.hero||''))
+    fail(slug,'Hero contains an unterminated SVG shape (missing > after /) and may render blank');
   if(brokenPlaceholder.test(lesson.hero||''))fail(slug,'Hero contains a rendered JavaScript placeholder such as undefined');
   // Prevent blank intro diagrams caused by HTML sections accidentally nested inside
   // SVG markup. Such markup can be silently reparented or ignored by browsers.
@@ -59,6 +65,7 @@ for(const slug of slugs) {
       if(count>=3)fail(slug,'Q'+(i+1)+' repeated long SVG label '+count+' times: '+label.slice(0,85));
     }
     if(brokenPlaceholder.test(item.figure))fail(slug,'Q'+(i+1)+' contains a rendered JavaScript placeholder (undefined/NaN/[object Object])');
+    if(malformedSvgPrimitive.test(item.figure))fail(slug,'Q'+(i+1)+' contains an unterminated SVG shape (missing > after /) and may render blank');
     if(!item.figure.includes('<svg '))fail(slug,'Q'+(i+1)+' needs substantial visual illustration (SVG)');
     if(!item.figure.includes('aria-label='))fail(slug,'Q'+(i+1)+' visual needs an accessible description');
     const shapes=(item.figure.match(/<(?:path|circle|rect|line|polygon|polyline|ellipse)\b/g)||[]).length;
