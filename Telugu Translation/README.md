@@ -15,7 +15,16 @@
 | 9 | Backpropagation | [Open translated lesson](09-backpropagation.html) | [English lesson](../lessons/09-backpropagation.html) |
 | 10 | Gradient Descent | [Open translated lesson](10-gradient-descent.html) | [English lesson](../lessons/10-gradient-descent.html) |
 
-[**View all 10 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
+| 11 | Generative Model · AI-01158 | [Open translated lesson](11-generative-model.html) | [English module](../study-engine/modules/generative-model.json) |
+| 12 | Tokenization · AI-01035 | [Open translated lesson](12-tokenization.html) | [English module](../study-engine/modules/tokenization.json) |
+| 13 | Embedding Vector · AI-00725 | [Open translated lesson](13-embedding-vector.html) | [English module](../study-engine/modules/embedding-vector.json) |
+| 14 | Vector Database · AI-01315 | [Open translated lesson](14-vector-database.html) | [English module](../study-engine/modules/vector-database.json) |
+| 15 | AI Agent Framework · AI-01499 | [Open translated lesson](15-ai-agent-framework.html) | [English module](../study-engine/modules/ai-agent-framework.json) |
+| 16 | Supervised Learning · AI-00483 | [Open translated lesson](16-supervised-learning.html) | [English module](../study-engine/modules/supervised-learning.json) |
+| 17 | Reinforcement Learning · AI-01623 | [Open translated lesson](17-reinforcement-learning.html) | [English module](../study-engine/modules/reinforcement-learning.json) |
+| 18 | Computer Vision · AI-01759 | [Open translated lesson](18-computer-vision.html) | [English module](../study-engine/modules/computer-vision.json) |
+
+[**View all 18 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
 ## Translation rules
 
@@ -26,4 +35,4 @@
 5. Preserve working quiz scoring, reset and all 15 themes. Do not touch original English module files.
 6. Run the quality verification: `node "Telugu Translation/verify-translation.mjs"`.
 
-This table covers all ten numbered HTML entries from the English `lessons` directory. The English `latest.html` is a listing page; the matching bilingual listing is `index.html` here.
+Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–18 use the newly completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those eight in `lessons/`). The bilingual index page is `index.html` here.
