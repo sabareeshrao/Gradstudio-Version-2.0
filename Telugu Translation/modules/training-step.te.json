@@ -58,7 +58,7 @@
       "options": [
         "Larger Learning Rate Always Fast, Stable అంటుంది. Oversized Steps Overshoot, Diverge చేయవచ్చు.",
         "Batch Size Storage Only, Loss Update Speed Only అంటుంది. Both Gradient Signalని Affect చేస్తాయి.",
-        "Batch Noise/Memory, Loss Objective, Gradient Sensitivity, LR Step, SGD/Adam Rules Affect చేస్తాయి.",
+        "Batch Noise/Memory, Loss Objective, Grad Sensitivity, LR Step, SGD/Adam Rules Affect చేస్తాయి.",
         "SGD, Adam Identical Updates, LR Evaluationలో Only Matter అంటుంది. Trainingలో Their Rules Differ."
       ],
       "answer": "c",
