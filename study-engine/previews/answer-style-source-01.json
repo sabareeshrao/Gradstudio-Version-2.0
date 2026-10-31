@@ -1,0 +1,172 @@
+[
+  {
+    "id": "01",
+    "slug": "transformer",
+    "topic": "Transformer",
+    "question": "What is a Transformer in Artificial Intelligence, and how does it process and understand sequences of information such as text?",
+    "options": [
+      "A network that processes each word only after the previous word finishes.",
+      "A network that uses attention to relate tokens throughout an input sequence.",
+      "A network that stores each sentence as one permanent searchable lookup key.",
+      "A network that determines all word positions solely through vocabulary token IDs."
+    ],
+    "answer": "b",
+    "short": "In simple words: A Transformer connects words using attention, so each word can consider relevant context. For example, “it” may connect to an earlier noun.",
+    "technical": "Correct: B. The Transformer processes token representations with attention. This lets different positions gather information from other relevant positions, while positional information helps distinguish sequence order. Transformer architectures support classification, translation and text generation.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/01-transformer.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/transformer.json"
+  },
+  {
+    "id": "02",
+    "slug": "rag",
+    "topic": "Retrieval-Augmented Generation (RAG)",
+    "question": "What is Retrieval-Augmented Generation (RAG) in Artificial Intelligence, and how does it combine information retrieval with Large Language Models (LLMs) to generate answers?",
+    "options": [
+      "It retrains model parameters with updated knowledge documents before composing every requested response.",
+      "It retrieves relevant passages before an LLM composes a useful evidence-based response.",
+      "It replaces the language model with an index that only returns document filenames.",
+      "It trains a separate language model for every question using local documents."
+    ],
+    "answer": "b",
+    "short": "In simple words: RAG lets an AI search documents before answering. Think of an assistant checking a handbook instead of relying only on memory.",
+    "technical": "Correct: B. Retrieval finds relevant external passages; the LLM generates a response using those passages as context. RAG usually leaves the trained model weights unchanged. Source citations can help readers verify the answer.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/02-rag.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/rag.json"
+  },
+  {
+    "id": "03",
+    "slug": "deep-learning",
+    "topic": "Deep Learning",
+    "question": "What is Deep Learning in Artificial Intelligence, and how does it use multiple layers of artificial neurons to learn patterns and representations from data?",
+    "options": [
+      "Deep Learning follows predefined decision rules and cannot improve its representations from examples.",
+      "Deep Learning uses many neural layers to learn increasingly useful features from data.",
+      "Deep Learning stores training examples in nested groups without learning network parameters.",
+      "Deep Learning applies statistical tests to features chosen entirely by human domain experts."
+    ],
+    "answer": "b",
+    "short": "In simple words: Deep learning uses neural networks with many layers. Early layers learn simple features, while later ones combine them into useful patterns.",
+    "technical": "Correct: B. Deep learning uses neural networks with multiple stages of learned transformation. Earlier layers can detect simple patterns; later layers combine them into features useful for a prediction. Training changes the weights that define those transformations.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/03-deep-learning.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/deep-learning.json"
+  },
+  {
+    "id": "04",
+    "slug": "neural-network",
+    "topic": "Neural Network",
+    "question": "What is an Artificial Neural Network, and how is it inspired by the structure and functioning of neurons in the human brain?",
+    "options": [
+      "It reproduces biological neuron behavior using electrical spikes and neurotransmitter signals as its core computations.",
+      "It connects mathematical units that transform inputs and learn patterns, loosely inspired by brain neurons.",
+      "It stores a lookup table of common brain responses and retrieves matching outputs for each input.",
+      "It links handcrafted logical rules that imitate how humans reason, without learning numerical connection weights."
+    ],
+    "answer": "b",
+    "short": "In simple words: A neural network is a set of connected math units that learn patterns. It is loosely inspired by the brain, not a copy of it.",
+    "technical": "Correct: B. Artificial neural networks connect simplified mathematical neurons. They were inspired by neurons and connections in the brain, but typical modern networks use weighted sums, biases, and activation functions rather than faithfully reproducing biological cell chemistry.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/04-neural-network.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/neural-network.json"
+  },
+  {
+    "id": "05",
+    "slug": "artificial-intelligence",
+    "topic": "Artificial Intelligence (AI)",
+    "question": "What is Artificial Intelligence (AI), and what does it mean for a machine to perform tasks that normally require human intelligence, such as reasoning, learning, perception, and decision-making?",
+    "options": [
+      "Artificial intelligence means any computer program that always follows instructions without learning or making independent decisions.",
+      "Artificial intelligence lets machines perform tasks involving reasoning, learning, perception, and making useful decisions.",
+      "Artificial intelligence only describes physical robots that navigate rooms without any instructions from people.",
+      "Artificial intelligence refers to ordinary websites that store information without analyzing patterns or uncertainty."
+    ],
+    "answer": "b",
+    "short": "In simple words: AI makes computers perform tasks that seem intelligent, such as reading text or recognizing images. It does not have to think like a person.",
+    "technical": "Correct: B. AI builds systems that can perceive, learn, reason, use language, or decide. It does not require a human-shaped robot or consciousness. A spam filter, medical image classifier, or planning agent can perform AI tasks.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/05-artificial-intelligence.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/artificial-intelligence.json"
+  },
+  {
+    "id": "06",
+    "slug": "prompt-engineering",
+    "topic": "Prompt Engineering",
+    "question": "What is Prompt Engineering in Artificial Intelligence, and how do prompts influence the responses generated by Large Language Models (LLMs) such as ChatGPT?",
+    "options": [
+      "Writing model source code to permanently change how its neural weights are stored.",
+      "Adding more training examples so every model response becomes fully predetermined automatically.",
+      "Designing clear instructions and context that steer a language model's generated response.",
+      "Replacing a model's learned vocabulary with rules that guarantee all answers are correct."
+    ],
+    "answer": "c",
+    "short": "In simple words: Prompt engineering means giving an AI clear instructions. Asking for “three short examples” helps guide the kind of answer you receive.",
+    "technical": "Correct: C. Prompt engineering means writing clear task instructions, context, constraints and expected output characteristics. Prompts steer an existing LLM's generation, but do not directly change its learned model weights or guarantee accuracy.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/06-prompt-engineering.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/prompt-engineering.json"
+  },
+  {
+    "id": "07",
+    "slug": "attention-mechanism",
+    "topic": "Attention Mechanism",
+    "question": "What is the Attention Mechanism in Artificial Intelligence, and how does it help a neural network focus on the most relevant parts of an input sequence when processing language or other information?",
+    "options": [
+      "Attention assigns one fixed importance score to each word across every input sentence.",
+      "Attention weighs tokens differently for each query to build useful contextual representations.",
+      "Attention compresses every sentence into a single unchanging vector before reading individual words.",
+      "Attention selects the last token as the main reference for each generated sentence."
+    ],
+    "answer": "b",
+    "short": "In simple words: Attention lets a model give different importance to different words. When understanding “it,” the model may focus on an earlier noun.",
+    "technical": "Correct: B. Attention lets a query token weigh information from different positions. A token can give greater weight to useful context, such as the earlier word dog when interpreting it . The weights depend on learned representations and the current query, not a fixed importance value per word.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/07-attention-mechanism.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/attention-mechanism.json"
+  },
+  {
+    "id": "08",
+    "slug": "self-attention",
+    "topic": "Self-Attention",
+    "question": "What is Self-Attention in Artificial Intelligence, and how does it allow each word or token in a sequence to gather information from other tokens within the same sequence?",
+    "options": [
+      "Self-attention passes each token unchanged through the model without consulting surrounding words.",
+      "Self-attention lets each token combine information from other tokens in its sequence.",
+      "Self-attention assigns fixed meanings to tokens before processing any surrounding sentence context.",
+      "Self-attention sorts sentence tokens alphabetically before combining their learned vector representations."
+    ],
+    "answer": "b",
+    "short": "In simple words: Self-attention helps each word use information from other words in the same sentence. This makes the meaning depend on context.",
+    "technical": "Correct: B. Self-attention compares each token with tokens in the same sequence and uses learned weights to combine their information. This produces context-aware representations. Different attention masks decide which positions a token is allowed to see.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/08-self-attention.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/self-attention.json"
+  },
+  {
+    "id": "09",
+    "slug": "backpropagation",
+    "topic": "Backpropagation",
+    "question": "What is Backpropagation in Neural Networks, and what role does it play in helping a Neural Network learn from its prediction errors?",
+    "options": [
+      "It computes predictions in a forward pass and chooses the network architecture before training begins.",
+      "It computes loss gradients for parameters, guiding updates that reduce prediction errors during learning.",
+      "It sends model outputs backward as new inputs, without calculating any parameter derivatives accurately.",
+      "It permanently memorizes incorrect predictions instead of adjusting the learned weights that produced each mistake."
+    ],
+    "answer": "b",
+    "short": "In simple words: Backpropagation works out how each weight affected a wrong prediction. An optimizer then uses that feedback to adjust the weights.",
+    "technical": "Correct: B. Backpropagation calculates how the loss changes with each trainable parameter. An optimizer uses those gradients to adjust weights and biases. Backpropagation is not the initial prediction or the optimizer itself.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/09-backpropagation.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/backpropagation.json"
+  },
+  {
+    "id": "10",
+    "slug": "gradient-descent",
+    "topic": "Gradient Descent",
+    "question": "What is Gradient Descent in Machine Learning?",
+    "options": [
+      "A method for storing training examples without changing the model.",
+      "A method for adding more features after every training round.",
+      "A method for reducing model error by updating its parameters.",
+      "A method for selecting only the easiest examples for training."
+    ],
+    "answer": "c",
+    "short": "In simple words: Gradient descent improves a model by making small changes to its weights. Imagine walking downhill toward a place with less error.",
+    "technical": "Correct: C. Gradient Descent is an optimization method that adjusts model parameters, such as weights, to reduce a measured error called loss. Picture a ball taking short steps down a landscape. The method follows the local slope, so it does not promise the absolute lowest point in every problem.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/10-gradient-descent.html",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/gradient-descent.json"
+  }
+]
