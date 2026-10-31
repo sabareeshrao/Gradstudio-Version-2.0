@@ -41,7 +41,7 @@
       "stem": "User ఒక Sentenceని Large Language Model (LLM)కి ఇచ్చినప్పుడు Tokenizer Textని Tokensగా Split చేసి Numerical Token IDsగా Convert చేసి Modelకి ఎలా Prepare చేస్తుంది?",
       "tag": "Beginner · Flow",
       "options": [
-        "Tokenizer Incoming Textని Known Tokensగా Split చేసి Numeric Vocabulary IDsకి Map చేస్తుంది. ఆ IDs Model Embedding Lookupకి Send అవుతాయి.",
+        "Tokenizer Textని Tokensగా Split చేసి Vocabulary IDsకి Map చేసి Model Embedding Lookupకి Send చేస్తుంది.",
         "Tokenizer Modelకి ముందే Final Answer, All Contextual Embeddings Create చేస్తుందని అంటుంది. Main Prediction Work Neural Network చేస్తుంది.",
         "Tokenizer Each Word ID కోసం Internet Search చేస్తుందని అంటుంది. Normal Vocabularies Model Tokenizer Filesలో Store అవుతాయి.",
         "Tokenizer Unknown Words, Punctuation అన్నిటికీ Same ID ఇస్తుందని అంటుంది. Subword, Byte Methods Distinctions Preserve చేయగలవు."
@@ -58,7 +58,7 @@
       "options": [
         "BPE, WordPiece, Unigram Exactly Same Frequency-Merging Rule Use చేస్తాయని అంటుంది. Actually Piece Selection Strategies Different.",
         "Character-Level Tokenizer Every Possible Sentence List Require, Word Tokenizer Vocabulary Use చేయదని అంటుంది. Both Claims Incorrect.",
-        "BPE Frequent Pieces Merge చేస్తుంది; WordPiece Scoring, Unigram Candidate Pruning Use చేస్తాయి. Word, Character Methods Different Granularity కలిగి ఉంటాయి.",
+        "BPE Frequent Merges, WordPiece Scoring, Unigram Candidate Pruning Use చేస్తాయి; Word, Character Ways Different Units Use చేస్తాయి.",
         "Unigram Only Whole Words, BPE, WordPiece Single Characters Only Use చేస్తాయని అంటుంది. Subword Pieces Different Lengthsలో ఉండవచ్చు."
       ],
       "answer": "c",
@@ -86,7 +86,7 @@
       "stem": "Vocabulary Size, Token Granularity, Byte-Level Encoding, Unicode, Special Tokens LLM Efficiencyని ఎలా Affect చేస్తాయి? Code, Numbers, Multilingual Languages, Long Documentsలో Effects ఏమిటి?",
       "tag": "Advanced · Architecture",
       "options": [
-        "Vocabulary Size, Byte/Unicode Handling, Special Tokens Code, Numbers, Multilingual Text Splitsని Affect చేసి Memory, Model Behavior Change చేస్తాయి.",
+        "Vocabulary, Byte/Unicode Rules, Special Tokens Code, Numbers, Multilingual Splits, Memory, Model Behaviorని Affect చేస్తాయి.",
         "Every Unicode Character Exactly One Token అంటుంది. Subword, Byte-Level Encodingలో Character Multiple Tokens లేదా Bytes Use చేయవచ్చు.",
         "Larger Vocabulary Attention Always Cheaper, Embeddings Extra Space Require చేయవని అంటుంది. Entries ఎక్కువైతే Tables కూడా Grow అవుతాయి.",
         "Equal Character Count Every Languageలో Equal Token Count ఇస్తుందంటుంది. Different Scripts, Numbers, Vocabularies Splitsని Change చేస్తాయి."
