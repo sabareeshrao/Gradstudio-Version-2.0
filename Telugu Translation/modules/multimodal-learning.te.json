@@ -12,7 +12,7 @@
       "answer": "b",
       "options": [
         "Single-Input Model One Data Type Only Read చేసి Othersని Filenamesగా Treat చేస్తుందంటుంది. Other Signals Learn కాదు.",
-        "Multimodal Learning Text, Images, Speech, Sensors Combine చేసి Complementary Cluesతో Understanding, Prediction Improve చేస్తుంది.",
+        "Multimodal Learning Text, Images, Speech, Sensors Combine చేసి Complementary Evidenceతో Predictions Improve చేస్తుంది.",
         "Storage Text, Pictures, Audio Separate Foldersలో Save చేసి Connections Learn చేయదంటుంది. Related Signals Understanding Missing.",
         "Video-Only Frames Use చేసి Words, Audio, Sensors Ignore చేస్తుందంటుంది. Broader Multimodal Idea కాదు."
       ],
@@ -29,7 +29,7 @@
         "More Inputs Noisy అయినా Predictions Always Correct అంటుంది. Extra Data Reliability Guarantee కాదు.",
         "Multimodal Inputs Storage Files Reduce, All Sources Same Information Contain అంటుంది. Complementary Clues Matter.",
         "Image, Speech Combine చేస్తే Always Meaning Destroy అవుతుందంటుంది. Fusion Useful Context Add చేయవచ్చు.",
-        "Image, Audio, Text Complementary Evidence Provide; Conflicting/Noisy Inputs Mislead చేయవచ్చు, కాబట్టి Fusion Quality Check అవసరం."
+        "Image, Audio, Text Complementary Clues; Noisy, Conflicting Signalsకు Careful Fusion, Reliability Checks అవసరం."
       ],
       "explanation": "<strong>Explanation:</strong> Image, Speech, Text Streams Complementary Clues ఇస్తాయి; One Source Another Clarify చేస్తుంది. But Noisy, Conflicting Evidence Mislead చేయవచ్చు, కాబట్టి Fusion, Reliability Checks Essential. Building Security Video Review చేసే Firefighterని Imagine చేయండి. Camera Door దగ్గర Smoke చూపిస్తుంది; Microphone Alarm Record చేస్తుంది; Written Message Floor Identify చేస్తుంది. Every Input Separate Clue. Multimodal System Related Signals Combine చేసి Fuller Situation Build చేస్తుంది. <strong>Complementary Evidence</strong> Hidden Scene Parts Understand చేయడంలో Help చేస్తుంది.",
       "technicalExplanation": "<strong>Correct: D.</strong> Images Visual Detail, Audio Speech/Off-Camera Sounds, Text Context Clarify చేస్తాయి. Combination Uncertainty Reduce చేయవచ్చు; Contradictory/Noisy Inputs Error Increase కూడా చేయవచ్చు. Taskకి Useful Evidence Learn చేయాలి.",
@@ -41,7 +41,7 @@
       "tag": "Beginner · Visual + Audio",
       "answer": "a",
       "options": [
-        "Separate Encoders Image, Speech Features; Fusion Align; Combined Context నుంచి Prediction లేదా Language Answer Generate చేస్తుంది.",
+        "Image, Speech Separate Encoders; Fusion Align చేసి Combined Featuresతో Question Answer చేస్తుంది.",
         "Question Spoken తర్వాత Image Discard చేసి Memorized Phraseతో Reply చేస్తుందంటుంది. Visual Evidence Missing.",
         "Spoken Questionని Imageగా Convert చేయాల్సిందే అంటుంది. Audio/Text Features Direct Visual Featuresతో Link అవుతాయి.",
         "Image Unrelated Classifierకి, Speech Ignore చేసి Generic Label Return చేస్తుందంటుంది. Actual Question Answer కాదు."
@@ -58,7 +58,7 @@
       "options": [
         "Early Fusion Final Decisions, Late Fusion Raw Inputs అంటుంది. Timing Reverse.",
         "Cross-Attention Fixed Labels, Shared Spaces Relations Prevent అంటుంది. Both Learned Cross-Modal Connections Support చేస్తాయి.",
-        "Early Raw Features, Intermediate Learned Representations, Late Decisions Combine; Cross-Attention Align, Shared Embeddings Match చేస్తాయి.",
+        "Early Raw, Intermediate Learned, Late Decision Fusion; Cross-Attention, Shared Embeddings Relate Streams.",
         "All Fusion Methods Same Network Stageలో Identical Operations అంటుంది. Compute, Memory, Context Trade-offs Different."
       ],
       "explanation": "<strong>Explanation:</strong> Early Fusion Raw/Early Features Combine; Intermediate Fusion Learned Representations Connect; Late Fusion Decisions Mix చేస్తుంది. Cross-Attention One Modalityతో Another Align; Shared Embedding Space Paired Signals Comparable చేస్తుంది. Railway Safety Systemలో Camera, Vibration Sensors ఉన్నాయని Imagine చేయండి. <strong>Early Fusion</strong> Initial Signals Combine; <strong>Intermediate</strong> Encoded Features Link; <strong>Late</strong> Separate Models Predictions Merge. Cross-Attention One Streamకి Other Evidenceపై Focus, Shared Space Related Signals Closer Bring చేస్తుంది.",
@@ -72,7 +72,7 @@
       "answer": "b",
       "options": [
         "Text-Only Model Image Features బదులు Random Constants Add చేస్తుందంటుంది. Visual Content Predictions Influence చేయదు.",
-        "PyTorch Image, Text Encodersతో Compatible Vectors Fuse చేసి Prediction Train, Single-Modality Baselinesతో Validation Compare చేస్తాం.",
+        "PyTorch Image/Text Encoders Fuse చేసి Train; Single-Input Baselinesతో Held-Out Validation Compare చేస్తాం.",
         "Raw Pixels, Token IDs Direct Concatenate చేసి Preprocessing Unnecessary అంటుంది. Incompatible Numbers Model Understand చేయదు.",
         "Text Encoder Only Label Decide చేసి Image Ignore చేస్తుందంటుంది. Visual Modality Contribution Missing."
       ],
@@ -89,7 +89,7 @@
         "Contrastive Learning Every Pairకి Manual Category Labels Require అంటుంది. Pair Correspondence Itself Training Signal.",
         "CLIP Matching Caption Away, Unrelated Closer Pull చేస్తుందంటుంది. Intended Contrastive Objective Reverse.",
         "ImageBind Audio/Sensors Ignore, ALIGN Sensor Tables Only అంటుంది. These Methods Cross-Modal Alignment Support.",
-        "Contrastive Matched Embeddings Closer, Mismatch Farther; CLIP/ALIGN Image–Text, ImageBind More Modalities Align చేస్తాయి."
+        "Contrastive Matched Pairs Closer, Others Farther; CLIP/ALIGN Image–Text, ImageBind Multimodal Align."
       ],
       "explanation": "<strong>Explanation:</strong> Contrastive Learning Matching Image/Text లేదా Other Embeddings Closer, Mismatches Farther చేస్తుంది. CLIP, ALIGN Image–Text Pairs; ImageBind More Modalities Align చేస్తుంది. Online Sneaker Catalogలో Photos, Short Descriptions Imagine చేయండి. Matching Shoe Image, Caption Pairsతో పాటు Unrelated Pairs Train చేస్తాం. Matching Representations Near, Nonmatching Away కావాలని Learn చేస్తుంది. <strong>CLIP, ALIGN</strong> Image/Text; <strong>ImageBind</strong> Audio, Other Sensors వరకు Alignment Extend చేస్తుంది.",
       "technicalExplanation": "<strong>Correct: D.</strong> CLIP, ALIGN Paired Image–Text Contrastive Objectives Use; ImageBind Audio, Depth, Thermal, Inertial వంటి More Signals Align చేస్తుంది. Pairs Correspondence ద్వారా Pretraining, Every Exampleకి Manual Class Label అవసరం లేదు.",
@@ -101,7 +101,7 @@
       "tag": "Advanced · Robustness",
       "answer": "a",
       "options": [
-        "Modality Dropout Missing Inputs, Temporal Alignment Different Times, Uncertainty Fusion Noisy Sources, Distillation Knowledge Transfer Handle చేస్తాయి.",
+        "Modality Dropout Missing, Temporal Alignment Timing, Uncertainty Fusion Noise, Distillation Cross-Modal Knowledge Handle చేస్తాయి.",
         "Dropout Every Training Exampleలో One Modality Permanently Delete అంటుంది. Partial Input Robustness Learning కాదు.",
         "All Sensors Always Same Timestamp Record అంటుంది. Clock Offset, Processing Delay Real Challenges.",
         "Cross-Modal Distillation Raw Files Identicalగా Convert అంటుంది. Actually Learned Representations మధ్య Knowledge Transfer."
