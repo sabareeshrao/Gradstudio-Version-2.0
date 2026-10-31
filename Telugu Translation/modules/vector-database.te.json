@@ -11,7 +11,7 @@
       "tag": "Beginner · Basics",
       "options": [
         "Vector Database Documentsని Exact Keywords Listsగా Only Store, Match చేస్తుందని అంటుంది. Keyword Search Learned Semantic Vectorsని Direct Compare చేయదు.",
-        "Vector Database Embeddings, Document References, Metadata Store చేసి Nearby Vectors Search చేస్తుంది; Wording Different అయినా Related Information Find చేయగలదు.",
+        "Vector Database Embeddings, References, Metadata Store చేసి Nearby Vectors Search చేస్తుంది; Different Wordingలో Related Information Find చేస్తుంది.",
         "Vector Database Every Documentని Written Summaryతో Replace చేసి Numeric Comparison Avoid చేస్తుందంటుంది. Vector Search Numbers Compare చేస్తుంది.",
         "Database Image Pixelsని Regular Table Columnsలో Put చేసి File Names Alphabetically Sort చేస్తుందంటుంది. Dense Embedding Similarity Search అలా కాదు."
       ],
@@ -28,7 +28,7 @@
         "Database “reset my password” Exact Words మాత్రమే Search చేసి Different Wording Ignore చేస్తుంది. ఇది Literal Keyword Matching Limitation.",
         "Database Familiar Word కనిపించే వరకు Random Documents Select చేస్తుంది. Random Sampling Relevant Results Reliably Rank చేయదు.",
         "Database 10,000 File Names Sort చేసి Shortest Titles Choose చేస్తుంది. File Name Semantic Relevanceకి Reliable Metric కాదు.",
-        "Questionని Embeddingగా Convert చేసి Stored Document Vectorsతో Compare చేస్తుంది; “recover account access”లాంటి Phrases కూడా Match కావచ్చు."
+        "Question Embeddingని Stored Document Vectorsతో Compare చేసి “recover account access”లాంటి Phrases Match చేయగలదు."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Company Help Centerలో “Recover account access” అనే Page ఉందనుకోండి. Someone “How do I reset my password?” అని Ask చేస్తారు. Words Different అయినా Meaning Similar. System Questionని Indexed Documentsతో Compatible Embedding Model ద్వారా Vectorగా Convert చేస్తుంది. Vector Database Similar Document Vectors Search చేసి Related Pages Return చేస్తుంది. దీన్నే <strong>Semantic Search</strong> అంటారు: Exact Phrase Require చేయకుండా Related Meaning Find చేయడం. అయినా Search Qualityని Test చేయాలి.",
@@ -58,7 +58,7 @@
         "Cosine Magnitude Only, Euclidean Word Meanings, IVF Alphabetic Text Sort అని అంటుంది. Metrics, Index Structuresని Confuse చేస్తుంది.",
         "Dot Product Vector Values Ignore, HNSW, IVF Always Exact Neighbors ఇస్తాయని అంటుంది. Approximate Indexes Recall Trade-off ఇవ్వవచ్చు.",
         "Cosine, Euclidean, Dot Product Every Vectorని Always Same Rank చేస్తాయంటుంది. Metric, Normalization, Index Resultsని Change చేయవచ్చు.",
-        "Similarity Metrics Vector Relations Compare చేస్తాయి; HNSW, IVF Collections Organize చేసి Every Vectorని Check చేయకుండా Faster Search Enable చేస్తాయి."
+        "Similarity Metrics Vector Relations Compare చేస్తాయి; HNSW, IVF Indexes Every Vector Scan చేయకుండా Search Speed పెంచుతాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Five Million Scientific Abstracts ఉన్న Collectionలో Search చేస్తున్నారని Imagine చేయండి. Queryని Every Vectorతో Compare చేయడం Too Slow కావచ్చు. <strong>Cosine Similarity</strong> Direction Compare చేస్తుంది; <strong>Euclidean Distance</strong> Separation Measure చేస్తుంది; <strong>Dot Product</strong> Magnitude, Alignment Capture చేస్తుంది. HNSW, IVF వంటి Indexes Candidates Organize చేసి Search Fast చేస్తాయి. కొన్ని Indexes Approximateగా ఉండడం వల్ల Mathematically Closest Item Miss కావచ్చు. Settings Choose చేయడానికి Engineers <strong>Latency, Recall</strong> రెండింటినీ Measure చేస్తారు.",
@@ -100,7 +100,7 @@
       "stem": "Production RAG కోసం Vector Databaseని ఎలా Design చేస్తాం? Hybrid Search, Access Control, Embedding Upgrades, Document Updates/Deletions, Reranking, Evaluationతో Irrelevant లేదా Unauthorized Data LLMకి వెళ్లకుండా ఎలా Prevent చేస్తాం?",
       "tag": "Advanced · Production",
       "options": [
-        "Secure RAG Keyword, Vector Search Combine చేసి User Permissions Check, Evidence Rerank, Old Indexes Refresh, Retrieval Quality Measure చేస్తుంది.",
+        "Secure RAG Keyword/Vector Search, Permissions, Reranking, Index Refresh, Retrieval Quality Checksని Combine చేస్తుంది.",
         "Metadata Labels Alone Every Access Request Authorize చేస్తాయని అంటుంది. Trusted User Identity, Source Permissions Check చేయాలి.",
         "Embedding Model Replace చేసినా Old, New Vectors Exactly Same Spaceలో ఉంటాయని అంటుంది. Often Reindexing అవసరం కావచ్చు.",
         "Cosine Score High అయితే Reranking, Authorization, Freshness Checks అవసరం లేదంటుంది. Score Quality, Permissionsని Replace చేయదు."
