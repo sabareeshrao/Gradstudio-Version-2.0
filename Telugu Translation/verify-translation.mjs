@@ -57,7 +57,7 @@ const translations=[
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
-const sourceTrackedLessons=new Set(["transformer","rag","deep-learning","neural-network","artificial-intelligence","generative-model","tokenization","embedding-vector","vector-database","ai-agent-framework","prompt-engineering","attention-mechanism"]);
+const sourceTrackedLessons=new Set(["transformer","rag","deep-learning","neural-network","artificial-intelligence","generative-model","tokenization","embedding-vector","vector-database","ai-agent-framework","prompt-engineering","attention-mechanism","self-attention","backpropagation","gradient-descent"]);
 // Match the translation to the latest English choices and explanation wording.
 // A changed English question invalidates its translation until reviewed again.
 function englishSourceDigest(q){
