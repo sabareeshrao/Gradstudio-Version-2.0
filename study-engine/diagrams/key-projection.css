@@ -1,0 +1,17 @@
+/* Key Projection: custom diagrams, shared quiz and 15 themes */
+.key-hero,.key-figure{min-width:0;border:1px solid #d7e6e9;border-radius:15px;padding:clamp(13px,2.4vw,21px);color:#31536a;background:radial-gradient(circle at 86% 12%,#e9f5ee,transparent 44%),linear-gradient(154deg,#f6fbff,#fffaf5)}
+.key-hero{margin-bottom:22px;background:linear-gradient(127deg,#e6f5ef,#f8fbff 62%,#fff5e8)}
+.key-hero h2{font-size:clamp(1.1rem,2vw,1.46rem);color:#2f536a;line-height:1.3;margin:6px 0 14px}
+.key-figure h3{font-size:clamp(1rem,1.85vw,1.19rem);color:#30556b;line-height:1.39;margin:5px 0 12px}
+.key-kicker{display:block;color:#2d7b7e;font-weight:850;text-transform:uppercase;letter-spacing:.1em;font-size:.69rem}
+.key-stage{max-width:100%;overflow-x:auto;overflow-y:hidden;background:#fff;border:1px solid #dce9eb;border-radius:10px;overscroll-behavior-x:contain}
+.key-stage:focus-visible{outline:2px solid #448fb8;outline-offset:2px}
+.key-svg{display:block;width:100%;height:auto;max-width:none}
+.key-note{font-size:.81rem;line-height:1.58;color:#5c7686;margin:12px 0 0}
+.key-sources{background:#fff;border:1px solid #d8e8e9;border-radius:12px;padding:13px 15px;margin:16px 0;color:#47697c;font-size:.81rem}
+.key-sources summary{cursor:pointer;color:#30747c;font-weight:850}
+.key-sources li{margin:6px 0}.key-sources a{color:#246b9a}
+.explanation-deep-content pre{white-space:pre;tab-size:2;overflow-x:auto;max-width:100%;border-radius:9px;background:#192c40;color:#dbeaf9;padding:14px;font-size:.77rem;line-height:1.55}
+.explanation-deep-content pre code{background:transparent;color:inherit;border:0;padding:0;white-space:pre;font-size:inherit}
+@media(max-width:680px){.key-hero,.key-figure{padding:12px}.key-svg{width:760px}.key-note{font-size:.76rem}}
+@media(prefers-reduced-motion:reduce){.key-stage{scroll-behavior:auto}}
