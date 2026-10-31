@@ -12,7 +12,7 @@
       "tag": "Beginner · Basics",
       "options": [
         "NLP Text Files Store చేసి Matching Words Search మాత్రమే చేస్తుందంటుంది. Understanding, Generation Storage కంటే Wider.",
-        "NLP English, Telugu సహా Human Text/Speech Analyze, Interpret, Generate చేస్తుంది; Learned Language Patterns Different Tasksలో Use అవుతాయి.",
+        "NLP English/Telugu Text, Speech Analyze, Interpret, Generate చేయడానికి Learned Patterns Use చేస్తుంది.",
         "NLP Every Message First Englishకి Translate చేయాలి అంటుంది. Multilingual Models Directly Other Languages Process చేయగలవు.",
         "NLP Spoken Audioని Textగా Convert చేయడానికే Limited అంటుంది. Speech Recognition One Application మాత్రమే."
       ],
@@ -29,7 +29,7 @@
         "NLP Spelling Fix, Documents Shorten మాత్రమే; Classification, Translation Vision Tasks అంటుంది. NLP More Capabilities కలిగి ఉంటుంది.",
         "Documents Length, Word Countతో మాత్రమే Group చేస్తుందని అంటుంది. Names, Opinions కూడా Extract చేయవచ్చు.",
         "Translation, QA చేయగలదు కానీ Entities, Comments Classify చేయలేదు అంటుంది. Labeling, Extraction కూడా NLP.",
-        "Classification Topics, Sentiment Opinions, NER Names/Places, Translation Languages, QA Answers, Summarization Long Text Condense చేస్తాయి."
+        "Classification Topics, Sentiment Opinions, NER Names, Translation Languages, QA Answers, Summarization Condensed Text."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Text Classification Topics Assign; Sentiment Analysis Opinion Estimate; Named-Entity Recognition People/Places Find; Translation Language Change; Question Answering Answers Find/Generate; Summarization Long Text Condense చేస్తాయి. Thousands of Customer Reviews Receive చేసే Travel Websiteని Think చేయండి. NLP Reviewsని <strong>Classify</strong> చేసి Positive/Negative Opinions Detect, City/Hotel Names Identify చేయవచ్చు. Another Languageకి Translate, Reviews Questions Answer, Common Complaints Summarize చేయవచ్చు. Same Input Type — Human Language —పై Different Tasks.",
@@ -41,7 +41,7 @@
       "stem": "ఒక Human Sentenceని Computer ఎలా Process చేస్తుంది? Raw Text నుంచి Tokenization, Normalization, Numerical Representation, Language Understanding, Meaningful Output వరకు Steps ఏమిటి?",
       "tag": "Beginner · Workflow",
       "options": [
-        "Raw Textని Carefully Normalize, Tokenize, IDs/Embeddingsగా Convert చేసి Model Process చేస్తుంది; Negation, Punctuation Important.",
+        "Text Normalize, Tokenize, Embed చేసి Model Process చేస్తుంది; Negation, Punctuation Preserve చేయాలి.",
         "Sentenceని Programming Instructionsగా Convert చేసి Words Alphabetically Sort చేస్తుందంటుంది. Original Meaning Lost.",
         "Meaning Before All Punctuation, Word Order Remove చేస్తుందంటుంది. Over-Cleaning Sentence Meaningని Change చేయవచ్చు.",
         "Numbersకి Convert కాకముందే Model Sentence Understand చేస్తుందంటుంది. Neural Models Numeric Representations Use చేస్తాయి."
@@ -58,7 +58,7 @@
       "options": [
         "Rule, Bag-of-Words Context Perfectగా Understand చేశాయని, Neural Methods Size కోసం Only Add చేశారని అంటుంది. Limitations ఉన్నాయి.",
         "Word2Vec All Ambiguity Eliminate చేసి LSTM, Transformer Unnecessary అంటుంది. Static Vectors Context Differences Miss చేస్తాయి.",
-        "Rules/N-Grams Local; BoW/TF-IDF Order Miss; Word2Vec Similarity, LSTM Sequences, Attention Context, Transformers Broad Links Learn చేస్తాయి.",
+        "Rules/N-Grams Local, BoW/TF-IDF Order Miss; Word2Vec, LSTM, Transformers Broader Context Learn చేస్తాయి.",
         "Transformers Tokenization/Training Remove, Statistical Methods No Data Needed అంటుంది. Both Inputs, Training/Evaluation Require."
       ],
       "answer": "c",
@@ -89,7 +89,7 @@
         "BERT Next Word Causally Predict, GPT Future See, T5 Output Generate చేయలేదు అంటుంది. Roles Reverse.",
         "T5 Encoder Only Classify, BERT Decoder Only Generate అంటుంది. Transformer Structures, Common Uses Different.",
         "All Transformer Masks, Training Objectives Identical అంటుంది. BERT, GPT, T5 Task Suitability Different.",
-        "BERT Bidirectional Masked Encoder; GPT Causal Next-Token Decoder; T5 Text-to-Text Encoder–Decoder; Fine-Tuning Adapts Representations."
+        "BERT Bidirectional Encoder, GPT Causal Decoder, T5 Text-to-Text Encoder–Decoder; Fine-Tuning Adapts చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> BERT Bidirectional Encoder Context, Masked-Token Learning; GPT Causal Decoder Next-Token Prediction; T5 Encoder–Decoder Text-to-Text Objectives Use చేస్తాయి. Fine-Tuning Pretrained Representations Adapt చేస్తుంది. Public Meeting Transcriptని Imagine చేయండి. <strong>BERT-style Encoder</strong> Left/Right Contextతో Statement Classify చేస్తుంది. <strong>GPT-style Decoder</strong> Future చూడకుండా Next Token Predict చేసి Transcript Continue చేస్తుంది. <strong>T5-style Encoder–Decoder</strong> Passage Read చేసి Summary Generate చేస్తుంది. All Transformers అయినా Masks, Objectives Different.",
@@ -101,7 +101,7 @@
       "stem": "Advanced NLPలో Ambiguity, Long Context, Multilingual Language, Code-Switching, Domain Terms, Hallucinations, Bias వంటి Challenges ఎలా Handle చేస్తాం? Instruction Tuning, RAG, Domain Adaptation, Evaluation Benchmarks ఎలా Help చేస్తాయి?",
       "tag": "Advanced · Reliability",
       "options": [
-        "Ambiguity, Code-Switching, Domain Terms, Long Context, Hallucination, Bias Evaluate; Tuning, RAG, Adaptation Help కానీ Guarantee కాదు.",
+        "Ambiguity, Code-Switching, Domain Terms, Bias, Hallucinations Evaluate; RAG, Instruction Tuning, Adaptation Help, Guarantees కాదు.",
         "Bigger Models All Mixed-Language Errors, Hallucinations Remove చేస్తాయంటుంది. Size Alone Perfect Reliability కాదు.",
         "Technical Vocabulary Remove చేయాలంటుంది. Domain Adaptation Specialist Language Handle చేయడంలో Help చేస్తుంది.",
         "One English Test Set Telugu, Mixed Language, Long Docsకి Proof అంటుంది. Each Settingపై Specific Tests అవసరం."
