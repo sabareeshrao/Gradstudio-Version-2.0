@@ -14,7 +14,7 @@
       "options": [
         "Generalization describes a model storing every labeled training record so it can recognize familiar items later. That strategy may remember examples, but cannot by itself demonstrate success on entirely new observations.",
         "Generalization means a trained model learns patterns that transfer to previously unseen data and predicts those cases accurately. It shows that learning extends beyond the particular examples the model encountered during training.",
-        "Generalization happens when a model grows more complicated after each training mistake, adding rules for every individual case. Such complexity may improve training scores without helping it predict new examples accurately.",
+        "Generalization happens when a model grows more complicated after each training mistake, adding rules for every individual case. Such complexity may improve training scores without helping it predict new examples accurately in changing conditions.",
         "Generalization measures how quickly a model reduces its training loss after repeated optimization steps. Learning familiar examples well is useful, but it does not directly measure performance on fresh observations."
       ],
       "explanation": "<strong>Explanation:</strong> Generalization means a model can use what it learned to predict new examples. Imagine a bicycle-rental model that learned demand from past days. Predicting yesterday's rentals is easy to check, but the real test is tomorrow, a day the model never trained on. If its estimate is accurate, it has probably learned useful links between demand, weather, and weekday patterns rather than memorizing past counts. We evaluate this with independent validation or test examples.",
@@ -40,7 +40,7 @@
       "tag": "Beginner · New dog photos",
       "answer": "a",
       "options": [
-        "Evaluate unfamiliar dogs using new photos with different lighting, poses, backgrounds, and cameras. Examine mistakes and accuracy by breed; reliable results across these changes suggest learned visual features rather than memorized pictures.",
+        "Evaluate unfamiliar dogs using new photos with varied lighting, poses, backgrounds, and cameras. Examine mistakes by breed; strong performance suggests learned visual features rather than memorized training pictures.",
         "Shuffle all training photographs and test the model again on those same images. Accurate predictions after rearranging the pictures demonstrate that the model can classify entirely new dogs under unfamiliar conditions.",
         "Check whether the training loss falls very close to zero and remains there during additional epochs. Near-perfect training performance proves the classifier understands breed features, even without an independent test.",
         "Add colored frames to familiar training images, then assess the modified copies as test data. Success on those edits guarantees the classifier recognizes new dog breeds across real-world backgrounds and viewpoints."
@@ -82,7 +82,7 @@
       "tag": "Advanced · Shift after deployment",
       "answer": "b",
       "options": [
-        "IID requires every example to have identical features and labels, making diverse observations invalid. Domain adaptation removes unfamiliar records, while OOD evaluation simply reuses the original training distribution and known examples.",
+        "IID requires every example to have identical features and labels, making diverse observations invalid. Domain adaptation removes unfamiliar records, while OOD evaluation simply reuses the original training distribution and known examples in practice.",
         "IID assumes independent examples from the same distribution. Deployment shifts can break that assumption; domain adaptation uses information from the new setting, and OOD inputs outside familiar conditions can make predictions unreliable.",
         "Distribution shifts change only the time needed to load training data, not how model predictions work. Domain adaptation modifies optimizer speed, while OOD describes labels intentionally hidden during the training stage.",
         "IID means that examples arrive sorted by filename, while failed deployment results mostly from insufficient processor speed. Domain adaptation changes the network depth and guarantees correct predictions on unusual new inputs."
@@ -96,7 +96,7 @@
       "tag": "Advanced · Learning theory",
       "answer": "a",
       "options": [
-        "Bias–variance explains underfitting and sensitivity; capacity and PAC-style bounds relate model complexity, data size, and unseen error. Robust optimization, realistic augmentation, and calibrated confidence can improve reliability, without guaranteeing correctness.",
+        "Bias–variance describes underfitting and sensitivity; capacity and PAC theory link complexity and data size to unseen error. Robust optimization, augmentation, and calibration can improve reliability without guaranteeing success.",
         "Bias and variance measure training runtime and computer memory, while capacity counts optimizer steps. PAC learning guarantees that every unseen prediction is correct whenever the final training loss reaches zero.",
         "Generalization bounds provide exact future accuracy for any model and deployment environment, so validation is unnecessary. Robust optimization replaces real data, while calibration guarantees every predicted label will be right.",
         "Bias–variance theory says simple models always generalize better than complex models. Augmentation prevents every distribution shift, and calibration raises classification accuracy automatically by increasing reported confidence scores."
