@@ -73,15 +73,15 @@
       "technicalExplanation": "<strong>Correct Answer: A.</strong> Iterative Prune/Fine-Tune Cycles; Global Eligible Layers Across Rank; Movement Training Changes Use చేస్తుంది. Good Sparse Initializations Also Studied అవుతాయి."
     },
     {
-      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "stem": "Mobile, IoT, Edge AIలో Pruning, Sparse Kernels, Quantization Memory, Speed, Accuracyని ఎలా Affect చేస్తాయి?",
       "options": [
-        "Modelలో Weights తగ్గుతాయి.",
-        "Modelలో Features Compare అవుతాయి.",
-        "Modelలో Data Process అవుతుంది.",
-        "Modelలో Signals Update అవుతాయి."
+        "Zero Weights Every Deviceపై Automatically Faster Runtime Guarantee చేస్తాయి.",
+        "Quantization Always Accuracy Improve; Device Benchmarks Unnecessary అవుతాయి.",
+        "Memory Bandwidth Sparse Modelsలో Never Matters; Overhead Zero అంటుంది.",
+        "Hardware-Friendly Sparsity, Quantization May Help; Real Device Tests Need."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Mobileలో Battery, RAM, Speed Matter. Pruned Model Betterనా Actual Hardwareపై Check చేయాలి.",
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> Sparse Metadata, Unsupported Kernels Overhead Add చేయవచ్చు. Channel/Block Patterns, Quantization Support Check చేసి Accuracy, Memory, Energy, Latency Measure చేయాలి."
     }
   ]
 }
