@@ -36,6 +36,8 @@ jobs:
         run: node study-engine/verify-diagram-quality.mjs
       - name: Reject overlapping Attention Mechanism SVG labels
         run: node study-engine/verify-svg-text-layout.mjs attention-mechanism
+      - name: Reject NLP Question 3 overlapping SVG labels
+        run: node study-engine/verify-svg-text-layout.mjs natural-language-processing Q3
       - name: Preserve English diagrams and modern Telugu-English study copy
         run: node "Telugu Translation/verify-translation.mjs"
       - name: Configure Pages
