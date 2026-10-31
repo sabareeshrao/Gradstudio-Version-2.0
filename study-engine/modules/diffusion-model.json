@@ -25,7 +25,7 @@
       "tag": "Beginner · comparisons",
       "stem": "Why do Diffusion Models use the process of adding and removing noise, and how does this approach differ from other generative techniques such as Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs)?",
       "options": [
-        "Adding controlled noise teaches a model how to remove it; GANs learn through generator-discriminator competition, while VAEs learn probabilistic latent representations for generating new examples.",
+        "Adding controlled noise teaches gradual cleanup; GANs train a generator against a discriminator, while VAEs learn probabilistic latent codes for generating different content.",
         "Diffusion needs just one image transformation and never learns repeated noise removal, while GANs and VAEs both use reverse-noise chains. Their training processes actually differ.",
         "Diffusion trains a generator against a discriminator, GANs learn compressed latent codes, and VAEs add noise over time. Those statements mix up distinct generative objectives.",
         "Diffusion directly copies examples, GANs estimate noise schedules, and VAEs perform reverse diffusion steps. Each architecture actually learns a different way to generate samples."
@@ -54,7 +54,7 @@
       "stem": "How do Denoising Diffusion Probabilistic Models (DDPMs) mathematically describe the forward and reverse processes using Gaussian noise, timestep schedules, transition probabilities, noise prediction, and training loss functions, and what role does a U-Net play in learning the denoising process?",
       "options": [
         "DDPMs use Softmax to assign image category labels, while a U-Net decides which label fits best. Standard DDPM training instead involves predicting noise.",
-        "DDPMs add Gaussian noise according to a timestep schedule, then train a U-Net or similar network to predict that noise and support reverse generation.",
+        "DDPMs add Gaussian noise according to a timestep schedule, then train a U-Net or network to predict that noise and support reverse generation.",
         "DDPMs train by maximizing a discriminator's judgment and choose stored images through a U-Net. That is not the standard noise-prediction learning objective.",
         "DDPMs reverse fixed changes in image colors, and timesteps record how many training epochs passed. Timesteps actually describe levels in the noise process."
       ],
@@ -81,7 +81,7 @@
       "tag": "Advanced · architectures",
       "stem": "How do modern Diffusion Model architectures and sampling methods, including Latent Diffusion Models (LDMs), Denoising Diffusion Implicit Models (DDIMs), Diffusion Transformers (DiTs), and Classifier-Free Guidance (CFG), improve generation speed, computational efficiency, image quality, and control over generated outputs?",
       "options": [
-        "Latent diffusion works in compressed space; DDIM can reduce sampling steps, DiTs use Transformer blocks, and classifier-free guidance can strengthen how closely outputs follow prompts.",
+        "Latent diffusion works in compressed space; DDIM can reduce sampling steps, DiTs use Transformer blocks, and classifier-free guidance can strengthen how outputs follow prompts.",
         "Latent diffusion always denoises full-resolution pixels, DDIM needs more steps, DiTs avoid attention, and guidance only compresses pictures. These claims reverse their usual benefits.",
         "Latent diffusion stores only text prompts, DDIM trains discriminators, DiTs discard representations, and guidance sets image resolution. These methods improve different parts of generation.",
         "Latent diffusion ignores visual patterns, DDIM changes class labels, DiTs remove timesteps, and guidance provides exact likelihoods. Those descriptions do not explain practical efficiency."
