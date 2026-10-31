@@ -51,6 +51,8 @@ These links are generated from the canonical [module manifest](modules/index.jso
 
 ### Latest additions — October 30, 2026
 
+- [Multi-Head Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multi-head-attention) — seven unique visual scenes, PyTorch causal-attention verification, beginner explanations, and modern KV-cache architectures.
+
 New visual lessons include Large Vision-Language Model (LVLM) and Loss Function, alongside earlier modules on Reinforcement Learning, Computer Vision, and Multimodal Learning. Each module has its own questions and SVG illustrations while reusing the shared quiz engine.
 
 - [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) — nonlinear neurons, six activation curves, Python gradients, and stability.
