@@ -11,7 +11,7 @@
       "tag": "Beginner · Basics",
       "options": [
         "Documentsని Keyword Listsగా మాత్రమే Store చేసి Exact Words Match చేస్తుంది.",
-        "Embeddings Store చేసి Nearby Vectors Search చేస్తుంది; Original Document Links Maintain చేస్తుంది.",
+        "Embeddings Store చేసి Similar Vectors, Source Links Retrieve చేస్తుంది.",
         "Every Documentని Summaryతో Replace చేసి Numerical Similarityని Completely Avoid చేస్తుంది.",
         "Imagesని Pixel Columnsగా Store చేసి Documentsని Alphabetical Orderలో Search చేస్తుంది."
       ],
@@ -27,7 +27,7 @@
         "Literal Password Wordని Only Match చేసి Related Login Documentsని Ignore చేస్తుంది.",
         "Entire Document Library నుంచి Random Sentencesని Select చేసి Results Return చేస్తుంది.",
         "Document Filenames Lengthని Compare చేసి Shortest Titlesకి Priority ఇస్తుంది.",
-        "Questionని Embed చేసి Similar Meaning ఉన్న Documentsని Different Wording ఉన్నా Finds చేస్తుంది."
+        "Question Embed చేసి Related Documents Different Words ఉన్నా Retrieve చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> \"Reset password\", \"recover account access\" Different Words అయినా Meaning Similar. Query, Documents Embeddings Closeగా ఉంటే Both Retrieve కావచ్చు.",
@@ -40,7 +40,7 @@
       "options": [
         "Documentని Pictureగా Convert చేసి Metadataలో Title మాత్రమే Save చేస్తుంది.",
         "Queryని First Permanentగా Store చేసి తర్వాత Documentsకి Embeddings Generate చేస్తుంది.",
-        "Document Vector, Metadata Store చేసి Queryతో Nearby Records, Sources Retrieve చేస్తుంది.",
+        "Document Vector, Metadata Store చేసి Queryకి Sources Return చేస్తుంది.",
         "Entire Documentsని LLMకి Send చేసి Final Answer Only Databaseలో Store చేస్తుంది."
       ],
       "answer": "c",
@@ -55,7 +55,7 @@
         "Cosine Only Vector Length Compare చేస్తుంది; IVF Raw Keywordsని Store చేస్తుంది.",
         "Dot Product Vector Values Ignore చేస్తుంది; HNSW, IVF Always Exact Neighbors ఇస్తాయి.",
         "Every Similarity Metric Identical Ranking ఇస్తుంది కాబట్టి Index Choice Matter కాదు.",
-        "Metrics Closeness Score చేస్తాయి; HNSW, IVF Full Scan కాకుండా Faster Search Help చేస్తాయి."
+        "Metrics Vector Closeness Measure చేస్తాయి; HNSW, IVF Scanning Reduce చేస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Cosine, Dot Product, Euclidean Vectors Compare చేస్తాయి. HNSW, IVF Indexes Millions of Entriesని Every Time Full Scan చేయకుండా Help చేస్తాయి.",
@@ -66,7 +66,7 @@
       "stem": "Python, Embedding Model, FAISS లేదా Chromaతో Vector Database App ఎలా Build చేస్తాం? Document Embeddings, Metadata Insert, Top-K Similarity Search, Matching Documents Retrieval ఎలా చేస్తాం?",
       "tag": "Medium · Python",
       "options": [
-        "Documents Embed చేసి Metadataతో Chromaలో Insert చేసి Compatible Query Vectorతో Search చేస్తాం.",
+        "Documents Embed చేసి Metadataతో Chroma Databaseలో Search చేస్తాం.",
         "Raw Strings మాత్రమే Store చేస్తాం; Cosine Automatically Embeddings Create చేస్తుంది.",
         "Different Embedding Models Mix చేస్తే Always Better Matching Accuracy వస్తుంది.",
         "Documents Store చేయకుండా Every Queryని LLMకి Send చేసి Sources Ignore చేస్తాం."
@@ -94,7 +94,7 @@
       "stem": "Production RAG కోసం Vector Databaseని ఎలా Design చేస్తాం? Hybrid Search, Access Control, Embedding Upgrades, Document Updates/Deletions, Reranking, Evaluationతో Irrelevant లేదా Unauthorized Data LLMకి వెళ్లకుండా ఎలా Prevent చేస్తాం?",
       "tag": "Advanced · Production",
       "options": [
-        "Permissions Enforce చేసి Hybrid Retrieval, Reranking, Quality Evaluationతో Secure Sources Return చేస్తాం.",
+        "Permissions Enforce చేసి Hybrid Retrieval, Reranking, Evaluation Apply చేస్తాం.",
         "Metadata Labels ఉంటే Trusted Identity, Source Authorization Checks Skip చేయవచ్చు.",
         "Embedding Upgradesలో Old, New Vector Spaces Always Identicalగా Remain అవుతాయి.",
         "Cosine Scores Highగా ఉంటే Restricted Sourcesని కూడా Reranking లేకుండా Return చేయవచ్చు."
