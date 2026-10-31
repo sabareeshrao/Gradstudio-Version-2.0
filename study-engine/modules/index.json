@@ -304,6 +304,11 @@
       "slug": "cross-validation-evaluation",
       "title": "Cross-Validation Evaluation",
       "domain": "Model Evaluation and Performance Reliability · AI Evaluation and Benchmarking"
+    },
+    {
+      "slug": "generalization",
+      "title": "Generalization",
+      "domain": "Model Performance on Unseen Data · Supervised Machine Learning"
     }
   ]
 }
