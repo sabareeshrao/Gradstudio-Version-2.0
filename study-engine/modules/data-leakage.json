@@ -53,7 +53,7 @@
       "tag": "Medium · Cross-validation leakage",
       "stem": "How can Data Leakage occur during cross-validation, feature engineering, data augmentation, and hyperparameter tuning, even when training and testing datasets are separated?",
       "options": [
-        "Cross-validation prevents leakage if a final test set stays untouched. Feature selection and augmentation can use all development folds because those rows already belong to model training.",
+        "Cross-validation automatically prevents leakage if a final test set stays completely untouched. Feature selection and augmentation can use all development folds because those rows already belong to supervised model training.",
         "Leakage only becomes possible after a final model is deployed and its predictions are monitored. Cross-validation and hyperparameter tuning cannot leak information if the original train-test split was performed correctly.",
         "Leakage occurs when validation data influences feature selection, preprocessing, model tuning, or training examples. Each validation fold must remain separate from the operations used to fit the model being evaluated.",
         "Feature engineering may inspect validation targets before cross-validation because only the model's weights count as training. Augmentation can copy near-duplicate examples across folds without changing the validity of evaluation scores."
