@@ -3,7 +3,7 @@
     {
       "slug": "softmax",
       "title": "Softmax",
-      "domain": "LLM foundations"
+      "domain": "Probability Distribution and Output Normalization · Deep Learning Foundations"
     },
     {
       "slug": "masking",
