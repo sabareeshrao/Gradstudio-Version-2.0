@@ -41,7 +41,7 @@
       "tag": "Beginner · Steps",
       "stem": "Input Vectorని రెండు Pathsగా Split చేసి, ఒక Branchలో Transform చేసి, Original Inputతో Add చేసి Next Layerకి ఎలా Send చేస్తాం?",
       "options": [
-        "Input Identity + F(x) Branch → Elementwise Add x+F(x) → Next Block; Shape Match.",
+        "Input Identity + F(x) Branch → Add x+F(x) → Next Block; Shapes Match అవాలి.",
         "Two Different Transforms తర్వాత Original Signal Discard చేస్తుందంటుంది. Direct Shortcut Missing.",
         "Unrelated Layers Outputs Add చేసి Original Later Reconstruct అంటుంది. Shortcut Input Copy Already Preserve.",
         "Every Transformation తర్వాత Last Prediction మాత్రమే Output, Original Add చేయదంటుంది. Residual Operation Missing."
@@ -86,7 +86,7 @@
       "tag": "Advanced · Architecture",
       "stem": "Transformerలో Multi-Head Attention, Feed-Forward Blocks చుట్టూ Residuals ఎలా Add చేస్తాం? Pre-LayerNorm, Post-LayerNorm Normalization Placementలో Difference ఏమిటి?",
       "options": [
-        "Attention/FFN Residuals; Pre-LN Branch Before Norm, Post-LN After Addition; Gradient Behavior Different.",
+        "Attention/FFN Residuals; Pre-LN Before Branch, Post-LN After Addition; Gradients Differ అవుతాయి.",
         "Pre-LN Whole Model After Only, Post-LN Embedding Once అంటుంది. Actual Normalization Per Sublayer.",
         "Pre-LN Attention Remove, Post-LN FFN Identity Replace అంటుంది. Same Components with Different Norm Placement.",
         "Pre-LN No Norm, Post-LN Inference Only Norm అంటుంది. Both Trainingలో Normalize చేస్తాయి."
