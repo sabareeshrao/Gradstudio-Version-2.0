@@ -39,7 +39,7 @@
       "tag": "Beginner · a story",
       "answer": "a",
       "options": [
-        "The model scores likely next tokens, chooses one, appends it to “Once upon a time, there was a,” and predicts again using the longer passage.",
+        "The model scores next tokens, chooses one, appends it to “Once upon a time, there was a,” and predicts again using the expanded story.",
         "The model copies the opening prompt unchanged and then attaches random completed paragraphs without checking whether they follow from the existing story.",
         "The model predicts every sentence simultaneously, ignoring the words it generated earlier, so new sentences do not influence its later choices.",
         "The model can only select a token that appeared in the initial prompt, making it unable to introduce characters or words from its vocabulary."
@@ -55,7 +55,7 @@
       "options": [
         "Training feeds back sampled model tokens for each step and waits until the whole story finishes to calculate a single final loss value.",
         "Training exposes future target tokens to every attention position, allowing the model to copy the answer rather than learn from preceding context.",
-        "Teacher forcing supplies true previous tokens; shifted targets, causal masks, and cross-entropy allow parallel training losses across sequence positions.",
+        "Teacher forcing uses true prior tokens; shifted labels, causal masks, and cross-entropy let training check many sequence positions in parallel.",
         "Training computes loss only for the last position of every sequence, ignoring earlier token predictions even when correct targets are available."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine training a model on collections of short song titles. During training, the correct earlier tokens are already known. With <strong>teacher forcing</strong>, the model receives those true tokens, and shifted targets tell it what to predict next. A <strong>causal mask</strong> prevents positions from reading their future targets. Many positions can be evaluated in parallel, with cross-entropy providing learning signals. At inference time, the model instead generates new tokens one after another because the future output is unknown.",
@@ -70,7 +70,7 @@
         "The model adds independent token probabilities without considering earlier words, even though complete sequence likelihood depends on conditional context.",
         "The model selects tokens directly from unnormalized scores, ignoring Softmax and any sampling choices that could influence the next generated token.",
         "The model multiplies conditional next-token probabilities across a sequence, using Softmax on logits to obtain probabilities for choosing each token.",
-        "The model calculates the probability of entire sentences by counting visible words rather than estimating how likely each token follows its history."
+        "The model calculates sentence probabilities by counting visible words, instead of estimating how likely each token follows its preceding context."
       ],
       "explanation": "<strong>Explanation:</strong> Suppose a model gives a sequence of three words probabilities of 0.5, 0.4, and 0.2, each conditioned on the preceding words. The <strong>chain rule</strong> multiplies them: <code>0.5 × 0.4 × 0.2 = 0.04</code> for that complete sequence. For each step, the model produces raw <strong>logits</strong>, and Softmax turns them into a distribution over candidate tokens. A decoding strategy chooses one. Sequence probability depends on the full history, not simply how common the words are.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> The chain rule gives P(x₁,…,x_T)=∏ P(x_t|x₁,…,x_{t−1}). The model predicts vocabulary logits, and Softmax converts them to conditional next-token probabilities. Sampling or greedy selection then chooses a token. For example, 0.50×0.20×0.60=0.06.",
@@ -95,7 +95,7 @@
       "tag": "Advanced · scaling",
       "answer": "a",
       "options": [
-        "Speculative draft verification, continuous batching, prefix caching, and smaller distilled models can improve serving speed while preserving appropriate quality checks.",
+        "Speculative draft checks, live batching, prefix reuse, and smaller distilled models can speed up inference while still requiring quality tests.",
         "KV caching removes every memory requirement and makes every generated answer factually correct, regardless of context length or model limitations.",
         "Speculative decoding accepts draft tokens without checking the target model, so it never needs to verify whether the proposed continuation is valid.",
         "Long prompts require no additional attention work once old tokens have been cached, making generation time independent of the supplied context."
