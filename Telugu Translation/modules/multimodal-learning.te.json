@@ -58,7 +58,7 @@
       "options": [
         "Early Fusion Final Decisions, Late Fusion Raw Inputs అంటుంది. Timing Reverse.",
         "Cross-Attention Fixed Labels, Shared Spaces Relations Prevent అంటుంది. Both Learned Cross-Modal Connections Support చేస్తాయి.",
-        "Early Raw, Intermediate Learned, Late Decision Fusion; Cross-Attention, Shared Embeddings Relate Streams.",
+        "Early Raw, Intermediate Learned, Late Decisions Fuse; Cross-Attention, Shared Embeddings Streamsని Relate.",
         "All Fusion Methods Same Network Stageలో Identical Operations అంటుంది. Compute, Memory, Context Trade-offs Different."
       ],
       "explanation": "<strong>Explanation:</strong> Early Fusion Raw/Early Features Combine; Intermediate Fusion Learned Representations Connect; Late Fusion Decisions Mix చేస్తుంది. Cross-Attention One Modalityతో Another Align; Shared Embedding Space Paired Signals Comparable చేస్తుంది. Railway Safety Systemలో Camera, Vibration Sensors ఉన్నాయని Imagine చేయండి. <strong>Early Fusion</strong> Initial Signals Combine; <strong>Intermediate</strong> Encoded Features Link; <strong>Late</strong> Separate Models Predictions Merge. Cross-Attention One Streamకి Other Evidenceపై Focus, Shared Space Related Signals Closer Bring చేస్తుంది.",
@@ -89,7 +89,7 @@
         "Contrastive Learning Every Pairకి Manual Category Labels Require అంటుంది. Pair Correspondence Itself Training Signal.",
         "CLIP Matching Caption Away, Unrelated Closer Pull చేస్తుందంటుంది. Intended Contrastive Objective Reverse.",
         "ImageBind Audio/Sensors Ignore, ALIGN Sensor Tables Only అంటుంది. These Methods Cross-Modal Alignment Support.",
-        "Contrastive Matched Pairs Closer, Others Farther; CLIP/ALIGN Image–Text, ImageBind Multimodal Align."
+        "Contrastive Matching Pairs Closer, Others Farther; CLIP/ALIGN Images–Text, ImageBind Modalitiesని Align చేస్తాయి."
       ],
       "explanation": "<strong>Explanation:</strong> Contrastive Learning Matching Image/Text లేదా Other Embeddings Closer, Mismatches Farther చేస్తుంది. CLIP, ALIGN Image–Text Pairs; ImageBind More Modalities Align చేస్తుంది. Online Sneaker Catalogలో Photos, Short Descriptions Imagine చేయండి. Matching Shoe Image, Caption Pairsతో పాటు Unrelated Pairs Train చేస్తాం. Matching Representations Near, Nonmatching Away కావాలని Learn చేస్తుంది. <strong>CLIP, ALIGN</strong> Image/Text; <strong>ImageBind</strong> Audio, Other Sensors వరకు Alignment Extend చేస్తుంది.",
       "technicalExplanation": "<strong>Correct: D.</strong> CLIP, ALIGN Paired Image–Text Contrastive Objectives Use; ImageBind Audio, Depth, Thermal, Inertial వంటి More Signals Align చేస్తుంది. Pairs Correspondence ద్వారా Pretraining, Every Exampleకి Manual Class Label అవసరం లేదు.",
