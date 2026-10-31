@@ -209,6 +209,11 @@
       "slug": "context-window",
       "title": "Context Window",
       "domain": "Token Limits, Context Management, and Long-Context Processing · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "transformer-encoder",
+      "title": "Transformer Encoder",
+      "domain": "Bidirectional Context Understanding and Encoder Architecture · Transformers and LLM Architecture"
     }
   ]
 }
