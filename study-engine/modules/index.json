@@ -46,6 +46,11 @@
       "domain": "Optimization Algorithms · Deep Learning & LLMs"
     },
     {
+      "slug": "adam-optimizer",
+      "title": "Adam Optimizer",
+      "domain": "Adaptive Learning Rates and Neural Network Optimization · Optimization"
+    },
+    {
       "slug": "neural-network",
       "title": "Neural Network",
       "domain": "Artificial Neural Networks"
