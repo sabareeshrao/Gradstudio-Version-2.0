@@ -72,6 +72,18 @@
       '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
       '<div class="actions"><button id="checkBtn" type="button">Check Answers</button><button id="resetBtn" type="button">Reset</button></div>'+
       (data.sources||'')+'<p class="footer">'+esc(data.footer||data.keyword+' · Visual study module · 15 themes')+'</p>';
+    // Render delimited mathematics in every dynamically injected English lesson.
+
+    // Readable fallback appears immediately even when MathJax cannot load.
+
+    try{
+
+      const {renderMath}=await import('./math-render.js?v=20261031-math-fix');
+
+      renderMath(root); // Upgrades to SVG asynchronously without blocking quiz controls.
+
+    }catch(mathError){console.warn('Math rendering unavailable',mathError);}
+
     await import('./quiz-theme.js?v=20261031-reveal-hide');
   }catch(error){
     document.getElementById('themeMenu').style.display='none';
