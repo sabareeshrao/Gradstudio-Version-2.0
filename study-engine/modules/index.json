@@ -294,6 +294,11 @@
       "slug": "principal-component-analysis",
       "title": "Principal Component Analysis (PCA)",
       "domain": "Dimensionality Reduction and Feature Extraction · Unsupervised and Self-Supervised Learning"
+    },
+    {
+      "slug": "overfitting",
+      "title": "Overfitting",
+      "domain": "Model Generalization and Training Performance · Supervised Machine Learning"
     }
   ]
 }
