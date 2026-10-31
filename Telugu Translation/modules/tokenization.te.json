@@ -12,7 +12,7 @@
       "tag": "Beginner · Basics",
       "options": [
         "Every Sentenceని Processingకు ముందు Simpler Englishలో Rewrite చేసే Method.",
-        "Textని Small Unitsగా Divide చేసి Numeric Inputsగా Convert చేయడానికి Help చేస్తుంది.",
+        "Textని Tokensగా Split చేసి Modelకి Numeric IDsగా Convert చేస్తుంది.",
         "Rare Words అన్నీ Remove చేసి Common Vocabulary మాత్రమే Keep చేస్తుంది.",
         "Neural Network Processingకు ముందే Sentence Sentiment Labels Create చేస్తుంది."
       ],
@@ -81,7 +81,7 @@
       "stem": "Vocabulary Size, Token Granularity, Byte-Level Encoding, Unicode, Special Tokens LLM Efficiencyని ఎలా Affect చేస్తాయి? Code, Numbers, Multilingual Languages, Long Documentsలో Effects ఏమిటి?",
       "tag": "Advanced · Architecture",
       "options": [
-        "Vocabulary, Byte Handling వల్ల Scripts బట్టి Token Counts, Special Tokens, Efficiency Change అవుతాయి.",
+        "Vocabulary, Byte Choices Token Counts, Special Tokens, Efficiencyని Affect చేస్తాయి.",
         "Unicodeలో Every Character Always Exactly One Tokenగా Convert అవుతుంది.",
         "Larger Vocabulary Memory Increase లేకుండా Always Fewer Attention Operations Guarantee చేస్తుంది.",
         "Same Character Length ఉంటే Code, Numbers, Different Languages Same Token Count Use చేస్తాయి."
@@ -98,7 +98,7 @@
         "Tokens Double అయితే Attention Work Only Double; Vocabulary Changes Weightsపై Impact ఉండదు.",
         "More Tokens Automatically Memory Reduce చేస్తాయి; New Entriesకి Embedding Training Need లేదు.",
         "Context Window Words Count చేస్తుంది; Tokenizer Choice Costsని Affect చేయదు.",
-        "Token Counts Context, Compute Affect చేస్తాయి; Vocabulary Editsకి New Embeddings Train చేయాలి."
+        "Token Counts Context, Compute Affect చేస్తాయి; New Vocabularyకి Embeddings Train చేయాలి."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> More Tokens Context Windowని Quickly Fill చేస్తాయి, Attention Work పెరుగుతుంది. Vocabulary Change అయితే Model Embeddings కూడా Update చేయాలి.",
