@@ -154,6 +154,11 @@
       "slug": "training-step",
       "title": "Training Step",
       "domain": "Neural Network Training and Parameter Updates · Deep Learning Foundations"
+    },
+    {
+      "slug": "generative-adversarial-network",
+      "title": "Generative Adversarial Network (GAN)",
+      "domain": "Adversarial Learning and Synthetic Data Generation · Generative Modeling"
     }
   ]
 }
