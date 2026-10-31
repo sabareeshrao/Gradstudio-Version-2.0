@@ -1,0 +1,24 @@
+/* Decision Tree Classifier: themed instructional diagrams, shared Gradstudio quiz unchanged. */
+.dtc-hero,.dtc-diagram{box-sizing:border-box;min-width:0;color:#345068}
+.dtc-hero{background:radial-gradient(circle at 85% 5%,#d9f2e9,transparent 43%),linear-gradient(145deg,#f7fbff,#fff8eb);border-radius:20px;border:1px solid #d2e5e8;padding:clamp(17px,2.4vw,27px);margin-bottom:23px}
+.dtc-hero h2{font-size:clamp(1.22rem,2.4vw,1.8rem);color:#2d586e;line-height:1.26;margin:8px 0}
+.dtc-hero p{font-size:.87rem;color:#627e8c;line-height:1.58;margin:6px 0 13px}
+.dtc-diagram{padding:clamp(15px,2.3vw,23px);border-radius:13px;background:radial-gradient(circle at 90% 0,#e5f5ea,transparent 42%),linear-gradient(145deg,#f7fbff,#fffaf5)}
+.dtc-label{font-size:.73rem;letter-spacing:.105em;font-weight:900;text-transform:uppercase;color:#338578}
+.dtc-diagram h3{font-size:clamp(1.04rem,1.8vw,1.22rem);color:#2e5870;line-height:1.36;margin:7px 0 14px}
+.dtc-stage{border-radius:13px;border:1px solid #d4e4e8;background:#fff;overflow:hidden}
+.dtc-stage svg{display:block;width:100%;height:auto}
+.dtc-note{font-size:.8rem;color:#607e8f;line-height:1.58;margin:12px 0 0}
+.dtc-note strong{color:#34816e}
+.dtc-formula{background:#eff8f4;color:#477b83;border:1px solid #d1e6da;padding:11px 14px;border-radius:10px;font-size:.84rem;line-height:1.6;margin-top:12px;overflow-wrap:anywhere}
+.dtc-code-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:12px;margin-top:12px}
+.dtc-code{margin:0;background:#1a3044;color:#e8f4f9;border-radius:10px;padding:14px 16px;overflow:auto;white-space:pre;font:12px/1.6 ui-monospace,Consolas,monospace}
+.dtc-help{border-radius:10px;border:1px solid #d5e7e9;background:#fff;padding:12px 14px;color:#597e8d;font-size:.79rem;line-height:1.6}
+.dtc-help strong{color:#377d73}
+.dtc-expand{background:#f2faf5;border:1px solid #d5e8dc;border-radius:10px;padding:11px 13px;margin-top:12px}
+.dtc-expand summary{font-weight:850;color:#357f70;font-size:.85rem;cursor:pointer}
+.dtc-expand pre{white-space:pre;overflow:auto;max-height:500px;background:#1b3146;color:#e7f3fa;border-radius:9px;padding:13px;font:12px/1.58 ui-monospace,Consolas,monospace}
+.dtc-sources{border:1px solid #d6e6e9;border-radius:11px;background:#fff;padding:12px 14px;margin-top:18px;color:#587587;font-size:.79rem}
+.dtc-sources summary{cursor:pointer;font-weight:850}.dtc-sources li{margin:7px 0}.dtc-sources a{color:#24728c}
+@media(max-width:760px){.dtc-code-grid{grid-template-columns:1fr}.dtc-stage{overflow-x:auto;overscroll-behavior-x:contain}.dtc-stage svg{min-width:780px}.dtc-stage:after{content:"Swipe horizontally to explore the diagram →";display:block;position:sticky;left:0;text-align:center;background:#f6fbfd;color:#688b9b;font-size:.71rem;padding:6px}}
+@media(prefers-reduced-motion:reduce){.dtc-hero *,.dtc-diagram *{animation:none!important;transition:none!important}}
