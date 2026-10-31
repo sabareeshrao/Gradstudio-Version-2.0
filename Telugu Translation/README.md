@@ -1,6 +1,6 @@
 # Telugu + English Lesson Library
 
-[**Master list: all 22 full HTML web links and GitHub HTML sources**](ALL_TELUGU_HTML_LINKS.md)
+[**Master list: all 26 full HTML web links and GitHub HTML sources**](ALL_TELUGU_HTML_LINKS.md)
 
 **Separate bilingual copies of the numbered English lessons in [lessons/](../lessons/).** The English originals and original technical diagrams are unchanged.
 
@@ -31,7 +31,12 @@
 | 21 | Large Vision-Language Model (LVLM) · AI-02089 | [Open translated lesson](21-large-vision-language-model.html) | [English module](../study-engine/modules/large-vision-language-model.json) |
 | 22 | Multimodal Learning · AI-02068 | [Open translated lesson](22-multimodal-learning.html) | [English module](../study-engine/modules/multimodal-learning.json) |
 
-[**View all 22 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
+| 23 | Generative Adversarial Network (GAN) · AI-01159 | [Open translated lesson](23-generative-adversarial-network.html) | [English module](../study-engine/modules/generative-adversarial-network.json) |
+| 24 | Training Step · AI-00754 | [Open translated lesson](24-training-step.html) | [English module](../study-engine/modules/training-step.json) |
+| 25 | Loss Function · AI-00739 | [Open translated lesson](25-loss-function.html) | [English module](../study-engine/modules/loss-function.json) |
+| 26 | Activation Function · AI-00702 | [Open translated lesson](26-activation-function.html) | [English module](../study-engine/modules/activation-function.json) |
+
+[**View all 26 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
 ## Translation rules
 
@@ -42,4 +47,4 @@
 5. Preserve working quiz scoring, reset and all 15 themes. Do not touch original English module files.
 6. Run the quality verification: `node "Telugu Translation/verify-translation.mjs"`.
 
-Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–22 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those twelve in `lessons/`). The bilingual index page is `index.html` here.
+Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–26 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those sixteen in `lessons/`). The bilingual index page is `index.html` here.
