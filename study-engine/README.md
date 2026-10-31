@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (34 modules)
+## Hosted lesson directory (38 modules)
 
 These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
 
@@ -42,6 +42,12 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 30 | [Loss Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-function) | `loss-function` |
 | 31 | [Training Step](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=training-step) | `training-step` |
 | 32 | [Generative Adversarial Network (GAN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-adversarial-network) | `generative-adversarial-network` |
+| 33 | [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) | `activation-function` |
+| 34 | [Rotary Position Embedding (RoPE)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) | `rotary-position-embedding` |
+| 35 | [Residual Connection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=residual-connection) | `residual-connection` |
+| 36 | [Key Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection) | `key-projection` |
+| 37 | [Query Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection) | `query-projection` |
+| 38 | [Value Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) | `value-projection` |
 
 ### Latest additions — October 30, 2026
 
