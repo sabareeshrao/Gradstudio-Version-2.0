@@ -62,3 +62,12 @@ The remaining modules can be revised in subsequent user-selected batches.
 15. AI Agent Framework (`ai-agent-framework`, AI-01499)
 
 **Verification:** 35 question stems, answer keys, and seven custom figures per module retained. All 140 choices now use complete beginner-friendly teaching sentences, pass the existing strict word/character length heuristic, and each explanation is labeled **Explanation:** and has at most 100 words (actual range: 69–81 words). Examples are distinct across this batch. No Telugu content or shared rendering code was edited.
+
+## Batch 4 — completed English modules
+16. Supervised Learning (`supervised-learning`, AI-00483)
+17. Reinforcement Learning (`reinforcement-learning`, AI-01623)
+18. Computer Vision (`computer-vision`, AI-01759)
+19. Natural Language Processing (`natural-language-processing`, AI-01031)
+20. Diffusion Model (`diffusion-model`, AI-01205)
+
+**Verification:** Preserved 35 existing question stems, 35 answer keys, and all 35 original teaching figures. Rewrote 140 four-choice answers and 35 accessible explanations with distinct teaching examples; each visible explanation is labeled **Explanation:** and contains 65–79 words. Every question passes the answer-length heuristic (correct answer not uniquely longest by words or characters, word-count ratio ≤ 1.15). Preserved advanced technical explanations, common study-engine styling, and Telugu assets.
