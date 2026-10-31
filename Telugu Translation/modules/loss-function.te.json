@@ -104,7 +104,7 @@
         "Differentiable Loss Best Model Fast Guarantee చేస్తుందంటుంది. Learning Rate, Batch, Optimizer Still Important.",
         "Sum, Mean Losses Same Gradients Every Batch అంటుంది. Reduction Effective Gradient Scale Change చేస్తుంది.",
         "Huge Gradients Always Helpful, Label Smoothing Always Correct అంటుంది. Stability, Uncertainty Risks.",
-        "Derivative, Curvature, Gradient, Reduction, Outliers Affect Training; Loss Weighting, Smoothing, Regularization Help."
+        "Derivatives, Curvature, Grads, Reduction, Outliers Affect; Weights, Smoothing, Regularization Help చేస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Differentiability, Curvature, Gradient Magnitude, Sum-vs-Mean Reduction, Outliers Optimization Affect చేస్తాయి. Loss Weighting Tasks Balance; Label Smoothing, Regularization Help అయినా Testing Required. Factory Energy Usage, Equipment Vibration Both Predict చేసే Modelని Imagine చేయండి. Two Losses Numerical Scales Differ కావచ్చు; One Dominates అయితే Other Task Ignore కావచ్చు. <strong>Loss Weighting</strong> Balance చేస్తుంది. <strong>Reduction</strong> Sum/Average Gradient Scale Change; Regularization Complexity Limit; Label Smoothing Overconfidence Reduce చేయవచ్చు.",
