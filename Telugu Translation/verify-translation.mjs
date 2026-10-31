@@ -41,7 +41,11 @@ const translations=[
   ["transformer-encoder","35-transformer-encoder.html","modules/transformer-encoder.te.json"],
   ["transformer-decoder","36-transformer-decoder.html","modules/transformer-decoder.te.json"],
   ["context-window","37-context-window.html","modules/context-window.te.json"],
-  ["autoregressive-language-model","38-autoregressive-language-model.html","modules/autoregressive-language-model.te.json"]
+  ["autoregressive-language-model","38-autoregressive-language-model.html","modules/autoregressive-language-model.te.json"],
+  ["convolutional-neural-network","43-convolutional-neural-network.html","modules/convolutional-neural-network.te.json"],
+  ["recurrent-neural-network","44-recurrent-neural-network.html","modules/recurrent-neural-network.te.json"],
+  ["long-short-term-memory","45-long-short-term-memory.html","modules/long-short-term-memory.te.json"],
+  ["random-forest","46-random-forest.html","modules/random-forest.te.json"]
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
@@ -122,7 +126,7 @@ if(tableBegin<0||tableEnd<=tableBegin){
  for(let i=0;i<translations.length;i++){
   const entry=translations[i][1],row=lines[i+2]||"";
   const webUrl="https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/"+entry;
-  if(!row.startsWith("| "+String(i+1).padStart(2,"0")+" |"))errors.push("master links: row "+(i+1)+" missing or separated from table");
+  if(!row.startsWith("| "+translations[i][1].slice(0,2)+" |"))errors.push("master links: row "+(i+1)+" missing or separated from table");
   if(!row.includes("]("+webUrl+")"))errors.push("master links: row "+(i+1)+" missing full HTML URL");
   const englishOriginal=i<10
    ? "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/"+entry
@@ -146,4 +150,4 @@ if(tableBegin<0||tableEnd<=tableBegin){
  }
 }
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 38 bilingual lessons, 266 questions, 1064 options, 266 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 42 bilingual lessons (IDs 1–38, 43–46), 294 questions, 1176 options, 294 original English diagrams, answer keys, translations, and index links.");
