@@ -27,7 +27,7 @@
       "options": [
         "Clear Goal, Relevant Context, Constraints, Examples, Formats Ambiguityని Reduce చేస్తాయి.",
         "Prompt Longగా ఉన్నంతమాత్రాన Every Time More Accurate Answers వస్తాయి.",
-        "Task Context Remove చేసి Free-Form Output Force చేస్తే Accuracy Increase అవుతుంది.",
+        "Task Context Remove చేసి Free-Form Output Force చేస్తే Accuracy Increase అవుతుంది, Useful Contextని Remove చేసి.",
         "Examples Trainingలో మాత్రమే Use అవుతాయి; Inference Promptsలో Useful కావు."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Good Promptలో Goal, Useful Context, Expected Format Clearగా ఉంటాయి. Vague Instructions ఇస్తే Answer కూడా Unclear కావచ్చు.",
@@ -39,7 +39,7 @@
       "stem": "Poorly Written Promptని Well-Structured Promptగా ఎలా Improve చేయవచ్చు? Accuracy, Relevance, Completeness, Consistencyని ఎలా Compare చేస్తాం?",
       "answer": "d",
       "options": [
-        "Unrelated Details Add చేస్తే Prompt Biggerగా ఉండి Answer Always Better అవుతుంది.",
+        "Unrelated Details Add చేస్తే Prompt Biggerగా ఉండి Answer Always Better అవుతుంది, Targeted Comparisonని కూడా Avoid చేసి.",
         "Audience, Output Format Remove చేసి Model Freedomపై Entirely Depend అవుతాం.",
         "Complex Technical Words Insert చేస్తే Hallucinations Automatically Stop అవుతాయి.",
         "Task, Audience, Constraints, Format Specify చేసి Resultsని Criteriaతో Compare చేస్తాం."
@@ -53,7 +53,7 @@
       "stem": "Zero-Shot, One-Shot, Few-Shot, Role Prompting, Chain-of-Thought, Self-Consistency Techniques ఎలా Differ అవుతాయి? ఏ Situationలో ఏది Use చేస్తాం?",
       "answer": "b",
       "options": [
-        "All Prompting Techniquesకి Model Retraining అవసరం; Role Prompt Weights Change చేస్తుంది.",
+        "All Prompting Techniquesకి Model Retraining అవసరం; Role Prompt Weights Change చేస్తుంది, Model Behaviorని Instantly Change చేసి.",
         "Zero-Shot Examples లేకుండా, Few-Shot Examplesతో; Self-Consistency Multiple Answers Compare చేస్తుంది.",
         "One-Shot ఒక Training Epoch; Chain-of-Thought Tokenizer మాత్రమే Change చేస్తుంది.",
         "Role Prompting Guaranteed Facts ఇస్తుంది; Self-Consistency First Sample మాత్రమే Select చేస్తుంది."
@@ -68,7 +68,7 @@
       "answer": "a",
       "options": [
         "Prompt Versions Manage చేసి Instructions, User Data Separate, JSON Schema Validate చేస్తాం.",
-        "System Instructions అన్నీ User Messageలో Put చేసి All JSON Valid Assume చేస్తాం.",
+        "System Instructions అన్నీ User Messageలో Put చేసి All JSON Valid Assume చేస్తాం, Schema Validationని Completely Ignore చేసి.",
         "Version History లేకుండా Every Requestకి Prompt Silently Change చేస్తాం.",
         "Structured Output Use చేస్తే Further Validation ఎప్పుడూ అవసరం ఉండదు."
       ],
@@ -95,7 +95,7 @@
       "stem": "Production Promptsని Prompt Injection, Instruction Hierarchy, Hallucinations, Adversarial Testing, Evaluation Sets, Token Cost, Latency, Regression Testsతో ఎలా Secure, Optimize చేస్తాం?",
       "answer": "d",
       "options": [
-        "One Impressive Example Show చేసిన తర్వాత Production Promptని Immediately Deploy చేస్తాం.",
+        "One Impressive Example Show చేసిన తర్వాత Production Promptని Immediately Deploy చేస్తాం, Safety Checksని పూర్తిగా Skip చేసి.",
         "Instruction Hierarchy ఉంటే Tool Permissions, Authorization Checks Entirely Unnecessary.",
         "Low Token Cost Automatically Better Accuracy, Zero Regressions Guarantee చేస్తుంది.",
         "Prompt Versions, Diverse Tests, Output Validation, Tool Permissionsతో Reliability Improve చేస్తాం."
