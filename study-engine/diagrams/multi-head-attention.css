@@ -1,0 +1,20 @@
+/* Gradstudio Multi-Head Attention module-specific art system */
+.mha-hero,.mha-fig{font-family:inherit;color:#29475b;min-width:0}
+.mha-hero{padding:clamp(18px,3vw,28px);border:1px solid #cde0e7;border-radius:20px;margin:0 0 24px;background:radial-gradient(circle at 3% 3%,#e1f7ef,transparent 53%),linear-gradient(135deg,#f4fafe,#fffaf1);box-shadow:0 5px 18px #23485810}
+.mha-hero h2{font-size:clamp(1.2rem,2.5vw,1.8rem);line-height:1.22;margin:7px 0 7px;color:#2c5270}
+.mha-hero p{font-size:.9rem;line-height:1.52;color:#597386;margin:0 0 16px}
+.mha-kicker{font-size:.72rem;letter-spacing:.105em;font-weight:900;text-transform:uppercase;color:#26836f}
+.mha-fig{padding:clamp(15px,2.7vw,24px);background:radial-gradient(ellipse at 100% 0%,#e7f6ef,transparent 45%),linear-gradient(155deg,#f6fbff,#fffdf9)}
+.mha-fig h3{font-size:clamp(1rem,2vw,1.2rem);color:#2d526c;line-height:1.36;margin:7px 0 15px}
+.mha-stage{max-width:100%;border-radius:13px;background:#fff;border:1px solid #d9e6eb;overflow-x:auto;overflow-y:hidden;scrollbar-color:#bdd4de transparent}
+.mha-stage svg{width:100%;height:auto;display:block;min-width:690px}
+.mha-hero .mha-stage svg{min-width:740px}
+.mha-stage svg text{font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+.mha-note{font-size:.82rem;color:#5b7182;line-height:1.6;margin:13px 0 0}
+.mha-code{margin-top:14px;border-radius:12px;overflow:hidden;border:1px solid #34475c;background:#17283b}
+.mha-code-title{font-size:.78rem;font-weight:800;padding:9px 14px;background:#2b4057;color:#d9edf4}
+.mha-code pre{padding:14px;color:#dcebf7;white-space:pre;overflow-x:auto;line-height:1.58;font-size:clamp(.67rem,1.4vw,.82rem);tab-size:4;margin:0}
+.mha-code code{padding:0;border:0;background:none;color:inherit;font:inherit}
+@media(max-width:650px){.mha-stage svg{min-width:640px}.mha-hero .mha-stage svg{min-width:690px}.mha-hero{padding:15px}.mha-code pre{font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){.mha-hero *,.mha-fig *{scroll-behavior:auto!important;animation:none!important}}
+@media(min-width:661px){.mha-scroll-hint{display:none}}@media(max-width:660px){.mha-scroll-hint{font-size:.73rem;font-weight:750;color:#547688;margin:7px 0}} 
