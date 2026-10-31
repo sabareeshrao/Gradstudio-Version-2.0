@@ -1,0 +1,27 @@
+/* CNN illustrated-v2 scoped teaching visuals. Gradstudio shared quiz and themes untouched. */
+.cnn-hero,.cnn-fig{box-sizing:border-box;min-width:0;color:#2d475a}
+.cnn-hero{border:1px solid #cce2e5;border-radius:21px;margin:0 0 23px;padding:clamp(17px,2.6vw,27px);background:radial-gradient(circle at 12% 4%,#d9f4e7,transparent 44%),linear-gradient(145deg,#f8fbff,#fff9ed)}
+.cnn-hero h2{margin:7px 0;font-size:clamp(1.17rem,2.5vw,1.77rem);line-height:1.25;color:#315e73}
+.cnn-hero p{margin:8px 0 15px;font-size:.88rem;line-height:1.6;color:#648090}
+.cnn-kicker{color:#2f8274;font-size:.71rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.cnn-fig{padding:clamp(15px,2.4vw,24px);background:radial-gradient(circle at 90% 5%,#e2f4ee,transparent 42%),linear-gradient(140deg,#f8fbff,#fffaf4);border-radius:13px}
+.cnn-fig h3{font-size:clamp(1.04rem,1.78vw,1.21rem);line-height:1.38;color:#31586f;margin:7px 0 13px}
+.cnn-stage{border:1px solid #d4e6e9;border-radius:13px;background:#fff;overflow:hidden}
+.cnn-stage svg{width:100%;height:auto;display:block}
+.cnn-note{margin:12px 0 0;color:#617c8c;font-size:.80rem;line-height:1.57}
+.cnn-note strong{color:#348371}
+.cnn-formula{border:1px solid #d2e7dd;background:#f0f9f5;color:#4b7586;border-radius:10px;padding:12px 14px;margin-top:12px;font-size:.83rem;line-height:1.62;overflow-wrap:anywhere}
+.cnn-formula strong{color:#347e70}
+.cnn-code-wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:12px;margin-top:12px}
+.cnn-code{margin:0;max-height:340px;overflow:auto;white-space:pre;background:#1b3044;color:#e8f2f9;border-radius:11px;padding:13px 15px;font:12px/1.58 ui-monospace,Consolas,Menlo,monospace}
+.cnn-code-aside{border:1px solid #d4e5e9;border-radius:11px;background:#fff;padding:13px;font-size:.8rem;color:#60808f;line-height:1.55}
+.cnn-code-aside strong{color:#347d72}.cnn-code-aside p{margin:9px 0}
+.cnn-details{background:#f2faf5;border:1px solid #cde5d8;border-radius:10px;margin-top:12px;padding:10px 12px}
+.cnn-details summary{font-weight:850;color:#357b70;cursor:pointer;font-size:.84rem}
+.cnn-details pre{padding:12px;border-radius:9px;color:#e8f3f8;background:#1d3146;overflow:auto;white-space:pre;max-height:500px;font:12px/1.55 ui-monospace,Consolas,monospace}
+.cnn-legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.cnn-legend span{font-size:.72rem;font-weight:800;padding:5px 9px;background:#eaf7f1;border:1px solid #cfe5d8;color:#377d6e;border-radius:99px}
+.cnn-sources{background:#fff;border:1px solid #d6e5e9;border-radius:11px;padding:12px 14px;margin:17px 0;font-size:.79rem;color:#537589}
+.cnn-sources summary{cursor:pointer;font-weight:850}.cnn-sources li{margin:7px 0}.cnn-sources a{color:#24728f}
+@media(max-width:760px){.cnn-code-wrap{grid-template-columns:1fr}.cnn-stage{overflow-x:auto;overscroll-behavior-x:contain}.cnn-stage svg{min-width:800px}.cnn-stage:after{content:"Swipe horizontally to see the complete diagram →";display:block;position:sticky;left:0;background:#f7fafb;color:#6e8796;text-align:center;padding:5px;font-size:.70rem}}
+@media(prefers-reduced-motion:reduce){.cnn-hero *,.cnn-fig *{animation:none!important;transition:none!important}}
