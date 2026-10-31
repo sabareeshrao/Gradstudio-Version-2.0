@@ -1,0 +1,87 @@
+{
+  "translationOverlay": true,
+  "language": "te",
+  "contentLanguage": "te-en",
+  "diagramLanguage": "en",
+  "title": "Knowledge Distillation — Telugu + English Learning",
+  "subtitle": "Original English diagrams, formulas, labels and code unchanged.",
+  "questions": [
+    {
+      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "options": [
+        "Teacher Model నుంచి Student Learn చేస్తుంది.",
+        "Modelలో Weights Trainingతో Update చేస్తాయి.",
+        "Input Dataని Teacher Process చేస్తుంది.",
+        "Model Parameters Differentగా Represent అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+    },
+    {
+      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "options": [
+        "Teacher Model నుంచి Student Learn చేస్తుంది.",
+        "Modelలో Weights Trainingతో Update చేస్తాయి.",
+        "Input Dataని Teacher Process చేస్తుంది.",
+        "Model Parameters Differentగా Represent అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+    },
+    {
+      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "options": [
+        "Teacher Model నుంచి Student Learn చేస్తుంది.",
+        "Modelలో Weights Trainingతో Update చేస్తాయి.",
+        "Input Dataని Teacher Process చేస్తుంది.",
+        "Model Parameters Differentగా Represent అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+    },
+    {
+      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "options": [
+        "Teacher Model నుంచి Student Learn చేస్తుంది.",
+        "Modelలో Weights Trainingతో Update చేస్తాయి.",
+        "Input Dataని Teacher Process చేస్తుంది.",
+        "Model Parameters Differentగా Represent అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+    },
+    {
+      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "options": [
+        "Teacher Model నుంచి Student Learn చేస్తుంది.",
+        "Modelలో Weights Trainingతో Update చేస్తాయి.",
+        "Input Dataని Teacher Process చేస్తుంది.",
+        "Model Parameters Differentగా Represent అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+    },
+    {
+      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "options": [
+        "Teacher Model నుంచి Student Learn చేస్తుంది.",
+        "Modelలో Weights Trainingతో Update చేస్తాయి.",
+        "Input Dataని Teacher Process చేస్తుంది.",
+        "Model Parameters Differentగా Represent అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+    },
+    {
+      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "options": [
+        "Teacher Model నుంచి Student Learn చేస్తుంది.",
+        "Modelలో Weights Trainingతో Update చేస్తాయి.",
+        "Input Dataని Teacher Process చేస్తుంది.",
+        "Model Parameters Differentగా Represent అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+    }
+  ]
+}
