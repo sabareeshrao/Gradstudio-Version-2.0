@@ -11,7 +11,7 @@
       "tag": "Beginner · Concept",
       "options": [
         "Each Head ఒక Word మాత్రమే Choose చేసి Other Token Linksని Permanently Discard చేస్తుంది.",
-        "Several Heads Different Token Relationshipsని Parallelగా Learn చేసి Outputs Combine చేస్తాయి.",
+        "Several Heads Parallelగా Different Token Relationships Learn, Outputs Combine చేస్తాయి.",
         "Unfamiliar Word వచ్చినప్పుడు Each Head Automatically New Vocabulary Tokens Create చేస్తుంది.",
         "Attention Weights Compute కాకముందే All Wordsని Single Vectorగా Merge చేస్తారు."
       ],
@@ -38,7 +38,7 @@
       "stem": "Multi-Head Attentionలో Input Representations నుంచి Q, K, V Create చేసి Heads Separateగా Attend చేసి Final Output ఎలా Produce చేస్తాం?",
       "tag": "Beginner · Flow",
       "options": [
-        "Tokens Q/K/Vగా Project అవుతాయి; Heads Attend Separately, Merge, Final Projection Apply చేస్తాం.",
+        "Tokens Q/K/V Project; Heads Separately Attend, Merge, Final Projection చేస్తాం.",
         "Tokens Class Labelsగా మారతాయి; Only One Head Resultని All Heads Copy చేస్తాయి.",
         "Heads Original Word Order Shuffle చేసి Vocabulary Outputకి Directly Send చేస్తాయి.",
         "Heads Join అయిన తర్వాత Queries, Keys, Values First Time Generate అవుతాయి."
@@ -80,7 +80,7 @@
       "stem": "Some Attention Heads Useful Patterns Learn చేసి Others Redundant ఎందుకు అవుతాయి? Visualization, Entropy, Pruning, Ablation Experiments ఎలా Evaluate చేస్తాయి?",
       "tag": "Advanced · Deep Dive",
       "options": [
-        "Head Attention Maps, Entropy Inspect చేసి Ablationతో Actual Performance Impact Test చేస్తాం.",
+        "Head Maps, Entropy Inspect చేసి Removalతో Actual Performance Test చేస్తాం.",
         "Trainingలో Each Headకి Fixed Job Assign చేస్తే Redundant Heads Impossible అవుతాయి.",
         "Head Weight Magnitude Only Compare చేస్తే Actual Contribution Perfectగా Know అవుతుంది.",
         "Low-Entropy Head Always Useless కాబట్టి Evaluation లేకుండానే All Remove చేస్తాం."
@@ -97,7 +97,7 @@
         "MHA, MQAలో All Query Heads KV Sharing Exactly Same విధంగా జరుగుతుంది.",
         "MLA Past Token Context Store చేయదు; Generationకి Cache Completely Unnecessary అవుతుంది.",
         "FlashAttention All Long Sequencesపై Exact Dense Attention Compute Linearగా Reduces చేస్తుంది.",
-        "MQA Shares KV; GQA Groups Queries; MLA Compresses KV; FlashAttention IO Optimize చేస్తుంది."
+        "MQA Shared KV; GQA Groups; MLA Compresses; FlashAttention IO Optimize చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> MQA/GQA/MLA Cached KV Memory Reduce చేస్తాయి. FlashAttention Memory Transfers Optimize చేస్తుంది, కానీ Long Context Still Computational Cost ఉంటుంది.",
