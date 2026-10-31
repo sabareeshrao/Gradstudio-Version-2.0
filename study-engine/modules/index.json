@@ -259,6 +259,11 @@
       "slug": "logistic-regression",
       "title": "Logistic Regression",
       "domain": "Probability-Based Classification and Decision Boundaries · Supervised Machine Learning"
+    },
+    {
+      "slug": "k-means-clustering",
+      "title": "K-Means Clustering",
+      "domain": "Discovering Hidden Groups and Patterns in Unlabeled Data · Unsupervised and Self-Supervised Learning"
     }
   ]
 }
