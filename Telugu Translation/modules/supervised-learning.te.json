@@ -13,7 +13,7 @@
       "answer": "b",
       "options": [
         "Labels లేకుండా Similar Examples Group చేస్తుంది అంటుంది. ఇది Unsupervised Clustering; Known Correct Targets నుంచి Learn చేయదు.",
-        "Supervised Learning Input Features, Correct Labels/Targets Paired Examplesపై Train చేసి New Inputsకి Categories లేదా Numbers Predict చేస్తుంది.",
+        "Supervised Learning Known Labelsతో Inputsపై Train అయ్యి Unseen Inputsకి Categories లేదా Numbers Predict చేస్తుంది.",
         "Every Labeled Example Memorize చేసి Identical Records Only Recognize చేస్తుందంటుంది. Unfamiliar Inputsకి Patterns Generalize చేయదు.",
         "Every Situationకి Programmer Fixed Rules Write చేస్తాడంటుంది. Labeled Examples నుంచి Prediction Function Learn చేయడం కాదు."
       ],
@@ -73,7 +73,7 @@
       "answer": "b",
       "options": [
         "Missing-Value Rules Test Setతో Fit చేసి Best Test Score వచ్చే వరకు Tune చేస్తుందంటుంది. ఇది Data Leakage.",
-        "Scikit-learn First Split, Pipelineలో Impute/Encode, CV Tune చేసి Held-Out Classification/Regression Metrics Report చేస్తాం.",
+        "Scikit-learn First Split, Pipelineలో Impute/Encode, CV Tune చేసి Held-Out Classification/Regression Scores Report చేస్తాం.",
         "Full Dataset Categories Encode చేసి Regressionని Classification Accuracyతో Evaluate చేస్తుందంటుంది. Leakage, Wrong Metric.",
         "All Labelsపై Tune చేసి Same Samplesపై Evaluate చేస్తుందంటుంది. Training Score Independent Testకి Substitute కాదు."
       ],
