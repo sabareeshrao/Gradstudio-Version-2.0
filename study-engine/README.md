@@ -49,6 +49,8 @@ New visual lessons include Large Vision-Language Model (LVLM) and Loss Function,
 
 - [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) — nonlinear neurons, six activation curves, Python gradients, and stability.
 
+- [Rotary Position Embedding (RoPE)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) — relative token-position geometry, PyTorch, and long-context scaling.
+
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
 - `core.css`: reused layout, responsive behavior and theme-related styling.
