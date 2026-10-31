@@ -80,11 +80,20 @@ if(tableBegin<0||tableEnd<=tableBegin){
  const lines=linksFile.slice(tableBegin,tableEnd).trim().split(/\r?\n/);
  if(lines.length!==translations.length+2)errors.push("master links: table must have exactly "+translations.length+" contiguous data rows");
  if(lines[1]!=="|---:|---|---|---|")errors.push("master links: invalid Markdown table separator");
+ if(lines[0]!=="| No. | Lesson / Keyword | Telugu HTML Page | English Original Page |")errors.push("master links: table headers must link Telugu and English original pages");
  for(let i=0;i<translations.length;i++){
   const entry=translations[i][1],row=lines[i+2]||"";
   const webUrl="https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/"+entry;
   if(!row.startsWith("| "+String(i+1).padStart(2,"0")+" |"))errors.push("master links: row "+(i+1)+" missing or separated from table");
   if(!row.includes("]("+webUrl+")"))errors.push("master links: row "+(i+1)+" missing full HTML URL");
+  const englishOriginal=i<10
+   ? "https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/"+entry
+   : "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module="+translations[i][0];
+  if(!row.includes("[Open English]("+englishOriginal+")"))
+   errors.push("master links: row "+(i+1)+" missing correct live English original page");
+  if(row.includes("github.com/") || row.includes("[View HTML]"))
+   errors.push("master links: source-code link found in place of English lesson");
+
   if(row.split("|").length!==6)errors.push("master links: row "+(i+1)+" has broken table columns");
  }
  const list=linksFile.match(new RegExp("\\x60{3}text\\r?\\n([\\s\\S]*?)\\r?\\n\\x60{3}"));
