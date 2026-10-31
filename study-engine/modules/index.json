@@ -234,6 +234,11 @@
       "slug": "knowledge-distillation",
       "title": "Knowledge Distillation",
       "domain": "Transferring Knowledge from Large AI Models to Smaller Models · Efficient and Edge AI"
+    },
+    {
+      "slug": "long-short-term-memory",
+      "title": "Long Short-Term Memory (LSTM)",
+      "domain": "Learning Long-Term Dependencies and Managing Memory in Sequential Data · Neural Network Architectures"
     }
   ]
 }
