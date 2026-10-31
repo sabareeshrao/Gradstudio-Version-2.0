@@ -269,6 +269,11 @@
       "slug": "decision-tree-classifier",
       "title": "Decision Tree Classifier",
       "domain": "Classification Using Decision Rules and Tree-Based Learning · Supervised Machine Learning"
+    },
+    {
+      "slug": "linear-regression",
+      "title": "Linear Regression",
+      "domain": "Predicting Continuous Values and Understanding Relationships Between Variables · Supervised Machine Learning"
     }
   ]
 }
