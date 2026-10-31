@@ -33,8 +33,8 @@ for(const slug of slugs) {
   if(brokenPlaceholder.test(lesson.hero||''))fail(slug,'Hero contains a rendered JavaScript placeholder such as undefined');
   // Prevent blank intro diagrams caused by HTML sections accidentally nested inside
   // SVG markup. Such markup can be silently reparented or ignored by browsers.
-  const firstSvg=(lesson.hero||'').match(/<svg\\b[^>]*>[\\s\\S]*?<\\/svg>/i)?.[0]||'';
-  if(/<(?:section|article|div|header|main|p|h[1-6])\\b/i.test(firstSvg))
+  const firstSvg=(lesson.hero||'').match(/<svg\b[^>]*>[\s\S]*?<\/svg>/i)?.[0]||'';
+  if(/<(?:section|article|div|header|main|p|h[1-6])\b/i.test(firstSvg))
     fail(slug,'Hero SVG contains nested HTML elements; keep the SVG as a single valid drawing');
   const q=lesson.questions;
   if(!Array.isArray(q)||q.length<1){fail(slug,'Missing questions');continue}
