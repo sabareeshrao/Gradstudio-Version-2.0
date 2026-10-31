@@ -1,0 +1,88 @@
+{
+  "translationOverlay": true,
+  "language": "te",
+  "contentLanguage": "te-en",
+  "diagramLanguage": "en",
+  "title": "Value Projection — Telugu + English Learning",
+  "subtitle": "Original English technical diagrams and formulas · Modern Telugu + English",
+  "footer": "Value Projection · 7 Questions · 28 Options",
+  "questions": [
+    {
+      "stem": "Transformerలో Value Projection అంటే ఏమిటి? Token Hidden States నుంచి Useful Value Vectors ఎలా Create చేస్తాం?",
+      "options": [
+        "Value Projection Raw Textని Learned Weights లేకుండా Direct Send చేస్తుంది.",
+        "Learned Map Token Featuresని Attentionలో Carry అయ్యే Value Vectorsగా Changes చేస్తుంది.",
+        "Value Projection Attentionకి ముందు Token Distance మాత్రమే Calculate చేస్తుంది.",
+        "Value Projection Token Positions Assign చేసి All Content Unchangedగా Keep చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Value ఒక Token నుంచి Transfer అయ్యే Informationని Represent చేసే Vector.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> V=XW_V, a learned linear map. Queries/Keys decide weights; Values provide features to aggregate."
+    },
+    {
+      "stem": "Query, Key Tokens Match చేస్తే Value Vectors Outputకి ఏమి Contribute చేస్తాయి?",
+      "options": [
+        "Queries Answer Content Store; Values Only Attention Ranking Decide చేస్తాయి.",
+        "Values Candidate Matching Scores Compute; Keys Final Mixed Output Carry చేస్తాయి.",
+        "Keys Output Features Calculate; Values Which Word to Attend Decide చేస్తాయి.",
+        "Q/K Relevant Sources Select; Values Collected Information Provide చేస్తాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Queries, Keys ఎక్కడ Look చేయాలో Decide చేస్తాయి; Values ఏమి Collect చేయాలో Give చేస్తాయి.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Attention Weights Softmax(QKᵀ/√d_k), Output A V. V Change చేస్తే Scores Same ఉన్నా Output Change అవుతుంది."
+    },
+    {
+      "stem": "“The chef prepared a delicious meal”లో Attention Weights, Value Vectors ఎలా Combine అవుతాయి?",
+      "options": [
+        "Attention Scores Words Reorder చేయడానికి మాత్రమే Use అవుతాయి; Values Ignore చేస్తాం.",
+        "All Word Values Equalగా Contribute చేస్తాయి; Different Weights Matter కావు.",
+        "Each Value Weightతో Multiply అవుతుంది; Larger Weights More Features Contribute చేస్తాయి.",
+        "Highest Scoreతో All Other Values Delete చేసి One Word Information Only Return చేస్తాం."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Each Word Valueకి Attention Weight Multiply చేసి Add చేస్తాం; Higher Weight More Influence.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Example Weights [0.2,0.3,0.5] and Values [1,0],[0,2],[2,1] give weighted output [1.2,1.1]."
+    },
+    {
+      "stem": "V=XW_V, Attention(Q,K,V) Formulas Context-Aware Output ఎలా Compute చేస్తాయి?",
+      "options": [
+        "Learned W_V Inputని Valuesగా Maps; Softmax Weights Value Rowsని Blend చేస్తాయి.",
+        "Only X Normalize చేసి Queries Multiply చేస్తాం; Value Projection Need లేదు.",
+        "V Query, Key Sum నుంచి Create అవుతుంది; Position IDs Only Learn చేస్తుంది.",
+        "Attention Raw Scores Valuesతో Direct Multiply; Softmax Normalization Skip చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> W_V Hidden Statesని Valuesగా Convert చేస్తుంది; Attention Weights వాటిని Combine చేస్తాయి.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> A=softmax(QKᵀ/√d_k); Output=A V. V=XW_V; A Rows Sum 1 and Values Are Feature Coordinates."
+    },
+    {
+      "stem": "PyTorchలో Value Projection, Head Reshape, Attention Output ఎలా Implement చేస్తాం?",
+      "options": [
+        "Value Tensors Fixed Random Constants; Changing Them Cannot Affect Output అంటుంది.",
+        "nn.Linear Value Features Create; Heads Reshape; Weightsతో Values Combine చేస్తాం.",
+        "PyTorch Full Sentenceకి Only One Value Vector Produce చేస్తుంది.",
+        "Attention Weights Q/K నుంచి Calculate కాకుండా Always Fixed Parametersగా ఉంటాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> PyTorch Linear Creates Values; Each Head వాటిని Attention Weightsతో Mix చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> V[B,H,T,d_v], weights[B,H,T,T]; torch.matmul(weights,V) gives [B,H,T,d_v]."
+    },
+    {
+      "stem": "RoPE Usually Valuesని ఎందుకు Rotate చేయదు? Multi-Head Value Outputs ఎలా Combine అవుతాయి?",
+      "options": [
+        "RoPE Q/K Rotate చేసి Position Scores Build; Values Per-Head Content Carry చేస్తాయి.",
+        "RoPE All Values Rotate చేస్తుంది; Q/K Completely Position Independent ఉంటాయి.",
+        "Every Head Same Value Vector Shares; Outputs Always Identicalగా ఉంటాయి.",
+        "Output Projection Only Positions Add చేస్తుంది; Head Information Mix చేయదు."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> RoPE Q/K Scoresకి Position Adds; Values Content Carry చేస్తాయి. Different Heads Complementary Features Learn చేయవచ్చు.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Q/K RoPE Rotation обычно; Values Typically Unrotated. Head Outputs Concatenate, W_O Projects Them."
+    },
+    {
+      "stem": "MHA, MQA, GQA, MLAలో Value Caching Memory, Inference Speedపై ఎలా Affect చేస్తుంది?",
+      "options": [
+        "MQA Cache Bigger అవుతుంది; Values Per Query Head Always Duplicate చేస్తుంది.",
+        "All Models Every Query Headకి Full Separate KV Always Cache చేస్తాయి.",
+        "MLA Always Smallest Cache Guarantee; Implementation Size Consider చేయదు.",
+        "MHA Per-Head KV; GQA/MQA Shared KV; MLA Compressed Representations Cache చేయవచ్చు."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> LLMs Previous Keys, Values Cache చేస్తాయి. Shared KV Heads లేదా Compression Memory Save చేయవచ్చు.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> MHA KV Per Head, GQA Grouped KV, MQA Single KV. MLA May Cache Compressed Latents; Quality Trade-offs Need Testing."
+    }
+  ]
+}
