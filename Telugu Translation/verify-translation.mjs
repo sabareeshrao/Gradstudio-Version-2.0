@@ -29,7 +29,11 @@ const translations=[
   ["generative-adversarial-network","23-generative-adversarial-network.html","modules/generative-adversarial-network.te.json"],
   ["training-step","24-training-step.html","modules/training-step.te.json"],
   ["loss-function","25-loss-function.html","modules/loss-function.te.json"],
-  ["activation-function","26-activation-function.html","modules/activation-function.te.json"]
+  ["activation-function","26-activation-function.html","modules/activation-function.te.json"],
+  ["softmax","27-softmax.html","modules/softmax.te.json"],
+  ["residual-connection","28-residual-connection.html","modules/residual-connection.te.json"],
+  ["positional-encoding","29-positional-encoding.html","modules/positional-encoding.te.json"],
+  ["rotary-position-embedding","30-rotary-position-embedding.html","modules/rotary-position-embedding.te.json"]
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
@@ -108,4 +112,4 @@ if(tableBegin<0||tableEnd<=tableBegin){
  }
 }
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 26 bilingual lessons, 182 questions, 728 options, 182 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 30 bilingual lessons, 210 questions, 840 options, 210 original English diagrams, answer keys, translations, and index links.");
