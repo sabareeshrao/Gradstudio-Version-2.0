@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**46 translated lessons · 322 questions · 46 individual HTML pages**
+**50 translated lessons · 350 questions · 50 individual HTML pages**
 
-The original lesson IDs are preserved. **Lessons 39–42 have not yet been added to the Telugu folder**, so the table continues from 38 to 43. Each row links to both the Telugu-English lesson and original English lesson.
+All 50 lesson IDs are now translated, with live Telugu and English links for each topic.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -46,6 +46,10 @@ The original lesson IDs are preserved. **Lessons 39–42 have not yet been added
 | 36 | Transformer Decoder | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/36-transformer-decoder.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-decoder) |
 | 37 | Context Window | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/37-context-window.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) |
 | 38 | Autoregressive Language Model | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/38-autoregressive-language-model.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) |
+| 39 | Next-Token Prediction | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/39-next-token-prediction.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=next-token-prediction) |
+| 40 | Neural Network Pruning | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/40-neural-network-pruning.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network-pruning) |
+| 41 | Quantization | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/41-quantization.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=quantization) |
+| 42 | Knowledge Distillation | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/42-knowledge-distillation.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=knowledge-distillation) |
 | 43 | Convolutional Neural Network (CNN) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/43-convolutional-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network) |
 | 44 | Recurrent Neural Network (RNN) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/44-recurrent-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) |
 | 45 | Long Short-Term Memory (LSTM) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/45-long-short-term-memory.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) |
@@ -55,55 +59,8 @@ The original lesson IDs are preserved. **Lessons 39–42 have not yet been added
 | 49 | Linear Regression | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/49-linear-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression) |
 | 50 | K-Means Clustering | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/50-k-means-clustering.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) |
 
-## Copy-ready HTML links
+## Copy-ready HTML URLs
 
-```text
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/01-transformer.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/02-rag.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/03-deep-learning.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/04-neural-network.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/05-artificial-intelligence.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/06-prompt-engineering.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/07-attention-mechanism.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/08-self-attention.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/09-backpropagation.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/10-gradient-descent.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/11-generative-model.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/12-tokenization.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/13-embedding-vector.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/14-vector-database.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/15-ai-agent-framework.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/16-supervised-learning.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/17-reinforcement-learning.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/18-computer-vision.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/19-natural-language-processing.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/20-diffusion-model.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/21-large-vision-language-model.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/22-multimodal-learning.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/23-generative-adversarial-network.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/24-training-step.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/25-loss-function.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/26-activation-function.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/27-softmax.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/28-residual-connection.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/29-positional-encoding.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/30-rotary-position-embedding.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/31-query-projection.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/32-key-projection.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/33-value-projection.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/34-multi-head-attention.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/35-transformer-encoder.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/36-transformer-decoder.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/37-context-window.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/38-autoregressive-language-model.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/43-convolutional-neural-network.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/44-recurrent-neural-network.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/45-long-short-term-memory.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/46-random-forest.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/47-decision-tree-classifier.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/48-logistic-regression.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/49-linear-regression.html
-https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/50-k-means-clustering.html
-```
+[All 50 URLs in a copy-ready text file](COPY_READY_TELUGU_URLS.txt)
 
 Original English diagrams, tiles, code, and formulas remain unchanged. Questions, answer choices and explanations are in modern Telugu + English.

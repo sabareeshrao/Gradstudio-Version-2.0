@@ -1,6 +1,6 @@
 # Telugu + English Lesson Library
 
-[**Master list: all 46 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
+[**Master list: all 50 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
 
 **Separate bilingual copies of the numbered English lessons in [lessons/](../lessons/).** The English originals and original technical diagrams are unchanged. The last column links to the **live English lesson**, not the GitHub source code.
 
@@ -51,19 +51,21 @@
 | 37 | Context Window · AI-00942 | [Open Telugu](37-context-window.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) |
 | 38 | Autoregressive Language Model · AI-00966 | [Open Telugu](38-autoregressive-language-model.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) |
 
+| 39 | Next-Token Prediction · AI-00970 | [Open Telugu](39-next-token-prediction.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=next-token-prediction) |
+| 40 | Neural Network Pruning · AI-04081 | [Open Telugu](40-neural-network-pruning.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network-pruning) |
+| 41 | Quantization · AI-04096 | [Open Telugu](41-quantization.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=quantization) |
+| 42 | Knowledge Distillation · AI-04128 | [Open Telugu](42-knowledge-distillation.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=knowledge-distillation) |
 | 43 | Convolutional Neural Network (CNN) · AI-00796 | [Open Telugu](43-convolutional-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network) |
 | 44 | Recurrent Neural Network (RNN) · AI-00820 | [Open Telugu](44-recurrent-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) |
 | 45 | Long Short-Term Memory (LSTM) · AI-00822 | [Open Telugu](45-long-short-term-memory.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) |
 | 46 | Random Forest · AI-00520 | [Open Telugu](46-random-forest.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest) |
-
-**Lesson IDs 39–42 have not yet been translated into this folder.** The original numbering is preserved.
 
 | 47 | Decision Tree Classifier · AI-00514 | [Open Telugu](47-decision-tree-classifier.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=decision-tree-classifier) |
 | 48 | Logistic Regression · AI-00497 | [Open Telugu](48-logistic-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression) |
 | 49 | Linear Regression · AI-00491 | [Open Telugu](49-linear-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression) |
 | 50 | K-Means Clustering · AI-00592 | [Open Telugu](50-k-means-clustering.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) |
 
-[**View all 46 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
+[**View all 50 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
 ## Translation rules
 
@@ -74,4 +76,4 @@
 5. Preserve working quiz scoring, reset and all 15 themes. Do not touch original English module files.
 6. Run the quality verification: `node "Telugu Translation/verify-translation.mjs"`.
 
-Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–38 and 43–50 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those thirty-six in `lessons/`). The bilingual index page is `index.html` here.
+Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–50 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those forty in `lessons/`). The bilingual index page is `index.html` here.
