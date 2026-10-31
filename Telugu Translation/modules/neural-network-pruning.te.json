@@ -44,7 +44,7 @@
       "options": [
         "Unstructured Whole Layers Remove; Structured Single Random Weights Only Masks చేస్తుంది.",
         "Magnitude Gradients Only Uses; Gradient Scoring Absolute Weight Size Only Uses చేస్తుంది.",
-        "Unstructured Individual Weights Masks; Structured Whole Groups Remove చేసి Layers Shrink చేస్తుంది.",
+        "Unstructured Weights Mask; Structured Groups Remove చేసి Layers Shrink చేస్తుంది.",
         "Structured Shapes Always Same; Unstructured Every Chipపై Speed Guarantee ఇస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Unstructured Single Weights Off; Structured Whole Channels Remove చేసి Smaller Layers Create చేస్తుంది.",
@@ -64,7 +64,7 @@
     {
       "stem": "Advanced Pruning Strategiesలో Iterative, Global, Movement Methods ఎలా Work చేస్తాయి?",
       "options": [
-        "Iterative Small Cuts; Global Cross-Layer Ranking; Movement Updates Track చేస్తుంది.",
+        "Iterative Cuts; Global Cross-Layer Rank; Movement Updates Track చేస్తుంది.",
         "Global Equal Cuts Per Layer; Iterative Further Training Never Allows చేస్తుంది.",
         "Movement Fixed Magnitude Only; Sparse Starting Weights Never Matter అంటుంది.",
         "All Advanced Methods Every Sparsityపై Perfect Accuracy Guarantee చేస్తాయి."
