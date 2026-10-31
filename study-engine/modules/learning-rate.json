@@ -13,7 +13,7 @@
       "answer": "b",
       "options": [
         "A loss function is a score that measures the difference between a model's prediction and the expected result. It tells training how much error occurred, but it does not set the size of the weight update by itself.",
-        "The learning rate is a training setting that scales how much an optimizer changes weights and biases using the gradients of prediction error. A bigger rate usually produces bigger updates, while a smaller rate produces more cautious updates.",
+        "The learning rate is a setting that scales how much an optimizer changes weights and biases using the gradients of loss. A bigger rate usually produces bigger updates, while a smaller rate produces more cautious updates.",
         "A gradient measures how the loss changes when a weight or bias changes slightly. It gives a useful local direction and sensitivity for training, but it is not the separate setting that controls how large the optimizer step should be.",
         "Batch size is the number of training examples used to estimate an update at one time. It affects the noise and cost of gradient estimates, but it does not directly multiply each gradient by a chosen step-size setting."
       ],
@@ -29,7 +29,7 @@
         "A very high learning rate makes the optimizer take tiny steps because it automatically protects itself from every large update. A very low rate makes steps larger, so low values usually cause training to diverge rapidly.",
         "A very low learning rate guarantees the best answer if training continues for long enough. A very high rate always reaches the lowest loss faster because larger parameter movements can never make an update worse.",
         "The learning rate only affects how frequently the loss is printed, not the direction or size of parameter changes. Training quality is controlled entirely by the number of examples, so low and high settings behave the same.",
-        "An overly high learning rate can jump across promising weights, make loss oscillate, or cause divergence. An overly low rate makes useful updates tiny, so progress can be very slow or stop early before reaching a good result."
+        "A high learning rate can jump across good weights, make loss oscillate, or cause divergence. A low rate makes useful updates tiny, so progress can be very slow or stop early before reaching a good result."
       ],
       "explanation": "<strong>Explanation:</strong> If the learning rate is too high, weight updates can overshoot useful settings, sending the loss up and down or even making training fail. If it is too low, every update is so small that reaching a good result may take many steps. Think of adjusting the volume during a live concert: huge jumps keep making it too loud or too quiet, while nearly invisible turns take forever. The right adjustment moves toward a comfortable level without repeatedly swinging past it.",
       "technicalExplanation": "Excessive step size can destabilize gradient descent, especially along directions of high curvature. A very small learning rate can make optimization prohibitively slow within a finite compute budget. Both outcomes depend on optimizer, batch noise, gradient scale, and loss geometry.",
@@ -56,7 +56,7 @@
       "options": [
         "The update adds the learning rate to the current weight and then uses the gradient only to report a loss value. This makes movement always positive, regardless of whether the loss rises when the weight increases or decreases.",
         "The gradient is the number of steps in the training schedule, while the learning rate picks the direction of movement. Multiplying them sets a fixed change that is unrelated to how sensitive the loss is to the parameter.",
-        "The equation subtracts learning rate η times the loss gradient from the old weight. The product controls the update magnitude; the minus sign moves opposite a positive gradient and toward larger weights when the gradient is negative.",
+        "The equation subtracts learning rate η times the loss gradient from the old weight. The product controls the update magnitude; the minus sign moves opposite a positive gradient and upward when the gradient is negative.",
         "Gradient descent first divides the weight by the learning rate, then uses the loss score as a replacement weight. Both the new direction and update size come from the loss value alone rather than the derivative of loss."
       ],
       "explanation": "<strong>Explanation:</strong> In gradient descent, the new weight equals the old weight minus the learning rate times the gradient. The gradient's sign tells which way the loss increases, and its size shows local sensitivity. The learning rate scales the move in the opposite direction. For example, suppose a delivery-time model has weight 1.5, gradient +2, and learning rate 0.1. The change is 0.2, so the new weight is 1.3. If the gradient were negative, subtraction would move the weight upward instead.",
@@ -68,7 +68,7 @@
       "stem": "How can Learning Rate Schedulers, including Step Decay, Exponential Decay, Cosine Annealing, and Learning Rate Warmup, automatically adjust the Learning Rate during training, and when is each approach useful?",
       "answer": "a",
       "options": [
-        "A scheduler changes the learning rate as training progresses. Step decay drops it at chosen intervals; exponential decay reduces it by a repeated factor; cosine annealing lowers it smoothly; warmup raises it gradually at the start to avoid unstable early updates.",
+        "A scheduler changes the learning rate as training progresses. Step decay drops it at intervals; exponential decay reduces it by a repeated factor; cosine annealing lowers it smoothly; warmup raises it gradually at the start to avoid unstable early updates.",
         "A scheduler mainly stores validation results so the optimizer never needs to change its learning rate. Step decay increases it sharply forever; exponential decay holds it constant; cosine annealing swaps optimizers; and warmup disables updates until the end of training.",
         "Each scheduler sets a different batch size rather than changing learning rate. Step decay removes batches, exponential decay deletes examples, cosine annealing changes token order, and warmup freezes all parameters before each evaluation pass to prevent model updates.",
         "Schedulers make every model converge by selecting identical values at every epoch. Step decay and exponential decay both hold the rate fixed; cosine annealing always increases it; warmup permanently keeps the rate at its starting value, even after training stabilizes."
