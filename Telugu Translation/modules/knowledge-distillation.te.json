@@ -73,15 +73,15 @@
       "technicalExplanation": "<strong>Correct Answer: A.</strong> Response Probabilities Match; Feature Hidden States Align; Relation Pairwise Structure Preserve; Self-Distillation Previous Checkpoint Guidance Use చేస్తుంది."
     },
     {
-      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "stem": "Large Teacher నుంచి Small Studentకి Distill చేస్తే Reasoning Loss, Error Copy, Data Shift Risksని ఎలా Reduce చేస్తాం?",
       "options": [
-        "Teacher Model నుంచి Student Learn చేస్తుంది.",
-        "Modelలో Weights Trainingతో Update చేస్తాయి.",
-        "Input Dataని Teacher Process చేస్తుంది.",
-        "Model Parameters Differentగా Represent అవుతాయి."
+        "Student Size Increase చేస్తే All Capacity Problems Without Testing Solve అవుతాయి.",
+        "Easy Teacher Examples Only Use చేస్తే Rare Cases Automatically Preserve అవుతాయి.",
+        "Teacher Answers Unfiltered Copy చేసి Compression తర్వాత Evaluation Skip చేస్తాం.",
+        "Staged Teaching, Curated Data, Multiple Teachers Use చేసి Quality Test చేస్తాం."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+      "explanation": "<strong>Simple Explanation:</strong> Small Student Important Skills Lose చేయవచ్చు. Better Examples, Several Teachers, Evaluation Help చేస్తాయి.",
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> Capacity Gap, Teacher Errors, Distribution Shift, Forgetting Student Quality Reduce చేయవచ్చు. Progressive Training, Data Selection, Multi-Teacher Signals, Retention Benchmarks Use చేయాలి."
     }
   ]
 }
