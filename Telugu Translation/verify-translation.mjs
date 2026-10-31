@@ -45,7 +45,11 @@ const translations=[
   ["convolutional-neural-network","43-convolutional-neural-network.html","modules/convolutional-neural-network.te.json"],
   ["recurrent-neural-network","44-recurrent-neural-network.html","modules/recurrent-neural-network.te.json"],
   ["long-short-term-memory","45-long-short-term-memory.html","modules/long-short-term-memory.te.json"],
-  ["random-forest","46-random-forest.html","modules/random-forest.te.json"]
+  ["random-forest","46-random-forest.html","modules/random-forest.te.json"],
+  ["decision-tree-classifier","47-decision-tree-classifier.html","modules/decision-tree-classifier.te.json"],
+  ["logistic-regression","48-logistic-regression.html","modules/logistic-regression.te.json"],
+  ["linear-regression","49-linear-regression.html","modules/linear-regression.te.json"],
+  ["k-means-clustering","50-k-means-clustering.html","modules/k-means-clustering.te.json"]
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
@@ -150,4 +154,4 @@ if(tableBegin<0||tableEnd<=tableBegin){
  }
 }
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 42 bilingual lessons (IDs 1–38, 43–46), 294 questions, 1176 options, 294 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 46 bilingual lessons (IDs 1–38, 43–50), 322 questions, 1288 options, 322 original English diagrams, answer keys, translations, and index links.");
