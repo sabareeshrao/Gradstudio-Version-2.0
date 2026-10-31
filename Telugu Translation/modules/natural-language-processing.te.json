@@ -29,7 +29,7 @@
         "NLP Spelling Fix, Documents Shorten మాత్రమే; Classification, Translation Vision Tasks అంటుంది. NLP More Capabilities కలిగి ఉంటుంది.",
         "Documents Length, Word Countతో మాత్రమే Group చేస్తుందని అంటుంది. Names, Opinions కూడా Extract చేయవచ్చు.",
         "Translation, QA చేయగలదు కానీ Entities, Comments Classify చేయలేదు అంటుంది. Labeling, Extraction కూడా NLP.",
-        "Classification Topics, Sentiment Opinions, NER Names, Translation Languages, QA Answers, Summarization Condensed Text."
+        "Classification Topics, Sentiment Opinions, NER Names, Translation Languages, QA Answers, Summarization Textని Short చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Text Classification Topics Assign; Sentiment Analysis Opinion Estimate; Named-Entity Recognition People/Places Find; Translation Language Change; Question Answering Answers Find/Generate; Summarization Long Text Condense చేస్తాయి. Thousands of Customer Reviews Receive చేసే Travel Websiteని Think చేయండి. NLP Reviewsని <strong>Classify</strong> చేసి Positive/Negative Opinions Detect, City/Hotel Names Identify చేయవచ్చు. Another Languageకి Translate, Reviews Questions Answer, Common Complaints Summarize చేయవచ్చు. Same Input Type — Human Language —పై Different Tasks.",
@@ -89,7 +89,7 @@
         "BERT Next Word Causally Predict, GPT Future See, T5 Output Generate చేయలేదు అంటుంది. Roles Reverse.",
         "T5 Encoder Only Classify, BERT Decoder Only Generate అంటుంది. Transformer Structures, Common Uses Different.",
         "All Transformer Masks, Training Objectives Identical అంటుంది. BERT, GPT, T5 Task Suitability Different.",
-        "BERT Bidirectional Encoder, GPT Causal Decoder, T5 Text-to-Text Encoder–Decoder; Fine-Tuning Helps."
+        "BERT Bidirectional, GPT Causal, T5 Encoder–Decoder Text-to-Text; Fine-Tuning Adapt చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> BERT Bidirectional Encoder Context, Masked-Token Learning; GPT Causal Decoder Next-Token Prediction; T5 Encoder–Decoder Text-to-Text Objectives Use చేస్తాయి. Fine-Tuning Pretrained Representations Adapt చేస్తుంది. Public Meeting Transcriptని Imagine చేయండి. <strong>BERT-style Encoder</strong> Left/Right Contextతో Statement Classify చేస్తుంది. <strong>GPT-style Decoder</strong> Future చూడకుండా Next Token Predict చేసి Transcript Continue చేస్తుంది. <strong>T5-style Encoder–Decoder</strong> Passage Read చేసి Summary Generate చేస్తుంది. All Transformers అయినా Masks, Objectives Different.",
