@@ -11,10 +11,10 @@
       "tag": "Beginner · Recognizing leakage",
       "stem": "What is Data Leakage in Machine Learning, and how does it cause a model to appear more accurate than it actually is?",
       "options": [
-        "A model has leakage when it uses training records that will also be available for future predictions. Scores increase because the extra valid examples help it learn patterns from a larger sample.",
+        "Data Leakage occurs when a model uses training records that will also be available for future predictions. Scores increase because the extra valid labeled examples help it learn patterns from a larger sample.",
         "Data Leakage occurs when a model uses information during training that would not be available when making real predictions. This can produce misleadingly high evaluation scores and poor performance on new data.",
-        "A model has leakage when it gets near-perfect scores on training examples but low scores on an independent test set. The low test score confirms that evaluation has already exposed the problem.",
-        "A model has leakage when its evaluator hides the correct answers until predictions are finished. Withheld labels make the accuracy appear unreliable even though the model learned from information available during real predictions."
+        "Data Leakage occurs when a model gets near-perfect scores on training examples but very low scores on an independent test set. The low test score confirms that evaluation has already exposed the problem.",
+        "Data Leakage occurs when an evaluator hides the correct answer labels until predictions are finished. Withheld labels make accuracy appear unreliable even though the model learned from information available during real predictions."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> Data Leakage means a model learns from information it could not have when predicting in real life. That hidden advantage makes test scores look better than the model truly is. Imagine predicting whether a scholarship applicant will be approved, but accidentally including the final approval email as an input. The model seems brilliant because the answer is already in the data. Once that email is unavailable for new applicants, performance drops. Always check when each feature becomes available.",
@@ -53,10 +53,10 @@
       "tag": "Medium · Cross-validation leakage",
       "stem": "How can Data Leakage occur during cross-validation, feature engineering, data augmentation, and hyperparameter tuning, even when training and testing datasets are separated?",
       "options": [
-        "During cross-validation, fitting preprocessing and feature selection before creating folds is safe when the final test set remains untouched. Augmented examples can also be spread across folds because they count as different images.",
-        "During cross-validation, validation folds may guide preprocessing because they are not the final test set. Reusing the same validation scores for hyperparameter tuning stays fair when validation rows never update model weights.",
+        "Leakage occurs during cross-validation only if the untouched final test set influences the model. Feature selection can use all validation folds before fitting, and augmented versions may be distributed across folds without affecting scores.",
+        "Leakage occurs during cross-validation when a model changes weights directly on validation rows. Letting validation scores select preprocessing steps and hyperparameters remains unbiased because no weight update happens during those choices.",
         "Leakage occurs when validation data influences feature selection, preprocessing, model tuning, or training examples. Each validation fold must remain separate from the operations used to fit the model being evaluated.",
-        "During cross-validation, copies of one original image can go into different folds if augmentation changes their appearance. Feature engineering and repeated tuning are safe once the original dataset has been split."
+        "Leakage occurs during cross-validation when the same raw image is copied without changes into multiple folds. Rotated versions no longer count as related examples, so augmentation and repeated tuning cannot affect validation reliability."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> A separate test set is not enough if validation folds influence the steps that train the model. During cross-validation, feature selection and preprocessing must be fitted again inside each training fold. Picture a drone-image classifier: if you rotate one image and put its almost identical copy in a validation fold, the result looks better than real-world performance. Repeated tuning on the same validation data can also overfit your choices. Keep folds isolated during every learning step.",
@@ -95,10 +95,10 @@
       "tag": "Advanced · Production safeguards",
       "stem": "How can Data Leakage be detected and prevented in production Machine Learning systems using feature availability checks, data lineage, point-in-time validation, and leakage-resistant evaluation strategies?",
       "options": [
-        "Production leakage checks focus on unusually strong training accuracy and remove features that predict the target exceptionally well. Point-in-time validation is optional because historically saved feature values are assumed to reflect what was originally known.",
+        "Data Leakage checks focus on unusually strong training accuracy and remove features that predict the target exceptionally well. Point-in-time validation is optional because historically saved feature values are assumed to reflect what was originally available.",
         "Data Leakage can be detected by checking suspicious features, unusually high scores, and whether information was available at prediction time. Data lineage, point-in-time feature checks, isolated evaluation sets, and realistic validation help prevent leakage.",
-        "An earlier prediction may use the latest stored feature values as long as their original source is documented. Reliable data lineage and regular monitoring mean historical timestamps and point-in-time joins can be skipped safely.",
-        "Production systems prevent leakage by hiding target labels when a model makes predictions and refreshing feature tables before evaluation. This avoids checking event timestamps because the deployed pipeline uses one consistent database snapshot."
+        "Data Leakage checks may reuse the latest stored feature values for earlier predictions when their source is documented. Data lineage and monitoring can replace historical timestamps and point-in-time joins without affecting reliability.",
+        "Data Leakage checks can prevent problems by hiding target labels during predictions and refreshing feature tables before evaluation. This avoids tracking event timestamps because the deployed model always uses one consistent database snapshot."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> In production, ask a simple question about every feature: <strong>Did we know this value at prediction time?</strong> A fraud detector assessing a card payment at 10:00 must not use a chargeback reported the next day. Data lineage shows where each feature came from; point-in-time checks verify when it existed. Compare offline validation with realistic live conditions, watch for unusually perfect scores, and keep an untouched evaluation set. These checks turn leakage prevention into a repeatable production practice.",
