@@ -40,7 +40,7 @@
       "stem": "RoPE Step by Step ఎలా Work చేస్తుంది? Token Embeddings నుంచి Q, K Create చేసి Coordinate Pairs, Position Angles, Attention Scores ఎలా Calculate చేస్తాం?",
       "tag": "Beginner · Steps",
       "options": [
-        "Embeddings → Q/K Projection → Pairs → Position Rotate → Attention Scores.",
+        "Embeddings → Q/K Projection → Pairs → Position Rotate → Scores వస్తాయి.",
         "Values Only Rotate చేసి Q/K Product Skip చేస్తుందంటుంది. Standard RoPE Q/Kపై Apply.",
         "Softmax First, Position IDs Later, Q/K After అంటుంది. Actual RoPE Earlier Stage.",
         "Word Letters, Vocabulary IDs Rotate చేస్తుందంటుంది. RoPE Numerical Vector Componentsపై Work."
