@@ -36,6 +36,8 @@ jobs:
         run: node study-engine/verify-diagram-quality.mjs
       - name: Reject overlapping Attention Mechanism SVG labels
         run: node study-engine/verify-svg-text-layout.mjs attention-mechanism
+      - name: Preserve English diagrams and modern Telugu-English study copy
+        run: node "Telugu Translation/verify-translation.mjs"
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Build website and preserve existing browser links
