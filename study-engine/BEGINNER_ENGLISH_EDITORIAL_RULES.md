@@ -116,3 +116,14 @@ The remaining modules can be revised in subsequent user-selected batches.
 45. Long Short-Term Memory (LSTM) (`long-short-term-memory`)
 
 **Verification:** All 35 original question stems, answer keys, technical explanations, and distinct diagrams are preserved. Rewrote the 140 answer choices in beginner-friendly technical English and all 35 visible explanations with varied real-world teaching examples. Each explanation starts with **Explanation:**, uses 68–83 words, and remains within the 100-word limit. Each question passes the 1.15 maximum option word-count ratio; the correct answer is not uniquely longest by word or character count. The five committed JSON modules were fetched again from GitHub for final verification. Telugu materials, shared quiz code, and unrelated modules were unchanged.
+
+## Batch 10 — completed English modules
+46. Random Forest (`random-forest`)
+47. Decision Tree Classifier (`decision-tree-classifier`)
+48. Logistic Regression (`logistic-regression`)
+49. Linear Regression (`linear-regression`)
+50. K-Means Clustering (`k-means-clustering`)
+
+**Verification:** All 35 original question stems, 35 answer keys, 35 unique diagram figures (verified against their original lengths), and advanced technical explanations were preserved. Rewrote all 140 answer choices into understandable technical English and all 35 visible explanations with varied examples. Each explanation begins **Explanation:** and contains 66–81 words (under the 100-word maximum). Every question passes the maximum option word-count ratio of 1.15, and the correct option is not uniquely longest by words or characters. All five updated JSON modules were committed and fetched again from GitHub for verification. No Telugu content, shared quiz-rendering code, themes, or unrelated modules were edited.
+
+**Completion:** Batches 1–10 cover the 50 planned English study topics (7 questions and 28 answer choices per topic; 350 questions and 1,400 choices total). Batch 46–50 source checks passed; live GitHub Pages rendering was not independently tested.
