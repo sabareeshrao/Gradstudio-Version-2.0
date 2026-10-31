@@ -229,6 +229,11 @@
       "slug": "quantization",
       "title": "Quantization",
       "domain": "Reducing Numerical Precision for Efficient AI Models · Efficient and Edge AI"
+    },
+    {
+      "slug": "knowledge-distillation",
+      "title": "Knowledge Distillation",
+      "domain": "Transferring Knowledge from Large AI Models to Smaller Models · Efficient and Edge AI"
     }
   ]
 }
