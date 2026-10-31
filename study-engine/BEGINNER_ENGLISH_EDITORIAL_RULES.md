@@ -44,3 +44,12 @@ Use these rules when updating existing English study-engine modules in numbered 
 5. Artificial Intelligence (`artificial-intelligence`, AI-00001)
 
 The remaining modules can be revised in subsequent user-selected batches.
+
+## Batch 2 — completed English modules
+6. Prompt Engineering (`prompt-engineering`, AI-01417)
+7. Attention Mechanism (`attention-mechanism`, AI-00885)
+8. Self-Attention (`self-attention`, AI-00886)
+9. Backpropagation (`backpropagation`, AI-00694)
+10. Gradient Descent (`gradient-descent`, AI-00294)
+
+**Verification:** All 35 questions retained their stems, answer keys, and individual diagrams. The 140 answer choices use complete teaching-oriented English with balanced word/character lengths. All visible explanations are labelled **Explanation:**, use a different concrete scenario per question, and are within 100 words. Future batches must maintain these requirements.
