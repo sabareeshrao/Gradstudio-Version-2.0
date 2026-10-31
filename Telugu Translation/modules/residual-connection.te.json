@@ -28,7 +28,7 @@
         "Residuals All Errors Remove చేసి Deeper Model Always Better Accuracy Guarantee చేస్తాయి.",
         "Residuals Trainingలో Every Layer Weightsని Permanentగా Freeze చేస్తాయి.",
         "Residuals Deeper Networks Smallerగా చేసి Total Computation Always Reduce చేస్తాయి.",
-        "Residual Shortcut Earlier Signal Preserve చేసి Layers Small Corrections Learn చేయడానికి Help చేస్తుంది."
+        "Residual Shortcut Signal Preserve చేసి Layers Corrections Learn చేయడంలో Help చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> More Layers ఉండటం Trainingని Hard చేయవచ్చు. Shortcuts Original Signalని Preserve చేసి Small Corrections Learn చేయడంలో Help చేస్తాయి.",
