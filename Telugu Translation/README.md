@@ -1,27 +1,29 @@
-# Telugu + English Lessons — Gradstudio
+# Telugu + English Lesson Library
 
-Original English lessons and shared Study Engine are **untouched**. This folder contains separate, bilingual learner-facing translations.
+**Separate bilingual copies of the numbered English lessons in [lessons/](../lessons/).** The English originals and original technical diagrams are unchanged.
 
-## Pilot lesson: Transformer
+| No. | Topic | Telugu + English HTML | Original English |
+|---:|---|---|---|
+| 1 | Transformer | [Open translated lesson](01-transformer.html) | [English lesson](../lessons/01-transformer.html) |
+| 2 | Retrieval-Augmented Generation (RAG) | [Open translated lesson](02-rag.html) | [English lesson](../lessons/02-rag.html) |
+| 3 | Deep Learning | [Open translated lesson](03-deep-learning.html) | [English lesson](../lessons/03-deep-learning.html) |
+| 4 | Neural Network | [Open translated lesson](04-neural-network.html) | [English lesson](../lessons/04-neural-network.html) |
+| 5 | Artificial Intelligence (AI) | [Open translated lesson](05-artificial-intelligence.html) | [English lesson](../lessons/05-artificial-intelligence.html) |
+| 6 | Prompt Engineering | [Open translated lesson](06-prompt-engineering.html) | [English lesson](../lessons/06-prompt-engineering.html) |
+| 7 | Attention Mechanism | [Open translated lesson](07-attention-mechanism.html) | [English lesson](../lessons/07-attention-mechanism.html) |
+| 8 | Self-Attention | [Open translated lesson](08-self-attention.html) | [English lesson](../lessons/08-self-attention.html) |
+| 9 | Backpropagation | [Open translated lesson](09-backpropagation.html) | [English lesson](../lessons/09-backpropagation.html) |
+| 10 | Gradient Descent | [Open translated lesson](10-gradient-descent.html) | [English lesson](../lessons/10-gradient-descent.html) |
 
-- [Open the bilingual HTML](01-transformer.html)
-- [Open the live GitHub Pages preview](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/01-transformer.html)
-- [Original English lesson](../lessons/01-transformer.html)
-- [Translated content JSON](transformer.te.json)
+[**View all 10 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
-## Translation and illustration rules (approved sample direction)
+## Translation rules
 
-1. **All diagrams remain in English** — figure headings, tiles, labels, SVG text, legends, code, formulas, example tokens, explanatory figure captions and hero artwork must match the original English module exactly. Never mechanically translate SVG labels.
-2. **Questions are modern Telugu + English**, as in everyday Telugu tech writing. Keep standard AI terms such as Transformer, Attention, Encoder, Decoder, Embedding, Token, Training, Masking, Loss and PyTorch in English; write the sentence structure in clear Telugu. Avoid archaic, formal Telugu terminology.
-3. **Four A–D answer choices** per question; use the same correct answer index as the original module. Keep similar word/character lengths and realistic distractors so the correct answer does not stand out.
-4. **Question numbering is always `Q1`, `Q2`, … `Q7`** in visible labels, quiz feedback, and accessibility text. Never show Telugu `ప్రశ్న` as a question label.
-5. **Explanations have two levels**: a short, beginner-friendly **Simple Explanation** (visible after checking) and an optional **Detailed Explanation** (collapsed by default). Both use clear Telugu + common English technical words.
-6. **The question appears immediately below its diagram**. Preserve all seven original distinct technical diagrams and their CSS.
-7. **Keep the quiz functional**: correct scoring, reset, all 15 themes, responsive viewing, and English technical code unchanged.
-8. **Never modify** `lessons/`, `study-engine/modules/*.json`, or English diagram styles for a Telugu translation.
+1. Keep every original **diagram, tile, figure heading, SVG label, chart, code, formula and illustration in English**, unchanged byte-for-byte from its source module.
+2. Translate all 7 questions, 4 A–D options per question, simple explanations and optional detailed explanations into natural, contemporary **Telugu + English technical language**.
+3. Preserve original meaning and correct-answer index. No correct option should stand out by being uniquely longest.
+4. Show the original diagram first; the bilingual question immediately below it. Keep short Simple Explanation visible after checking and optional Detailed Explanation collapsed.
+5. Preserve working quiz scoring, reset and all 15 themes. Do not touch original English module files.
+6. Run the quality verification: `node "Telugu Translation/verify-translation.mjs"`.
 
-## Automated check
-
-Run `node "Telugu Translation/verify-translation.mjs"` to check figure equality, bilingual text, unchanged answers and basic option-length bias against the English source.
-
-Translate additional lessons only after this pilot is reviewed.
+This table covers all ten numbered HTML entries from the English `lessons` directory. The English `latest.html` is a listing page; the matching bilingual listing is `index.html` here.
