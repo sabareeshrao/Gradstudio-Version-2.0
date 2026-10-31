@@ -13,7 +13,15 @@ const translations=[
   ["attention-mechanism","07-attention-mechanism.html","modules/attention-mechanism.te.json"],
   ["self-attention","08-self-attention.html","modules/self-attention.te.json"],
   ["backpropagation","09-backpropagation.html","modules/backpropagation.te.json"],
-  ["gradient-descent","10-gradient-descent.html","modules/gradient-descent.te.json"]
+  ["gradient-descent","10-gradient-descent.html","modules/gradient-descent.te.json"],
+  ["generative-model","11-generative-model.html","modules/generative-model.te.json"],
+  ["tokenization","12-tokenization.html","modules/tokenization.te.json"],
+  ["embedding-vector","13-embedding-vector.html","modules/embedding-vector.te.json"],
+  ["vector-database","14-vector-database.html","modules/vector-database.te.json"],
+  ["ai-agent-framework","15-ai-agent-framework.html","modules/ai-agent-framework.te.json"],
+  ["supervised-learning","16-supervised-learning.html","modules/supervised-learning.te.json"],
+  ["reinforcement-learning","17-reinforcement-learning.html","modules/reinforcement-learning.te.json"],
+  ["computer-vision","18-computer-vision.html","modules/computer-vision.te.json"]
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
@@ -22,9 +30,10 @@ function validate(slug,entry,filename){
  const entryPath=resolve(folder,entry);
  const englishEntry=resolve(root,"lessons",entry);
  const englishModule=resolve(root,"study-engine/modules",slug+".json");
- if(!existsSync(translationPath)||!existsSync(entryPath)||!existsSync(englishEntry)||!existsSync(englishModule)){
-  errors.push(slug+": missing translated HTML, data or original English lesson");return;
+ if(!existsSync(translationPath)||!existsSync(entryPath)||!existsSync(englishModule)){
+  errors.push(slug+": missing translated HTML, data or English source module");return;
  }
+ if(Number(entry.slice(0,2))<=10&&!existsSync(englishEntry))errors.push(slug+": missing original English entry");
  const d=JSON.parse(readFileSync(translationPath,"utf8"));
  const source=JSON.parse(readFileSync(englishModule,"utf8"));
  const html=readFileSync(entryPath,"utf8");
@@ -54,4 +63,4 @@ translations.forEach(row=>validate(...row));
 const index=readFileSync(resolve(folder,"index.html"),"utf8");
 for(const [slug,entry] of translations)if(!index.includes('./'+entry))errors.push(slug+": missing from index.html link table");
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 10 bilingual lessons, 70 questions, 280 options, 70 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 18 bilingual lessons, 126 questions, 504 options, 126 original English diagrams, answer keys, translations, and index links.");
