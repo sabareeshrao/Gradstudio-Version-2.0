@@ -25,7 +25,7 @@
       "tag": "Beginner · Why",
       "stem": "Decoderలో Causal Masking ఎందుకు అవసరం? Current Token Future Tokensని చూడకుండా Trainingలో Correct Order ఎలా Maintain చేస్తుంది?",
       "options": [
-        "Causal Mask Future Tokens Block చేస్తుంది; Each Position Earlier Contextతో Learn చేస్తుంది.",
+        "Causal Mask Future Tokens Block; Each Position Prior Contextతో Learn చేస్తుంది.",
         "Causal Mask Earlier Words Hide చేసి Next Wordsనుంచి Output Generate చేయిస్తుంది.",
         "Causal Mask Softmax తర్వాత Low Probability Tokensని Only Remove చేస్తుంది.",
         "Causal Mask Decoder Own Inputని Trainingలో Completely Hide చేసి Learning Block చేస్తుంది."
@@ -81,7 +81,7 @@
       "tag": "Advanced · Design",
       "stem": "Original Encoder–Decoder Transformerలో Decoder Cross-Attention, Encoder Outputs Use చేస్తుంది; Decoder-Only GPT Architecture ఎలా Differ అవుతుంది?",
       "options": [
-        "Decoder-Only Causal Self-Attention Use; Encoder–Decoderలో Encoder Outputsకి Cross-Attention ఉంటుంది.",
+        "Decoder-Only Causal Attention; Original Encoder–Decoderలో Cross-Attention Also ఉంటుంది.",
         "Decoder-Only Requires Cross-Attention; Original Encoder–Decoderకి Causal Mask Need కాదు.",
         "Decoder-Only Future Tokens Read చేస్తుంది; Encoder–Decoder Source Text Read చేయలేదు.",
         "Both Architectures Same Blocks; Difference Only Tokenizer Choiceలో ఉంటుంది."
