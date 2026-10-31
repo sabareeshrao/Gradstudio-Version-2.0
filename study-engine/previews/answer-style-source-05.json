@@ -1,0 +1,172 @@
+[
+  {
+    "id": "45",
+    "slug": "long-short-term-memory",
+    "topic": "Long Short-Term Memory (LSTM)",
+    "question": "What is Long Short-Term Memory (LSTM) in Deep Learning, and how does this specialized type of Recurrent Neural Network (RNN) remember important information over longer sequences of words, events, or time-series observations?",
+    "options": [
+      "It replaces each token with a fixed lookup number and never updates memory through time.",
+      "It removes every earlier observation so the network processes each individual time step independently.",
+      "It uses gated memory and recurrent connections to carry useful information across multiple time steps.",
+      "It connects all positions simultaneously with self-attention and stores no recurrent hidden state anywhere."
+    ],
+    "answer": "c",
+    "short": "In simple words: An LSTM is an RNN with gates that manage memory. It can keep important clues while reading later words or events.",
+    "technical": "Detailed explanation: An LSTM is a gated recurrent neural network designed for sequential inputs. At time step t, it combines current input x_t, previous hidden state h_(t-1), and previous cell state c_(t-1) to compute new gate activations, cell memory c_t and hidden representation h_t. The long-lived cell state creates an additive pathway to preserve selected information. Forget, input and output gates are learned sigmoid controls, so memory is selective rather than a perfect copy of every prior token. LSTMs are used for text, speech, sensor readings and time-series forecasting, including streaming settings.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/long-short-term-memory.json"
+  },
+  {
+    "id": "46",
+    "slug": "random-forest",
+    "topic": "Random Forest",
+    "question": "What is a Random Forest in Machine Learning, and how does combining predictions from multiple Decision Trees help produce more accurate and reliable results than relying on a single tree?",
+    "options": [
+      "It trains one large decision tree and corrects that tree after every prediction.",
+      "It combines many different decision trees so individual mistakes can cancel out.",
+      "It replaces all decision rules with a distance score between the input examples.",
+      "It merges training records into one summary before any tree branches are grown."
+    ],
+    "answer": "b",
+    "short": "In simple words: A Random Forest uses many decision trees. Combining their answers can reduce the impact of mistakes made by any one tree.",
+    "technical": "Detailed explanation: Random Forest is a bagged tree ensemble. Each decision tree uses a different bootstrap sample and often a random feature subset at each split. Aggregation typically lowers variance compared with one deep tree, though better accuracy is not guaranteed for every dataset.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/random-forest.json"
+  },
+  {
+    "id": "47",
+    "slug": "decision-tree-classifier",
+    "topic": "Decision Tree Classifier",
+    "question": "What is a Decision Tree Classifier in Machine Learning, and how does it predict categories by asking a sequence of simple yes-or-no questions about input data?",
+    "options": [
+      "A classifier memorizes whole examples and always returns the nearest training label without testing separate features.",
+      "A classifier turns each category into a number and uses one fixed equation without branching over input features.",
+      "A classifier follows learned yes-or-no feature tests from a root until a leaf predicts a category.",
+      "A classifier generates possible categories randomly and chooses whichever label appears most often in its input."
+    ],
+    "answer": "c",
+    "short": "In simple words: A decision tree learns simple questions from labeled examples. Each answer selects a branch until a leaf gives the category.",
+    "technical": "Detailed explanation: DecisionTreeClassifier is a supervised-learning method. It learns feature predicates, often numeric thresholds, that recursively partition labeled training examples into smaller groups. At prediction time, a sample follows one branch at each node and eventually reaches a terminal leaf. The majority class or weighted majority class at that leaf becomes its predicted category. Unlike a simple linear classifier, the model can learn nonlinear combinations of rules.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=decision-tree-classifier",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/decision-tree-classifier.json"
+  },
+  {
+    "id": "48",
+    "slug": "logistic-regression",
+    "topic": "Logistic Regression",
+    "question": "What is Logistic Regression in Machine Learning, and why is it primarily used for classification problems even though its name contains the word \"Regression\"?",
+    "options": [
+      "Logistic Regression predicts continuous target values directly, without ever turning scores into class probabilities reliably.",
+      "Logistic Regression groups unlabeled examples into clusters by measuring distances between their input features.",
+      "Logistic Regression models the probability of a class, then predicts categories despite its historical name.",
+      "Logistic Regression generates new sample features and compares them against examples from training data."
+    ],
+    "answer": "c",
+    "short": "In simple words: Despite its name, Logistic Regression is mainly a classifier. It turns a weighted feature score into a probability of belonging to a class.",
+    "technical": "Detailed explanation: Logistic Regression is a probabilistic classification model despite the historical name “regression”. It forms a linear score z=wᵀx+b and maps it through Sigmoid for binary classification: p=1/(1+exp(−z)). It estimates the probability of the positive class conditional on the supplied features. A threshold converts p into class 0 or 1. For a standard model using untransformed input features, the 0.5 decision boundary is linear in feature space. Adding interactions or nonlinear feature engineering can produce nonlinear boundaries in the original feature space.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/logistic-regression.json"
+  },
+  {
+    "id": "49",
+    "slug": "linear-regression",
+    "topic": "Linear Regression",
+    "question": "What is Linear Regression in Machine Learning, and how does it help a computer predict numerical values such as house prices, salaries, or sales based on historical data?",
+    "options": [
+      "It places every training example into fixed categories instead of predicting continuous numerical outcomes.",
+      "It learns a relationship between features and numerical targets to predict values for new examples.",
+      "It predicts continuous numerical outcomes without learning any useful patterns or coefficients from historical examples.",
+      "It memorizes every price exactly and never estimates values for houses absent from training."
+    ],
+    "answer": "b",
+    "short": "In simple words: Linear regression learns a straight-line relationship from historical examples. It uses that pattern to estimate numerical values for new cases.",
+    "technical": "Detailed explanation: Linear regression predicts a continuous numerical target using a model linear in coefficients. Simple form: y_hat=mx+b. The slope and intercept are learned from labeled history, usually by least squares. House price from area, salary from experience, and sales from advertising spend are illustrative examples. Correlation does not prove causation; predictions can fail outside the observed range.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/linear-regression.json"
+  },
+  {
+    "id": "50",
+    "slug": "k-means-clustering",
+    "topic": "K-Means Clustering",
+    "question": "What is K-Means Clustering in Machine Learning, and how does it automatically discover groups of similar data points without requiring predefined labels or correct answers?",
+    "options": [
+      "It needs correct group labels for training and assigns every point its known category.",
+      "It groups nearby data points by moving the centers and repeatedly reassigning points.",
+      "It predicts a numeric target for each record using a single fitted regression line.",
+      "It creates a separate cluster for every point without comparing distances or patterns."
+    ],
+    "answer": "b",
+    "short": "In simple words: K-Means finds groups in unlabeled data by placing centers and gathering nearby points around each one.",
+    "technical": "Detailed explanation: K-Means is unsupervised: it does not use known group labels during fitting. Given K centers, it alternates between assigning points to their nearest center and updating each center to the mean of its assigned points. It finds distance-based patterns, not guaranteed human-defined categories.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/k-means-clustering.json"
+  },
+  {
+    "id": "EX1",
+    "slug": "next-token-prediction",
+    "topic": "Next Token Prediction",
+    "question": "What is Next-Token Prediction in Large Language Models (LLMs), and how does it enable models like GPT to generate text by predicting one token at a time?",
+    "options": [
+      "A model writes its entire answer simultaneously without considering which words came before any other words.",
+      "A model predicts the next token from earlier tokens, repeating the process to create more text.",
+      "A model selects a stored answer from the dataset and copies it without generating new token sequences.",
+      "A model translates every input into numbers, but never predicts more language after processing the prompt."
+    ],
+    "answer": "b",
+    "short": "In simple words: An LLM predicts one token from the text so far. It adds that token and repeats to build longer text.",
+    "technical": "Correct: B. Next-token prediction means learning a conditional distribution over the next token given the previous tokens, p(x_t | x_1,...,x_{t-1}). Decoder-only language models such as GPT tokenize a prompt, process it through masked self-attention, and produce vocabulary logits. A decoding strategy selects a new token, which is appended and used as context for the following prediction. This autoregressive loop continues until an end-of-sequence token, a maximum length, or another stopping condition is reached. The model does not normally plan every word of its full answer in a single forward pass.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=next-token-prediction",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/next-token-prediction.json"
+  },
+  {
+    "id": "EX2",
+    "slug": "neural-network-pruning",
+    "topic": "Neural Network Pruning",
+    "question": "What is Neural Network Pruning in Artificial Intelligence, and how does removing unnecessary weights, neurons, or connections make a neural network smaller and more efficient?",
+    "options": [
+      "Pruning always adds new neurons to make predictions more precise after each training epoch.",
+      "Pruning removes less useful connections or units so a network can operate more efficiently.",
+      "Pruning increases every weight equally to avoid choosing which connections should be kept.",
+      "Pruning deletes training labels instead of adjusting the structure of a neural network."
+    ],
+    "answer": "b",
+    "short": "In simple words: Pruning means removing parts of a neural network that contribute little. The goal is to keep its useful predictions while reducing unnecessary work.",
+    "technical": "Detailed explanation: Neural Network Pruning identifies parameters or structures that contribute relatively little to the intended task and disables or removes them. Unstructured pruning can zero out individual weights, while structured pruning may target whole neurons, channels, filters, heads or blocks. Dense tensor shapes may remain unchanged under a mask. To get physically smaller dense operators, structured channels often must be removed and adjacent layers rebuilt or re-exported. Importance is estimated with techniques such as magnitude, gradient sensitivity or learned scores. Report the actual sparsity and post-pruning quality rather than promising all removed weights were truly unnecessary.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network-pruning",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/neural-network-pruning.json"
+  },
+  {
+    "id": "EX3",
+    "slug": "quantization",
+    "topic": "Quantization",
+    "question": "What is Quantization in Artificial Intelligence, and how does converting neural network weights and activations from high-precision formats such as FP32 into lower-precision formats such as FP16, INT8, or INT4 reduce model size and computational requirements?",
+    "options": [
+      "It converts every model parameter into a plain text label before the model runs inference.",
+      "It uses fewer bits to store or compute numerical model values, often reducing memory needs.",
+      "It removes all unnecessary layers from a network while keeping its original precision unchanged.",
+      "It always changes a neural network's predictions into exact integers with no rounding error."
+    ],
+    "answer": "b",
+    "short": "In simple words: Quantization stores numbers using fewer bits. The model becomes smaller, but some numerical details can be lost.",
+    "technical": "Detailed explanation: Quantization reduces the bits used to represent trained weights and sometimes activations. FP32 and FP16 are floating-point formats (32 and 16 bits); INT8 and packed INT4 are integer quantization formats. Integer quantization maps real values to a finite set of codes using a scale, optional zero point and clipping. Smaller representations reduce raw storage and may speed computation on compatible hardware, but they can introduce approximation error. FP16 is best understood as lower floating-point precision rather than integer quantization.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=quantization",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/quantization.json"
+  },
+  {
+    "id": "EX4",
+    "slug": "knowledge-distillation",
+    "topic": "Knowledge Distillation",
+    "question": "What is Knowledge Distillation in Artificial Intelligence, and how can a smaller neural network called a Student Model learn from a larger, more powerful Teacher Model?",
+    "options": [
+      "It copies the teacher’s complete network so both systems have identical weights.",
+      "It learns from the teacher’s predictions while using a smaller neural network.",
+      "It trains the teacher again using only the student's most uncertain examples.",
+      "It uses the teacher solely to collect extra labels before independent training."
+    ],
+    "answer": "b",
+    "short": "In simple words: A big teacher shows how it predicts. The smaller student learns those useful patterns without copying the teacher’s entire network.",
+    "technical": "Detailed explanation: A pretrained teacher often stays fixed while a compact student learns from its soft predictions, hidden features, or relationships. The student optimizes its own parameters; it does not copy the teacher's complete architecture.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=knowledge-distillation",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/knowledge-distillation.json"
+  }
+]
