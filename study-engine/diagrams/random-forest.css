@@ -1,0 +1,21 @@
+/* Gradstudio Random Forest illustrated-v2 — scoped diagram presentation only. */
+.rf-hero,.rf-diagram{font-family:inherit;color:#2c4c60;min-width:0}
+.rf-hero{border-radius:19px;border:1px solid #d3e3e9;margin-bottom:23px;padding:clamp(16px,2.9vw,28px);background:radial-gradient(circle at 5% 8%,#e7f6ed,transparent 52%),linear-gradient(130deg,#f4f9ff,#fff8ee);box-shadow:0 9px 25px #28586f0a}
+.rf-hero h2{font-size:clamp(1.23rem,2.6vw,1.75rem);line-height:1.26;color:#285b73;margin:7px 0}
+.rf-hero p{font-size:.89rem;line-height:1.54;color:#587788;max-width:70ch;margin:5px 0 17px}
+.rf-eyebrow{font-size:.71rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#29836b}
+.rf-diagram{padding:clamp(14px,2.7vw,24px);background:radial-gradient(circle at 94% 4%,#e9f6ef,transparent 48%),linear-gradient(135deg,#f8fcfe,#fff)}
+.rf-diagram h3{margin:4px 0 14px;font-size:clamp(1rem,2vw,1.22rem);line-height:1.35;color:#30586c}
+.rf-svg{max-width:100%;min-width:0;background:#fff;overflow-x:auto;overflow-y:hidden;scrollbar-color:#bfd7df transparent;border:1px solid #dce8eb;border-radius:13px}
+.rf-svg svg{width:100%;height:auto;min-width:700px;display:block}
+.rf-hero .rf-svg svg{min-width:765px}
+.rf-svg svg text{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.rf-note{font-size:.81rem;line-height:1.56;margin:11px 0 0;color:#5b7788}
+.rf-code{border:1px solid #d7e4eb;border-radius:11px;margin-top:12px;overflow:hidden;background:#f6fafc}
+.rf-code summary{padding:11px 14px;font-weight:800;font-size:.81rem;color:#466e83;cursor:pointer}
+.rf-code[open] summary{background:#294155;color:#eaf4fa}
+.rf-code[open]{background:#172a3e}
+.rf-code pre{margin:0;padding:15px;color:#edf7fc;line-height:1.57;font-size:clamp(.67rem,1.3vw,.82rem);tab-size:4;overflow:auto}
+.rf-code code{font:inherit;color:inherit;white-space:pre;background:none;border:none;padding:0}
+@media(max-width:700px){.rf-hero{padding:15px}.rf-svg svg{min-width:640px}.rf-hero .rf-svg svg{min-width:710px}.rf-code pre{font-size:.69rem}}
+@media(prefers-reduced-motion:reduce){.rf-svg{scroll-behavior:auto}.rf-hero *, .rf-diagram *{transition:none!important;animation:none!important}}
