@@ -52,3 +52,40 @@
 .lr-note-inline{font-size:.71rem;color:#718a96}
 @media(max-width:800px){.lr-math,.lr-optimizer,.lr-audit{grid-template-columns:1fr}.lr-three{grid-template-columns:1fr}.lr-optimizer svg,.lr-audit svg{max-height:300px}.lr-hero svg{max-height:310px}}
 @media(max-width:540px){.lr-schedules{grid-template-columns:1fr}.lr-scene{padding:13px}.lr-hero{padding:14px}.lr-tile{padding:10px}.lr-hero svg,.lr-scene svg{max-width:100%}}
+
+
+/* 2026-10-31 responsive illustration sizing audit:
+   SVG viewBox ratios remain intrinsic, but plots no longer balloon with cards. */
+.lr-hero,.lr-scene,.lr-schedule,.lr-tile,.lr-math,.lr-optimizer,.lr-audit{min-width:0;max-width:100%;overflow:hidden}
+.lr-hero{padding:clamp(12px,2vw,20px)}
+.lr-scene{padding:clamp(12px,1.8vw,18px)}
+.lr-hero svg{display:block;width:100%;max-width:760px;height:auto;margin:12px auto 0;overflow:hidden}
+.lr-scene>svg{display:block;width:100%;max-width:670px;height:auto;margin:0 auto;overflow:hidden}
+.lr-scene h3{font-size:clamp(1rem,1.55vw,1.16rem);margin-bottom:10px}
+.lr-scene>svg text{font-size:12px}
+.lr-schedules{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.lr-schedule{padding:10px;overflow:hidden}
+.lr-schedule svg{display:block;width:100%;max-width:280px;height:auto;margin:7px auto 3px;overflow:hidden}
+.lr-schedule svg text{font-size:10.5px}
+.lr-schedule strong{font-size:.8rem}
+.lr-schedule small{font-size:.7rem;line-height:1.4}
+.lr-math,.lr-optimizer,.lr-audit{gap:11px}
+.lr-math svg,.lr-optimizer svg,.lr-audit svg{width:100%;max-width:600px;height:auto;margin-inline:auto;overflow:hidden}
+.lr-math .lr-eq{max-width:100%;overflow-wrap:anywhere;white-space:normal}
+.lr-callout{flex-wrap:wrap;line-height:1.5}
+.lr-key{gap:5px 12px}
+.lr-key span{font-size:.7rem}
+.lr-scene .lr-caption{font-size:.77rem}
+@media(max-width:760px){
+ .lr-scene>svg{max-width:100%}
+ .lr-hero svg{max-width:100%}
+ .lr-math,.lr-audit,.lr-optimizer{grid-template-columns:minmax(0,1fr)}
+ .lr-schedules{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .lr-schedule svg{max-width:250px}
+}
+@media(max-width:470px){
+ .lr-schedules{grid-template-columns:1fr}
+ .lr-schedule svg{max-width:260px}
+ .lr-scene,.lr-hero{padding:11px}
+ .lr-scene h3{font-size:1rem}
+}
