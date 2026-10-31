@@ -42,7 +42,7 @@
         "First Round తర్వాత Real Images Remove చేసి Generator Feedback లేకుండా Train అవుతుంది.",
         "Discriminator Noise Create చేస్తుంది; Generator ప్రతి Noiseని Real Labelగా Mark చేస్తుంది.",
         "Same Fake Image ప్రతి Round Repeat అవుతుంది; Discriminator మాత్రమే Weights Update చేస్తుంది.",
-        "Noise నుంచి Fake Image; Discriminator Real/Fake Compare; Both Networks Gradually Update అవుతాయి."
+        "Noise నుంచి Fake Image; Discriminator Real/Fake Compare; Both Networks Update అవుతాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Generator Noiseని Imageగా Convert చేస్తుంది. Discriminator Feedback ఇస్తుంది. Each Training Roundలో Networks Weights Update చేస్తాయి.",
@@ -54,7 +54,7 @@
       "tag": "Medium · Technical",
       "options": [
         "GAN Loss Image Colors మాత్రమే Compare చేస్తుంది; Generatorకి Discriminator Feedback రాదు.",
-        "Discriminator Real/Fake Loss Learn చేస్తుంది; Generator Alternate Updatesతో దాన్ని Fool చేస్తుంది.",
+        "Discriminator Real/Fake Learn చేస్తుంది; Generator Alternate Updatesతో Fool చేస్తుంది.",
         "Two Networks Same Labelsపైనే Train అవుతాయి; Alternating Updates అవసరం ఉండదు.",
         "Minimax Objective One Networkని Permanently Freeze చేసి Other Networkని Train చేస్తుంది."
       ],
@@ -69,7 +69,7 @@
       "options": [
         "Single Image Encoder Train చేస్తాం; Discriminator, Adversarial Feedback Both Remove చేస్తాం.",
         "MNIST Digitsని New Folderకి Copy చేస్తాం; Model Training అవసరం ఉండదు.",
-        "PyTorchలో Generator, Discriminator Build చేసి Alternate Updatesతో Digit Images Generate చేస్తాం.",
+        "PyTorchలో Generator, Discriminator Alternateగా Train చేసి Fake Digits Generate చేస్తాం.",
         "Digit Classifier Train చేసి Random Rotationsతో Imagesని GAN Outputsగా Declare చేస్తాం."
       ],
       "answer": "c",
