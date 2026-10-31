@@ -25,10 +25,10 @@
       "tag": "Beginner · hidden-state memory",
       "stem": "What is the Hidden State in an RNN, and how does it act as a form of memory that carries information from previous time steps to help the network understand the current input?",
       "options": [
-        "The hidden state is a weight value that updates only after a full training epoch, rather than changing as the model processes each input.",
+        "The hidden state is a model weight updated only after a training epoch, rather than a state that changes when new inputs arrive.",
         "The hidden state is a running numerical summary of earlier inputs that gets updated with each new time step in the sequence.",
         "The hidden state is a permanent correct label attached to each training example, so reading new sequence values cannot change it.",
-        "The hidden state perfectly stores every earlier token in complete detail, even when a fixed-size representation cannot preserve all information."
+        "The hidden state perfectly preserves every earlier token in complete detail, even though its limited numerical size cannot retain all information."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> A music app wants to recognize the rhythm of a short drum performance. After each beat, the RNN updates its <strong>hidden state</strong>, a compact vector representing useful information from the beats heard so far. The next beat is processed together with that state. This lets earlier rhythm influence later recognition. The hidden state is not the same as the model's fixed training weights. Nor is it a perfect archive: a limited-size vector may forget details from long performances.",
@@ -41,7 +41,7 @@
       "options": [
         "An RNN must read words backward because its recurrent connections cannot follow their original order or learn useful forward context.",
         "An RNN stores the sentence as an unchanged dictionary entry and looks up the answer without updating any hidden representations.",
-        "The RNN reads the words in order, updating its hidden state so earlier words can affect how later inputs are understood.",
+        "The RNN reads words in order, updating hidden state so earlier words influence how later inputs are understood.",
         "The RNN represents each word separately and clears all preceding context before it makes a prediction about the next token."
       ],
       "answer": "c",
@@ -54,7 +54,7 @@
       "stem": "How does an RNN mathematically calculate its Hidden State and output at each time step using input vectors, recurrent weight matrices, bias terms, and activation functions, and how are the same parameters reused across the sequence?",
       "options": [
         "At each time step, learned matrices combine the current input and previous hidden state, and an activation creates the next state.",
-        "At each time step, the hidden state is calculated using only the current word, so no information from earlier states can influence it.",
+        "At each time step, the hidden state uses only the current word, and earlier states never enter its calculation.",
         "Every sequence position uses new unrelated recurrent weights, preventing the same model parameters from learning patterns repeated over time.",
         "The recurrence adds the numerical token IDs directly, without learned matrices, bias terms, or nonlinear transformations of current and previous information."
       ],
@@ -96,8 +96,8 @@
       "stem": "How do Bidirectional RNNs, Stacked RNNs, and Sequence-to-Sequence Encoder-Decoder architectures handle complex sequential tasks, and how do RNN-based models compare with Transformers in terms of parallelization, long-range dependencies, computational complexity, inference latency, and real-world deployment?",
       "options": [
         "Transformers cannot represent distant relationships, and recurrent networks process every time step in parallel, so their computational behavior is always identical.",
-        "Bidirectional RNNs read both directions, stacking adds recurrent layers, and encoder-decoder structures map input sequences to output sequences.",
-        "Bidirectional RNNs process inputs forward only, stacked networks remove hidden state, and Transformers require sequential token-by-token training.",
+        "Bidirectional RNNs process both directions; stacked layers add recurrent depth; encoder-decoder systems map variable-length input sequences into output sequences.",
+        "Bidirectional RNNs only read forward, stacked RNNs delete all hidden states, and Transformers require strictly sequential training for every token position.",
         "Stacked RNNs can process only one time step total, while encoder-decoder networks are unable to generate outputs of varying lengths."
       ],
       "answer": "b",
