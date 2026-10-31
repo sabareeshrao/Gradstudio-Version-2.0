@@ -58,7 +58,7 @@
       "answer": "b",
       "options": [
         "Latent Variables Final Classifier Labels మాత్రమే, ప్రతి Generated Imageకి Exact Probability Calculate తప్పనిసరి అంటుంది. ఈ రెండూ General Rules కావు.",
-        "Latent Variables Dataలో Hidden Factorsని Capture చేస్తాయి; Explicit Models Density Describe చేస్తాయి, Implicit Models Tractable Density లేకుండానే Samples Create చేస్తాయి.",
+        "Latent Variables Hidden Factors Capture చేస్తాయి; Explicit Models Density Describe, Implicit Models Tractable Density లేకుండా Samples Generate చేస్తాయి.",
         "Implicit Modelsకి Generate చేయడానికి Before Exact Probability అవసరం, Explicit Models Noise Only Transform చేస్తాయని చెబుతుంది. Definitions Reverse అవుతాయి.",
         "Probability Density Saved Training Files Count మాత్రమే; Sampling Stored File Select చేస్తుందని అంటుంది. Learned Distribution New Values కూడా Produce చేయవచ్చు."
       ],
@@ -74,7 +74,7 @@
       "options": [
         "GANs Mainly Noise Remove, Diffusion Judgeతో Compete, Flows Next Text Token Predict చేస్తాయని అంటుంది. Architectures Processesని Mix చేస్తుంది.",
         "VAEs Generator-versus-Judge Competition, GANs Each Sampleకి Exact Normalized Likelihood Use చేస్తాయని అంటుంది. Training Objectivesని Swap చేస్తుంది.",
-        "GANs Competitionతో Train; VAEs Probabilistic Latents Use; Autoregressive Sequence Predict; Diffusion Denoise; Flows Invertible Transformations Learn చేస్తాయి.",
+        "GANs Competitionతో Train; VAEs Latent Variables Use; Autoregressive Sequences Predict; Diffusion Denoises; Flows Invertible Transforms Learn చేస్తాయి.",
         "All Generative Architectures Identical Loss Use చేస్తాయని, Examples Count మాత్రమే Difference అంటుంది. Objectives, Generation Methods Actually Different."
       ],
       "explanation": "<strong>Explanation:</strong> Small Animation Studioకి Different Generated Content కావాలనుకోండి. <strong>GAN</strong>లో Generator, Discriminatorకి Againstగా Train అవుతుంది. <strong>VAE</strong> Sample చేయగల Latent Codes Learn చేస్తుంది. <strong>Autoregressive Model</strong> Sequenceలో Next Partని Predict చేస్తుంది. <strong>Diffusion Model</strong> Step by Step Noise Remove చేయడం Learn చేస్తుంది. <strong>Normalizing Flow</strong> Distributions మధ్య Invertible Transformations Use చేస్తుంది. ఈ Approachesకి Generation Quality, Likelihood Modeling, Speedలో Different Strengths, Trade-offs ఉంటాయి.",
