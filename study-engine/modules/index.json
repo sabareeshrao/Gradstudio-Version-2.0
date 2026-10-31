@@ -129,6 +129,11 @@
       "slug": "large-vision-language-model",
       "title": "Large Vision-Language Model (LVLM)",
       "domain": "Visual Understanding, Language Reasoning, and Multimodal Intelligence · Multimodal AI"
+    },
+    {
+      "slug": "diffusion-model",
+      "title": "Diffusion Model",
+      "domain": "Noise-Based Generative Models and Data Generation · Generative Modeling"
     }
   ]
 }
