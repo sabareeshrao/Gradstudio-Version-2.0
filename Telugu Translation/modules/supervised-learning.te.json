@@ -13,7 +13,7 @@
       "answer": "b",
       "options": [
         "Labels లేకుండా Samplesని Similarity బట్టి Group చేసే Unsupervised Method.",
-        "Correct Labels ఉన్న Examples నుంచి Learn చేసి Unseen Inputsకి Answers Predict చేస్తుంది.",
+        "Labeled Examples నుంచి Learn చేసి New Inputsకి Predict చేస్తుంది.",
         "Training Examples Copy చేసి Identical New Inputs మాత్రమే Recognize చేసే System.",
         "Labeled Examples నుంచి Learn చేయకుండా Every Inputకి Manual Rules Apply చేస్తుంది."
       ],
@@ -29,7 +29,7 @@
         "Classification Prices Predict చేస్తుంది; Regression Spam Categoriesని Predict చేస్తుంది.",
         "Both Methods Categories మాత్రమే Predict చేస్తాయి; Regression More Training Data Use చేస్తుంది.",
         "Classification Missing Fields Find చేస్తుంది; Regression Target Labels Define చేస్తుంది.",
-        "Classification Categories Predict చేస్తుంది; Regression House Price వంటి Numbers Estimate చేస్తుంది."
+        "Classification Categories, Regression Numeric House Prices Predict చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Classification ఒక Category Choose చేస్తుంది, Example Spam/Not Spam. Regression Numeric Value Predict చేస్తుంది, Example House Price.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Classification Discrete Classes Predict చేస్తుంది: Spam, Handwritten Digit. Regression Continuous Number Estimate చేస్తుంది: House Price. Classificationకి Precision/Recall, Regressionకి MAE/RMSE వంటి Different Metrics Use చేస్తాం.",
@@ -56,7 +56,7 @@
       "options": [
         "Every Algorithm Exactly Same Equation Use చేస్తుంది; Familiar Model Always Best.",
         "Neural Networks Every Datasetకి Best; Linear Models Backup మాత్రమే.",
-        "Task, Data Size, Complexity, Interpretability, Validation Results బట్టి Model Choose చేస్తాం.",
+        "Task, Data, Interpretability, Validation బట్టి Model Choose చేస్తాం.",
         "Training Speed మాత్రమే Model Choice Decide చేస్తుంది; Error Rates Matter కాదు."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Different Algorithms Different Patterns Learn చేస్తాయి. Task Type, Data, Interpretability, Validation Performance బట్టి Model Select చేయాలి.",
@@ -82,7 +82,7 @@
       "stem": "Empirical Risk Minimization (ERM), Loss Functions, Regularization, Bias–Variance Trade-off, Generalization వల్ల Training Dataలో Good Accuracy ఉన్న Model New Dataలో ఎందుకు Fail కావచ్చు?",
       "answer": "a",
       "options": [
-        "Training Overfit కావచ్చు; Validation, Regularization Unseen Data Performance Improve చేయవచ్చు.",
+        "Training Overfit అవచ్చు; Validation, Regularization Helpful అవుతాయి.",
         "Low Training Loss Future Dataలో Guaranteed Accuracyని Always Ensure చేస్తుంది.",
         "Every Training Label Memorize చేస్తే Bias, Variance Automatically Zero అవుతాయి.",
         "Regularization Data Shift ఉన్నా All Future Predictions Correctగా Makes చేస్తుంది."
@@ -99,7 +99,7 @@
         "Only Accuracy Monitor చేసి Every Week Evidence లేకుండానే Retrain చేస్తాం.",
         "Copied Minority Samplesని Train, Final Test రెండింటిలో Insert చేస్తాం.",
         "Daily Test Labelsతో Recalibrate చేసి Same Testపై Models Replace చేస్తాం.",
-        "Clean Splits, Data Shifts, Confidence Monitor చేసి Measured Declineపై Retrain చేస్తాం."
+        "Data Drift, Confidence Check చేసి Quality Dropపై Retrain చేస్తాం."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Launch తర్వాత Data, Performance Change అవవచ్చు. Drift, Class Imbalance, Confidence Monitor చేసి Evidence ఆధారంగా Retrain చేయాలి.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Data Leakage Prevent చేసి Imbalanced Dataకి Class Weights లేదా Train-Only Resampling Use చేయండి. Per-Class Metrics, Calibration, Drift, Label Noise Check చేసి Model Quality Decline అయితే Retrain/Migrate Consider చేయండి.",
