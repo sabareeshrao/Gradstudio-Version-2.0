@@ -10,15 +10,15 @@ Use these rules when updating existing English study-engine modules in numbered 
 ## Four options that actually teach
 - Write **complete, natural sentences in simple English**. Keep technical terms when they name a real concept and explain them through context.
 - Each option should communicate a coherent, related technical idea, not a random or absurd distractor.
-- Make the four options **similar in reading effort**, usually around 22–30 words each; do not turn them into one-line definitions or long walls of text.
-- **Do not reveal the correct choice by length**. Existing `verify-module-options.mjs` checks maximum word-length ratio 1.15 and whether the correct choice is uniquely longest by words or characters.
+- Make all four options readable and educational. Aim for similar reading effort, but **never shorten a correct answer so far that it fails to answer the question**.
+- Watch for answer-length clues. The word-length heuristic is a **review warning**, not a reason to omit definitions or mechanisms. Improve the options editorially rather than padding with filler; use `--strict-length` for hard length checks.
 - Avoid repeating identical answer phrasing, mechanically padding an option just to pass the length check, or using an obvious “always/never” clue.
 - The correct answer must remain supported by the question and diagram. Preserve the stored answer key unless it was factually incorrect and a separate correction was explicitly requested.
 
 ## Explanation (visible after checking)
 - Label the learner-facing text simply **Explanation:**. Never display “YouTube mentor style,” “YouTuber,” or similar style tags.
 - Keep each visible explanation **at or under 100 words**.
-- Use a warm, conversational teaching voice: a concrete situation, the actual mechanism, and a short takeaway. Do not stack definitions or unexplained acronyms.
+- **First answer every part of the question directly**: define the concept when asked what it is, then describe the mechanism, why, or requested comparisons. Follow with a distinct concrete example that supports the answer. Avoid unexplained acronyms.
 - Use **a different relevant example for every question**; do not recycle an imagination/scenario within or across a batch.
 - Keep the deeper optional technical explanation when a module already has one; do not replace the beginner explanation with that advanced text.
 
@@ -30,8 +30,8 @@ Use these rules when updating existing English study-engine modules in numbered 
 ## Batch audit before committing
 1. Exactly seven unchanged question stems per module.
 2. Four conceptually distinct options per question, keyed A–D.
-3. Correct choice not uniquely longest in words **or characters**, and word-count ratio at most 1.15.
-4. Visible explanation starts with **Explanation:** and contains no more than 100 words.
+3. Confirm the correct option **explicitly addresses every asked part**, not only a related fact. Review length balance separately; don't trade away completeness for a 1.15 ratio.
+4. Visible explanation starts with **Explanation:**, gives the direct answer **before** the example, and contains no more than 100 words.
 5. Every question has a different specific example or situation.
 6. All seven question figures and diagram styles remain present; no changes to Telugu assets.
 7. Confirm the GitHub file commit and provide the module's GitHub Pages link. Do not claim a successful live deployment unless tested.
@@ -127,3 +127,6 @@ The remaining modules can be revised in subsequent user-selected batches.
 **Verification:** All 35 original question stems, 35 answer keys, 35 unique diagram figures (verified against their original lengths), and advanced technical explanations were preserved. Rewrote all 140 answer choices into understandable technical English and all 35 visible explanations with varied examples. Each explanation begins **Explanation:** and contains 66–81 words (under the 100-word maximum). Every question passes the maximum option word-count ratio of 1.15, and the correct option is not uniquely longest by words or characters. All five updated JSON modules were committed and fetched again from GitHub for verification. No Telugu content, shared quiz-rendering code, themes, or unrelated modules were edited.
 
 **Completion:** Batches 1–10 cover the 50 planned English study topics (7 questions and 28 answer choices per topic; 350 questions and 1,400 choices total). Batch 46–50 source checks passed; live GitHub Pages rendering was not independently tested.
+
+## 50-topic semantic correction audit (2026-10-31)
+All 50 planned English modules received a question-to-answer completeness pass. The earlier 1.15 mechanical length rule had encouraged overly short correct choices that omitted definitions or subparts of questions. Correct options now foreground the direct answer, and learner explanations begin with that answer before a practical example. This revision keeps stems, stored answer keys, diagrams, advanced explanations and Telugu files unchanged. Length parity is still important but must be reviewed without truncating correct content. See `ENGLISH_SEMANTIC_AUDIT_50_TOPICS.md` for translation-review guidance.
