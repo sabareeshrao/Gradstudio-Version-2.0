@@ -1,0 +1,16 @@
+/* Neural Network Pruning: keyword-scoped instructional scenes; shared engine owns questions/themes/score. */
+.prune-hero,.prune-figure{box-sizing:border-box;min-width:0;border:1px solid #d5e5e8;border-radius:15px;padding:clamp(13px,2.3vw,21px);color:#33556b;background:radial-gradient(circle at 87% 8%,#e6f4ed,transparent 44%),linear-gradient(155deg,#f7fbff,#fffaf4)}
+.prune-hero{margin-bottom:22px;background:linear-gradient(130deg,#e6f5ee,#f7fbfe 67%,#fff5e9)}
+.prune-hero h2{color:#2d5369;line-height:1.32;font-size:clamp(1.1rem,2vw,1.44rem);margin:6px 0 14px}
+.prune-figure h3{color:#31556c;line-height:1.42;font-size:clamp(1rem,1.85vw,1.18rem);margin:5px 0 12px}
+.prune-kicker{color:#2c7c78;font-weight:850;font-size:.69rem;letter-spacing:.1em;text-transform:uppercase;display:block}
+.prune-scroll{max-width:100%;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;background:#fff;border:1px solid #d9e7ea;border-radius:10px}
+.prune-scroll:focus-visible{outline:2px solid #438db9;outline-offset:2px}
+.prune-svg{display:block;width:100%;height:auto;max-width:none}
+.prune-note{margin:12px 0 0;color:#5b7787;font-size:.81rem;line-height:1.58}
+.prune-sources{margin:16px 0;padding:13px 16px;background:#fff;border:1px solid #d9e6eb;border-radius:12px;font-size:.82rem;color:#45677b}
+.prune-sources summary{cursor:pointer;color:#30767d;font-weight:850}.prune-sources li{margin:6px 0}.prune-sources a{color:#226899}
+.explanation-deep-content pre{white-space:pre;tab-size:2;overflow-x:auto;max-width:100%;border-radius:9px;padding:14px;background:#192d40;color:#dce9f6;font-size:.77rem;line-height:1.56}
+.explanation-deep-content pre code{background:transparent;color:inherit;white-space:pre;border:0;padding:0;font-size:inherit}
+@media(max-width:680px){.prune-hero,.prune-figure{padding:12px}.prune-svg{width:780px}.prune-note{font-size:.77rem}}
+@media(prefers-reduced-motion:reduce){.prune-scroll{scroll-behavior:auto}}
