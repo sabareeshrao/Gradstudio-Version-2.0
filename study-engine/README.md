@@ -58,6 +58,8 @@ All listed keywords run in the [shared study engine](https://sabareeshrao.github
 | 46 | [Quantization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=quantization) | `quantization` |
 | 47 | [Knowledge Distillation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=knowledge-distillation) | `knowledge-distillation` |
 | 48 | [Long Short-Term Memory (LSTM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) | `long-short-term-memory` |
+| 49 | [Recurrent Neural Network (RNN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) | `recurrent-neural-network` |
+| 50 | [Random Forest](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest) | `random-forest` |
 | 51 | [Convolutional Neural Network (CNN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network) | `convolutional-neural-network` |
 
 ### Latest additions
