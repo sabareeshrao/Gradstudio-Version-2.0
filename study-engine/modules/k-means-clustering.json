@@ -28,7 +28,7 @@
         "K represents the number of features, a cluster contains one input column, and the centroid is the target value to predict.",
         "K counts training epochs, a cluster is one individual record, and a centroid is the correct category label for that record.",
         "K determines the distance formula, a cluster is the model's output score, and a centroid is always an unusual outlier.",
-        "K is the chosen number of groups; a cluster holds assigned points, and its centroid is the mean position of those points."
+        "K sets cluster count; each cluster holds assigned points, and its centroid is the average of those grouped points."
       ],
       "explanation": "<strong>Explanation:</strong> Picture a botanist measuring flower-petal length and width. If the botanist chooses <strong>K = 3</strong>, K-Means tries to form three groups. Each <strong>cluster</strong> contains points assigned to a nearby center. Its <strong>centroid</strong> is the average position of those assigned measurements. The chosen K matters: too few groups can mix different patterns, while too many can split meaningful groups unnecessarily. K is selected by the analyst or a model-selection process, not discovered automatically by basic K-Means.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> The user chooses K, the number of clusters. Each cluster contains points assigned to its centroid, which is the arithmetic mean of those members. Too few clusters merge patterns; too many may fragment them. Interpretability depends on the data and task.",
@@ -39,10 +39,10 @@
       "tag": "Beginner · shopper example",
       "answer": "a",
       "options": [
-        "Start with K tentative centers, assign shoppers to the nearest center using income and spending, update cluster means, and repeat until stable.",
+        "Choose starting centers, group shoppers by income and spending, update the average center of each group, and repeat until stable.",
         "Sort shoppers by last name and build groups from the alphabetical order, without comparing their annual income or spending measurements.",
         "Predict shoppers' spending with one regression line, then place only customers with exactly equal predictions in the same permanent group.",
-        "Choose random centers once and never update them, even when assigned customers suggest completely different average group positions."
+        "Choose fixed random centers, assign customers only once, and ignore changes in group averages even when assignments should be updated."
       ],
       "explanation": "<strong>Explanation:</strong> Suppose a shopping mall has income and spending data for customers but no existing customer segments. K-Means begins with tentative <strong>centroids</strong> on a two-feature chart. It assigns each shopper to the nearest center, computes the average income and spending within each group, and moves the centers there. The process repeats until the assignments or centers stabilize. One group might spend more despite moderate income. These are numerical patterns, not necessarily complete explanations of customer behavior.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> For each customer, K-Means compares the income-and-spending vector with current centroids using distance. It assigns the nearest one, computes a new average from each group, then repeats until centers barely move or another stopping criterion triggers. Scaling matters when feature units differ significantly.",
@@ -54,9 +54,9 @@
       "answer": "c",
       "options": [
         "Assign every observation to its farthest centroid, then minimize the number of selected features rather than the distances inside groups.",
-        "Leave the starting centroids unchanged and stop only when all data points happen to lie at exactly the same distance from a center.",
+        "Keep the first centroids permanently fixed and stop when every point is equally distant from its assigned center.",
         "Assign each point to its nearest centroid and recompute each centroid as the group's mean, reducing within-cluster squared distances.",
-        "Average all data points into one shared center, ignoring K and removing the distinction between the separate groups requested by the analyst."
+        "Average every data point into one global center and ignore the requested K, removing the distinction between separate clusters."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine organizing small stars on a two-dimensional astronomy chart by their plotted coordinates. K-Means measures each star's distance to the current centers and assigns it to the nearest one. It then updates each <strong>centroid</strong> to the average coordinates of its assigned stars. These two steps usually reduce the <strong>within-cluster sum of squares (WCSS)</strong>, often called inertia. The process ends when centers or assignments stop changing enough. It finds a local solution, not always the best possible grouping.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> Using squared Euclidean distance ||x−μ||², assign point x_i to the center minimizing that value. Update each μ_j to the mean of the currently assigned points. WCSS (inertia) is Σ_i ||x_i−μ_{assignment(i)}||². Each Lloyd iteration does not increase it, but convergence may be to a local optimum.",
@@ -68,9 +68,9 @@
       "answer": "b",
       "options": [
         "Choose K by maximizing inertia and ignoring the feature scales, because the first randomly selected centroids always produce the optimal groups.",
-        "Compare elbow curves and silhouette scores for several K values, scale features where appropriate, and check results across different initial centers.",
+        "Compare elbow plots and silhouette scores for several K settings, scale numeric features, and test different initial centroid placements.",
         "Set K equal to the number of input features, because K-Means++ guarantees ideal clusters regardless of the data distribution.",
-        "Always use the largest tested K, since additional groups necessarily improve cluster meaning and make assignments more reliable."
+        "Always choose the largest K tested, because added centers guarantee stable, meaningful groups under any initialization for all datasets."
       ],
       "explanation": "<strong>Explanation:</strong> Picture a conservation team grouping wildlife habitats by rainfall, average temperature, and vegetation. Rainfall might have much larger numeric values than the other features, so <strong>scaling</strong> can prevent it from dominating distances. Try several K values. An <strong>elbow plot</strong> shows how inertia improves as K increases, and <strong>silhouette scores</strong> assess separation and compactness. <strong>K-Means++</strong> selects more useful starting centers than naive random selection, but different initializations may still produce different clusters.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> Inertia or WCSS always weakly decreases with larger K, so the elbow looks for diminishing returns. Silhouette scores compare cohesion and separation, ranging from −1 to 1. Standardizing features can prevent a large-unit feature from dominating Euclidean distance. K-Means++ chooses spread-out starting seeds and multiple initializations reduce seed sensitivity.",
@@ -83,8 +83,8 @@
       "options": [
         "K-Means naturally follows winding groups and curved boundaries, while DBSCAN is limited to clusters that have nearly equal round shapes.",
         "Every clustering algorithm finds identical groups after scaling and handles extreme outliers equally well, regardless of the data's geometry.",
-        "Gaussian Mixture Models cannot represent overlapping clusters, while hierarchical clustering always needs predefined true labels before fitting.",
-        "K-Means favors compact groups; DBSCAN can find irregular dense regions, GMM permits probabilistic overlap, and hierarchical methods build nested groupings."
+        "Gaussian Mixture Models cannot handle overlapping clusters, while hierarchical clustering always requires known training labels for every example.",
+        "K-Means favors round groups; DBSCAN finds irregular density clusters, GMM models overlap, and hierarchical clustering builds nested groups."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine GPS points collected along two winding hiking trails. The points form long, curved shapes rather than round clouds. K-Means divides space by proximity to centroids, so it may split a trail incorrectly. <strong>DBSCAN</strong> can identify irregular dense shapes and label some outliers as noise. A <strong>Gaussian Mixture Model</strong> gives soft membership probabilities for overlapping groups, while <strong>hierarchical clustering</strong> builds nested structures. The best algorithm depends on geometry, density, noise, and what the groupings mean.",
       "technicalExplanation": "<strong>Detailed explanation:</strong> K-Means partitions space into nearest-center (Voronoi) regions and minimizes squared Euclidean distances, favoring convex, similarly spread clusters. DBSCAN can find non-convex groups and noise, though variable densities can challenge it. Gaussian mixtures model overlapping distributions; hierarchical clustering creates nested groupings. High-dimensional distances can lose meaning.",
@@ -95,7 +95,7 @@
       "tag": "Advanced · production and stability",
       "answer": "a",
       "options": [
-        "Mini-Batch K-Means uses subsets for faster centroid updates; multiple starts, efficient distance calculations, PCA, and stability checks support larger datasets.",
+        "Mini-Batch K-Means updates centers with subsets; fast distance calculations, repeated starts, PCA, and stability checks support large datasets.",
         "Using all records in every iteration is always faster than mini-batches, so large datasets never benefit from approximate centroid updates.",
         "Adding more dimensions and keeping only one random initialization guarantees stable clusters, even when distance becomes less informative.",
         "Replace distance comparisons with predefined category labels, then evaluate classification accuracy as the only meaningful measure of clustering quality."
