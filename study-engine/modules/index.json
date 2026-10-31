@@ -204,6 +204,11 @@
       "slug": "transformer-decoder",
       "title": "Transformer Decoder",
       "domain": "Autoregressive Text Generation and Decoder Architecture · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "context-window",
+      "title": "Context Window",
+      "domain": "Token Limits, Context Management, and Long-Context Processing · Transformers and LLM Architecture"
     }
   ]
 }
