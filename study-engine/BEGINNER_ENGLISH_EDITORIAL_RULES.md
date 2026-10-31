@@ -107,3 +107,12 @@ The remaining modules can be revised in subsequent user-selected batches.
 40. Neural Network Pruning (`neural-network-pruning`)
 
 **Verification:** All 35 original question stems, answer keys, distinct figures, and advanced technical explanations were preserved. Rewrote 140 A–D choices with full, teaching-oriented English and 35 beginner-facing explanations with different concrete scenarios. Each explanation starts with **Explanation:** and contains 68–81 words. Every question passes the existing maximum 1.15 option word-count ratio and the correct answer is not uniquely longest by words or characters. All five updated JSON files were committed and read back from GitHub; Telugu lessons and shared study-engine rendering, themes, and unrelated modules were unchanged.
+
+## Batch 9 — completed English modules
+41. Quantization (`quantization`)
+42. Knowledge Distillation (`knowledge-distillation`)
+43. Convolutional Neural Network (CNN) (`convolutional-neural-network`)
+44. Recurrent Neural Network (RNN) (`recurrent-neural-network`)
+45. Long Short-Term Memory (LSTM) (`long-short-term-memory`)
+
+**Verification:** All 35 original question stems, answer keys, technical explanations, and distinct diagrams are preserved. Rewrote the 140 answer choices in beginner-friendly technical English and all 35 visible explanations with varied real-world teaching examples. Each explanation starts with **Explanation:**, uses 68–83 words, and remains within the 100-word limit. Each question passes the 1.15 maximum option word-count ratio; the correct answer is not uniquely longest by word or character count. The five committed JSON modules were fetched again from GitHub for final verification. Telugu materials, shared quiz code, and unrelated modules were unchanged.
