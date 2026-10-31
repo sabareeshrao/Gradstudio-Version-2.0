@@ -1,6 +1,6 @@
 # Telugu + English Lesson Library
 
-[**Master list: all 26 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
+[**Master list: all 30 Telugu HTML and English original lesson page links**](ALL_TELUGU_HTML_LINKS.md)
 
 **Separate bilingual copies of the numbered English lessons in [lessons/](../lessons/).** The English originals and original technical diagrams are unchanged. The last column links to the **live English lesson**, not the GitHub source code.
 
@@ -36,7 +36,12 @@
 | 25 | Loss Function · AI-00739 | [Open Telugu](25-loss-function.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-function) |
 | 26 | Activation Function · AI-00702 | [Open Telugu](26-activation-function.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) |
 
-[**View all 26 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
+| 27 | Softmax · AI-00717 | [Open Telugu](27-softmax.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=softmax) |
+| 28 | Residual Connection · AI-00957 | [Open Telugu](28-residual-connection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=residual-connection) |
+| 29 | Positional Encoding · AI-00931 | [Open Telugu](29-positional-encoding.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding) |
+| 30 | Rotary Position Embedding (RoPE) · AI-00935 | [Open Telugu](30-rotary-position-embedding.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) |
+
+[**View all 30 lessons as a clickable HTML table**](index.html) · [GitHub Pages Library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
 ## Translation rules
 
@@ -47,4 +52,4 @@
 5. Preserve working quiz scoring, reset and all 15 themes. Do not touch original English module files.
 6. Run the quality verification: `node "Telugu Translation/verify-translation.mjs"`.
 
-Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–26 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those sixteen in `lessons/`). The bilingual index page is `index.html` here.
+Lessons 01–10 correspond to numbered English `lessons/` HTML entries. Lessons 11–30 use the completed English source modules from `study-engine/modules/` (there are no separate numbered English HTML entries for those twenty in `lessons/`). The bilingual index page is `index.html` here.
