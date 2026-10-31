@@ -13,7 +13,7 @@
       "options": [
         "GAN Saved Pictures Copy చేసి New Examplesగా Label చేస్తుందంటుంది. Copying, Learned Generation Different.",
         "GAN Known Image Categories Classify మాత్రమే, New Examples Generate చేయదంటుంది. Generator Role Missing.",
-        "GAN Generator Fake Samples, Discriminator Real/Fake Check; Competition Improves Generator.",
+        "GAN Generator Fake Samples Create చేస్తుంది; Discriminator Real/Fake Check; Competition Improves.",
         "GAN Fixed Image Filter మాత్రమే Apply చేస్తుందంటుంది. Trainable Patterns Learn చేయదు."
       ],
       "answer": "c",
@@ -73,7 +73,7 @@
       "options": [
         "One Encoder Class Labels Only, Discriminator Remove అంటుంది. Two-Network Adversarial Process Missing.",
         "MNIST Digits Copy చేసి Newly Generated అంటుంది. Learning, Generator Training Demonstrate కాదు.",
-        "PyTorch GAN Generator Noise→Image, Discriminator Scores; MNIST Alternate Training, Sample Digits Inspect.",
+        "PyTorch GAN: Generator Noise→Image, Discriminator Scores; MNISTపై Alternate Training, Digits Inspect.",
         "Classifier Train చేసి Original Digits Rotate చేస్తుందంటుంది. Image Augmentation New Generative Modeling కాదు."
       ],
       "answer": "c",
@@ -89,7 +89,7 @@
         "DCGAN Convolutions Remove, cGAN Labels Ignore, WGAN Competition Stop అంటుంది. Variant Features Reverse.",
         "CycleGAN Exact Pairs Require, StyleGAN Label Classifier, WGAN Same BCE అంటుంది. Their Goals Different.",
         "Every GAN Variant Next-Token Text Model అయిపోతుందంటుంది. Image Adversarial Generation Still Central.",
-        "DCGAN Conv, cGAN Labels, WGAN Critic, CycleGAN Unpaired Transfer, StyleGAN Styles."
+        "DCGAN Conv, cGAN Labels, WGAN Critic, CycleGAN Unpaired, StyleGAN Stylesని Control చేస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> DCGAN Convolutions; Conditional GAN Labels; WGAN Critic; CycleGAN Unpaired Domain Translation; StyleGAN Style Controls Use చేస్తాయి. Stability, Guidance, Visual Detailకు Different Improvements. Illustrated Postcards Design చేసే Studioని Imagine చేయండి. <strong>DCGAN</strong> Spatial Patternsకి Convolutions; <strong>cGAN</strong> Labelsతో Guide; <strong>WGAN</strong> Critic Objective; <strong>CycleGAN</strong> Paired Examples లేకుండా Image Styles Transfer; <strong>StyleGAN</strong> Appearanceపై Controls. Each Variant Different Problem Address చేస్తుంది: Stability, Detail, Controllability, Translation.",
@@ -101,7 +101,7 @@
       "stem": "GAN Trainingలో Mode Collapse, Weak Gradients, Overpowering Discriminator, Instability ఎందుకు వస్తాయి? Wasserstein Loss, Gradient Penalty, Spectral Normalization, Feature Matching, FIDతో ఎలా Address చేస్తాం?",
       "tag": "Advanced · Troubleshooting",
       "options": [
-        "Mode Collapse Repeats; Weak Gradients Hurt; Wasserstein, Penalty, Normalization Help; FID, Diversity Check.",
+        "Mode Collapse Repeats; Weak Grads Hurt; Wasserstein, Penalty, Norm Help; FID, Diversity Check చేస్తాం.",
         "Mode Collapse Variety Increase, Spectral Norm Every Sample Realistic Prove అంటుంది. These Claims False.",
         "Vanishing Gradients Strong Updates, Feature Matching One Stored Image Copy అంటుంది. Intended Effects Different.",
         "FID Each Image Real అని Certify చేస్తుందంటుంది. Distribution Metric Individual Quality Guarantee కాదు."
