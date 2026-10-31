@@ -37,7 +37,7 @@
         "Lower Bits Every Original Value Perfectగా Preserve చేసి Accuracy Never Changes అంటుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> 100 Million Weights: FP32 ~400 MB, INT8 ~100 MB, INT4 ~50 MB. ఇవి Raw Weights Only.",
-      "technicalExplanation": "<strong>Correct Answer: A.</strong> 100,000,000×4 Bytes=400 Decimal MB; INT8×1=100 MB; Packed INT4×0.5=50 MB. Scale, Padding, Unquantized Layers Extra Memory Need."
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> 100,000,000×4 Bytes=400 Decimal MB; INT8×1=100 MB; Packed INT4×0.5=50 MB. Scale, Padding, Unquantized Layers Extra Memory Need. ఇవి Raw Weight Storage Estimates మాత్రమే; Scales, Padding వల్ల Actual Memory ఇంకా ఎక్కువ కావచ్చు."
     },
     {
       "stem": "Scale, Zero Point, Rounding, Clippingతో Floating Valueని Integerగా ఎలా Convert చేస్తాం? Symmetric, Asymmetric Quantization Difference ఏమిటి?",
@@ -67,7 +67,7 @@
         "GPTQ Activations Only Quantize; AWQ Attention Scores Only Adjust చేస్తుంది.",
         "All Techniques Activation Statistics Ignore చేసి Random Rounding Only Use చేస్తాయి.",
         "SmoothQuant Weights Only; AWQ Whole LLM Retrain Mandatory అని Says చేస్తుంది.",
-        "GPTQ Weight Error Reduce; AWQ Important Channels Protect; SmoothQuant Outliers Handle చేస్తుంది."
+        "GPTQ Weight Error; AWQ Channels; SmoothQuant Outliers Handle చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> GPTQ Weight Error Reduce; AWQ Important Channels Protect; SmoothQuant Activation Outliers Manage చేస్తుంది.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> GPTQ Approx Second-Order Weight Reconstruction; AWQ Activation Statisticsతో Salient Channels Protect; SmoothQuant Activation Outliersని Weights వైపు Shift చేస్తుంది."
@@ -75,7 +75,7 @@
     {
       "stem": "CPU, GPU, NPUపై INT8/INT4 Quantization Deploy చేసేటప్పుడు Size, Accuracy, Latency, Energy ఎలా Benchmark చేస్తాం?",
       "options": [
-        "Target Hardwareపై Inference, Conversion Overhead, Quality, Energy, Latency Measure చేస్తాం.",
+        "Hardwareపై Quality, Latency, Energy, Conversion Costs Measure చేస్తాం.",
         "Smallest Stored Model Every Hardwareపై Fastest, Most Accurate అని Guarantee చేస్తుంది.",
         "INT4 Files Every CPU, GPU, Phoneలో Native INT4 Operators Guarantee చేస్తాయి.",
         "Dequantization Back to Float All Quantization Error Completely Remove చేస్తుంది."
