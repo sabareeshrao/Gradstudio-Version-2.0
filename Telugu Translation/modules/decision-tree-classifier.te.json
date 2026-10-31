@@ -55,7 +55,7 @@
       "options": [
         "Training Random Split Thresholdsనే Equal Chanceతో Choose చేస్తుంది; Impurity Ignore చేస్తుంది.",
         "Candidate Splits Compare చేసి Weighted Gini/Entropy Reduction ఎక్కువైతే Prefer చేస్తుంది.",
-        "Gini Tree Depth Count; Entropy Runtime Measure; Information Gain Leaf Count Only Checks.",
+        "Gini Tree Depth Count; Entropy Runtime Measure; Information Gain Leaf Count Only Checks చేస్తుంది.",
         "Thresholds Training Startకి Fixed; Actual Class Labels Split Decisionsని Affect చేయవు."
       ],
       "answer": "b",
