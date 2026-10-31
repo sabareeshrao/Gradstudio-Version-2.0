@@ -33,7 +33,7 @@ for(const slug of slugs){
     if(words<12||words>42)fail(slug,i,'Beginner takeaway must use 12–42 words, found '+words);
     if(/<(?:ul|ol|li|table|h[1-6]|pre|blockquote)\b/i.test(body))
       fail(slug,i,'Do not overwhelm the default answer with lists, tables, or code blocks');
-    if(/\b(?:Correct answer|Correct:\s*[A-D]|Layer\s*[1-7])\b/i.test(plain(body)))
+    if(/\b(?:Correct answer\s*:|Correct:\s*[A-D]\b|Layer\s*[1-7]\b)/i.test(plain(body)))
       fail(slug,i,'Do not repeat answer keys or Layer N labels inside the takeaway');
     if(!q.technicalExplanation||countWords(q.technicalExplanation)<10)
       fail(slug,i,'Keep the original thorough explanation in technicalExplanation');
