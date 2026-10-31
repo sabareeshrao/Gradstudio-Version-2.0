@@ -51,7 +51,7 @@
       "stem": "Sentenceలో ఏ Words Relevant అనేది Attention Mechanism ఎలా Decide చేస్తుంది? Attention Scores, Weights, Weighted Value Combinationsతో Context-aware Representation ఎలా Build అవుతుంది?",
       "answer": "a",
       "options": [
-        "Attention Query, Keys Compare చేసి Scores ఇస్తుంది; Softmax Weightsగా Convert చేసి Vectors Combine చేసి Query-Specific Context Build చేస్తుంది.",
+        "Query–Key Scoresని Softmax Weightsగా Convert చేసి Value Vectors Mix చేస్తుంది; Query-Specific Context Build అవుతుంది.",
         "Word Frequencies Count చేసి Common Embeddings Average చేస్తుంది అంటుంది. Frequency, Query Relevance Same కాదు.",
         "Original Word Orderలో Tokens Sort చేసి Equal Weights ఇస్తుందని అంటుంది. Attention Different Queriesకి Different Relations Learn చేస్తుంది.",
         "Sentence Rarest Word Select చేసి Every Outputకి Same Vector Copy చేస్తుందని అంటుంది. Useful Other Tokens Ignore అవుతాయి."
@@ -82,7 +82,7 @@
       "answer": "b",
       "options": [
         "PyTorch Tokens Alphabetically Group చేసి Shared Attention Vector Assign చేస్తుందంటుంది. Learned Q/K/V Projections Missing అవుతాయి.",
-        "PyTorch Learned Q, K, V Layers, Scaled Scores, Mask, Softmax, Weighted Valuesతో Attention Output Compute చేస్తుంది.",
+        "PyTorch Q/K/V Learned Layers, Scaled Scores, Mask, Softmax, Weighted Valuesతో Attention Output Compute చేస్తుంది.",
         "Token IDs Add చేసి Attention Calculate చేయగలమంటుంది. Learned Projections, Similarity లేకుండా Context Relevance Compute కాదు.",
         "Correct Target Labels నుంచి Attention Scores Direct Create చేస్తుందంటుంది. Inference-Time Attention Query–Key Compare చేస్తుంది."
       ],
