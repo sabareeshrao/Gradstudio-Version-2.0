@@ -10,7 +10,7 @@
       "stem": "Deep Learningలో Backpropagation అంటే ఏమిటి? Neural Network Prediction Errorsని Identify చేసి Learningకి Help చేసే Gradient Computation ఎలా Work చేస్తుంది?",
       "tag": "Beginner · Basics",
       "options": [
-        "Forward Passలో Predictions చేసి Trainingకి ముందు Architecture మాత్రమే Choose చేస్తుంది, Optimization Progressని Evaluate చేయకుండా.",
+        "Forward Passలో Predictions చేసి Trainingకి ముందు Architecture మాత్రమే Choose చేస్తుంది, Always.",
         "Each Parameterకి Loss Gradient Compute చేసి Better Weight Updatesకి Guide చేస్తుంది.",
         "Derivatives Calculate చేయకుండా Outputsని Backward New Inputsగా Send చేస్తుంది.",
         "Wrong Predictionsని Permanent Memorize చేసి Weightsని Never Change చేస్తుంది."
@@ -40,7 +40,7 @@
       "options": [
         "Predict, Loss Measure, Backprop Gradients, Optimizerతో Parameter Updates Repeat చేస్తుంది.",
         "Weights First Update చేసి తర్వాత Prediction, Lossని Only Report చేస్తుంది.",
-        "Inputs Backward Send చేసి Loss తర్వాత Compute చేసి Updates Skip చేస్తుంది, Actual Parameter Changesని Track చేయకుండా.",
+        "Inputs Backward Send చేసి Loss తర్వాత Compute చేసి Updates Skip చేస్తుంది, Context లేకుండా.",
         "Forward Passకి ముందే Loss Compute చేసి Equal Gradients All Layersకి Copy చేస్తుంది."
       ],
       "answer": "a",
@@ -80,7 +80,7 @@
       "stem": "PyTorch Reverse-Mode Automatic Differentiationతో Backpropagation ఎలా Work చేస్తుంది? Computation Graph, Jacobian Chain Rule, Vector-Jacobian Products, Gradient Accumulation, In-Place Operations పాత్ర ఏమిటి?",
       "tag": "Advanced · Architectures",
       "options": [
-        "PyTorch Full Jacobian Every Time Materialize చేసి All Gradients Automatic Clear చేస్తుంది, Proper Version Checksని Skip చేసి.",
+        "PyTorch Full Jacobian Every Time Materialize చేసి All Gradients Automatic Clear చేస్తుంది, Completely.",
         "Autograd Python Sourceని Forward Passకి ముందే Symbolically Differentiate చేస్తుంది.",
         "In-Place Changes Autogradకి Invisible కాబట్టి Saved Valuesకి Never Problems రావు.",
         "Autograd Graph Record చేసి Backward Vector-Jacobian Products, Gradient Accumulation Handle చేస్తుంది."
