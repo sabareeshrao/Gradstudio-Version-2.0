@@ -101,7 +101,7 @@
       "tag": "Advanced · Robustness",
       "answer": "a",
       "options": [
-        "Modality Dropout Missing, Temporal Alignment Timing, Uncertainty Fusion Noise, Distillation Cross-Modal Knowledge Handle చేస్తాయి.",
+        "Modality Dropout Missing, Alignment Timing, Uncertainty Fusion Noise, Distillation Cross-Modal Knowledge Handle చేస్తాయి.",
         "Dropout Every Training Exampleలో One Modality Permanently Delete అంటుంది. Partial Input Robustness Learning కాదు.",
         "All Sensors Always Same Timestamp Record అంటుంది. Clock Offset, Processing Delay Real Challenges.",
         "Cross-Modal Distillation Raw Files Identicalగా Convert అంటుంది. Actually Learned Representations మధ్య Knowledge Transfer."
