@@ -42,7 +42,7 @@
         "Tree Email Length Only Check చేసి Every Emailకి Same Label Assign చేస్తుంది.",
         "Tree Emailని First Spamగా Mark చేసి Later Featuresతో Only Confirm చేస్తుంది.",
         "Tree One Similarity Score Compute చేసి No Separate Feature Branches Follow చేస్తుంది.",
-        "Tree Sender, Suspicious Words, Links Tests Follow చేసి Leafలో Spam/Not Spam Predict చేస్తుంది."
+        "Tree Sender, Words, Links Tests Follow చేసి Spam/Not Spam Leafకి వెళ్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Unknown Sender? Suspicious Link? ఇలా Email Features Check చేస్తూ Spam లేదా Not Spam Leafకి చేరుతుంది.",
