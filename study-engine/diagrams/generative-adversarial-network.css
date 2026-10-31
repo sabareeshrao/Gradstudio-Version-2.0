@@ -1,0 +1,28 @@
+
+/* GAN illustrated-v2: visual-only theme layer; shared quiz logic stays in the study engine. */
+.gan-hero,.gan-fig{box-sizing:border-box;color:#263e54;min-width:0}
+.gan-hero{margin-bottom:23px;padding:clamp(18px,2.7vw,27px);border:1px solid #cbdfe6;border-radius:20px;background:radial-gradient(circle at 8% 5%,#d9f5eb,transparent 47%),linear-gradient(145deg,#f7fbff,#fff7ed)}
+.gan-hero h2{font-size:clamp(1.22rem,2.5vw,1.8rem);line-height:1.22;margin:7px 0;color:#245673}
+.gan-hero p{font-size:.9rem;color:#607888;margin:8px 0 16px;max-width:80ch}
+.gan-kicker{font-size:.72rem;letter-spacing:.105em;text-transform:uppercase;font-weight:900;color:#2d806f}
+.gan-fig{padding:clamp(14px,2.5vw,24px);background:radial-gradient(circle at 91% 4%,#e5f5ee,transparent 40%),linear-gradient(138deg,#f7fbfe,#fffcf7);border-radius:13px}
+.gan-fig h3{font-size:clamp(1.03rem,1.7vw,1.19rem);line-height:1.36;margin:7px 0 14px;color:#2b4e6b}
+.gan-canvas{background:#fff;border:1px solid #d5e6eb;border-radius:13px;overflow:hidden}
+.gan-canvas svg{width:100%;height:auto;display:block}
+.gan-note{margin:13px 0 0;color:#5d7988;font-size:.81rem;line-height:1.55}
+.gan-note strong{color:#2a806b}
+.gan-chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.gan-chip-row span{background:#e9f7f1;border:1px solid #cbe8da;color:#347d6c;padding:5px 9px;border-radius:99px;font-size:.74rem;font-weight:800}
+.gan-formula{border:1px solid #d6e3ee;background:#f2f7fb;padding:12px 14px;margin-top:12px;border-radius:10px;color:#365974;font-family:Cambria,Georgia,serif;font-size:clamp(.78rem,1.6vw,.97rem);line-height:1.55;overflow-wrap:anywhere}
+.gan-code-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:12px;margin-top:12px}
+.gan-code{background:#1d2f43;color:#dfeaf5;font:12px/1.6 ui-monospace,Menlo,Consolas,monospace;border-radius:11px;padding:14px 16px;white-space:pre;overflow:auto;margin:0}
+.gan-code-side{padding:13px;background:white;border:1px solid #d5e5e8;border-radius:11px;font-size:.8rem;line-height:1.55;color:#547686}
+.gan-code-side strong{color:#326e7a}
+.gan-code-side p{margin:9px 0}
+.gan-code-details{margin-top:12px;border:1px solid #d2e5de;border-radius:11px;padding:9px 12px;background:#f1f9f5}
+.gan-code-details summary{font-weight:850;color:#337d6c;cursor:pointer;font-size:.84rem}
+.gan-code-details pre{background:#1a2e42;color:#e8f3fa;padding:12px 14px;border-radius:9px;max-height:450px;overflow:auto;font-size:12px;line-height:1.6;white-space:pre}
+.gan-sources{border:1px solid #d7e7e7;border-radius:11px;padding:12px 14px;font-size:.8rem;color:#526e7e;background:#fff;margin:18px 0}
+.gan-sources summary{font-weight:800;cursor:pointer}.gan-sources li{margin:7px 0}.gan-sources a{color:#236d8e}
+@media(max-width:760px){.gan-code-grid{grid-template-columns:1fr}.gan-canvas{overflow-x:auto;overscroll-behavior-x:contain}.gan-canvas svg{min-width:760px}.gan-canvas:after{content:"Swipe sideways to explore the full diagram →";display:block;position:sticky;left:0;background:#f6fafb;color:#718b98;text-align:center;font-size:.7rem;padding:4px}}
+@media(prefers-reduced-motion:reduce){.gan-hero *,.gan-fig *{animation:none!important;transition:none!important}}
