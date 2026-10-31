@@ -47,6 +47,8 @@ These links are generated from the canonical [module manifest](modules/index.jso
 
 New visual lessons include Large Vision-Language Model (LVLM) and Loss Function, alongside earlier modules on Reinforcement Learning, Computer Vision, and Multimodal Learning. Each module has its own questions and SVG illustrations while reusing the shared quiz engine.
 
+- [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) — nonlinear neurons, six activation curves, Python gradients, and stability.
+
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
 - `core.css`: reused layout, responsive behavior and theme-related styling.
