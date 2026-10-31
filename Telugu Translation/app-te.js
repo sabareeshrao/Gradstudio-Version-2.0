@@ -49,6 +49,12 @@ try{
     '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
     '<div class="actions"><button id="checkBtn" type="button">Check Answers · సమాధానాలు చూడండి</button><button id="resetBtn" type="button">Reset Quiz · మళ్లీ ప్రయత్నించండి</button></div>'+
     (data.sources||'')+'<p class="footer">'+esc(data.footer)+'</p>';
+  // Match English math rendering for bilingual lesson stems and explanations.
+  // Typeset after dynamic HTML insertion; preserve original Telugu source data.
+  try{
+    const {renderMath}=await import('../study-engine/math-render.js?v=20261031-math-fix');
+    renderMath(root);
+  }catch(mathError){console.warn('Telugu math display fallback',mathError);}
   await import('./quiz-te.js');
 }catch(error){
   root.innerHTML='<h1>Lesson open కాలేదు</h1><p class="sub">'+esc(error.message)+'</p><p><a href="./">All Lessons</a></p>';
