@@ -40,26 +40,26 @@
       "technicalExplanation": "<strong>Correct Answer: A.</strong> 100,000,000×4 Bytes=400 Decimal MB; INT8×1=100 MB; Packed INT4×0.5=50 MB. Scale, Padding, Unquantized Layers Extra Memory Need."
     },
     {
-      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "stem": "Scale, Zero Point, Rounding, Clippingతో Floating Valueని Integerగా ఎలా Convert చేస్తాం? Symmetric, Asymmetric Quantization Difference ఏమిటి?",
       "options": [
-        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
-        "Model Features Read చేసి Process చేస్తుంది.",
-        "Model Parameters Trainingలో Update చేస్తుంది.",
-        "Model Input Dataతో Prediction చేస్తుంది."
+        "Quantization Valuesని Bit Countతో Multiply చేసి Input Range Completely Ignore చేస్తుంది.",
+        "Symmetric Nonzero Zero Point Always Needs; Asymmetric Zero Only Use చేస్తుంది.",
+        "Scale, Zero Pointతో Rounded, Clipped Integer Codes Generate చేస్తాం.",
+        "Every Float Unique Integerగా Maps; Rounding, Saturation Never Occur అంటుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Float Valueని Small Integer Stepsకి Round చేస్తాం. Range Exceed అయితే Clip చేస్తాం.",
+      "technicalExplanation": "<strong>Correct Answer: C.</strong> q=clamp(round(x/s)+z,min,max), s>0. Dequantize (q−z)s. Symmetric Usually z=0; Asymmetric Offset Zero Point Use చేస్తుంది."
     },
     {
-      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "stem": "Post-Training Quantization (PTQ), Quantization-Aware Training (QAT)లో Difference ఏంటి? Calibration, Accuracy Trade-offs ఏమిటి?",
       "options": [
-        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
-        "Model Features Read చేసి Process చేస్తుంది.",
-        "Model Parameters Trainingలో Update చేస్తుంది.",
-        "Model Input Dataతో Prediction చేస్తుంది."
+        "PTQ Complete Retraining Always Needs; QAT Weights Never Updates చేస్తుంది.",
+        "PTQ Trained Model Convert; QAT Trainingలో Rounding Simulate చేస్తుంది.",
+        "PTQ, QAT Outliers ఏవైనా Exact Same Predictions Always Produce చేస్తాయి.",
+        "QAT Calibration Data Need Eliminate చేసి Zero Accuracy Loss Guarantee చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> PTQ Training తర్వాత Compress చేస్తుంది. QAT Trainingలో Precision Lossకి Model Adapt అవుతుంది.",
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> PTQ Representative Calibration Data Use చేయవచ్చు. QAT Fake Quantization Forwardలో Apply చేసి Student Weights Gradient Updatesతో Adapt చేస్తుంది. Hardware Evaluation Needed."
     },
     {
       "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
