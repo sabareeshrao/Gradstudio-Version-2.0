@@ -114,6 +114,11 @@
       "slug": "computer-vision",
       "title": "Computer Vision",
       "domain": "Visual Understanding, Image Processing, and Machine Perception · Computer Vision"
+    },
+    {
+      "slug": "ai-agent-framework",
+      "title": "AI Agent Framework",
+      "domain": "AI Agent Development, Orchestration, and Autonomous Task Execution · AI Agents and Tool Use"
     }
   ]
 }
