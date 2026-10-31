@@ -38,7 +38,7 @@
       "stem": "How does information travel through a Multi-Head Attention layer, from receiving token representations and creating separate Query, Key, and Value vectors for each head to calculating attention independently, combining head outputs, and producing a final contextual representation?",
       "tag": "Beginner · information flow",
       "options": [
-        "Input tokens are projected into Queries, Keys, and Values for each head; heads compute attention separately, concatenate their outputs, and apply an output projection.",
+        "Token inputs become Q, K, and V projections for each head; heads attend separately, concatenate their results, and apply a final output projection.",
         "The network first turns token IDs into final labels, then one head predicts the response while every other head copies exactly that same result.",
         "Each head rearranges the original sentence into a new word order, after which the vocabulary layer generates attention scores without Query-Key comparisons.",
         "The model adds head outputs together before creating Queries, Keys, or Values, placing the combination before the attention calculations that produce those outputs."
@@ -55,7 +55,7 @@
         "Each attention head always receives the full hidden width independently, and splitting features is unnecessary even in an implementation with fixed total projection width.",
         "Heads divide sentence positions into separate groups and never share context across groups, rather than splitting projected feature dimensions to compute attention.",
         "Projected features are divided among heads; each head computes scaled attention and Softmax weights, then the outputs are concatenated and transformed by WO.",
-        "The final output averages raw Query vectors without calculating weighted Values, concatenating heads, or applying the learned output projection matrix."
+        "The final output averages raw Query vectors without weighting Values, joining heads, or using the learned output projection matrix in the attention layer."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> Imagine a Transformer with 512 hidden features and eight attention heads. A common design assigns <strong>64 Query and Key features</strong> to each head, because 512 divided by eight is 64. Each head calculates scaled Query-Key scores, applies Softmax, and uses the weights to combine Values. The head outputs are concatenated and passed through <strong>WO</strong>, a learned matrix that mixes their information. Splitting feature width is not the same as giving each head only a different section of the sentence.",
@@ -67,7 +67,7 @@
       "tag": "Medium · PyTorch",
       "options": [
         "Create heads by stacking unchanged token IDs, then compare their labels after choosing the output token; this skips the actual learned attention calculation.",
-        "Project and reshape Q, K, and V into heads, apply scaled scores and causal masks, combine outputs, then compare results with PyTorch's built-in attention.",
+        "Project and reshape Q, K, and V into heads, apply causal masks and scaled attention, then compare outputs with PyTorch's built-in implementation.",
         "Let PyTorch choose head dimensions automatically without arranging Query, Key, or Value tensors, and assume all input shapes are already valid.",
         "Apply Softmax to raw token embeddings before making any head projections, so no Query-Key scores or causal masks can influence the attention result."
       ],
@@ -80,7 +80,7 @@
       "stem": "Why do different Attention Heads sometimes learn specialized patterns while others become redundant, and how can head visualization, attention entropy, head pruning, and ablation experiments help researchers understand which heads contribute meaningfully to Transformer performance?",
       "tag": "Advanced · head research",
       "options": [
-        "Visualize attention patterns, measure their concentration, and test model quality after disabling heads to learn which heads are useful or redundant.",
+        "Inspect attention patterns, measure head entropy, and compare model performance after removing heads to identify useful or redundant ones.",
         "Assign a permanent role to every attention head at initialization, guaranteeing no two heads can develop overlapping patterns through training.",
         "Compare head weight sizes only, without measuring attention patterns or what happens to prediction accuracy when a head is removed.",
         "Remove every head with focused attention because low entropy always means useless behavior, regardless of its contribution to the actual task."
@@ -96,8 +96,8 @@
       "options": [
         "MHA and MQA share all Query heads, while GQA stores more independent cached KV heads than MHA, reversing the expected memory arrangements.",
         "MLA removes every stored context vector, so generation never needs old token information and can answer from the current token alone.",
-        "FlashAttention turns full dense attention into linear-time computation for arbitrarily long sequences, eliminating its quadratic score-interaction cost.",
-        "MQA shares KV heads; GQA shares KV by groups; MLA compresses cached representations, while FlashAttention reduces attention memory traffic."
+        "FlashAttention makes exact dense attention linear in sequence length, so adding more tokens no longer has quadratic computation costs in long contexts.",
+        "MQA shares KV across Queries; GQA shares KV by groups; MLA compresses cached features, while FlashAttention reduces memory movement during attention."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Imagine a language model analyzing a long novel. Standard multi-head attention keeps separate Key and Value heads; that can require substantial <strong>KV-cache memory</strong> during generation. <strong>MQA</strong> shares a single KV head, and <strong>GQA</strong> shares groups. <strong>MLA</strong> can use compressed cached information. <strong>FlashAttention</strong> makes attention calculations more memory-efficient, but does not remove all pairwise compute from dense attention. These methods balance memory, bandwidth, speed, and model quality in different ways.",
