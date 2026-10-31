@@ -179,6 +179,11 @@
       "slug": "key-projection",
       "title": "Key Projection",
       "domain": "Key Vector Generation and Attention Matching · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "query-projection",
+      "title": "Query Projection",
+      "domain": "Query Vector Generation and Attention Computation · Transformers and LLM Architecture"
     }
   ]
 }
