@@ -42,6 +42,8 @@ jobs:
         run: node study-engine/verify-svg-text-layout.mjs generative-adversarial-network
       - name: Reject Softmax SVG text overlap and out-of-bounds labels
         run: node study-engine/verify-svg-text-layout.mjs softmax
+      - name: Check Query Projection SVG text layout
+        run: node study-engine/verify-svg-text-layout.mjs query-projection
       - name: Preserve English diagrams and modern Telugu-English study copy
         run: node "Telugu Translation/verify-translation.mjs"
       - name: Configure Pages
