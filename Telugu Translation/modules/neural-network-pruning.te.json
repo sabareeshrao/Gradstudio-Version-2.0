@@ -40,26 +40,26 @@
       "technicalExplanation": "<strong>Correct Answer: A.</strong> Weight Magnitude లేదా Gradient Score Rank చేసి Lowest 400 Mask చేస్తాం. 40% Sparsity; Validationతో Performance Assess చేయాలి."
     },
     {
-      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "stem": "Unstructured, Structured, Magnitude, Gradient Pruningలో Difference ఏమిటి? Hardware Benefit ఎలా వస్తుంది?",
       "options": [
-        "Modelలో Weights తగ్గుతాయి.",
-        "Modelలో Features Compare అవుతాయి.",
-        "Modelలో Data Process అవుతుంది.",
-        "Modelలో Signals Update అవుతాయి."
+        "Unstructured Whole Layers Remove; Structured Single Random Weights Only Masks చేస్తుంది.",
+        "Magnitude Gradients Only Uses; Gradient Scoring Absolute Weight Size Only Uses చేస్తుంది.",
+        "Unstructured Individual Weights Masks; Structured Whole Groups Remove చేసి Layers Shrink చేస్తుంది.",
+        "Structured Shapes Always Same; Unstructured Every Chipపై Speed Guarantee ఇస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Unstructured Single Weights Off; Structured Whole Channels Remove చేసి Smaller Layers Create చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer: C.</strong> Magnitude |w|, Gradient-Based Loss Sensitivity Measure చేస్తాయి. Structured Groups Remove చేస్తే Smaller Dense Compute Hardwareపై Help చేయవచ్చు."
     },
     {
-      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "stem": "PyTorchలో Pruning Mask, Sparsity Count, Fine-Tuning, Accuracy, Latency ఎలా Test చేస్తాం?",
       "options": [
-        "Modelలో Weights తగ్గుతాయి.",
-        "Modelలో Features Compare అవుతాయి.",
-        "Modelలో Data Process అవుతుంది.",
-        "Modelలో Signals Update అవుతాయి."
+        "Mask Applied అంటే Model Physical Size Always Shrinks అని Assume చేస్తాం.",
+        "Weights Mask, Fine-Tune, Accuracy, Real Device Latency Measure చేస్తాం.",
+        "Training Rows Remove చేసి Network Sparsity Estimate చేస్తాం.",
+        "Weights Class Labelsగా Convert చేసి All Validation Skip చేస్తాం."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Low-Importance Weights Mask చేసి Fine-Tune చేస్తాం. Accuracy, Speed Both Test చేయాలి.",
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> PyTorch prune.l1_unstructured Mask Apply చేస్తుంది. Sparsity Count, Validation Accuracy, Target Hardware Latency Benchmark చేయాలి."
     },
     {
       "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
