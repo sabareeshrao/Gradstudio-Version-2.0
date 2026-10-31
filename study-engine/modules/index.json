@@ -279,6 +279,11 @@
       "slug": "linear-regression",
       "title": "Linear Regression",
       "domain": "Predicting Continuous Values and Understanding Relationships Between Variables · Supervised Machine Learning"
+    },
+    {
+      "slug": "stochastic-gradient-descent",
+      "title": "Stochastic Gradient Descent (SGD)",
+      "domain": "Iterative Optimization and Model Training · Optimization"
     }
   ]
 }
