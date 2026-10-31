@@ -23,7 +23,7 @@
         "Large Teacher Remote Storageలో ఉంటే Phone Offline Fully Runs అంటుంది.",
         "Every Layer Wider చేసి Less Training Data Use చేస్తాం.",
         "Difficult Classes Remove చేసి Architecture Unchangedగా Keep చేస్తాం.",
-        "Teacher Skills Smaller Studentకి Transfer చేసి Resources Save చేస్తాం."
+        "Teacher Skills Small Studentకి Transfer చేసి Resources Save చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Small Student Less RAM, Compute Use చేయవచ్చు. Useful Accuracy Preserve చేయాలి.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Compact Model Storage, Memory, Latency Reduce చేయవచ్చు. Actual Quality, Hardware Speedపై Test చేయాలి."
