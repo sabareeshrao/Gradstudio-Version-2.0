@@ -1,0 +1,27 @@
+/* Generalization: bespoke illustrated learning scenes, accessible at phone and desktop widths. */
+.genz-hero,.genz-scene{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:#29455c;min-width:0;overflow-wrap:anywhere}
+.genz-hero{padding:clamp(18px,3vw,30px);background:linear-gradient(135deg,#e8f5f4 0%,#faf9ff 58%,#fff5e8 100%);border:1px solid #c9e2df;border-radius:19px;margin-bottom:27px;box-shadow:0 8px 26px #3a61750e}
+.genz-eyebrow{display:block;color:#287c78;font-size:.71rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase;margin-bottom:7px}
+.genz-hero h2{margin:0 0 6px;font-size:clamp(1.32rem,3vw,1.9rem);color:#243e62;line-height:1.23}
+.genz-hero p{font-size:.88rem;color:#4b7282;line-height:1.5;max-width:74ch;margin:7px 0 15px}
+.genz-hero svg{width:100%;display:block;height:auto;border-radius:13px}
+.genz-hero .genz-key{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:13px}
+.genz-key span{border-radius:99px;padding:5px 12px;background:#fff9;border:1px solid #c9e1e0;color:#367477;font-size:.74rem;font-weight:750}
+.genz-scene{border:1px solid #d2e4ec;border-radius:15px;padding:clamp(14px,2.2vw,24px);background:radial-gradient(circle at 84% 5%,#e6f6f0,transparent 42%),linear-gradient(150deg,#fafcfe,#fffaf5)}
+.genz-scene h3{margin:3px 0 13px;color:#284962;font-size:clamp(.95rem,2vw,1.15rem);line-height:1.35}
+.genz-scene svg{width:100%;height:auto;display:block;border-radius:12px}
+.genz-annotation{font-size:.78rem;color:#55758a;line-height:1.55;margin:13px 0 0}
+.genz-legend{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.genz-legend span{border-radius:9px;background:#fff;border:1px solid #d0e2e9;color:#396f82;padding:8px 10px;font-weight:750;font-size:.75rem;text-align:center;flex:1 1 130px}
+.genz-legend span:nth-child(2n){background:#eaf7f1;border-color:#c6e5d6;color:#287b70}
+.genz-legend em{font-style:normal;color:#b86a41;font-weight:800}
+.genz-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.genz-split div{background:#fff;border:1px solid #d3e5ec;border-radius:11px;padding:11px 12px;min-width:0}
+.genz-split strong{display:block;font-size:.79rem;color:#2e5d72;margin-bottom:4px}
+.genz-split span{display:block;color:#577587;font-size:.73rem;line-height:1.5}
+.genz-formula{display:block;text-align:center;border:1px solid #c3dfde;background:#fff;padding:12px;margin:12px 0;border-radius:10px;color:#2b7574;font-size:clamp(.98rem,2.5vw,1.25rem);font-weight:800}
+.genz-mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:12px}
+.genz-mini div{background:white;border-radius:11px;border:1px solid #d7e5e9;padding:12px}
+.genz-mini strong{display:block;color:#2c6675;font-size:.77rem}.genz-mini span{display:block;color:#617e89;font-size:.72rem;line-height:1.43;margin-top:4px}
+@media(max-width:570px){.genz-scene{padding:11px}.genz-split{grid-template-columns:1fr}.genz-mini{grid-template-columns:1fr}.genz-legend span{flex:1 1 44%}}
+@media(prefers-reduced-motion:reduce){.genz-hero *,.genz-scene *{animation:none!important;transition:none!important}}
