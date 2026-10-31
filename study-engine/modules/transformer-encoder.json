@@ -12,7 +12,7 @@
       "tag": "Beginner · understanding",
       "options": [
         "A Transformer Encoder predicts only the next word using a causal mask on every input layer, so later words cannot inform earlier representations.",
-        "A Transformer Encoder builds context-aware token representations by relating words in both directions, helping the model understand meaning from surrounding text.",
+        "An Encoder relates words on both sides to build context-aware token representations, helping the model learn meaning from the surrounding sentence.",
         "A Transformer Encoder translates each word independently using a dictionary, without learning relationships between distant words or the sentence as a whole.",
         "A Transformer Encoder memorizes complete sentences and returns the closest stored match, instead of using neural attention to learn useful contextual features."
       ],
@@ -28,7 +28,7 @@
         "Self-attention removes information from other tokens, and feed-forward layers only tokenize the input; residuals discard earlier signals instead of preserving them.",
         "Layer normalization chooses dictionary definitions, while multi-head attention directly produces final word probabilities instead of contextual representations for later layers.",
         "Feed-forward networks replace attention entirely, while residual connections block information sharing across layers, preventing tokens from gaining richer representations.",
-        "Self-attention exchanges contextual information, feed-forward layers transform features, residual connections preserve paths, and LayerNorm helps stabilize numerical processing."
+        "Attention shares token context; feed-forward layers transform features; residuals preserve paths; and LayerNorm supports stable numerical processing across layers."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Picture a survey-analysis system reading thousands of student comments. Inside an Encoder layer, <strong>multi-head self-attention</strong> shares useful information between words. A <strong>feed-forward network</strong> transforms each token's features after attention. <strong>Residual connections</strong> preserve a direct route for existing information, and <strong>Layer Normalization</strong> helps keep the numerical processing stable. Repeating these layers makes token representations richer. Each part contributes something different; attention alone is not the whole Encoder.",
@@ -39,7 +39,7 @@
       "stem": "When a Transformer Encoder processes the sentence \"The bank is near the river,\" how does it use surrounding words to understand that \"bank\" refers to the side of a river rather than a financial institution?",
       "tag": "Beginner · riverbank context",
       "options": [
-        "The Encoder uses the nearby word “river” to represent “bank” as a river edge, showing how surrounding context can clarify an ambiguous word.",
+        "The Encoder uses “river” to interpret “bank” as a river edge, showing how nearby context words clarify an otherwise ambiguous meaning.",
         "The Encoder always assigns “bank” the financial meaning because each word has one fixed representation that cannot be changed by context.",
         "The Encoder ignores “river” and relies only on how often “bank” appeared during training, without examining neighboring words in the current sentence.",
         "The Encoder must translate the entire sentence into another language before it can decide which meaning of “bank” is appropriate in English."
@@ -55,7 +55,7 @@
       "options": [
         "Tokens are classified before embeddings are created, then the Encoder converts its labels back into positions without calculating self-attention or contextual features.",
         "Position information completely replaces token embeddings, so the Encoder can create Query and Key vectors without representing the actual word content.",
-        "Token embeddings gain position information; projected Queries, Keys, and Values enter attention, while feed-forward and residual processing refine contextual representations.",
+        "Embeddings include positions; Queries, Keys, and Values feed attention; feed-forward and residual blocks then refine each token's meaningful contextual representation.",
         "Values first generate Queries after classification finishes, while shortcuts remove all self-attention operations, so no context can be exchanged between tokens."
       ],
       "answer": "c",
@@ -68,7 +68,7 @@
       "tag": "Medium · attention equation",
       "options": [
         "Softmax is applied to Values before Query and Key matrices are combined, and the resulting numbers directly become class labels without context.",
-        "Scaled Query-Key similarities become Softmax weights that combine Values; multiple heads, residual paths, normalization, and stacked layers refine token context.",
+        "Scaled Query-Key scores become Softmax weights for Values; heads, residual paths, LayerNorm, and stacked layers refine the context of each token.",
         "Multi-head attention uses fixed identical scores for every token, and LayerNorm prevents the model from updating representations during its later layers.",
         "Residual paths delete earlier context after each attention head, so stacked Encoder layers cannot build richer representations of the sentence."
       ],
