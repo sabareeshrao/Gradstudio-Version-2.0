@@ -11,7 +11,7 @@
       "tag": "Beginner · Basics",
       "answer": "b",
       "options": [
-        "ప్రతి Question వచ్చినప్పుడూ Retrieved Pagesని New Training Examplesగా Use చేసి Model Weights Update చేస్తుంది. RAG Normally ప్రతి Requestకి Retrain చేయదు.",
+        "ప్రతి Question వచ్చినప్పుడూ Retrieved Pagesని New Training Examplesగా Use చేసి Model Weights Update చేస్తుంది. RAG Normally ప్రతి Requestకి Retrain చేయదు. ప్రతి Requestకి Training Cost కూడా అవసరం వస్తుంది.",
         "External Documentsలో Relevant Information Retrieve చేసి LLMకి Contextగా ఇస్తుంది. LLM ఆ Retrieved Evidence Use చేసి User Questionకి Answer Write చేస్తుంది.",
         "Document Indexలో Search చేసి File Names మాత్రమే Userకి Return చేస్తుంది. ఇందులో LLM Answer Generate చేయదు; Userనే All Files Read చేయాలి.",
         "ప్రతి User Questionకి Matching Documentsతో Separate Language Model Train చేస్తుంది. ఆ New Model మాత్రమే Final Answer Generate చేస్తుందని Assume చేస్తుంది."
@@ -42,7 +42,7 @@
       "answer": "a",
       "options": [
         "First Documentsని Searchable Indexగా Prepare చేస్తుంది. Question వచ్చినప్పుడు Relevant Passages Retrieve చేసి Promptలో Add చేసి Context-Based Answer Generate చేస్తుంది.",
-        "Search చేయకముందే Answer Write చేసి, దాన్ని Support చేసే Passages మాత్రమే Retrieve చేస్తుంది. First Guess Wrong అయితే Conflicting Evidence Ignore అవుతుంది.",
+        "Search చేయకముందే Answer Write చేసి, దాన్ని Support చేసే Passages మాత్రమే Retrieve చేస్తుంది. First Guess Wrong అయితే Conflicting Evidence Ignore అవుతుంది. Initial Guessకి Opposite Evidenceను Ignore చేయవచ్చు.",
         "Every Questionకి All Stored Documentsని LLM Promptలో Put చేస్తుంది. Relevant Passages Choose చేయకపోవడంతో Context Space, Compute Waste అవుతాయి.",
         "File Upload అయ్యే ప్రతిసారీ New Model Fine-Tune చేసి Search Without Documents Answers ఇస్తుంది. ఇది Typical RAG Request Flow కాదు."
       ],
@@ -72,7 +72,7 @@
       "answer": "a",
       "options": [
         "Pythonలో PDFs నుంచి Text Extract చేసి Chunks, Embeddings Create చేస్తాం. FAISS లేదా Chroma Searchలో Matches Retrieve చేసి LLMకి Answer కోసం Send చేస్తాం.",
-        "ప్రతి PDF Searchకి New LLMని Train చేసి Original Documentని Delete చేస్తాం. Model Retrainingనే Normal PDF Retrieval Flowగా Use చేస్తుందని Assume చేస్తుంది.",
+        "ప్రతి PDF Searchకి New LLMని Train చేసి Original Documentని Delete చేస్తాం. Model Retrainingనే Normal PDF Retrieval Flowగా Use చేస్తుందని Assume చేస్తుంది. Retrieved Source Textను Directగా Use చేయదు.",
         "Actual PDF Text Parse చేయకుండా File Names మాత్రమే FAISSలో Store చేస్తాం. LLM Contentsని ఊహించి Direct Response ఇస్తుందని Assume చేస్తుంది.",
         "PDF Pagesకి Random Vectors Assign చేసి Top Ranked Pages Return చేస్తాం. Random Vectors Text Meaningని Preserve చేయకపోవడంతో Semantic Search Unreliable."
       ],
@@ -86,7 +86,7 @@
       "tag": "Advanced · Architectures",
       "answer": "b",
       "options": [
-        "Exact Product Codesకి Keyword Search Useful కాదని Only Dense Vector Similarity Use చేస్తుంది. ఇలా Exact Term Matches Missing అవుతాయని Ignore చేస్తుంది.",
+        "Exact Product Codesకి Keyword Search Useful కాదని Only Dense Vector Similarity Use చేస్తుంది. ఇలా Exact Term Matches Missing అవుతాయని Ignore చేస్తుంది. Exact Product Code Matches కూడా Miss కావచ్చు.",
         "Keyword, Semantic Search Combine చేసి Difficult Queries Rewrite చేస్తుంది. Candidate Passages Rerank చేసి Unrelated Context Remove చేసి Better Evidence Modelకి ఇస్తుంది.",
         "Unclear Search Queryకి Query Rewrite బదులుగా LLM Training Weights Update చేస్తుంది. Poor Retrievalని Request-Time Retrainingతో Fix చేస్తుందని Assume చేస్తుంది.",
         "Similarity Low అయితే Retrieved Documents Access Rulesని Override చేయడానికి Allow చేస్తుంది. Search Relevance Permissionsని Change చేయగలదని Incorrectగా Assume చేస్తుంది."
@@ -103,7 +103,7 @@
       "options": [
         "Answer Length Only Measure చేసి Long Responseని Better Evidenceగా Treat చేస్తుంది. Missing Citations, Wrong Retrieved Passagesని Evaluationలో Ignore చేస్తుంది.",
         "High Similarity Score వచ్చినప్పుడు Employeeకి Restricted Files కూడా Show చేస్తుంది. Search Qualityని Document Permissionsకి Substitute చేస్తుందని Assume చేస్తుంది.",
-        "One Document Change అయినా Entire LLM Retrain చేసి Search Index Update Avoid చేస్తుంది. Knowledge Refreshకి Full Retrainingనే Only Solutionగా భావిస్తుంది.",
+        "One Document Change అయినా Entire LLM Retrain చేసి Search Index Update Avoid చేస్తుంది. Knowledge Refreshకి Full Retrainingనే Only Solutionగా భావిస్తుంది. Search Index Update చేయడాన్ని Reject చేస్తుంది.",
         "Retrieval Metrics, Answer Faithfulness, Citation Accuracy Measure చేస్తుంది. Document Access Enforce చేసి Index Updates, Response Speed, Costని Productionలో Monitor చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> HR Portal Paid Leave Answer ఇవ్వాలంటే Correct Policy Retrieve చేయాలి; Restricted Documents Protect చేయాలి; Citation, Faithfulness, Latency Regularగా Check చేయాలి.",
