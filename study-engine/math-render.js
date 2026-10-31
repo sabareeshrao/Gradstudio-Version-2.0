@@ -18,8 +18,41 @@ const GREEK={
 };
 const SUB=Object.fromEntries([... '0123456789+-=()ait'].map((c,i)=>[c,'₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐᵢₜ'.charAt(i)]));
 // Keep the plain-text fallback legible on offline / restricted clients.
+function rewriteFractions(source){
+  // Brace-aware parsing handles nested fractions, powers and subscripts:
+  // \frac{e^{z_i}}{\sum_j e^{z_j}} instead of a partial regex replacement.
+  function group(text,at){
+    while(text[at]===' ')at++;
+    if(text[at]!=='{')return null;
+    const start=at+1;let depth=1;
+    for(let i=start;i<text.length;i++){
+      if(text[i]==='{')depth++;
+      else if(text[i]==='}'){
+        depth--;
+        if(depth===0)return {value:text.slice(start,i),next:i+1};
+      }
+    }
+    return null;
+  }
+  let out='';
+  for(let i=0;i<source.length;){
+    const fraction=source.startsWith('\\frac',i);
+    const radical=source.startsWith('\\sqrt',i);
+    if(fraction||radical){
+      const end=i+(fraction?5:5),a=group(source,end);
+      const b=fraction&&a?group(source,a.next):null;
+      if(a&&(!fraction||b)){
+        out+=fraction?'('+rewriteFractions(a.value)+')/('+rewriteFractions(b.value)+')':'√('+rewriteFractions(a.value)+')';
+        i=fraction?b.next:a.next;
+        continue;
+      }
+    }
+    out+=source[i++];
+  }
+  return out;
+}
 export function readableMath(source){
-  let s=String(source).trim();
+  let s=rewriteFractions(String(source).trim());
   for(let k=0;k<5;k++){
     const old=s;
     s=s.replace(/\\(?:text|mathrm|operatorname|mathbf|mathit|boldsymbol)\s*\{([^{}]*)\}/g,'$1')
