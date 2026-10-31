@@ -95,7 +95,7 @@
       "stem": "How can CNNs be optimized for deployment on smartphones, autonomous vehicles, and edge AI devices using Depthwise Separable Convolutions, Dilated Convolutions, Quantization, Pruning, and Knowledge Distillation, and what trade-offs arise between receptive field size, accuracy, inference latency, memory usage, and computational cost?",
       "tag": "Advanced · edge AI efficiency",
       "options": [
-        "Depthwise separable convolution lowers some operations; dilation widens receptive fields; quantization, pruning, and distillation can reduce deployment resource costs.",
+        "Depthwise filters reduce work; dilation widens receptive fields; quantization, pruning, and distillation can lower memory and compute costs on devices.",
         "Depthwise separable convolution guarantees better accuracy and lower latency on every phone, regardless of processor support or the specific CNN architecture.",
         "Dilation always reduces a filter's receptive field, while quantization needs full precision and pruning leaves every original model weight untouched.",
         "Knowledge distillation copies all Teacher weights exactly into the CNN, removing any need to test model size, inference speed, or output accuracy."
