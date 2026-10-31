@@ -36,7 +36,12 @@ const translations=[
   ["rotary-position-embedding","30-rotary-position-embedding.html","modules/rotary-position-embedding.te.json"],
   ["query-projection","31-query-projection.html","modules/query-projection.te.json"],
   ["key-projection","32-key-projection.html","modules/key-projection.te.json"],
-  ["value-projection","33-value-projection.html","modules/value-projection.te.json"]
+  ["value-projection","33-value-projection.html","modules/value-projection.te.json"],
+  ["multi-head-attention","34-multi-head-attention.html","modules/multi-head-attention.te.json"],
+  ["transformer-encoder","35-transformer-encoder.html","modules/transformer-encoder.te.json"],
+  ["transformer-decoder","36-transformer-decoder.html","modules/transformer-decoder.te.json"],
+  ["context-window","37-context-window.html","modules/context-window.te.json"],
+  ["autoregressive-language-model","38-autoregressive-language-model.html","modules/autoregressive-language-model.te.json"]
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
@@ -141,4 +146,4 @@ if(tableBegin<0||tableEnd<=tableBegin){
  }
 }
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 33 bilingual lessons, 231 questions, 924 options, 231 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 38 bilingual lessons, 266 questions, 1064 options, 266 original English diagrams, answer keys, translations, and index links.");
