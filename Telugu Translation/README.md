@@ -1,5 +1,7 @@
 # Telugu + English Lesson Library
 
+[**Master list: all 18 full HTML web links and GitHub HTML sources**](ALL_TELUGU_HTML_LINKS.md)
+
 **Separate bilingual copies of the numbered English lessons in [lessons/](../lessons/).** The English originals and original technical diagrams are unchanged.
 
 | No. | Topic | Telugu + English HTML | Original English |
