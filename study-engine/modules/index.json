@@ -254,6 +254,11 @@
       "slug": "convolutional-neural-network",
       "title": "Convolutional Neural Network (CNN)",
       "domain": "Learning Visual Features Through Convolutional Layers · Neural Network Architectures"
+    },
+    {
+      "slug": "logistic-regression",
+      "title": "Logistic Regression",
+      "domain": "Probability-Based Classification and Decision Boundaries · Supervised Machine Learning"
     }
   ]
 }
