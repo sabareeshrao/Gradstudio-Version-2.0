@@ -6,7 +6,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 ## Hosted lesson directory (42 modules)
 
-These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
+These links are generated from the canonical [module manifest](modules/index.json); every keyword uses the shared HTML, CSS, and JavaScript engine.
 
 | # | Keyword | Module slug |
 |---:|---|---|
@@ -26,40 +26,36 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 14 | [Artificial Intelligence (AI)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=artificial-intelligence) | `artificial-intelligence` |
 | 15 | [Self-Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=self-attention) | `self-attention` |
 | 16 | [Attention Mechanism](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=attention-mechanism) | `attention-mechanism` |
-| 17 | [Prompt Engineering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=prompt-engineering) | `prompt-engineering` |
-| 18 | [Tokenization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization) | `tokenization` |
-| 19 | [Vector Database](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database) | `vector-database` |
-| 20 | [Generative Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model) | `generative-model` |
-| 21 | [Embedding Vector](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=embedding-vector) | `embedding-vector` |
-| 22 | [Reinforcement Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=reinforcement-learning) | `reinforcement-learning` |
-| 23 | [Computer Vision](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=computer-vision) | `computer-vision` |
-| 24 | [AI Agent Framework](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=ai-agent-framework) | `ai-agent-framework` |
-| 25 | [Supervised Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=supervised-learning) | `supervised-learning` |
-| 26 | [Large Vision-Language Model (LVLM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=large-vision-language-model) | `large-vision-language-model` |
-| 27 | [Diffusion Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=diffusion-model) | `diffusion-model` |
-| 28 | [Natural Language Processing (NLP)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=natural-language-processing) | `natural-language-processing` |
-| 29 | [Multimodal Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multimodal-learning) | `multimodal-learning` |
-| 30 | [Loss Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-function) | `loss-function` |
-| 31 | [Training Step](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=training-step) | `training-step` |
-| 32 | [Generative Adversarial Network (GAN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-adversarial-network) | `generative-adversarial-network` |
-| 33 | [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) | `activation-function` |
-| 34 | [Rotary Position Embedding (RoPE)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) | `rotary-position-embedding` |
-| 35 | [Residual Connection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=residual-connection) | `residual-connection` |
-| 36 | [Key Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection) | `key-projection` |
-| 37 | [Query Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection) | `query-projection` |
-| 38 | [Value Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) | `value-projection` |
+| 17 | [Multi-Head Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multi-head-attention) | `multi-head-attention` |
+| 18 | [Autoregressive Language Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) | `autoregressive-language-model` |
+| 19 | [Prompt Engineering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=prompt-engineering) | `prompt-engineering` |
+| 20 | [Tokenization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization) | `tokenization` |
+| 21 | [Vector Database](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database) | `vector-database` |
+| 22 | [Generative Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model) | `generative-model` |
+| 23 | [Embedding Vector](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=embedding-vector) | `embedding-vector` |
+| 24 | [Reinforcement Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=reinforcement-learning) | `reinforcement-learning` |
+| 25 | [Computer Vision](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=computer-vision) | `computer-vision` |
+| 26 | [AI Agent Framework](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=ai-agent-framework) | `ai-agent-framework` |
+| 27 | [Supervised Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=supervised-learning) | `supervised-learning` |
+| 28 | [Large Vision-Language Model (LVLM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=large-vision-language-model) | `large-vision-language-model` |
+| 29 | [Diffusion Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=diffusion-model) | `diffusion-model` |
+| 30 | [Natural Language Processing (NLP)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=natural-language-processing) | `natural-language-processing` |
+| 31 | [Multimodal Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multimodal-learning) | `multimodal-learning` |
+| 32 | [Loss Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-function) | `loss-function` |
+| 33 | [Training Step](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=training-step) | `training-step` |
+| 34 | [Generative Adversarial Network (GAN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-adversarial-network) | `generative-adversarial-network` |
+| 35 | [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) | `activation-function` |
+| 36 | [Rotary Position Embedding (RoPE)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) | `rotary-position-embedding` |
+| 37 | [Residual Connection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=residual-connection) | `residual-connection` |
+| 38 | [Key Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection) | `key-projection` |
+| 39 | [Query Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection) | `query-projection` |
+| 40 | [Value Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) | `value-projection` |
+| 41 | [Transformer Decoder](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-decoder) | `transformer-decoder` |
+| 42 | [Context Window](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) | `context-window` |
 
-### Latest additions — October 30, 2026
+### Latest additions
 
-- [Autoregressive Language Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) — sequential decoding, causal training, probability chains, and inference serving, illustrated in seven learning scenes.
-
-- [Multi-Head Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multi-head-attention) — seven unique visual scenes, PyTorch causal-attention verification, beginner explanations, and modern KV-cache architectures.
-
-New visual lessons include Large Vision-Language Model (LVLM) and Loss Function, alongside earlier modules on Reinforcement Learning, Computer Vision, and Multimodal Learning. Each module has its own questions and SVG illustrations while reusing the shared quiz engine.
-
-- [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) — nonlinear neurons, six activation curves, Python gradients, and stability.
-
-- [Rotary Position Embedding (RoPE)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) — relative token-position geometry, PyTorch, and long-context scaling.
+New illustrated lessons include Context Window, Value Projection, Query Projection, and Key Projection. These lessons use beginner-first explanations, balanced options and distinct instructional diagrams.
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
