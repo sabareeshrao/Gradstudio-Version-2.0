@@ -132,7 +132,7 @@
 @media(max-width:810px){
 .tvt-hero-layout,.tvt-fruit-layout,.tvt-dependency-grid{grid-template-columns:1fr}
 .tvt-hero-layout{gap:17px}
-.tvt-hero-copy h2 br{display:none}
+.tvt-hero-copy h2 br{display:initial}
 .tvt-figure-card{min-width:0}
 .tvt-fruit-cloud{max-width:540px}
 }
