@@ -264,6 +264,11 @@
       "slug": "k-means-clustering",
       "title": "K-Means Clustering",
       "domain": "Discovering Hidden Groups and Patterns in Unlabeled Data · Unsupervised and Self-Supervised Learning"
+    },
+    {
+      "slug": "decision-tree-classifier",
+      "title": "Decision Tree Classifier",
+      "domain": "Classification Using Decision Rules and Tree-Based Learning · Supervised Machine Learning"
     }
   ]
 }
