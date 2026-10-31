@@ -89,3 +89,12 @@ The remaining modules can be revised in subsequent user-selected batches.
 30. Rotary Position Embedding (RoPE) (`rotary-position-embedding`)
 
 **Verification:** All 35 question stems and answer keys, their original 35 distinct diagram figures, and their optional technical explanations were preserved. Rewrote 140 A–D choices in beginner-friendly technical English and replaced 35 visible explanations with concrete topic-specific examples. Each visible explanation is labeled **Explanation:** and contains 70–82 words. Every question passes the 1.15 maximum option word-ratio check, and the correct answer is never uniquely longest by word count or character count. The five source JSON modules were committed and read back from GitHub for final verification; no Telugu files, shared themes, quiz code, or unrelated modules were edited.
+
+## Batch 7 — completed English modules
+31. Query Projection (`query-projection`)
+32. Key Projection (`key-projection`)
+33. Value Projection (`value-projection`)
+34. Multi-Head Attention (`multi-head-attention`)
+35. Transformer Encoder (`transformer-encoder`)
+
+**Verification:** Preserved all 35 original question stems, 35 answer keys, 35 unique diagrams, and original advanced technical explanations. Rewrote 140 multiple-choice answers into related, beginner-friendly teaching sentences and all 35 beginner explanations using distinct examples. Each explanation begins **Explanation:** and contains 66–81 words. Every question passes the same 1.15 maximum option word-ratio check, and correct answers are never uniquely longest by word or character length. All five JSON modules were committed and read back from GitHub. Telugu lessons, shared quiz code, themes, and unrelated modules were not edited.
