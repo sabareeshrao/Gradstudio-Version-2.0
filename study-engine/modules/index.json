@@ -319,6 +319,11 @@
       "slug": "data-leakage",
       "title": "Data Leakage",
       "domain": "Preventing Information Leakage in Machine Learning · Data Preprocessing and Feature Engineering"
+    },
+    {
+      "slug": "model-evaluation",
+      "title": "Model Evaluation",
+      "domain": "Measuring and Comparing Machine Learning Model Performance · AI Evaluation and Benchmarking"
     }
   ]
 }
