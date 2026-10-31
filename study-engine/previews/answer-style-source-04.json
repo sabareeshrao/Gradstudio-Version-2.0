@@ -1,0 +1,172 @@
+[
+  {
+    "id": "31",
+    "slug": "query-projection",
+    "topic": "Query Projection",
+    "question": "What is Query Projection in Transformer models, and how does it transform a token's representation into a Query vector that helps the model determine which other tokens are relevant?",
+    "options": [
+      "A learned map makes each token a Query vector for comparison with other token Keys.",
+      "Query Projection stores whole sentences in a fixed table to retrieve matching texts during language generation.",
+      "Query Projection selects the next word directly, without comparing attention scores against any token Keys.",
+      "Query Projection first turns text into pictures so attention can detect relevant features across images."
+    ],
+    "answer": "a",
+    "short": "In simple words: Query Projection turns token features into search vectors. Attention compares them with Keys to find which other tokens are relevant.",
+    "technical": "Correct: A. Query Projection is a trainable linear mapping applied to a token’s current hidden-state representation. A Query is a numerical vector representing what a token can match against other tokens’ Keys. Standard Transformer self-attention computes Q=XW_Q and K=XW_K, then uses scaled dot products between them to form attention scores. A separate learned Query mapping gives the model flexibility beyond comparing the original embeddings directly.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/query-projection.json"
+  },
+  {
+    "id": "32",
+    "slug": "key-projection",
+    "topic": "Key Projection",
+    "question": "What is Key Projection in Transformer models, and how does it create Key vectors that help other tokens determine whether the information represented by a particular token is relevant to them?",
+    "options": [
+      "Keys are fixed labels stored with tokens, allowing attention to avoid calculating learned projections.",
+      "Key projection learns distinct matchable token features that other tokens compare with their Queries.",
+      "Key projection creates a final prediction from each token without comparing it with other tokens.",
+      "Keys are copies of output words, used only after the model finishes its attention operation."
+    ],
+    "answer": "b",
+    "short": "In simple words: Each token gets a learned Key vector that describes it for matching. Other tokens compare their Queries with these Keys to decide attention.",
+    "technical": "Detailed explanation: A Transformer learns separate linear projections for Queries, Keys, and Values. For a token representation x, a Key is k=xW_K, where W_K is learned during training. It is not a fixed tag or dictionary entry. Queries from different token positions score each Key via a dot product, so Keys provide a learned matching interface. Attention scores become normalized weights that combine Values, not Keys.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/key-projection.json"
+  },
+  {
+    "id": "33",
+    "slug": "value-projection",
+    "topic": "Value Projection",
+    "question": "What is Value Projection in a Transformer, and how does it convert each token's hidden representation into a Value vector containing information that can be passed to other tokens through the Attention Mechanism?",
+    "options": [
+      "It sends the original token text directly to other tokens without using learned weights.",
+      "It maps hidden token states into vectors that carry information through attention weighting.",
+      "It calculates token distances before deciding which future words the network should ignore.",
+      "It assigns token positions to queries and keys while leaving content representations unchanged."
+    ],
+    "answer": "b",
+    "short": "In simple words: A Value vector carries learned features from a token. Attention can transfer those features to other tokens.",
+    "technical": "Detailed explanation: The token's hidden representation X is mapped through learnable parameters W_V to a Value vector V=XW_V, optionally adding bias. Value features represent information that attention can send to other tokens. Queries and Keys determine the attention scores, while Values supply what is aggregated. These vectors are learned features, not literal word strings.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/value-projection.json"
+  },
+  {
+    "id": "34",
+    "slug": "multi-head-attention",
+    "topic": "Multi-Head Attention",
+    "question": "What is Multi-Head Attention in Transformer models, and how does using multiple Attention Heads allow a model to examine different relationships between words or tokens simultaneously instead of relying on a single Attention Mechanism?",
+    "options": [
+      "Each head selects one word, discarding other possible connections for the entire sentence.",
+      "Several heads study different token relationships in parallel and combine their outputs.",
+      "Heads create new vocabulary tokens whenever an input includes an unfamiliar word.",
+      "All words merge into one vector before any attention weights are computed."
+    ],
+    "answer": "b",
+    "short": "In simple words: Different heads can look at the same words in different ways. Their results join to give each token a richer view of its context.",
+    "technical": "Detailed explanation: Each head learns its own query, key and value projections. It computes attention separately. The outputs are concatenated and projected, allowing diverse relationships, although some heads may be redundant.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multi-head-attention",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/multi-head-attention.json"
+  },
+  {
+    "id": "35",
+    "slug": "transformer-encoder",
+    "topic": "Transformer Encoder",
+    "question": "What is a Transformer Encoder, and how does it help an AI model understand the meaning and relationships between words in a sentence?",
+    "options": [
+      "An encoder predicts only the next word, hiding later tokens throughout every attention operation in its layers.",
+      "An encoder uses surrounding words to build context-aware representations and capture meaningful relationships between tokens.",
+      "An encoder translates individual words separately without considering sentence context or relationships between distant terms.",
+      "An encoder stores complete sentences verbatim and retrieves matching examples instead of learning useful contextual features."
+    ],
+    "answer": "b",
+    "short": "In simple words: An encoder looks at words together rather than separately. This helps it represent each word using the sentence around it.",
+    "technical": "Correct: B. Encoder self-attention allows a token's representation to incorporate information from other available input positions, including earlier and later tokens where no causal mask is applied. Position information allows order to matter, while stacked attention and feed-forward layers produce contextual hidden states useful for classification, entity extraction, and semantic embeddings.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-encoder",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/transformer-encoder.json"
+  },
+  {
+    "id": "36",
+    "slug": "transformer-decoder",
+    "topic": "Transformer Decoder",
+    "question": "What is a Transformer Decoder, and how does it enable Large Language Models (LLMs) such as GPT to generate text one token at a time by predicting what should come next?",
+    "options": [
+      "It predicts a whole paragraph in one pass, then revises every token at the end.",
+      "It copies the nearest memorized sentence and adjusts punctuation after generating each word again.",
+      "It predicts one next token from context, appends it, then repeats for more tokens.",
+      "It waits for a second encoder to supply every token before continuing the output."
+    ],
+    "answer": "c",
+    "short": "In simple words: A Transformer Decoder reads earlier tokens and predicts what comes next. It adds the chosen token to the text, then makes another prediction.",
+    "technical": "Detailed explanation: A decoder-only Transformer maps a sequence of input token IDs to hidden states, then predicts a probability distribution for the token following each context position. At generation time, it starts with prompt tokens, computes next-token logits from the final position, selects a token, appends that token, and repeats until a stop condition or length limit. The model usually computes many positions in parallel during teacher-forced training, but at inference each newly committed token depends on previously committed output. Tokens are vocabulary units, not necessarily full words.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-decoder",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/transformer-decoder.json"
+  },
+  {
+    "id": "37",
+    "slug": "context-window",
+    "topic": "Context Window",
+    "question": "What is a Context Window in Large Language Models (LLMs), and how does it determine the maximum amount of text or other tokenized information a model can consider while generating a response?",
+    "options": [
+      "It gives the model unlimited access to all information mentioned during every earlier conversation.",
+      "It limits the tokens of available input context a model can consider while generating responses.",
+      "It measures only the words generated after the model has already finished reading the prompt.",
+      "It permanently records everything the model learns while processing a user's current complex question."
+    ],
+    "answer": "b",
+    "short": "In simple words: A context window is the amount of tokenized information the model can work with at once. It has a limit.",
+    "technical": "Detailed explanation: A context window is the limited sequence of tokens a model can process for an invocation. Besides text, model-specific token accounting may include images, audio, tool results and other information. Input and output limits may share a budget or be constrained separately depending on architecture and API. The illustrated 8,000-token allocation is only an example: consult the actual model's tokenizer and generation settings. Advertised length does not imply perfect utilization.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/context-window.json"
+  },
+  {
+    "id": "38",
+    "slug": "autoregressive-language-model",
+    "topic": "Autoregressive Language Model",
+    "question": "What is an Autoregressive Language Model, and how does it generate human-like text by predicting the next token based on the tokens that have already appeared in a sequence?",
+    "options": [
+      "It predicts all future tokens together before reading any of the existing text.",
+      "It predicts the next token using earlier tokens, then repeats after appending it.",
+      "It searches for blank tokens and replaces them using words from both sides.",
+      "It independently labels every word without generating new tokens for the sequence."
+    ],
+    "answer": "b",
+    "short": "In simple words: An autoregressive model writes one token at a time. Each new token joins the earlier text and helps predict what comes next.",
+    "technical": "Detailed explanation: An autoregressive language model factorizes a sequence into conditional next-token probabilities. During inference it samples or selects a token based on the prefix, appends the token, and repeats until stopping.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/autoregressive-language-model.json"
+  },
+  {
+    "id": "43",
+    "slug": "convolutional-neural-network",
+    "topic": "Convolutional Neural Network (CNN)",
+    "question": "What is a Convolutional Neural Network (CNN), and why is this neural network architecture particularly effective at understanding images, recognizing objects, and detecting visual patterns?",
+    "options": [
+      "A CNN processes whole images as one vector and learns global patterns without detecting local spatial features.",
+      "A CNN applies shared learnable filters over image regions, building useful visual features from simple patterns.",
+      "A CNN labels objects by comparing image filenames and using predefined features that engineers supply for every class.",
+      "A CNN first converts each image into text descriptions, then predicts categories using language-specific feature rules."
+    ],
+    "answer": "b",
+    "short": "In simple words: A CNN scans nearby pixels using filters it learns from examples. This helps it find visual patterns wherever they appear.",
+    "technical": "Detailed explanation: A CNN uses learned spatially local kernels, weight sharing and hierarchical feature learning. A small filter moves over image patches to create a feature map indicating where visual patterns appear. Subsequent blocks combine features into more complex representations that can support classification or object detection. Fewer unique weights are needed than learning an independent filter for every position.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/convolutional-neural-network.json"
+  },
+  {
+    "id": "44",
+    "slug": "recurrent-neural-network",
+    "topic": "Recurrent Neural Network (RNN)",
+    "question": "What is a Recurrent Neural Network (RNN), and how does it differ from a traditional Feedforward Neural Network when processing sequential information such as text, speech, or time-series data?",
+    "options": [
+      "An RNN reads all words simultaneously without carrying information between its separate time steps.",
+      "A feedforward network updates the same hidden state after each word, unlike any recurrent model.",
+      "A feedforward network naturally remembers previous inputs, while an RNN processes all tokens independently.",
+      "An RNN reuses a hidden state across time, while feedforward layers lack that recurrent memory."
+    ],
+    "answer": "d",
+    "short": "In simple words: An RNN reads a sequence in order and carries a changing memory forward. A regular feedforward network does not pass that memory between steps.",
+    "technical": "Detailed explanation: An RNN consumes ordered vectors x₁,x₂,…,x_T. A recurrent cell combines the newest input xₜ with hidden state hₜ₋₁ and produces hₜ, which can inform the next step. Feedforward networks do not have this built-in recurrence, though they can be applied across multiple positions as independent functions. The cell parameters are shared over time, unlike a new set of weights for each word. This supports text, speech and time series but creates sequential dependencies during computation.",
+    "englishUrl": "https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network",
+    "source": "https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/study-engine/modules/recurrent-neural-network.json"
+  }
+]
