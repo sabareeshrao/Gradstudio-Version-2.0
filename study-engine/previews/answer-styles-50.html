@@ -208,6 +208,7 @@ function renderTopics(){
  const canReveal=showTopicAnswer;
  get("topic-review").innerHTML='<div class="kicker">'+esc(item.topic)+' · Q1 · English source</div>'+
  '<div class="mini-meta"><span>Source lesson '+esc(item.id)+'</span><a href="'+esc(item.englishUrl)+'" target="_blank" rel="noopener noreferrer">Open original English lesson</a><a href="'+esc(item.source)+'" target="_blank" rel="noopener noreferrer">View question JSON</a></div>'+
+ '<div class="format-tabs" role="group" aria-label="Choose mentor explanation format">'+["a","b","c"].map((v,i)=>'<button type="button" class="format-btn topic-fmt" data-fmt="'+v+'" aria-pressed="'+String(v===format)+'">'+["A · Direct","B · Example first","C · Misconception"][i]+'</button>').join("")+'</div>'+
  '<div class="lesson-question">'+esc(item.question)+'</div>'+
  '<div class="reading-note">Four original A–D choices from GitHub. These are the baseline, not the rewritten option pilot above.</div>'+
  '<div class="lesson-choices">'+opts+'</div>'+
@@ -215,6 +216,7 @@ function renderTopics(){
  (canReveal?'<div class="lesson-expl"><strong>Correct: '+item.answer.toUpperCase()+'.</strong><p>'+esc(one)+'</p><div class="mark">'+wordCount(one)+' words / 100 maximum</div></div>':'')+
  '<div class="metrics"><span>Q1 of 7</span><span>4 source options</span><span>3 mentor styles</span><span>English only</span></div>';
  get("topic-reveal").onclick=()=>{showTopicAnswer=!showTopicAnswer;renderTopics();};
+ get("topic-review").querySelectorAll(".topic-fmt").forEach(btn=>btn.onclick=()=>{format=btn.dataset.fmt;renderSample();renderTopics();});
 }
 async function load(){
  try{
