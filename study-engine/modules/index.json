@@ -309,6 +309,11 @@
       "slug": "generalization",
       "title": "Generalization",
       "domain": "Model Performance on Unseen Data · Supervised Machine Learning"
+    },
+    {
+      "slug": "train-validation-test-split",
+      "title": "Train-Validation-Test Split",
+      "domain": "Dataset Partitioning and Model Evaluation · Data Preprocessing and Feature Engineering"
     }
   ]
 }
