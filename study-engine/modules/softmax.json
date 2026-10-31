@@ -42,7 +42,7 @@
         "First use the raw scores 2, 1, and 0.1 as exponential results, then divide by three. That skips the actual exponential calculations.",
         "Subtract the largest raw score from every input and use the shifted scores directly as final probabilities, without exponentials or normalization.",
         "Divide 2, 1, and 0.1 by their sum of 3.1, which can seem reasonable here but is not the Softmax transformation.",
-        "Exponentiate 2, 1, and 0.1 to get about 7.39, 2.72, and 1.11; divide each by their total, about 11.21."
+        "Exponentiate 2, 1, and 0.1 to get 7.39, 2.72, and 1.11; divide each by their total, 11.21."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Imagine a restaurant assistant choosing between three table suggestions with scores <strong>2.0, 1.0, and 0.1</strong>. Softmax first applies the exponential function: approximately <strong>7.39, 2.72, and 1.11</strong>. Add those results to get about <strong>11.21</strong>. Divide each exponential by this total to get probabilities of roughly <strong>65.9%, 24.2%, and 9.9%</strong>. Those percentages add up to 100%, and higher original scores still have higher chances. The key is exponentiate, add, then divide.",
@@ -67,8 +67,8 @@
       "stem": "How can Softmax be implemented using Python, NumPy, and PyTorch, and why is subtracting the maximum input value important for numerical stability when working with large logits?",
       "tag": "Medium · stable Python",
       "options": [
-        "NumPy should exponentiate very large raw logits directly, because numerical overflow helps Softmax represent the correct probability more clearly.",
-        "Subtract the maximum logit before exponentiating to avoid overflow; stable NumPy and PyTorch implementations preserve the resulting probabilities.",
+        "NumPy should exponentiate very extremely large raw logits directly, because numerical overflow helps Softmax represent the correct probability more clearly.",
+        "Subtract the maximum logit before exponentiation to avoid overflow; NumPy and PyTorch code still give the same accurate stable probabilities.",
         "Subtracting the minimum logit makes every input equal to zero and guarantees a uniform probability distribution, even when their scores differ.",
         "PyTorch Softmax operates only on one scalar and cannot normalize a vector or batch directly. Libraries support tensor operations along chosen dimensions."
       ],
@@ -82,7 +82,7 @@
       "tag": "Advanced · training gradients",
       "options": [
         "Cross-entropy changes only the true class's probability, while every other class receives zero gradient. Softmax scores remain connected through their common denominator.",
-        "The Softmax Jacobian is always the identity matrix, so each class probability changes independently of every other class score.",
+        "The standard Softmax Jacobian is always the identity matrix, so each class probability changes independently of every other class score.",
         "Backpropagation adjusts the output probabilities directly but leaves all network weights unchanged, because Softmax normalization has already completed the learning step.",
         "Cross-entropy measures how well class probabilities match labels; gradients through the Softmax calculation help update logits and the model's earlier trainable weights."
       ],
@@ -95,7 +95,7 @@
       "stem": "How is Softmax used inside Transformer Attention mechanisms and Large Language Models (LLMs), and what challenges arise with large vocabularies, numerical precision, probability calibration, and computational efficiency?",
       "tag": "Advanced · Transformers and LLMs",
       "options": [
-        "Transformers use Softmax to assign attention weights among allowed positions, while language-model output Softmax produces probabilities over candidate next tokens.",
+        "Transformer attention Softmax weights different input token positions; an LLM's output Softmax gives probabilities for possible candidate next tokens.",
         "Attention Softmax stores all previous messages as permanent memory, while output Softmax translates token probabilities directly into image pixels.",
         "Softmax guarantees a language model's confidence matches real accuracy even when training data changes. Probability calibration still requires testing.",
         "Softmax replaces attention comparisons with equal weights for every token, removing the need to score which parts of the context matter."
