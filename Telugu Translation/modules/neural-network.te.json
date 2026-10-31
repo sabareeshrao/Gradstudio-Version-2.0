@@ -55,7 +55,7 @@
         "Prediction Wrong అయితే More Neurons Add చేస్తేనే Network Improve అవుతుంది.",
         "Optimizer Training Labelsని Predictionsకి Match అయ్యేలా Change చేస్తుంది.",
         "Loss Errorని Measure చేస్తుంది; Backprop Gradients Compute చేసి Optimizer Weights Update చేస్తుంది.",
-        "Hidden Neurons Previous Responses Memorize చేసి Gradientsతో Training Samples Delete చేస్తాయి, Accurate Gradient Computation లేకుండా."
+        "Hidden Neurons Previous Responses Memorize చేసి Gradientsతో Training Samples Delete చేస్తాయి, Always."
       ],
       "answer": "c",
       "explanation": "<strong>Simple Explanation:</strong> Network Guess చేస్తుంది, Lossతో Mistake Measure చేస్తుంది. Backpropagation Weights ఏ దిశలో Change కావాలో చెప్పి Optimizer Update చేస్తుంది.",
