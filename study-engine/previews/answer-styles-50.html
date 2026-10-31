@@ -186,13 +186,34 @@ const clean=s=>String(s??"").replace(/^(?:Correct:\s*[A-D]\.?\s*|In simple words
 function firstSentences(text,count){let out=clean(text).split(/(?<=[.!?])\s+/).filter(Boolean).slice(0,count).join(" ");return out;}
 function cap(text,max=100){const a=String(text).replace(/\s+/g," ").trim().split(" ");return a.length<=max?text:a.slice(0,max-1).join(" ")+"…";}
 function mentor(item,mode){
- const right=item.options["abcd".indexOf(item.answer)],wrong=item.options[("abcd".indexOf(item.answer)+1)%4];
- const basic=firstSentences(item.short,2),detail=firstSentences(item.technical,2),scenario=situations[item.slug]||"working through a realistic example of "+item.topic;
- let ans;
- if(mode==="a")ans="Here’s the idea. "+basic+" "+detail+" The key is to understand what the model actually does, not just memorize its name.";
- else if(mode==="b")ans="Imagine "+scenario+". "+basic+" "+firstSentences(item.technical,1)+" That is the intuition behind the right answer. Try connecting the explanation to the picture or operation in the lesson.";
- else ans="Here’s how to check your reasoning. "+basic+" A tempting answer says: “"+wrong+"” But that changes the mechanism. "+firstSentences(item.technical,2)+" Remember which operation or relationship makes the correct answer different.";
- return cap(ans,100);
+ const right=item.options["abcd".indexOf(item.answer)];
+ const wrong=item.options[("abcd".indexOf(item.answer)+1)%4];
+ const basic=firstSentences(item.short,2);
+ const details=clean(item.technical).split(/(?<=[.!?])\s+/).filter(Boolean).slice(0,3);
+ const situation=situations[item.slug]||"an everyday problem involving "+item.topic;
+ let parts=[];
+ if(mode==="a"){
+   parts=["Here’s the main idea.",basic];
+   for(const sentence of details)parts.push(sentence);
+   parts.push("So the important part of the correct choice is: "+right);
+ } else if(mode==="b"){
+   parts=["Imagine "+situation+".",basic];
+   parts.push(details[0]||"The model learns this relationship from its training data.");
+   if(details[1])parts.push(details[1]);
+   parts.push("Keep this everyday example in mind as you compare the answers.");
+ } else {
+   parts=["A common misunderstanding sounds like this: “"+wrong+"”"];
+   parts.push("That is not the mechanism this question is asking about.");
+   parts.push(basic);
+   for(const sentence of details.slice(0,2))parts.push(sentence);
+   parts.push("The correct option instead describes: "+right);
+ }
+ let output=[],used=0;
+ for(const sentence of parts){
+  const t=String(sentence||"").trim(),n=t.split(/\s+/).filter(Boolean).length;
+  if(t&&used+n<=96){output.push(t);used+=n;}
+ }
+ return output.join(" ");
 }
 function topicButton(item,i){return '<button type="button" class="topic'+(selectedTopic===i?" active":"")+'" data-index="'+i+'"><span class="num">'+esc(item.id)+'</span><span>'+esc(item.topic)+'</span></button>';}
 function renderTopicList(){
