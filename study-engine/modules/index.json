@@ -159,6 +159,11 @@
       "slug": "generative-adversarial-network",
       "title": "Generative Adversarial Network (GAN)",
       "domain": "Adversarial Learning and Synthetic Data Generation · Generative Modeling"
+    },
+    {
+      "slug": "activation-function",
+      "title": "Activation Function",
+      "domain": "Introducing Nonlinearity and Controlling Neuron Outputs · Deep Learning Foundations"
     }
   ]
 }
