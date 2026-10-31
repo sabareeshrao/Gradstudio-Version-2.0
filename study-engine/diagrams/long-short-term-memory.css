@@ -1,0 +1,19 @@
+/* LSTM illustrated-v2: seven original concept-specific diagrams */
+.lstm-hero,.lstm-figure{font-family:inherit;min-width:0;color:#2e4d5c}
+.lstm-hero{margin:0 0 23px;padding:clamp(18px,2.7vw,28px);background:radial-gradient(ellipse at left top,#e5f5ed,transparent 52%),linear-gradient(138deg,#f5fbff,#fff9ed);border:1px solid #cee5e6;border-radius:19px;box-shadow:0 8px 26px #365d6e12}
+.lstm-eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.10em;font-weight:900;color:#28836e}
+.lstm-hero h2{font-size:clamp(1.2rem,2.6vw,1.81rem);line-height:1.25;color:#305a71;margin:9px 0}
+.lstm-hero p{font-size:.89rem;line-height:1.58;color:#627c8b}
+.lstm-figure{padding:clamp(15px,2.7vw,25px);background:radial-gradient(ellipse at top right,#e8f7ef,transparent 48%),linear-gradient(136deg,#f9fcff,#fffbf5)}
+.lstm-figure h3{font-size:clamp(1.03rem,1.92vw,1.23rem);line-height:1.35;margin:8px 0 14px;color:#2f586d;font-weight:850}
+.lstm-canvas{border:1px solid #d8e7eb;border-radius:13px;max-width:100%;background:#fff;overflow-x:auto;overflow-y:hidden;scrollbar-color:#b8d3df transparent}
+.lstm-canvas svg{display:block;width:100%;min-width:650px;height:auto;max-width:none}
+.lstm-note{font-size:.83rem;line-height:1.57;color:#607c88;margin:12px 0 0}
+.lstm-note strong{color:#29826e}
+.lstm-code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.75rem;line-height:1.48;white-space:pre;overflow-x:auto;border-radius:10px;padding:14px;background:#1c3044;color:#e7f3fa}
+.lstm-references{border:1px solid #d8e7ea;background:#fff;border-radius:12px;padding:13px 15px;margin-top:23px;color:#647c8b;font-size:.8rem}
+.lstm-references summary{cursor:pointer;font-weight:850;color:#377d8c}
+.lstm-references li{margin:7px 0}
+.lstm-references a{color:#19749a}
+@media(max-width:650px){.lstm-hero{padding:15px 12px}.lstm-figure{padding:13px 10px}.lstm-canvas svg{min-width:650px}}
+@media(prefers-reduced-motion:reduce){.lstm-hero *,.lstm-figure *{transition:none!important;animation:none!important}}
