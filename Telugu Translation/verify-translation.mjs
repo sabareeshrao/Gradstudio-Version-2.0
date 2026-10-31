@@ -25,7 +25,11 @@ const translations=[
   ["natural-language-processing","19-natural-language-processing.html","modules/natural-language-processing.te.json"],
   ["diffusion-model","20-diffusion-model.html","modules/diffusion-model.te.json"],
   ["large-vision-language-model","21-large-vision-language-model.html","modules/large-vision-language-model.te.json"],
-  ["multimodal-learning","22-multimodal-learning.html","modules/multimodal-learning.te.json"]
+  ["multimodal-learning","22-multimodal-learning.html","modules/multimodal-learning.te.json"],
+  ["generative-adversarial-network","23-generative-adversarial-network.html","modules/generative-adversarial-network.te.json"],
+  ["training-step","24-training-step.html","modules/training-step.te.json"],
+  ["loss-function","25-loss-function.html","modules/loss-function.te.json"],
+  ["activation-function","26-activation-function.html","modules/activation-function.te.json"]
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
@@ -67,4 +71,4 @@ translations.forEach(row=>validate(...row));
 const index=readFileSync(resolve(folder,"index.html"),"utf8");
 for(const [slug,entry] of translations)if(!index.includes('./'+entry))errors.push(slug+": missing from index.html link table");
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 22 bilingual lessons, 154 questions, 616 options, 154 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 26 bilingual lessons, 182 questions, 728 options, 182 original English diagrams, answer keys, translations, and index links.");
