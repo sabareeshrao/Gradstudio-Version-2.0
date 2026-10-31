@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**33 lessons · 231 questions · 33 individual HTML pages**
+**38 lessons · 266 questions · 38 individual HTML pages**
 
-Every row opens a Telugu + English lesson and its original English lesson page. Lessons 01–10 use the English lesson entry pages; lessons 11–33 open their original English modules in the Study Engine.
+Every row opens a Telugu + English lesson and its corresponding English original page. Lessons 01–10 use the original English lesson pages; lessons 11–38 link to the original English modules in the Study Engine.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -41,6 +41,11 @@ Every row opens a Telugu + English lesson and its original English lesson page. 
 | 31 | Query Projection | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/31-query-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection) |
 | 32 | Key Projection | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/32-key-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection) |
 | 33 | Value Projection | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/33-value-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) |
+| 34 | Multi-Head Attention | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/34-multi-head-attention.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multi-head-attention) |
+| 35 | Transformer Encoder | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/35-transformer-encoder.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-encoder) |
+| 36 | Transformer Decoder | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/36-transformer-decoder.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-decoder) |
+| 37 | Context Window | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/37-context-window.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) |
+| 38 | Autoregressive Language Model | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/38-autoregressive-language-model.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) |
 
 ## Copy-ready HTML links
 
@@ -78,6 +83,11 @@ https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/30-ro
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/31-query-projection.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/32-key-projection.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/33-value-projection.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/34-multi-head-attention.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/35-transformer-encoder.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/36-transformer-decoder.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/37-context-window.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/38-autoregressive-language-model.html
 ```
 
-Original English diagrams, tiles, formulas and code are retained. Questions, four options, and explanations are written in modern Telugu + English.
+Original English diagrams, tiles, code, and formulas are preserved. Questions, options, and explanations use modern Telugu + English.
