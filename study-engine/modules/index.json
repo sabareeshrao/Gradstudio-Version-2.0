@@ -104,6 +104,11 @@
       "slug": "embedding-vector",
       "title": "Embedding Vector",
       "domain": "Numerical Representations and Semantic Feature Spaces · Deep Learning Foundations"
+    },
+    {
+      "slug": "reinforcement-learning",
+      "title": "Reinforcement Learning",
+      "domain": "Learning Through Interaction, Rewards, and Sequential Decision-Making · Reinforcement Learning (RL)"
     }
   ]
 }
