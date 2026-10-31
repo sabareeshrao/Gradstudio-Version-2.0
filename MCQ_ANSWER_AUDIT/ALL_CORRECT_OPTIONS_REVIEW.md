@@ -3,7 +3,9 @@
 **Status:** Proposed corrections for review. The source quiz modules are not changed by this file.
 **Columns:** Topic + question number | Original question (verbatim) | Existing correct answer (verbatim) | Fixed option or `Good`.
 **Editorial rules:** Use only the words needed; answer every part clearly; preserve previously approved corrections; mark `Good` only when the existing answer is already clear, complete, and beginner-friendly.
-**Scope:** All registered study-engine modules; 50 older numbered topics first, followed by additional registered topics.
+**Scope:** 63 registered topics × 7 questions = **441 questions**. Topics 01–50 use the existing numbered study order; topics 51–63 are additional registered modules.
+
+**Audit decisions:** **169 proposed fixed options** and **272 marked `Good`**. `Good` means the existing correct option is retained. The existing English quiz modules are **not changed**; this is the proposed review sheet for approval.
 
 | Topic + Question Number | Original Question | Existing Correct Answer | Fixed Option / Good |
 |---|---|---|---|
