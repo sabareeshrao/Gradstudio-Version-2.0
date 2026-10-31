@@ -7,37 +7,37 @@
   "subtitle": "Original English diagrams and code remain unchanged",
   "questions": [
     {
-      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "stem": "AI Quantization అంటే ఏమిటి? FP32 Valuesని FP16, INT8, INT4గా Convert చేస్తే Model ఎలా Smaller అవుతుంది?",
       "options": [
-        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
-        "Model Features Read చేసి Process చేస్తుంది.",
-        "Model Parameters Trainingలో Update చేస్తుంది.",
-        "Model Input Dataతో Prediction చేస్తుంది."
+        "Quantization All Weightsని Plain Text Labelsగా Convert చేస్తుంది.",
+        "Quantization Fewer Bitsతో Numerical Model Values Store లేదా Compute చేస్తుంది.",
+        "Quantization Precision Same ఉంచి Only Layers Remove చేస్తుంది.",
+        "Quantization Predictions Exact Integersగా Change చేసి Rounding Error Eliminate చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Quantization Numbersని Fewer Bitsతో Represent చేస్తుంది. Storage Save అవుతుంది; Slight Rounding Error రావచ్చు.",
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> FP32 32-bit Floating, FP16 16-bit Floating. INT8, INT4 Lower-Bit Quantized Representations; Scale, Zero Point, Clippingలో Precision Loss Possible."
     },
     {
-      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "stem": "Smartphone, Edge AIలో Lower Precision వల్ల RAM, Speed, Battery ఎలా Improve అవుతాయి?",
       "options": [
-        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
-        "Model Features Read చేసి Process చేస్తుంది.",
-        "Model Parameters Trainingలో Update చేస్తుంది.",
-        "Model Input Dataతో Prediction చేస్తుంది."
+        "Quantized Model Original Training Datasetని Smaller చేసి Every Deviceపై Speed Guarantees చేస్తుంది.",
+        "Lower Precision All Mathematical Errors Remove చేసి Accuracy Always Boost చేస్తుంది.",
+        "Every CPU, GPU Native INT4 Support చేసి Conversions Never Needs చేస్తుంది.",
+        "Smaller Weights Memory Transfers Reduce; Supported Hardwareపై Speed Improve చేయవచ్చు."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Smaller Numbers Less RAM Need చేస్తాయి. Chip Support ఉంటే Power, Inference Speed Benefit వస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> Quantized Weights/Activations Cache, Memory Bandwidth Save చేయవచ్చు. Unsupported Operators, Conversion Overhead ఉంటే Benefits తగ్గవచ్చు."
     },
     {
-      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "stem": "100 Million FP32 Weights INT8, INT4గా Convert చేస్తే Raw Memory ఎంత Change అవుతుంది?",
       "options": [
-        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
-        "Model Features Read చేసి Process చేస్తుంది.",
-        "Model Parameters Trainingలో Update చేస్తుంది.",
-        "Model Input Dataతో Prediction చేస్తుంది."
+        "FP32 400 MB; INT8 100 MB; Packed INT4 50 MB Approx అవుతుంది.",
+        "FP32 100 MB; INT8 400 MB; Packed INT4 800 MB Approx అవుతుంది.",
+        "INT8, INT4 Same Bits Use చేస్తాయి; Both Storage Always Identical అంటుంది.",
+        "Lower Bits Every Original Value Perfectగా Preserve చేసి Accuracy Never Changes అంటుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> 100 Million Weights: FP32 ~400 MB, INT8 ~100 MB, INT4 ~50 MB. ఇవి Raw Weights Only.",
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> 100,000,000×4 Bytes=400 Decimal MB; INT8×1=100 MB; Packed INT4×0.5=50 MB. Scale, Padding, Unquantized Layers Extra Memory Need."
     },
     {
       "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
