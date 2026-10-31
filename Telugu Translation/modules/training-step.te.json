@@ -41,7 +41,7 @@
       "tag": "Beginner · Step by Step",
       "stem": "Complete Training Stepలో Mini-Batch Load, Forward Propagation, Loss Calculation, Backpropagation, Optimizer Update ఏ Orderలో జరుగుతాయి?",
       "options": [
-        "Load Mini-Batch → Forward → Loss → Gradient Clear/Accumulate → Backprop → Optimizer Update.",
+        "Mini-Batch → Forward → Loss → Grads Clear/Accumulate → Backprop → Optimizer Update.",
         "Before Predictions Random Weights Change చేసి Loss Compute చేస్తుందంటుంది. Useful Gradient Feedback Missing.",
         "Any Prediction/Lossకి Before Backprop Run చేస్తుందంటుంది. Forward Pass First Required.",
         "Correct Labelsని Guessesకి Match చేసి Optimizer లేకుండా End చేస్తుందంటుంది. Weight Learning జరగదు."
@@ -58,7 +58,7 @@
       "options": [
         "Larger Learning Rate Always Fast, Stable అంటుంది. Oversized Steps Overshoot, Diverge చేయవచ్చు.",
         "Batch Size Storage Only, Loss Update Speed Only అంటుంది. Both Gradient Signalని Affect చేస్తాయి.",
-        "Batch Noise/Memory, Loss Objective, Gradient Sensitivity, LR Step Size, SGD/Adam Update Rules Affect చేస్తాయి.",
+        "Batch Noise/Memory, Loss Objective, Gradient Sensitivity, LR Step, SGD/Adam Rules Affect చేస్తాయి.",
         "SGD, Adam Identical Updates, LR Evaluationలో Only Matter అంటుంది. Trainingలో Their Rules Differ."
       ],
       "answer": "c",
@@ -72,7 +72,7 @@
       "stem": "Python, PyTorchలో model.train(), optimizer.zero_grad(), model(inputs), loss.backward(), optimizer.step()తో Training Step ఎలా Implement చేస్తాం? Before/After Weights ఎలా Check చేస్తాం?",
       "options": [
         "Loss/Prediction Before Optimizer Step చేసి Current Gradients లేకుండా Finish చేస్తుందంటుంది. Wrong Order.",
-        "PyTorch train → zero_grad → forward → loss → backward → step; Weights Compare చేస్తాం.",
+        "PyTorch train → zero_grad → forward → loss → backward → step; Weights Inspect.",
         "Evaluation Modeలో Targets Change చేసి Backward After Weights Update అంటుంది. Stages Mixed.",
         "Backward Before Weights Update చేయకుండా Old Gradients Several Epochs Accumulate చేస్తుందంటుంది. Stale Updates Risk."
       ],
@@ -86,7 +86,7 @@
       "tag": "Advanced · Variants",
       "stem": "Gradient Accumulation, Mixed Precision, Gradient Clipping, LR Scheduling, Distributed Data Parallel (DDP) Training Stepsని ఎలా Change చేస్తాయి?",
       "options": [
-        "Accumulation Grads Sum; Mixed Precision Saves Memory; Clipping Limits; Schedules Change LR; DDP Sync.",
+        "Accumulation Grads Sum; Mixed Precision Memory; Clipping Limits; LR Schedules; DDP Sync.",
         "Accumulation All Grads Remove, Mixed Precision Freeze, DDP Labels Change అంటుంది. Operations Misrepresented.",
         "Clipping Large Gradients Increase, DDP Unrelated Models Train అంటుంది. Clipping Limits, DDP Synchronizes.",
         "LR Scheduling Backprop Replace, Accumulation Every Microbatch Update అంటుంది. Update Boundary Delayed."
