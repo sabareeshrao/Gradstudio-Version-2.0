@@ -16,7 +16,7 @@ const GREEK={
   log:'log',ln:'ln',exp:'exp',sin:'sin',cos:'cos',tan:'tan',
   min:'min',max:'max',argmin:'argmin',argmax:'argmax'
 };
-const SUB=Object.fromEntries([... '0123456789+-=()aitenw'].map((c,i)=>[c,'₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐᵢₜₑₙᵥ'.charAt(i)]));
+const SUB=Object.fromEntries([... '0123456789+-=()ait'].map((c,i)=>[c,'₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎ₐᵢₜ'.charAt(i)]));
 // Keep the plain-text fallback legible on offline / restricted clients.
 export function readableMath(source){
   let s=String(source).trim();
