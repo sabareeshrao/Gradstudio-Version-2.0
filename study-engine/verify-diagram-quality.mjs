@@ -45,6 +45,19 @@ for(const slug of slugs) {
     if(!match)fail(slug,'Q'+(i+1)+' missing unique composition fingerprint (data-scene)');
     else scenes.push(match[1]);
     figs.push(item.figure);
+    // Reject malformed SVG paint values such as fill="#abc,#def" (renders black)
+    // and labels accidentally serialized from an entire JavaScript array.
+    for(const [attribute,value] of item.figure.matchAll(/\\b(fill|stroke|stop-color)="([^"]*)"/g)){
+      if(/^(?:#[0-9a-fA-F]{3,8}\\s*,\\s*)+#[0-9a-fA-F]{3,8}$/.test(value))
+        fail(slug,'Q'+(i+1)+' invalid SVG '+attribute+' contains a list of colors; use one color per shape');
+    }
+    const svgTexts=[...item.figure.matchAll(/<text\\b[^>]*>([^<]+)<\\/text>/g)]
+      .map(m=>m[1].replace(/&amp;/g,'&').trim());
+    const seen=new Map();
+    for(const label of svgTexts){if(label.length>=75)seen.set(label,(seen.get(label)||0)+1)}
+    for(const [label,count] of seen){
+      if(count>=3)fail(slug,'Q'+(i+1)+' repeated long SVG label '+count+' times: '+label.slice(0,85));
+    }
     if(brokenPlaceholder.test(item.figure))fail(slug,'Q'+(i+1)+' contains a rendered JavaScript placeholder (undefined/NaN/[object Object])');
     if(!item.figure.includes('<svg '))fail(slug,'Q'+(i+1)+' needs substantial visual illustration (SVG)');
     if(!item.figure.includes('aria-label='))fail(slug,'Q'+(i+1)+' visual needs an accessible description');
