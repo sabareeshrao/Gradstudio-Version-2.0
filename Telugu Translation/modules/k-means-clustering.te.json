@@ -28,7 +28,7 @@
         "K Input Features Count; Cluster One Feature; Centroid Prediction Target అవుతుంది.",
         "K Training Epoch Count; Cluster Input Row; Centroid Labels List అవుతుంది.",
         "K Distance Formula Choose; Centroid Outlier Pointని Always Represent చేస్తుంది.",
-        "K Group Count; Cluster Nearby Members; Centroid వాళ్ల Mean Position Represent చేస్తుంది."
+        "K Group Count; Cluster Nearby Points; Centroid Mean Position అవుతుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> K అంటే Groups Count. Cluster ఒక Group. Centroid ఆ Groupలో Points Average Location.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> K User-Specified Number of Clusters. Cluster Assigned Records Group; Centroid μ_j Mean Vector. Too Few Groups Merge, Too Many Fragment; Interpretation Domainపై Depend.",
@@ -84,7 +84,7 @@
         "K-Means Curved Clusters Always Perfect; DBSCAN Round-Only Groups Require చేస్తుంది.",
         "Outliers All Algorithmsపై Same Effect; Scaling తర్వాత Results Identical అవుతాయి.",
         "GMM Overlapping Clusters Model చేయలేదు; Hierarchical Labels Mandatory అని Assume చేస్తాం.",
-        "K-Means Round Groups Prefer; DBSCAN Shapes, GMM Overlap, Hierarchy Nested Groups Support చేస్తాయి."
+        "K-Means Round Groups; DBSCAN Shapes; GMM Overlap; Hierarchy Nested Groups చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> K-Means Compact, Round Groupsకి Suitable. Irregular Shapes, Outliers ఉంటే DBSCAN, GMM వంటి Alternatives Compare చేయాలి.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> K-Means Voronoi Nearest-Center Regions వల్ల Roughly Convex Groupsకి Works. DBSCAN Non-Convex Density Groups, Noise; GMM Soft Probabilistic Overlap; Hierarchical Nested Partitions. Different Assumptions Validate చేయాలి.",
