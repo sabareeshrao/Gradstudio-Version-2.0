@@ -57,7 +57,12 @@ function validate(slug,entry,filename){
   const overlay=d;
   d={...source,...overlay,
     hero:source.hero,diagramStyle:"../study-engine/"+source.diagramStyle,
-    questions:source.questions.map((q,i)=>({...q,...overlay.questions[i],figure:q.figure,answer:q.answer}))
+    questions:source.questions.map((q,i)=>({
+      ...q,...overlay.questions[i],figure:q.figure,answer:q.answer,
+      technicalExplanation:overlay.questions[i].technicalExplanation?.includes("Correct Answer:")
+       ? overlay.questions[i].technicalExplanation
+       : "<strong>Correct Answer: "+q.answer.toUpperCase()+".</strong> "+(overlay.questions[i].technicalExplanation||"")
+    }))
   };
  }
  const html=readFileSync(entryPath,"utf8");
