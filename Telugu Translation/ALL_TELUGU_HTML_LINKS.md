@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**30 lessons · 210 questions · 30 individual HTML pages**
+**33 lessons · 231 questions · 33 individual HTML pages**
 
-Every row opens a Telugu + English lesson and its original English lesson page. Lessons 01–10 use the English lesson entry pages; lessons 11–30 open their original English modules in the Study Engine.
+Every row opens a Telugu + English lesson and its original English lesson page. Lessons 01–10 use the English lesson entry pages; lessons 11–33 open their original English modules in the Study Engine.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -38,6 +38,9 @@ Every row opens a Telugu + English lesson and its original English lesson page. 
 | 28 | Residual Connection | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/28-residual-connection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=residual-connection) |
 | 29 | Positional Encoding | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/29-positional-encoding.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding) |
 | 30 | Rotary Position Embedding (RoPE) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/30-rotary-position-embedding.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) |
+| 31 | Query Projection | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/31-query-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection) |
+| 32 | Key Projection | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/32-key-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection) |
+| 33 | Value Projection | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/33-value-projection.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) |
 
 ## Copy-ready HTML links
 
@@ -72,6 +75,9 @@ https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/27-so
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/28-residual-connection.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/29-positional-encoding.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/30-rotary-position-embedding.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/31-query-projection.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/32-key-projection.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/33-value-projection.html
 ```
 
 Original English diagrams, tiles, formulas and code are retained. Questions, four options, and explanations are written in modern Telugu + English.
