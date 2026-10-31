@@ -94,7 +94,7 @@
       "stem": "How should a Vector Database be designed and optimized for a production Retrieval-Augmented Generation (RAG) system, including hybrid keyword-vector search, metadata-based access control, embedding model upgrades, document updates and deletions, reranking, retrieval evaluation, and preventing irrelevant or unauthorized information from reaching the LLM?",
       "tag": "Advanced · trustworthy RAG",
       "options": [
-        "A secure RAG system combines keyword and vector search, applies real access checks, reranks relevant passages, refreshes outdated embeddings, and measures retrieval quality before generation.",
+        "Secure RAG combines keyword and vector search, checks user permissions, reranks the best evidence, refreshes old indexes, and measures retrieval quality before answering.",
         "Metadata labels alone authorize every retrieval request, so the application can ignore the user's identity. Permissions must still be checked against a trusted source.",
         "Replacing the embedding model keeps exactly the same vector space for every document, so old and new vectors can always mix without rebuilding the existing index.",
         "Reranking is unnecessary whenever cosine scores are high, even if the sources are restricted or outdated. Scores do not replace authorization and evidence-quality checks."
