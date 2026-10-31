@@ -1,0 +1,12 @@
+/* Feature Selection module: seven scoped responsive instructional diagrams. */
+.fs-hero,.fs-fig{color:#2a5066;border:1px solid #d8e5eb;border-radius:17px;overflow:hidden;padding:clamp(15px,2.4vw,25px);background:linear-gradient(140deg,#f9fcff,#f4faf7 71%,#fff8ef)}
+.fs-hero{margin-bottom:20px;background:linear-gradient(140deg,#e9f5f7,#f6fcf9 74%,#fff6ed)}
+.fs-kicker{display:block;font:800 .7rem/1.4 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#3c8293}
+.fs-hero h2,.fs-fig h3{font-size:clamp(1.1rem,2.2vw,1.5rem);line-height:1.28;color:#25516b;margin:9px 0}
+.fs-hero p,.fs-intro,.fs-foot{font-size:.85rem;line-height:1.57;color:#517183;margin:8px 0 14px}
+.fs-scroll{border:1px solid #d6e4ea;border-radius:13px;padding:8px;background:#fff;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.fs-scroll svg{display:block;min-width:670px;max-width:none;width:100%;height:auto;border-radius:8px;background:linear-gradient(168deg,#fff,#fafdfb)}
+.fs-foot{margin:12px 0 0}
+.fs-f1 .fs-scroll{border-top:3px solid #76b69b}.fs-f2 .fs-scroll{border-top:3px solid #e0a17d}.fs-f3 .fs-scroll{border-top:3px solid #92a5d2}.fs-f4 .fs-scroll{border-top:3px solid #c2a077}.fs-f5 .fs-scroll{border-top:3px solid #69a3c2}.fs-f6 .fs-scroll{border-top:3px solid #d38d80}.fs-f7 .fs-scroll{border-top:3px solid #76aa96}
+@media(max-width:720px){.fs-hero,.fs-fig{padding:13px}.fs-scroll{padding:5px}.fs-scroll svg{min-width:760px}.fs-intro,.fs-foot{font-size:.8rem}}
+@media(prefers-reduced-motion:no-preference){.fs-scroll:hover svg{filter:saturate(1.07)}}
