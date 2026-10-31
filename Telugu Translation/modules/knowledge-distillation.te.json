@@ -64,7 +64,7 @@
     {
       "stem": "Response-Based, Feature-Based, Relation-Based, Self-Distillationలో Knowledge Transfer ఎలా Differ అవుతుంది?",
       "options": [
-        "Output Scores, Hidden Features, Relationships, Prior Guidance Transfer చేస్తాయి.",
+        "Output Scores, Hidden Features, Relations Studentకి Transfer చేస్తాం.",
         "Only Hard Labels Transfer; Training Duration మాత్రమే Different ఉంటుంది.",
         "Teacher Layer Sizes, File Formats, Hardware Layout Only Transfer చేస్తాయి.",
         "Model Parameter Counts, Training Speed, Vocabulary Order Only Match చేస్తాయి."
