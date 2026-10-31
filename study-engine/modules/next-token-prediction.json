@@ -54,7 +54,7 @@
       "tag": "Medium · inside the decoder",
       "options": [
         "Next-token probabilities come entirely from the numerical positions of tokens, without using contextual embeddings, attention, or learned hidden representations.",
-        "The model generates a complete answer first, then assigns scores to each token after the words are already chosen, making the probabilities irrelevant.",
+        "The model writes a finished answer first, then scores each token afterward, so probabilities cannot guide its earlier selections.",
         "Softmax creates embeddings from raw vocabulary IDs, then passes them backward into attention before the model processes the original prompt.",
         "Embeddings and position information enter causal decoder blocks; final hidden states produce vocabulary logits that Softmax turns into next-token probabilities."
       ],
@@ -82,8 +82,8 @@
       "tag": "Advanced · model training",
       "options": [
         "Training uses only the model's own generated guesses, without access to actual next-token labels or any error signal for improving parameters.",
-        "Shifted targets are copies of the current input positions, and causal masking reveals future words so the model can use the correct answer directly.",
-        "Training uses real next-token targets, causal masks, cross-entropy, and backpropagation; inference instead feeds generated tokens back into future predictions.",
+        "Shifted labels copy the current input positions, and causal masking reveals future words so the model can use answers directly.",
+        "Training learns with true shifted targets, causal masks, cross-entropy and backpropagation; inference feeds chosen tokens into the next prediction.",
         "Backpropagation begins only after generating a user-facing reply, rather than during learning from many labeled next-token examples in the training dataset."
       ],
       "answer": "c",
@@ -96,8 +96,8 @@
       "tag": "Advanced · production inference",
       "options": [
         "Prefill processes the prompt, KV caching reuses earlier Keys and Values, decode generates tokens, and speculative methods verify proposed draft continuations.",
-        "KV caching stores only old Query vectors, forcing the model to rebuild all earlier Key and Value projections whenever it generates another token.",
-        "Prefill produces the entire answer instantly, while decode repeatedly tokenizes the original prompt without generating any additional output tokens.",
+        "KV caching stores only old Queries, forcing the model to rebuild earlier Keys and Values whenever it generates another token.",
+        "Prefill produces the entire answer instantly, while decode repeatedly tokenizes the original prompt without creating any new output tokens at all.",
         "Speculative decoding always changes the target model's answer distribution and guarantees lower latency for every request, regardless of model size or workload."
       ],
       "answer": "a",
