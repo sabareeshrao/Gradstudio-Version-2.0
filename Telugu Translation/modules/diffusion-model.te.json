@@ -26,7 +26,7 @@
       "tag": "Beginner · Why Noise",
       "stem": "Diffusion Models Noise Add, Remove చేయడం ఎందుకు Learn చేస్తాయి? GANs, VAEs వంటి Other Generative Modelsతో Training Process ఎలా Differentగా ఉంటుంది?",
       "options": [
-        "Different Noise Levels Clear Denoising Targets ఇస్తాయి; Diffusion GAN Competition లేదా VAE Direct Latent Decoding Require చేయదు.",
+        "Controlled Noise Denoising Targets ఇస్తుంది; GAN Competition, VAE Direct Latent Decoding Diffusionకి Required కాదు.",
         "Diffusion One Transformation Only, GAN/VAE Reverse Noise Chains Use చేస్తాయంటుంది. Objectives Different.",
         "Diffusion Discriminator, GAN Latents, VAE Noise Schedule అంటుంది. Generative Methods Roles Swap.",
         "Diffusion Examples Copy, GAN Noise Schedule, VAE Reverse Diffusion అంటుంది. Each Architecture Different."
@@ -73,7 +73,7 @@
       "options": [
         "PyTorch Classifier Labels Predict చేసి Direct Pictures Generate చేస్తుందంటుంది. Denoising Process Missing.",
         "Autoencoder Compress/Reconstruct చేసి Reverse Noise Steps Skip చేస్తుందంటుంది. Different Generative Method.",
-        "Images, Timesteps, Gaussian Noise Load/Sample; Network Noise Prediction MSEతో Train చేసి Fresh Noise నుంచి Reverse Sample చేస్తాం.",
+        "PyTorch Imagesపై Gaussian Noise, Timesteps Add చేసి MSE Denoiser Train; Reverse Sample చేస్తాం.",
         "Stored Image Patches Shuffle చేసి Picture Create చేస్తుందంటుంది. Learned Denoising Network కాదు."
       ],
       "answer": "c",
@@ -104,7 +104,7 @@
         "Distillation Model Size Increase, Latent More Pixel Compute, Flow Matching Prompts Remove అంటుంది. Efficiency Goals Different.",
         "Distillation Frames Store, Latent Time Discard, Flow Matching Smooth Motion Guarantee అంటుంది. Consistency Still Challenging.",
         "Distillation Perfect Videos, Latent Perfect Alignment, Flow No Training అంటుంది. None Removes All Errors.",
-        "High-Resolution/Video Cost, Consistency, Alignment Challengesకి Distillation, Samplers, Latents, Flow Matching Help; Still Testing Needed."
+        "High-Resolution/Video Memory, Temporal, Alignment Challengesకి Distillation, Latent, Flow Matching Help; Testing Necessary."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> High-Resolution Image, Videoకి Memory, Time, Temporal Consistency Costs ఉంటాయి; Text–Image Alignment Fail కావచ్చు. Distillation, Better Samplers, Latent Generation, Flow Matching Sampling Cost Reduce చేయవచ్చు కానీ Stability, Video Continuity Test చేయాలి. Animation Team Windలో Sway అయ్యే Trees Generate చేస్తోందనుకోండి. Frames Each Realisticగా ఉండడమే కాక Trees Frames Across Consistentగా ఉండాలి. <strong>Distillation</strong> Steps Reduce, <strong>Latent-Space Generation</strong> Working Representation Shrink, <strong>Flow Matching</strong> Efficient Paths Learn చేయవచ్చు. Teams Motion Smoothness, Quality, Prompt Alignment Evaluate చేస్తాయి.",
