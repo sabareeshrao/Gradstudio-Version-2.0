@@ -41,7 +41,7 @@
       "options": [
         "RNN Sentenceని Backward Only Read చేస్తుంది; Forward Order Process Possible కాదు.",
         "RNN Every Wordని Fixed Dictionaryలో Store చేసి Hidden State Never Change చేస్తుంది.",
-        "Words Orderలో Read చేసి Hidden State Update; Earlier Words Later Predictionsని Affect చేస్తాయి.",
+        "Words Read, State Update; Earlier Context Later Predictionsని Affect చేస్తుంది.",
         "Each Tokenని Separate Encode చేసి Earlier Contextని Every Stepలో Discard చేస్తుంది."
       ],
       "answer": "c",
@@ -53,7 +53,7 @@
       "tag": "Medium · Math",
       "stem": "hₜ = tanh(Wₓxₜ + Wₕhₜ₋₁ + b) Formulaలో Input, Previous Memory, Shared Weights, Output ఎలా Work చేస్తాయి?",
       "options": [
-        "Same Weight Matrices Current Input, Previous State Combine చేసి New Hidden State Create చేస్తాయి.",
+        "Shared Matrices Current Input, Previous State Combine చేసి Hidden State Update చేస్తాయి.",
         "Hidden State Current Word Only Use చేస్తుంది; Previous State Calculationలో Enter కాదు.",
         "Every Positionకి New Recurrent Matrices; Shared Weights Completely Avoid చేస్తుంది.",
         "RNN Token IDs Simply Add చేసి Activation Functions, Matrix Multiplication Skip చేస్తుంది."
@@ -83,7 +83,7 @@
       "options": [
         "LSTM One Gate Only; GRU Four Separate Gates, Cell Memory Require చేస్తుంది.",
         "LSTM Every Wordని Perfectly Store చేస్తుంది; GRU Past Information Permanently Lose చేస్తుంది.",
-        "LSTM Gatesతో Cell, Hidden States; GRU Simpler Gatesతో One Hidden State Use చేస్తుంది.",
+        "LSTM Cell, Hidden Statesతో Gates; GRU Simpler Gates, One State Use చేస్తుంది.",
         "LSTM, GRU Time Recurrence Remove చేసి Each Token Completely Independently Process చేస్తాయి."
       ],
       "answer": "c",
