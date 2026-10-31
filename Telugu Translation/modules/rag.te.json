@@ -96,7 +96,7 @@
       "answer": "d",
       "options": [
         "Output Length మాత్రమే Measure చేస్తుంది; Citations, Access Checks అవసరం ఉండవు.",
-        "Search Score High అయితే Permissions Disable చేసి All Retrieved Instructions Trust చేస్తుంది, Always.",
+        "Search Score High అయితే Permissions Disable చేసి All Retrieved Instructionsని Blindly Always Trust చేస్తుంది.",
         "Knowledge Updateకి Incremental Indexing Avoid చేసి Entire LLMని Retrain చేస్తుంది.",
         "Retrieval, Faithfulness, Citations, Security, Latency, Cost, Driftని Continuously Track చేస్తుంది."
       ],
