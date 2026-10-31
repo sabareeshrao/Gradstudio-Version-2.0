@@ -62,26 +62,26 @@
       "technicalExplanation": "<strong>Correct Answer: B.</strong> PTQ Representative Calibration Data Use చేయవచ్చు. QAT Fake Quantization Forwardలో Apply చేసి Student Weights Gradient Updatesతో Adapt చేస్తుంది. Hardware Evaluation Needed."
     },
     {
-      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "stem": "LLM Quantizationలో GPTQ, AWQ, SmoothQuant, Activation Outliers, Mixed Precision ఎలా Handle చేస్తాయి?",
       "options": [
-        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
-        "Model Features Read చేసి Process చేస్తుంది.",
-        "Model Parameters Trainingలో Update చేస్తుంది.",
-        "Model Input Dataతో Prediction చేస్తుంది."
+        "GPTQ Activations Only Quantize; AWQ Attention Scores Only Adjust చేస్తుంది.",
+        "All Techniques Activation Statistics Ignore చేసి Random Rounding Only Use చేస్తాయి.",
+        "SmoothQuant Weights Only; AWQ Whole LLM Retrain Mandatory అని Says చేస్తుంది.",
+        "GPTQ Weight Error Reduce; AWQ Important Channels Protect; SmoothQuant Outliers Handle చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> GPTQ Weight Error Reduce; AWQ Important Channels Protect; SmoothQuant Activation Outliers Manage చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> GPTQ Approx Second-Order Weight Reconstruction; AWQ Activation Statisticsతో Salient Channels Protect; SmoothQuant Activation Outliersని Weights వైపు Shift చేస్తుంది."
     },
     {
-      "stem": "AI Model Quantization ఎలా Work చేస్తుంది?",
+      "stem": "CPU, GPU, NPUపై INT8/INT4 Quantization Deploy చేసేటప్పుడు Size, Accuracy, Latency, Energy ఎలా Benchmark చేస్తాం?",
       "options": [
-        "Model Numbersని Smaller Formatలో Store చేస్తుంది.",
-        "Model Features Read చేసి Process చేస్తుంది.",
-        "Model Parameters Trainingలో Update చేస్తుంది.",
-        "Model Input Dataతో Prediction చేస్తుంది."
+        "Target Hardwareపై Inference, Conversion Overhead, Quality, Energy, Latency Measure చేస్తాం.",
+        "Smallest Stored Model Every Hardwareపై Fastest, Most Accurate అని Guarantee చేస్తుంది.",
+        "INT4 Files Every CPU, GPU, Phoneలో Native INT4 Operators Guarantee చేస్తాయి.",
+        "Dequantization Back to Float All Quantization Error Completely Remove చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> AI Modelలో Numbers Representation Change చేయడం.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Precision, Accuracy, Speed గురించి Learn చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Smaller Model Speed Guarantee కాదు. Actual Deviceపై Quality, Latency, Battery Check చేయాలి.",
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> Low-Bit Kernel Support, Packing, Dequantization Cost, Memory Bandwidth Device-Specific. End-to-End Latency, Throughput, Accuracy, Energyపై Benchmark చేయాలి."
     }
   ]
 }
