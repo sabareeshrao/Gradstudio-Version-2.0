@@ -47,11 +47,11 @@ for(const slug of slugs) {
     figs.push(item.figure);
     // Reject malformed SVG paint values such as fill="#abc,#def" (renders black)
     // and labels accidentally serialized from an entire JavaScript array.
-    for(const [attribute,value] of item.figure.matchAll(/\\b(fill|stroke|stop-color)="([^"]*)"/g)){
-      if(/^(?:#[0-9a-fA-F]{3,8}\\s*,\\s*)+#[0-9a-fA-F]{3,8}$/.test(value))
+    for(const [,attribute,value] of item.figure.matchAll(/\b(fill|stroke|stop-color)="([^"]*)"/g)){
+      if(/^(?:#[0-9a-fA-F]{3,8}\s*,\s*)+#[0-9a-fA-F]{3,8}$/.test(value))
         fail(slug,'Q'+(i+1)+' invalid SVG '+attribute+' contains a list of colors; use one color per shape');
     }
-    const svgTexts=[...item.figure.matchAll(/<text\\b[^>]*>([^<]+)<\\/text>/g)]
+    const svgTexts=[...item.figure.matchAll(/<text\b[^>]*>([^<]+)<\/text>/g)]
       .map(m=>m[1].replace(/&amp;/g,'&').trim());
     const seen=new Map();
     for(const label of svgTexts){if(label.length>=75)seen.set(label,(seen.get(label)||0)+1)}
