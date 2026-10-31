@@ -119,6 +119,11 @@
       "slug": "ai-agent-framework",
       "title": "AI Agent Framework",
       "domain": "AI Agent Development, Orchestration, and Autonomous Task Execution · AI Agents and Tool Use"
+    },
+    {
+      "slug": "supervised-learning",
+      "title": "Supervised Learning",
+      "domain": "Learning from Labeled Data and Predictive Modeling · Supervised Machine Learning"
     }
   ]
 }
