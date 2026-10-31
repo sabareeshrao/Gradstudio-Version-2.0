@@ -1,9 +1,12 @@
 (async function startTeluguLesson(){
 'use strict';
 const root=document.getElementById('moduleRoot');
+const slug=document.body.dataset.module || 'transformer';
+if(!/^[a-z0-9-]+$/.test(slug))throw new Error('Invalid lesson slug');
+const contentFile=slug==='transformer'?'./transformer.te.json':'./modules/'+slug+'.te.json';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 try{
-  const res=await fetch(new URL('./transformer.te.json',import.meta.url),{cache:'no-cache'});
+  const res=await fetch(new URL(contentFile,import.meta.url),{cache:'no-cache'});
   if(!res.ok)throw new Error('పాఠం దొరకలేదు (HTTP '+res.status+')');
   const data=await res.json();
   if(data.language!=='te'||!Array.isArray(data.questions)||data.questions.length!==7||
