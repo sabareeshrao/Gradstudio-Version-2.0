@@ -7,14 +7,17 @@
   async function getJSON(url){const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error('Module not found (HTTP '+r.status+')');return r.json();}
   const base=new URL('./',import.meta.url);
   try{
-    const manifest=await getJSON(new URL('modules/index.json',base));
+    // The library needs the module registry, but a direct lesson link does not.
+    // Fetching the lesson JSON directly avoids rejecting newer links when the
+    // deployed index.json is cached or older than the module file.
     if(!slug){
+      const manifest=await getJSON(new URL('modules/index.json',base));
       document.getElementById('themeMenu').style.display='none';
       root.innerHTML='<h1>Gradstudio Study Modules</h1><p class="sub">Select a keyword to open its seven-layer visual quiz. The same page engine powers every module.</p>'+
       manifest.modules.map(m=>'<article class="question"><div class="q-head"><span class="q-badge">7 LAYERS</span><span class="q-tag">'+esc(m.domain)+'</span></div><h2>'+esc(m.title)+'</h2><p><a href="?module='+encodeURIComponent(m.slug)+'">Open interactive lesson in browser →</a></p></article>').join('');
       return;
     }
-    if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)||!manifest.modules.some(m=>m.slug===slug))throw Error('Unknown keyword: '+slug);
+    if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))throw Error('Invalid keyword: '+slug);
     const data=await getJSON(new URL('modules/'+slug+'.json',base));
     if(!Array.isArray(data.questions)||data.questions.length<1||data.questions.some(q=>q.options?.length!==4||!['a','b','c','d'].includes(q.answer)||!q.figure))throw Error('Invalid module: each question needs four choices, one answer, and its own figure.');
     if(data.diagramStyle){
