@@ -4,7 +4,26 @@
   const params=new URLSearchParams(location.search);
   const slug=params.get('module');
   const esc=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  async function getJSON(url){const r=await fetch(url,{cache:'no-cache'});if(!r.ok)throw Error('Module not found (HTTP '+r.status+')');return r.json();}
+  // Use published site assets first. If a Pages deployment is delayed,
+  // read public lesson JSON from the exact GitHub repository instead.
+  // This fallback is confined to checked module JSON filenames.
+  async function getJSON(url){
+    let originalError;
+    try{
+      const response=await fetch(url,{cache:'no-store'});
+      if(response.ok)return response.json();
+      originalError=Error('Published lesson unavailable (HTTP '+response.status+')');
+    }catch(error){originalError=error;}
+    const requested=new URL(url,base);
+    const relative=requested.href.startsWith(base.href)?requested.href.slice(base.href.length):'';
+    if(!/^modules\/[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(relative))throw originalError;
+    const raw='https://raw.githubusercontent.com/sabareeshrao/Gradstudio-Version-2.0/main/study-engine/'+relative;
+    try{
+      const alternate=await fetch(raw,{cache:'no-store'});
+      if(alternate.ok)return alternate.json();
+    }catch(error){console.warn('GitHub source fallback unavailable',error);}
+    throw Error('Lesson data is not yet available on Pages or GitHub. Try refreshing after deployment.');
+  }
   const base=new URL('./',import.meta.url);
   try{
     // The library needs the module registry, but a direct lesson link does not.
@@ -21,8 +40,19 @@
     const data=await getJSON(new URL('modules/'+slug+'.json',base));
     if(!Array.isArray(data.questions)||data.questions.length<1||data.questions.some(q=>q.options?.length!==4||!['a','b','c','d'].includes(q.answer)||!q.figure))throw Error('Invalid module: each question needs four choices, one answer, and its own figure.');
     if(data.diagramStyle){
-      const sheet=document.createElement('link');sheet.rel='stylesheet';sheet.href=new URL(data.diagramStyle,base).href;
-      await new Promise((res,rej)=>{sheet.onload=res;sheet.onerror=()=>rej(Error('Diagram CSS missing'));document.head.appendChild(sheet)});
+      // Prefer the deployed stylesheet; fall back to the matching GitHub source
+      // for recently added modules while Pages is catching up.
+      const loadStyle=(href)=>new Promise((res,rej)=>{
+        const sheet=document.createElement('link');sheet.rel='stylesheet';sheet.href=href;
+        sheet.onload=res;sheet.onerror=()=>{sheet.remove();rej(Error('Diagram CSS unavailable'))};
+        document.head.appendChild(sheet);
+      });
+      try{
+        await loadStyle(new URL(data.diagramStyle,base).href);
+      }catch(error){
+        if(!/^diagrams\/[a-z0-9]+(?:-[a-z0-9]+)*\.css$/.test(data.diagramStyle))throw error;
+        await loadStyle('https://raw.githubusercontent.com/sabareeshrao/Gradstudio-Version-2.0/main/study-engine/'+data.diagramStyle);
+      }
     }
     document.title=data.title+' — Gradstudio';
     document.querySelector('#moduleBrand').innerHTML=esc(data.keyword)+'<small>Visual Study · '+data.questions.length+' Learning Layers</small>';
