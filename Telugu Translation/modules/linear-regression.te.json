@@ -74,7 +74,7 @@
       ],
       "answer": "b",
       "explanation": "<strong>Simple Explanation:</strong> Dataset Split → Model Fit → New Predictions → MAE, RMSE, R². Test Data Trainingలో Use చేయకూడదు.",
-      "technicalExplanation": "<strong>Correct Answer: B.</strong> Scikit-learn train_test_split(X,y), LinearRegression().fit(X_train,y_train), predict(X_test). MAE Mean Absolute Error, RMSE Root Mean Squared Error, R² Baseline Comparison; Check Units."
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> Scikit-learn train_test_split(X,y), LinearRegression().fit(X_train,y_train), predict(X_test). MAE Mean Absolute Error, RMSE Root Mean Squared Error, R² Baseline Comparison; Check Units. MAE, RMSE Actual Price Unitsలో వస్తాయి; R² Baseline Predictionతో Compare చేస్తుంది. Test Set Trainingలో Leak కాకూడదు."
     },
     {
       "tag": "Advanced · Limitations",
