@@ -1,0 +1,16 @@
+/* Value Projection · illustrated-v2 · responsive SVG teaching scenes */
+.vp-hero,.vp-figure{font-family:inherit;min-width:0;color:#2d4b5b}
+.vp-hero{padding:clamp(18px,2.8vw,28px);margin-bottom:22px;border:1px solid #cde3e5;border-radius:20px;background:radial-gradient(circle at top left,#e1f5eb,transparent 51%),linear-gradient(140deg,#f5fbff,#fff9f0);box-shadow:0 9px 28px #365c6a12}
+.vp-eyebrow{font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#2b8776}
+.vp-hero h2{font-size:clamp(1.19rem,2.5vw,1.78rem);line-height:1.25;color:#305972;margin:9px 0}
+.vp-hero p{font-size:.89rem;line-height:1.58;color:#627c89}
+.vp-figure{padding:clamp(14px,2.7vw,25px);background:radial-gradient(ellipse at 100% 0%,#e8f7ed,transparent 49%),linear-gradient(136deg,#f8fcff,#fffbf5)}
+.vp-figure h3{font-size:clamp(1.04rem,1.94vw,1.23rem);font-weight:850;line-height:1.35;margin:8px 0 14px;color:#30556d}
+.vp-canvas{max-width:100%;overflow-x:auto;overflow-y:hidden;border:1px solid #d9e7ea;border-radius:13px;background:#fff;scrollbar-color:#b8d3dc transparent}
+.vp-canvas svg{width:100%;height:auto;min-width:650px;max-width:none;display:block}
+.vp-note{font-size:.83rem;color:#607a88;line-height:1.58;margin:12px 0 0}.vp-note strong{color:#27826d}
+.vp-code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#1b3044;color:#e7f3f9;border-radius:10px;padding:14px;white-space:pre;overflow-x:auto;font-size:.75rem;line-height:1.48}
+.vp-sources{padding:13px 15px;background:#fff;border:1px solid #d9e7ea;border-radius:12px;color:#617a8c;font-size:.8rem;margin-top:22px}
+.vp-sources summary{cursor:pointer;font-weight:850}.vp-sources li{margin:7px 0}.vp-sources a{color:#176f99}
+@media(max-width:650px){.vp-hero{padding:15px 12px}.vp-figure{padding:13px 9px}.vp-canvas svg{min-width:650px}}
+@media(prefers-reduced-motion:reduce){.vp-hero *,.vp-figure *{animation:none!important;transition:none!important}}
