@@ -1,0 +1,25 @@
+/* NLP illustrated-v2: only concept-specific visuals, shared quiz and themes stay in the study engine. */
+.nlp-hero,.nlp-fig{color:#28465b;box-sizing:border-box;min-width:0}
+.nlp-hero{padding:clamp(17px,2.7vw,27px);border:1px solid #cde4e2;border-radius:20px;background:radial-gradient(circle at 10% 9%,#def4e8,transparent 45%),linear-gradient(140deg,#f4fbff,#fff8ef);margin-bottom:24px}
+.nlp-hero h2{color:#245a68;font-size:clamp(1.18rem,2.5vw,1.75rem);line-height:1.23;margin:7px 0}
+.nlp-hero p{margin:9px 0 16px;color:#5d7789;font-size:.88rem;line-height:1.6}
+.nlp-fig{padding:clamp(15px,2.5vw,24px);border-radius:13px;background:radial-gradient(circle at 90% 3%,#e3f5f0,transparent 40%),linear-gradient(145deg,#f8fcff,#fffaf4)}
+.nlp-kicker{font-size:.7rem;font-weight:900;text-transform:uppercase;letter-spacing:.11em;color:#2c827f}
+.nlp-fig h3{margin:7px 0 15px;font-size:clamp(1rem,1.8vw,1.19rem);line-height:1.35;color:#31566a}
+.nlp-scene{background:#fff;border:1px solid #d3e4eb;border-radius:14px;overflow:hidden}
+.nlp-scene svg{width:100%;height:auto;display:block}
+.nlp-note{font-size:.79rem;line-height:1.57;color:#607c8b;margin:13px 0 0}
+.nlp-note strong{color:#247a68}
+.nlp-caveat{font-size:.76rem;color:#805f42;border-left:3px solid #d69c62;background:#fff3e6;border-radius:0 8px 8px 0;padding:9px 11px;margin:12px 0 0;line-height:1.5}
+.nlp-legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.nlp-legend span{padding:5px 9px;border-radius:100px;border:1px solid #d5e8e4;background:#edf8f5;color:#3a7469;font-size:.72rem;font-weight:800}
+.nlp-code-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(200px,.65fr);gap:11px;margin-top:12px}
+.nlp-code{margin:0;padding:13px 15px;border-radius:11px;color:#dcecf9;background:#1b3044;font-size:.75rem;line-height:1.58;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;overflow-x:auto;white-space:pre}
+.nlp-code-notes{background:#fff;border:1px solid #d3e7e6;border-radius:11px;padding:12px;color:#56798b;font-size:.77rem}
+.nlp-code-notes strong{display:block;color:#33667a}
+.nlp-code-notes p{margin:7px 0;line-height:1.5}
+.nlp-code-notes code{font-size:.72rem;color:#25766d}
+.nlp-refs{padding:12px 14px;border:1px solid #d2e2e7;border-radius:13px;background:#fff;color:#4c697d;font-size:.79rem;margin:18px 0}
+.nlp-refs summary{cursor:pointer;font-weight:850}.nlp-refs li{margin:7px 0}.nlp-refs a{color:#1c6689}
+@media(max-width:750px){.nlp-code-grid{grid-template-columns:1fr}.nlp-scene{overflow-x:auto;overscroll-behavior-x:contain}.nlp-scene svg{min-width:680px}.nlp-scene:after{content:"Swipe sideways to see the complete diagram →";display:block;position:sticky;left:0;text-align:center;background:#f5fafb;color:#708b99;font-size:.7rem;padding:5px}}
+@media(prefers-reduced-motion:reduce){.nlp-hero *,.nlp-fig *{transition:none!important;animation:none!important}}
