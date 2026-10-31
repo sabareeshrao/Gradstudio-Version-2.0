@@ -12,7 +12,7 @@
       "stem": "What is a Residual Connection in Deep Learning, and how does it allow information to skip one or more neural network layers instead of passing through every transformation?",
       "options": [
         "A residual connection always replaces the original input with a newly calculated signal, so earlier information is lost before reaching the next block.",
-        "A residual connection carries the original input around a transformation and adds it to the transformed output, preserving an alternative path for information.",
+        "A residual connection keeps the original input beside a learned transformation and adds both, preserving a direct path for information.",
         "A residual connection stores the original input in a separate file for later training, without using it in the current layer's output.",
         "A residual connection deletes some layers to make a model smaller, so information skips their calculations because the network no longer contains them."
       ],
@@ -28,7 +28,7 @@
         "Residual blocks completely remove training errors and guarantee deeper networks will beat shallower ones. They help optimization but cannot ensure ideal model performance.",
         "Residual blocks freeze the weights of every deep layer to prevent any changes during training, which would stop those layers from learning useful transformations.",
         "Residual shortcuts reduce the number of trainable layers by permanently deleting difficult ones, making depth irrelevant to the model's calculations and learned behavior.",
-        "Residual paths let deeper networks preserve their input while learning corrections, giving information and gradients another route through difficult-to-optimize layers."
+        "Residual paths help very deep networks preserve useful inputs while learning corrections, giving information and gradients a shorter route through the layers."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Picture a long conveyor system with many processing stations. If every station must replace the entire signal, important details may become difficult to preserve. Residual connections give the signal a direct path alongside the learned transformation. A deep network can then focus on learning a useful <strong>correction</strong>, which may be small. This helped address the <strong>degradation problem</strong>, where adding layers unexpectedly made training harder. Shortcuts improve optimization; they do not guarantee that every deeper model is better.",
@@ -39,7 +39,7 @@
       "tag": "Beginner · add the two paths",
       "stem": "How does a Residual Connection work step by step, starting with an input vector, passing it through a neural network layer, adding the original input back to the transformed output, and forwarding the combined result to the next layer?",
       "options": [
-        "An input splits into a shortcut and a learned branch; the branch transforms the input, and the two results are added before reaching the next block.",
+        "An input splits into shortcut and learned branches; the transformed signal is added to the original before the combined result reaches the next block.",
         "The input goes through two unrelated transformations while the original signal is discarded, so no direct identity information reaches the final addition.",
         "The network adds outputs from unrelated layers and tries to reconstruct the original input afterward, rather than keeping a direct copy along the shortcut.",
         "The input passes through every transformation and is replaced by the last layer's prediction, without an addition that includes the original signal."
@@ -82,9 +82,9 @@
       "stem": "How are Residual Connections integrated into Transformer blocks around Multi-Head Attention and Feed-Forward Networks, and how do Pre-LayerNorm and Post-LayerNorm architectures differ in their placement of normalization, residual addition, and gradient flow?",
       "options": [
         "Pre-LayerNorm normalizes before the attention or feed-forward branch, while Post-LayerNorm applies normalization after that branch's result is added to the shortcut.",
-        "Pre-LayerNorm normalizes only after the complete Transformer, while Post-LayerNorm normalizes embeddings once and never processes later blocks.",
+        "Pre-LayerNorm normalizes only after the complete Transformer, while Post-LayerNorm normalizes embeddings once and never processes later blocks during training or inference.",
         "Pre-LayerNorm removes attention entirely, while Post-LayerNorm replaces the feed-forward network with a fixed identity mapping, so they use different model families.",
-        "Pre-LayerNorm adds every branch without any normalization, while Post-LayerNorm performs normalization only during inference instead of training."
+        "Pre-LayerNorm adds every learned branch without normalization, while Post-LayerNorm performs normalization only during inference instead of actual model training."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> Suppose a Transformer processes an airline announcement. Its attention block updates the token representations, while a residual path keeps earlier information available. A feed-forward block often has another shortcut. With <strong>Pre-LayerNorm</strong>, normalization happens before the learned branch, so the residual addition has a direct identity path. With <strong>Post-LayerNorm</strong>, normalization follows the addition. Both arrangements can work, but they change gradient behavior and training stability. The placement of LayerNorm is an architectural choice, not simply a display setting.",
