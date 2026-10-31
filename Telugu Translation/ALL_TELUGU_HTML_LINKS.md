@@ -1,6 +1,6 @@
 # All Telugu + English Lesson HTML Links
 
-**22 lessons · 154 questions · 22 individual HTML pages**
+**26 lessons · 182 questions · 26 individual HTML pages**
 
 This is the master directory of all Telugu + English study pages. Each full **HTML Web URL** below opens a GitHub Pages lesson. **GitHub HTML Source** opens the source file. All URLs are copyable.
 
@@ -32,6 +32,11 @@ This is the master directory of all Telugu + English study pages. Each full **HT
 | 21 | Large Vision-Language Model (LVLM) | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/21-large-vision-language-model.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/21-large-vision-language-model.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/21-large-vision-language-model.html) |
 | 22 | Multimodal Learning | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/22-multimodal-learning.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/22-multimodal-learning.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/22-multimodal-learning.html) |
 
+| 23 | Generative Adversarial Network (GAN) | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/23-generative-adversarial-network.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/23-generative-adversarial-network.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/23-generative-adversarial-network.html) |
+| 24 | Training Step | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/24-training-step.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/24-training-step.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/24-training-step.html) |
+| 25 | Loss Function | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/25-loss-function.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/25-loss-function.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/25-loss-function.html) |
+| 26 | Activation Function | [https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/26-activation-function.html](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/26-activation-function.html) | [View HTML](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/Telugu%20Translation/26-activation-function.html) |
+
 ## Copy-ready HTML links
 
 ```text
@@ -57,6 +62,10 @@ https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/19-na
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/20-diffusion-model.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/21-large-vision-language-model.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/22-multimodal-learning.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/23-generative-adversarial-network.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/24-training-step.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/25-loss-function.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/26-activation-function.html
 ```
 
 Technical diagram artwork, SVG labels, charts, code, and formulas remain in English. Questions, answer choices and explanations use natural Telugu + English. The original English source modules have not been changed.
