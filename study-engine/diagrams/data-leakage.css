@@ -17,3 +17,11 @@
 .dl-f7 .dl-canvas{border-top:3px solid #99ad71}
 @media(max-width:700px){.dl-hero,.dl-fig{padding:13px}.dl-canvas{padding:5px}.dl-canvas svg{min-width:610px;max-width:none}.dl-intro{font-size:.82rem}.dl-foot{font-size:.78rem}}
 @media(prefers-reduced-motion:no-preference){.dl-canvas svg{transition:filter .18s ease}.dl-canvas:hover svg{filter:saturate(1.08)}}
+
+/* Working code snippet: meaningful companion to the pipeline visualization */
+.dl-code-panel{margin-top:13px;background:#172b3b;border:1px solid #35536a;border-radius:12px;overflow:hidden;box-shadow:0 7px 18px #13314518;}
+.dl-code-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#2b4354;color:#e6f3f8;padding:10px 15px;font:800 .73rem system-ui,-apple-system,Segoe UI,sans-serif;}
+.dl-code-note{font-size:.66rem;font-weight:600;color:#bad6de;}
+.dl-code-panel pre{margin:0;padding:14px 16px;overflow:auto;font:500 .75rem/1.63 ui-monospace,SFMono-Regular,Consolas,monospace;color:#eff7fb;tab-size:4;white-space:pre;}
+.dl-code-panel code{font:inherit;}
+@media(max-width:700px){.dl-code-heading{flex-wrap:wrap}.dl-code-panel pre{font-size:.70rem}}
