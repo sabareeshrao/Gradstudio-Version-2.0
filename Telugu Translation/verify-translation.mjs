@@ -33,7 +33,10 @@ const translations=[
   ["softmax","27-softmax.html","modules/softmax.te.json"],
   ["residual-connection","28-residual-connection.html","modules/residual-connection.te.json"],
   ["positional-encoding","29-positional-encoding.html","modules/positional-encoding.te.json"],
-  ["rotary-position-embedding","30-rotary-position-embedding.html","modules/rotary-position-embedding.te.json"]
+  ["rotary-position-embedding","30-rotary-position-embedding.html","modules/rotary-position-embedding.te.json"],
+  ["query-projection","31-query-projection.html","modules/query-projection.te.json"],
+  ["key-projection","32-key-projection.html","modules/key-projection.te.json"],
+  ["value-projection","33-value-projection.html","modules/value-projection.te.json"]
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
@@ -46,8 +49,17 @@ function validate(slug,entry,filename){
   errors.push(slug+": missing translated HTML, data or English source module");return;
  }
  if(Number(entry.slice(0,2))<=10&&!existsSync(englishEntry))errors.push(slug+": missing original English entry");
- const d=JSON.parse(readFileSync(translationPath,"utf8"));
+ let d=JSON.parse(readFileSync(translationPath,"utf8"));
  const source=JSON.parse(readFileSync(englishModule,"utf8"));
+ if(d.translationOverlay===true){
+  if(!Array.isArray(d.questions)||d.questions.length!==7){errors.push(slug+": overlay requires seven questions");return;}
+  if(d.questions.some(q=>q.figure!==undefined||q.answer!==undefined))errors.push(slug+": overlay must not replace English figures or answer keys");
+  const overlay=d;
+  d={...source,...overlay,
+    hero:source.hero,diagramStyle:"../study-engine/"+source.diagramStyle,
+    questions:source.questions.map((q,i)=>({...q,...overlay.questions[i],figure:q.figure,answer:q.answer}))
+  };
+ }
  const html=readFileSync(entryPath,"utf8");
  if(slug!=="transformer"&&!html.includes('data-module="'+slug+'"'))errors.push(slug+": HTML data-module missing");
  if(d.contentLanguage!=="te-en"||d.diagramLanguage!=="en")errors.push(slug+": incorrect language markers");
@@ -112,4 +124,4 @@ if(tableBegin<0||tableEnd<=tableBegin){
  }
 }
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 30 bilingual lessons, 210 questions, 840 options, 210 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 33 bilingual lessons, 231 questions, 924 options, 231 original English diagrams, answer keys, translations, and index links.");
