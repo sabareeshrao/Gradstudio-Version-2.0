@@ -14,7 +14,7 @@
       "options": [
         "Training Inputsని Categoriesగా Map చేసి New Examples Generate చేయని Model.",
         "Requested Contentకి Matching Training Filesని మాత్రమే Retrieve చేసే System.",
-        "Data Patterns Learn చేసి Sampling ద్వారా New Examples Generate చేసే Model.",
+        "Learned Data Patternsని Sample చేసి New Examples Generate చేసే Model.",
         "Existing Imagesలో Objects Label చేసి Original Pixelsని Preserve చేసే Model."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Generative Model Examplesలో Patterns నేర్చుకుని కొత్త Content Create చేస్తుంది. Example: New Sentence లేదా Picture Generate చేయడం.",
@@ -43,7 +43,7 @@
         "Stored Exampleకి Small Changes చేసి అదే Copyని New Generationగా Treat చేస్తుంది.",
         "Full Training Imagesని Collageగా Combine చేసి Learned Patternsని Avoid చేస్తుంది.",
         "Unrelated Random Pixelsని మాత్రమే Pick చేసి Training Data Structure Ignore చేస్తుంది.",
-        "Reusable Patterns Learn చేసి New Combinations Sample చేస్తుంది; Memorization కూడా Possible."
+        "Reusable Patterns Learn చేసి New Combinations Sample చేస్తుంది; Copying Risk ఉంటుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Model Many Examples నుంచి Common Patterns Learn చేస్తుంది. New Combinations Create చేయడమే Generation; Same Example Copy చేయడం Memorization.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Training Examplesలో Shared Features, Grammar, Shapes, Styles Learn అవుతాయి. Sampling Learned Distribution నుంచి New Output Builds చేస్తుంది. Overfitting ఉంటే Training Examplesకి Too Similar లేదా Exact Copies రావచ్చు.",
@@ -55,7 +55,7 @@
       "answer": "b",
       "options": [
         "Latent Variables Final Labels మాత్రమే; Every Model Exact Likelihood Calculate చేయాలి.",
-        "Latents Hidden Factors Represent చేస్తాయి; Explicit Densities Model చేస్తుంది, Implicit Samples Generate చేస్తుంది.",
+        "Latents Hidden Factors; Explicit Models Densities, Implicit Models Samples Represent చేస్తాయి.",
         "Implicit Models Exact Density Always Calculate చేస్తాయి; Explicit Models Only Noise Images Use చేస్తాయి.",
         "Probability Density Stored Filesని Count చేస్తుంది; Sampling Always Original Example Returns."
       ],
@@ -82,7 +82,7 @@
       "tag": "Advanced · Architecture",
       "answer": "a",
       "options": [
-        "Likelihood Data Fit చేస్తుంది; ELBO VAEs Guide చేస్తుంది; GANs Compete; Diffusion Denoises; Autoregression Predicts.",
+        "Likelihood Data Fit; ELBO VAEs Guide; GANs Compete; Diffusion Denoises; Next Tokens Predict.",
         "All Objectives Image Brightness మాత్రమే Match చేస్తాయి; Sample Quality, Diversity Sameగా ఉంటాయి.",
         "Likelihood Distribution Ignore చేస్తుంది; ELBO Latents Remove చేస్తుంది; GANs Exact Densities Calculate చేస్తాయి.",
         "Next-Token Training Tokens Random Shuffle చేస్తుంది; Denoising Ground-Truth Dataని Ignore చేస్తుంది."
