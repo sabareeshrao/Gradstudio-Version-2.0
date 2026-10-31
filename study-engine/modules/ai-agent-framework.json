@@ -95,8 +95,8 @@
       "stem": "How can AI Agent Frameworks be engineered for reliable production environments, including durable execution, checkpointing, retries, idempotency, tool permission boundaries, prompt-injection defense, observability, agent evaluation, token-cost optimization, latency management, and recovery from partial workflow failures?",
       "tag": "Advanced · reliability",
       "options": [
-        "Use durable checkpoints, safe retries, idempotent tool operations, limited permissions, tracing, evaluation, and recovery tests so an agent can resume without duplicating sensitive actions.",
-        "Retry every failed action immediately, even payments, without checking whether it already succeeded. Retrying a side effect can create duplicate charges or changes.",
+        "Use checkpoints, idempotent tools, limited permissions, tracing, and recovery tests so an agent can resume safely without repeating a sensitive payment or other action.",
+        "Retry every failed action immediately, including important payments, without checking whether it already succeeded. Retrying a side effect can create duplicate charges or changes.",
         "Store tool-call logs but skip outcome checks, because a successful API response always means the user's goal was correctly completed. Technical success is not the whole task.",
         "Allow every tool by default because more access prevents prompt injection and reduces the need for approval. Broad permissions instead increase the damage from mistakes."
       ],
