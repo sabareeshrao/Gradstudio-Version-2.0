@@ -53,3 +53,12 @@ The remaining modules can be revised in subsequent user-selected batches.
 10. Gradient Descent (`gradient-descent`, AI-00294)
 
 **Verification:** All 35 questions retained their stems, answer keys, and individual diagrams. The 140 answer choices use complete teaching-oriented English with balanced word/character lengths. All visible explanations are labelled **Explanation:**, use a different concrete scenario per question, and are within 100 words. Future batches must maintain these requirements.
+
+## Batch 3 — completed English modules
+11. Generative Model (`generative-model`, AI-01158)
+12. Tokenization (`tokenization`, AI-01035)
+13. Embedding Vector (`embedding-vector`, AI-00725)
+14. Vector Database (`vector-database`, AI-01315)
+15. AI Agent Framework (`ai-agent-framework`, AI-01499)
+
+**Verification:** 35 question stems, answer keys, and seven custom figures per module retained. All 140 choices now use complete beginner-friendly teaching sentences, pass the existing strict word/character length heuristic, and each explanation is labeled **Explanation:** and has at most 100 words (actual range: 69–81 words). Examples are distinct across this batch. No Telugu content or shared rendering code was edited.
