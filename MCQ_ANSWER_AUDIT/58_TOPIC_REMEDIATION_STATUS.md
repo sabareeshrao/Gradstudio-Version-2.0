@@ -11,9 +11,17 @@ Implementation: [study-engine/modules](../study-engine/modules). QA rules: [AI_R
 - All **406 existing figures** remain present. Existing technical explanation fields, diagram CSS, the shared renderer, and Telugu files were left intact.
 - Changes were written through the connected GitHub repository. This report describes content-source verification, **not** verified live Pages rendering or certified pedagogy.
 
+## Distractor rewrite progress — Batch 1: Topics 1–5 (2026-10-31)
+
+**Updated in the English study engine:** Transformer, RAG, Deep Learning, Neural Network, and Artificial Intelligence. All **35 questions / 105 incorrect options** in these five modules have had their distractors rewritten as same-topic near misses, while their 35 canonical answer strings, positions, questions, explanations, and diagrams were preserved.
+
+**Source-level checks:** 35/35 canonical question stems and correct answers still match the provided audit file; 35/35 explanations are at most 100 words; all 105 distractors are at least as long as the corresponding correct option in word count. All 35 questions now pass the combined 1.15 word-ratio and correct-not-uniquely-longest heuristic (words *and* characters). These are mechanical checks, not proof that every wrong choice is conceptually ideal or that live pages have rendered correctly.
+
+**Remaining after Batch 1:** Topics 6–58 (**53 topics, 371 questions, 1,113 wrong choices**) require the same rewrite. Second-pass pedagogical review, example variety, and visual/browser testing remain important, including the completed first batch. Translators should use the latest per-file commit, not treat this batch report as certification of the remaining topics.
+
 ## Not completed — distractor editorial rewrite and mentor-quality review
 
-The **1,218 previously written wrong options have not been thoroughly rewritten or human-equivalent semantically certified** against the new gold answers. An automated review flags **394 / 406 questions** for at least one possible length clue (correct option uniquely longest by words or characters, or four-choice word ratio over 1.15). An option passing that heuristic is not necessarily a good distractor.
+Of the original **1,218 wrong options**, **105 have received a first-pass rewrite**; the other **1,113 remain to be rewritten**. None of the 1,218 has received an independent human pedagogical sign-off. The mechanical review now flags **359 / 406 questions** for at least one possible length clue (correct option uniquely longest by words or characters, or four-choice word ratio over 1.15). An option passing that heuristic is not necessarily a good distractor.
 
 The audit also finds old responses that explicitly reveal their own incorrectness (e.g., “that describes ... rather than ...”). Some older explanatory paragraphs were short and may lack distinct real-world examples. The automatic explanation merge preserved the direct correct answer and some pre-existing examples where they fit, but it is **not** a completed 406-question editorial quality review. Do not tell learners or translators that the whole MCQ dataset passes the current educational standard yet.
 
@@ -23,11 +31,11 @@ The audit also finds old responses that explicitly reveal their own incorrectnes
 
 | # | Topic | Gold answers aligned | Automated length/clue warnings | Status |
 |---:|---|:---:|:---:|---|
-| 01 | Transformer | 7/7 | 7/7 | Needs distractor review |
-| 02 | Retrieval-Augmented Generation (RAG) | 7/7 | 7/7 | Needs distractor review |
-| 03 | Deep Learning | 7/7 | 7/7 | Needs distractor review |
-| 04 | Neural Network | 7/7 | 7/7 | Needs distractor review |
-| 05 | Artificial Intelligence (AI) | 7/7 | 7/7 | Needs distractor review |
+| 01 | Transformer | 7/7 | 0/7 | Rewritten (first pass); editorial QA pending |
+| 02 | Retrieval-Augmented Generation (RAG) | 7/7 | 0/7 | Rewritten (first pass); editorial QA pending |
+| 03 | Deep Learning | 7/7 | 0/7 | Rewritten (first pass); editorial QA pending |
+| 04 | Neural Network | 7/7 | 0/7 | Rewritten (first pass); editorial QA pending |
+| 05 | Artificial Intelligence (AI) | 7/7 | 0/7 | Rewritten (first pass); editorial QA pending |
 | 06 | Prompt Engineering | 7/7 | 7/7 | Needs distractor review |
 | 07 | Attention Mechanism | 7/7 | 7/7 | Needs distractor review |
 | 08 | Self-Attention | 7/7 | 7/7 | Needs distractor review |
@@ -93,6 +101,6 @@ The audit also finds old responses that explicitly reveal their own incorrectnes
 
 ### Prioritized example
 
-Transformer Q1 still has distractors that refer to recurrent networks, retrieval and position numbers in a way that may give away the correct answer. The new correct option is from the source file, but the incorrect alternatives need a proper near-miss rewrite. Data Leakage's revised distractors are a *style reference*, not words to reuse.
+Transformer Q1 and the other first-five modules have received near-miss distractor rewrites. Review Prompt Engineering Q1 and Topics 6–58 next, while applying the same semantic test and preserving every supplied correct answer. Data Leakage's revised distractors are a *style reference*, not words to reuse.
 
 **Status classification: Canonical source migration COMPLETED; comprehensive distractor/mentor editorial QA NOT COMPLETED.**
