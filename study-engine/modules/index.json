@@ -144,6 +144,11 @@
       "slug": "multimodal-learning",
       "title": "Multimodal Learning",
       "domain": "Learning from Multiple Types of Data and Cross-Modal Information · Multimodal AI"
+    },
+    {
+      "slug": "loss-function",
+      "title": "Loss Function",
+      "domain": "Measuring Prediction Errors and Guiding Model Learning · Deep Learning Foundations"
     }
   ]
 }
