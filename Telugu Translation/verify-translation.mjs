@@ -21,7 +21,11 @@ const translations=[
   ["ai-agent-framework","15-ai-agent-framework.html","modules/ai-agent-framework.te.json"],
   ["supervised-learning","16-supervised-learning.html","modules/supervised-learning.te.json"],
   ["reinforcement-learning","17-reinforcement-learning.html","modules/reinforcement-learning.te.json"],
-  ["computer-vision","18-computer-vision.html","modules/computer-vision.te.json"]
+  ["computer-vision","18-computer-vision.html","modules/computer-vision.te.json"],
+  ["natural-language-processing","19-natural-language-processing.html","modules/natural-language-processing.te.json"],
+  ["diffusion-model","20-diffusion-model.html","modules/diffusion-model.te.json"],
+  ["large-vision-language-model","21-large-vision-language-model.html","modules/large-vision-language-model.te.json"],
+  ["multimodal-learning","22-multimodal-learning.html","modules/multimodal-learning.te.json"]
 ];
 const te=/[\u0C00-\u0C7F]/u,en=/[A-Za-z]/u;
 const errors=[];
@@ -63,4 +67,4 @@ translations.forEach(row=>validate(...row));
 const index=readFileSync(resolve(folder,"index.html"),"utf8");
 for(const [slug,entry] of translations)if(!index.includes('./'+entry))errors.push(slug+": missing from index.html link table");
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 18 bilingual lessons, 126 questions, 504 options, 126 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 22 bilingual lessons, 154 questions, 616 options, 154 original English diagrams, answer keys, translations, and index links.");
