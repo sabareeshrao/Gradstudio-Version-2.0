@@ -13,7 +13,7 @@
       "options": [
         "Diffusion Stored Training Pictures Pixels Combine చేస్తుందంటుంది. అది Learned General Denoising కంటే Copying.",
         "One Permanent Code నుంచి Direct Image Create చేసి Noise Removal Learn చేయదంటుంది. Other Generative Methods Different.",
-        "Diffusion Added Noiseని Reverse చేయడం Train చేసి Random Noise నుంచి Repeatedly Denoise చేసి New Image/Audio Generate చేస్తుంది.",
+        "Diffusion Added Noise Reverse Learn చేసి Random Noise నుంచి Repeated Denoisingతో Images/Audio Generate చేస్తుంది.",
         "Closest Stored Imageని One Stepలో Return చేస్తుందంటుంది. Image Search, Learned Denoising Generation Different."
       ],
       "answer": "c",
@@ -26,7 +26,7 @@
       "tag": "Beginner · Why Noise",
       "stem": "Diffusion Models Noise Add, Remove చేయడం ఎందుకు Learn చేస్తాయి? GANs, VAEs వంటి Other Generative Modelsతో Training Process ఎలా Differentగా ఉంటుంది?",
       "options": [
-        "Controlled Noise Denoising Targets ఇస్తుంది; GAN Competition, VAE Direct Latent Decoding Diffusionకి Required కాదు.",
+        "Controlled Noise Denoising Targets ఇస్తుంది; Diffusion GAN Competition, VAE Direct Latent Require కాదు.",
         "Diffusion One Transformation Only, GAN/VAE Reverse Noise Chains Use చేస్తాయంటుంది. Objectives Different.",
         "Diffusion Discriminator, GAN Latents, VAE Noise Schedule అంటుంది. Generative Methods Roles Swap.",
         "Diffusion Examples Copy, GAN Noise Schedule, VAE Reverse Diffusion అంటుంది. Each Architecture Different."
@@ -44,7 +44,7 @@
         "Forward Clean Images, Reverse Noisier Training Images Create చేస్తాయని అంటుంది. Stages Reverse.",
         "Forward Pictures Text Tokensగా Convert, Reverse Without Learning Rebuild అంటుంది. Noise Corruption, Denoiser Actual.",
         "Forward Prompt Improve, Reverse Saved Image Select అంటుంది. Diffusion Steps అలా Work చేయవు.",
-        "Forward Noise Scheduleతో Data Corrupt; Reverse Trained Network Timestepsలో Denoise చేసి Noise నుంచి Plausible Sample Create చేస్తుంది."
+        "Forward Noise Corrupt; Reverse Trained Denoiser Timestepsతో Fresh Noise నుంచి Sample Generate చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Forward Diffusion Noise Schedule ప్రకారం Training Samplesని Gradually Corrupt చేస్తుంది; Reverse Diffusion Trained Denoiserతో Successive Timestepsలో Random Noiseని New Plausible Sampleగా Transform చేస్తుంది. Colorful Butterfly Illustrationని Imagine చేయండి. <strong>Forward Diffusion</strong>లో Random Noise Add అవుతూ Details Hard to See అవుతాయి. Model Different Noisy Versions నుంచి Learn చేస్తుంది. <strong>Reverse Diffusion</strong>లో New Noiseతో Start చేసి Learned Predictionsతో Butterfly-like Picture Step by Step Produce చేస్తుంది. Training Illustrationని Copy చేయాల్సిన Requirement లేదు.",
@@ -57,7 +57,7 @@
       "stem": "Denoising Diffusion Probabilistic Model (DDPM)లో Gaussian Noise, Timesteps, Transition Probabilities, Noise-Prediction Loss ఎలా Define చేస్తాం? U-Net Denoising Learn చేయడంలో Role ఏమిటి?",
       "options": [
         "DDPM Softmax Image Classes Predict, U-Net Best Label Select చేస్తుందని అంటుంది. Standard Training Noise Prediction.",
-        "DDPM Gaussian Noise Scheduleతో U-Net Added Noise Predict; Loss True Noise Compare; Reverse Transitions Denoised States Sample చేస్తాయి.",
+        "DDPM Gaussian Schedule; U-Net Noise Estimate, Loss Compare, Reverse Transitions Sample చేస్తాయి.",
         "DDPM Discriminator Judgment Maximize, U-Net Stored Images Choose చేస్తుందంటుంది. Standard Objective Different.",
         "Timesteps Training Epochs, DDPM Color Changes Reverse అంటుంది. Timesteps Noise Levels Indicate చేస్తాయి."
       ],
@@ -73,7 +73,7 @@
       "options": [
         "PyTorch Classifier Labels Predict చేసి Direct Pictures Generate చేస్తుందంటుంది. Denoising Process Missing.",
         "Autoencoder Compress/Reconstruct చేసి Reverse Noise Steps Skip చేస్తుందంటుంది. Different Generative Method.",
-        "PyTorch Imagesపై Gaussian Noise, Timesteps Add చేసి MSE Denoiser Train; Reverse Sample చేస్తాం.",
+        "PyTorch Imagesపై Noise, Timesteps Add చేసి MSE Train; Reverse Sample చేస్తాం.",
         "Stored Image Patches Shuffle చేసి Picture Create చేస్తుందంటుంది. Learned Denoising Network కాదు."
       ],
       "answer": "c",
@@ -86,7 +86,7 @@
       "tag": "Advanced · Architectures",
       "stem": "Modern Diffusion Modelsలో Latent Diffusion (LDM), DDIM, Diffusion Transformer (DiT), Classifier-Free Guidance (CFG) ఎలా Work చేస్తాయి? Image Quality, Speed, Prompt Control ఎలా Improve చేస్తాయి?",
       "options": [
-        "Latent Denoise Compressed Spaceలో; DDIM Fewer Steps; DiT Transformer Blocks; CFG Prompt Conditioning Strengthens చేస్తుంది.",
+        "Latent Compressed Denoising; DDIM Fewer Steps; DiT Blocks; CFG Prompt Guidance Strengthens చేస్తుంది.",
         "Latent Full-Resolution Only, DDIM More Steps, DiT No Attention, Guidance Compression అంటుంది. Opposite.",
         "Latent Prompts Only Store, DDIM Discriminator, DiT No Representation, CFG Resolution Set అంటుంది. Roles Wrong.",
         "Latent Patterns Ignore, DDIM Class Labels Change, DiT No Timesteps, CFG Exact Likelihood అంటుంది. Benefits Misrepresented."
