@@ -118,8 +118,21 @@ function validate(slug,entry,filename){
   if(!te.test(q.stem)||!en.test(q.stem))errors.push(slug+": bilingual question "+(i+1)+" missing");
   if(!Array.isArray(q.options)||q.options.length!==4){errors.push(slug+": four answer choices required for Q"+(i+1));continue;}
   if(q.options.some(x=>!te.test(x)||!en.test(x)))errors.push(slug+": bilingual option missing Q"+(i+1));
-  if(!q.explanation?.includes("Simple Explanation:")||!te.test(q.explanation))errors.push(slug+": beginner explanation missing Q"+(i+1));
-  if(!q.technicalExplanation?.includes("Correct Answer:")||!te.test(q.technicalExplanation))errors.push(slug+": technical detail missing Q"+(i+1));
+  if(sourceTrackedLessons.has(slug)){
+   // These lessons now follow the newer English example-led explanation format.
+   // Never move the example into a second panel or substitute a short summary.
+   if(!/^<strong>Explanation:<\/strong>\s*/.test(q.explanation||"")||!te.test(q.explanation))
+    errors.push(slug+": source-format main Explanation missing Q"+(i+1));
+   if(!new RegExp('^<strong>Correct: '+q.answer.toUpperCase()+'\\.<\\/strong>\\s*').test(q.technicalExplanation||"")||!te.test(q.technicalExplanation))
+    errors.push(slug+": original Correct: answer panel missing Q"+(i+1));
+   const words=(q.explanation||"").replace(/<[^>]+>/g," ").trim().split(/\s+/).length;
+   if(words<50)errors.push(slug+": explanation shortened below source depth Q"+(i+1)+" ("+words+" words)");
+   if(!d.translationSource?.preserveEnglishExplanationStructure)
+    errors.push(slug+": source explanation order preservation flag missing");
+  } else {
+   if(!q.explanation?.includes("Simple Explanation:")||!te.test(q.explanation))errors.push(slug+": beginner explanation missing Q"+(i+1));
+   if(!q.technicalExplanation?.includes("Correct Answer:")||!te.test(q.technicalExplanation))errors.push(slug+": technical detail missing Q"+(i+1));
+  }
   const words=q.options.map(x=>x.trim().split(/\s+/).length),chars=q.options.map(x=>x.length),idx="abcd".indexOf(q.answer);
   if(idx<0){errors.push(slug+": invalid answer Q"+(i+1));continue;}
   if(words[idx]>Math.max(...words.filter((_,j)=>j!==idx)))errors.push(slug+": correct answer longest by words Q"+(i+1));
