@@ -29,7 +29,7 @@
         "Batch Complete Epoch, Iteration Network Layers Count అంటుంది. Terms Different Meanings.",
         "Training Step Always Single Example, Epoch Single Gradient అంటుంది. Batch Sizes, Accumulation Counts Differ.",
         "Epoch Exactly One Optimizer Update, Batch Entire Dataset అంటుంది. Often Many Batches per Epoch.",
-        "Batch Subset, Iteration Batch Processing, Epoch Full Dataset Pass; Optimizer Step Weight Change, Accumulationలో Later కావచ్చు."
+        "Batch Subset, Iteration Batch Process, Epoch Dataset Pass; Accumulationలో Optimizer Updates Less Frequent."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Batch Examples Subset; Iteration One Batch Process; Epoch Entire Training Dataset Once Cover. Optimizer Step Weight Change; Gradient Accumulationలో Many Iterations తర్వాత One Update కావచ్చు. Orchestra Music Piece Rehearse చేస్తున్నట్టు Picture చేయండి. <strong>Batch</strong> One Group of Measures Practice, <strong>Iteration</strong> That Group Process. <strong>Epoch</strong> Entire Dataset One Pass. Training/Optimizer Step Parameters Change చేయవచ్చు; Accumulationతో Batch Iterations, Weight Updates Count Differ అవుతాయి.",
@@ -41,7 +41,7 @@
       "tag": "Beginner · Step by Step",
       "stem": "Complete Training Stepలో Mini-Batch Load, Forward Propagation, Loss Calculation, Backpropagation, Optimizer Update ఏ Orderలో జరుగుతాయి?",
       "options": [
-        "Mini-Batch Load → Forward → Loss → Zero/Accumulate Grads → Backward → Optimizer Update.",
+        "Load Mini-Batch → Forward → Loss → Gradient Clear/Accumulate → Backprop → Optimizer Update.",
         "Before Predictions Random Weights Change చేసి Loss Compute చేస్తుందంటుంది. Useful Gradient Feedback Missing.",
         "Any Prediction/Lossకి Before Backprop Run చేస్తుందంటుంది. Forward Pass First Required.",
         "Correct Labelsని Guessesకి Match చేసి Optimizer లేకుండా End చేస్తుందంటుంది. Weight Learning జరగదు."
@@ -58,7 +58,7 @@
       "options": [
         "Larger Learning Rate Always Fast, Stable అంటుంది. Oversized Steps Overshoot, Diverge చేయవచ్చు.",
         "Batch Size Storage Only, Loss Update Speed Only అంటుంది. Both Gradient Signalని Affect చేస్తాయి.",
-        "Batch Size Noise/Memory, Loss Objective, Gradient Sensitivity, LR Step Size, SGD/Adam Update Rule Control చేస్తాయి.",
+        "Batch Noise/Memory, Loss Objective, Gradient Sensitivity, LR Step Size, SGD/Adam Update Rules Affect చేస్తాయి.",
         "SGD, Adam Identical Updates, LR Evaluationలో Only Matter అంటుంది. Trainingలో Their Rules Differ."
       ],
       "answer": "c",
@@ -72,7 +72,7 @@
       "stem": "Python, PyTorchలో model.train(), optimizer.zero_grad(), model(inputs), loss.backward(), optimizer.step()తో Training Step ఎలా Implement చేస్తాం? Before/After Weights ఎలా Check చేస్తాం?",
       "options": [
         "Loss/Prediction Before Optimizer Step చేసి Current Gradients లేకుండా Finish చేస్తుందంటుంది. Wrong Order.",
-        "PyTorch train → zero_grad → forward → loss → backward → optimizer.step; Weights Before/After Verify చేస్తాం.",
+        "PyTorch train → zero_grad → forward → loss → backward → step; Weights Compare చేస్తాం.",
         "Evaluation Modeలో Targets Change చేసి Backward After Weights Update అంటుంది. Stages Mixed.",
         "Backward Before Weights Update చేయకుండా Old Gradients Several Epochs Accumulate చేస్తుందంటుంది. Stale Updates Risk."
       ],
@@ -86,7 +86,7 @@
       "tag": "Advanced · Variants",
       "stem": "Gradient Accumulation, Mixed Precision, Gradient Clipping, LR Scheduling, Distributed Data Parallel (DDP) Training Stepsని ఎలా Change చేస్తాయి?",
       "options": [
-        "Accumulation Microbatch Grads Sum; Mixed Precision Memory; Clipping Large Gradients; LR Schedule Changes; DDP Sync చేస్తుంది.",
+        "Accumulation Grads Sum; Mixed Precision Saves Memory; Clipping Limits; Schedules Change LR; DDP Sync.",
         "Accumulation All Grads Remove, Mixed Precision Freeze, DDP Labels Change అంటుంది. Operations Misrepresented.",
         "Clipping Large Gradients Increase, DDP Unrelated Models Train అంటుంది. Clipping Limits, DDP Synchronizes.",
         "LR Scheduling Backprop Replace, Accumulation Every Microbatch Update అంటుంది. Update Boundary Delayed."
@@ -104,7 +104,7 @@
         "Validation Loss Only Log చేసి Every Microbatch Optimizer Step Count అంటుంది. Progress Dashboard Misleading.",
         "Exploding Gradients వచ్చినప్పుడు LR Increase, Speed Only Measure అంటుంది. Instability Worse కావచ్చు.",
         "Every Microbatch Completed Weight Update, GPU Utilization All Delays Explain అంటుంది. Counts Differ.",
-        "Loss, Norms, GPU, Loader Delay, NaNs Log; Microbatches vs Optimizer Updates Separate; Bottlenecks Diagnose చేస్తాం."
+        "Loss, Gradient Norms, GPU, Data Delay, NaN Log; Optimizer/Microbatch Counts Distinguish, Diagnose."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Loss, Gradient Norms, GPU Usage, Data-Loader Delays, Numerical NaNs Log చేయాలి. Gradient Accumulationలో Microbatch Count, Actual Optimizer Updates Different; Settings Change Before Bottleneck Investigate చేయాలి. Factory Machine Failure Model Dashboardలో Sudden NaN Loss చూపిస్తే Extreme Gradients, Invalid Values, Unstable Updates Reasons కావచ్చు. Engineers <strong>Loss, Norms, Learning Rate, GPU Memory, Loader Delay</strong> Check చేస్తారు. High GPU Usage Alone Slowdown Explain చేయదు; Accumulation Counters Accurateగా Track చేయాలి.",
