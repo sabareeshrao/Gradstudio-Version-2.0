@@ -11,10 +11,10 @@
       "tag": "Beginner · recognition",
       "answer": "b",
       "options": [
-        "Computer vision mainly stores photographs in organized folders and guesses their contents from file names. Storage can help, but filenames do not explain the pixels in an image.",
-        "Computer vision analyzes image and video pixels to recognize objects, describe scenes, or locate visual details using patterns learned from data.",
+        "Computer vision stores pictures in folders and guesses contents from file names. Storage is useful, but names cannot explain the actual image pixels.",
+        "Computer vision analyzes image and video pixels to recognize objects, describe complex scenes, or locate visual details using useful patterns learned from real data.",
         "Computer vision first translates every picture into written instructions before detecting any shapes or objects. Many vision models work directly with numerical image data.",
-        "Computer vision improves every low-quality photo by adding missing pixels and repairing lighting. Image enhancement is one application, not the whole field."
+        "Computer vision improves every low-quality photo by adding missing pixels and repairing bad lighting. Image enhancement is one possible application, not the whole field."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine a traffic camera watching an intersection. A computer vision model can examine frames and detect bicycles, cars, and pedestrians. It does this by learning <strong>visual patterns</strong> from image pixels rather than reading a file name or a written caption. Depending on its task, it may name a scene, find an object, or mark where something appears. Computer vision is the part of AI that helps machines work with pictures and videos, not just store them.",
       "technicalExplanation": "<strong>Correct: B.</strong> Models learn visual features from pixels and use those features to classify scenes, recognize suitable object or face categories, and locate relevant content. Their results are predictions that need accuracy and robustness checks.",
@@ -39,7 +39,7 @@
       "tag": "Beginner · different outputs",
       "answer": "a",
       "options": [
-        "Classification identifies an image category; detection locates objects with boxes; segmentation marks their pixels; and tracking follows identified objects across video frames.",
+        "Classification identifies the image category; detection draws object boxes; segmentation marks object pixels; and tracking follows objects across several video frames.",
         "Classification draws exact outlines around every object, while tracking chooses a single category for a whole photograph. Those outputs belong to other vision tasks.",
         "Detection follows the same moving object through several frames, while segmentation gives only an overall scene label. Detection and segmentation have different outputs.",
         "Tracking divides each image into colored pixel regions, while classification places bounding boxes around every object. These descriptions confuse the task boundaries."
@@ -55,7 +55,7 @@
       "options": [
         "CNN filters store every training picture as a complete pattern, while pooling adds new labeled examples. Those operations do not describe ordinary convolutional feature learning.",
         "Stride sets the number of colors in an image, while padding controls which class names the output may use. These parameters mainly affect spatial calculations.",
-        "CNN kernels scan nearby pixels to produce feature maps; stride and padding control the scan, while pooling and deeper layers combine simple patterns into richer features.",
+        "CNN kernels scan nearby pixels to produce feature maps; stride and padding control scanning, while pooling and deeper layers combine patterns into richer features.",
         "Each CNN neuron processes one pixel without looking at nearby locations or passing features forward. Convolutions specifically use local neighborhoods and shared filters."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine checking a bridge photo for cracks. Early <strong>convolutional filters</strong> may notice edges and short lines. Later layers can combine those pieces into longer crack-like shapes. A kernel is a small filter that scans local image regions, creating a <strong>feature map</strong>. Stride controls how far it moves, padding handles the image edges, and pooling can summarize nearby responses. Together, these operations help CNNs recognize visual patterns that are larger and more complex than individual pixels.",
@@ -84,7 +84,7 @@
         "ResNet uses shortcut connections, Vision Transformers use attention over patches, YOLO detects objects, and U-Net or SAM can produce segmentation masks for image regions.",
         "ResNet only generates pixel masks, while YOLO mainly improves photo colors with global attention. Those descriptions miss their typical recognition and detection roles.",
         "Vision Transformers ignore patches and read only file names, while SAM must start training from zero for each image. Both architectures use learned visual representations.",
-        "Self-supervised learning always needs human category labels, while transfer learning discards pretrained features. These methods instead reuse information in different ways."
+        "Self-supervised learning always needs human category labels, while transfer learning discards all pretrained features. These learning methods instead reuse information in different ways."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine a marine research lab studying underwater images. <strong>ResNet</strong> can extract visual features with CNN blocks and shortcut connections. A <strong>Vision Transformer</strong> attends to image patches. <strong>YOLO</strong> can detect fish with bounding boxes, while <strong>U-Net</strong> or <strong>SAM</strong> can produce region masks. Transfer learning reuses a model trained elsewhere; self-supervised learning can learn representations without manual class labels. Pick the architecture for the kind of output the lab needs.",
       "technicalExplanation": "<strong>Correct: A.</strong> ResNet uses residual CNN blocks, ViT models attend over patches, YOLO models detect objects, U-Net segments via encoder–decoder connections, and SAM produces prompt-driven masks. Transfer learning adapts pretrained features and self-supervised learning learns without manual class labels.",
@@ -95,10 +95,10 @@
       "tag": "Advanced · deployment",
       "answer": "d",
       "options": [
-        "A high score on clean validation photos guarantees performance in fog, rain, glare, and changing camera views. Real deployment conditions may differ greatly from training.",
+        "A high score on clean photos guarantees performance in fog, rain, glare, and changing camera views. Real deployment conditions may differ greatly from training.",
         "Real-time vision should maximize frames per second without measuring model accuracy or memory use. Speed is helpful only when the predictions remain useful.",
         "One well-lit dataset prevents domain shift and guarantees safety against edited or adversarial images. Robustness requires varied testing, monitoring, and careful design.",
-        "Test difficult lighting, blur, partial visibility, and new camera angles; monitor mistakes and balance measured accuracy, device memory, and inference speed."
+        "Test difficult lighting, blur, partial visibility, and new camera angles; monitor mistakes and balance measured accuracy, device memory, and real-world inference speed."
       ],
       "explanation": "<strong>Explanation:</strong> Think of a robot checking cracks in railway tracks. A model trained on clear daytime photos might struggle at dusk, with motion blur, or when equipment blocks part of the view. Engineers need tests covering those conditions and should monitor mistakes after deployment. They may improve preprocessing, use more representative training data, or adapt the model. <strong>Latency, accuracy, and memory</strong> all matter if the robot must respond on the device in real time.",
       "technicalExplanation": "<strong>Correct: D.</strong> Test robustness across lighting, blur, occlusion, viewpoint and domain changes; consider adversarial attacks and limited training data. Monitor deployment drift and balance model memory, accuracy, and real-time latency using real hardware measurements.",
