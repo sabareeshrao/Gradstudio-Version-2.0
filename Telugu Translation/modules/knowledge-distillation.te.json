@@ -51,26 +51,26 @@
       "technicalExplanation": "<strong>Correct Answer: C.</strong> Hard Label Cross-Entropy + Temperature-Softened Teacher/Student KL Loss Combine చేస్తాం. Typical Loss α·CE+(1−α)·T²·KL."
     },
     {
-      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "stem": "PyTorchలో Fixed Teacher Logits, Student Cross-Entropy, KL Loss Combine చేసి Training ఎలా చేస్తాం?",
       "options": [
-        "Teacher Model నుంచి Student Learn చేస్తుంది.",
-        "Modelలో Weights Trainingతో Update చేస్తాయి.",
-        "Input Dataని Teacher Process చేస్తుంది.",
-        "Model Parameters Differentగా Represent అవుతాయి."
+        "Teacher, Student Both Gradients Update; Input MSE Only Use చేస్తాం.",
+        "Teacher Freeze; Two Losses Combine చేసి Student Weights Update చేస్తాం.",
+        "Hard Labelsపై KL Only Use; Teacher Probabilities Completely Ignore చేస్తాం.",
+        "Teacher Argmax Labels Only Use చేసి Soft Scores Remove చేస్తాం."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+      "explanation": "<strong>Simple Explanation:</strong> Teacher Freeze చేస్తాం. True Labels, Teacher Soft Scores రెండింటి నుంచి Student Learn చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> teacher.eval(), torch.no_grad()తో Teacher Logits. Studentపై CE + Temperature-Scaled KL Loss Compute చేసి Only Student.backward() Updates చేస్తాం."
     },
     {
-      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "stem": "Response-Based, Feature-Based, Relation-Based, Self-Distillationలో Knowledge Transfer ఎలా Differ అవుతుంది?",
       "options": [
-        "Teacher Model నుంచి Student Learn చేస్తుంది.",
-        "Modelలో Weights Trainingతో Update చేస్తాయి.",
-        "Input Dataని Teacher Process చేస్తుంది.",
-        "Model Parameters Differentగా Represent అవుతాయి."
+        "Output Scores, Hidden Features, Relationships, Prior Guidance Transfer చేస్తాయి.",
+        "Only Hard Labels Transfer; Training Duration మాత్రమే Different ఉంటుంది.",
+        "Teacher Layer Sizes, File Formats, Hardware Layout Only Transfer చేస్తాయి.",
+        "Model Parameter Counts, Training Speed, Vocabulary Order Only Match చేస్తాయి."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+      "explanation": "<strong>Simple Explanation:</strong> Student Final Predictions మాత్రమే కాదు, Hidden Features, Relationships కూడా Learn చేయవచ్చు.",
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> Response Probabilities Match; Feature Hidden States Align; Relation Pairwise Structure Preserve; Self-Distillation Previous Checkpoint Guidance Use చేస్తుంది."
     },
     {
       "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
