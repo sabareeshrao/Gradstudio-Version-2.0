@@ -95,10 +95,10 @@
       "tag": "Advanced · Production safeguards",
       "stem": "How can Data Leakage be detected and prevented in production Machine Learning systems using feature availability checks, data lineage, point-in-time validation, and leakage-resistant evaluation strategies?",
       "options": [
-        "Production leakage can be detected by watching whether training accuracy rises after new data arrives. It can be prevented by keeping all features in one table and reusing current feature values for earlier predictions.",
+        "Production leakage can be detected by monitoring whether training accuracy rises during automated retraining. It can be prevented by keeping every historical feature in a shared database and reusing current snapshots for earlier predictions.",
         "Data Leakage can be detected by checking suspicious features, unusually high scores, and whether information was available at prediction time. Data lineage, point-in-time feature checks, isolated evaluation sets, and realistic validation help prevent leakage.",
-        "Production leakage can be prevented by checking that feature columns have names and no missing values. Data lineage is useful for documentation, but timestamps and test sets are unnecessary once a model is deployed.",
-        "Production leakage is revealed by low evaluation scores and slow predictions after deployment. It can be prevented by retraining regularly on the newest records, even if those records contain information from after prediction time."
+        "Production leakage can be prevented by checking standardized feature names and missing values before deployment. Data lineage is helpful for documentation, but historical timestamps and isolated evaluation windows are unnecessary once predictions reach production.",
+        "Production leakage is revealed by slower inference and lower model accuracy after deployment. It can be prevented by continuously retraining with recent observations, including future information recorded after the original decision was actually made."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> In production, ask a simple question about every feature: <strong>Did we know this value at prediction time?</strong> A fraud detector assessing a card payment at 10:00 must not use a chargeback reported the next day. Data lineage shows where each feature came from; point-in-time checks verify when it existed. Compare offline validation with realistic live conditions, watch for unusually perfect scores, and keep an untouched evaluation set. These checks turn leakage prevention into a repeatable production practice.",
