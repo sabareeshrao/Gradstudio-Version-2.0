@@ -12,7 +12,7 @@
       "tag": "Beginner · Basics",
       "options": [
         "Agent Framework Taskకి Before New LLM Scratch నుంచి Train చేయాల్సిందే అంటుంది. Usually Existing Modelsని Tools, Workflowsతో Connect చేస్తుంది.",
-        "Agent Framework Modelsని Tools, Instructions, Memory, Execution Stepsతో Connect చేసే Reusable Components Provide చేసి Text Beyond Tasks Manage చేస్తుంది.",
+        "Agent Framework Models, Tools, Instructions, Memory, Execution Steps Connect చేసి Text Beyond Tasks Manage చేయగలదు.",
         "Agent Framework Chat Screen మాత్రమే, External Services Connect చేయలేదు అంటుంది. Many Frameworks Tool Calls, Structured Workflows Support చేస్తాయి.",
         "Agent Framework Completed Tool Errors Dashboard మాత్రమే అంటుంది. Monitoring Useful అయినా Orchestration Next Steps కూడా Decide చేస్తుంది."
       ],
@@ -43,7 +43,7 @@
       "options": [
         "Framework User Request Read చేయకముందే Every Connected Tool Run చేస్తుందని అంటుంది. ఇది User Goal Ignore చేసి Waste Creates.",
         "Model Complete Answer First Write చేస్తుంది; Tool Results Return అవ్వవు అంటుంది. Agent Next Stepకి Tool Observations Need.",
-        "Agent Task Understand చేసి Authorized Tool Select, Execute, Result Review చేస్తుంది; Completionకి Depending Repeat లేదా Stop చేస్తుంది.",
+        "Agent Task Understand చేసి Authorized Tool Select, Execute, Review చేస్తుంది; Complete అయితే Stop, Otherwise Repeat చేస్తుంది.",
         "Framework Every Request All Toolsకి Send చేసి Fastest Result Trust చేస్తుందని అంటుంది. Tool Selection, Validation, Stop Rules Needed."
       ],
       "answer": "c",
@@ -56,7 +56,7 @@
       "stem": "LangChain, LangGraph, CrewAI, AutoGen, Semantic Kernel Frameworksలో Orchestration, Workflow Control, Tool Integration, Memory, Multi-Agent Collaboration ఎలా Differ అవుతాయి? Developers ఏది Choose చేయాలి?",
       "tag": "Medium · Mathematics",
       "options": [
-        "LangChain Agent/Tool Blocks, LangGraph Stateful Workflows, CrewAI Role Teams, AutoGen, Semantic Kernel Different Orchestration Patterns Offer చేస్తాయి.",
+        "LangChain Agent/Tools, LangGraph Stateful Workflows, CrewAI Role Teams, AutoGen, Semantic Kernel Orchestration Options Provide చేస్తాయి.",
         "LangGraph Embeddings Only Store, CrewAI Vector Indexes Build, Semantic Kernel Model Weights Retrain చేస్తాయని అంటుంది. Framework Roles Misidentified.",
         "AutoGen Fixed Prompts Only, LangChain Multi-Agent Mandatory, LangGraph Tools Call చేయలేదు అంటుంది. These Restrictions Not Accurate.",
         "All Agent Frameworks Same Workflow, State Model అంటుంది; Website Design Only Difference కాదు. APIs, Control, Collaboration Differ అవుతాయి."
@@ -89,7 +89,7 @@
         "Decentralized Agents Every Decisionకి Permanent Supervisor Require అంటుంది. Peer-to-Peer Coordination Possible, Safeguards Required.",
         "Shared State ఉంటే Everyone Every Task చేయవచ్చని అంటుంది. Specialist Responsibilities Duplicate Work Reduce చేయవచ్చు.",
         "Parallel Agents Conflicts Remove, Human Review Unnecessary అంటుంది. Shared Resourcesని Change చేస్తే Concurrent Decisions Disagree కావచ్చు.",
-        "Supervisor Work Assign, Approvals Manage చేస్తుంది; Decentralized Agents Messagesతో Coordinate చేస్తాయి; Both Reliable Shared State, Conflict Handling Need."
+        "Supervisor Work Assign, Approvals Manage; Decentralized Agents Messages Share చేస్తాయి; Both Shared State, Conflicts Handle చేయాలి."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Film-Production Team Shoot Plan చేస్తోందని Imagine చేయండి. One Agent Locations Check చేస్తుంది; Another Equipment Estimate చేస్తుంది; Third Schedule Prepare చేస్తుంది. <strong>Supervisor Agent</strong> Tasks Assign చేసి Results Combine చేయవచ్చు. Decentralized Designలో Specialists Directగా Communicate చేయవచ్చు. Both Approaches Conflicting Information, Task Ownership, Shared State, Expensive Decisionsకి Human Approval Handle చేయాలి. Parallel Work Time Save చేయవచ్చు కానీ Duplicate Actions, Disagreements Automatically Prevent చేయదు.",
@@ -101,7 +101,7 @@
       "stem": "Production AI Agentsలో Checkpointing, Durable Execution, Retries, Idempotency, Permissions, Prompt-Injection Defense, Observability, Evaluation, Cost, Latency, Partial Failure Recovery ఎలా Design చేస్తాం?",
       "tag": "Advanced · Production",
       "options": [
-        "Checkpoints, Idempotent Tools, Limited Permissions, Traces, Recovery Tests Use చేసి Paymentలాంటి Sensitive Actionని Duplicate చేయకుండా Resume చేయవచ్చు.",
+        "Checkpoints, Idempotent Tools, Least Permissions, Traces, Recovery Testsతో Duplicate Payments Avoid చేసి Safe Resume చేయవచ్చు.",
         "Every Failed Paymentని Succeededనా Check చేయకుండా Immediately Retry చేయాలని అంటుంది. Side Effects Duplicate Charges Create చేయవచ్చు.",
         "Tool Logs Store చేసి Outcomes Skip చేయాలని అంటుంది. API Success అంటే User Goal Always Correctగా Complete అయిందని కాదు.",
         "Every Tool Default Allow చేస్తే Prompt Injection Reduce అవుతుందంటుంది. Broad Access Wrong Actions Damage Increase చేస్తుంది."
