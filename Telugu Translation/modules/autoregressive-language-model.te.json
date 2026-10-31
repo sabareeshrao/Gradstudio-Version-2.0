@@ -28,7 +28,7 @@
         "Model Whole Sentence Both Directions Read చేసి Next Token Generation Start చేస్తుంది.",
         "Model Middle Missing Wordని Neighborsతో Predict చేసి Sequence Forward Continue చేయదు.",
         "Model Text Once Classify చేసి Previous Outputsని Future Predictionsకి Ignore చేస్తుంది.",
-        "Model Generated Earlier Tokensని Contextగా Use చేసి Next Token Repeatedly Predict చేస్తుంది."
+        "Model Generated Tokens Reuse చేసి Next Token Continuously Predict చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Model తన Previous Generated Textని Next Guess కోసం Use చేస్తుంది. అందుకే Output Step by Step Grow అవుతుంది.",
       "technicalExplanation": "<strong>Correct Answer: D.</strong> Unlike Bidirectional Masked-Language Models which may use Both Neighbors, Autoregressive Models Predict from Prior Prefix. Its Own Generated Tokens Subsequent Predictionsకి Input అవుతాయి.",
@@ -69,7 +69,7 @@
       "options": [
         "Model Independent Token Probabilities Add చేసి Earlier Context Completely Ignore చేస్తుంది.",
         "Model Raw Logits నుంచి Direct Sampling చేస్తుంది; Probability Normalization Never Use చేస్తుంది.",
-        "Model Conditional Probabilities Multiply; Softmax Logits నుంచి Sampling Probabilities Gives చేస్తుంది.",
+        "Conditional Probabilities Multiply; Softmax Logitsని Token Chancesగా Convert చేస్తుంది.",
         "Model Sequence Likelihood Tokens Count చేసి Calculate చేస్తుంది; Context Predictions Avoid చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Complete Sentence Probability ప్రతి Stepలో Next Token Chanceల Product. Softmax Scoresని Probabilitiesగా Change చేస్తుంది.",
@@ -95,7 +95,7 @@
       "tag": "Advanced · Production",
       "answer": "a",
       "options": [
-        "Draft Verification, Batching, Prefix Cache Reuse, Smaller Models Inference Improve చేయవచ్చు.",
+        "Batching, Prefix Reuse, Draft Checking, Small Models Inference Speed Help చేస్తాయి.",
         "KV Cache All Memory Use Remove చేసి Every Reply Factually Correct Guarantee ఇస్తుంది.",
         "Speculative Decoding All Draft Tokens Target Model Checks లేకుండా Always Accept చేస్తుంది.",
         "Longer Prompts Cache ఉన్నప్పుడు Additional Attention Compute Cost Require చేయవు."
