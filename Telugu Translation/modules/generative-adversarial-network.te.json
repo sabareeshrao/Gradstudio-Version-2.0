@@ -44,7 +44,7 @@
         "First Round తర్వాత Real Images Discard, Discriminator Feedback Skip చేస్తుందంటుంది. Learning Signal Missing.",
         "Discriminator Random Noise Create, Generator Real/Fake Judge అంటుంది. Actual Data Flow Reverse.",
         "One Fixed Fake Forever Use చేసి Discriminator మాత్రమే Train చేస్తుందంటుంది. Both Networks Update అవుతాయి.",
-        "Random Latent → Generator Sample → D Real/Fake Compare → D Update → G Update."
+        "z→G Sample → D Real/Fake Compare → D Update → G Update చేస్తాం."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Random Latent Vectorతో Start చేసి Generator Sample Create, Discriminator Real/Fake Samples Compare చేసి Its Classifier Update; Then Generator Discriminatorని Fool చేయడానికి Train. Decorative Floor Tiles Generate చేసే Artist AI Toolని Imagine చేయండి. <strong>Generator</strong> Random Noise నుంచి Pattern Create చేస్తుంది. <strong>Discriminator</strong> Real, Fake Tiles Compare చేసి Separate చేయడం Learn చేస్తుంది. First Discriminator Update, తర్వాత Feedback Use చేసి Generator Update. Many Rounds Repeat చేస్తే Designs Improve కావచ్చు.",
