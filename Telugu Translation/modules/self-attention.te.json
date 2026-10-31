@@ -27,7 +27,7 @@
       "options": [
         "Separate Encoder Informationని Only Decoder Tokensకి Attach చేయడమే Self-Attention.",
         "Every Tokenని Sequentialగా Process చేసి One Hidden State Only Update చేస్తుంది.",
-        "Tokens మధ్య Direct Connections Block చేసి Fixed Convolutions మాత్రమే Use చేస్తుంది.",
+        "Tokens మధ్య Direct Connections Block చేసి Fixed Convolutions మాత్రమే Use చేస్తుంది, Additional Context Relationsని Ignore చేసి.",
         "One Sequenceలో Tokens Connect అవుతాయి; Transformer Many Positions Parallelగా Process చేస్తుంది."
       ],
       "answer": "d",
