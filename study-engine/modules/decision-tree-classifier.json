@@ -25,7 +25,7 @@
       "stem": "What are the Root Node, Decision Nodes, Branches, and Leaf Nodes in a Decision Tree, and how does each component help the model reach a classification decision?",
       "tag": "Beginner · tree anatomy",
       "options": [
-        "The root begins the first test, decision nodes ask further feature questions, branches represent outcomes, and leaves give predicted categories.",
+        "The root starts feature tests, nodes ask more questions, branches show outcomes, and leaves predict categories for each new example.",
         "The root contains only final labels, while branches train the model and leaves calculate distances to all of the original examples.",
         "The root adjusts the learning rate, decision nodes create new raw features, and leaves change the network's weights after each prediction.",
         "The root names every class, branches delete examples randomly, and leaves repeat the full tree before giving any classification decision."
@@ -41,8 +41,8 @@
       "options": [
         "A spam tree labels messages using only their total character counts, regardless of sender details, suspicious links, or words in the email.",
         "A spam tree always predicts Spam first, then checks the email features to justify that category without changing its original decision.",
-        "A spam tree computes one overall distance score and never follows different feature-based branches for messages with different characteristics.",
-        "A spam tree checks learned features such as the sender, suspicious wording, and included links, then follows a branch to a predicted class."
+        "A spam tree calculates one similarity score and never follows separate learned branches to inspect different senders, words, or suspicious links.",
+        "A spam tree tests the sender, suspicious words, and included links, following learned branches to reach a final category prediction."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Suppose an inbox receives a message from an unknown sender saying, “Claim your prize,” with a suspicious website link. A trained tree may first check the sender's status. That answer determines which question comes next, such as whether the message includes risky wording. Following successive <strong>yes/no feature tests</strong> leads to a leaf predicting <strong>Spam</strong> or <strong>Not Spam</strong>. Not every spam filter uses the same questions; the decision rules are learned from labeled messages.",
@@ -54,9 +54,9 @@
       "tag": "Medium · splitting quality",
       "options": [
         "Training selects the longest branch at random because Gini impurity and entropy measure only the number of nodes already present.",
-        "Training compares possible feature thresholds, choosing splits that reduce class impurity, as measured by Gini or entropy-based information gain.",
-        "Gini impurity measures training time, entropy counts how deep the tree is, and information gain rewards the greatest number of leaf nodes.",
-        "Every feature threshold is fixed before training and cannot respond to the observed feature values or correct class labels."
+        "Training compares feature thresholds and chooses splits that lower weighted Gini impurity or entropy across the resulting child groups.",
+        "Gini impurity measures training time, entropy counts how deep the tree is, and information gain rewards many leaf nodes.",
+        "Every threshold is fixed before training and cannot change with feature values, true labels, or observed numerical patterns in the data."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> Imagine a vineyard classifying grapes as ripe or unripe using sugar content. A tree might consider thresholds of 15, 17, or 19 units. For each proposed split, it checks how mixed the labels would be in the resulting groups. <strong>Gini impurity</strong> and <strong>entropy</strong> describe that mixture. <strong>Information gain</strong> measures how much a split reduces uncertainty. The training algorithm generally prefers a useful reduction, not the deepest branch or a random cutoff.",
@@ -69,7 +69,7 @@
       "options": [
         "Fit the model using both training and test rows, then evaluate those same records as if they were independent examples never seen before.",
         "Visualize randomly chosen rules before training, assign categories manually, and skip evaluation because every branch can be read by a person.",
-        "Split labeled examples, fit Scikit-learn DecisionTreeClassifier, inspect learned rules, predict test cases, and evaluate classification on held-out data.",
+        "Split labeled data, train a tree, inspect its rules, predict new cases, and test how well it classifies unseen examples.",
         "Replace each input feature with the correct class label, then grow unlimited branches and report training accuracy as an unbiased test result."
       ],
       "answer": "c",
