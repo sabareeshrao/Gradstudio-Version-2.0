@@ -39,7 +39,7 @@
       "stem": "ఒక Human Sentenceని Computer ఎలా Process చేస్తుంది? Raw Text నుంచి Tokenization, Normalization, Numerical Representation, Language Understanding, Meaningful Output వరకు Steps ఏమిటి?",
       "tag": "Beginner · Workflow",
       "options": [
-        "Textని Tokensగా Split చేసి, అవసరమైతే Normalize చేసి, Numbersగా Encode చేసి Output Generate చేస్తుంది.",
+        "Textని Tokenize, Normalize, Encode చేసి Model Output Generate చేస్తుంది.",
         "Raw Textని Immediately Programming Codeగా Convert చేసి Alphabetically Sort చేసి Return చేస్తుంది.",
         "Every Punctuation Remove చేసి Word Order Discard చేసి Charactersతో Labels మాత్రమే Match చేస్తుంది.",
         "Text Numbersగా మారకముందే Meaning పూర్తిగా Understand చేసి Token Embeddings అవసరం లేకుండా చేస్తుంది."
@@ -55,7 +55,7 @@
       "options": [
         "Old Rules, Bag-of-Words ప్రతి Contextని Perfectగా Understand చేశాయి; Neural Models Need కాలేదు.",
         "Word2Vec All Ambiguity Solve చేసింది; LSTMs, Transformers Mainly Storage Improve చేశాయి.",
-        "Handwritten Rules, Word Counts నుంచి Context Learn చేసే Neural Models వైపు Methods Evolve అయ్యాయి.",
+        "Rules, Counts నుంచి Context-Aware Neural Models వైపు NLP Evolve అయింది.",
         "Transformers Tokenization, Training Remove చేశాయి; Statistical Modelsకి Data అసలు Need లేదు."
       ],
       "answer": "c",
@@ -68,7 +68,7 @@
       "tag": "Medium · Python",
       "options": [
         "NLTK Direct Sentiment API Deploy చేస్తుంది; spaCy, Transformers Only Whitespace Remove చేస్తాయి.",
-        "NLTK Text Prepare చేస్తుంది; spaCy Entities Finds; Transformers Sentiment Predict; Labeled Dataతో Test చేస్తాం.",
+        "NLTK Text Split; spaCy Entities Detect; Transformers Sentiment Predict; Labelsతో Test చేస్తాం.",
         "Only Token Countsతో Sentiment Train చేసి Entitiesని Testing లేకుండా Manually Label చేస్తాం.",
         "spaCy Every Entity ముందే Store చేస్తుంది; Transformersకి Labeled Test Data అవసరం లేదు."
       ],
@@ -84,7 +84,7 @@
         "BERT Next Token Only Predict చేస్తుంది; GPT Generationలో Future Words కూడా Access చేస్తుంది.",
         "T5 Encoder-Only Classifier; BERT Decoder-Only Generatorగా Context లేకుండా Work చేస్తుంది.",
         "మూడు Models Same Attention Masks, Training Objectives Use చేస్తాయి; Differences Model Size మాత్రమే.",
-        "BERT Both-Side Context Learns; GPT Next Tokens Predicts; T5 Input Encode చేసి Output Generate చేస్తుంది."
+        "BERT Both-Side Context; GPT Next Token; T5 Input నుంచి Text Generate చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> BERT Wordకి Both-Side Context చూస్తుంది. GPT Next Token Predict చేస్తుంది. T5 Input Read చేసి Output Text Generate చేస్తుంది.",
