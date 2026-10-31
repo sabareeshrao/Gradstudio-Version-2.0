@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (28 modules)
+## Hosted lesson directory (30 modules)
 
 These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
 
@@ -38,12 +38,12 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 26 | [Large Vision-Language Model (LVLM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=large-vision-language-model) | `large-vision-language-model` |
 | 27 | [Diffusion Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=diffusion-model) | `diffusion-model` |
 | 28 | [Natural Language Processing (NLP)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=natural-language-processing) | `natural-language-processing` |
+| 29 | [Multimodal Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multimodal-learning) | `multimodal-learning` |
+| 30 | [Loss Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-function) | `loss-function` |
 
 ### Latest additions — October 30, 2026
 
-New visual lessons include Reinforcement Learning, Computer Vision, AI Agent Framework, Supervised Learning, and Large Vision-Language Model (LVLM). The shared rendering engine stays separate from each lesson's questions and custom SVG illustrations.
-
-- Multimodal Learning: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multimodal-learning
+New visual lessons include Large Vision-Language Model (LVLM) and Loss Function, alongside earlier modules on Reinforcement Learning, Computer Vision, and Multimodal Learning. Each module has its own questions and SVG illustrations while reusing the shared quiz engine.
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
