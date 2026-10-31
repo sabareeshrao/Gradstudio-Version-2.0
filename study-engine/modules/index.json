@@ -239,6 +239,11 @@
       "slug": "long-short-term-memory",
       "title": "Long Short-Term Memory (LSTM)",
       "domain": "Learning Long-Term Dependencies and Managing Memory in Sequential Data · Neural Network Architectures"
+    },
+    {
+      "slug": "recurrent-neural-network",
+      "title": "Recurrent Neural Network (RNN)",
+      "domain": "Sequential Data Processing and Learning Temporal Dependencies · Neural Network Architectures"
     }
   ]
 }
