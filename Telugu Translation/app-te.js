@@ -22,7 +22,10 @@ try{
       diagramStyle:'../study-engine/'+source.diagramStyle,
       hero:source.hero,
       questions:source.questions.map((original,i)=>({
-        ...original,...translated.questions[i],answer:original.answer,figure:original.figure
+        ...original,...translated.questions[i],answer:original.answer,figure:original.figure,
+        technicalExplanation:translated.questions[i].technicalExplanation?.includes('Correct Answer:')
+          ? translated.questions[i].technicalExplanation
+          : '<strong>Correct Answer: '+original.answer.toUpperCase()+'.</strong> '+(translated.questions[i].technicalExplanation||'')
       }))
     };
   }
