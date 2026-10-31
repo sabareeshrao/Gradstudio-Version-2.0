@@ -43,7 +43,7 @@
       "options": [
         "Prediction First Generate చేసి Position Indices Later Add చేస్తుందంటుంది. Attentionకు Too Late.",
         "All Attention Layers Finish తర్వాత Position Labels ఇస్తుందంటుంది. Earlier Layers Order Use చేయలేవు.",
-        "Tokens → Embeddings → Position Vectors → Add → Self-Attention (Original Additive Design).",
+        "Tokens → Embeddings → Position Vectors → Add → Self-Attention; Original Designలో ఇలా.",
         "Padding Mask Only Positions Represent చేస్తుందంటుంది. Ordinary Padding Mask Full Order Provide చేయదు."
       ],
       "answer": "c",
