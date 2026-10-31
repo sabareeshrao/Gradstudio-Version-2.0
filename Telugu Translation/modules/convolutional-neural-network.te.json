@@ -81,7 +81,7 @@
       "stem": "LeNet, AlexNet, VGG, ResNet, EfficientNet CNN Designs Depth, Residual Connections, Scalingలో ఎలా Differ అవుతాయి?",
       "tag": "Advanced · Architecture",
       "options": [
-        "LeNet Residual; AlexNet Compound Scaling; ResNet No Shortcuts; EfficientNet Only Shallow Layers.",
+        "LeNet Residual Use; AlexNet Compound Scaling; ResNet Shortcuts Remove; EfficientNet Shallow మాత్రమే.",
         "All CNN Families Same Depth, Layers, Budget Use చేస్తాయి; Names మాత్రమే Different.",
         "VGG, ResNet, EfficientNet Training Dataలో మాత్రమే Different; Architectures Identical ఉంటాయి.",
         "LeNet Compact; AlexNet Deeper; VGG Conv Stacks; ResNet Skips; EfficientNet Scales చేస్తుంది."
