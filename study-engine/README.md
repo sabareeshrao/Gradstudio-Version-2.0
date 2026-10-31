@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (21 modules)
+## Hosted lesson directory (22 modules)
 
 These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
 
@@ -31,10 +31,11 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 19 | [Vector Database](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database) | `vector-database` |
 | 20 | [Generative Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model) | `generative-model` |
 | 21 | [Embedding Vector](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=embedding-vector) | `embedding-vector` |
+| 22 | [Reinforcement Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=reinforcement-learning) | `reinforcement-learning` |
 
 ### Latest additions — October 30, 2026
 
-Recent modules include Tokenization, Vector Database, Generative Model, and Embedding Vector, each with seven teaching questions and their own illustrations. Lesson JSON is stored in [`modules/`](modules/) and per-keyword visual styling in [`diagrams/`](diagrams/).
+Recent modules include Tokenization, Vector Database, Generative Model, Embedding Vector, and Reinforcement Learning, each with seven teaching questions and their own illustrations. Lesson JSON is stored in [`modules/`](modules/) and per-keyword visual styling in [`diagrams/`](diagrams/).
 
 ## Architecture
 - `index.html`: one reusable page shell with the sticky header and theme picker.
