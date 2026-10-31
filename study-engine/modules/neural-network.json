@@ -97,7 +97,7 @@
         "Add more hidden layers and larger batches whenever gradients become unstable, even if the loss begins to jump. Model size alone does not correct training instability.",
         "Use normalization and residual connections for steadier learning, regularization against overfitting, and suitable learning rates to avoid updates that are too large or small.",
         "Remove activation functions and biases so gradients no longer need to travel through them. This usually takes away the nonlinear modeling power that networks need.",
-        "Lower training loss all the way to zero before checking validation data, since a perfect training score guarantees the network will work equally well on new examples."
+        "Lower training loss all the way to zero before scrutinizing validation performance, since a perfect training score guarantees the network will work equally well on new examples."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> Imagine a model trained to steer a toy car on a dry track. It performs well there but fails on a wet track: that is a warning about <strong>generalization</strong>. Other problems appear during training when gradients become too small or too large. Residual paths can help gradients travel through deeper networks; normalization and careful learning rates can make updates steadier. Regularization helps limit overfitting. Watch training and validation results together: a low training loss is not proof the network will handle new conditions.",
