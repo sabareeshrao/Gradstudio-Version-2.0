@@ -7,37 +7,37 @@
   "subtitle": "Original English diagrams and formulas preserved",
   "questions": [
     {
-      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "stem": "Neural Network Pruning అంటే ఏమిటి? Unnecessary Weights, Neurons Remove చేసి Model ఎలా Efficient అవుతుంది?",
       "options": [
-        "Modelలో Weights తగ్గుతాయి.",
-        "Modelలో Features Compare అవుతాయి.",
-        "Modelలో Data Process అవుతుంది.",
-        "Modelలో Signals Update అవుతాయి."
+        "Pruning Every Epoch Extra Neurons Add చేసి Model Size Increase చేస్తుంది.",
+        "Pruning Less Useful Weights, Connections Remove చేసి Work Reduce చేస్తుంది.",
+        "Pruning Every Weight Equalగా Increase చేసి All Connections Keep చేస్తుంది.",
+        "Pruning Structure బదులు Training Labels Only Delete చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Less Important Connections Remove/Disable చేయడం Pruning. Goal Size Reduce చేసి Accuracy Maintain చేయడం.",
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> Unstructured Weights Mask చేస్తుంది; Structured Channels, Neurons Remove చేస్తుంది. Dense Tensor Shape Mask వల్ల Automatically Shrink కాదు."
     },
     {
-      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "stem": "Some Weights Redundant ఎందుకు? Pruning Real Device Speed, Memory Save Always Guarantee ఎందుకు కాదు?",
       "options": [
-        "Modelలో Weights తగ్గుతాయి.",
-        "Modelలో Features Compare అవుతాయి.",
-        "Modelలో Data Process అవుతుంది.",
-        "Modelలో Signals Update అవుతాయి."
+        "Every Weight Necessary; All Devicesపై Pruning Always Faster అని Assume చేస్తుంది.",
+        "Pruning Sparse Hardware లేకున్నా Every Model Automatically Accelerate చేస్తుంది.",
+        "All Trained Parameters Unique, Redundancy Never Possible అంటుంది.",
+        "Some Weights Redundant; Real Savings Hardware, Kernelsపై Depend అవుతాయి."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> Some Weights Similar Work చేస్తాయి. Sparse Kernels లేకపోతే Speed Benefit రాకపోవచ్చు.",
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> Fewer Nonzeros Always Fewer Dense Operations కాదు. Hardware Sparse Format Support, Layer Compaction Check చేయాలి."
     },
     {
-      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "stem": "1000 Connectionsలో 400 Less Useful ఉంటే Pruning, Accuracy Test ఎలా చేస్తాం?",
       "options": [
-        "Modelలో Weights తగ్గుతాయి.",
-        "Modelలో Features Compare అవుతాయి.",
-        "Modelలో Data Process అవుతుంది.",
-        "Modelలో Signals Update అవుతాయి."
+        "Importance Rank, Bottom 400 Mask, Test, Fine-Tune చేస్తాం.",
+        "400 Random Output Labels Delete చేసి 1000 Weights Sameగా Keep చేస్తాం.",
+        "Top 400 Only Retain చేసి Accuracy Test Unnecessary అని Assume చేస్తాం.",
+        "400 Dataset Rows Remove చేసి Network Structure Automatically Shrink చేస్తాం."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+      "explanation": "<strong>Simple Explanation:</strong> 1000లో 400 Off చేస్తే 600 Active. తర్వాత Accuracy Check, Fine-Tune చేయాలి.",
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> Weight Magnitude లేదా Gradient Score Rank చేసి Lowest 400 Mask చేస్తాం. 40% Sparsity; Validationతో Performance Assess చేయాలి."
     },
     {
       "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
