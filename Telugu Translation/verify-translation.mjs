@@ -42,6 +42,10 @@ const translations=[
   ["transformer-decoder","36-transformer-decoder.html","modules/transformer-decoder.te.json"],
   ["context-window","37-context-window.html","modules/context-window.te.json"],
   ["autoregressive-language-model","38-autoregressive-language-model.html","modules/autoregressive-language-model.te.json"],
+  ["next-token-prediction","39-next-token-prediction.html","modules/next-token-prediction.te.json"],
+  ["neural-network-pruning","40-neural-network-pruning.html","modules/neural-network-pruning.te.json"],
+  ["quantization","41-quantization.html","modules/quantization.te.json"],
+  ["knowledge-distillation","42-knowledge-distillation.html","modules/knowledge-distillation.te.json"],
   ["convolutional-neural-network","43-convolutional-neural-network.html","modules/convolutional-neural-network.te.json"],
   ["recurrent-neural-network","44-recurrent-neural-network.html","modules/recurrent-neural-network.te.json"],
   ["long-short-term-memory","45-long-short-term-memory.html","modules/long-short-term-memory.te.json"],
@@ -119,7 +123,7 @@ for(const [slug,entry] of translations)if(!index.includes('./'+entry))errors.pus
 // Guardrail: all URL rows must stay inside one uninterrupted Markdown table.
 const linksFile=readFileSync(resolve(folder,"ALL_TELUGU_HTML_LINKS.md"),"utf8");
 const tableBegin=linksFile.indexOf("| No. |");
-const tableEnd=linksFile.indexOf("## Copy-ready HTML links");
+const tableEnd=linksFile.indexOf("## Copy-ready HTML URLs");
 if(tableBegin<0||tableEnd<=tableBegin){
  errors.push("master links: Markdown table or copy-ready section missing");
 }else{
@@ -142,16 +146,18 @@ if(tableBegin<0||tableEnd<=tableBegin){
 
   if(row.split("|").length!==6)errors.push("master links: row "+(i+1)+" has broken table columns");
  }
- const list=linksFile.match(new RegExp("\\x60{3}text\\r?\\n([\\s\\S]*?)\\r?\\n\\x60{3}"));
- if(!list){errors.push("master links: copy-ready URL block missing")}
+
+ const copyPath=resolve(folder,"COPY_READY_TELUGU_URLS.txt");
+ if(!existsSync(copyPath))errors.push("copy-ready: all 50 full URLs file is missing");
  else{
-  const urls=list[1].split(/\r?\n/);
-  if(urls.length!==translations.length)errors.push("master links: copy-ready URL count mismatch");
+  const urls=readFileSync(copyPath,"utf8").trim().split(/\r?\n/);
+  if(urls.length!==translations.length)errors.push("copy-ready: URL count differs from lesson count");
   translations.forEach(([,entry],i)=>{
    if(urls[i]!=="https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/"+entry)
-    errors.push("master links: copy-ready URL "+(i+1)+" does not match table");
+    errors.push("copy-ready URL "+(i+1)+" does not match its Telugu page");
   });
  }
+
 }
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
-console.log("PASS: 46 bilingual lessons (IDs 1–38, 43–50), 322 questions, 1288 options, 322 original English diagrams, answer keys, translations, and index links.");
+console.log("PASS: 50 bilingual lessons, 350 questions, 1400 options, 350 original English diagrams, answer keys, translations, and index links.");
