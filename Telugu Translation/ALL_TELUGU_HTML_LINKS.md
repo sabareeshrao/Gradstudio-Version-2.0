@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**38 lessons · 266 questions · 38 individual HTML pages**
+**42 translated lessons · 294 questions · 42 individual HTML pages**
 
-Every row opens a Telugu + English lesson and its corresponding English original page. Lessons 01–10 use the original English lesson pages; lessons 11–38 link to the original English modules in the Study Engine.
+The original lesson IDs are preserved. **Lessons 39–42 have not yet been added to the Telugu folder**, so this table goes from 38 to 43. Every row links to the live Telugu-English HTML page and its original English Study Engine page.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -46,6 +46,10 @@ Every row opens a Telugu + English lesson and its corresponding English original
 | 36 | Transformer Decoder | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/36-transformer-decoder.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-decoder) |
 | 37 | Context Window | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/37-context-window.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) |
 | 38 | Autoregressive Language Model | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/38-autoregressive-language-model.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) |
+| 43 | Convolutional Neural Network (CNN) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/43-convolutional-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network) |
+| 44 | Recurrent Neural Network (RNN) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/44-recurrent-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) |
+| 45 | Long Short-Term Memory (LSTM) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/45-long-short-term-memory.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) |
+| 46 | Random Forest | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/46-random-forest.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest) |
 
 ## Copy-ready HTML links
 
@@ -88,6 +92,10 @@ https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/35-tr
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/36-transformer-decoder.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/37-context-window.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/38-autoregressive-language-model.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/43-convolutional-neural-network.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/44-recurrent-neural-network.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/45-long-short-term-memory.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/46-random-forest.html
 ```
 
-Original English diagrams, tiles, code, and formulas are preserved. Questions, options, and explanations use modern Telugu + English.
+Original English diagrams, code, tile headings and formulas are unchanged. Questions and explanations use modern Telugu + English.
