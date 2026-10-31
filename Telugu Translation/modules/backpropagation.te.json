@@ -10,7 +10,7 @@
       "stem": "Deep Learningలో Backpropagation అంటే ఏమిటి? Neural Network Prediction Errorsని Identify చేసి Learningకి Help చేసే Gradient Computation ఎలా Work చేస్తుంది?",
       "tag": "Beginner · Basics",
       "options": [
-        "Forward Passలో Predictions చేసి Trainingకి ముందు Architecture మాత్రమే Choose చేస్తుంది, Always.",
+        "Forward Passలో Predictions చేసి Trainingకి ముందు Architecture మాత్రమే Always Choose చేస్తుంది.",
         "Each Parameterకి Loss Gradient Compute చేసి Better Weight Updatesకి Guide చేస్తుంది.",
         "Derivatives Calculate చేయకుండా Outputsని Backward New Inputsగా Send చేస్తుంది.",
         "Wrong Predictionsని Permanent Memorize చేసి Weightsని Never Change చేస్తుంది."
@@ -80,7 +80,7 @@
       "stem": "PyTorch Reverse-Mode Automatic Differentiationతో Backpropagation ఎలా Work చేస్తుంది? Computation Graph, Jacobian Chain Rule, Vector-Jacobian Products, Gradient Accumulation, In-Place Operations పాత్ర ఏమిటి?",
       "tag": "Advanced · Architectures",
       "options": [
-        "PyTorch Full Jacobian Every Time Materialize చేసి All Gradients Automatic Clear చేస్తుంది, Completely.",
+        "PyTorch Full Jacobian Every Time Materialize చేసి All Gradients Completely Automatic Clear చేస్తుంది.",
         "Autograd Python Sourceని Forward Passకి ముందే Symbolically Differentiate చేస్తుంది.",
         "In-Place Changes Autogradకి Invisible కాబట్టి Saved Valuesకి Never Problems రావు.",
         "Autograd Graph Record చేసి Backward Vector-Jacobian Products, Gradient Accumulation Handle చేస్తుంది."
