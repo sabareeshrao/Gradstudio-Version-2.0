@@ -57,3 +57,18 @@
 5. Word-count and cosmetic layout heuristics (never override completeness)
 
 **Scope:** English modules only unless explicitly asked otherwise. Never edit Telugu translations as a side effect of English revisions. When requesting translation, share the specific audited commit SHA, so a translator can work from an exact revision.
+
+
+## Visual fidelity gate — raised after the Data Leakage v3 redesign
+
+Do **not** treat a colored rectangle with text as a high-quality teaching diagram. Match the visual ambition of `modules/neural-network.json` and `modules/transformer.json` when planning scenes.
+
+- Make a **hero illustration plus seven custom visual lessons**, each tied to the question's exact mechanism, not a seven-fold copy of the same box-and-arrow card.
+- Use **varied visual languages** where relevant: illustrated real-world records, visual timelines, plots with labelled axes and numerical examples, fold matrices, actual code with side-by-side process flow, grouped-identity panels, and production lineage maps.
+- Show **why** the concept works and the common error; mark invalid paths and valid paths clearly without hiding the distinction behind decorative text.
+- Use typography with readable labels, clear connector direction, accessible SVG `role="img"` plus `aria-label`, scoped unique gradient/marker IDs, gentle depth and color with semantic meaning.
+- Keep drawings informative on mobile. A wide detailed SVG may be horizontally scrollable if labels would otherwise be tiny; add a visible swipe hint and test code panels separately.
+- Test actual rendered visuals on desktop and mobile when a browser is available. **Structural checks alone cannot prove visual quality.** State clearly if rendering could not be independently inspected.
+- Guard preservation: a diagram upgrade must not rewrite user questions, correct answers, answer keys, explanatory text, tested code or Telugu materials unless explicitly requested.
+
+**Reference upgrade:** `modules/data-leakage.json` and `diagrams/data-leakage.css` (illustrated-v3 scenes) show the new visual expectations: an illustrated prediction-time leak, two leakage sources, a numerical training/test mean plot, a CV fold + augmented image comparison, an in-fold Pipeline with readable code, chronological/grouped splits and a production point-in-time lineage timeline.
