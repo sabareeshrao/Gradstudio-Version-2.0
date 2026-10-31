@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**42 translated lessons · 294 questions · 42 individual HTML pages**
+**46 translated lessons · 322 questions · 46 individual HTML pages**
 
-The original lesson IDs are preserved. **Lessons 39–42 have not yet been added to the Telugu folder**, so this table goes from 38 to 43. Every row links to the live Telugu-English HTML page and its original English Study Engine page.
+The original lesson IDs are preserved. **Lessons 39–42 have not yet been added to the Telugu folder**, so the table continues from 38 to 43. Each row links to both the Telugu-English lesson and original English lesson.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -50,6 +50,10 @@ The original lesson IDs are preserved. **Lessons 39–42 have not yet been added
 | 44 | Recurrent Neural Network (RNN) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/44-recurrent-neural-network.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) |
 | 45 | Long Short-Term Memory (LSTM) | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/45-long-short-term-memory.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) |
 | 46 | Random Forest | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/46-random-forest.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest) |
+| 47 | Decision Tree Classifier | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/47-decision-tree-classifier.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=decision-tree-classifier) |
+| 48 | Logistic Regression | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/48-logistic-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression) |
+| 49 | Linear Regression | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/49-linear-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression) |
+| 50 | K-Means Clustering | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/50-k-means-clustering.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) |
 
 ## Copy-ready HTML links
 
@@ -96,6 +100,10 @@ https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/43-co
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/44-recurrent-neural-network.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/45-long-short-term-memory.html
 https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/46-random-forest.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/47-decision-tree-classifier.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/48-logistic-regression.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/49-linear-regression.html
+https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/50-k-means-clustering.html
 ```
 
-Original English diagrams, code, tile headings and formulas are unchanged. Questions and explanations use modern Telugu + English.
+Original English diagrams, tiles, code, and formulas remain unchanged. Questions, answer choices and explanations are in modern Telugu + English.
