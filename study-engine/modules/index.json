@@ -194,6 +194,11 @@
       "slug": "value-projection",
       "title": "Value Projection",
       "domain": "Value Vector Generation and Information Transfer in Attention · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "transformer-decoder",
+      "title": "Transformer Decoder",
+      "domain": "Autoregressive Text Generation and Decoder Architecture · Transformers and LLM Architecture"
     }
   ]
 }
