@@ -89,7 +89,7 @@
         "Cross-Entropy Correct Class Probability Only Change, Others Zero Gradients అంటుంది. Softmax Classes Coupled.",
         "Softmax Jacobian Identity Matrix అని అంటుంది. Shared Denominator Cross-Class Derivatives Create చేస్తుంది.",
         "Backprop Probabilities Direct Change, Network Weights Unchanged అంటుంది. Optimizer Weights Learn చేస్తుంది.",
-        "Cross-Entropy Correct Class Measure; Jacobian Couples Classes; Backprop Logit/Weight Gradients; Libraries Fuse."
+        "Cross-Entropy Class Loss; Jacobian Couples Classes; Backprop Logit/Weight Grads; Libraries Fuse చేస్తాయి."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Cross-Entropy Correct Labelsకి Assigned Probability ఎంత ఉందో Measure చేస్తుంది. Softmax Jacobian Class Probabilities Couple చేస్తుంది; Backprop Logits, Earlier Weightsకి Derivatives Send చేస్తుంది; Libraries Often Both Fuse చేస్తాయి. Recycling Itemకి Four Binsలో Best Bin Choose చేసే Modelని Imagine చేయండి. <strong>Softmax</strong> Class Logitsని Probabilitiesగా Convert; <strong>Cross-Entropy</strong> Correct Binకి Probability Evaluate. Backprop Loss Derivatives All Logits, Weightsకి Link చేస్తుంది. <strong>Softmax Jacobian</strong> One Score Change Others Probabilitiesని Affect చేస్తుందని Express చేస్తుంది, Shared Denominator వల్ల.",
