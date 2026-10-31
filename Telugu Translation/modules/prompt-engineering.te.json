@@ -27,7 +27,7 @@
       "options": [
         "Clear Goal, Relevant Context, Constraints, Examples, Formats Ambiguityని Reduce చేస్తాయి.",
         "Prompt Longగా ఉన్నంతమాత్రాన Every Time More Accurate Answers వస్తాయి.",
-        "Task Context Remove చేసి Free-Form Output Force చేస్తే Accuracy Increase అవుతుంది, Always.",
+        "Task Context Remove చేసి Free-Form Output Force చేస్తే Accuracy Always Increase అవుతుంది.",
         "Examples Trainingలో మాత్రమే Use అవుతాయి; Inference Promptsలో Useful కావు."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Good Promptలో Goal, Useful Context, Expected Format Clearగా ఉంటాయి. Vague Instructions ఇస్తే Answer కూడా Unclear కావచ్చు.",
