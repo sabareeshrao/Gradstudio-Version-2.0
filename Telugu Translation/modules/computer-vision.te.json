@@ -29,7 +29,7 @@
         "Imageకి Overall Color One Number Enough; Pixels, Channels అవసరం లేదంటుంది. Spatial Values Critical.",
         "RGB Image Brightness Only Store, Resolution Objects Identify చేస్తుందంటుంది. Colors, Object Labels Different.",
         "Pictures Written Color Namesగా Store అయ్యి Arraysకి Translate అవుతాయంటుంది. Image Data Numerical Grids.",
-        "Image Pixel Numerical Grid; RGB Red/Green/Blue Values, Resolution Width/Height Define చేస్తాయి; Detail, Memory, Preprocessing Affect."
+        "Pixel Grid RGB Values Store; Resolution Width, Height Define చేసి Detail, Memory, Preprocessing Affect చేస్తుంది."
       ],
       "explanation": "<strong>Explanation:</strong> Digital Image Numerical Pixel Grid. RGBలో Each Locationకి Red, Green, Blue Values ఉంటాయి. Resolution Width, Height Define చేసి Feature Details, Memory, Preprocessingపై Impact చూపిస్తుంది. Art Museum కోసం Colorful Painting Scan చేస్తున్నారని Imagine చేయండి. Digital Picture అనేది <strong>Pixels</strong> Grid. RGBలో Every Pixelకి Three Color Channels. 1000×1000 Imageలో Million Pixel Locations ఉంటాయి; Higher Resolution Often More Data Processing Require చేస్తుంది. Model Numerical Arrays Read చేసి Visual Patterns Find చేస్తుంది.",
       "technicalExplanation": "<strong>Correct: D.</strong> Digital Image Height×Width Array with Numeric Channels. Resolution Detail, Compute Cost Affect చేస్తుంది. OpenCV Often BGR Read చేస్తుంది; Pretrained Models Normalized Channel-First Tensors Expect చేయవచ్చు.",
@@ -41,7 +41,7 @@
       "tag": "Beginner · Flow",
       "answer": "a",
       "options": [
-        "Classification Image Label; Detection Boxes; Segmentation Pixel Regions; Tracking Same Objectని Video Framesలో Follow చేస్తుంది.",
+        "Classification Labels; Detection Boxes; Segmentation Pixels; Tracking Same Objectని Framesలో Link చేస్తుంది.",
         "Classification Exact Outlines Draw, Tracking Whole Photo Category Assign చేస్తుందంటుంది. Tasks Reversed.",
         "Detection Videoలో Object Follow, Segmentation Whole Scene Label Only అంటుంది. Outputs Different.",
         "Tracking Pixel Regions Color, Classification Bounding Boxes Draw చేస్తుందంటుంది. Task Roles Confused."
@@ -58,7 +58,7 @@
       "options": [
         "CNN Filters Full Training Photos Memorize, Pooling Labeled Examples Add చేస్తుందంటుంది. Features Learn చేసే Operations ఇవి కాదు.",
         "Stride Image Colors Count, Padding Output Class Names Control అంటుంది. Both Spatial Operationsకి Related.",
-        "Shared Kernels Local Regions Scan చేసి Feature Maps Create; Stride Steps, Padding Edges, Pooling Regions, Deep Layers Rich Features Build చేస్తాయి.",
+        "Kernels Local Feature Maps; Stride Steps, Padding Edges, Pooling Summary, Deep Layers Rich Patterns Build చేస్తాయి.",
         "Each CNN Neuron Neighbors Ignore చేసి Single Pixel Only Process చేస్తుందంటుంది. Convolutions Local Neighborhoods Use."
       ],
       "explanation": "<strong>Explanation:</strong> Convolution Kernels Local Image Regionsపై Shared Weights Apply చేసి Feature Maps Create చేస్తాయి. Stride Movement, Padding Edge Handling, Pooling Regional Summary; Deeper Layers Edges, Texturesని Rich Featuresగా Combine చేస్తాయి. Bridge Photoలో Cracks Check చేస్తున్నట్టు Imagine చేయండి. Early <strong>Convolution Filters</strong> Edges, Short Lines Notice చేయవచ్చు; Later Layers వాటిని Longer Crack Shapesగా Combine చేస్తాయి. Kernel Small Filterగా Local Image Scan చేసి <strong>Feature Map</strong> Create చేస్తుంది. Stride Step, Padding Edges, Pooling Nearby Responses Summarize చేస్తాయి.",
@@ -72,7 +72,7 @@
       "answer": "b",
       "options": [
         "OpenCV Image Load అయిన Pathనే Correct Labelగా Use చేస్తుందంటుంది. Real Labels, Evaluation Needed.",
-        "OpenCV Load; Preprocess Colors/Size/Normalization; Pretrained PyTorch Model Inference; Predictions Visualize; Held-Out Labeled Imagesపై Evaluate చేస్తాం.",
+        "OpenCV Load, Preprocess; PyTorch Infer, Visualize; Held-Out Labeled Imagesపై Evaluation చేస్తాం.",
         "Pretrained PyTorchకి Any Pixel Range Works కాబట్టి Normalization Skip అంటుంది. Model Input Format Match కావాలి.",
         "One Successful Prediction All New Imagesకి Accuracy Prove చేస్తుందంటుంది. Many Labeled Examplesపై Test చేయాలి."
       ],
@@ -86,7 +86,7 @@
       "tag": "Advanced · Architecture",
       "answer": "a",
       "options": [
-        "ResNet Residual CNN, ViT Patch Attention, YOLO Detection, U-Net/SAM Segmentation; Transfer Pretrained Features, Self-Supervised Unlabeled Learn చేస్తాయి.",
+        "ResNet CNN, ViT Attention, YOLO Detection, U-Net/SAM Masks; Transfer Pretrained, Self-Supervised Unlabeled Learn చేస్తాయి.",
         "ResNet Masks Only, YOLO Photo Colors Improve చేస్తుందంటుంది. Recognition, Detection Roles Different.",
         "ViT Patches Ignore, File Names Only Read; SAM Every Imageకి Retrain అంటుంది. Learned Visual Representations Used.",
         "Self-Supervised Human Labels Require, Transfer Learning Pretrained Features Discard అంటుంది. Both Opposite."
@@ -104,7 +104,7 @@
         "Clean Photos High Accuracy Fog, Rain, Glareలో Guarantee అంటుంది. Real Conditions Differ కావచ్చు.",
         "Real-Time Vision Speed Only Maximize చేసి Accuracy, Memory Ignore అంటుంది. Fast Wrong Predictions Useful కాదు.",
         "One Well-Lit Dataset Domain Shift, Attacks Prevent అంటుంది. Diverse Testing, Monitoring Needed.",
-        "Lighting, Blur, Occlusion, Viewpoints, Domain Shift, Attacks Test; Data Diversify, Errors Track; Accuracy, Latency, Memory Together Optimize."
+        "Lighting, Blur, Occlusion, Shift, Attacks Test; Data Diversify; Accuracy, Latency, Memory Optimize చేస్తాం."
       ],
       "explanation": "<strong>Explanation:</strong> Real Deploymentలో Lighting, Occlusion, Blur, Viewpoints, Domain Shift, Adversarial Cases Test చేయాలి; Data Diversify, Errors Monitor చేయాలి. Accuracy, Precision, Latency, Memory, Device Throughput Together Optimize చేయాలి. Railway Track Cracks Check చేసే Robotని Think చేయండి. Clear Daytime Photosపై Trained Model Dusk, Motion Blur, Equipment Occlusionలో Struggle కావచ్చు. Engineers Those Conditionsపై Test చేసి Deployment Mistakes Track చేయాలి. Representative Training Data, Better Preprocessing, Model Adaptation Help చేయవచ్చు.",
       "technicalExplanation": "<strong>Correct: D.</strong> Lighting, Blur, Occlusion, Camera Viewpoint, Domain Changes, Adversarial Inputs Test చేయండి. Deployment Drift Monitor, Representative Data Use, Real Hardwareలో Latency, Memory, Accuracy Balance చేయాలి.",
