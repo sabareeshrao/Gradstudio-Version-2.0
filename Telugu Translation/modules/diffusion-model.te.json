@@ -13,7 +13,7 @@
       "options": [
         "New Image Create చేయడానికి Training Photos Pixelsని Directly Copy చేసి Combine చేస్తుంది.",
         "Learned Noise-Removal Process లేకుండా Fixed Code Decode చేసి Images Create చేస్తుంది.",
-        "Random Noise నుంచి Start చేసి Repeated Denoisingతో New Realistic Sample Generate చేస్తుంది.",
+        "Noise నుంచి Start చేసి Denoising Stepsతో New Sample Create చేస్తుంది.",
         "Training Datasetలో Closest Pictureని Select చేసి Single Passలో Image Return చేస్తుంది."
       ],
       "answer": "c",
@@ -42,7 +42,7 @@
         "Forward Noise నుంచి Clean Images Generate చేస్తుంది; Reverse Imagesని Trainingకి Corrupt చేస్తుంది.",
         "Forward Imagesని Tokensగా Compress చేస్తుంది; Reverse Learned Steps లేకుండా Pixels Decode చేస్తుంది.",
         "Forward Better Prompts Select చేస్తుంది; Reverse Human Ratingsని Compare చేసి Output Choose చేస్తుంది.",
-        "Forward Real Imagesకి Noise Add చేస్తుంది; Reverse Noise నుంచి Plausible Samples Gradually Generate చేస్తుంది."
+        "Forward Noise Add; Reverse Learned Stepsతో New Samples Generate చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Trainingలో Clean Imageకి Step by Step Noise Add చేస్తాం. Generationలో Noise నుంచి Start చేసి Learned Reverse Stepsతో Image Form చేస్తాం.",
@@ -54,7 +54,7 @@
       "stem": "Denoising Diffusion Probabilistic Model (DDPM)లో Gaussian Noise, Timesteps, Transition Probabilities, Noise-Prediction Loss ఎలా Define చేస్తాం? U-Net Denoising Learn చేయడంలో Role ఏమిటి?",
       "options": [
         "DDPM Pixel Labels Softmaxతో Predict చేస్తుంది; U-Net Image Classesని Only Identify చేస్తుంది.",
-        "Gaussian Noise Schedule Use చేసి, U-Netతో Each Timestep Added Noise Estimate చేయడం Train చేస్తాం.",
+        "Gaussian Noise Schedule, U-Netతో Each Step Noise Predict చేయడం Train చేస్తాం.",
         "DDPM Discriminator Score Minimize చేసి Training Dataset నుంచి Images Directly Select చేస్తుంది.",
         "Timesteps Training Duration మాత్రమే Track చేస్తాయి; Reverse Process Colorsని Without Noise Change చేస్తుంది."
       ],
@@ -81,7 +81,7 @@
       "tag": "Advanced · Architectures",
       "stem": "Modern Diffusion Modelsలో Latent Diffusion (LDM), DDIM, Diffusion Transformer (DiT), Classifier-Free Guidance (CFG) ఎలా Work చేస్తాయి? Image Quality, Speed, Prompt Control ఎలా Improve చేస్తాయి?",
       "options": [
-        "LDM Compressed Latentsలో Denoises; DDIM Faster Samples; DiT Attention; CFG Prompt Guidance Use చేస్తుంది.",
+        "LDM Latents; DDIM Fewer Steps; DiT Attention; CFG Prompt Guidance Use చేస్తుంది.",
         "LDM Always Full Pixelsలో Operate చేస్తుంది; DDIM More Steps Needs; DiT Attention Remove చేస్తుంది.",
         "LDM Prompts Store చేస్తుంది; DDIM Discriminator Train చేస్తుంది; DiT All Latents Remove చేస్తుంది.",
         "DiT Timesteps Eliminate చేస్తుంది; CFG Image Resolution Fix చేసి Prompt Meaning Ignore చేస్తుంది."
@@ -98,7 +98,7 @@
         "Distillation Bigger Models Require చేస్తుంది; Latents Pixel Memory Increase చేసి Prompt Control Remove చేస్తాయి.",
         "Distillation Finished Frames Save చేస్తుంది; Latent Models Time Informationని Always Ignore చేస్తాయి.",
         "Distillation Video Consistency Guarantee చేస్తుంది; Flow Matching Training Needని Remove చేస్తుంది.",
-        "Distillation Sampling Steps Reduce చేస్తుంది; Latents Compute Save చేస్తాయి; Flow Matching Efficient Paths Learns."
+        "Distillation Steps Reduce; Latents Compute Save; Flow Matching Generation Improve చేస్తుంది."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Big Images, Videos Generate చేయడానికి More Memory, Time Need. Distillation, Latent Methods Faster Outputకి Help చేస్తాయి; Video Consistency Still Test చేయాలి.",
