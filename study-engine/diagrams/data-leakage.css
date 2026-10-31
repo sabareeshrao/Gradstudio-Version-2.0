@@ -1,0 +1,19 @@
+/* Data Leakage — original illustrated lesson system. Shared themes are inherited from core.css. */
+.dl-hero,.dl-fig{--dl-ink:#2b5269;--dl-good:#267c67;--dl-warn:#b06d4e;color:var(--dl-ink);background:linear-gradient(135deg,#f9fcff 0%,#f4faf8 66%,#fff8f1 100%);border:1px solid #dbe6e9;border-radius:16px;padding:clamp(15px,2.6vw,25px);overflow:hidden;}
+.dl-hero{margin-bottom:20px;background:linear-gradient(145deg,#e8f5f1,#fbfcff 65%,#fff3e9);}
+.dl-fig{background:radial-gradient(circle at 90% 10%,#e4f4ed 0%,transparent 35%),linear-gradient(160deg,#fcfdff,#f8fbf9);box-shadow:inset 0 1px 0 #fff;}
+.dl-kicker{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;font-size:.7rem;letter-spacing:.13em;font-weight:900;color:#3d8192;text-transform:uppercase;display:block;}
+.dl-fig h3,.dl-hero h2{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;font-size:clamp(1.09rem,2.2vw,1.45rem);line-height:1.28;color:#214b62;margin:9px 0 7px;font-weight:860;}
+.dl-intro,.dl-hero>p{font-size:.87rem;line-height:1.56;color:#547486;margin:5px 0 13px;}
+.dl-canvas{width:100%;overflow-x:auto;overscroll-behavior-inline:contain;border:1px solid #d8e7ea;border-radius:13px;background:#fff;box-shadow:0 5px 18px #0c49620a;padding:8px;}
+.dl-canvas svg{display:block;width:100%;height:auto;min-width:520px;max-width:100%;background:linear-gradient(170deg,#fff 55%,#f9fcfb 100%);border-radius:9px;}
+.dl-foot{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#567282;font-size:.81rem;line-height:1.6;margin:13px 2px 1px;}
+.dl-hero .dl-foot{font-weight:650;}
+.dl-sources{margin-top:16px;padding:12px 15px;border:1px solid #d8e5e8;border-radius:10px;background:#fff;color:#456a7a;font-size:.82rem;}
+.dl-sources summary{font-weight:800;cursor:pointer}.dl-sources a{color:#286b86;text-decoration:underline;}
+.dl-f1 .dl-canvas{border-top:3px solid #c98562}.dl-f2 .dl-canvas{border-top:3px solid #7ca2c8}
+.dl-f3 .dl-canvas{border-top:3px solid #65ab97}.dl-f4 .dl-canvas{border-top:3px solid #bd9684}
+.dl-f5 .dl-canvas{border-top:3px solid #7599ca}.dl-f6 .dl-canvas{border-top:3px solid #69a0a3}
+.dl-f7 .dl-canvas{border-top:3px solid #99ad71}
+@media(max-width:700px){.dl-hero,.dl-fig{padding:13px}.dl-canvas{padding:5px}.dl-canvas svg{min-width:610px;max-width:none}.dl-intro{font-size:.82rem}.dl-foot{font-size:.78rem}}
+@media(prefers-reduced-motion:no-preference){.dl-canvas svg{transition:filter .18s ease}.dl-canvas:hover svg{filter:saturate(1.08)}}
