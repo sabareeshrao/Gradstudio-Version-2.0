@@ -11,10 +11,10 @@
       "tag": "Beginner · Recognizing leakage",
       "stem": "What is Data Leakage in Machine Learning, and how does it cause a model to appear more accurate than it actually is?",
       "options": [
-        "Overfitting occurs when a model learns training examples too closely instead of finding general patterns. Its training accuracy may be high, but its performance on unfamiliar examples is often much weaker.",
+        "Overfitting occurs when a model learns training examples too closely instead of finding general patterns. Its apparent training accuracy may be high, but its performance on unfamiliar examples is often much weaker.",
         "Data Leakage occurs when a model uses information during training that would not be available when making real predictions. This can produce misleadingly high evaluation scores and poor performance on new data.",
-        "Data drift occurs when information seen after deployment differs from earlier training examples. A model may become less accurate over time, even if its earlier test results were reliable.",
-        "Label noise occurs when some training examples contain incorrect answers or unreliable annotations. It can confuse the model and reduce its accuracy, but it does not necessarily expose future information."
+        "Data drift occurs when information seen after deployment differs from earlier training examples. A deployed model may gradually become less accurate over time, even if its earlier offline test results were reliable.",
+        "Label noise occurs when some training examples contain incorrect answers or unreliable annotations. It can confuse the model and reduce its overall accuracy, but it does not necessarily expose unavailable future information."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> Data Leakage means a model learns from information it could not have when predicting in real life. That hidden advantage makes test scores look better than the model truly is. Imagine predicting whether a scholarship applicant will be approved, but accidentally including the final approval email as an input. The model seems brilliant because the answer is already in the data. Once that email is unavailable for new applicants, performance drops. Always check when each feature becomes available.",
@@ -25,7 +25,7 @@
       "tag": "Beginner · Two leakage types",
       "stem": "What is the difference between Target Leakage and Train-Test Contamination, and how can each affect Machine Learning predictions?",
       "options": [
-        "Target Leakage occurs when the model predicts a class using earlier observations that were available in advance. Train-Test Contamination occurs when different classes appear in both sets, making evaluation results unreliable.",
+        "Target Leakage occurs when the model predicts a class using earlier observations that were available in advance. Train-Test Contamination occurs when different target classes appear in both data sets, making evaluation results unreliable.",
         "Target Leakage happens when the training set contains repeated samples with the same label. Train-Test Contamination happens when the model has more training rows than test rows, causing its performance to look unreliable.",
         "Target Leakage occurs when the target label is missing for some training records. Train-Test Contamination occurs when training and test sets use the same feature names, making their scores unfairly high or misleading.",
         "Target Leakage happens when input features reveal information about the target that would not be available at prediction time. Train-Test Contamination occurs when information from test data influences training, making evaluation results unreliable."
@@ -40,8 +40,8 @@
       "stem": "Why should a dataset be divided into training and testing sets before applying preprocessing techniques such as normalization, missing-value imputation, and feature selection?",
       "options": [
         "Splitting the dataset first prevents information from the test set from influencing preprocessing decisions. Preprocessing methods should learn their required values from training data and then apply those learned values to test data.",
-        "Normalizing every available row before splitting gives both groups identical measurement scales. The model then learns the global average, which makes testing unfair because the test-set statistics were already included.",
-        "Filling missing values before splitting ensures both datasets contain equally complete records. The imputation method should learn from every available row so the final test score benefits from all collected information.",
+        "Normalizing every available row before splitting gives both groups identical measurement scales across all features. The model then learns the global average, which makes testing unfair because the test-set statistics were already included.",
+        "Filling missing values before splitting ensures both datasets contain equally complete records. The imputation method should learn from every available row so the final test score benefits from all previously collected dataset information.",
         "Selecting useful features before splitting removes weak inputs from both groups in one step. The feature selector should examine all targets first, so the model trains with features proven on the entire dataset."
       ],
       "answer": "a",
@@ -53,10 +53,10 @@
       "tag": "Medium · Cross-validation leakage",
       "stem": "How can Data Leakage occur during cross-validation, feature engineering, data augmentation, and hyperparameter tuning, even when training and testing datasets are separated?",
       "options": [
-        "Cross-validation prevents every form of leakage as long as a final test set stays untouched. Features and augmented examples can be prepared using all training and validation folds because they are part of model development.",
+        "Cross-validation prevents leakage if a final test set stays untouched. Feature selection and augmentation can use all development folds because those rows already belong to model training.",
         "Leakage only becomes possible after a final model is deployed and its predictions are monitored. Cross-validation and hyperparameter tuning cannot leak information if the original train-test split was performed correctly.",
         "Leakage occurs when validation data influences feature selection, preprocessing, model tuning, or training examples. Each validation fold must remain separate from the operations used to fit the model being evaluated.",
-        "Feature engineering may inspect validation targets before cross-validation because only the model's weights count as training. Augmentation can also copy near-duplicate examples across folds without changing the validity of evaluation scores."
+        "Feature engineering may inspect validation targets before cross-validation because only the model's weights count as training. Augmentation can copy near-duplicate examples across folds without changing the validity of evaluation scores."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> A separate test set is not enough if validation folds influence the steps that train the model. During cross-validation, feature selection and preprocessing must be fitted again inside each training fold. Picture a drone-image classifier: if you rotate one image and put its almost identical copy in a validation fold, the result looks better than real-world performance. Repeated tuning on the same validation data can also overfit your choices. Keep folds isolated during every learning step.",
@@ -68,9 +68,9 @@
       "stem": "How can a Machine Learning pipeline using Scikit-learn prevent Data Leakage during preprocessing, feature selection, and cross-validation?",
       "options": [
         "Scikit-learn Pipelines combine preprocessing, feature selection, and model training so each step is fitted only on the training portion of each fold. This prevents validation data from influencing the learned transformations.",
-        "Scikit-learn Pipelines automatically compare every training row with every validation row to find the best preprocessing settings. This makes transformations consistent because the scaler and feature selector use information from all folds.",
-        "Scikit-learn Pipelines store a trained estimator and its predictions after cross-validation is complete. Preprocessing and feature selection should be fitted before creating the Pipeline so that each fold receives identical global values.",
-        "Scikit-learn Pipelines keep transformations in a fixed order, but they do not control which rows are fitted. To avoid leakage, all data must be normalized and selected before running cross-validation."
+        "Scikit-learn Pipelines compare every training row with every validation row to find the best preprocessing settings. This makes transformations consistent because the scaler and feature selector use information from all folds.",
+        "Scikit-learn Pipelines store a trained estimator and its predictions after cross-validation is complete. Preprocessing and feature selection should be fitted before creating the Pipeline so that each fold receives identical values.",
+        "Scikit-learn Pipelines keep transformations in a fixed order, but they do not control which rows are fitted. To avoid leakage, all available data must be normalized and selected before running cross-validation."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> A Scikit-learn Pipeline places the imputer, scaler, feature selector, and model in one sequence. When cross-validation fits a fold, each learning step sees only that fold's training rows; validation rows are transformed with those learned settings. Imagine predicting wine quality from laboratory measurements. You might fill missing acidity values, standardize chemical readings, select useful features, then fit a classifier. Keeping these operations inside one Pipeline prevents a validation sample from teaching the earlier steps. Use group-aware or time-aware splits when necessary.",
@@ -81,8 +81,8 @@
       "tag": "Advanced · Time and group splits",
       "stem": "How does Data Leakage occur in time-series forecasting, grouped datasets, and repeated observations, and why are random train-test splits sometimes unsuitable for these problems?",
       "options": [
-        "Random splitting is reliable for time-series forecasting because every date contributes equally to training and testing. Group identity can be ignored when records are collected on different days, since those rows are independent examples.",
-        "Random splitting prevents future information from reaching earlier predictions by mixing dates evenly across both sets. Repeated observations can stay in separate folds without tracking their shared origin or subject identity.",
+        "Random splitting is reliable for time-series forecasting because every date contributes to training and testing. Group identity can be ignored when records are on different days, since those rows are independent examples.",
+        "Random splitting prevents future information from reaching earlier predictions by mixing dates evenly across both sets. Repeated observations can stay in separate folds without tracking their shared data origin or subject identity.",
         "Time-based splitting is required only when the dataset contains missing timestamps, while group-aware splitting is needed only for duplicate labels. Ordinary random splitting gives realistic estimates whenever the dataset is large enough.",
         "Random splitting can expose future information or place related observations in both training and testing sets. Time-based splits and group-aware validation help prevent this leakage by respecting chronological order and group boundaries."
       ],
@@ -95,10 +95,10 @@
       "tag": "Advanced · Production safeguards",
       "stem": "How can Data Leakage be detected and prevented in production Machine Learning systems using feature availability checks, data lineage, point-in-time validation, and leakage-resistant evaluation strategies?",
       "options": [
-        "Production leakage can be detected mainly by watching whether training accuracy rises after new data arrives. It can be prevented by keeping all historical features in one table and reusing current feature values for earlier predictions.",
+        "Production leakage can be detected by watching whether training accuracy rises after new data arrives. It can be prevented by keeping all features in one table and reusing current feature values for earlier predictions.",
         "Data Leakage can be detected by checking suspicious features, unusually high scores, and whether information was available at prediction time. Data lineage, point-in-time feature checks, isolated evaluation sets, and realistic validation help prevent leakage.",
-        "Production leakage can be prevented by checking that feature columns have correct names and no missing values. Data lineage is useful for documentation, but timestamps and realistic historical test sets are unnecessary once the model is deployed.",
-        "Production leakage is usually revealed by low evaluation scores and slow predictions after deployment. It can be prevented by retraining regularly on the newest records, even if those records contain information from after prediction time."
+        "Production leakage can be prevented by checking that feature columns have names and no missing values. Data lineage is useful for documentation, but timestamps and test sets are unnecessary once a model is deployed.",
+        "Production leakage is revealed by low evaluation scores and slow predictions after deployment. It can be prevented by retraining regularly on the newest records, even if those records contain information from after prediction time."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> In production, ask a simple question about every feature: <strong>Did we know this value at prediction time?</strong> A fraud detector assessing a card payment at 10:00 must not use a chargeback reported the next day. Data lineage shows where each feature came from; point-in-time checks verify when it existed. Compare offline validation with realistic live conditions, watch for unusually perfect scores, and keep an untouched evaluation set. These checks turn leakage prevention into a repeatable production practice.",
