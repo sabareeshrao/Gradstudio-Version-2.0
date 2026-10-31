@@ -214,6 +214,11 @@
       "slug": "transformer-encoder",
       "title": "Transformer Encoder",
       "domain": "Bidirectional Context Understanding and Encoder Architecture · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "next-token-prediction",
+      "title": "Next-Token Prediction",
+      "domain": "Predicting and Generating Tokens in Large Language Models · Transformers and LLM Architecture"
     }
   ]
 }
