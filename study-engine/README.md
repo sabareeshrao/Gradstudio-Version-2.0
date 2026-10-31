@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (26 modules)
+## Hosted lesson directory (28 modules)
 
 These links are generated from the canonical [module manifest](modules/index.json); each keyword uses the shared HTML, CSS, and JavaScript engine.
 
@@ -36,6 +36,8 @@ These links are generated from the canonical [module manifest](modules/index.jso
 | 24 | [AI Agent Framework](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=ai-agent-framework) | `ai-agent-framework` |
 | 25 | [Supervised Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=supervised-learning) | `supervised-learning` |
 | 26 | [Large Vision-Language Model (LVLM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=large-vision-language-model) | `large-vision-language-model` |
+| 27 | [Diffusion Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=diffusion-model) | `diffusion-model` |
+| 28 | [Natural Language Processing (NLP)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=natural-language-processing) | `natural-language-processing` |
 
 ### Latest additions — October 30, 2026
 
