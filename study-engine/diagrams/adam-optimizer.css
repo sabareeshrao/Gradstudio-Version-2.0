@@ -1,0 +1,31 @@
+/* Adam Optimizer · unique technical diagrams; theme-aware, no external assets */
+.adam-hero,.adam-fig{--ai-ink:#25384c;--ai-blue:#4c82c9;--ai-teal:#228d87;--ai-cream:#fffaf4;--ai-soft:#edf7f3;--ai-line:#d7e6e5;color:var(--ai-ink);font-family:inherit}
+.adam-hero{padding:clamp(15px,3vw,28px);margin:0 0 20px;background:linear-gradient(125deg,#e3f4eb 0%,#f1f9fc 62%,#fffaf0 100%);border:1px solid #cddfdc;border-radius:18px;box-shadow:0 10px 28px rgba(37,80,85,.06)}
+.adam-hero h2{color:#28465b;font-size:clamp(1.18rem,2.6vw,1.75rem);line-height:1.28;margin:8px 0}
+.adam-hero>p{margin:6px 0 15px;color:#57717b;line-height:1.6;font-size:.88rem}
+.adam-kicker{display:inline-flex;align-items:center;color:#287a74;text-transform:uppercase;letter-spacing:.095em;font-size:.7rem;font-weight:900;line-height:1.4}
+.adam-art{display:block;width:100%;height:auto;max-height:330px;border-radius:12px}
+.adam-hero .adam-art{max-height:220px}
+.adam-notice{font-size:.77rem!important;margin:11px 0 0!important;color:#58746d!important}
+.adam-fig{border-radius:16px;border:1px solid #d6e4e7;padding:clamp(12px,2.8vw,22px);background:linear-gradient(145deg,#fafdfe,#f1f8f6);margin:0;overflow:hidden}
+.adam-fig h3{font-size:clamp(1rem,2vw,1.27rem);font-weight:850;color:#2b4b5d;line-height:1.4;margin:6px 0 15px}
+.adam-note{font-size:.8rem;line-height:1.55;color:#56707a;background:#fff;border-left:3px solid #64b4a1;border-radius:4px 8px 8px 4px;margin:13px 0 0;padding:10px 12px}
+.adam-points{display:flex;gap:8px;justify-content:space-between;margin:10px 0;flex-wrap:wrap}
+.adam-points span{flex:1;min-width:148px;font-size:.75rem;line-height:1.5;color:#48667a;background:#fff;border:1px solid #dce8ed;border-radius:10px;padding:10px 12px;text-align:center}
+.adam-points strong{color:#176e80}
+.adam-math-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr);gap:13px}
+.adam-math-board,.adam-worked{border-radius:12px;padding:16px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:9px}
+.adam-math-board{background:#1b3247;color:#eef7fb;box-shadow:inset 0 1px 4px rgba(0,0,0,.12)}
+.adam-math-board div{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:0;font-size:clamp(.72rem,1.42vw,.9rem);white-space:normal;overflow-wrap:anywhere}
+.adam-math-board .adam-key-formula{color:#9aefcf;border-top:1px solid #547387;padding-top:9px;font-weight:800;font-size:clamp(.75rem,1.5vw,.94rem)}
+.adam-worked{background:#fff;border:1px solid #d3e2e7;color:#47616f;font-size:.81rem;line-height:1.5}
+.adam-worked strong{font-size:.83rem;color:#33596d}
+.adam-worked b{font-size:.96rem;color:#167969;background:#e7f8f1;padding:9px;border-radius:9px}
+.adam-code-panel{overflow:hidden;border-radius:12px;background:#142e40;color:#eaf7f6;margin-top:14px;border:1px solid #3c6679}
+.adam-code-head{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#26495d;color:#dceeed;padding:9px 12px;font-size:.73rem;font-weight:750}
+.adam-code-head span:last-child{color:#a4dfd6}
+.adam-code-panel pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:clamp(.68rem,1.3vw,.81rem);line-height:1.65;white-space:pre;overflow-x:auto;padding:15px 17px;margin:0;tab-size:4}
+.adam-code-panel code{font-family:inherit;font-size:inherit;color:inherit;background:none;border:none;padding:0;white-space:inherit}
+.adam-fig svg text,.adam-hero svg text{paint-order:stroke;stroke-width:0}
+@media(max-width:680px){.adam-math-layout{grid-template-columns:1fr}.adam-fig{overflow-x:auto}.adam-fig .adam-art{min-width:590px;width:590px;max-width:none}.adam-hero .adam-art{min-width:0;width:100%}.adam-points{display:grid;grid-template-columns:1fr;gap:6px}.adam-points span{min-width:0}.adam-hero{padding:15px}.adam-code-panel pre{font-size:.72rem}}
+@media(max-width:420px){.adam-art{max-height:320px}.adam-code-panel pre{font-size:.66rem}.adam-fig h3{font-size:1rem}}
