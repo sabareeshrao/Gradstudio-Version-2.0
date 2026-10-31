@@ -23,3 +23,6 @@
 .nlp-refs summary{cursor:pointer;font-weight:850}.nlp-refs li{margin:7px 0}.nlp-refs a{color:#1c6689}
 @media(max-width:750px){.nlp-code-grid{grid-template-columns:1fr}.nlp-scene{overflow-x:auto;overscroll-behavior-x:contain}.nlp-scene svg{min-width:680px}.nlp-scene:after{content:"Swipe sideways to see the complete diagram →";display:block;position:sticky;left:0;text-align:center;background:#f5fafb;color:#708b99;font-size:.7rem;padding:5px}}
 @media(prefers-reduced-motion:reduce){.nlp-hero *,.nlp-fig *{transition:none!important;animation:none!important}}
+
+/* Q2 uses six wider cards; preserve readable text instead of shrinking all labels on phones. */
+@media(max-width:750px){.nlp-fig[data-scene="six-distinct-nlp-task-illustrations"] .nlp-scene svg{min-width:860px}}
