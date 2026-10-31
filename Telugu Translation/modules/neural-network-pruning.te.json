@@ -1,0 +1,87 @@
+{
+  "translationOverlay": true,
+  "language": "te",
+  "contentLanguage": "te-en",
+  "diagramLanguage": "en",
+  "title": "Neural Network Pruning — Telugu + English Learning",
+  "subtitle": "Original English diagrams and formulas preserved",
+  "questions": [
+    {
+      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "options": [
+        "Modelలో Weights తగ్గుతాయి.",
+        "Modelలో Features Compare అవుతాయి.",
+        "Modelలో Data Process అవుతుంది.",
+        "Modelలో Signals Update అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+    },
+    {
+      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "options": [
+        "Modelలో Weights తగ్గుతాయి.",
+        "Modelలో Features Compare అవుతాయి.",
+        "Modelలో Data Process అవుతుంది.",
+        "Modelలో Signals Update అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+    },
+    {
+      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "options": [
+        "Modelలో Weights తగ్గుతాయి.",
+        "Modelలో Features Compare అవుతాయి.",
+        "Modelలో Data Process అవుతుంది.",
+        "Modelలో Signals Update అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+    },
+    {
+      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "options": [
+        "Modelలో Weights తగ్గుతాయి.",
+        "Modelలో Features Compare అవుతాయి.",
+        "Modelలో Data Process అవుతుంది.",
+        "Modelలో Signals Update అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+    },
+    {
+      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "options": [
+        "Modelలో Weights తగ్గుతాయి.",
+        "Modelలో Features Compare అవుతాయి.",
+        "Modelలో Data Process అవుతుంది.",
+        "Modelలో Signals Update అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+    },
+    {
+      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "options": [
+        "Modelలో Weights తగ్గుతాయి.",
+        "Modelలో Features Compare అవుతాయి.",
+        "Modelలో Data Process అవుతుంది.",
+        "Modelలో Signals Update అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+    },
+    {
+      "stem": "Neural Network Pruning ఎలా Work చేస్తుంది?",
+      "options": [
+        "Modelలో Weights తగ్గుతాయి.",
+        "Modelలో Features Compare అవుతాయి.",
+        "Modelలో Data Process అవుతుంది.",
+        "Modelలో Signals Update అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Modelని Smaller చేయడం ఈ Concept.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Original Model Explanationని Teluguలో Explain చేస్తాం."
+    }
+  ]
+}
