@@ -219,6 +219,11 @@
       "slug": "next-token-prediction",
       "title": "Next-Token Prediction",
       "domain": "Predicting and Generating Tokens in Large Language Models · Transformers and LLM Architecture"
+    },
+    {
+      "slug": "neural-network-pruning",
+      "title": "Neural Network Pruning",
+      "domain": "Reducing Neural Network Size and Computational Complexity · Efficient and Edge AI"
     }
   ]
 }
