@@ -11,7 +11,7 @@
       "tag": "Beginner · Basics",
       "answer": "c",
       "options": [
-        "Model Weights Change చేయకుండా Training Examples Store చేసే Method.",
+        "Model Weights Change చేయకుండా Training Examples Store చేసే Method, Error Reductionని Measure చేయకుండా.",
         "Every Training Roundకి New Features Add చేసే Fixed Rule.",
         "Model Error Reduce చేయడానికి Parameters Update చేసే Optimization Method.",
         "Easiest Training Examples మాత్రమే Always Select చేసే Method."
@@ -28,7 +28,7 @@
         "Prediction Errors తగ్గించే Parameter Values Find చేయడానికి Help చేస్తుంది.",
         "Every Training Exampleకి Automatically Correct Label Guarantee ఇస్తుంది.",
         "Collected Dataలో All Noise Automatically Delete చేసే Method.",
-        "Trainingలో Loss Function అవసరం లేకుండా Completely Replace చేస్తుంది."
+        "Trainingలో Loss Function అవసరం లేకుండా Completely Replace చేస్తుంది, Gradientsని Never Compute చేసి."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Initial Model Guesses Wrong కావచ్చు. Gradient Descent Better Weights Choose చేయడంలో Help చేసి Prediction Loss తగ్గించడానికి Try చేస్తుంది.",
       "figure": "<div class=\"gd-fig gd-fitting\"><span class=\"gd-kicker\">02 · WHY IT HELPS</span><h3>From a bad prediction to a better one</h3><div class=\"gd-fit-panels\"><div class=\"gd-fit-card\"><strong>Before training</strong><svg viewBox=\"0 0 300 176\" role=\"img\" aria-label=\"Target points lie along a rising trend but model predicts a nearly flat line\"><path d=\"M28 13V155H284\" stroke=\"#a3b5c1\" stroke-width=\"2\" fill=\"none\"/><path d=\"M32 111H282\" stroke=\"#d48b64\" stroke-width=\"4\"/><g fill=\"#488db2\"><circle cx=\"54\" cy=\"142\" r=\"5\"/><circle cx=\"101\" cy=\"119\" r=\"5\"/><circle cx=\"145\" cy=\"94\" r=\"5\"/><circle cx=\"197\" cy=\"69\" r=\"5\"/><circle cx=\"254\" cy=\"34\" r=\"5\"/></g></svg><div class=\"gd-error high\">Large mismatch</div></div><div class=\"gd-fit-middle\">→<small>weight updates</small></div><div class=\"gd-fit-card\"><strong>After training</strong><svg viewBox=\"0 0 300 176\" role=\"img\" aria-label=\"A prediction line follows the observed rising data points\"><path d=\"M28 13V155H284\" stroke=\"#a3b5c1\" stroke-width=\"2\" fill=\"none\"/><path d=\"M33 151L276 23\" stroke=\"#2a9a76\" stroke-width=\"4\"/><g fill=\"#488db2\"><circle cx=\"54\" cy=\"142\" r=\"5\"/><circle cx=\"101\" cy=\"119\" r=\"5\"/><circle cx=\"145\" cy=\"94\" r=\"5\"/><circle cx=\"197\" cy=\"69\" r=\"5\"/><circle cx=\"254\" cy=\"34\" r=\"5\"/></g></svg><div class=\"gd-error low\">Smaller mismatch</div></div></div><p class=\"gd-note\">A model starts with adjustable weights. Gradient Descent gives it a repeatable way to improve them.</p></div>",
@@ -55,7 +55,7 @@
       "options": [
         "Each Parameterకి Fixed Positive Constant Add చేసి Optimize చేస్తుంది.",
         "Learning Rate × Partial Derivativeని Current Parameter నుంచి Subtract చేస్తుంది.",
-        "Derivatives లేకుండా Lossని Directగా All Parametersతో Multiply చేస్తుంది.",
+        "Derivatives లేకుండా Lossని Directగా All Parametersతో Multiply చేస్తుంది, Partial Derivativesని Check చేయకుండా.",
         "Gradient Instead Always Predetermined Fixed Increment Use చేస్తుంది."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Gradient Error Increase Directionని చూపిస్తుంది. Gradient Descent Opposite Directionలో Learning Rateతో Step Size Control చేస్తుంది.",
@@ -69,7 +69,7 @@
       "options": [
         "Loss, Gradient Calculate చేసి Weight Update Repeat చేసి Convergence Check చేస్తాం.",
         "Loss Calculate చేసి Weights Shuffle చేసి Gradients Delete చేస్తాం.",
-        "Labels Calculate చేసి Weights Freeze చేసి Inputs Update చేస్తాం.",
+        "Labels Calculate చేసి Weights Freeze చేసి Inputs Update చేస్తాం, Parameter Updatesని కూడా Skip చేసి.",
         "Loss Ignore చేసి Original Weights Copy చేస్తూ Loop Repeat చేస్తాం."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Pythonలో Loss, Derivative Calculate చేసి Weight Update Repeat చేస్తాం. Loss Values Plot చేస్తే Decrease అవుతుందో Check చేయవచ్చు.",
@@ -84,7 +84,7 @@
         "Batch Single Example, SGD Full Dataset Use చేస్తుంది; Adam Same Update అన్ని Weightsకి ఇస్తుంది.",
         "Mini-Batch Only Once per Epoch Update; RMSProp Gradient Magnitudesని Ignore చేస్తుంది.",
         "Batch All Data, SGD One Sample, Mini-Batch Group; Momentum, RMSProp, Adam Different History Use చేస్తాయి.",
-        "All Methods Same Gradient, Batch Size Use చేస్తాయి; Names Different Layersని మాత్రమే Indicate చేస్తాయి."
+        "All Methods Same Gradient, Batch Size Use చేస్తాయి; Names Different Layersని మాత్రమే Indicate చేస్తాయి, Optimizer Historyని Record చేయకుండా."
       ],
       "explanation": "<strong>Simple Explanation:</strong> Batch Full Dataset, SGD One Example, Mini-Batch Small Group Use చేస్తాయి. Momentum, RMSProp, Adam Updatesని Smarterగా Adjust చేస్తాయి.",
       "figure": "<div class=\"gd-fig gd-optimizer-v2\"><span class=\"gd-kicker\">06 · TWO DIFFERENT OPTIMIZER DECISIONS</span><h3>Data used per update is separate from the update rule</h3><div class=\"gd-grid-two\"><div class=\"gd-method-box\"><strong>Batch gradient descent · all examples</strong><div class=\"gd-dot-seq\"><span class=\"active\"></span><span class=\"active\"></span><span class=\"active\"></span><span class=\"active\"></span><span class=\"active\"></span><span class=\"active\"></span><span class=\"active\"></span><span class=\"active\"></span></div><p>One update from the whole dataset. Accurate average; costly for large data.</p></div><div class=\"gd-method-box\"><strong>Stochastic gradient descent · one example</strong><div class=\"gd-dot-seq\"><span class=\"active\"></span><span class=\"\"></span><span class=\"\"></span><span class=\"\"></span><span class=\"\"></span><span class=\"\"></span><span class=\"\"></span><span class=\"\"></span></div><p>One noisy update per example; can bounce around the loss landscape.</p></div><div class=\"gd-method-box\"><strong>Mini-batch gradient descent · a small group</strong><div class=\"gd-dot-seq\"><span class=\"active\"></span><span class=\"active\"></span><span class=\"active\"></span><span class=\"\"></span><span class=\"\"></span><span class=\"\"></span><span class=\"\"></span><span class=\"\"></span></div><p>Uses a group each step; good balance of throughput and gradient noise.</p></div><div class=\"gd-method-box\"><strong>Different optimizer rules on the gradient</strong><svg viewBox=\"0 0 450 150\" role=\"img\" aria-label=\"Four arrows illustrating plain updates, momentum, RMSProp, and Adam update strategies\"><rect x=\"5\" y=\"8\" width=\"440\" height=\"135\" rx=\"10\" fill=\"#f6fbfc\"/><g font-size=\"14\" font-weight=\"800\" fill=\"#456a7d\"><text x=\"22\" y=\"35\">SGD</text><text x=\"22\" y=\"66\">Momentum</text><text x=\"22\" y=\"97\">RMSProp</text><text x=\"22\" y=\"128\">Adam</text></g><g stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"><path d=\"M152 31 L246 31\" stroke=\"#5794c3\"/><path d=\"M152 62 L312 62\" stroke=\"#369c84\"/><path d=\"M152 93 L272 93\" stroke=\"#c39354\"/><path d=\"M152 124 L292 124\" stroke=\"#886bb3\"/></g><g font-size=\"12\" fill=\"#597588\"><text x=\"254\" y=\"35\">current gradient</text><text x=\"320\" y=\"66\">past direction</text><text x=\"280\" y=\"97\">squared scale</text><text x=\"298\" y=\"128\">both moments</text></g></svg><span class=\"gd-chip\">RMSProp: squared gradients</span> <span class=\"gd-chip\">Adam: first + second moments</span></div></div><p class=\"gd-explain-line\">Momentum, RMSProp and Adam can be used with mini-batches; they are not alternative batch-size definitions. In practice “SGD” often means mini-batch SGD.</p></div>",
@@ -96,7 +96,7 @@
       "answer": "d",
       "options": [
         "Backprop Direct Weight Update చేస్తుంది; Clipping Every Instabilityని Fully Eliminate చేస్తుంది.",
-        "Learning Rate Schedule More Data Create చేస్తుంది; Distributed Training Single Device Only Use చేస్తుంది.",
+        "Learning Rate Schedule More Data Create చేస్తుంది; Distributed Training Single Device Only Use చేస్తుంది, Coordinated Gradient Updatesకి Support లేకుండా.",
         "Clipping Vanishing Gradients Completely Fix చేస్తుంది; More Workers Perfect Generalization Guarantee చేస్తాయి.",
         "Backprop Gradients Compute; Scheduling, Clipping Steps Manage; Distributed Training Workers Coordinate చేస్తుంది."
       ],
