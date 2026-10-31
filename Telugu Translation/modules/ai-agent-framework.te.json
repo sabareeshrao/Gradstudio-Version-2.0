@@ -12,7 +12,7 @@
       "tag": "Beginner · Basics",
       "options": [
         "Agent Framework Every Time Custom LLMని Scratch నుంచి Train చేయాల్సిందే.",
-        "Models, Tools, Workflows Connect చేసి Actions Coordinate చేసే Reusable Toolkit.",
+        "Models, Tools, Workflows Connect చేసే Agent Toolkit.",
         "Agent Framework Only Writing Interface; External Softwareతో Interact చేయలేదు.",
         "Tool Errors Monitor చేసే Dashboard మాత్రమే; Decisions Coordinate చేయదు."
       ],
@@ -41,7 +41,7 @@
       "options": [
         "Framework All Available Tools First Execute చేసి, Later Correct Results Select చేస్తుంది.",
         "Model Final Answer Guess చేస్తుంది; Tool Resultsని Feedbackగా Use చేయదు.",
-        "Agent Task Understand చేసి Tool Choose, Results Check చేసి Repeat లేదా Finish చేస్తుంది.",
+        "Agent Task Interpret చేసి Tool Choose, Result Check, Finish చేస్తుంది.",
         "Framework Every Toolకి Request Send చేసి Fastest Resultని Final Answerగా Accept చేస్తుంది."
       ],
       "answer": "c",
@@ -68,7 +68,7 @@
       "tag": "Medium · Python",
       "options": [
         "API Key, Prompt ఉంటే Agent Unlimited Toolsని Safeగా Execute చేయగలదు.",
-        "Tool Define, Agentకి Connect చేసి Bounded Calls, Failure Checks, Tests Perform చేస్తాం.",
+        "Tool Define చేసి Agent Connect, Bounded Calls, Failures Test చేస్తాం.",
         "Agent Framework Tools Support చేయదు కాబట్టి Custom Model First Train చేయాలి.",
         "User Inputని Every Toolకి Send చేసి Results Verification లేకుండా Trust చేస్తాం."
       ],
@@ -84,7 +84,7 @@
         "Decentralized Agentsకి Always One Supervisor Directly All Specialist Calls Approve చేయాలి.",
         "Shared State ఉంటే Delegation అవసరం లేదు; All Agents Every Task చేయాలి.",
         "Parallel Agents ఉంటే Conflicts, Approvals, Coordination Problems Completely Disappear అవుతాయి.",
-        "Supervisor Tasks Delegate చేస్తుంది; Decentralized Peers Coordination, Conflict Handling Need అవుతాయి."
+        "Supervisor Tasks Delegate చేస్తుంది; Peersకి Coordination, Conflict Handling అవసరం."
       ],
       "answer": "d",
       "explanation": "<strong>Simple Explanation:</strong> Some Agents Supervisorతో Work Divide చేస్తాయి; Others Direct Collaborate అవుతాయి. Sensitive Actionsకి Clear Routing, Approval అవసరం.",
@@ -95,7 +95,7 @@
       "stem": "Production AI Agentsలో Checkpointing, Durable Execution, Retries, Idempotency, Permissions, Prompt-Injection Defense, Observability, Evaluation, Cost, Latency, Partial Failure Recovery ఎలా Design చేస్తాం?",
       "tag": "Advanced · Production",
       "options": [
-        "Checkpoints, Safe Retries, Permission Limits, Traces, Evaluationsతో Reliable Recovery Design చేస్తాం.",
+        "Checkpoints, Permissions, Safe Retriesతో Reliable Recovery Manage చేస్తాం.",
         "Retries Alone Safe; Repeated Paymentsకి Idempotency, Approval Checks అవసరం లేదు.",
         "Successful API Call ఉంటే Task Outcome Always Correct; Evaluation Skip చేయవచ్చు.",
         "Every Toolకి Full Access ఇస్తే Prompt Injection, Human Approval Problems పోతాయి."
