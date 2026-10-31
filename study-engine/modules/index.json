@@ -124,6 +124,11 @@
       "slug": "supervised-learning",
       "title": "Supervised Learning",
       "domain": "Learning from Labeled Data and Predictive Modeling · Supervised Machine Learning"
+    },
+    {
+      "slug": "large-vision-language-model",
+      "title": "Large Vision-Language Model (LVLM)",
+      "domain": "Visual Understanding, Language Reasoning, and Multimodal Intelligence · Multimodal AI"
     }
   ]
 }
