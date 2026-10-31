@@ -27,7 +27,7 @@
         "Backpropagation gives every weight the same adjustment because all layers are responsible for the final prediction. Different connections usually influence the loss by different amounts.",
         "Backpropagation checks only the last layer and leaves hidden-layer parameters unchanged throughout training. Earlier weights also affect outputs indirectly and need useful gradients.",
         "Backpropagation replaces an entire hidden layer when one training example is predicted incorrectly. Normal training instead adjusts existing parameters based on how they affect loss.",
-        "Backpropagation uses the chain rule to trace loss sensitivity through hidden layers, calculating a gradient for each weight and bias instead of treating all parameters equally."
+        "Backpropagation uses the chain rule to trace loss sensitivity through hidden layers, calculating gradients for each weight and bias instead of treating all parameters equally."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Imagine a network predicting the quality of filtered water from readings at several processing stages. A weight in an early hidden layer may change a later signal, which changes the final quality score. Backpropagation follows these connections backward using the <strong>chain rule</strong>. It calculates how sensitive the loss is to each weight or bias, including parameters far from the output. This is more useful than giving every connection the same correction. A gradient measures sensitivity, not literal personal blame for a mistake.",
