@@ -60,7 +60,7 @@
         "Embeddings Reshape చేసి Query Weightsని Permanently Zeroగా Freeze చేస్తాం."
       ],
       "explanation": "<strong>Simple Explanation:</strong> PyTorch Linear Queries Create చేస్తుంది; Reshape, Transpose Different Headsగా Organize చేస్తాయి.",
-      "technicalExplanation": "For B=2,T=6,d_model=8,H=2,d_head=4: Projection [2,6,8] → Reshape [2,6,2,4] → Transpose [2,2,6,4]."
+      "technicalExplanation": "<strong>Correct Answer: A.</strong> PyTorchలో Learned Query Projection తర్వాత Tensorని Multiple Headsగా Arrange చేస్తాం. For B=2,T=6,d_model=8,H=2,d_head=4: Projection [2,6,8] → Reshape [2,6,2,4] → Transpose [2,2,6,4]. Reshape Valuesని మార్చదు."
     },
     {
       "stem": "Query Projection, RoPE, Key Projection, Scaling, Softmax కలిసి Attention ఎలా Calculate చేస్తాయి?",
