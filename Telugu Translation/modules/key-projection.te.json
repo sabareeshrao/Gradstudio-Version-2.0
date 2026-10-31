@@ -1,0 +1,88 @@
+{
+  "translationOverlay": true,
+  "language": "te",
+  "contentLanguage": "te-en",
+  "diagramLanguage": "en",
+  "title": "Key Projection — Telugu + English Learning",
+  "subtitle": "Original English diagrams, formulas and code · Modern Telugu-English",
+  "footer": "Key Projection · 7 Questions · 28 Options",
+  "questions": [
+    {
+      "stem": "Key Projection Transformerలో ఏంటి? Queryతో Match అయ్యే Key Vectors ఎలా Create అవుతాయి?",
+      "options": [
+        "Keys Fixed Labels మాత్రమే; Learned Projection అవసరం ఉండదు.",
+        "Learned Key Features Queriesతో Match అయ్యి Relevance Scores ఇస్తాయి.",
+        "Key Projection Final Word Predict చేస్తుంది; Matching అవసరం లేదు.",
+        "Keys Attention Finish తర్వాత Generated Words నుంచి Copy అవుతాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+    },
+    {
+      "stem": "Query, Key Different Roles ఎందుకు? Available Informationతో Matching ఎలా Work చేస్తుంది?",
+      "options": [
+        "Queries Original Values Store; Keys Final Sentences Choose చేస్తాయి.",
+        "Queries, Keys Same Matrices Use చేస్తాయి; Names మాత్రమే Different.",
+        "Keys Search Ask చేస్తాయి; Queries Available Content Describe చేస్తాయి.",
+        "Query Information Seeks; Key Available Matching Features Describe చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+    },
+    {
+      "stem": "“it” Pronoun, Earlier “animal” Token మధ్య Query–Key Match ఎలా Help చేస్తుంది?",
+      "options": [
+        "“it” Query, “animal” Key Matchతో Earlier Noun Context Use అవుతుంది.",
+        "“it” Key “animal” Word Replace చేసి Attention Skip చేస్తుంది.",
+        "“animal” Valueగా Change అయ్యేవరకు Key Matching Impossible.",
+        "Every Pronoun Highest Score Receives చేస్తుంది; Context Matter కాదు."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+    },
+    {
+      "stem": "K=XW_K, QKᵀ/√d_k Formulasలో Key Projection, Scores ఎలా Compute చేస్తాం?",
+      "options": [
+        "Key Weights Softmax తర్వాత Apply; Learned Keys Never Create అవుతాయి.",
+        "All Token Keys One Average Vectorగా Store అవుతాయి.",
+        "K=XW_K Learned Map; Scaled QKᵀ Matching Scores Calculate చేస్తుంది.",
+        "Key Projection Sequence Lengthతో Divide చేస్తుంది; Query Weights Ignore చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+    },
+    {
+      "stem": "PyTorchలో Key Projection, Heads Reshape, Q×Kᵀ Scores ఎలా Implement చేస్తాం?",
+      "options": [
+        "Every Tokenకి Same Constant Key Tensor Always Use చేస్తాం.",
+        "nn.Linear Keys Create; Heads Reshape చేసి Q×Kᵀ Scores Compute చేస్తాం.",
+        "Raw Token IDs Keysగా Use చేసి Queriesకి Direct Add చేస్తాం.",
+        "Input Softmaxతో Keys Create చేసి Projection Weights Freeze చేస్తాం."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+    },
+    {
+      "stem": "RoPEలో Query, Key Rotation Relative Positionsని Attentionలో ఎలా Represent చేస్తుంది?",
+      "options": [
+        "Compatible Q/K Rotations Relative Distanceని Attention Scoresలో Reflect చేస్తాయి.",
+        "Only Keys Rotate చేస్తే Scores Content Entirely Ignore చేస్తాయి.",
+        "Softmax తర్వాత Values Rotate చేస్తే Queries Automatically Position Aware.",
+        "Key Lengthకి Position Add చేస్తే Token Order Completely Remove అవుతుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+    },
+    {
+      "stem": "LLM Generationలో KV Cache, MQA, GQA Memory, Speedని ఎలా Affect చేస్తాయి?",
+      "options": [
+        "KV Cache Final Logits Store చేస్తుంది; MQA Vocabulary Reduce చేస్తుంది.",
+        "KV Cache All Attention Computation Remove చేసి Values Ignore చేస్తుంది.",
+        "MQA Separate KV per Query; GQA All Heads Independent Keep చేస్తుంది.",
+        "Past K/V Cache Reuse; MQA/GQA Shared Headsతో Memory Save చేస్తాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Token Key Matching Features Provide చేస్తుంది.",
+      "technicalExplanation": "<strong>Correct Answer:</strong> Query–Key Compatibility Determines Attention Scores; Values Carry Content."
+    }
+  ]
+}
