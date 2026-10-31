@@ -10,7 +10,7 @@
       "stem": "Neural Network Pruning అంటే ఏమిటి? Unnecessary Weights, Neurons Remove చేసి Model ఎలా Efficient అవుతుంది?",
       "options": [
         "Pruning Every Epoch Extra Neurons Add చేసి Model Size Increase చేస్తుంది.",
-        "Pruning Less Useful Weights, Connections Remove చేసి Work Reduce చేస్తుంది.",
+        "Pruning Less Useful Weights Remove చేసి Work Reduce చేస్తుంది.",
         "Pruning Every Weight Equalగా Increase చేసి All Connections Keep చేస్తుంది.",
         "Pruning Structure బదులు Training Labels Only Delete చేస్తుంది."
       ],
