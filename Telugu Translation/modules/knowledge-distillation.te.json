@@ -7,26 +7,26 @@
   "subtitle": "Original English diagrams, formulas, labels and code unchanged.",
   "questions": [
     {
-      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "stem": "Knowledge Distillation అంటే ఏమిటి? Large Teacher నుంచి Small Student Model ఎలా Learn చేస్తుంది?",
       "options": [
-        "Teacher Model నుంచి Student Learn చేస్తుంది.",
-        "Modelలో Weights Trainingతో Update చేస్తాయి.",
-        "Input Dataని Teacher Process చేస్తుంది.",
-        "Model Parameters Differentగా Represent అవుతాయి."
+        "Teacher Full Network, Weights Studentకి Exactly Copy చేస్తాం.",
+        "Small Student Teacher Predictions నుంచి Useful Behavior Learn చేస్తుంది.",
+        "Teacher Only Student Examplesతో Retrain చేసి Student Weights Ignore చేస్తుంది.",
+        "Teacher Extra Labels Gather చేసి Student Independentగా Trains చేస్తుంది."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+      "explanation": "<strong>Simple Explanation:</strong> Big Teacher Predictionsని Small Student Learn చేస్తుంది. All Weights Copy చేయదు.",
+      "technicalExplanation": "<strong>Correct Answer: B.</strong> Teacher Usually Fixed; Student Soft Predictions, Hidden Features నుంచి Own Weights Train చేస్తుంది."
     },
     {
-      "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
+      "stem": "Edge Devicesకి Knowledge Distillation ఎందుకు Useful? Small Student Memory, Compute ఎలా Save చేస్తుంది?",
       "options": [
-        "Teacher Model నుంచి Student Learn చేస్తుంది.",
-        "Modelలో Weights Trainingతో Update చేస్తాయి.",
-        "Input Dataని Teacher Process చేస్తుంది.",
-        "Model Parameters Differentగా Represent అవుతాయి."
+        "Large Teacher Remote Storageలో ఉంటే Phone Offline Fully Runs అంటుంది.",
+        "Every Layer Wider చేసి Less Training Data Use చేస్తాం.",
+        "Difficult Classes Remove చేసి Architecture Unchangedగా Keep చేస్తాం.",
+        "Useful Teacher Skills Smaller Studentకి Transfer చేసి Resources Save చేస్తాం."
       ],
-      "explanation": "<strong>Simple Explanation:</strong> Teacher నుంచి Student Learn చేయడం ఈ Concept.",
-      "technicalExplanation": "<strong>Correct Answer:</strong> Teacher Signals Student Trainingకి Help చేస్తాయి."
+      "explanation": "<strong>Simple Explanation:</strong> Small Student Less RAM, Compute Use చేయవచ్చు. Useful Accuracy Preserve చేయాలి.",
+      "technicalExplanation": "<strong>Correct Answer: D.</strong> Compact Model Storage, Memory, Latency Reduce చేయవచ్చు. Actual Quality, Hardware Speedపై Test చేయాలి."
     },
     {
       "stem": "Knowledge Distillation ఎలా Work చేస్తుంది?",
