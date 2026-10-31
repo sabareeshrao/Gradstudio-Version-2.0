@@ -11,7 +11,7 @@
       "tag": "Beginner · trimming unused parts",
       "stem": "What is Neural Network Pruning in Artificial Intelligence, and how does removing unnecessary weights, neurons, or connections make a neural network smaller and more efficient?",
       "options": [
-        "Pruning adds extra neurons to a network after every training epoch, increasing model size to guarantee that all future predictions become more accurate.",
+        "Pruning adds neurons after training epochs, increasing the model's size to guarantee that future predictions become more accurate.",
         "Pruning removes selected low-value weights, connections, or units to reduce model cost while trying to preserve useful prediction performance.",
         "Pruning raises every trained weight by the same fixed amount, so the model can avoid deciding which connections contribute less.",
         "Pruning deletes the labels from training examples rather than changing neural-network parameters or structure, which does not reduce inference computations."
@@ -28,7 +28,7 @@
         "Every extra neural-network weight improves accuracy, so removing any parameter always damages quality but guarantees faster inference across all devices.",
         "Pruning automatically reduces memory and latency for every model without requiring changes to layer structure, numerical kernels, or deployment hardware.",
         "Overparameterized models must keep every connection because training cannot produce redundant representations, so removing weights is never safe after training.",
-        "Some connections are redundant; removing them can reduce memory and computation when the model structure and available hardware support the change."
+        "Some connections are redundant; pruning reduces useful work when the model's structure and deployment hardware support these changes."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Picture a drone using an onboard model to avoid obstacles. A large model may contain overlapping features or weights whose removal barely changes the predictions. Pruning can reduce the work required, but hardware matters. Setting weights to zero does not necessarily speed up an unchanged <strong>dense computation</strong>. Structured changes, such as removing entire channels, can be easier for some devices to accelerate. Engineers therefore compare memory, actual latency, energy use, and prediction quality—not just the number of zero weights.",
@@ -67,10 +67,10 @@
       "tag": "Medium · PyTorch implementation",
       "stem": "How can Neural Network Pruning be implemented using PyTorch, including measuring weight importance, applying pruning masks, calculating sparsity, fine-tuning the pruned network, and comparing model accuracy, parameter count, and inference latency before and after pruning?",
       "options": [
-        "Apply a pruning mask and assume the physical model now has fewer stored parameters without rebuilding layers or verifying actual inference improvements.",
-        "Use PyTorch masks to prune low-importance weights, measure sparsity and accuracy, fine-tune, and benchmark real inference before claiming efficiency gains.",
-        "Delete examples with small numerical features from the training dataset, then calculate network sparsity using the number of batches that remain.",
-        "Convert all weights into category labels and skip validation, evaluating only training loss instead of model size, output quality, or deployment latency."
+        "Apply a mask and assume the model has fewer stored parameters without rebuilding layers or verifying actual inference speed.",
+        "Use PyTorch masks to prune low-value weights, measure sparsity and accuracy, fine-tune, and benchmark inference before claiming efficiency improvements.",
+        "Delete examples with low-valued numerical features from the original training dataset, then calculate network sparsity using the number of batches remaining.",
+        "Convert all weights into labels and skip validation, evaluating only training loss instead of model size, output quality, or deployment latency."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> Suppose you are pruning a PyTorch classifier that identifies damaged fruit. First measure its baseline accuracy, parameter use, and inference time. Apply a <strong>pruning mask</strong> to selected low-importance weights, then calculate the percentage of weights set to zero. Fine-tune the model and evaluate it again on held-out pictures. Finally, benchmark on the intended device. A masked tensor may still occupy the original storage and execute dense operations, so <strong>sparsity percentage is not the same as speedup</strong>.",
@@ -81,7 +81,7 @@
       "tag": "Advanced · iterative and learned pruning",
       "stem": "How do advanced pruning strategies such as Iterative Pruning, Global Pruning, Movement Pruning, and Lottery Ticket Hypothesis approaches balance sparsity and model performance, and how can pruning schedules and recovery training affect the final network?",
       "options": [
-        "Iterative pruning removes weights in stages; global pruning compares parameters across layers; movement tracks training changes, while lottery-ticket approaches explore effective subnetworks.",
+        "Iterative pruning removes weights in stages; global pruning compares layers; movement tracks changes; lottery ticket methods explore useful subnetworks.",
         "Global pruning always removes the same percentage from each layer, while iterative pruning forbids fine-tuning or recovery training between pruning stages.",
         "Movement pruning considers only fixed initial weight magnitudes, while lottery tickets remove the need to choose any useful initialization for training.",
         "Lottery ticket methods guarantee perfect model accuracy at any sparsity level, even when most useful connections have been removed permanently."
@@ -95,10 +95,10 @@
       "tag": "Advanced · edge-device performance",
       "stem": "What challenges arise when deploying pruned neural networks on edge devices such as smartphones, IoT sensors, and embedded AI accelerators, and how do hardware-aware pruning, sparse computation support, memory bandwidth, pruning granularity, and integration with quantization influence real-world latency, energy efficiency, and accuracy?",
       "options": [
-        "Any weight set to zero automatically reduces latency and energy on every smartphone or accelerator, even when the device uses unchanged dense calculation kernels.",
+        "Every zero weight automatically reduces runtime and energy on all devices, even when hardware still uses the same dense kernels.",
         "Quantization always improves accuracy, and sparse storage makes it unnecessary to test performance on the actual device used to deploy the model.",
         "Memory bandwidth stops mattering after pruning because reducing nonzero weights guarantees smaller data transfers and identical results on every hardware platform.",
-        "Hardware-aware sparsity and quantization can reduce resource use, but developers must measure device latency, energy, memory, and accuracy after deployment changes."
+        "Hardware-aware sparsity and quantization can reduce resources, but teams must measure device latency, energy, memory, and accuracy after deployment changes."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Imagine deploying an AI camera on a battery-powered wildlife tracker. A sparse model might use fewer mathematical operations, but its real speed depends on which patterns the device's accelerator supports. <strong>Hardware-aware pruning</strong> chooses compatible structures. <strong>Quantization</strong> can also reduce storage and numeric precision. Teams measure memory movement, energy use, latency, and model accuracy on the actual tracker. A weight count or simulated benchmark alone cannot prove that the battery will last longer or the detector will remain reliable.",
