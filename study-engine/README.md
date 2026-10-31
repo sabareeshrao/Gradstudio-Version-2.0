@@ -4,7 +4,7 @@ This folder is an **additive**, browser-hosted study-module system. Older indepe
 
 **Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
 
-## Hosted lesson directory (53 modules)
+## Hosted lesson directory (54 modules)
 
 - [K-Means Clustering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) — seven visual lessons on cluster discovery, centroids, WCSS, elbow and silhouette methods, clustering limitations, and production scaling.
 
@@ -63,6 +63,9 @@ All listed keywords run in the [shared study engine](https://sabareeshrao.github
 | 49 | [Recurrent Neural Network (RNN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) | `recurrent-neural-network` |
 | 50 | [Random Forest](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest) | `random-forest` |
 | 51 | [Convolutional Neural Network (CNN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network) | `convolutional-neural-network` |
+| 52 | [Logistic Regression](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression) | `logistic-regression` |
+| 53 | [K-Means Clustering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) | `k-means-clustering` |
+| 54 | [Decision Tree Classifier](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=decision-tree-classifier) | `decision-tree-classifier` |
 
 ### Latest additions
 
