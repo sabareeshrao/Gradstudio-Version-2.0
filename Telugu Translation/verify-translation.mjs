@@ -70,5 +70,33 @@ function validate(slug,entry,filename){
 translations.forEach(row=>validate(...row));
 const index=readFileSync(resolve(folder,"index.html"),"utf8");
 for(const [slug,entry] of translations)if(!index.includes('./'+entry))errors.push(slug+": missing from index.html link table");
+// Guardrail: all URL rows must stay inside one uninterrupted Markdown table.
+const linksFile=readFileSync(resolve(folder,"ALL_TELUGU_HTML_LINKS.md"),"utf8");
+const tableBegin=linksFile.indexOf("| No. |");
+const tableEnd=linksFile.indexOf("## Copy-ready HTML links");
+if(tableBegin<0||tableEnd<=tableBegin){
+ errors.push("master links: Markdown table or copy-ready section missing");
+}else{
+ const lines=linksFile.slice(tableBegin,tableEnd).trim().split(/\r?\n/);
+ if(lines.length!==translations.length+2)errors.push("master links: table must have exactly "+translations.length+" contiguous data rows");
+ if(lines[1]!=="|---:|---|---|---|")errors.push("master links: invalid Markdown table separator");
+ for(let i=0;i<translations.length;i++){
+  const entry=translations[i][1],row=lines[i+2]||"";
+  const webUrl="https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/"+entry;
+  if(!row.startsWith("| "+String(i+1).padStart(2,"0")+" |"))errors.push("master links: row "+(i+1)+" missing or separated from table");
+  if(!row.includes("]("+webUrl+")"))errors.push("master links: row "+(i+1)+" missing full HTML URL");
+  if(row.split("|").length!==6)errors.push("master links: row "+(i+1)+" has broken table columns");
+ }
+ const list=linksFile.match(new RegExp("\\x60{3}text\\r?\\n([\\s\\S]*?)\\r?\\n\\x60{3}"));
+ if(!list){errors.push("master links: copy-ready URL block missing")}
+ else{
+  const urls=list[1].split(/\r?\n/);
+  if(urls.length!==translations.length)errors.push("master links: copy-ready URL count mismatch");
+  translations.forEach(([,entry],i)=>{
+   if(urls[i]!=="https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/"+entry)
+    errors.push("master links: copy-ready URL "+(i+1)+" does not match table");
+  });
+ }
+}
 if(errors.length){errors.forEach(e=>console.error("FAIL:",e));process.exit(1)}
 console.log("PASS: 26 bilingual lessons, 182 questions, 728 options, 182 original English diagrams, answer keys, translations, and index links.");
