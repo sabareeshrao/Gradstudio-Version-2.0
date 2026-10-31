@@ -38,7 +38,7 @@
       "stem": "How does RoPE work step by step, starting with token embeddings, generating Query and Key vectors, dividing their dimensions into pairs, rotating each pair according to its token position, and calculating Attention scores using the rotated vectors?",
       "tag": "Beginner · steps of attention",
       "options": [
-        "Create Query and Key vectors, group rotary dimensions into pairs, rotate each pair by its token position, then calculate attention scores from the results.",
+        "Create Query and Key vectors, group rotary dimensions into pairs, rotate each pair by token position, then calculate the attention scores afterward.",
         "Rotate only Value vectors before attention, concatenate all tokens, and skip Query-Key products. Ordinary RoPE applies the relevant rotations to Queries and Keys.",
         "Calculate Softmax probabilities first and insert position IDs afterward, before creating Query and Key vectors. That places the rotation in the wrong stage.",
         "Split every word into individual letters and rotate the letters' vocabulary IDs directly. RoPE works with numerical vector components, not written characters."
@@ -54,7 +54,7 @@
       "options": [
         "RoPE replaces sine and cosine calculations with one learned scalar that multiplies all attention probabilities. This does not create position-specific two-dimensional rotations.",
         "The absolute angle of one token determines every attention score, no matter where the other token occurs. Relative position depends on both token locations.",
-        "Rotating Query and Key pairs with sine and cosine makes their dot products depend on the difference between token positions rather than only their absolute indices.",
+        "Sine–cosine rotations of Query and Key pairs make their dot products depend on the relative distance between the token positions.",
         "All coordinate pairs rotate by one fixed angle at every position, so tokens at different distances produce the same relative-position information."
       ],
       "answer": "c",
@@ -94,7 +94,7 @@
       "stem": "Why can standard RoPE struggle when LLMs process contexts longer than their training window, and how do advanced techniques such as Position Interpolation, NTK-aware Scaling, YaRN, and LongRoPE extend context length while balancing positional accuracy, numerical stability, and computational efficiency?",
       "tag": "Advanced · long context scaling",
       "options": [
-        "Standard RoPE may behave poorly at unseen long positions; interpolation and scaling techniques modify positional phases, but reliable context extension still requires testing.",
+        "RoPE can struggle at unseen long positions; interpolation and scaling adjust positional phases, but reliable long-context extension still needs testing.",
         "Standard RoPE guarantees unchanged accuracy at any sequence length because repeated rotations can never confuse a model trained on shorter texts.",
         "Position interpolation makes all token indices larger, while YaRN removes position-based attention entirely. These methods instead modify how positional information is scaled.",
         "LongRoPE disables Query-Key rotations and replaces them with larger vocabulary embeddings. Context-extension methods generally adjust positional handling, not vocabulary identity."
