@@ -13,7 +13,7 @@
       "options": [
         "GAN Saved Pictures Copy చేసి New Examplesగా Label చేస్తుందంటుంది. Copying, Learned Generation Different.",
         "GAN Known Image Categories Classify మాత్రమే, New Examples Generate చేయదంటుంది. Generator Role Missing.",
-        "GAN Generator Synthetic Samples, Discriminator Real/Fake Distinguish; Competition Generator Output Improve చేస్తుంది.",
+        "GAN Generator Synthetic Samples Create, Discriminator Real/Fake Detect; Competition Generator Improve చేస్తుంది.",
         "GAN Fixed Image Filter మాత్రమే Apply చేస్తుందంటుంది. Trainable Patterns Learn చేయదు."
       ],
       "answer": "c",
@@ -26,7 +26,7 @@
       "stem": "GANలో Generator, Discriminator అనే Two Neural Networks ఎందుకు ఉంటాయి? Counterfeiter vs Detective Exampleతో Competition ఎలా Work చేస్తుంది?",
       "tag": "Beginner · Why",
       "options": [
-        "Generator Candidate Images; Discriminator Real/Fake Judge, Feedback; Both Alternate Train అవుతాయి, File Lookup కాదు.",
+        "Generator Images Create, Discriminator Real/Fake Feedback; Both Train, Stored Lookup కాదు.",
         "Generator Fake Detect, Discriminator Noise నుంచి Pictures Create అంటుంది. Roles Reversed.",
         "Both Independently Images Create చేసి Realism Judge చేయవని అంటుంది. GAN Discriminator Necessary.",
         "One Model Images Memorize, Another Nearest File Return చేస్తుందంటుంది. Retrieval, Adversarial Learning Different."
@@ -44,7 +44,7 @@
         "First Round తర్వాత Real Images Discard, Discriminator Feedback Skip చేస్తుందంటుంది. Learning Signal Missing.",
         "Discriminator Random Noise Create, Generator Real/Fake Judge అంటుంది. Actual Data Flow Reverse.",
         "One Fixed Fake Forever Use చేసి Discriminator మాత్రమే Train చేస్తుందంటుంది. Both Networks Update అవుతాయి.",
-        "Random Latent నుంచి Generator Sample, Discriminator Real/Fake Compare, D Update, Then G Fool చేయడానికి Update చేస్తాం."
+        "Random Latent → Generator Sample → Discriminator Real/Fake Compare → D Update → G Update."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Random Latent Vectorతో Start చేసి Generator Sample Create, Discriminator Real/Fake Samples Compare చేసి Its Classifier Update; Then Generator Discriminatorని Fool చేయడానికి Train. Decorative Floor Tiles Generate చేసే Artist AI Toolని Imagine చేయండి. <strong>Generator</strong> Random Noise నుంచి Pattern Create చేస్తుంది. <strong>Discriminator</strong> Real, Fake Tiles Compare చేసి Separate చేయడం Learn చేస్తుంది. First Discriminator Update, తర్వాత Feedback Use చేసి Generator Update. Many Rounds Repeat చేస్తే Designs Improve కావచ్చు.",
@@ -57,7 +57,7 @@
       "tag": "Medium · Technical",
       "options": [
         "GAN Loss Picture Brightness Only Measure అంటుంది. Discriminator Realism Signal Missing.",
-        "Classical GAN Alternate D Real/Fake BCE, G Sample Improvements; Minimax Competition Unbalanced అయితే Unstable.",
+        "GAN D Real/Fake BCE, G Improvements Alternate; Minimax Imbalance Training Unstable కావచ్చు.",
         "Both Networks Same Classification Goalతో Together Train, Alternate కాదు అంటుంది. Adversarial Objectives Different.",
         "One Network Permanently Freeze చేసి Other Alone Improve అంటుంది. Normal GAN Updates Alternate."
       ],
@@ -73,7 +73,7 @@
       "options": [
         "One Encoder Class Labels Only, Discriminator Remove అంటుంది. Two-Network Adversarial Process Missing.",
         "MNIST Digits Copy చేసి Newly Generated అంటుంది. Learning, Generator Training Demonstrate కాదు.",
-        "PyTorch Generator Noise→Image, Discriminator Image Score; MNISTపై Alternate Optimization, Sample Digits/Losses Inspect చేస్తాం.",
+        "PyTorch GAN Generator Noise→Image, Discriminator Scores; MNIST Alternate Training, Sample Digits Inspect.",
         "Classifier Train చేసి Original Digits Rotate చేస్తుందంటుంది. Image Augmentation New Generative Modeling కాదు."
       ],
       "answer": "c",
@@ -89,7 +89,7 @@
         "DCGAN Convolutions Remove, cGAN Labels Ignore, WGAN Competition Stop అంటుంది. Variant Features Reverse.",
         "CycleGAN Exact Pairs Require, StyleGAN Label Classifier, WGAN Same BCE అంటుంది. Their Goals Different.",
         "Every GAN Variant Next-Token Text Model అయిపోతుందంటుంది. Image Adversarial Generation Still Central.",
-        "DCGAN Convolutions, cGAN Labels, WGAN Critic, CycleGAN Unpaired Translation, StyleGAN Style Controls Provide చేస్తాయి."
+        "DCGAN Convolutions, cGAN Labels, WGAN Critic, CycleGAN Unpaired Translation, StyleGAN Appearance Controls."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> DCGAN Convolutions; Conditional GAN Labels; WGAN Critic; CycleGAN Unpaired Domain Translation; StyleGAN Style Controls Use చేస్తాయి. Stability, Guidance, Visual Detailకు Different Improvements. Illustrated Postcards Design చేసే Studioని Imagine చేయండి. <strong>DCGAN</strong> Spatial Patternsకి Convolutions; <strong>cGAN</strong> Labelsతో Guide; <strong>WGAN</strong> Critic Objective; <strong>CycleGAN</strong> Paired Examples లేకుండా Image Styles Transfer; <strong>StyleGAN</strong> Appearanceపై Controls. Each Variant Different Problem Address చేస్తుంది: Stability, Detail, Controllability, Translation.",
@@ -101,7 +101,7 @@
       "stem": "GAN Trainingలో Mode Collapse, Weak Gradients, Overpowering Discriminator, Instability ఎందుకు వస్తాయి? Wasserstein Loss, Gradient Penalty, Spectral Normalization, Feature Matching, FIDతో ఎలా Address చేస్తాం?",
       "tag": "Advanced · Troubleshooting",
       "options": [
-        "Mode Collapse Similar Samples Repeat; Weak Gradients/Unstable Training Hurt; Wasserstein, Penalty, Norm Help; FID, Diversity, Visual Checks చేయాలి.",
+        "Mode Collapse Repeats; Weak Gradients Hurt; Wasserstein, Penalty, Normalization Help; FID, Diversity Check.",
         "Mode Collapse Variety Increase, Spectral Norm Every Sample Realistic Prove అంటుంది. These Claims False.",
         "Vanishing Gradients Strong Updates, Feature Matching One Stored Image Copy అంటుంది. Intended Effects Different.",
         "FID Each Image Real అని Certify చేస్తుందంటుంది. Distribution Metric Individual Quality Guarantee కాదు."
