@@ -11,7 +11,7 @@
       "tag": "Beginner · Creating useful variations",
       "stem": "What is Data Augmentation in Machine Learning, and how does it increase the variety of training data without requiring completely new data collection?",
       "options": [
-        "Data Augmentation creates additional training examples by changing existing inputs and keeping their original labels even when the changes alter what the examples mean. More versions alone make the training set reliable.",
+        "Data Augmentation creates training examples by changing existing inputs and keeping their original labels even when the changes alter what the examples mean. More versions alone make the training set reliable.",
         "Data Augmentation creates additional training examples by modifying existing data while preserving important information. It helps models learn from more varied inputs without collecting entirely new datasets.",
         "Data Augmentation increases the variety of training examples by modifying both training and held-out test data before splitting them. The resulting shared patterns help a model perform better during evaluation.",
         "Data Augmentation produces additional training examples by changing labels while leaving input features the same. This gives the model several possible answers for each item without collecting new information."
@@ -40,7 +40,7 @@
       "stem": "What are common Data Augmentation techniques for images, text, and audio, and how do these transformations create useful training examples?",
       "options": [
         "Image augmentation uses flipping, rotation, and cropping. Text augmentation uses word replacement or paraphrasing, while audio augmentation uses noise addition or speed changes. These techniques create varied training inputs when they preserve the correct labels.",
-        "Image augmentation uses flipping and cropping, text uses paraphrasing, and audio uses added noise. These changes are valid whenever the input remains recognizable to people, even if the correct task label changes.",
+        "Image augmentation uses flipping and cropping, text uses paraphrasing, and audio uses added noise. These changes are valid whenever the input remains recognizable to people, even if the correct task label changes significantly in reality.",
         "Image augmentation can rotate or crop pictures, text can replace words, and audio can change speed. Each transformation is useful only when it produces a new class label different from the original example.",
         "Image augmentation changes viewpoints, text augmentation rephrases sentences, and audio augmentation modifies recordings. Those methods should be applied to validation and test sets before evaluation to make the measured accuracy more representative."
       ],
@@ -53,10 +53,10 @@
       "tag": "Medium · When a transformation is valid",
       "stem": "How do label-preserving transformations and task-specific constraints determine whether an augmented training example is valid?",
       "options": [
-        "A valid augmentation keeps the original label and file format even when a transformation removes the feature that determines the answer. Matching labels and consistent formats are sufficient checks for validity.",
-        "A valid augmentation may change the example's meaning as long as the modified sample looks realistic and remains similar to the original. Task-specific rules mainly determine the allowed image resolution.",
+        "A valid augmentation keeps the original label even when a transformation removes the feature that determines the answer. Matching labels and file formats are sufficient checks for validity.",
+        "A valid augmentation may change the example's meaning if the modified sample looks realistic and resembles the original. Task-specific rules mainly determine the allowed image resolution.",
         "A valid augmentation changes the input without changing its correct label or important meaning. Task-specific constraints ensure transformations do not remove information needed for accurate predictions.",
-        "A valid augmentation depends on making the transformation strong enough to challenge the model, even when the original label becomes uncertain. Keeping difficult examples encourages the network to recover the correct class."
+        "A valid augmentation must challenge the model even when the original label becomes uncertain. Keeping such difficult examples encourages the network to recover the correct class."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> A label-preserving transformation changes how an example looks or sounds without changing what the correct answer should be. The rules depend on the task. For handwritten-digit recognition, a small shift of a “6” may be fine, but a 180-degree rotation might make it look like a “9.” That would no longer support the original label. Before using an augmentation, ask whether it removes, changes, or hides the feature the model is supposed to recognize.",
@@ -82,9 +82,9 @@
       "stem": "How do advanced Data Augmentation techniques such as Mixup, CutMix, and synthetic data generation influence model generalization and decision boundaries?",
       "options": [
         "Mixup combines training inputs and labels, while CutMix combines image regions and their corresponding label proportions. Synthetic data generation creates new training samples. These techniques can improve generalization by increasing training diversity and encouraging more robust decision boundaries.",
-        "Mixup combines training inputs but keeps the label from the first example, while CutMix pastes image regions without adjusting label proportions. Both methods improve boundaries because mixing the inputs alone supplies enough supervision.",
-        "Mixup combines the correct labels while leaving training inputs unchanged, and CutMix exchanges equal image regions only between identical classes. Synthetic generation simply duplicates real examples to increase the number of rows.",
-        "Mixup creates synthetic samples by joining two predictions after training, while CutMix combines model weights from different runs. Both methods make decision boundaries smoother without changing the training examples or their labels."
+        "Mixup combines training inputs but keeps the label from the first example, while CutMix pastes image regions without adjusting label proportions. Both methods improve boundaries because mixing the inputs alone supplies enough supervision for every blended example actually.",
+        "Mixup combines the correct labels while leaving training inputs unchanged, and CutMix exchanges equal image regions only between identical classes. Synthetic generation simply duplicates real examples to increase the number of rows in training.",
+        "Mixup creates synthetic samples by joining two predictions after training, while CutMix combines model weights from different runs. Both methods make decision boundaries smoother without changing the training examples or their labels in actual training."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> Mixup blends two examples and their labels. CutMix replaces part of one image with a region from another and adjusts the label proportions accordingly. Synthetic generation creates additional samples using a data-generating process or model. For example, combining two flower classes during training can encourage a classifier to change its predictions smoothly rather than drawing an overly sharp boundary around individual pictures. The mixing rules and synthetic samples must remain appropriate for the task.",
