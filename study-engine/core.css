@@ -109,3 +109,19 @@
 .reveal-toggle:focus-visible{outline:3px solid #2e92b3;outline-offset:3px}
 .question label.revealed-opt{background:#effbf4;border-color:#279f79;font-weight:600}
 @media(prefers-reduced-motion:reduce){.reveal-toggle{transition:none}}
+
+
+/* Shared math fallback + responsive MathJax SVG for all 50+ English modules.
+   The same stylesheet is used by bilingual Telugu pages. */
+.math-expression{display:inline-block;vertical-align:-.15em;max-width:100%;white-space:nowrap;overflow-x:auto;overflow-y:hidden;line-height:1.35;padding:0 .1em;font-family:Cambria,'STIX Two Math','Times New Roman',serif;font-weight:550;color:inherit}
+.math-expression.math-display{display:block;margin:.55rem 0;padding:.35rem .1rem;text-align:center}
+.math-expression[data-math-state="fallback"]{font-size:.96em;white-space:normal;overflow-wrap:anywhere}
+.math-expression mjx-container{display:inline-block!important;max-width:100%;margin:0!important;vertical-align:middle;white-space:nowrap}
+.math-expression mjx-container svg{display:inline-block!important;height:auto;max-width:none;vertical-align:middle;overflow:visible}
+.math-expression.math-display mjx-container{display:block!important;max-width:100%;overflow-x:auto;overflow-y:hidden;padding:.25rem 0}
+.q-text,.explanation-quick,.explanation-deep-content,.answer-text{min-width:0;overflow-wrap:break-word}
+.q-fig{max-width:100%;min-width:0}
+@media(max-width:600px){
+ .math-expression{font-size:.88em;max-width:100%}
+ .math-expression.math-display{font-size:.84em}
+}
