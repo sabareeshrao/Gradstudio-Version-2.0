@@ -1,0 +1,88 @@
+{
+  "translationOverlay": true,
+  "language": "te",
+  "contentLanguage": "te-en",
+  "diagramLanguage": "en",
+  "title": "Query Projection — Telugu + English Learning",
+  "subtitle": "English diagrams, formulas and code unchanged · Telugu + English learning",
+  "footer": "Query Projection · 7 Questions · 28 Options · 7 English Diagrams",
+  "questions": [
+    {
+      "stem": "Transformerలో Query Projection అంటే ఏమిటి? Token State నుంచి Query Vector ఎలా Generate చేస్తాం?",
+      "options": [
+        "Learned Weights Token Featuresని Queriesగా Convert చేసి Keysతో Compare చేస్తాయి.",
+        "Query Projection Full Sentencesని Fixed Lookup Tableలో Store చేసి Search చేస్తుంది.",
+        "Query Projection Attention Scores లేకుండా Next Tokenని Direct Predict చేస్తుంది.",
+        "Query Projection Textని Imageగా Convert చేసి Only Visual Features Compare చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Query ఒక Tokenకి ఏ Information కావాలో Represent చేసే Learned Vector. Keysతో Match చేసి Attention Scores పొందుతుంది.",
+      "technicalExplanation": "Q=XW_Q, where X Hidden States and W_Q Trainable Matrix. Q/K Similarity Attention Scoresకి Basis; Query Alone Answer Produce చేయదు."
+    },
+    {
+      "stem": "Self-Attentionలో Query, Key, Value Different Roles ఎందుకు? Separate Learned Weights ఎలా Help చేస్తాయి?",
+      "options": [
+        "Queries Answer Content Return; Keys Final Words Predict; Values Search Positions Decide చేస్తాయి.",
+        "All Q/K/V Vectors Identical; Different Matrices Any Difference ఇవ్వవు.",
+        "Query Match Requests; Key Candidate Clues; Value Useful Content Carries చేస్తుంది.",
+        "Only Value Projection Trainable; Query, Key Embeddings Copy చేస్తాయి."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Query ఏమి Search చేయాలో, Key ఏది Availableగా ఉందో, Value ఏ Information ఇవ్వాలో Indicate చేస్తాయి.",
+      "technicalExplanation": "Q=XW_Q, K=XW_K, V=XW_V. Q/K Matching Scores Create చేస్తాయి; Softmax Weights Vectors Vని Aggregate చేస్తాయి."
+    },
+    {
+      "stem": "“The cat sat on the mat”లో “sat” Query Other Keysతో ఎలా Compare అవుతుంది?",
+      "options": [
+        "Queries Word Labelsగా Store చేసి Alphabetically Score Sort చేస్తాం.",
+        "Learned Queryని Other Token Keysతో Compare చేసి Relevance Scores ఇస్తాం.",
+        "Query Always Nearest Wordని Select చేస్తుంది; Context Matter కాదు.",
+        "Softmax First Generate చేసి Probabilities నుంచి Query Vectors Build చేస్తాం."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> “sat” Query Other Words Keysతో Match అవుతుంది; Higher Scores More Attentionకి Help చేయవచ్చు.",
+      "technicalExplanation": "Learned Q/K Dot Products Context, Position, Attention Maskపై Depend అవుతాయి. Nearest Token Always Best అనే Rule లేదు."
+    },
+    {
+      "stem": "Q=XW_Q Formulaలో Matrix Shapes, Hidden Dimensions, Query Width ఎలా Calculate చేస్తాం?",
+      "options": [
+        "Weights Word Countsని Token IDsగా Map చేస్తాయి; Shapes Matter కావు.",
+        "Query Feature Width Only Batch Size Determine చేస్తుంది; Tokens Disappear అవుతాయి.",
+        "Query Original Embedding Copy చేస్తుంది; Learned Weights Width Change చేయలేవు.",
+        "X[T,8] × W_Q[8,4] నుంచి Q[T,4] వస్తుంది; Token Count Sameగా ఉంటుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> Learned Matrix Input Featuresని Query Featuresగా Convert చేస్తుంది. Token Count Change కాదు.",
+      "technicalExplanation": "X[T,d_model] × W_Q[d_model,d_q] → Q[T,d_q]. Inner Dimensions Match కావాలి; T Sequence Length Same ఉంటుంది."
+    },
+    {
+      "stem": "PyTorch nn.Linearతో Query Projection, Multiple Attention Heads Reshape ఎలా చేస్తాం?",
+      "options": [
+        "nn.Linearతో Query Features Create చేసి Reshape, Transposeతో Headsగా Arrange చేస్తాం.",
+        "Pythonలో Word IDsని Headsలో Loop చేసి Learned Matrices Avoid చేస్తాం.",
+        "Raw Token IDsపై Softmax Run చేసి తర్వాత Query Projection చేస్తాం.",
+        "Embeddings Reshape చేసి Query Weightsని Permanently Zeroగా Freeze చేస్తాం."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> PyTorch Linear Queries Create చేస్తుంది; Reshape, Transpose Different Headsగా Organize చేస్తాయి.",
+      "technicalExplanation": "For B=2,T=6,d_model=8,H=2,d_head=4: Projection [2,6,8] → Reshape [2,6,2,4] → Transpose [2,2,6,4]."
+    },
+    {
+      "stem": "Query Projection, RoPE, Key Projection, Scaling, Softmax కలిసి Attention ఎలా Calculate చేస్తాయి?",
+      "options": [
+        "RoPE Softmax Probabilities Rotate చేస్తుంది; Q/K Matching Entirely Avoid అవుతుంది.",
+        "RoPE Q/K Rotate చేస్తుంది; Scaled Scoresపై Softmax Attention Weights ఇస్తుంది.",
+        "RoPE Learned Query Weights Remove చేస్తుంది; Scaling Logitsని Largeగా Multiply చేస్తుంది.",
+        "Softmax Values నుంచి Queries, Keys Create చేసి Token IDs Change చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> RoPE Positionsని Q/Kలో Add చేస్తుంది. Dot Product, Scaling, Softmaxతో Attention Weights వస్తాయి.",
+      "technicalExplanation": "Projected Q/K Pairsకి RoPE Rotation; Q_rot K_rotᵀ/√d_head. Mask, Softmax తర్వాత Weights Valuesతో Mix అవుతాయి."
+    },
+    {
+      "stem": "MHA, MQA, GQA, MLAలో Query/KV Heads, Cache Size, Inference Trade-offs ఏమిటి?",
+      "options": [
+        "MHA Shared KV Only; MQA Per-Head KV; GQA Most Cache Uses చేస్తుంది.",
+        "All Models Old Queries Cache, Past K/V Every Step Recompute చేస్తాయి.",
+        "MHA Per-Head KV; MQA One; GQA Grouped; MLA Compressed KV Uses చేస్తాయి.",
+        "MLA Compression Avoid చేసి Every Queryకి Full KV Cache Store చేస్తుంది."
+      ],
+      "explanation": "<strong>Simple Explanation:</strong> MQA, GQA Share KV Heads, MLA Compressed KV Use చేయవచ్చు. KV Cache Memory తగ్గించే Trade-off ఉంటుంది.",
+      "technicalExplanation": "MHA Independent KV Heads; MQA Shared Single KV; GQA Groups; MLA Low-Rank Latent KV. Memory Savings Quality, Bandwidthపై Depend."
+    }
+  ]
+}
