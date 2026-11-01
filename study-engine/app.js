@@ -54,7 +54,7 @@
         const styleURL=new URL(data.diagramStyle,base);
         // A fresh stylesheet version prevents previously cached nested-SVG
         // sizing rules from overriding the corrected lesson diagrams.
-        if(slug==='data-augmentation')styleURL.searchParams.set('v','20261101-svg-layout-audit');
+        if(slug==='data-augmentation')styleURL.searchParams.set('v','20261101-slim-chevron-mobile-panels');
         await loadStyle(styleURL.href);
       }catch(error){
         if(!/^diagrams\/[a-z0-9]+(?:-[a-z0-9]+)*\.css$/.test(data.diagramStyle))throw error;
