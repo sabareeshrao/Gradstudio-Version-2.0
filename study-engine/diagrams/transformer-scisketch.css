@@ -15,3 +15,32 @@
 .sc-original>.tr-figure{margin:0 0 13px}
 .sc-original .tr-surface{max-width:100%;overflow-x:auto}
 @media(max-width:700px){.sc-banner{padding:14px 15px}.sc-q6{padding:12px!important}.sc-stage>.sc-diagram{width:1070px;min-width:1070px}.sc-original{padding:0 6px}.sc-original>.tr-figure{padding:8px}}
+
+/* Seven-card SciSketch code-first visual study, per-card native accessible comparison. */
+.sc-enhanced{border:2px solid #3abfb5!important;box-shadow:0 8px 26px rgba(8,83,91,.08);margin-bottom:14px}
+.sc-enhanced .sc-stage{margin-top:8px}
+.sc-enhanced .sc-stage>.sc-diagram{display:block;width:100%;min-width:1100px;max-width:none;height:auto;overflow:visible}
+.sc-implementation{display:grid;gap:16px;grid-template-columns:minmax(310px,.75fr) minmax(0,1.7fr);align-items:start}
+.sc-implementation .sc-implementation-figure{min-width:0}
+.sc-implementation .sc-stage{min-width:0;overflow:auto}
+.sc-code-shell{background:#142c3f;color:#e6f6fd;border-radius:13px;overflow:hidden;border:1px solid #2c5062;box-shadow:0 8px 18px rgba(0,26,46,.10)}
+.sc-code-title{padding:13px 16px;border-bottom:1px solid #3b6072;color:#d7f4fd;font-weight:750;font-size:.78rem;letter-spacing:.03em}
+.sc-code-dots{color:#f6b477;margin-right:9px}
+.sc-code-shell pre,.sc-code-shell pre code{background:transparent!important;color:#e6f6fd!important;border:none!important;box-shadow:none!important;font:500 .73rem/1.8 ui-monospace,SFMono-Regular,Consolas,monospace!important}
+.sc-code-shell pre{overflow-x:auto;margin:0;padding:16px 16px 21px;max-width:100%;white-space:pre}
+.sc-code-shell pre code{padding:0!important}
+.sc-compare{margin:0 0 22px;border:1px solid #81c7c5;border-radius:14px;overflow:hidden;background:var(--lab-canvas,#f6fafc);color:#23475a}
+.sc-compare>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:15px 18px;font-weight:800;font-size:.91rem;line-height:1.35;background:linear-gradient(110deg,#e8f8f6,#e9f1f8);color:#175a66}
+.sc-compare>summary::-webkit-details-marker{display:none}
+.sc-compare>summary:after{content:"＋";font-size:18px;margin-left:auto;font-weight:900;color:#0f807a}
+.sc-compare[open]>summary:after{content:"−"}
+.sc-compare-mark{display:inline-flex;align-items:center;justify-content:center;background:#116d79;color:white;font-weight:900;font-size:.71rem;padding:4px 7px;border-radius:7px;letter-spacing:.02em}
+.sc-compare-hint{color:#5d7785;font-size:.78rem;font-weight:600}
+.sc-compare-inner{padding:14px 16px 18px}
+.sc-comparison-label{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;margin-bottom:12px;font-size:.79rem;color:#607685}
+.sc-comparison-label strong{color:#226d78}
+.sc-baseline{max-width:100%;overflow-x:auto}
+.sc-baseline>.tr-figure{margin:0!important}
+.sc-baseline .tr-surface,.sc-baseline .tr-code-grid{max-width:100%;overflow-x:auto}
+@media(max-width:960px){.sc-implementation{grid-template-columns:1fr}}
+@media(max-width:700px){.sc-enhanced{padding:12px!important}.sc-enhanced .sc-stage>.sc-diagram{width:1100px;min-width:1100px}.sc-compare>summary{padding:12px}.sc-compare-inner{padding:9px 7px 14px}.sc-compare-hint{flex-basis:100%;margin-left:40px}.sc-code-shell pre{font-size:.7rem}}
