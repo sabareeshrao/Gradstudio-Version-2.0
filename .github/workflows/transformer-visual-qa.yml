@@ -1,0 +1,36 @@
+name: Transformer Research Visual Browser QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'study-engine/unlisted/transformer-scisketch.json'
+      - 'study-engine/diagrams/transformer-scisketch.css'
+      - 'study-engine/experiments/diagram-comparison.js'
+      - 'study-engine/experiments/verify-transformer-browser.mjs'
+      - '.github/workflows/transformer-visual-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  geometry-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install chromium --with-deps
+      - name: Lint actual rendered diagrams at desktop and mobile widths
+        run: node study-engine/experiments/verify-transformer-browser.mjs
+      - name: Upload diagram QA screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: transformer-browser-qa
+          path: study-engine/experiments/qa-artifacts
+          if-no-files-found: ignore
