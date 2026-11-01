@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "status": "content-only-staging",
+  "slug": "data-augmentation",
+  "keyword": "Data Augmentation",
+  "title": "Data Augmentation",
+  "topic": "Expanding Training Data Through Transformations",
+  "subject": "Data Preprocessing and Feature Engineering",
+  "baseCommit": "67b098c54fe6bfb56255c095848372287a1370aa",
+  "questions": [
+    {
+      "tag": "Beginner · Core concept",
+      "level": "Beginner",
+      "stem": "What is Data Augmentation in Machine Learning, and how does it create additional training examples from existing data?",
+      "options": [
+        "Data Augmentation creates extra training examples by slightly changing validation samples before adding them to training. This brings more variety without collecting new records.",
+        "Data Augmentation creates new training examples by applying controlled transformations to existing data. It increases training diversity while preserving the information needed for correct predictions.",
+        "Data Augmentation creates additional training examples by transforming existing samples and assigning new class labels whenever the modified examples look different. This adds variety by expanding target categories.",
+        "Data Augmentation creates extra training examples by repeating existing records under different file names. The dataset grows, although the input content stays unchanged across each repeated copy."
+      ],
+      "answer": "b"
+    },
+    {
+      "tag": "Beginner · Small datasets and overfitting",
+      "level": "Beginner",
+      "stem": "Why is Data Augmentation important when training datasets are small, and how does it help Machine Learning models avoid overfitting?",
+      "options": [
+        "Data Augmentation helps small datasets by copying samples several times without modifying them. The repeats help the model memorize training patterns and reduce the need for new examples.",
+        "Data Augmentation helps small datasets by modifying all available samples, including those reserved for testing. Seeing test cases during training helps the model learn patterns likely to appear in evaluations.",
+        "Data Augmentation helps small datasets by transforming examples into new classes and giving them different labels. Learning additional labels prevents memorization, even when the original prediction task stays unchanged.",
+        "Data Augmentation creates variations of existing samples, allowing models to learn from more diverse inputs. This reduces reliance on memorized training patterns and can improve performance on unseen data."
+      ],
+      "answer": "d"
+    },
+    {
+      "tag": "Beginner · Images, text, and audio",
+      "level": "Beginner",
+      "stem": "How do Data Augmentation techniques differ when applied to image, text, and audio datasets?",
+      "options": [
+        "Image augmentation uses transformations such as rotation, flipping, and cropping. Text augmentation uses paraphrasing or word replacement, while audio augmentation uses noise addition or speed adjustments, provided the correct labels remain valid.",
+        "Image augmentation may use cropping and rotation, text augmentation may replace words, and audio augmentation may change speed or add noise. These changes are suitable whenever modified files remain readable by the model.",
+        "Image augmentation uses flips and crops, text augmentation substitutes words, and audio augmentation adds noise or changes speed. The same transformation settings suit every task without checking whether original labels remain meaningful.",
+        "Image augmentation uses rotation and cropping, text augmentation uses paraphrasing, and audio augmentation may change speed. Since inputs changed, all augmented samples must receive a new class label before training."
+      ],
+      "answer": "a"
+    },
+    {
+      "tag": "Medium · Online versus offline",
+      "level": "Medium",
+      "stem": "What is the difference between online and offline Data Augmentation, and how does each approach affect training efficiency and storage requirements?",
+      "options": [
+        "Online augmentation prepares and saves transformed samples before training, making each version reusable without repeated work. Offline augmentation creates new versions during live training batches, reducing extra storage.",
+        "Online augmentation creates changed samples during training and saves each version for later reuse. Offline augmentation also creates examples during training but removes them after every training batch.",
+        "Online augmentation generates modified samples during training, providing varied inputs without storing every version. Offline augmentation generates and saves samples beforehand, making them reusable but requiring additional storage.",
+        "Online augmentation changes inputs during training, while offline augmentation prepares changes beforehand. Both approaches require storing every transformed sample permanently, so their storage costs are nearly identical."
+      ],
+      "answer": "c"
+    },
+    {
+      "tag": "Medium · Label correctness",
+      "level": "Medium",
+      "stem": "Why must Data Augmentation preserve label correctness, and how can inappropriate transformations reduce model performance?",
+      "options": [
+        "Data Augmentation can change what a sample means as long as its original class label is kept. The model becomes more flexible by treating different meanings as the same category.",
+        "Data Augmentation must preserve the correct relationship between inputs and labels. Inappropriate transformations can change important features or meanings, introduce incorrect labels, and teach the model misleading patterns.",
+        "Data Augmentation should assign a new class label whenever an input changes, even if its meaning stays the same. This teaches the model that each transformation is a different class.",
+        "Data Augmentation can change important features if original samples are kept alongside modified ones. A larger dataset balances incorrect labels and prevents the model from learning misleading patterns."
+      ],
+      "answer": "b"
+    },
+    {
+      "tag": "Advanced · Mixup, CutMix, and synthetic data",
+      "level": "Advanced",
+      "stem": "How do advanced Data Augmentation methods such as Mixup, CutMix, and generative synthetic data improve model generalization?",
+      "options": [
+        "Mixup combines inputs and labels, CutMix replaces image regions and adjusts label proportions, and generative methods produce synthetic samples. These techniques can increase training diversity and improve generalization.",
+        "Mixup blends inputs while keeping one original class label, CutMix replaces image regions without adjusting label proportions, and generative methods add synthetic samples. These increase variety without mixed labels.",
+        "Mixup and CutMix both create samples by blending whole images pixel by pixel, while generative models make artificial examples. Their labels stay unchanged because original objects remain partly visible.",
+        "Mixup creates images with a generator, CutMix adds random noise to image regions, and generative augmentation combines existing images. Each method increases variety without checking the resulting labels."
+      ],
+      "answer": "a"
+    },
+    {
+      "tag": "Advanced · Evaluation and leakage resistance",
+      "level": "Advanced",
+      "stem": "How can Data Augmentation strategies be optimized and evaluated while preventing data leakage, distribution mismatch, and unrealistic training samples?",
+      "options": [
+        "Augmentation strategies are optimized by trying transformations on the final test set and selecting the highest score. Once selected, separate validation data becomes less important for reliable evaluation of future predictions.",
+        "Augmentation strategies are optimized by choosing transformations that increase training accuracy most. Many generated examples can make independent validation and matching real-world conditions less important for generalization.",
+        "Augmentation strategies are optimized by visually checking transformed samples and their labels. If they look realistic, augmented copies of validation examples can safely join the training set.",
+        "Augmentation strategies are optimized by testing their effects on independent validation data. Effective methods preserve task-relevant information, avoid unrealistic transformations, and keep augmented training samples separate from evaluation data."
+      ],
+      "answer": "d"
+    }
+  ],
+  "handoff": {
+    "approvedForPublication": false,
+    "reason": "Not on approved 58-topic whitelist; staging only until explicit curriculum expansion approval.",
+    "sourceLockedFields": [
+      "questions[*].stem",
+      "questions[*].options[answer]",
+      "questions[*].answer"
+    ],
+    "nextSteps": [
+      "Diagram agent supplies unique hero and seven SVG diagrams.",
+      "Explanation agent supplies seven learner-facing explanations.",
+      "Final auditor integrates after visual, content and curriculum approval."
+    ]
+  }
+}
