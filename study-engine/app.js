@@ -16,7 +16,7 @@
     }catch(error){originalError=error;}
     const requested=new URL(url,base);
     const relative=requested.href.startsWith(base.href)?requested.href.slice(base.href.length):'';
-    if(!/^modules\/[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(relative))throw originalError;
+    if(!/^(?:modules|unlisted)\/[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(relative))throw originalError;
     const raw='https://raw.githubusercontent.com/sabareeshrao/Gradstudio-Version-2.0/main/study-engine/'+relative;
     try{
       const alternate=await fetch(raw,{cache:'no-store'});
@@ -37,7 +37,10 @@
       return;
     }
     if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))throw Error('Invalid keyword: '+slug);
-    const data=await getJSON(new URL('modules/'+slug+'.json',base));
+    // The published 58-topic catalog stays locked; this approved direct-link
+    // lesson is kept separately and never added to the public index.
+    const lessonPath=slug==='data-augmentation'?'unlisted/data-augmentation.json':'modules/'+slug+'.json';
+    const data=await getJSON(new URL(lessonPath,base));
     if(!Array.isArray(data.questions)||data.questions.length<1||data.questions.some(q=>q.options?.length!==4||!['a','b','c','d'].includes(q.answer)||!q.figure))throw Error('Invalid module: each question needs four choices, one answer, and its own figure.');
     if(data.diagramStyle){
       // Prefer the deployed stylesheet; fall back to the matching GitHub source

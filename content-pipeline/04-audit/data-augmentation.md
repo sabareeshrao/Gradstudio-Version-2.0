@@ -1,0 +1,25 @@
+# Data Augmentation — Agent 4 Integration and Diagram Layout Audit
+
+**Topic:** Data Augmentation · Expanding Training Data Through Transformations  
+**Source content:** `06da98f5fd659889c30e679f4c86cb7b982b0df4`  
+**Diagram and explanation work:** preserved and integrated from `content-pipeline/02-diagrams/data-augmentation/` and `content-pipeline/03-explanations/data-augmentation.json`.
+
+## Verified defects and corrections
+
+1. **Nested SVG selector:** the diagram CSS targeted `.da-art svg` at every depth. Hero, Q1 and Q3 embed smaller SVG illustrations, so the shared width/min-width rule targeted those children too. Changed the selector to `.da-art > svg`, restricting responsive sizing to the outer diagram. No internal SVG positions or art were discarded.
+2. **Crowded labels on narrow screens:** kept the 1000-unit diagram designs near native size (minimum 920px; 940px at narrow viewports) and contained horizontal scrolling in `.da-art`. This keeps labels legible rather than shrinking them to 760px wide. Diagram scrolling is keyboard focusable and visibly hinted on small screens.
+3. **Blocked deployment:** the earlier integration added a 59th JSON file inside `study-engine/modules/`, causing the exact-58-topic publishing workflow to fail. The full lesson now lives at `study-engine/unlisted/data-augmentation.json`, served by the existing shared engine at `?module=data-augmentation`; the 58-topic whitelist and public manifest remain unchanged.
+4. **Nonblocking loading:** the shared-engine JSON fallback can now resolve the `unlisted/` path if the CDN update is delayed; only safe slug paths are accepted.
+
+## Source-lock and structural findings
+
+- **PASS:** 7 original question stems unchanged.
+- **PASS:** 28 A–D choices, 7 exact user-supplied keyed answers and all 7 answer keys preserved.
+- **PASS:** all seven mentor explanations unchanged and previously checked at 100 words or fewer.
+- **PASS:** hero and seven distinct SVG figures retained; SVGs provide accessible titles/descriptions.
+- **PASS:** no changes to Telugu files, the approved 58-topic whitelist or the public module manifest.
+- **PASS:** direct lesson address remains `https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=data-augmentation`.
+
+## Verification scope
+
+A locally rendered Chromium regression scene was used to inspect the outer/nested SVG sizing behavior at a mobile viewport. A full screenshot-based review of the **deployed** GitHub Pages lesson is still required to establish that every panel has zero residual overlaps. The GitHub Pages workflow status must also be checked after integration. Avoid treating source-level checks alone as visual proof.
