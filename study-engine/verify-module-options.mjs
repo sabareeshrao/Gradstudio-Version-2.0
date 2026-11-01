@@ -1,7 +1,7 @@
 /**
  * Gradstudio MCQ answer-length audit; semantic completeness has priority.
  * Usage: node study-engine/verify-module-options.mjs
- * Or:    node study-engine/verify-module-options.mjs study-engine/modules/stochastic-depth.json
+ * Or:    node study-engine/verify-module-options.mjs study-engine/modules/train-validation-test-split.json
  *
  * Compares word and character lengths for every A-D choice. Keeping answer
  * lengths similar prevents the correct option from becoming a visual clue.
@@ -18,7 +18,7 @@ const strictAll=rawArgs.includes('--strict-all');
 const strictLength=rawArgs.includes('--strict-length')||strictAll;
 const args=rawArgs.filter(x=>x!=='--strict-all'&&x!=='--strict-length');
 const files=args.length?args.map(x=>resolve(x)):manifest.modules.map(m=>resolve(base,'modules',m.slug+'.json'));
-const legacyBiasDebt=new Set(['flops','rag','turing-test','semantic-textual-similarity']);
+const legacyBiasDebt=new Set(['rag']);
 /* Known pre-existing option-length warnings in unrelated English lessons.
    Allow only these EXACT answer+option fingerprints until those lessons are
    edited and reviewed. Any change re-enables the strict QA failure. */

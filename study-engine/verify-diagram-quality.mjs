@@ -14,7 +14,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const here=path.dirname(fileURLToPath(import.meta.url));
 const manifest=JSON.parse(readFileSync(path.join(here,'modules/index.json'),'utf8'));
-const LEGACY=new Set(['softmax','masking','positional-encoding','stochastic-depth','flops','rag','turing-test','semantic-textual-similarity','gradient-descent']);
+const LEGACY=new Set(['softmax','positional-encoding','rag','gradient-descent']);
 const requested=process.argv.slice(2);
 const slugs=requested.length?requested:manifest.modules.map(m=>m.slug).filter(s=>!LEGACY.has(s));
 let failed=0, checked=0;

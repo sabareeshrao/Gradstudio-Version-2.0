@@ -20,7 +20,7 @@ for(let i=0;i<topics.length;i++){
  try{
   const q=JSON.parse(readFileSync(p,'utf8'));
   if(q.questions?.length!==7||q.questions.some(x=>x.options?.length!==4||!['a','b','c','d'].includes(x.answer)))errors.push('Invalid 7-question quiz '+topic.slug);
-  if(q.diagramStyle&&!existsSync(resolve(root,q.diagramStyle)))errors.push('Missing diagram CSS '+topic.slug);
+  if(q.diagramStyle&&!existsSync(resolve(root,String(q.diagramStyle).split(/[?#]/)[0])))errors.push('Missing diagram CSS '+topic.slug);
  }catch(e){errors.push('JSON parse: '+topic.slug+': '+e.message)}
 }
 for(const p of ['index.html','lab-v3.css','lab-v3.js'])if(!existsSync(join(base,p)))errors.push('Original template asset missing '+p);

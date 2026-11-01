@@ -38,7 +38,7 @@ for(const m of index.modules||[]){
     if(module.questions?.length!==7)fail(m.slug+' must contain seven questions');
     if(!module.title)fail('Missing module title for '+m.slug);
     if(module.diagramStyle){
-      const stylesheet=resolve(root,module.diagramStyle);
+      const stylesheet=resolve(root,String(module.diagramStyle).split(/[?#]/)[0]);
       if(!stylesheet.startsWith(root+'/')||!existsSync(stylesheet))
         fail('Missing or invalid diagram stylesheet for '+m.slug);
     }
