@@ -23,3 +23,13 @@
 ## Verification scope
 
 A locally rendered Chromium regression scene was used to inspect the outer/nested SVG sizing behavior at a mobile viewport. A full screenshot-based review of the **deployed** GitHub Pages lesson is still required to establish that every panel has zero residual overlaps. The GitHub Pages workflow status must also be checked after integration. Avoid treating source-level checks alone as visual proof.
+
+## Release verification (after integration)
+
+- **PASS:** custom GitHub Pages workflow completed successfully for integration commit `1426ece7174a4f7ac1013cdbba13a046dfe6570e`; GitHub Pages build/deploy also completed successfully.
+- **PASS:** local Chromium viewport regression confirmed 940px outer SVG width at 390px mobile, 940px at 768px viewport, and 920px at 1280px viewport. Scroll containers expose the full artwork without reducing 12px SVG labels below approximately 11px.
+- **PASS:** static SVG coordinate scan found no likely text-to-text bounding-box intersections or out-of-viewBox text across the hero and seven figures (approximate check only).
+- **PASS:** the English-link translation table has no Data Augmentation row; Telugu material remains unchanged.
+- **WARN:** the repository's standalone legacy quiz-quality workflow fails on other published modules; the unlisted Data Augmentation JSON is outside its 58-topic scan. Do not infer a new topic failure from this unrelated gate.
+- **BROWSER NOTE:** actual live GitHub Pages rendering was not independently screenshot-tested from this environment; coordinate checks and an isolated Chromium sizing regression do not prove full visual perfection.
+- **CACHE FIX:** refresh `study-engine/app.js` via updated HTML script version and `diagrams/data-augmentation.css` via a new stylesheet version so returning visitors receive the fixed layout.

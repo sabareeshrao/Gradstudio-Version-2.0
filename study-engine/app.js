@@ -51,7 +51,11 @@
         document.head.appendChild(sheet);
       });
       try{
-        await loadStyle(new URL(data.diagramStyle,base).href);
+        const styleURL=new URL(data.diagramStyle,base);
+        // A fresh stylesheet version prevents previously cached nested-SVG
+        // sizing rules from overriding the corrected lesson diagrams.
+        if(slug==='data-augmentation')styleURL.searchParams.set('v','20261101-svg-layout-audit');
+        await loadStyle(styleURL.href);
       }catch(error){
         if(!/^diagrams\/[a-z0-9]+(?:-[a-z0-9]+)*\.css$/.test(data.diagramStyle))throw error;
         await loadStyle('https://raw.githubusercontent.com/sabareeshrao/Gradstudio-Version-2.0/main/study-engine/'+data.diagramStyle);
