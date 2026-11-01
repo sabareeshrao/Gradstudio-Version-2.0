@@ -49,6 +49,9 @@ try{
     '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
     '<div class="actions"><button id="checkBtn" type="button">Check Answers · సమాధానాలు చూడండి</button><button id="resetBtn" type="button">Reset Quiz · మళ్లీ ప్రయత్నించండి</button></div>'+
     (data.sources||'')+'<p class="footer">'+esc(data.footer)+'</p>';
+  // Apply the shared visual safety check; Telugu wording and source remain untouched.
+  try{const {normalizeSvgArrowheads}=await import('../study-engine/svg-arrowheads.js?v=20261101-slim-arrows');normalizeSvgArrowheads(root)}
+  catch(e){console.warn('SVG arrowhead guard unavailable',e)}
   // Match English math rendering for bilingual lesson stems and explanations.
   // Typeset after dynamic HTML insertion; preserve original Telugu source data.
   try{

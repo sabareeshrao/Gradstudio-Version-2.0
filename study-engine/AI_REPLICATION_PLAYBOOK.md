@@ -72,3 +72,13 @@ Do **not** treat a colored rectangle with text as a high-quality teaching diagra
 - Guard preservation: a diagram upgrade must not rewrite user questions, correct answers, answer keys, explanatory text, tested code or Telugu materials unless explicitly requested.
 
 **Current visual reference:** Use `modules/train-validation-test-split.json`, `diagrams/train-validation-test-split.css`, `modules/backpropagation.json` and the original root `index.html`. Historical Data Leakage illustrations are recoverable through Git history, not part of the active 58-topic library.
+
+## SVG arrowhead quality rule — mandatory for EVERY English lesson
+
+**Failure to avoid:** An SVG `<marker>` without `markerUnits="userSpaceOnUse"` defaults to units of the connector stroke width. A 9-unit marker on a 3px line becomes a **27px chunky arrowhead**; it can obscure nodes and overlap illustrations, especially on phones. Do not use large filled triangles, thick arrow tips, or an arrowhead wider than the gap it occupies.
+
+1. Always use `markerUnits="userSpaceOnUse"`, `viewBox="0 0 10 10"`, `markerWidth="9"`, `markerHeight="9"`, `refX="8"`, `refY="5"`, and `orient="auto"`. Use an **open chevron**, not a filled wedge: `<path d="M1.5 2.2 L7.8 5 L1.5 7.8" fill="none" stroke="#4b8fa1" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>`.
+2. Keep connector lines approximately 1.5–3px wide. Align the tip to the destination without covering the target or the illustrated object. Leave at least ~12px of clear arrow travel before the tip; avoid 9px arrow lines squeezed between panels. Marker IDs must be unique **within each SVG**.
+3. Do not apply full-width/min-width CSS to **nested** SVG illustrations; use a direct-child selector like `.art > svg`. For desktop and mobile, prove that the **page itself** remains within the viewport; only intentionally wide diagram regions may scroll. On narrow phones, split a multi-panel SVG into stacked zoomed/cropped panels rather than shrinking labels or forcing a user to pan through a 1000px graphic.
+4. Inspect the rendered arrowheads and text on **desktop and mobile**. Check every arrow in the hero plus Q1–Q7 for clear head size, consistent line weight, spacing, non-overlap, visible direction and legible labels. Static JSON validation alone is not a browser screenshot test.
+5. Run `node study-engine/verify-svg-arrowheads.mjs` before publication. The deployment workflow enforces this rule for all approved English modules plus Data Augmentation. The shared runtime `study-engine/svg-arrowheads.js` also normalizes imported arrowheads in English and Telugu overlays as a safety net, but new source assets **must** obey the rule directly.

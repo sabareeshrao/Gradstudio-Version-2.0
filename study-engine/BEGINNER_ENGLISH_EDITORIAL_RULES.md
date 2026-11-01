@@ -145,3 +145,8 @@ All 50 planned English modules received a question-to-answer completeness pass. 
 - **Test actual understanding:** A beginner should need to reason about the subject, not scan for the matching keyword, extreme wording, or the longest answer.
 - **Length is secondary:** Match reading effort closely, but do not pad options to a word-count target at the expense of plausibility or teaching quality. Preserve the user's supplied correct answer verbatim.
 - **Code-figure QA:** For questions with embedded code, verify a high-contrast code foreground/background, readable font size, preserved line breaks, and horizontal scrolling on mobile. The global stylesheet's default `code` styling must not make the snippet unreadable.
+
+## Universal arrowhead and mobile-diagram guardrail
+- Never use implicit `markerUnits="strokeWidth"`: a small SVG marker becomes huge on thick connector lines. Use explicit `markerUnits="userSpaceOnUse"` and a 9×9px open chevron with ~1.35px stroke, not a chunky filled triangle. Keep IDs unique per SVG, use thin connectors, and do not let tips overlap panels, nodes, or text.
+- Size only the outer SVG with direct-child CSS selectors; nested SVG art must keep intrinsic coordinates. For mobile, put multiple figure panels in a readable vertical stack rather than clipping the page or requiring entire-page horizontal scrolling.
+- Run `node study-engine/verify-svg-arrowheads.mjs` and perform actual mobile/desktop visual review before calling a lesson finished. See `AI_REPLICATION_PLAYBOOK.md` for the exact marker specification.

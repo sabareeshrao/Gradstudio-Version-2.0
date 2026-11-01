@@ -30,6 +30,8 @@ jobs:
           node-version: '22'
       - name: Verify 58-topic whitelist and original template
         run: node study-engine/verify-58-topic-catalog.mjs
+      - name: Reject bulky or stroke-width-scaled SVG arrowheads
+        run: node study-engine/verify-svg-arrowheads.mjs
       - name: Verify every hosted lesson link and bypass stale module indexes
         continue-on-error: true
         run: node study-engine/verify-direct-lesson-links.mjs

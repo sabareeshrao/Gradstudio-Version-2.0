@@ -79,6 +79,9 @@
       '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
       '<div class="actions"><button id="checkBtn" type="button">Check Answers</button><button id="resetBtn" type="button">Reset</button></div>'+
       (data.sources||'')+'<p class="footer">'+esc(data.footer||data.keyword+' · Visual study module · 15 themes')+'</p>';
+    // Normalize arrowheads for every English module; no stroke-width-scaled triangles.
+    try{const {normalizeSvgArrowheads}=await import('./svg-arrowheads.js?v=20261101-slim-arrows');normalizeSvgArrowheads(root)}
+    catch(e){console.warn('SVG arrowhead guard unavailable',e)}
     // Render delimited mathematics in every dynamically injected English lesson.
 
     // Readable fallback appears immediately even when MathJax cannot load.
