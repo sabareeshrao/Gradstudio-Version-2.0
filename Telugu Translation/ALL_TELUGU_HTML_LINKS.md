@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**50 translated lessons · 350 questions · 50 individual HTML pages**
+**58 English lessons · 406 questions · 50 Telugu translations completed · 8 Telugu translations pending**
 
-All 50 lesson IDs are now translated, with live Telugu and English links for each topic.
+English lessons 01–58 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–58 are intentionally blank until those translations are published.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -58,9 +58,17 @@ All 50 lesson IDs are now translated, with live Telugu and English links for eac
 | 48 | Logistic Regression | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/48-logistic-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression) |
 | 49 | Linear Regression | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/49-linear-regression.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression) |
 | 50 | K-Means Clustering | [Open Telugu](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/50-k-means-clustering.html) | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) |
+| 51 | Principal Component Analysis (PCA) |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=principal-component-analysis) |
+| 52 | Stochastic Gradient Descent (SGD) |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-gradient-descent) |
+| 53 | Adam Optimizer |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=adam-optimizer) |
+| 54 | Learning Rate |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=learning-rate) |
+| 55 | Overfitting |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=overfitting) |
+| 56 | Generalization |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generalization) |
+| 57 | Train-Validation-Test Split |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=train-validation-test-split) |
+| 58 | Cross-Validation Evaluation |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=cross-validation-evaluation) |
 
 ## Copy-ready HTML URLs
 
-[All 50 URLs in a copy-ready text file](COPY_READY_TELUGU_URLS.txt)
+[Copy-ready Telugu URLs for lessons 01–50](COPY_READY_TELUGU_URLS.txt)
 
-Original English diagrams, tiles, code, and formulas remain unchanged. Questions, answer choices and explanations are in modern Telugu + English.
+Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–58 are pending.
