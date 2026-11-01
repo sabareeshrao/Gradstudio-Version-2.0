@@ -70,6 +70,21 @@ try{
   await page.locator('#pb-select-2').selectOption('paperbanana');
   await page.locator('.pb-card').nth(1).screenshot({path:output+'/q2-'+width+'.png'});
   await page.locator('.pb-card').nth(2).screenshot({path:output+'/q3-'+width+'.png'});
+  // Inspect repaired SciSketch Q2/Q3 with real browser geometry; preserve screenshot evidence.
+  for(const number of [2,3]){
+   await page.locator('#pb-select-'+number).selectOption('scisketch');
+   await sleep(180);
+   const result=await page.evaluate(n=>{
+    const card=[...document.querySelectorAll('.pb-card')][n-1];
+    return {status:card.querySelector('.pb-layout-status')?.textContent||'',
+      selected:card.querySelector('.pb-select')?.value,
+      visible:card.querySelectorAll('.pb-variant:not([hidden])').length};
+   },number);
+   console.log('SCISKETCH',width,'Q'+number,JSON.stringify(result));
+   if(result.selected!=='scisketch'||result.visible!==1)failures.push(width+': SciSketch control visibility failed Q'+number);
+   await page.locator('.pb-card').nth(number-1).screenshot({path:output+'/q'+number+'-scisketch-'+width+'.png'});
+   await page.locator('#pb-select-'+number).selectOption('paperbanana');
+  }
   await page.close();
  }
 }finally{
