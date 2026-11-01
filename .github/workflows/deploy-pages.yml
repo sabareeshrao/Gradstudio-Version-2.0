@@ -80,6 +80,8 @@ jobs:
           node --check study-engine/app.js
           node --check "Telugu Translation/app-te.js"
           node study-engine/verify-math-rendering.mjs
+      - name: Verify isolated Transformer SciSketch A/B experiment preserves source content
+        run: node study-engine/experiments/verify-transformer-scisketch.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Build only the 58 approved topics and original template
