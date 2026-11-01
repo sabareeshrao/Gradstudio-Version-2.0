@@ -39,7 +39,7 @@
     if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))throw Error('Invalid keyword: '+slug);
     // The published 58-topic catalog stays locked; this approved direct-link
     // lesson is kept separately and never added to the public index.
-    const lessonPath=slug==='data-augmentation'?'unlisted/data-augmentation.json':'modules/'+slug+'.json';
+    const lessonPath=(slug==='data-augmentation'||slug==='transformer-scisketch')?'unlisted/'+slug+'.json':'modules/'+slug+'.json';
     const data=await getJSON(new URL(lessonPath,base));
     if(!Array.isArray(data.questions)||data.questions.length<1||data.questions.some(q=>q.options?.length!==4||!['a','b','c','d'].includes(q.answer)||!q.figure))throw Error('Invalid module: each question needs four choices, one answer, and its own figure.');
     if(data.diagramStyle){

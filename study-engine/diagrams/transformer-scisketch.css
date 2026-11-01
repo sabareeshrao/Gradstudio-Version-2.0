@@ -1,0 +1,17 @@
+@import url("./transformer.css");
+/* Isolated SciSketch-inspired Transformer visual prototype; HTML/CSS/inline SVG only. */
+.sc-banner{display:grid;gap:9px;border:1px solid #a6e7d5;border-left:5px solid #0d9488;border-radius:13px;background:linear-gradient(115deg,#eafaf5,#f4f7ff);padding:18px 21px;margin:0 0 22px;color:#173b49;line-height:1.55}
+.sc-banner strong{font-size:.82rem;letter-spacing:.09em;color:#075c54}
+.sc-banner span{font-size:.92rem}
+.sc-banner a{color:#16619b;text-decoration:underline;text-underline-offset:3px}
+.sc-q6{border:2px solid #42c7b9!important;box-shadow:0 8px 30px rgba(11,64,78,.08)}
+.sc-q6 h3{max-width:70ch}
+.sc-summary{font-size:.87rem;line-height:1.5;max-width:83ch;color:#4e687a;margin:8px 0 16px}
+.sc-stage{max-width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-gutter:stable;border-radius:14px;border:1px solid #d4e4ec;background:#f8fcfe;overscroll-behavior-x:contain;touch-action:pan-x}
+.sc-stage>.sc-diagram{display:block;width:100%;min-width:1070px;max-width:none;height:auto;overflow:visible}
+.sc-swipe{color:#5b7485;font-size:.76rem;line-height:1.4;margin:8px 0 12px}
+.sc-original{border:1px solid #cadde5;border-radius:12px;padding:0 12px;background:#f7fbfd;margin:14px 0}
+.sc-original summary{cursor:pointer;font-size:.88rem;font-weight:800;padding:12px 4px;color:#225b74}
+.sc-original>.tr-figure{margin:0 0 13px}
+.sc-original .tr-surface{max-width:100%;overflow-x:auto}
+@media(max-width:700px){.sc-banner{padding:14px 15px}.sc-q6{padding:12px!important}.sc-stage>.sc-diagram{width:1070px;min-width:1070px}.sc-original{padding:0 6px}.sc-original>.tr-figure{padding:8px}}
