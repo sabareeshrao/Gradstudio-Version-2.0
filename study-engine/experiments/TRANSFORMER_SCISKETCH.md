@@ -1,9 +1,24 @@
-# Transformer · SciSketch Visual Experiment (pilot)
+# Transformer — SciSketch-inspired HTML/SVG visual comparison (all seven)
+Research: SciSketch (EMNLP 2025), https://aclanthology.org/2025.emnlp-demos.28/
+This is a **research-inspired code-first implementation**, NOT an execution of the SciSketch pretrained model or its image-generation pipeline.
 
-- **Research:** Wang et al., *SciSketch: An Open-source Framework for Automated Schematic Diagram Generation in Scientific Papers*, EMNLP 2025 — https://aclanthology.org/2025.emnlp-demos.28/
-- **Scope:** Duplicate full original Transformer seven-question module in `study-engine/unlisted/transformer-scisketch.json` without altering canonical `study-engine/modules/transformer.json`.
-- **Treatment:** Q6 only. Original figures for hero, Q1–Q5 and Q7 are unchanged. Q6 contains a planned, handcrafted code-first inline SVG and expandable original diagram for visual A/B comparison. This is an adaptation of SciSketch's code-based principles, **not** an execution of the original SciSketch model or its image-based pipeline.
-- **Technical source lock:** Preserve all seven stems, 28 answer options, answer keys, and explanations character-for-character; no edits to learner-facing assessment content.
-- **SVG semantics:** BERT all-to-all visibility (16 links); GPT causal mask (10 allowed of 16); T5 encoder states with three explicit decoder cross-attention connections. One inline SVG, no PNG/JPEG/assets.
-- **Deployment:** Module lives in `study-engine/unlisted` to preserve the approved 58-topic whitelist, accessed via `study-engine/?module=transformer-scisketch`.
-- **Validation:** Run `node study-engine/experiments/verify-transformer-scisketch.mjs` and browser-render / visually review desktop and mobile; do not claim the latter unless executed.
+## Immutable source
+- Canonical lesson remains `study-engine/modules/transformer.json`.
+- Unlisted A/B version `study-engine/unlisted/transformer-scisketch.json` keeps the original hero, seven question stems, all 28 options, answer keys and explanations **unchanged**.
+- Each Question 1–7 gets its own custom diagram art in inline SVG/HTML with a native `<details>` comparison control that reveals the **original** figure; no raster images or generated asset embedding.
+- Comparison controls use no form inputs and do not interfere with quiz scoring.
+
+## Seven bespoke technical scenes
+1. Contextual token neighborhood and context-enriched vector
+2. RNN sequential dependence versus parallel attention projections
+3. Tokenization, token embedding, position signals, attention and logits
+4. Original encoder-decoder Transformer internals with explicit encoder KV → decoder cross-attention
+5. PyTorch forward and training-step code next to a tensor-and-gradient-flow diagram
+6. BERT full attention, GPT lower-triangular mask, T5 cross attention
+7. Scaling atlas: dense attention + FlashAttention, KV cache/GQA, RoPE, sparse attention, distributed training
+
+## QA
+- Run `node study-engine/experiments/verify-transformer-scisketch.mjs`: this is a mandatory blocking CI step in the existing Pages workflow.
+- After deployment, visually inspect desktop and 390px mobile viewport, compare all seven A/B panels, check typography, clipping and gestures, plus quiz grading and Reveal/Hide.
+- The static test establishes structure and source integrity; it does **not** establish rendered aesthetics or complete technical accuracy.
+- Keep the approved 58-topic manifest unchanged. Preview: https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-scisketch.
