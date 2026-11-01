@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "status": "explanations-only-staging",
+  "slug": "data-augmentation",
+  "keyword": "Data Augmentation",
+  "sourceContentCommit": "06da98f5fd659889c30e679f4c86cb7b982b0df4",
+  "sourceContentPath": "content-pipeline/01-content/data-augmentation.json",
+  "sourceContentBlobSha": "34e61db6d3ef67bdee1ad5eea6f77b849377a5fe",
+  "note": "Explanation agent only. Integrate each explanation by questionIndex without changing existing stems, options, keys, diagrams, or technical explanations.",
+  "explanations": [
+    {
+      "questionIndex": 1,
+      "level": "Beginner",
+      "explanation": "<strong>Explanation:</strong> Data Augmentation creates additional training examples by applying controlled changes to existing samples while keeping the correct meaning or label. These changes give the model more variety without collecting entirely new data. For example, an online shoe shop may have only a few photos of each shoe. Training on slightly cropped, brighter, or shifted versions can help the model recognize shoes in new photos. But if a crop removes the shoe completely, it is no longer a useful training example.",
+      "exampleContext": "Online shoe catalog photos: small lighting and crop adjustments"
+    },
+    {
+      "questionIndex": 2,
+      "level": "Beginner",
+      "explanation": "<strong>Explanation:</strong> Data Augmentation helps with small datasets because a model may memorize exact examples instead of learning patterns that work on unseen data. Realistic variations expose the model to differences it may meet later and can reduce overfitting, though they cannot replace missing real-world data. Suppose a voice-command model hears “turn on the light” from only a few speakers. Adding mild background noise or changing the volume can help it handle new recordings. Changing the speech until the words become unclear would not help.",
+      "exampleContext": "Voice-command recordings from a few speakers with mild noise"
+    },
+    {
+      "questionIndex": 3,
+      "level": "Beginner",
+      "explanation": "<strong>Explanation:</strong> Data Augmentation differs by data type. Images can be cropped, rotated, or flipped; text can be carefully paraphrased or reworded; audio can receive mild noise or speed changes. The key is to preserve the correct label or intended meaning. For example, a cropped landscape may still show a mountain, a reworded customer message may still request a refund, and a recording with quiet background noise may still contain the same alarm. A useful change for one task might be harmful for another.",
+      "exampleContext": "Mountain images, refund messages, and recorded alarms across modalities"
+    },
+    {
+      "questionIndex": 4,
+      "level": "Medium",
+      "explanation": "<strong>Explanation:</strong> Online augmentation creates modified samples during training, so the same original example can look different across batches or epochs. It saves storage but uses computing time to generate changes. Offline augmentation prepares and saves those versions before training, making reuse easy but taking extra storage. For example, a satellite-image project could randomly adjust field-photo brightness each training epoch (online) or save several brightened versions ahead of time (offline). The better choice depends on storage limits, processing speed, and how much variety is needed.",
+      "exampleContext": "Satellite field photos produced on the fly versus saved ahead of training"
+    },
+    {
+      "questionIndex": 5,
+      "level": "Medium",
+      "explanation": "<strong>Explanation:</strong> Augmented data must have correct labels because the model learns the relationship between each input and its expected answer. If a change alters the meaning but the old label stays, the model learns a misleading pattern and may perform worse. Consider a road-sign classifier: flipping a left-turn arrow horizontally makes it a right-turn arrow. Keeping the label “left turn” would teach the wrong association. That example should be rejected or given an updated label when the task allows it.",
+      "exampleContext": "Left-turn versus right-turn road signs after horizontal flipping"
+    },
+    {
+      "questionIndex": 6,
+      "level": "Advanced",
+      "explanation": "<strong>Explanation:</strong> Mixup combines two training inputs and their labels in chosen proportions. CutMix replaces part of one image with a patch from another and mixes labels using the patch area. Generative models create new synthetic examples. These approaches can improve generalization by exposing the model to more variation, but the samples and labels must remain useful. For example, a flower classifier might train on a blended rose-and-tulip image with a mixed label instead of calling it only a rose. Generated flower images also need quality checks.",
+      "exampleContext": "Rose and tulip images with blended or mixed image labels"
+    },
+    {
+      "questionIndex": 7,
+      "level": "Advanced",
+      "explanation": "<strong>Explanation:</strong> Choose augmentation methods using validation data kept separate from training. Check that transformations preserve important information, represent realistic conditions, and do not create duplicates across splits. Compare results on data resembling actual future use; keep the final test set untouched. For example, a wildlife classifier should not train on an edited copy of the same camera-trap photo used for validation. Testing on photos from different camera locations can reveal whether the model learned animal features rather than memorizing one background.",
+      "exampleContext": "Wildlife camera traps and separate camera locations for validation"
+    }
+  ],
+  "handoff": {
+    "approvedForPublication": false,
+    "reason": "Curriculum expansion requires approval: not on approved 58-topic whitelist; do not publish incomplete staging.",
+    "nextStep": "Final auditor merges staged explanations only after content, visuals, and curriculum approval."
+  }
+}
