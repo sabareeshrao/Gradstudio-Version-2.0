@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "diagram-stage-only",
+  "approvedForPublication": false,
+  "topic": "Data Augmentation",
+  "slug": "data-augmentation",
+  "contentCommit": "06da98f5fd659889c30e679f4c86cb7b982b0df4",
+  "css": "diagrams.css",
+  "preview": "preview.html",
+  "hero": "hero.svg",
+  "figures": [
+    "layer-1.svg",
+    "layer-2.svg",
+    "layer-3.svg",
+    "layer-4.svg",
+    "layer-5.svg",
+    "layer-6.svg",
+    "layer-7.svg"
+  ],
+  "sourceLockedFields": [
+    "questions[*].stem",
+    "questions[*].options[answer]",
+    "questions[*].answer"
+  ],
+  "approvalNote": "Not on approved 58-topic whitelist; final auditor must seek explicit expansion approval before canonical publication."
+}
