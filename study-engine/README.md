@@ -1,127 +1,71 @@
-# Gradstudio Shared Study Engine
+# Gradstudio Shared Study Engine — 58 Topics
 
-This folder is an **additive**, browser-hosted study-module system. Older independent lessons and the root homepage remain unchanged.
+The one [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/) renders 58 approved seven-question English lessons, each from one JSON file. The original [Multimodal Training & Model Adaptation template](../index.html) remains unchanged in the repository root.
 
-**Current Batch 01 organized entrypoints:** [lessons/README.md](../lessons/README.md) · [latest lessons index](https://sabareeshrao.github.io/Gradstudio-Version-2.0/lessons/latest.html). Legacy standalone HTML files: [archive/legacy-lessons/](../archive/legacy-lessons/).
+**Source of truth:** [58-topic whitelist](58_TOPIC_WHITELIST.json) and [active manifest](modules/index.json). The shared engine uses `index.html`, `app.js`, `core.css`, `quiz-theme.js`, `math-render.js`, and each topic's JSON and diagram CSS.
 
-## Hosted lesson directory (60 modules)
+| # | Topic / HTML link | Slug | ID | Subject |
+|---:|---|---|---|---|
+| 1 | [Transformer](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer) | `transformer` | AI-00879 | Transformers and LLM Architecture |
+| 2 | [Retrieval-Augmented Generation (RAG)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rag) | `rag` | AI-01286 | Information Retrieval and RAG |
+| 3 | [Deep Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=deep-learning) | `deep-learning` | AI-00676 | Deep Learning Foundations |
+| 4 | [Neural Network](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network) | `neural-network` | AI-00678 | Deep Learning Foundations |
+| 5 | [Artificial Intelligence (AI)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=artificial-intelligence) | `artificial-intelligence` | AI-00001 | AI Foundations |
+| 6 | [Prompt Engineering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=prompt-engineering) | `prompt-engineering` | AI-01417 | Prompt Engineering |
+| 7 | [Attention Mechanism](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=attention-mechanism) | `attention-mechanism` | AI-00885 | Transformers and LLM Architecture |
+| 8 | [Self-Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=self-attention) | `self-attention` | AI-00886 | Transformers and LLM Architecture |
+| 9 | [Backpropagation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=backpropagation) | `backpropagation` | AI-00694 | Deep Learning Foundations |
+| 10 | [Gradient Descent](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=gradient-descent) | `gradient-descent` | AI-00294 | Optimization |
+| 11 | [Generative Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model) | `generative-model` | AI-01158 | Generative Modeling |
+| 12 | [Tokenization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization) | `tokenization` | AI-01035 | Natural Language Processing |
+| 13 | [Embedding Vector](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=embedding-vector) | `embedding-vector` | AI-00725 | Deep Learning Foundations |
+| 14 | [Vector Database](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database) | `vector-database` | AI-01315 | Information Retrieval and RAG |
+| 15 | [AI Agent Framework](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=ai-agent-framework) | `ai-agent-framework` | AI-01499 | AI Agents and Tool Use |
+| 16 | [Supervised Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=supervised-learning) | `supervised-learning` | AI-00483 | Supervised Machine Learning |
+| 17 | [Reinforcement Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=reinforcement-learning) | `reinforcement-learning` | AI-01623 | Reinforcement Learning |
+| 18 | [Computer Vision](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=computer-vision) | `computer-vision` | AI-01759 | Computer Vision |
+| 19 | [Natural Language Processing (NLP)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=natural-language-processing) | `natural-language-processing` | AI-01031 | Natural Language Processing |
+| 20 | [Diffusion Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=diffusion-model) | `diffusion-model` | AI-01205 | Generative Modeling |
+| 21 | [Large Vision-Language Model (LVLM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=large-vision-language-model) | `large-vision-language-model` | AI-02089 | Multimodal AI |
+| 22 | [Multimodal Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multimodal-learning) | `multimodal-learning` | AI-02068 | Multimodal AI |
+| 23 | [Generative Adversarial Network (GAN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-adversarial-network) | `generative-adversarial-network` | AI-01159 | Generative Modeling |
+| 24 | [Training Step](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=training-step) | `training-step` | AI-00754 | Deep Learning Foundations |
+| 25 | [Loss Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-function) | `loss-function` | AI-00739 | Deep Learning Foundations |
+| 26 | [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) | `activation-function` | AI-00702 | Deep Learning Foundations |
+| 27 | [Softmax](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=softmax) | `softmax` | AI-00717 | Deep Learning Foundations |
+| 28 | [Residual Connection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=residual-connection) | `residual-connection` | AI-00957 | Transformers and LLM Architecture |
+| 29 | [Positional Encoding](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding) | `positional-encoding` | AI-00931 | Transformers and LLM Architecture |
+| 30 | [Rotary Position Embedding (RoPE)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) | `rotary-position-embedding` | AI-00935 | Transformers and LLM Architecture |
+| 31 | [Query Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection) | `query-projection` | AI-00891 | Transformers and LLM Architecture |
+| 32 | [Key Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection) | `key-projection` | AI-00892 | Transformers and LLM Architecture |
+| 33 | [Value Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) | `value-projection` | AI-00893 | Transformers and LLM Architecture |
+| 34 | [Multi-Head Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multi-head-attention) | `multi-head-attention` | AI-00898 | Transformers and LLM Architecture |
+| 35 | [Transformer Encoder](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-encoder) | `transformer-encoder` | AI-00880 | Transformers and LLM Architecture |
+| 36 | [Transformer Decoder](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-decoder) | `transformer-decoder` | AI-00881 | Transformers and LLM Architecture |
+| 37 | [Context Window](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) | `context-window` | AI-00942 | Transformers and LLM Architecture |
+| 38 | [Autoregressive Language Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) | `autoregressive-language-model` | AI-00966 | Transformers and LLM Architecture |
+| 39 | [Next-Token Prediction](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=next-token-prediction) | `next-token-prediction` | AI-00970 | Transformers and LLM Architecture |
+| 40 | [Neural Network Pruning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network-pruning) | `neural-network-pruning` | AI-04081 | Efficient and Edge AI |
+| 41 | [Quantization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=quantization) | `quantization` | AI-04096 | Efficient and Edge AI |
+| 42 | [Knowledge Distillation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=knowledge-distillation) | `knowledge-distillation` | AI-04128 | Efficient and Edge AI |
+| 43 | [Convolutional Neural Network (CNN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network) | `convolutional-neural-network` | AI-00796 | Neural Network Architectures |
+| 44 | [Recurrent Neural Network (RNN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) | `recurrent-neural-network` | AI-00820 | Neural Network Architectures |
+| 45 | [Long Short-Term Memory (LSTM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) | `long-short-term-memory` | AI-00822 | Neural Network Architectures |
+| 46 | [Random Forest](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest) | `random-forest` | AI-00520 | Supervised Machine Learning |
+| 47 | [Decision Tree Classifier](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=decision-tree-classifier) | `decision-tree-classifier` | AI-00514 | Supervised Machine Learning |
+| 48 | [Logistic Regression](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression) | `logistic-regression` | AI-00497 | Supervised Machine Learning |
+| 49 | [Linear Regression](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression) | `linear-regression` | AI-00491 | Supervised Machine Learning |
+| 50 | [K-Means Clustering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) | `k-means-clustering` | AI-00592 | Unsupervised and Self-Supervised Learning |
+| 51 | [Principal Component Analysis (PCA)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=principal-component-analysis) | `principal-component-analysis` | AI-00622 | Unsupervised and Self-Supervised Learning |
+| 52 | [Stochastic Gradient Descent (SGD)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-gradient-descent) | `stochastic-gradient-descent` | AI-00296 | Optimization |
+| 53 | [Adam Optimizer](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=adam-optimizer) | `adam-optimizer` | AI-00303 | Optimization |
+| 54 | [Learning Rate](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=learning-rate) | `learning-rate` | AI-00315 | Optimization |
+| 55 | [Overfitting](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=overfitting) | `overfitting` | AI-00577 | Supervised Machine Learning |
+| 56 | [Generalization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generalization) | `generalization` | AI-00578 | Supervised Machine Learning |
+| 57 | [Train-Validation-Test Split](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=train-validation-test-split) | `train-validation-test-split` | AI-00439 | Data Preprocessing and Feature Engineering |
+| 58 | [Cross-Validation Evaluation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=cross-validation-evaluation) | `cross-validation-evaluation` | AI-03482 | AI Evaluation and Benchmarking |
 
-All lessons use the shared [Gradstudio study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/), the canonical [module manifest](modules/index.json), and the 15 themes.
+## Authoring requirements
+Preserve the user's exact questions and supplied correct answers. Each question needs four relevant options (three believable same-concept mistakes), one complete correct answer, a friendly explanation under 100 words, and a concept-specific diagram. Do not recreate the shared HTML for new topics. Use [AI replication instructions](AI_REPLICATION_PLAYBOOK.md) for all quality gates.
 
-| # | Keyword | Module slug |
-|---:|---|---|
-| 1 | [Softmax](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=softmax) | `softmax` |
-| 2 | [Masking in Transformers](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=masking) | `masking` |
-| 3 | [Positional Encoding](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=positional-encoding) | `positional-encoding` |
-| 4 | [Stochastic Depth](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-depth) | `stochastic-depth` |
-| 5 | [FLOPS](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=flops) | `flops` |
-| 6 | [Retrieval-Augmented Generation (RAG)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rag) | `rag` |
-| 7 | [Turing Test](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=turing-test) | `turing-test` |
-| 8 | [Semantic Textual Similarity (STS)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=semantic-textual-similarity) | `semantic-textual-similarity` |
-| 9 | [Gradient Descent](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=gradient-descent) | `gradient-descent` |
-| 10 | [Neural Network](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network) | `neural-network` |
-| 11 | [Backpropagation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=backpropagation) | `backpropagation` |
-| 12 | [Transformer](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer) | `transformer` |
-| 13 | [Deep Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=deep-learning) | `deep-learning` |
-| 14 | [Artificial Intelligence (AI)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=artificial-intelligence) | `artificial-intelligence` |
-| 15 | [Self-Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=self-attention) | `self-attention` |
-| 16 | [Attention Mechanism](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=attention-mechanism) | `attention-mechanism` |
-| 17 | [Multi-Head Attention](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multi-head-attention) | `multi-head-attention` |
-| 18 | [Autoregressive Language Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=autoregressive-language-model) | `autoregressive-language-model` |
-| 19 | [Prompt Engineering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=prompt-engineering) | `prompt-engineering` |
-| 20 | [Tokenization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tokenization) | `tokenization` |
-| 21 | [Vector Database](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=vector-database) | `vector-database` |
-| 22 | [Generative Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-model) | `generative-model` |
-| 23 | [Embedding Vector](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=embedding-vector) | `embedding-vector` |
-| 24 | [Reinforcement Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=reinforcement-learning) | `reinforcement-learning` |
-| 25 | [Computer Vision](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=computer-vision) | `computer-vision` |
-| 26 | [AI Agent Framework](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=ai-agent-framework) | `ai-agent-framework` |
-| 27 | [Supervised Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=supervised-learning) | `supervised-learning` |
-| 28 | [Large Vision-Language Model (LVLM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=large-vision-language-model) | `large-vision-language-model` |
-| 29 | [Diffusion Model](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=diffusion-model) | `diffusion-model` |
-| 30 | [Natural Language Processing (NLP)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=natural-language-processing) | `natural-language-processing` |
-| 31 | [Multimodal Learning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=multimodal-learning) | `multimodal-learning` |
-| 32 | [Loss Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-function) | `loss-function` |
-| 33 | [Training Step](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=training-step) | `training-step` |
-| 34 | [Generative Adversarial Network (GAN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generative-adversarial-network) | `generative-adversarial-network` |
-| 35 | [Activation Function](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=activation-function) | `activation-function` |
-| 36 | [Rotary Position Embedding (RoPE)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rotary-position-embedding) | `rotary-position-embedding` |
-| 37 | [Residual Connection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=residual-connection) | `residual-connection` |
-| 38 | [Key Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=key-projection) | `key-projection` |
-| 39 | [Query Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=query-projection) | `query-projection` |
-| 40 | [Value Projection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=value-projection) | `value-projection` |
-| 41 | [Transformer Decoder](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-decoder) | `transformer-decoder` |
-| 42 | [Context Window](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=context-window) | `context-window` |
-| 43 | [Transformer Encoder](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=transformer-encoder) | `transformer-encoder` |
-| 44 | [Next-Token Prediction](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=next-token-prediction) | `next-token-prediction` |
-| 45 | [Neural Network Pruning](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=neural-network-pruning) | `neural-network-pruning` |
-| 46 | [Quantization](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=quantization) | `quantization` |
-| 47 | [Knowledge Distillation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=knowledge-distillation) | `knowledge-distillation` |
-| 48 | [Long Short-Term Memory (LSTM)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=long-short-term-memory) | `long-short-term-memory` |
-| 49 | [Recurrent Neural Network (RNN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=recurrent-neural-network) | `recurrent-neural-network` |
-| 50 | [Random Forest](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=random-forest) | `random-forest` |
-| 51 | [Convolutional Neural Network (CNN)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=convolutional-neural-network) | `convolutional-neural-network` |
-| 52 | [Logistic Regression](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=logistic-regression) | `logistic-regression` |
-| 53 | [K-Means Clustering](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=k-means-clustering) | `k-means-clustering` |
-| 54 | [Decision Tree Classifier](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=decision-tree-classifier) | `decision-tree-classifier` |
-| 55 | [Linear Regression](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=linear-regression) | `linear-regression` |
-
-| 56 | [Adam Optimizer](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=adam-optimizer) | `adam-optimizer` |
-| 57 | [Stochastic Gradient Descent (SGD)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-gradient-descent) | `stochastic-gradient-descent` |
-| 58 | [Learning Rate](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=learning-rate) | `learning-rate` |
-| 59 | [Principal Component Analysis (PCA)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=principal-component-analysis) | `principal-component-analysis` |
-| 60 | [Overfitting](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=overfitting) | `overfitting` |
-
-### Latest additions
-
-Linear Regression covers numerical prediction, features and targets, house-price best fit, OLS residuals, verified Scikit-learn training, diagnostics, and regularization. Recent additions also include Random Forest, Recurrent Neural Network, and Convolutional Neural Network.
-
-## Architecture
-- `index.html`: one reusable page shell with the sticky header and theme picker.
-- `core.css`: reused layout, responsive behavior and theme-related styling.
-- `quiz-theme.js`: one reusable 15-theme selector, grading, progress and reset system.
-- `app.js`: manifest-driven loading, validation and rendering.
-- `modules/index.json`: discoverable lesson manifest.
-- `modules/<slug>.json`: **unique** exact question stems, four choices, answer, **simple explanation + optional technicalExplanation**, illustrated hero and seven custom diagrams.
-- `diagrams/<slug>.css`: **unique** styling required by that keyword's illustrated scenes. Softmax needs no additional sheet because its original styles are the base.
-
-## Workflow for every future keyword
-1. Keep the user's question wording and exact count, but remove redundant leading `Layer 1:`, `Layer 2:`, etc. labels from stored `stem` values. Display quiz question numbers only as `Q1`, `Q2`, ...; do not repeat layer labels in the question. Leave legitimate technical uses of the word “layer” untouched.
-2. Author four understandable options and one correct answer per question. Write **18–30 words of beginner-friendly explanation** (allowed range 12–42) and retain thorough content separately as `technicalExplanation`.
-3. Design a **different instructional diagram for every question**, plus a bespoke intro illustration. No repeated generic box-and-arrow layouts.
-4. Add `modules/new-keyword.json`; add `diagrams/new-keyword.css` if needed. Add a manifest entry.
-5. Run `node study-engine/verify-explanation-quality.mjs` to reject overloaded explanations, then run `node study-engine/verify-diagram-quality.mjs` for every new module to reject copied diagrams, generic text-only figures, missing accessible SVG scenes, or duplicate fingerprints; also run `node study-engine/verify-module-options.mjs` before publishing: four answers per card, options within a 1.15 word-count ratio, and no correct option uniquely longest by words or visible characters. This test also runs in the Pages workflow. Validate diagrams on mobile and desktop, correctness, themes and buttons. Link to `?module=new-keyword` after Pages deployment succeeds.
-6. For offline export, assemble a separate standalone HTML file. **The GitHub Pages version intentionally uses shared assets and is not file:// portable.**
-
-The migrated Softmax, Masking and Positional Encoding questions and diagrams come from the prior seven-layer pages; their unique graphics are preserved instead of being re-generated as generic templates.
-
-## Quality and security
-The module JSON contains trusted, authored HTML for figures and explanations. Treat it like source code; review changes before publishing. The renderer restricts module slugs to entries in the local manifest. Module data is not intended to accept arbitrary untrusted user input.
-
-## Notes
-The repository's older standalone-HTML policy remains applicable to exported offline editions. This engine is the new **hosted-page** mode requested by the repository owner. GitHub Pages must build and deploy before live URLs work.
-
-## Quiz answer-quality policy
-- Exactly four plausible, understandable options per layer; all distractors must be substantively relevant.
-- **Avoid answer-length clues:** correct choices should not consistently be the longest, and alternatives should have reasonably similar visible lengths. Distribute correct letters across A/B/C/D rather than putting most in one position.
-- Before committing a keyword, run `node study-engine/check-option-bias.mjs` (checks every module) or `node study-engine/check-option-bias.mjs gradient-descent` (one module). The check fails when the correct option is longest in more than two of seven layers, or one answer letter dominates.
-- Review option quality manually too. The checker does not prove options are unambiguous, accurate, or pedagogically fair.
-
-**Validation compatibility:** The answer-length workflow is strict for all new modules, including Neural Network. Four older modules (FLOPS, RAG, Turing Test, STS) still produce non-blocking legacy bias warnings so existing content does not prevent Pages deployment. Use `node study-engine/verify-module-options.mjs --strict-all` to audit every module without the grandfathering exception. These legacy warnings remain cleanup work, not a relaxation for future content.
-
-## Illustrated-v2 visual guardrail
-
-**SVG serialization guardrail:** Build repeated SVG labels with `items.map(renderLabel).join('')`, never `html += items.forEach(renderLabel)` (which appends `undefined`). The diagram-quality gate rejects serialized `undefined`, `NaN`, and `[object Object]` in visual content. Confirm required caption text is actually visible in desktop and mobile screenshots; passing structural checks alone does not establish visual quality.
-
-Every new keyword module (after the nine legacy modules) must declare `visualQuality: "illustrated-v2"`, include a concept-specific illustrated intro and one independently designed SVG instructional scene for each supplied question, and define unique `data-scene` fingerprints. The Pages build checks these constraints using `node study-engine/verify-diagram-quality.mjs`. Distinct compositions are required: do not copy a box-and-arrow skeleton and change its labels. The checker is a structural preflight, not a substitute for visual comparison to the original Multimodal Training diagrams or mobile screenshots.
-
-## Beginner-first explanations (required for every hosted lesson)
-
-The initial answer box must be easy enough for a newcomer to understand after a single read:
-
-- `explanation`: Start with `<strong>In simple words:</strong>` followed by **one idea in 18–30 everyday words** (acceptable 12–42). Use one tiny example when it makes the idea clearer.
-- `technicalExplanation`: Keep the original rigorous explanation here. The shared UI renders it inside **“Read the detailed explanation”**, collapsed until the learner chooses to expand it.
-- Avoid repeating the question, naming every wrong option, stacking jargon, or placing formulas and long code in the default explanation.
-- Run `node study-engine/verify-explanation-quality.mjs`; the Pages deployment workflow runs the same check. A human must also check factual accuracy and clarity.
-
-**The initial 17 hosted modules were updated to beginner-first explanations; later additions must meet the same quality standard.** Existing question text, correct keys, answer choices, unique diagrams, and original detailed explanations remain intact.
+The first 50 approved topics also have Telugu translations; their HTML entrypoints remain active because they are alternate-language routes, not extra English topics. Obsolete English redirect sources were removed from Git and are generated at Pages deploy time.

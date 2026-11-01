@@ -76,12 +76,10 @@ function englishSourceDigest(q){
 function validate(slug,entry,filename){
  const translationPath=resolve(folder,filename);
  const entryPath=resolve(folder,entry);
- const englishEntry=resolve(root,"lessons",entry);
  const englishModule=resolve(root,"study-engine/modules",slug+".json");
  if(!existsSync(translationPath)||!existsSync(entryPath)||!existsSync(englishModule)){
   errors.push(slug+": missing translated HTML, data or English source module");return;
  }
- if(Number(entry.slice(0,2))<=10&&!existsSync(englishEntry))errors.push(slug+": missing original English entry");
  let d=JSON.parse(readFileSync(translationPath,"utf8"));
  const source=JSON.parse(readFileSync(englishModule,"utf8"));
  if(d.translationOverlay===true){

@@ -28,6 +28,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Verify 58-topic whitelist and original template
+        run: node study-engine/verify-58-topic-catalog.mjs
       - name: Verify every hosted lesson link and bypass stale module indexes
         continue-on-error: true
         run: node study-engine/verify-direct-lesson-links.mjs
@@ -78,58 +80,34 @@ jobs:
           node study-engine/verify-math-rendering.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Build website and preserve existing browser links
+      - name: Build only the 58 approved topics and original template
         shell: bash
         run: |
           set -euo pipefail
+          node study-engine/verify-58-topic-catalog.mjs
           mkdir -p _site
           cp index.html lab-v3.css lab-v3.js _site/
-          cp -R lessons _site/lessons
-          cp -R templates _site/templates
-          cp -R archive _site/archive
           cp -R study-engine _site/study-engine
           cp -R "Telugu Translation" "_site/Telugu Translation"
-
-          # Historical root preview URLs continue to serve COMPLETE HTML.
-          while IFS= read -r -d '' file; do
-            name="$(basename "$file")"
-            if [[ -e "_site/$name" ]]; then
-              echo "Filename collision in Pages output: $name" >&2
-              exit 1
-            fi
-            cp "$file" "_site/$name"
-          done < <(find lessons templates archive -type f -name '*.html' -print0)
-
-          # Preserve historical nested lesson URLs after moving standalone
-          # sources from lessons/ to archive/legacy-lessons/.
-          node study-engine/build-legacy-aliases.mjs _site
-          test -s _site/lessons/latest.html
-          test -s _site/lessons/01-transformer.html
-          test -s _site/lessons/llm-foundations/Large-Language-Models-LLMs-Keyword-Study-008.html
-
+          cp -R archive _site/archive
+          mkdir -p _site/lessons
+          node study-engine/build-current-lesson-redirects.mjs _site
           touch _site/.nojekyll
           test -s _site/index.html
           test -s _site/study-engine/index.html
-          test -s _site/study-engine/app.js
           test -s _site/study-engine/modules/index.json
-          test -s _site/study-engine/modules/stochastic-gradient-descent.json
-          test -s _site/study-engine/diagrams/stochastic-gradient-descent.css
-          # Ensure every registered study-engine URL has a deployable JSON file.
-          node --input-type=module -e '
-            import {readFileSync, existsSync} from "node:fs";
-            import {join} from "node:path";
-            const base="_site/study-engine/modules";
-            const registry=JSON.parse(readFileSync(join(base,"index.json"),"utf8"));
-            const broken=registry.modules.filter(item=>!existsSync(join(base,item.slug+".json")));
-            if(broken.length){console.error("Unpublished lessons:",broken.map(x=>x.slug));process.exit(1)}
-            console.log("Pages artifact includes",registry.modules.length,"registered lesson JSON files.");
-          '
+          test -s _site/lessons/01-transformer.html
+          test -s _site/lessons/10-gradient-descent.html
+          test -s _site/lessons/latest.html
           test -s "_site/Telugu Translation/01-transformer.html"
-          test -s "_site/Telugu Translation/transformer.te.json"
-          test -s "_site/Telugu Translation/app-te.js"
-          test -s "_site/Telugu Translation/quiz-te.js"
-          test -s _site/study-engine/modules/positional-encoding.json
-          test -s _site/Large-Language-Models-LLMs-Keyword-Study-008.html
+          node --input-type=module -e '
+            import {readFileSync,readdirSync} from "node:fs";
+            const dir="_site/study-engine/modules";
+            const registry=JSON.parse(readFileSync(dir+"/index.json","utf8")).modules;
+            const files=readdirSync(dir).filter(x=>x.endsWith(".json")&&x!=="index.json");
+            if(registry.length!==58||files.length!==58)throw Error("Pages output must contain exactly 58 English modules");
+            console.log("Publishing exactly 58 approved English topics");
+          '
       - name: Upload static website
         uses: actions/upload-pages-artifact@v4
         with:

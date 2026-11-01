@@ -1,10 +1,7 @@
-# Gradstudio Archive
+# Archived reference material
 
-Historical source material is stored here to keep the repository root focused on the current [Study Engine](../study-engine/) and [lessons](../lessons/README.md).
+Current hosted material consists of 58 owner-approved English topics, existing alternate-language Telugu translations of 50 of them, and the original Multimodal Training & Model Adaptation template.
 
-- [AI keyword catalog](ai-keyword-catalog/README.md) — 4,857 cataloged keywords across 43 subject domains, including the original Markdown inventory and CSV files. Moved from `ai-keyword-catalog/`.
-- [References](references/) — original source PDF, [Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf](references/Build_a_Large_Language_Model_Kept_Ranked_Technical_Terms.pdf). Moved from `references/`.
-- [Legacy HTML lessons](legacy-lessons/README.md) — archived independent HTML lessons replaced by current shared-engine modules.
-- [Web API demo](Web-API-Keyword-Study-Demo-001.html) — earlier prototype.
+Legacy standalone lesson HTML, the old Web API demonstration and redundant standalone theme HTML were removed from the **current working tree** during the 58-topic cleanup. Previous revisions are recoverable in Git history; old standalone Pages URLs may no longer work. The technical keyword catalog and the original ranked PDF are retained here as non-hosted research references.
 
-The source catalog and the PDF are preserved; catalog README links to root-level curriculum guidance were adjusted for this new location.
+[Current lessons](../study-engine/README.md) · [Original root template](../index.html)

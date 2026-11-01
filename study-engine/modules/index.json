@@ -1,339 +1,352 @@
 {
   "modules": [
     {
-      "slug": "softmax",
-      "title": "Softmax",
-      "domain": "Probability Distribution and Output Normalization · Deep Learning Foundations"
-    },
-    {
-      "slug": "masking",
-      "title": "Masking in Transformers",
-      "domain": "Transformer architecture"
-    },
-    {
-      "slug": "positional-encoding",
-      "title": "Positional Encoding",
-      "domain": "Transformer architecture"
-    },
-    {
-      "slug": "stochastic-depth",
-      "title": "Stochastic Depth",
-      "domain": "Regularization Techniques · Deep Learning & LLMs"
-    },
-    {
-      "slug": "flops",
-      "title": "FLOPS",
-      "domain": "Computational Performance Metrics · Efficient and Edge AI"
+      "slug": "transformer",
+      "title": "Transformer",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00879"
     },
     {
       "slug": "rag",
       "title": "Retrieval-Augmented Generation (RAG)",
-      "domain": "Retrieval-Augmented Generation and Knowledge Retrieval · Information Retrieval and RAG · AI-01286"
-    },
-    {
-      "slug": "turing-test",
-      "title": "Turing Test",
-      "domain": "Foundations of Artificial Intelligence · Artificial Intelligence (AI)"
-    },
-    {
-      "slug": "semantic-textual-similarity",
-      "title": "Semantic Textual Similarity (STS)",
-      "domain": "Semantic Similarity & Text Representation · NLP"
-    },
-    {
-      "slug": "gradient-descent",
-      "title": "Gradient Descent",
-      "domain": "Optimization Algorithms · Deep Learning & LLMs"
-    },
-    {
-      "slug": "adam-optimizer",
-      "title": "Adam Optimizer",
-      "domain": "Adaptive Learning Rates and Neural Network Optimization · Optimization"
-    },
-    {
-      "slug": "neural-network",
-      "title": "Neural Network",
-      "domain": "Artificial Neural Networks"
-    },
-    {
-      "slug": "backpropagation",
-      "title": "Backpropagation",
-      "domain": "Neural Network Training and Gradient Computation · Artificial Intelligence (AI) / Machine Learning / Deep Learning"
-    },
-    {
-      "slug": "transformer",
-      "title": "Transformer",
-      "domain": "Transformer Architecture and Attention Mechanisms · Transformers and LLM Architecture"
+      "domain": "Information Retrieval and RAG",
+      "catalogId": "AI-01286"
     },
     {
       "slug": "deep-learning",
       "title": "Deep Learning",
-      "domain": "Deep Learning Fundamentals and Neural Network Architectures · Deep Learning Foundations"
+      "domain": "Deep Learning Foundations",
+      "catalogId": "AI-00676"
+    },
+    {
+      "slug": "neural-network",
+      "title": "Neural Network",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "AI-00678"
     },
     {
       "slug": "artificial-intelligence",
       "title": "Artificial Intelligence (AI)",
-      "domain": "Foundations and Evolution of Artificial Intelligence · AI Foundations"
-    },
-    {
-      "slug": "self-attention",
-      "title": "Self-Attention",
-      "domain": "Self-Attention and Contextual Representation Learning · Transformers and LLM Architecture"
-    },
-    {
-      "slug": "attention-mechanism",
-      "title": "Attention Mechanism",
-      "domain": "Attention Mechanisms and Contextual Information Processing · Transformers and LLM Architecture"
-    },
-    {
-      "slug": "multi-head-attention",
-      "title": "Multi-Head Attention",
-      "domain": "Parallel Attention Heads and Contextual Representation Learning · Transformers and LLM Architecture"
-    },
-    {
-      "slug": "autoregressive-language-model",
-      "title": "Autoregressive Language Model",
-      "domain": "Next-Token Prediction and Sequential Language Generation · Transformers and LLM Architecture"
+      "domain": "AI Foundations",
+      "catalogId": "AI-00001"
     },
     {
       "slug": "prompt-engineering",
       "title": "Prompt Engineering",
-      "domain": "Prompt Design, Instruction Optimization, and LLM Behavior Control · Prompt Engineering"
+      "domain": "Prompt Engineering",
+      "catalogId": "AI-01417"
     },
     {
-      "slug": "tokenization",
-      "title": "Tokenization",
-      "domain": "Text Processing and Token Representation · NLP"
+      "slug": "attention-mechanism",
+      "title": "Attention Mechanism",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00885"
     },
     {
-      "slug": "vector-database",
-      "title": "Vector Database",
-      "domain": "Vector Storage, Similarity Search, and Semantic Information Retrieval · Information Retrieval and RAG"
+      "slug": "self-attention",
+      "title": "Self-Attention",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00886"
+    },
+    {
+      "slug": "backpropagation",
+      "title": "Backpropagation",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "AI-00694"
+    },
+    {
+      "slug": "gradient-descent",
+      "title": "Gradient Descent",
+      "domain": "Optimization",
+      "catalogId": "AI-00294"
     },
     {
       "slug": "generative-model",
       "title": "Generative Model",
-      "domain": "Generative Artificial Intelligence and Data Distribution Learning · Generative Modeling"
+      "domain": "Generative Modeling",
+      "catalogId": "AI-01158"
+    },
+    {
+      "slug": "tokenization",
+      "title": "Tokenization",
+      "domain": "Natural Language Processing",
+      "catalogId": "AI-01035"
     },
     {
       "slug": "embedding-vector",
       "title": "Embedding Vector",
-      "domain": "Numerical Representations and Semantic Feature Spaces · Deep Learning Foundations"
+      "domain": "Deep Learning Foundations",
+      "catalogId": "AI-00725"
     },
     {
-      "slug": "reinforcement-learning",
-      "title": "Reinforcement Learning",
-      "domain": "Learning Through Interaction, Rewards, and Sequential Decision-Making · Reinforcement Learning (RL)"
-    },
-    {
-      "slug": "computer-vision",
-      "title": "Computer Vision",
-      "domain": "Visual Understanding, Image Processing, and Machine Perception · Computer Vision"
+      "slug": "vector-database",
+      "title": "Vector Database",
+      "domain": "Information Retrieval and RAG",
+      "catalogId": "AI-01315"
     },
     {
       "slug": "ai-agent-framework",
       "title": "AI Agent Framework",
-      "domain": "AI Agent Development, Orchestration, and Autonomous Task Execution · AI Agents and Tool Use"
+      "domain": "AI Agents and Tool Use",
+      "catalogId": "AI-01499"
     },
     {
       "slug": "supervised-learning",
       "title": "Supervised Learning",
-      "domain": "Learning from Labeled Data and Predictive Modeling · Supervised Machine Learning"
+      "domain": "Supervised Machine Learning",
+      "catalogId": "AI-00483"
     },
     {
-      "slug": "large-vision-language-model",
-      "title": "Large Vision-Language Model (LVLM)",
-      "domain": "Visual Understanding, Language Reasoning, and Multimodal Intelligence · Multimodal AI"
+      "slug": "reinforcement-learning",
+      "title": "Reinforcement Learning",
+      "domain": "Reinforcement Learning",
+      "catalogId": "AI-01623"
     },
     {
-      "slug": "diffusion-model",
-      "title": "Diffusion Model",
-      "domain": "Noise-Based Generative Models and Data Generation · Generative Modeling"
+      "slug": "computer-vision",
+      "title": "Computer Vision",
+      "domain": "Computer Vision",
+      "catalogId": "AI-01759"
     },
     {
       "slug": "natural-language-processing",
       "title": "Natural Language Processing (NLP)",
-      "domain": "Understanding, Processing, and Generating Human Language · Natural Language Processing"
+      "domain": "Natural Language Processing",
+      "catalogId": "AI-01031"
+    },
+    {
+      "slug": "diffusion-model",
+      "title": "Diffusion Model",
+      "domain": "Generative Modeling",
+      "catalogId": "AI-01205"
+    },
+    {
+      "slug": "large-vision-language-model",
+      "title": "Large Vision-Language Model (LVLM)",
+      "domain": "Multimodal AI",
+      "catalogId": "AI-02089"
     },
     {
       "slug": "multimodal-learning",
       "title": "Multimodal Learning",
-      "domain": "Learning from Multiple Types of Data and Cross-Modal Information · Multimodal AI"
-    },
-    {
-      "slug": "loss-function",
-      "title": "Loss Function",
-      "domain": "Measuring Prediction Errors and Guiding Model Learning · Deep Learning Foundations"
-    },
-    {
-      "slug": "training-step",
-      "title": "Training Step",
-      "domain": "Neural Network Training and Parameter Updates · Deep Learning Foundations"
+      "domain": "Multimodal AI",
+      "catalogId": "AI-02068"
     },
     {
       "slug": "generative-adversarial-network",
       "title": "Generative Adversarial Network (GAN)",
-      "domain": "Adversarial Learning and Synthetic Data Generation · Generative Modeling"
+      "domain": "Generative Modeling",
+      "catalogId": "AI-01159"
+    },
+    {
+      "slug": "training-step",
+      "title": "Training Step",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "AI-00754"
+    },
+    {
+      "slug": "loss-function",
+      "title": "Loss Function",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "AI-00739"
     },
     {
       "slug": "activation-function",
       "title": "Activation Function",
-      "domain": "Introducing Nonlinearity and Controlling Neuron Outputs · Deep Learning Foundations"
+      "domain": "Deep Learning Foundations",
+      "catalogId": "AI-00702"
     },
     {
-      "slug": "rotary-position-embedding",
-      "title": "Rotary Position Embedding (RoPE)",
-      "domain": "Rotary Position Encoding and Relative Position Awareness · Transformers and LLM Architecture"
+      "slug": "softmax",
+      "title": "Softmax",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "AI-00717"
     },
     {
       "slug": "residual-connection",
       "title": "Residual Connection",
-      "domain": "Skip Connections and Information Flow in Deep Neural Networks · Transformers and LLM Architecture"
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00957"
     },
     {
-      "slug": "key-projection",
-      "title": "Key Projection",
-      "domain": "Key Vector Generation and Attention Matching · Transformers and LLM Architecture"
+      "slug": "positional-encoding",
+      "title": "Positional Encoding",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00931"
+    },
+    {
+      "slug": "rotary-position-embedding",
+      "title": "Rotary Position Embedding (RoPE)",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00935"
     },
     {
       "slug": "query-projection",
       "title": "Query Projection",
-      "domain": "Query Vector Generation and Attention Computation · Transformers and LLM Architecture"
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00891"
+    },
+    {
+      "slug": "key-projection",
+      "title": "Key Projection",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00892"
     },
     {
       "slug": "value-projection",
       "title": "Value Projection",
-      "domain": "Value Vector Generation and Information Transfer in Attention · Transformers and LLM Architecture"
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00893"
     },
     {
-      "slug": "transformer-decoder",
-      "title": "Transformer Decoder",
-      "domain": "Autoregressive Text Generation and Decoder Architecture · Transformers and LLM Architecture"
-    },
-    {
-      "slug": "context-window",
-      "title": "Context Window",
-      "domain": "Token Limits, Context Management, and Long-Context Processing · Transformers and LLM Architecture"
+      "slug": "multi-head-attention",
+      "title": "Multi-Head Attention",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00898"
     },
     {
       "slug": "transformer-encoder",
       "title": "Transformer Encoder",
-      "domain": "Bidirectional Context Understanding and Encoder Architecture · Transformers and LLM Architecture"
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00880"
+    },
+    {
+      "slug": "transformer-decoder",
+      "title": "Transformer Decoder",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00881"
+    },
+    {
+      "slug": "context-window",
+      "title": "Context Window",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00942"
+    },
+    {
+      "slug": "autoregressive-language-model",
+      "title": "Autoregressive Language Model",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00966"
     },
     {
       "slug": "next-token-prediction",
       "title": "Next-Token Prediction",
-      "domain": "Predicting and Generating Tokens in Large Language Models · Transformers and LLM Architecture"
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "AI-00970"
     },
     {
       "slug": "neural-network-pruning",
       "title": "Neural Network Pruning",
-      "domain": "Reducing Neural Network Size and Computational Complexity · Efficient and Edge AI"
+      "domain": "Efficient and Edge AI",
+      "catalogId": "AI-04081"
     },
     {
       "slug": "quantization",
       "title": "Quantization",
-      "domain": "Reducing Numerical Precision for Efficient AI Models · Efficient and Edge AI"
+      "domain": "Efficient and Edge AI",
+      "catalogId": "AI-04096"
     },
     {
       "slug": "knowledge-distillation",
       "title": "Knowledge Distillation",
-      "domain": "Transferring Knowledge from Large AI Models to Smaller Models · Efficient and Edge AI"
-    },
-    {
-      "slug": "long-short-term-memory",
-      "title": "Long Short-Term Memory (LSTM)",
-      "domain": "Learning Long-Term Dependencies and Managing Memory in Sequential Data · Neural Network Architectures"
-    },
-    {
-      "slug": "recurrent-neural-network",
-      "title": "Recurrent Neural Network (RNN)",
-      "domain": "Sequential Data Processing and Learning Temporal Dependencies · Neural Network Architectures"
-    },
-    {
-      "slug": "random-forest",
-      "title": "Random Forest",
-      "domain": "Ensemble Learning Using Multiple Decision Trees · Supervised Machine Learning"
+      "domain": "Efficient and Edge AI",
+      "catalogId": "AI-04128"
     },
     {
       "slug": "convolutional-neural-network",
       "title": "Convolutional Neural Network (CNN)",
-      "domain": "Learning Visual Features Through Convolutional Layers · Neural Network Architectures"
+      "domain": "Neural Network Architectures",
+      "catalogId": "AI-00796"
     },
     {
-      "slug": "logistic-regression",
-      "title": "Logistic Regression",
-      "domain": "Probability-Based Classification and Decision Boundaries · Supervised Machine Learning"
+      "slug": "recurrent-neural-network",
+      "title": "Recurrent Neural Network (RNN)",
+      "domain": "Neural Network Architectures",
+      "catalogId": "AI-00820"
     },
     {
-      "slug": "k-means-clustering",
-      "title": "K-Means Clustering",
-      "domain": "Discovering Hidden Groups and Patterns in Unlabeled Data · Unsupervised and Self-Supervised Learning"
+      "slug": "long-short-term-memory",
+      "title": "Long Short-Term Memory (LSTM)",
+      "domain": "Neural Network Architectures",
+      "catalogId": "AI-00822"
+    },
+    {
+      "slug": "random-forest",
+      "title": "Random Forest",
+      "domain": "Supervised Machine Learning",
+      "catalogId": "AI-00520"
     },
     {
       "slug": "decision-tree-classifier",
       "title": "Decision Tree Classifier",
-      "domain": "Classification Using Decision Rules and Tree-Based Learning · Supervised Machine Learning"
+      "domain": "Supervised Machine Learning",
+      "catalogId": "AI-00514"
+    },
+    {
+      "slug": "logistic-regression",
+      "title": "Logistic Regression",
+      "domain": "Supervised Machine Learning",
+      "catalogId": "AI-00497"
     },
     {
       "slug": "linear-regression",
       "title": "Linear Regression",
-      "domain": "Predicting Continuous Values and Understanding Relationships Between Variables · Supervised Machine Learning"
+      "domain": "Supervised Machine Learning",
+      "catalogId": "AI-00491"
     },
     {
-      "slug": "stochastic-gradient-descent",
-      "title": "Stochastic Gradient Descent (SGD)",
-      "domain": "Iterative Optimization and Model Training · Optimization"
-    },
-    {
-      "slug": "learning-rate",
-      "title": "Learning Rate",
-      "domain": "Step Size Control and Optimization During Model Training · Optimization"
+      "slug": "k-means-clustering",
+      "title": "K-Means Clustering",
+      "domain": "Unsupervised and Self-Supervised Learning",
+      "catalogId": "AI-00592"
     },
     {
       "slug": "principal-component-analysis",
       "title": "Principal Component Analysis (PCA)",
-      "domain": "Dimensionality Reduction and Feature Extraction · Unsupervised and Self-Supervised Learning"
+      "domain": "Unsupervised and Self-Supervised Learning",
+      "catalogId": "AI-00622"
+    },
+    {
+      "slug": "stochastic-gradient-descent",
+      "title": "Stochastic Gradient Descent (SGD)",
+      "domain": "Optimization",
+      "catalogId": "AI-00296"
+    },
+    {
+      "slug": "adam-optimizer",
+      "title": "Adam Optimizer",
+      "domain": "Optimization",
+      "catalogId": "AI-00303"
+    },
+    {
+      "slug": "learning-rate",
+      "title": "Learning Rate",
+      "domain": "Optimization",
+      "catalogId": "AI-00315"
     },
     {
       "slug": "overfitting",
       "title": "Overfitting",
-      "domain": "Model Generalization and Training Performance · Supervised Machine Learning"
-    },
-    {
-      "slug": "cross-validation-evaluation",
-      "title": "Cross-Validation Evaluation",
-      "domain": "Model Evaluation and Performance Reliability · AI Evaluation and Benchmarking"
+      "domain": "Supervised Machine Learning",
+      "catalogId": "AI-00577"
     },
     {
       "slug": "generalization",
       "title": "Generalization",
-      "domain": "Model Performance on Unseen Data · Supervised Machine Learning"
+      "domain": "Supervised Machine Learning",
+      "catalogId": "AI-00578"
     },
     {
       "slug": "train-validation-test-split",
       "title": "Train-Validation-Test Split",
-      "domain": "Dataset Partitioning and Model Evaluation · Data Preprocessing and Feature Engineering"
+      "domain": "Data Preprocessing and Feature Engineering",
+      "catalogId": "AI-00439"
     },
     {
-      "slug": "data-leakage",
-      "title": "Data Leakage",
-      "domain": "Preventing Information Leakage in Machine Learning · Data Preprocessing and Feature Engineering"
-    },
-    {
-      "slug": "model-evaluation",
-      "title": "Model Evaluation",
-      "domain": "Measuring and Comparing Machine Learning Model Performance · AI Evaluation and Benchmarking"
-    },
-    {
-      "slug": "feature-selection",
-      "title": "Feature Selection",
-      "domain": "Selecting Relevant Features for Machine Learning · Data Preprocessing and Feature Engineering"
-    },
-    {
-      "slug": "data-augmentation",
-      "title": "Data Augmentation",
-      "domain": "Expanding Training Data Through Data Transformations · Data Preprocessing and Feature Engineering"
+      "slug": "cross-validation-evaluation",
+      "title": "Cross-Validation Evaluation",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "AI-03482"
     }
   ]
 }

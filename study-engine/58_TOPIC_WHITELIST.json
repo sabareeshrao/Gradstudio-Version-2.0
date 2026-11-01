@@ -1,0 +1,354 @@
+{
+  "version": 1,
+  "description": "Owner-approved English curriculum: exactly 58 seven-question topics.",
+  "topics": [
+    {
+      "number": 1,
+      "slug": "transformer",
+      "id": "AI-00879",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 2,
+      "slug": "rag",
+      "id": "AI-01286",
+      "subject": "Information Retrieval and RAG"
+    },
+    {
+      "number": 3,
+      "slug": "deep-learning",
+      "id": "AI-00676",
+      "subject": "Deep Learning Foundations"
+    },
+    {
+      "number": 4,
+      "slug": "neural-network",
+      "id": "AI-00678",
+      "subject": "Deep Learning Foundations"
+    },
+    {
+      "number": 5,
+      "slug": "artificial-intelligence",
+      "id": "AI-00001",
+      "subject": "AI Foundations"
+    },
+    {
+      "number": 6,
+      "slug": "prompt-engineering",
+      "id": "AI-01417",
+      "subject": "Prompt Engineering"
+    },
+    {
+      "number": 7,
+      "slug": "attention-mechanism",
+      "id": "AI-00885",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 8,
+      "slug": "self-attention",
+      "id": "AI-00886",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 9,
+      "slug": "backpropagation",
+      "id": "AI-00694",
+      "subject": "Deep Learning Foundations"
+    },
+    {
+      "number": 10,
+      "slug": "gradient-descent",
+      "id": "AI-00294",
+      "subject": "Optimization"
+    },
+    {
+      "number": 11,
+      "slug": "generative-model",
+      "id": "AI-01158",
+      "subject": "Generative Modeling"
+    },
+    {
+      "number": 12,
+      "slug": "tokenization",
+      "id": "AI-01035",
+      "subject": "Natural Language Processing"
+    },
+    {
+      "number": 13,
+      "slug": "embedding-vector",
+      "id": "AI-00725",
+      "subject": "Deep Learning Foundations"
+    },
+    {
+      "number": 14,
+      "slug": "vector-database",
+      "id": "AI-01315",
+      "subject": "Information Retrieval and RAG"
+    },
+    {
+      "number": 15,
+      "slug": "ai-agent-framework",
+      "id": "AI-01499",
+      "subject": "AI Agents and Tool Use"
+    },
+    {
+      "number": 16,
+      "slug": "supervised-learning",
+      "id": "AI-00483",
+      "subject": "Supervised Machine Learning"
+    },
+    {
+      "number": 17,
+      "slug": "reinforcement-learning",
+      "id": "AI-01623",
+      "subject": "Reinforcement Learning"
+    },
+    {
+      "number": 18,
+      "slug": "computer-vision",
+      "id": "AI-01759",
+      "subject": "Computer Vision"
+    },
+    {
+      "number": 19,
+      "slug": "natural-language-processing",
+      "id": "AI-01031",
+      "subject": "Natural Language Processing"
+    },
+    {
+      "number": 20,
+      "slug": "diffusion-model",
+      "id": "AI-01205",
+      "subject": "Generative Modeling"
+    },
+    {
+      "number": 21,
+      "slug": "large-vision-language-model",
+      "id": "AI-02089",
+      "subject": "Multimodal AI"
+    },
+    {
+      "number": 22,
+      "slug": "multimodal-learning",
+      "id": "AI-02068",
+      "subject": "Multimodal AI"
+    },
+    {
+      "number": 23,
+      "slug": "generative-adversarial-network",
+      "id": "AI-01159",
+      "subject": "Generative Modeling"
+    },
+    {
+      "number": 24,
+      "slug": "training-step",
+      "id": "AI-00754",
+      "subject": "Deep Learning Foundations"
+    },
+    {
+      "number": 25,
+      "slug": "loss-function",
+      "id": "AI-00739",
+      "subject": "Deep Learning Foundations"
+    },
+    {
+      "number": 26,
+      "slug": "activation-function",
+      "id": "AI-00702",
+      "subject": "Deep Learning Foundations"
+    },
+    {
+      "number": 27,
+      "slug": "softmax",
+      "id": "AI-00717",
+      "subject": "Deep Learning Foundations"
+    },
+    {
+      "number": 28,
+      "slug": "residual-connection",
+      "id": "AI-00957",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 29,
+      "slug": "positional-encoding",
+      "id": "AI-00931",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 30,
+      "slug": "rotary-position-embedding",
+      "id": "AI-00935",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 31,
+      "slug": "query-projection",
+      "id": "AI-00891",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 32,
+      "slug": "key-projection",
+      "id": "AI-00892",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 33,
+      "slug": "value-projection",
+      "id": "AI-00893",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 34,
+      "slug": "multi-head-attention",
+      "id": "AI-00898",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 35,
+      "slug": "transformer-encoder",
+      "id": "AI-00880",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 36,
+      "slug": "transformer-decoder",
+      "id": "AI-00881",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 37,
+      "slug": "context-window",
+      "id": "AI-00942",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 38,
+      "slug": "autoregressive-language-model",
+      "id": "AI-00966",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 39,
+      "slug": "next-token-prediction",
+      "id": "AI-00970",
+      "subject": "Transformers and LLM Architecture"
+    },
+    {
+      "number": 40,
+      "slug": "neural-network-pruning",
+      "id": "AI-04081",
+      "subject": "Efficient and Edge AI"
+    },
+    {
+      "number": 41,
+      "slug": "quantization",
+      "id": "AI-04096",
+      "subject": "Efficient and Edge AI"
+    },
+    {
+      "number": 42,
+      "slug": "knowledge-distillation",
+      "id": "AI-04128",
+      "subject": "Efficient and Edge AI"
+    },
+    {
+      "number": 43,
+      "slug": "convolutional-neural-network",
+      "id": "AI-00796",
+      "subject": "Neural Network Architectures"
+    },
+    {
+      "number": 44,
+      "slug": "recurrent-neural-network",
+      "id": "AI-00820",
+      "subject": "Neural Network Architectures"
+    },
+    {
+      "number": 45,
+      "slug": "long-short-term-memory",
+      "id": "AI-00822",
+      "subject": "Neural Network Architectures"
+    },
+    {
+      "number": 46,
+      "slug": "random-forest",
+      "id": "AI-00520",
+      "subject": "Supervised Machine Learning"
+    },
+    {
+      "number": 47,
+      "slug": "decision-tree-classifier",
+      "id": "AI-00514",
+      "subject": "Supervised Machine Learning"
+    },
+    {
+      "number": 48,
+      "slug": "logistic-regression",
+      "id": "AI-00497",
+      "subject": "Supervised Machine Learning"
+    },
+    {
+      "number": 49,
+      "slug": "linear-regression",
+      "id": "AI-00491",
+      "subject": "Supervised Machine Learning"
+    },
+    {
+      "number": 50,
+      "slug": "k-means-clustering",
+      "id": "AI-00592",
+      "subject": "Unsupervised and Self-Supervised Learning"
+    },
+    {
+      "number": 51,
+      "slug": "principal-component-analysis",
+      "id": "AI-00622",
+      "subject": "Unsupervised and Self-Supervised Learning"
+    },
+    {
+      "number": 52,
+      "slug": "stochastic-gradient-descent",
+      "id": "AI-00296",
+      "subject": "Optimization"
+    },
+    {
+      "number": 53,
+      "slug": "adam-optimizer",
+      "id": "AI-00303",
+      "subject": "Optimization"
+    },
+    {
+      "number": 54,
+      "slug": "learning-rate",
+      "id": "AI-00315",
+      "subject": "Optimization"
+    },
+    {
+      "number": 55,
+      "slug": "overfitting",
+      "id": "AI-00577",
+      "subject": "Supervised Machine Learning"
+    },
+    {
+      "number": 56,
+      "slug": "generalization",
+      "id": "AI-00578",
+      "subject": "Supervised Machine Learning"
+    },
+    {
+      "number": 57,
+      "slug": "train-validation-test-split",
+      "id": "AI-00439",
+      "subject": "Data Preprocessing and Feature Engineering"
+    },
+    {
+      "number": 58,
+      "slug": "cross-validation-evaluation",
+      "id": "AI-03482",
+      "subject": "AI Evaluation and Benchmarking"
+    }
+  ]
+}

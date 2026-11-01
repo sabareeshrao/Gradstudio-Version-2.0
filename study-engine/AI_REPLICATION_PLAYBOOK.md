@@ -1,6 +1,6 @@
 # Gradstudio AI Replication Playbook — English Visual Study Modules
 
-**Purpose:** Use this file as a durable, repo-based reference when another AI (or another chat) is asked to build or revise a Gradstudio topic. Read [BEGINNER_ENGLISH_EDITORIAL_RULES.md](./BEGINNER_ENGLISH_EDITORIAL_RULES.md) too. The finished [Data Leakage lesson](./modules/data-leakage.json) and its [diagram stylesheet](./diagrams/data-leakage.css) are a concrete implementation reference, not perfect answer text to copy.
+**Purpose:** Use this file as a durable, repo-based reference when another AI (or another chat) is asked to build or revise a Gradstudio topic. Read [BEGINNER_ENGLISH_EDITORIAL_RULES.md](./BEGINNER_ENGLISH_EDITORIAL_RULES.md) too. The retained [Train/Validation/Test Split module](./modules/train-validation-test-split.json), [Backpropagation module](./modules/backpropagation.json) and the original [Multimodal Training template](../index.html) are current visual and content references. Data Leakage is an archived historical example, not one of the approved 58 topics.
 
 ## Non-negotiable content contract
 
@@ -71,4 +71,4 @@ Do **not** treat a colored rectangle with text as a high-quality teaching diagra
 - Test actual rendered visuals on desktop and mobile when a browser is available. **Structural checks alone cannot prove visual quality.** State clearly if rendering could not be independently inspected.
 - Guard preservation: a diagram upgrade must not rewrite user questions, correct answers, answer keys, explanatory text, tested code or Telugu materials unless explicitly requested.
 
-**Reference upgrade:** `modules/data-leakage.json` and `diagrams/data-leakage.css` (illustrated-v3 scenes) show the new visual expectations: an illustrated prediction-time leak, two leakage sources, a numerical training/test mean plot, a CV fold + augmented image comparison, an in-fold Pipeline with readable code, chronological/grouped splits and a production point-in-time lineage timeline.
+**Current visual reference:** Use `modules/train-validation-test-split.json`, `diagrams/train-validation-test-split.css`, `modules/backpropagation.json` and the original root `index.html`. Historical Data Leakage illustrations are recoverable through Git history, not part of the active 58-topic library.

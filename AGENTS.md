@@ -1,3 +1,5 @@
+> **Current policy (November 2026):** Use exactly the 58 approved English topics in [study-engine/58_TOPIC_WHITELIST.json](study-engine/58_TOPIC_WHITELIST.json), the shared study engine, and the original root Multimodal Training template (`index.html`, `lab-v3.css`, `lab-v3.js`). Historical standalone-HTML and template-directory references in older instructions below are archival only; redundant sources have been removed from main. Existing Telugu translations of the first 50 approved topics remain protected.
+
 # AGENTS.md — Read first for Gradstudio module work
 
 > **Active-folder cleanup (2026-10-30):** The old independent HTML examples now reside in `archive/legacy-lessons/`. The `lessons/` folder lists current Batch 01 study modules using thin HTML entrypoints, with canonical content in `study-engine/modules/`. Historical nested Pages lesson URLs redirect to archived originals, while historical root URLs retain full HTML copies. For future hosted modules, keep following the shared Study Engine rule below.
