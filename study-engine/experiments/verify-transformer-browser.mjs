@@ -82,6 +82,7 @@ try{
    },number);
    console.log('SCISKETCH',width,'Q'+number,JSON.stringify(result));
    if(result.selected!=='scisketch'||result.visible!==1)failures.push(width+': SciSketch control visibility failed Q'+number);
+   if(!result.status.includes('no detected SVG')||result.status.includes('potential collisions'))failures.push(width+': SciSketch collision check failed Q'+number+': '+result.status);
    await page.locator('.pb-card').nth(number-1).screenshot({path:output+'/q'+number+'-scisketch-'+width+'.png'});
    await page.locator('#pb-select-'+number).selectOption('paperbanana');
   }
