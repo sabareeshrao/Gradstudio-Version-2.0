@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "status": "content-only-staging",
+  "slug": "model-evaluation",
+  "keyword": "Model Evaluation",
+  "title": "Model Evaluation",
+  "topic": "Measuring Machine Learning Model Performance",
+  "subject": "AI Evaluation and Benchmarking",
+  "topicId": "AI-03476",
+  "rankedPosition": 62,
+  "curriculumNote": "Staged at user request; not in the currently approved 58-topic whitelist. Do not alter that whitelist without separate authorization.",
+  "source": "User-supplied four-topic Agent 1 input; verbatim question and correct-answer lock",
+  "questions": [
+    {
+      "tag": "Beginner · Why evaluation matters",
+      "level": "Beginner",
+      "stem": "What is Model Evaluation in Machine Learning, and how does it help determine whether a trained model makes accurate and reliable predictions?",
+      "options": [
+        "Model Evaluation measures how closely a trained model fits the records it learned from. Consistently low training error is enough to establish accurate and reliable predictions.",
+        "Model Evaluation measures how well a trained model performs using evaluation data and suitable metrics. It helps determine whether the model can make accurate predictions on unseen data.",
+        "Model Evaluation compares predictions with evaluation labels, but uses the resulting score to keep updating the model until the same evaluation data yields its highest accuracy.",
+        "Model Evaluation uses metrics collected during training to estimate reliability. Testing on new examples is unnecessary once multiple training batches have produced similar scores."
+      ],
+      "answer": "b"
+    },
+    {
+      "tag": "Beginner · Unseen test data",
+      "level": "Beginner",
+      "stem": "Why is evaluating a Machine Learning model only on its training data insufficient, and what role does unseen test data play?",
+      "options": [
+        "Training data provides the strongest estimate of generalization because those examples are well understood by the model. Unseen test inputs mainly check whether file preprocessing succeeded.",
+        "A model can be evaluated on its training records if they are shuffled first. The resulting error usually reflects performance on unfamiliar data without needing an independent test set.",
+        "Training performance alone cannot show whether a model has learned useful patterns or memorized examples. Unseen test data measures how well the model generalizes to new inputs.",
+        "Using an unseen test set helps estimate generalization, but the test set should also guide feature choices and hyperparameters before the model's final accuracy is reported."
+      ],
+      "answer": "c"
+    },
+    {
+      "tag": "Beginner · Classification and regression metrics",
+      "level": "Beginner",
+      "stem": "What are the main evaluation metrics used for classification and regression models, and how do they measure different types of prediction performance?",
+      "options": [
+        "Classification uses accuracy, precision, recall, and F1-score to measure prediction correctness. Regression uses MAE, MSE, and RMSE to measure differences between predicted and actual numerical values.",
+        "Classification mainly uses MAE and RMSE to count wrong class predictions, while regression uses precision and recall to judge how close numerical predictions are to targets.",
+        "Classification metrics such as recall and F1-score measure average numeric distance from actual values, while regression accuracy calculates the percentage of exactly matched outputs.",
+        "Classification uses accuracy, precision and recall to measure decisions, while regression uses MAE and MSE; RMSE measures the average absolute error without applying any square root."
+      ],
+      "answer": "a"
+    },
+    {
+      "tag": "Medium · Precision, recall and F1",
+      "level": "Medium",
+      "stem": "How do precision, recall, F1-score, and confusion matrices provide a more complete evaluation of classification models than accuracy alone?",
+      "options": [
+        "Precision measures the portion of actual positives that were detected, while recall measures the portion of predicted positives that are correct. F1 averages these values arithmetically.",
+        "Precision measures all correctly classified inputs, while recall measures errors on negative predictions. A confusion matrix summarizes both rates without separating false positives and false negatives.",
+        "Precision and recall measure different kinds of positive predictions, but F1-score emphasizes whichever one is larger. Confusion matrices omit true negatives because only positive classes matter.",
+        "Precision measures correct positive predictions, recall measures detected actual positives, and F1-score balances both. A confusion matrix shows true positives, true negatives, false positives, and false negatives."
+      ],
+      "answer": "d"
+    },
+    {
+      "tag": "Medium · Cross-validation and baselines",
+      "level": "Medium",
+      "stem": "How do cross-validation, baseline models, and hyperparameter tuning contribute to reliable Model Evaluation and model selection?",
+      "options": [
+        "Cross-validation gives repeated scores, but baselines are needed only after hyperparameter tuning. The final test set should be used to choose settings before reporting the winning model.",
+        "Cross-validation evaluates performance across multiple data splits, while baseline models provide reference scores. Hyperparameter tuning uses validation results to select settings without using the final test set.",
+        "Cross-validation estimates performance across splits, and baselines provide reference scores, but choosing hyperparameters from the highest score on the final test set improves objectivity.",
+        "Cross-validation evaluates multiple partitions, while baseline models are chosen by training accuracy. Hyperparameters should be tuned on whichever test split produces the highest performance."
+      ],
+      "answer": "b"
+    },
+    {
+      "tag": "Advanced · Imbalance, calibration and shift",
+      "level": "Advanced",
+      "stem": "How should Model Evaluation handle imbalanced datasets, probability calibration, and distribution shifts to avoid misleading performance results?",
+      "options": [
+        "Imbalanced datasets require metrics such as precision, recall, F1-score, and PR-AUC. Calibration measures probability reliability, while distribution-shift testing checks performance when data patterns change.",
+        "For imbalanced datasets, accuracy becomes more informative as the rare class gets smaller. Calibration confirms that positive predictions are ranked correctly, even if probabilities are wrong.",
+        "On imbalanced datasets, precision and recall are useful, but probability calibration is unnecessary when F1-score is high. Distribution shift can be handled by keeping the same threshold.",
+        "PR-AUC evaluates the minority class, while calibration checks how often a model changes its predicted class. Distribution-shift testing compares training and testing set sizes, not changing patterns."
+      ],
+      "answer": "a"
+    },
+    {
+      "tag": "Advanced · Reliable benchmarks and monitoring",
+      "level": "Advanced",
+      "stem": "How can Model Evaluation frameworks prevent data leakage, ensure fair benchmark comparisons, and monitor prediction quality after model deployment?",
+      "options": [
+        "Fair benchmarks are achieved by applying each model's preferred metric and test samples. Reusing test results during tuning is acceptable when every model has the same opportunities.",
+        "Leakage-free evaluation means no training labels are copied directly into test inputs. Monitoring data drift after deployment replaces the need for held-out testing before release.",
+        "Reliable evaluation uses independent test sets, consistent metrics, leakage-free validation, and standardized benchmarks. Production monitoring tracks prediction quality, data drift, and performance degradation over time.",
+        "Evaluation frameworks need independent tests and repeatable metrics, but reusing benchmark results for feature selection is safe if the team records the exact experiments for comparison."
+      ],
+      "answer": "c"
+    }
+  ],
+  "handoff": {
+    "approvedForPublication": false,
+    "sourceLockedFields": [
+      "questions[*].stem",
+      "questions[*].options[answer]",
+      "questions[*].answer"
+    ],
+    "nextSteps": [
+      "Agent 3: create 7 learner explanations tied to this original commit SHA.",
+      "Agent 2: build distinct instructional SVGs after explanations and approved curriculum scope.",
+      "Agent 4: independently verify source and lesson output."
+    ]
+  }
+}
