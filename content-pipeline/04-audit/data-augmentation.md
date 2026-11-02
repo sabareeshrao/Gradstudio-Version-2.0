@@ -44,3 +44,12 @@ A locally rendered Chromium regression scene was used to inspect the outer/neste
 - Cache busting: published `index.html` and `app.js` now use a fresh asset revision for both the module renderer and its diagram CSS, ensuring previously cached diagrams do not show the old layout.
 - **Preservation:** all question stems, correct answer keys, all A–D choices and explanations were preserved byte-for-byte; no whitelist, index registry, or translated content was changed.
 - **Verification distinction:** source-level checks and GitHub Actions have passed; a full independent live-device screenshot review has not been performed in this environment.
+
+
+## No-horizontal-scroll follow-up
+
+Previous CSS forced SVG widths around 920–940px and allowed `overflow-x:auto` inside each figure. That was responsible for the user's sideways-scrolling experience. Removed those rules and discarded outdated swipe hints. The hero and Q1–Q7 now use topic-specific mobile panels (Q4 is a two-lane vertical process; Q6 remains three separate mobile figures), while the detailed desktop compositions stay intact.
+
+Added `study-engine/responsive-figures.js` for all template renderers, a universal shared-core fit guard, an editorial prohibition against horizontal panning, and a mandatory `study-engine/verify-responsive-templates.mjs` workflow check.
+
+Questions, all 28 options, answer keys and explanations were preserved. Legacy wide diagrams have a shared fit fallback; human review is still required wherever shrinking would make labels too small.

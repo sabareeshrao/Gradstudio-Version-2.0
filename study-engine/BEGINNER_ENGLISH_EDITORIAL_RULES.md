@@ -144,9 +144,14 @@ All 50 planned English modules received a question-to-answer completeness pass. 
 - **Near-miss distractors:** Each wrong option should make one realistic but meaningful error about timing, scope, assumptions, mechanism, or evaluation. It must remain clearly wrong on careful reading, not merely incomplete or technically equivalent to the correct answer.
 - **Test actual understanding:** A beginner should need to reason about the subject, not scan for the matching keyword, extreme wording, or the longest answer.
 - **Length is secondary:** Match reading effort closely, but do not pad options to a word-count target at the expense of plausibility or teaching quality. Preserve the user's supplied correct answer verbatim.
-- **Code-figure QA:** For questions with embedded code, verify a high-contrast code foreground/background, readable font size, preserved line breaks, and horizontal scrolling on mobile. The global stylesheet's default `code` styling must not make the snippet unreadable.
+- **Code-figure QA:** For questions with embedded code, verify a high-contrast code foreground/background, readable font size, preserved line breaks, and line wrapping without horizontal scrolling on mobile. The global stylesheet's default `code` styling must not make the snippet unreadable.
 
 ## Universal arrowhead and mobile-diagram guardrail
 - Never use implicit `markerUnits="strokeWidth"`: a small SVG marker becomes huge on thick connector lines. Use explicit `markerUnits="userSpaceOnUse"` and a 9×9px open chevron with ~1.35px stroke, not a chunky filled triangle. Keep IDs unique per SVG, use thin connectors, and do not let tips overlap panels, nodes, or text.
 - Size only the outer SVG with direct-child CSS selectors; nested SVG art must keep intrinsic coordinates. For mobile, put multiple figure panels in a readable vertical stack rather than clipping the page or requiring entire-page horizontal scrolling.
 - Run `node study-engine/verify-svg-arrowheads.mjs` and perform actual mobile/desktop visual review before calling a lesson finished. See `AI_REPLICATION_PLAYBOOK.md` for the exact marker specification.
+
+
+## Mandatory no-horizontal-scroll rule — all lesson templates
+
+**No sideways scrolling inside the page, hero, diagram, answer card, code block or explanation on a phone.** Never force `min-width:700px` or `overflow-x:auto` on SVG lesson art. Rebuild each wide composition into stacked, logically separate mobile illustrations with legible labels; keep the detailed desktop scene. Fit all content into the real viewport rather than hiding or clipping information. Use `study-engine/responsive-figures.js` for shared outer-SVG fallback and add topic-specific panels when needed. Test 320, 360, 390, 430, 768 and 1280px. Run `node study-engine/verify-responsive-templates.mjs` and inspect mobile screenshots. This global rule overrides all former "swipe horizontally" recommendations.

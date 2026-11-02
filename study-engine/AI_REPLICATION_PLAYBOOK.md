@@ -67,7 +67,7 @@ Do **not** treat a colored rectangle with text as a high-quality teaching diagra
 - Use **varied visual languages** where relevant: illustrated real-world records, visual timelines, plots with labelled axes and numerical examples, fold matrices, actual code with side-by-side process flow, grouped-identity panels, and production lineage maps.
 - Show **why** the concept works and the common error; mark invalid paths and valid paths clearly without hiding the distinction behind decorative text.
 - Use typography with readable labels, clear connector direction, accessible SVG `role="img"` plus `aria-label`, scoped unique gradient/marker IDs, gentle depth and color with semantic meaning.
-- Keep drawings informative on mobile. A wide detailed SVG may be horizontally scrollable if labels would otherwise be tiny; add a visible swipe hint and test code panels separately.
+- Keep drawings informative on mobile. Do not use horizontal panning: split wide SVGs into vertical mobile panels with legible labels, and wrap long code lines.
 - Test actual rendered visuals on desktop and mobile when a browser is available. **Structural checks alone cannot prove visual quality.** State clearly if rendering could not be independently inspected.
 - Guard preservation: a diagram upgrade must not rewrite user questions, correct answers, answer keys, explanatory text, tested code or Telugu materials unless explicitly requested.
 
@@ -79,6 +79,20 @@ Do **not** treat a colored rectangle with text as a high-quality teaching diagra
 
 1. Always use `markerUnits="userSpaceOnUse"`, `viewBox="0 0 10 10"`, `markerWidth="9"`, `markerHeight="9"`, `refX="8"`, `refY="5"`, and `orient="auto"`. Use an **open chevron**, not a filled wedge: `<path d="M1.5 2.2 L7.8 5 L1.5 7.8" fill="none" stroke="#4b8fa1" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>`.
 2. Keep connector lines approximately 1.5–3px wide. Align the tip to the destination without covering the target or the illustrated object. Leave at least ~12px of clear arrow travel before the tip; avoid 9px arrow lines squeezed between panels. Marker IDs must be unique **within each SVG**.
-3. Do not apply full-width/min-width CSS to **nested** SVG illustrations; use a direct-child selector like `.art > svg`. For desktop and mobile, prove that the **page itself** remains within the viewport; only intentionally wide diagram regions may scroll. On narrow phones, split a multi-panel SVG into stacked zoomed/cropped panels rather than shrinking labels or forcing a user to pan through a 1000px graphic.
+3. Do not apply full-width/min-width CSS to **nested** SVG illustrations; use a direct-child selector like `.art > svg`. For desktop and mobile, prove that the **page itself** remains within the viewport; neither the page nor its figure cards may scroll horizontally. On narrow phones, split a multi-panel SVG into stacked zoomed/cropped panels rather than shrinking labels or forcing a user to pan through a 1000px graphic.
 4. Inspect the rendered arrowheads and text on **desktop and mobile**. Check every arrow in the hero plus Q1–Q7 for clear head size, consistent line weight, spacing, non-overlap, visible direction and legible labels. Static JSON validation alone is not a browser screenshot test.
 5. Run `node study-engine/verify-svg-arrowheads.mjs` before publication. The deployment workflow enforces this rule for all approved English modules plus Data Augmentation. The shared runtime `study-engine/svg-arrowheads.js` also normalizes imported arrowheads in English and Telugu overlays as a safety net, but new source assets **must** obey the rule directly.
+
+
+## Mandatory no-horizontal-scrolling contract (overrides prior swipe advice)
+
+Applies to **all English and Telugu HTML lesson templates**, old and new, including the hero and seven quiz figures.
+
+- At phone widths 320, 360, 390 and 430px, the entire page and **every figure card** must fit horizontally. Do not make readers swipe sideways to see a chart, label, option, code block, or explanation.
+- **Never** use `overflow-x:auto`, `overflow-x:scroll`, `min-width:600px` to `1000px`, giant SVG viewports, or "swipe to see diagram" as a way to rescue cramped visuals. Do not increase card width beyond the screen. Adjust the composition instead.
+- Convert wide compositions into **vertical, meaningfully framed panels** at narrow widths. Preserve technical information and equations; keep rendered label text approximately 12px or larger. The full illustration can remain on desktop.
+- Scale only an outer SVG, not nested SVG pictures. Use a direct-child selector and `width:100%; min-width:0; max-width:100%`. Figure cards and ancestor layout boxes must also have `min-width:0`.
+- Code blocks must wrap long lines without forcing a sideways scroll on mobile. Check that they remain readable and that important indentation is still understandable.
+- Shared fallback: `study-engine/responsive-figures.js` fits oversized **outer** SVGs in all lesson templates, including reused English diagrams on Telugu pages. Add topic-specific readable mobile panels when simply shrinking an image would make labels too small.
+- Test viewport widths 320, 360, 390, 430, 768 and 1280px. Verify `document.documentElement.scrollWidth <= window.innerWidth + 1` and `everyFigure.scrollWidth <= everyFigure.clientWidth + 1`. A screenshot plus a real browser width check is required before calling visual QA complete.
+- Run `node study-engine/verify-responsive-templates.mjs` before publishing. Every new AI agent must obey this rule. **It supersedes any earlier instruction permitting horizontal panning.**

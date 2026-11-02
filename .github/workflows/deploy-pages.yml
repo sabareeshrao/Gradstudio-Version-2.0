@@ -30,6 +30,10 @@ jobs:
           node-version: '22'
       - name: Verify 58-topic whitelist and original template
         run: node study-engine/verify-58-topic-catalog.mjs
+      - name: Verify responsive templates forbid forced diagram panning
+        run: |
+          node --check study-engine/responsive-figures.js
+          node study-engine/verify-responsive-templates.mjs
       - name: Reject bulky or stroke-width-scaled SVG arrowheads
         run: node study-engine/verify-svg-arrowheads.mjs
       - name: Verify every hosted lesson link and bypass stale module indexes
