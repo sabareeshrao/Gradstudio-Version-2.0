@@ -70,12 +70,9 @@
       // Defensive fallback for imported lessons: show the question, not its Layer N label.
       const questionText=String(q.stem||'').replace(/^\s*(?:\d+\s*[.)]\s*)?Layer\s*\d+\s*[:.\-–—]\s*/i,'');
       const opts=q.options.map((opt,j)=>'<label><input name="q'+(i+1)+'" type="radio" value="'+('abcd'[j])+'"><span class="answer-text"><strong class="option-letter">'+('ABCD'[j])+'.</strong> '+opt+'</span></label>').join('');
-      // Progressive disclosure: show the beginner takeaway first. The older,
-      // comprehensive explanation stays available only when explicitly expanded.
-      const deeper=q.technicalExplanation
-        ?'<details class="explanation-deep"><summary>Read the detailed explanation</summary><div class="explanation-deep-content">'+q.technicalExplanation+'</div></details>'
-        :'';
-      return '<section class="question" data-answer="'+esc(q.answer)+'"><div class="q-head"><span class="q-badge">Q'+(i+1)+'</span><span class="q-tag">'+esc(q.tag)+'</span></div><figure class="q-fig">'+q.figure+'</figure><p class="q-text">'+questionText+'</p><fieldset class="answer-choices"><legend class="sr-only">Choose the best answer for question '+(i+1)+'</legend>'+opts+'</fieldset><div class="reveal-control-row"><button type="button" class="reveal-toggle" aria-expanded="false" aria-controls="reveal-explanation-'+(i+1)+'" aria-label="Reveal answer for question '+(i+1)+'">Reveal</button></div><div id="reveal-explanation-'+(i+1)+'" class="explanation" aria-live="polite"><div class="explanation-quick">'+q.explanation+'</div>'+deeper+'</div></section>';
+      // Match the Data Augmentation standard: one learner-facing explanation on Reveal.
+      // Historical technicalExplanation JSON fields remain unchanged, but are not rendered.
+      return '<section class="question" data-answer="'+esc(q.answer)+'"><div class="q-head"><span class="q-badge">Q'+(i+1)+'</span><span class="q-tag">'+esc(q.tag)+'</span></div><figure class="q-fig">'+q.figure+'</figure><p class="q-text">'+questionText+'</p><fieldset class="answer-choices"><legend class="sr-only">Choose the best answer for question '+(i+1)+'</legend>'+opts+'</fieldset><div class="reveal-control-row"><button type="button" class="reveal-toggle" aria-expanded="false" aria-controls="reveal-explanation-'+(i+1)+'" aria-label="Reveal answer for question '+(i+1)+'">Reveal</button></div><div id="reveal-explanation-'+(i+1)+'" class="explanation" aria-live="polite"><div class="explanation-quick">'+q.explanation+'</div></div></section>';
     };
     root.innerHTML='<h1>'+esc(data.title)+'</h1><p class="sub">'+esc(data.subtitle)+'</p>'+data.hero+
       '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
