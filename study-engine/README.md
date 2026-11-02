@@ -65,6 +65,7 @@ The one [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-
 | 57 | [Train-Validation-Test Split](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=train-validation-test-split) | `train-validation-test-split` | AI-00439 | Data Preprocessing and Feature Engineering |
 | 58 | [Cross-Validation Evaluation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=cross-validation-evaluation) | `cross-validation-evaluation` | AI-03482 | AI Evaluation and Benchmarking |
 | 59 | [Data Leakage](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=data-leakage) | `data-leakage` | AI-00435 | Data Preprocessing and Feature Engineering |
+| 60 | [Feature Selection](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=feature-selection) | `feature-selection` | AI-00423 | Data Preprocessing and Feature Engineering |
 
 This table shows the original 58 topics. Newly registered modules appear automatically in the [live library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/).
 

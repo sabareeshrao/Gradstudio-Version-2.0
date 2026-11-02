@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**59 English lessons · 413 questions · 50 Telugu translations completed · 9 Telugu translations pending**
+**60 English lessons · 420 questions · 50 Telugu translations completed · 10 Telugu translations pending**
 
-English lessons 01–59 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–59 are intentionally blank until those translations are published.
+English lessons 01–60 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–60 are intentionally blank until those translations are published.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -67,9 +67,10 @@ English lessons 01–59 are listed below. Telugu translations are available for 
 | 57 | Train-Validation-Test Split |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=train-validation-test-split) |
 | 58 | Cross-Validation Evaluation |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=cross-validation-evaluation) |
 | 59 | Data Leakage |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=data-leakage) |
+| 60 | Feature Selection |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=feature-selection) |
 
 ## Copy-ready HTML URLs
 
 [Copy-ready Telugu URLs for lessons 01–50](COPY_READY_TELUGU_URLS.txt)
 
-Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–59 are pending.
+Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–60 are pending.
