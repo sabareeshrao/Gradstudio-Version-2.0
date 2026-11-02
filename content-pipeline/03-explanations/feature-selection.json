@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "agent-3-explanations-complete",
+  "agent": 3,
+  "slug": "feature-selection",
+  "keyword": "Feature Selection",
+  "topicId": "AI-00423",
+  "topic": "Identifying Relevant Features for Machine Learning",
+  "subject": "Data Preprocessing and Feature Engineering",
+  "originalAgent1CommitSha": "e51cf1a59c4d679bcdf338f144130b3d894862c7",
+  "sourceContentPath": "content-pipeline/01-content/feature-selection.json",
+  "sourceContentBlobSha": "e7da82f1915cf4d545dc08983a902ae15adb84cd",
+  "sourceLocks": [
+    "questions[*].stem",
+    "questions[*].options[answer]",
+    "questions[*].answer"
+  ],
+  "publicationApproved": false,
+  "questions": [
+    {
+      "questionNumber": 1,
+      "level": "Beginner",
+      "stem": "What is Feature Selection in Machine Learning, and how does it help identify the most useful input features for making predictions?",
+      "answer": "c",
+      "correctAnswer": "Feature Selection is the process of choosing the most relevant input features from a dataset. It removes unnecessary features while keeping useful information that helps a model make accurate predictions.",
+      "explanation": "Explanation: Feature selection means choosing which existing input columns are useful for making a prediction. Instead of feeding every available column into the model, we keep the ones that carry helpful information and remove unnecessary ones. Imagine predicting hotel booking cancellations. The booking date and previous cancellation history may be useful, while a random reservation reference number probably adds little value. Comparing features against the prediction task helps identify the useful inputs. Selection keeps the chosen columns in their original form rather than creating new values."
+    },
+    {
+      "questionNumber": 2,
+      "level": "Beginner",
+      "stem": "Why can irrelevant and redundant features negatively affect Machine Learning models, and how does Feature Selection improve training?",
+      "answer": "a",
+      "correctAnswer": "Irrelevant features can introduce noise, while redundant features add repeated information. Feature Selection removes unnecessary inputs, reducing computational cost and potentially improving model accuracy and generalization.",
+      "explanation": "Explanation: An irrelevant feature adds noise because it does not help predict the target. A redundant feature repeats information that another feature already provides. Too many such inputs can slow training, complicate interpretation, and sometimes hurt performance on new data. Imagine identifying bird species using recordings: background file IDs add noise, while two nearly identical loudness measurements may repeat the same information. Feature selection removes those unnecessary inputs so the model can focus on informative sound characteristics. It can improve accuracy, but improvement is not guaranteed."
+    },
+    {
+      "questionNumber": 3,
+      "level": "Beginner",
+      "stem": "How does Feature Selection differ from Feature Extraction, and what happens to the original features in each method?",
+      "answer": "d",
+      "correctAnswer": "Feature Selection keeps a subset of the original features without changing their values. Feature Extraction transforms existing features into new representations, often reducing the number of dimensions.",
+      "explanation": "Explanation: Feature selection chooses a smaller set of original columns, keeping their meanings and values. Feature extraction creates new features by transforming or combining the originals. For example, a car insurance model might select vehicle age and annual mileage while dropping unhelpful columns. That is selection. If another method combines several correlated vehicle measurements into one new component, that is extraction. Both methods can reduce the number of inputs, but only extraction changes what the resulting features represent."
+    },
+    {
+      "questionNumber": 4,
+      "level": "Medium",
+      "stem": "How do Filter, Wrapper, and Embedded methods differ in the way they select important features for Machine Learning models?",
+      "answer": "b",
+      "correctAnswer": "Filter methods select features using statistical measures, while Wrapper methods evaluate different feature subsets using model performance. Embedded methods perform feature selection as part of model training.",
+      "explanation": "Explanation: Filter, wrapper, and embedded methods differ in when and how they judge usefulness. Filters score features with statistics, without repeatedly training the final model. Wrappers train models on different feature subsets and compare their performance. Embedded methods choose useful features while the model itself is being trained. Imagine predicting crop yield: a filter ranks soil measurements, a wrapper tries alternative groups of measurements, and an embedded method reduces the influence of less useful inputs during fitting. Wrappers often cost more computation because they fit many models."
+    },
+    {
+      "questionNumber": 5,
+      "level": "Medium",
+      "stem": "How do mutual information, Recursive Feature Elimination (RFE), and L1 regularization identify relevant features in a dataset?",
+      "answer": "c",
+      "correctAnswer": "Mutual information measures relationships between features and the target. RFE repeatedly removes lower-ranked features, while L1 regularization can shrink less useful feature coefficients to zero.",
+      "explanation": "Explanation: Mutual information measures how much knowing a feature tells us about the target, including some non-linear relationships. Recursive Feature Elimination, or RFE, repeatedly fits a model and removes lower-ranked features. L1 regularization adds a penalty that can push some feature coefficients to zero. Imagine predicting which songs listeners will skip. Mutual information checks relationships with skipping, RFE removes weaker audio features step by step, and L1 can set unhelpful coefficients to zero. Their rankings can differ because they measure usefulness differently."
+    },
+    {
+      "questionNumber": 6,
+      "level": "Advanced",
+      "stem": "Why can performing Feature Selection before cross-validation cause Data Leakage, and how can Machine Learning pipelines prevent this problem?",
+      "answer": "a",
+      "correctAnswer": "Selecting features before cross-validation allows validation data to influence feature choices, producing overly optimistic results. Pipelines prevent this by fitting Feature Selection separately within each training fold.",
+      "explanation": "Explanation: Choosing features before cross-validation lets the future validation folds influence which inputs are kept. Even if the prediction model is trained separately, the feature list has already benefited from the validation data, so the score may be too optimistic. Imagine recognizing spoken commands from audio. If you select the best frequency features using every recording first, the validation recordings have influenced the selection. Put feature selection inside a Pipeline so each fold chooses its features from its training data alone, then evaluates the untouched validation fold."
+    },
+    {
+      "questionNumber": 7,
+      "level": "Advanced",
+      "stem": "How can Feature Selection methods be evaluated for stability, predictive performance, and computational efficiency when working with high-dimensional datasets?",
+      "answer": "d",
+      "correctAnswer": "Feature Selection methods are evaluated using prediction accuracy, consistency of selected features across data splits, and computational cost. Effective methods retain useful features while reducing complexity and maintaining reliable performance on unseen data.",
+      "explanation": "Explanation: A strong feature-selection method must work well beyond one lucky split. Check predictive performance on held-out data, stability by comparing selected columns across repeated training splits, and efficiency by measuring training time and resource use. Imagine an astronomy dataset with thousands of telescope measurements. One method selects twenty features quickly but produces unstable predictions; another selects fifty consistently and generalizes better. The second may be preferable despite keeping more features. Use the same fair evaluation protocol for every method, and remember that fewer columns do not automatically mean better predictions."
+    }
+  ],
+  "verification": {
+    "questions": 7,
+    "explanations": 7,
+    "maxWords": 91,
+    "wordCounts": [
+      86,
+      86,
+      78,
+      87,
+      82,
+      87,
+      91
+    ],
+    "upstreamMatchesOriginalCommit": true,
+    "questionStemsAndAnswerKeysCopiedExactly": true,
+    "diagramsOrUIChanged": false
+  },
+  "handoff": {
+    "nextAgent": "Agent 2",
+    "note": "Match original Agent 1 SHA and topic ID before merging explanations into canonical lesson. This topic is staged outside the approved 58-topic whitelist; do not publish without curriculum approval."
+  }
+}
