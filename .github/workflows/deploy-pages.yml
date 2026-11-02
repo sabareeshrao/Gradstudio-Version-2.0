@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify 58-topic whitelist and original template
+      - name: Verify expandable topic catalog and original template
         run: node study-engine/verify-58-topic-catalog.mjs
       - name: Verify responsive templates forbid forced diagram panning
         run: |
@@ -100,7 +100,7 @@ jobs:
         run: node study-engine/experiments/verify-data-augmentation-scisketch-browser.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Build only the 58 approved topics and original template
+      - name: Build all registered English topics and original template
         shell: bash
         run: |
           set -euo pipefail
@@ -125,8 +125,8 @@ jobs:
             const dir="_site/study-engine/modules";
             const registry=JSON.parse(readFileSync(dir+"/index.json","utf8")).modules;
             const files=readdirSync(dir).filter(x=>x.endsWith(".json")&&x!=="index.json");
-            if(registry.length!==58||files.length!==58)throw Error("Pages output must contain exactly 58 English modules");
-            console.log("Publishing exactly 58 approved English topics");
+            if(registry.length!==files.length||registry.length<58)throw Error("Pages output must include every registered module and the original 58");
+            console.log("Publishing "+registry.length+" registered English topics");
           '
       - name: Upload static website
         uses: actions/upload-pages-artifact@v4
