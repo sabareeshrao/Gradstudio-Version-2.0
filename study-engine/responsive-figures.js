@@ -6,15 +6,15 @@ const SVG_NS='http://www.w3.org/2000/svg';
 const DA_SECTIONS=[
  [{label:'Original bicycle image',crop:[40,110,260,251]},{label:'Safe variations',crop:[347,110,313,251]},{label:'Better model exposure',crop:[700,140,260,196]}],
  [{label:'Original sample',crop:[44,108,217,253]},{label:'Lighting change',crop:[285,108,217,253]},{label:'Horizontal flip',crop:[526,108,217,253]},{label:'Safe crop',crop:[767,108,217,253]}],
- [{label:'Sparse data: memorization risk',crop:[36,107,443,267]},{label:'More variety: smoother boundary',crop:[518,107,446,267]}],
+ [{label:'Sparse data: memorization risk',crop:[60,150,282,190]},{label:'More variety: smoother boundary',crop:[543,150,282,190]}],
  [{label:'Image: change the pixels',crop:[36,105,293,269]},{label:'Text: preserve the meaning',crop:[351,105,296,269]},{label:'Audio: alter the signal safely',crop:[669,105,295,269]}],
  {processes:[
   {title:'Online: while training',lane:'online',steps:['Load a source image','Apply a random transform','Use a fresh training view','Train immediately']},
   {title:'Offline: before training',lane:'offline',steps:['Load a source image','Generate transformed copies','Save the copies to disk','Reuse them during training']}
  ]},
- [{label:'Safe: the digit is still 6',crop:[37,108,446,259]},{label:'Unsafe: the label may change',crop:[518,108,445,259]}],
+ [{label:'Safe: the digit is still 6',crop:[75,160,345,198]},{label:'Unsafe: the label may change',crop:[554,160,350,198]}],
  null,
- [{label:'Training: augment only training data',crop:[55,151,244,139]},{label:'Holdout: independent evaluation',crop:[371,151,235,139]},{label:'Check realism and label quality',crop:[644,101,322,267]}]
+ [{label:'Training: augment only training data',crop:[55,151,244,139]},{label:'Holdout: independent evaluation',crop:[371,151,235,139]},{label:'Check realism and label quality',items:['Labels remain correct','No shared identities across splits','Variations are realistic','Match deployment conditions','Compare results by group']}]
 ];
 function renameSvgIds(svg,prefix){
  const map=new Map();
@@ -38,6 +38,11 @@ function renameSvgIds(svg,prefix){
 function makePanel(source,spec,section,number){
  const card=document.createElement('section');card.className='da-mobile-card';
  const title=document.createElement('h4');title.textContent=spec.label;card.append(title);
+ if(spec.items){
+  const list=document.createElement('ul');list.className='da-mobile-checklist';
+  for(const item of spec.items){const li=document.createElement('li');li.textContent=item;list.append(li)}
+  card.append(list);return card;
+ }
  const svg=source.cloneNode(true);
  svg.setAttribute('viewBox',spec.crop.join(' '));
  svg.removeAttribute('aria-labelledby');
