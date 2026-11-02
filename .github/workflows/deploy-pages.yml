@@ -96,6 +96,8 @@ jobs:
         run: |
           npm install --no-save playwright
           npx playwright install chromium --with-deps
+      - name: Verify Telugu Feedforward visual cards (English diagrams, no MCQs)
+        run: node study-engine/verify-feedforward-telugu-visual.mjs
       - name: Blocking browser diagram regression (all Transformer experiment cards)
         run: node study-engine/experiments/verify-transformer-browser.mjs
       - name: Verify Data Augmentation SciSketch source and original figure locks
