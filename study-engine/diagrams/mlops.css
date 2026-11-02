@@ -1,0 +1,21 @@
+/* MLOps visual module. Shared engine + Data Augmentation inspired illustrated scenes. */
+.mo-hero,.mo-figure{font-family:inherit;color:#244c63;min-width:0;max-width:100%;box-sizing:border-box}
+.mo-kicker{color:#278a81;font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.mo-hero{padding:clamp(17px,3vw,29px);margin:0 0 25px;background:radial-gradient(ellipse at 12% 6%,#dff6ef,transparent 45%),linear-gradient(145deg,#f4fbff,#fffaf0);border:1px solid #c9dfe7;border-radius:20px;box-shadow:0 8px 26px #284f6012}
+.mo-hero h2{margin:9px 0;font-size:clamp(1.25rem,2.6vw,1.86rem);font-weight:850;color:#2b5c70;line-height:1.25}
+.mo-hero p,.mo-figure p{font-size:.87rem;color:#587989;line-height:1.62}
+.mo-figure{padding:clamp(13px,2.5vw,24px);border-radius:16px;background:radial-gradient(ellipse at 90% 0%,#e5f8f2,transparent 49%),linear-gradient(150deg,#f7fbff,#fffaf1)}
+.mo-art{display:block;max-width:100%;min-width:0;overflow:hidden;border:1px solid #d5e5ed;border-radius:14px;background:#f8fcfe}
+.mo-art>svg{display:block;max-width:100%!important;min-width:0;width:100%!important;height:auto;text-rendering:geometricPrecision;shape-rendering:geometricPrecision;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.mo-note{margin:12px 0 0;color:#5a7889!important;font-size:.82rem!important;line-height:1.64}
+.mo-hero .mo-note{font-weight:650}
+.q-fig:has(> .mo-figure){background:transparent;border:0}
+@media(max-width:670px){
+ .mo-hero,.mo-figure{padding:13px}
+ .mo-art{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#a4d1dc #edf6f9}
+ .mo-art>svg{min-width:740px!important;width:740px!important;max-width:none!important}
+ .mo-hero .mo-art>svg{min-width:650px!important;width:650px!important}
+ .mo-note{font-size:.81rem!important}
+ .mo-figure:after{content:"Swipe the diagram horizontally to explore";display:block;color:#607c8f;font-size:.72rem;font-weight:750;margin-top:7px}
+}
+@media(prefers-reduced-motion:reduce){.mo-hero *,.mo-figure *{transition:none!important;animation:none!important}}
