@@ -1,5 +1,7 @@
 # Gradstudio — AI Module Build & Quality Standard
 
+> **Current seven-question hosted policy (November 2026):** New GradStudio AI topics are unlimited and require no separate curriculum whitelist approval. For shared-engine HTML modules, use **7 questions (3 beginner, 2 medium, 2 advanced), one hero, 7 distinct diagrams**, and `study-engine/modules/index.json` registration. The original 58 remain protected, but additions are unrestricted. Legacy eight-question and standalone-only rules elsewhere in this document apply to archived/explicit standalone exports, not the current shared-engine topic pipeline. Keep visual, answer, responsiveness, and runtime QA mandatory.
+
 > **October 30, 2026 hosted-mode/folder update:** The older standalone HTML source files cited in this document have moved to `archive/legacy-lessons/`. Current lesson entry HTMLs are placed under `lessons/`, but canonical hosted lesson data remains in `study-engine/modules/` using shared CSS, JS and themes. The old monolithic HTML rules below apply only to expressly requested offline exports and legacy artifacts. The folder paths in the historical implementation section describe the previous organization.
 
 **Version:** 1.5  
