@@ -29,7 +29,7 @@ if(runtime.includes('DA_SECTIONS')||runtime.includes('makePanel(')||runtime.incl
  problems.push('Responsive helper still duplicates mobile diagrams');
 if(!runtime.includes("svg.ownerSVGElement")||!core.includes('Global diagram-fit fallback'))
  problems.push('Global fit-only safeguard missing');
-if(!app.includes('mountResponsiveFigures(root,slug)')||!html.includes('20261101-fit-only-v2'))
+if(!app.includes('mountResponsiveFigures(root,slug)')||!html.includes('20261102-data-augmentation-restore-v1'))
  problems.push('Renderer or cache version mismatch');
 if(problems.length){problems.forEach(p=>console.error('FAIL '+p));process.exitCode=1;}
 else console.log('PASS: seven original figures fit existing cards; no scrolling, width increase, or duplicated mobile layouts');
