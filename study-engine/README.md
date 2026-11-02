@@ -1,8 +1,8 @@
-# Gradstudio Shared Study Engine — 58 Topics
+# Gradstudio Shared Study Engine — Expandable Topics
 
-The one [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/) renders 58 approved seven-question English lessons, each from one JSON file. The original [Multimodal Training & Model Adaptation template](../index.html) remains unchanged in the repository root.
+The one [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/) renders the original 58 seven-question English lessons and any newly registered topics, each from one JSON file. The original [Multimodal Training & Model Adaptation template](../index.html) remains unchanged in the repository root.
 
-**Source of truth:** [58-topic whitelist](58_TOPIC_WHITELIST.json) and [active manifest](modules/index.json). The shared engine uses `index.html`, `app.js`, `core.css`, `quiz-theme.js`, `math-render.js`, and each topic's JSON and diagram CSS.
+**Live source of truth:** [active manifest](modules/index.json). [Historical original 58](58_TOPIC_WHITELIST.json) remain protected, but new topics may be added freely. No curriculum-approval gate applies. The shared engine uses `index.html`, `app.js`, `core.css`, `quiz-theme.js`, `math-render.js`, and each topic's JSON and diagram CSS.
 
 | # | Topic / HTML link | Slug | ID | Subject |
 |---:|---|---|---|---|
@@ -65,7 +65,9 @@ The one [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-
 | 57 | [Train-Validation-Test Split](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=train-validation-test-split) | `train-validation-test-split` | AI-00439 | Data Preprocessing and Feature Engineering |
 | 58 | [Cross-Validation Evaluation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=cross-validation-evaluation) | `cross-validation-evaluation` | AI-03482 | AI Evaluation and Benchmarking |
 
+This table shows the original 58 topics. Newly registered modules appear automatically in the [live library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/).
+
 ## Authoring requirements
 Preserve the user's exact questions and supplied correct answers. Each question needs four relevant options (three believable same-concept mistakes), one complete correct answer, a friendly explanation under 100 words, and a concept-specific diagram. Do not recreate the shared HTML for new topics. Use [AI replication instructions](AI_REPLICATION_PLAYBOOK.md) for all quality gates.
 
-The first 50 approved topics also have Telugu translations; their HTML entrypoints remain active because they are alternate-language routes, not extra English topics. Obsolete English redirect sources were removed from Git and are generated at Pages deploy time.
+The first 50 historical topics also have Telugu translations; their HTML entrypoints remain active because they are alternate-language routes, not extra English topics. Obsolete English redirect sources were removed from Git and are generated at Pages deploy time.
