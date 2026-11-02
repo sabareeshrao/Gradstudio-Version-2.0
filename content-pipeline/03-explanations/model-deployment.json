@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "agent-3-explanations-complete",
+  "agent": 3,
+  "slug": "model-deployment",
+  "keyword": "Model Deployment",
+  "topicId": "AI-03296",
+  "topic": "Deploying Machine Learning Models into Production",
+  "subject": "MLOps",
+  "originalAgent1CommitSha": "f74d1f1dc2e1b40e2437e8e658a72d8861b20d85",
+  "sourceContentPath": "content-pipeline/01-content/model-deployment.json",
+  "sourceContentBlobSha": "78d5a9d6d394775d370478a072ff77ec7b640ce0",
+  "sourceLocks": [
+    "questions[*].stem",
+    "questions[*].options[answer]",
+    "questions[*].answer"
+  ],
+  "publicationApproved": false,
+  "questions": [
+    {
+      "questionNumber": 1,
+      "level": "Beginner",
+      "stem": "What is Model Deployment in Machine Learning, and how does it make a trained model available for real-world predictions?",
+      "answer": "d",
+      "correctAnswer": "Model Deployment is the process of making a trained Machine Learning model available in a production environment. It allows applications or users to send input data and receive predictions.",
+      "explanation": "Explanation: Model deployment means putting a trained model into a system where real users or applications can send new inputs and receive predictions. Training produces the model; deployment makes it usable outside the development notebook. Imagine a gardening app that recognizes plant diseases from photos. After training and testing the image model, a deployed service accepts a photo and returns a predicted disease label. The app needs a working prediction service, not just saved training results on a developer's laptop."
+    },
+    {
+      "questionNumber": 2,
+      "level": "Beginner",
+      "stem": "What are the main steps involved in deploying a trained Machine Learning model from development to production?",
+      "answer": "b",
+      "correctAnswer": "Model Deployment involves saving the trained model, preparing its dependencies, creating a prediction interface, testing the system, and releasing it to a production environment.",
+      "explanation": "Explanation: Deployment begins with saving a trained model and the preprocessing it needs. Next, package the right software dependencies, provide a way for applications to request predictions, test that the entire system works, and release it into production. Imagine a grocery chain predicting next week's stock needs. Its team saves the model, fixes library versions, prepares a prediction endpoint, tests sample requests, and releases the service. The deployed system must process inputs in the same way the model saw them during training."
+    },
+    {
+      "questionNumber": 3,
+      "level": "Beginner",
+      "stem": "What is the difference between real-time inference and batch inference, and when is each deployment approach used?",
+      "answer": "c",
+      "correctAnswer": "Real-time inference generates predictions immediately when requests arrive. Batch inference processes groups of inputs at scheduled times or in bulk without requiring immediate responses.",
+      "explanation": "Explanation: Real-time inference responds when a request arrives, which is useful when someone needs an immediate result. Batch inference collects many inputs and predicts together, often on a schedule, when instant answers are unnecessary. Imagine a payment system checking a transaction for possible fraud before approving it: that calls for real-time inference. A property manager estimating monthly energy use for thousands of buildings overnight can use batch inference. The best choice depends on response-time requirements, request volume, and available computing resources."
+    },
+    {
+      "questionNumber": 4,
+      "level": "Medium",
+      "stem": "How do REST APIs, containers, and cloud infrastructure work together to serve Machine Learning models in production?",
+      "answer": "a",
+      "correctAnswer": "REST APIs receive prediction requests and return model outputs. Containers package the model and its dependencies, while cloud infrastructure provides computing resources to run and scale the service.",
+      "explanation": "Explanation: A REST API gives applications a standard way to send input data and receive predictions. A container bundles the model with required software so it runs consistently. Cloud infrastructure provides servers, networking, and scaling to handle demand. Imagine a railway operator predicting which track components need maintenance. Its dashboard sends sensor readings to an API, the containerized model calculates risk, and cloud servers run additional copies when many trains report at once. Each component solves a different part of serving the same trained model reliably."
+    },
+    {
+      "questionNumber": 5,
+      "level": "Medium",
+      "stem": "Why are model versioning, dependency management, and reproducible environments important for reliable Model Deployment?",
+      "answer": "d",
+      "correctAnswer": "Model versioning tracks deployed models and supports rollback. Dependency management and reproducible environments keep software versions and configurations consistent, reducing deployment failures.",
+      "explanation": "Explanation: Model versioning records exactly which trained model is running, making comparisons and rollbacks possible. Dependency management tracks the software libraries that model requires. Reproducible environments keep those versions and settings consistent across development, testing, and production. Imagine a customer-support system that routes incoming tickets. A new model version accidentally sends technical requests to the billing team. Version tracking helps restore the earlier model, while pinned software dependencies make that earlier version run as expected. Without these controls, failures become much harder to diagnose."
+    },
+    {
+      "questionNumber": 6,
+      "level": "Advanced",
+      "stem": "How do Canary Deployment, Blue-Green Deployment, and Shadow Deployment reduce risks when releasing updated Machine Learning models?",
+      "answer": "b",
+      "correctAnswer": "Canary Deployment exposes a new model to limited traffic, while Blue-Green Deployment switches between separate production environments. Shadow Deployment tests a new model using copied traffic without affecting live predictions.",
+      "explanation": "Explanation: Canary deployment sends only a small share of real requests to a new model, limiting potential harm. Blue-green deployment keeps separate old and new environments, then switches traffic between them. Shadow deployment sends copied requests to the new model for comparison but still uses the old model's answers. Imagine upgrading a video platform's recommendation engine. You can first examine shadow predictions, try a canary release with a few users, and later switch environments. These methods test changes while limiting disruption to existing users."
+    },
+    {
+      "questionNumber": 7,
+      "level": "Advanced",
+      "stem": "How can deployed Machine Learning models be monitored and optimized for prediction latency, throughput, scalability, data drift, and model performance degradation?",
+      "answer": "c",
+      "correctAnswer": "Production monitoring tracks response time, request volume, resource usage, data drift, and prediction quality. Autoscaling, inference optimization, alerts, and model retraining help maintain reliable performance.",
+      "explanation": "Explanation: Monitoring a deployed model means watching both service health and prediction quality. Latency is how long one prediction takes; throughput is how many requests the service handles. Scalability means coping with more demand. Data drift occurs when incoming patterns change, and model performance can worsen as a result. Imagine a shared-scooter service predicting demand near a new campus. Monitor response times, request traffic, input patterns, and actual rental outcomes. Autoscaling can relieve traffic spikes; alerts, investigation, and retraining can address degraded predictions."
+    }
+  ],
+  "verification": {
+    "questions": 7,
+    "explanations": 7,
+    "maxWords": 86,
+    "wordCounts": [
+      80,
+      82,
+      81,
+      86,
+      84,
+      84,
+      83
+    ],
+    "upstreamMatchesOriginalCommit": true,
+    "questionStemsAndAnswerKeysCopiedExactly": true,
+    "diagramsOrUIChanged": false
+  },
+  "handoff": {
+    "nextAgent": "Agent 2",
+    "note": "Match original Agent 1 SHA and topic ID before merging explanations into canonical lesson. This topic is staged outside the approved 58-topic whitelist; do not publish without curriculum approval."
+  }
+}
