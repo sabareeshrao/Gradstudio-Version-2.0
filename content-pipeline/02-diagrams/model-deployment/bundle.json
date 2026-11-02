@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "agent-2-diagrams-staged",
+  "approvedForPublication": false,
+  "slug": "model-deployment",
+  "topic": "Model Deployment",
+  "topicId": "AI-03296",
+  "sourceContentCommit": "f74d1f1dc2e1b40e2437e8e658a72d8861b20d85",
+  "sourceContentPath": "content-pipeline/01-content/model-deployment.json",
+  "agent3ExplanationsPath": "content-pipeline/03-explanations/model-deployment.json",
+  "hero": "hero.svg",
+  "figures": [
+    "layer-1.svg",
+    "layer-2.svg",
+    "layer-3.svg",
+    "layer-4.svg",
+    "layer-5.svg",
+    "layer-6.svg",
+    "layer-7.svg"
+  ],
+  "css": "diagrams.css",
+  "preview": "preview.html",
+  "sourceLockedFields": [
+    "questions[*].stem",
+    "questions[*].options[answer]",
+    "questions[*].answer"
+  ]
+}
