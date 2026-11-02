@@ -1,20 +1,18 @@
-/* Agent 2 | Feature Selection | topic-specific high-fidelity technical SVG illustrations */
-.fs2-hero,.fs2-fig{color:#233d56;max-width:100%;min-width:0;box-sizing:border-box;font-family:inherit}
-.fs2-hero{margin:0 0 25px;padding:clamp(16px,3vw,29px);background:radial-gradient(circle at 7% 7%,#e1f6ee,transparent 45%),linear-gradient(135deg,#f4faff,#fff9ee);border:1px solid #c4dce6;border-radius:20px;box-shadow:0 10px 26px #2357680b}
-.fs2-kicker{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#1a7a70}
-.fs2-hero h2{font-size:clamp(1.34rem,2.9vw,2rem);line-height:1.2;margin:9px 0 8px;color:#254b64}
-.fs2-hero>p{font-size:.88rem;max-width:75ch;line-height:1.61;color:#587386;margin:0 0 17px}
-.fs2-mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.fs2-mini>span{border:1px solid #c9e0e0;border-radius:20px;background:#fff;padding:6px 11px;font-size:.74rem;font-weight:760;color:#35727c}
-.fs2-fig{background:radial-gradient(circle at 96% 0%,#eaf8f2,transparent 44%),linear-gradient(144deg,#f5faff,#fff9f0);border-radius:14px;padding:clamp(14px,2.5vw,23px)}
-.fs2-fig h3{font-size:clamp(1.04rem,1.96vw,1.25rem);line-height:1.38;color:#29536a;margin:8px 0 15px}
-.fs2-canvas{min-width:0;max-width:100%;background:#fff;border:1px solid #d7e6ec;border-radius:14px;overflow:hidden;box-shadow:0 4px 13px #284b610b}
-.fs2-canvas>svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
-.fs2-note{font-size:.83rem;color:#536f7e;line-height:1.62;margin:12px 0 0}
-.fs2-code{background:#152b40!important;color:#f2f9ff!important;margin-top:15px;overflow:hidden;border-radius:13px;border:1px solid #3a5871}
-.fs2-code-label{padding:12px 15px;background:#2d455f;color:#f0f8ff;font-size:.71rem;font-weight:850;letter-spacing:.07em}
-.fs2-fig .fs2-code pre{display:block;margin:0;padding:16px;color:#f2f9ff!important;background:#152b40!important;overflow-x:auto;overflow-y:visible;white-space:pre;tab-size:4;font:500 13px/1.64 ui-monospace,Consolas,Menlo,monospace}
-.fs2-fig .fs2-code pre code{display:block;width:max-content;min-width:100%;padding:0!important;border:0!important;margin:0!important;background:transparent!important;color:#f2f9ff!important;box-shadow:none!important;white-space:pre;font:inherit!important;line-height:inherit!important}
-.fs2-code p{font-size:.78rem;line-height:1.56;color:#c5deef!important;padding:0 16px 14px;margin:0}
-@media(max-width:620px){.fs2-hero,.fs2-fig{padding:13px}.fs2-fig .fs2-code pre{font-size:12px}}
-@media(prefers-reduced-motion:reduce){.fs2-hero *,.fs2-fig *{animation:none!important;transition:none!important}}
+/* Feature Selection illustrated v4: lightweight data stories, not dashboard cards. */
+.fs2-hero,.fs2-fig{font-family:inherit;color:#254a5e;box-sizing:border-box;min-width:0;max-width:100%}
+.fs2-hero{margin:0 0 23px;padding:clamp(15px,2.7vw,28px);border:1px solid #d1e8e4;border-radius:20px;background:radial-gradient(circle at 11% 0%,#e7f6ef,transparent 46%),linear-gradient(135deg,#f8fcfe,#fffaf2)}
+.fs2-kicker{display:block;margin-bottom:10px;letter-spacing:.11em;text-transform:uppercase;font-size:.72rem;color:#197c73;font-weight:860}
+.fs2-hero h2{font-size:clamp(1.35rem,2.7vw,1.87rem);line-height:1.23;color:#254b60;margin:0 0 8px}
+.fs2-hero>p{font-size:.89rem;max-width:75ch;line-height:1.62;color:#597485;margin:0 0 18px}
+.fs2-fig{border-radius:14px;padding:clamp(12px,2.3vw,21px);background:linear-gradient(145deg,#f7fbfe,#fffaf3)}
+.fs2-canvas{border-radius:15px;background:#fff;border:1px solid #dce9ec;overflow:hidden;min-width:0;max-width:100%}
+.fs2-canvas>svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto;text-rendering:geometricPrecision;shape-rendering:geometricPrecision}
+.fs2-code{margin-top:14px;background:#162b3d!important;color:#f2f8ff!important;border:1px solid #3b596d;border-radius:13px;overflow:hidden}
+.fs2-code-label{padding:11px 15px;background:#2c4760;color:#eff8ff;font-weight:850;letter-spacing:.07em;font-size:.72rem}
+.fs2-fig .fs2-code pre{display:block;margin:0;padding:16px;overflow-x:auto;overflow-y:visible;white-space:pre;tab-size:4;color:#f2f8ff!important;background:#162b3d!important;font:500 13px/1.65 ui-monospace,Consolas,Menlo,monospace}
+.fs2-fig .fs2-code pre code{display:block;width:max-content;min-width:100%;border:0!important;background:transparent!important;color:#f2f8ff!important;margin:0!important;padding:0!important;box-shadow:none!important;white-space:pre;font:inherit!important}
+.fs2-code p{font-size:.76rem;line-height:1.55;color:#cde0e9!important;margin:0;padding:0 16px 14px}
+.fs2-sources{margin:17px 0;padding:12px 16px;border:1px solid #d8e8ea;border-radius:12px;background:#fff;color:#467081;font-size:.84rem}
+.fs2-sources summary{cursor:pointer;font-weight:850;color:#347486}
+@media(max-width:650px){.fs2-hero,.fs2-fig{padding:12px}.fs2-fig .fs2-code pre{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.fs2-hero *,.fs2-fig *{transition:none!important;animation:none!important}}
