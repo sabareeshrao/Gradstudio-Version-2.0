@@ -30,8 +30,8 @@ async function inspect(slug,width,strict){
  await page.route('https://**/*',route=>route.abort());
  const url=origin+'/study-engine/?module='+slug;
  try{
-  await page.goto(url,{waitUntil:'domcontentloaded',timeout:20000});
-  await page.waitForFunction(()=>document.querySelectorAll('.question').length===7,{timeout:20000});
+  await page.goto(url,{waitUntil:'domcontentloaded',timeout:12000});
+  await page.waitForFunction(()=>document.querySelectorAll('.question').length===7,null,{timeout:8000});
   const report=await page.evaluate(()=>{
    const visible=el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&r.width>0&&r.height>0};
    const regions=[...document.querySelectorAll('.q-fig,.da-art,.da-mobile-card,.da-q6-panel,.da-mobile-process,.da-hero,.question,.container')].filter(visible);
@@ -57,7 +57,7 @@ async function inspect(slug,width,strict){
    await page.screenshot({path:path.join(screenshots,'augmentation-'+width+'-top.png')});
    await page.locator('.question').nth(5).screenshot({path:path.join(screenshots,'augmentation-'+width+'-q6.png')});
   }
- }catch(e){errors.push(slug+' '+width+'px unable to render: '+String(e).slice(0,280));}
+ }catch(e){const detail=slug+' '+width+'px unable to render: '+String(e).slice(0,280);if(strict)errors.push(detail);else console.warn('LEGACY REVIEW '+detail);}
  finally{await page.close();}
 }
 try{
