@@ -31,7 +31,7 @@ if(runtime.includes('DA_SECTIONS')||runtime.includes('makePanel(')||runtime.incl
  problems.push('Responsive helper still duplicates diagrams');
 if(!runtime.includes('svg.ownerSVGElement')||!core.includes('Global diagram-fit fallback'))
  problems.push('Global fit-only safeguard missing');
-if(!app.includes('mountResponsiveFigures(root,slug)')||!app.includes('20261101-da-compact-responsive-v3')||!html.includes('20261101-fit-only-v2'))
+if(!app.includes('mountResponsiveFigures(root,slug)')||!app.includes('20261102-da-compact-v3')||!html.includes('20261102-vscode15-v1')||!html.includes('20261102-da-compact-v3'))
  problems.push('Renderer or cache version mismatch');
 if(problems.length){problems.forEach(p=>console.error('FAIL '+p));process.exitCode=1;}
 else console.log('PASS: 7 concise scenes; source content locked; responsive sizing and no sideways scrolling');
