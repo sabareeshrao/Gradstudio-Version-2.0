@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Owner-approved English curriculum: exactly 60 seven-question topics. Legacy whitelist filename retained for existing repository tooling.",
+  "description": "Owner-approved English curriculum: exactly 58 seven-question topics.",
   "topics": [
     {
       "number": 1,
@@ -349,18 +349,6 @@
       "slug": "cross-validation-evaluation",
       "id": "AI-03482",
       "subject": "AI Evaluation and Benchmarking"
-    },
-    {
-      "number": 59,
-      "slug": "data-leakage",
-      "id": "AI-00435",
-      "subject": "Data Preprocessing and Feature Engineering"
-    },
-    {
-      "number": 60,
-      "slug": "feature-selection",
-      "id": "AI-00423",
-      "subject": "Data Preprocessing and Feature Engineering"
     }
   ]
 }

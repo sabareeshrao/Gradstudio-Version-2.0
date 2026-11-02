@@ -2,7 +2,7 @@
 
 The one [shared study engine](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/) renders the original 58 seven-question English lessons and any newly registered topics, each from one JSON file. The original [Multimodal Training & Model Adaptation template](../index.html) remains unchanged in the repository root.
 
-**Live source of truth:** [active manifest](modules/index.json). [Historical original 58](58_TOPIC_WHITELIST.json) remain protected, but new topics may be added freely. No curriculum-approval gate applies. The shared engine uses `index.html`, `app.js`, `core.css`, `quiz-theme.js`, `math-render.js`, and each topic's JSON and diagram CSS.
+**Live source of truth:** [active manifest](modules/index.json) and [approved current 60-topic curriculum](60_TOPIC_WHITELIST.json). The [historical original 58](58_TOPIC_WHITELIST.json) remain protected; the two user-approved additions are Data Leakage and Feature Selection. The shared engine uses `index.html`, `app.js`, `core.css`, `quiz-theme.js`, `math-render.js`, and each topic's JSON and diagram CSS.
 
 | # | Topic / HTML link | Slug | ID | Subject |
 |---:|---|---|---|---|
