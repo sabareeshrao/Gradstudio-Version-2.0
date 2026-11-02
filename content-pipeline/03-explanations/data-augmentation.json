@@ -52,8 +52,8 @@
     }
   ],
   "handoff": {
-    "approvedForPublication": false,
-    "reason": "Curriculum expansion requires approval: not on approved 58-topic whitelist; do not publish incomplete staging.",
-    "nextStep": "Final auditor merges staged explanations only after content, visuals, and curriculum approval."
-  }
+    "reason": "No fixed-curriculum approval gate; integration and quality verification remain required.",
+    "nextStep": "Agent 2 integrates and publishes after content and visual checks; Agent 4 independently audits and repairs."
+  },
+  "curriculumApprovalRequired": false
 }
