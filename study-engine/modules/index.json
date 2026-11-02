@@ -353,6 +353,18 @@
       "title": "Machine Learning Operations (MLOps)",
       "domain": "Managing the Machine Learning Lifecycle · MLOps",
       "catalogId": "PENDING-MLOPS"
+    },
+    {
+      "slug": "feature-selection",
+      "title": "Feature Selection",
+      "domain": "Data Preprocessing and Feature Engineering",
+      "catalogId": "PENDING-FEATURE-SELECTION"
+    },
+    {
+      "slug": "model-evaluation",
+      "title": "Model Evaluation",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-MODEL-EVALUATION"
     }
   ]
 }
