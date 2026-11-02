@@ -1,0 +1,46 @@
+
+/* Constraint-first semantic mobile diagrams. Mobile never shows the giant
+   fixed-coordinate desktop artwork: vertical normal-flow panels replace it. */
+.cl-mobile{display:none;--cl-accent:#39758b;--cl-pale:#eff6fa;--cl-border:#bdd9e0}
+.cl-mobile[data-mode="paperbanana"]{--cl-accent:#0d8d7b;--cl-pale:#e5f7ef;--cl-border:#addbd0}
+.cl-mobile[data-mode="scisketch"]{--cl-accent:#236c9c;--cl-pale:#eaf3fb;--cl-border:#a5cde3}
+.cl-mobile[data-mode="original"]{--cl-accent:#77608d;--cl-pale:#f3f0f8;--cl-border:#d2c5df}
+@media(max-width:720px){
+ .pb-variant>.tr-figure{display:none!important}
+ .pb-variant .cl-mobile{display:grid;gap:12px;min-width:0;max-width:100%;overflow:clip;font-size:14px;line-height:1.48}
+ .pb-variant .cl-mobile *{box-sizing:border-box;max-width:100%}
+ .cl-header{display:grid;gap:2px;padding:11px 12px;border-radius:10px;background:var(--cl-pale);border:1px solid var(--cl-border);color:var(--cl-accent)}
+ .cl-header strong{font-size:12px;letter-spacing:.04em}.cl-header span{font-size:12px;color:#51717d}
+ .cl-panel{display:grid;gap:12px;min-width:0;max-width:100%;background:#fff;border:1px solid var(--cl-border);border-radius:13px;padding:14px;overflow-wrap:anywhere}
+ .cl-section-title{display:grid;gap:4px;color:var(--cl-accent)}
+ .cl-section-title strong{font-size:14px;line-height:1.3}.cl-section-title small{font-size:12px;color:#577280;line-height:1.45}
+ .cl-pills{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+ .cl-pill{display:inline-flex;align-items:center;justify-content:center;min-width:0;padding:7px 9px;background:var(--cl-pale);border:1px solid var(--cl-border);border-radius:8px;font-size:12px;font-weight:800;color:var(--cl-accent);overflow-wrap:anywhere;text-align:center}
+ .cl-pill.num{padding:2px 7px;min-width:24px;background:var(--cl-accent);color:white}
+ .cl-pill.focus{background:#0c867b;color:white}
+ .cl-connector{display:block;text-align:center;line-height:1;color:var(--cl-accent);font-size:18px}
+ .cl-steps,.cl-sequence{display:grid;gap:6px;min-width:0}
+ .cl-step{display:flex;gap:9px;align-items:center;min-width:0;padding:9px 10px;border:1px solid var(--cl-border);border-radius:9px;background:var(--cl-pale);font-size:13px}
+ .cl-step strong{font-size:12px;min-width:0;overflow-wrap:anywhere}
+ .cl-seq-node{padding:10px;border:1px solid var(--cl-border);background:var(--cl-pale);border-radius:9px;font-size:13px;font-weight:750;text-align:center;overflow-wrap:anywhere}
+ .cl-down{text-align:center;color:var(--cl-accent);font-size:23px;line-height:1}
+ .cl-emphasis{padding:12px;background:var(--cl-accent);border-radius:10px;color:white;font-weight:800;font-size:13px;text-align:center}
+ .cl-key{display:flex;flex-wrap:wrap;align-items:center;gap:5px;color:var(--cl-accent);font-size:12px}
+ .cl-small-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+ .cl-small-grid span{display:block;height:26px;background:var(--cl-accent);opacity:var(--intensity);border-radius:5px}
+ .cl-bars{height:145px;display:grid;grid-template-columns:repeat(5,1fr);align-items:end;gap:11px;padding:8px 10px 0;border-bottom:1px solid #b9ccda}
+ .cl-bar-holder{height:100%;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:4px}
+ .cl-bar{width:60%;min-width:16px;display:block;background:#a4c7d0;border-radius:5px 5px 0 0}
+ .cl-bar.em{background:var(--cl-accent)}
+ .cl-bar-holder small{font-size:12px}
+ .cl-matrix{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:6px;max-width:240px!important;margin:auto;width:100%}
+ .cl-cell{display:grid;place-items:center;aspect-ratio:1;border-radius:7px;font-size:15px}
+ .cl-cell.on{background:#69c6b5;color:#075f56}.cl-cell.off{background:#edf2f5;color:#879ba5}
+ .cl-code{white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:hidden;font:600 11px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;background:#173245;color:#f0fcfb;border-radius:11px;padding:12px;min-width:0}
+ .cl-micro-svg{display:block;width:100%;max-width:310px;height:auto;margin-inline:auto}
+ .cl-heads{display:grid;gap:8px;min-width:0}
+ .cl-note{font-size:12px;color:#66818a;margin:0;padding:8px 2px;line-height:1.45}
+ .cl-summary{font-size:13px;color:#3c6072;margin:0}
+ .pb-variant .pb-version-heading{overflow-wrap:anywhere}
+ .pb-card{overflow:clip}
+}
