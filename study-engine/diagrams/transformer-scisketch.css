@@ -105,3 +105,11 @@
 .transformer-research .pb-card .pb-variant[data-version="original"] svg{min-width:0!important;max-width:100%!important;width:100%!important;height:auto!important}
 .transformer-research .pb-panes{min-width:0}
 @media(max-width:720px){.transformer-research .pb-scroll,.transformer-research .sc-stage,.transformer-research .tr-surface{overflow-x:clip!important}}
+
+/* Never introduce sideways panning for a code/diagram panel. Reflow code instead. */
+.transformer-research .sc-code-shell pre{
+  overflow-x:clip!important;
+  white-space:pre-wrap!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word;
+}
