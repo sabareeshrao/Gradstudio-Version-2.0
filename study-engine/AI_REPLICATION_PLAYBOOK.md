@@ -34,7 +34,7 @@
 ## Required visualization and Python code checks
 
 - Draw figures that directly **teach the specific asked concept**: distinct mechanisms for each level, visible arrows with correct direction, clear legends, nonoverlapping annotations, and correct numerical examples. Check mobile overflow.
-- For a Python-implementation question, provide runnable and technically valid code plus an explanatory figure. Test the code separately when practical.
+- For a Python-implementation question, provide a **maximum 15-line** teaching code snippet plus a real explanatory figure. Prefer a runnable miniature example when genuinely possible; otherwise label it honestly as an excerpt with named prerequisites. Do not compress a large program into unreadable one-line statements or falsely advertise an excerpt as a complete runnable solution.
 - **Prevent the Q5 Data Leakage visibility bug:** `core.css` styles ordinary `code` with a light background. On a dark code panel, override `pre` and `pre code` background and foreground explicitly (for example, dark `#172b3b` and light `#f4f9ff`), remove inherited code borders/padding, retain `white-space:pre`, and make the `pre` horizontally scrollable. Confirm computed colors or inspect an actual screenshot. Apply stable fallback styles when dynamic module CSS loads late.
 - Give inline SVG marker and gradient IDs unique names where needed; duplicate IDs can make arrows disappear.
 
@@ -92,3 +92,12 @@ Do **not** treat a colored rectangle with text as a high-quality teaching diagra
 - Every phone viewport (320, 360, 390, 430px) and desktop must show the full illustration within the current question card. A wide diagram may have smaller labels at phone size; flag unreadable labels for a separate owner-approved diagram redesign rather than widening the card.
 - Preserve all user questions, options, answers, explanations, existing arrows and diagrams. `study-engine/responsive-figures.js` is only a minimal fit-to-card fallback; no compositional changes.
 - Run `node study-engine/verify-responsive-templates.mjs` and the real browser check, and report any remaining issues accurately.
+
+## Universal VS Code Dark+ teaching code standard — mandatory
+
+- **Maximum 15 actual source lines per displayed code block**, counting blank and comment lines. This applies to all approved English modules, linked/unlisted HTML lessons, expandable examples, hero diagrams, and code drawn inside SVG. Prefer 8–12 meaningful lines when possible. Never hide a 50-line block behind scrolling, collapsing, clipping, or runtime truncation as a substitute for fixing the source.
+- Display **only code relevant to the exact question**. Keep necessary setup, the essential operation, and one useful output/evaluation; remove duplicate full scripts and long boilerplate. If 15 lines cannot honestly show the full implementation, label the code as a *focused excerpt* and state prerequisites. Do not claim a compact excerpt is a complete working project.
+- Every HTML \`<pre>\` example uses the shared syntax formatter in \`study-engine/code-snippets.js\`, with **VS Code Dark+** palette: background \`#1e1e1e\`, ordinary text \`#d4d4d4\`, keywords \`#569cd6\`, strings \`#ce9178\`, comments \`#6a9955\`, numbers \`#b5cea8\`, function names \`#dcdcaa\`. Line numbers should be muted. These colors remain readable in all 15 Gradstudio themes; never allow global inline \`code\` styles to replace them.
+- Use a compact readable monospace font (approximately 12–13px, at least 1.5 line height) and mobile-safe wrapping. Avoid horizontal **page** scroll, hidden text, light-on-light code, or long empty panel height. SVG-drawn snippets must also have independently legible, high-contrast syntax colors and no more than 15 numbered lines.
+- Run \`node study-engine/verify-code-snippets.mjs\` and \`node --check study-engine/code-snippets.js\` before commit. Inspect an actual code panel on desktop and mobile. The runtime protects readers with a 15-line preview if older content slips through, **but a truncated source must still fail editorial QA**.
+- Source lock: when shortening code, do **not** edit user-provided stems, options, answer keys, explanations, other diagrams, themes, or Telugu files. Check runtime behavior and Python syntax when practical.
