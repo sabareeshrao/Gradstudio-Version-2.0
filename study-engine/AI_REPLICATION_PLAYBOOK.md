@@ -71,7 +71,9 @@ Do **not** treat a colored rectangle with text as a high-quality teaching diagra
 - Test actual rendered visuals on desktop and mobile when a browser is available. **Structural checks alone cannot prove visual quality.** State clearly if rendering could not be independently inspected.
 - Guard preservation: a diagram upgrade must not rewrite user questions, correct answers, answer keys, explanatory text, tested code or Telugu materials unless explicitly requested.
 
-**Current visual reference:** The user-selected master template is [Data Augmentation](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=data-augmentation&theme=sky), sourced from `unlisted/data-augmentation.json` and `diagrams/data-augmentation.css`. Its compact, distinct visual scenes and responsive layout are the target for future modules. Historical Data Leakage illustrations are recoverable through Git history, not part of the active 58-topic library.
+**User-selected template:** [Data Augmentation, original seven diagrams (Sky theme)](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=data-augmentation&theme=sky). Preserve its original artwork; the rejected compact redesign is not a reference.
+
+**Current visual reference:** Use `modules/train-validation-test-split.json`, `diagrams/train-validation-test-split.css`, `modules/backpropagation.json` and the original root `index.html`. Historical Data Leakage illustrations are recoverable through Git history, not part of the active 58-topic library.
 
 ## SVG arrowhead quality rule — mandatory for EVERY English lesson
 
@@ -101,13 +103,3 @@ Do **not** treat a colored rectangle with text as a high-quality teaching diagra
 - Use a compact readable monospace font (approximately 12–13px, at least 1.5 line height) and mobile-safe wrapping. Avoid horizontal **page** scroll, hidden text, light-on-light code, or long empty panel height. SVG-drawn snippets must also have independently legible, high-contrast syntax colors and no more than 15 numbered lines.
 - Run `node study-engine/verify-code-snippets.mjs` and `node --check study-engine/code-snippets.js` before commit. Inspect an actual code panel on desktop and mobile. The runtime protects readers with a 15-line preview if older content slips through, **but a truncated source must still fail editorial QA**.
 - Source lock: when shortening code, do **not** edit user-provided stems, options, answer keys, explanations, other diagrams, themes, or Telugu files. Check runtime behavior and Python syntax when practical.
-
-
-## Compact illustration reference — Data Augmentation (Nov 2026)
-
-- **Preferred reference:** `study-engine/unlisted/data-augmentation.json` + `study-engine/diagrams/data-augmentation.css`, viewable with `?module=data-augmentation&theme=sky`.
-- Teach with graphics first. Each diagram should have a **short heading, one visual relationship, 2–4 brief labels, and at most one short caption**. Move extra explanations outside the diagram.
-- Avoid 1000×430 fixed canvas diagrams with paragraphs, repeat labels, oversized white space, and 4–5 nested cards. Prefer responsive HTML+SVG where labels remain legible on phones.
-- **Keep diagrams compact on 320–430px phones**: cards stay within page width, diagrams must not force horizontal scrolling, and mobile should not turn one figure into a very tall stack. User-approved redesigns may reflow a figure; the legacy fit-only rule applies to illustrations that have not been approved for redesign.
-- Preserve supplied questions, correct answers, options, answer keys, and explanations when editing visual-only issues.
-- Run `node study-engine/verify-responsive-templates.mjs` and real browser checks when available; structural checks alone are not proof of visual quality.
