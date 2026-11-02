@@ -347,6 +347,11 @@
       "title": "Cross-Validation Evaluation",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "AI-03482"
+    },
+    {
+      "slug": "mlops",
+      "title": "Machine Learning Operations (MLOps)",
+      "domain": "Managing the Machine Learning Lifecycle · MLOps"
     }
   ]
 }
