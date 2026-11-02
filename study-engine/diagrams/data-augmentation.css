@@ -6,7 +6,7 @@
 .da-hero p,.da-figure p{font-size:.86rem;color:#5b7b89;line-height:1.6}
 .da-figure{background:radial-gradient(ellipse at 95% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);border-radius:16px;padding:clamp(13px,2.4vw,24px);margin:0}
 .da-figure h3{font-size:clamp(1.05rem,1.9vw,1.27rem);line-height:1.35;margin:8px 0 14px;color:#2f6376}
-.da-art{display:block;min-width:0;max-width:100%;overflow:hidden;border:0;border-radius:13px;background:transparent}
+.da-art{display:block;min-width:0;max-width:100%;overflow:hidden;border:1px solid #d6e6eb;border-radius:13px;background:#f8fcfd}
 .da-art > svg,.da-art > img{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto}
 .da-art > svg{shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
 .da-note{font-size:.81rem;color:#5c7a89;margin:12px 0 0;line-height:1.65}
@@ -14,5 +14,5 @@
 .da-swipe,.da-q6-mobile,.da-mobile-panels{display:none!important}
 @media(prefers-reduced-motion:reduce){.da-hero *,.da-figure *{animation:none!important;transition:none!important}}
 
-/* Avoid q-fig + art + SVG producing concentric border frames. */
+/* Single artwork outline: outer SVG background now fills the container without a drawn frame. */
 .q-fig:has(> .da-figure){border:0;background:transparent}
