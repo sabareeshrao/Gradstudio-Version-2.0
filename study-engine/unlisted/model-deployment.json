@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "keyword": "Model Deployment",
+  "title": "Model Deployment",
+  "subtitle": "Topic: Deploying Machine Learning Models into Production · Subject: MLOps",
+  "diagramStyle": "diagrams/model-deployment.css",
+  "hero": "<section class=\"md-hero\"><h2>From trained model to a reliable live service</h2></section>",
+  "questions": [
+    {
+      "stem": "What is Model Deployment in Machine Learning, and how does it make a trained model available for real-world predictions?",
+      "tag": "Beginner · Meaning",
+      "options": [
+        "Model Deployment makes a trained model available by uploading its file to a team folder. Applications can then run predictions without hosting a model service or loading its dependencies.",
+        "Model Deployment is the process of making a trained Machine Learning model available in a production environment. It allows applications or users to provide input data and receive predictions.",
+        "Model Deployment makes a trained model available by retraining it separately for every user request. Applications wait for those training updates before obtaining a prediction from the latest inputs.",
+        "Model Deployment makes a trained model available by publishing its evaluation results for users. Applications can view model accuracy but do not need a running prediction service to process new inputs."
+      ],
+      "answer": "b",
+      "explanation": "<strong>Explanation:</strong> Model Deployment means placing a trained model into a running environment where people or applications can send new inputs and get predictions. Training creates the model; deployment makes it usable. Imagine a bookstore has trained a recommendation model. The model file alone cannot recommend a book to shoppers. A deployed service loads it, accepts a shopper's interests, calculates a recommendation, and sends the result back to the website. The key is an accessible, working prediction service—not just a saved model.",
+      "figure": "<section class=\"md-figure\">Visual scene being installed.</section>"
+    },
+    {
+      "stem": "What are the main steps required to move a trained Machine Learning model from development into a production environment?",
+      "tag": "Beginner · Release steps",
+      "options": [
+        "Teams save the model, upload it to a server, and create a prediction URL. They leave package versions and release testing to later maintenance.",
+        "Teams prepare a prediction page and release it, then select the model and libraries it should use. Testing begins once user requests arrive.",
+        "Teams package the model and run local tests, then release it. The request interface and production checks are added after customers start using the system.",
+        "Model Deployment involves saving the trained model, packaging its dependencies, creating a prediction interface, testing the system, and releasing it to production."
+      ],
+      "answer": "d",
+      "explanation": "<strong>Explanation:</strong> Moving a model to production involves saving the trained model, packaging its required libraries, building an interface for requests, testing the full system, and releasing it. Each step matters because a model that works in a notebook may fail on a different machine. For example, a wildlife-audio classifier might run on a research laptop but fail on a server that lacks its audio-processing library. Packaging the dependency, testing sample sounds, and checking the response format help make the release reliable.",
+      "figure": "<section class=\"md-figure\">Visual scene being installed.</section>"
+    },
+    {
+      "stem": "How do real-time inference and batch inference differ in the way deployed Machine Learning models process input data?",
+      "tag": "Beginner · Prediction timing",
+      "options": [
+        "Real-time inference generates predictions as individual requests arrive, usually with low latency. Batch inference processes multiple inputs together, typically on a schedule or without immediate response requirements.",
+        "Real-time inference handles incoming requests together during scheduled runs, while batch inference gives an immediate response to every individual request. The two methods mainly differ in the direction of their timing.",
+        "Real-time inference and batch inference both return predictions immediately for every new request. Batch inference simply uses larger input files, so grouping does not change when results must be available.",
+        "Real-time inference updates a model as each input arrives, while batch inference keeps model weights unchanged. Their main difference is whether the model learns continuously, rather than when predictions are returned."
+      ],
+      "answer": "a",
+      "explanation": "<strong>Explanation:</strong> Real-time inference predicts when a request arrives, usually aiming for a fast response. Batch inference collects multiple inputs and processes them together, often on a schedule. For example, a transit app may estimate the arrival time of a bus when a rider opens it. That is real-time inference. A city team might instead process all yesterday's travel records overnight to prepare a morning report. That is batch inference. Neither method requires the model to retrain whenever it predicts.",
+      "figure": "<section class=\"md-figure\">Visual scene being installed.</section>"
+    },
+    {
+      "stem": "How do REST APIs, Docker containers, and cloud infrastructure work together to deploy and serve Machine Learning models?",
+      "tag": "Medium · Serving architecture",
+      "options": [
+        "REST APIs accept prediction requests and Docker packages the serving application, but containers supply their own computing resources without needing a host. Cloud infrastructure is useful mainly for saving the output logs.",
+        "Docker packages a trained model and its libraries, while cloud infrastructure runs that software. A REST API is mainly needed to retrain the model before each user receives a prediction.",
+        "REST APIs receive prediction requests and return results. Docker containers package the model and its dependencies, while cloud infrastructure provides the computing resources needed to run and scale the service.",
+        "REST APIs can accept inputs and return predictions, and containers bundle the model code. Cloud servers only store model versions, while scaling always requires a separate container for every single request."
+      ],
+      "answer": "c",
+      "explanation": "<strong>Explanation:</strong> A REST API is the doorway through which an application sends inputs and receives predictions. Docker packages the model, server code, and required dependencies into a portable container image. Cloud infrastructure supplies machines and scaling capacity to run that container. Imagine a parcel-delivery app sending a package's details to a /predict endpoint. A cloud-hosted container loads the delivery-time model, handles the request, and sends an estimated time back. The API, container, and cloud have different jobs but work together.",
+      "figure": "<section class=\"md-figure\">Visual scene being installed.</section>"
+    },
+    {
+      "stem": "Why are model versioning, reproducible environments, and automated CI/CD pipelines important for reliable Model Deployment?",
+      "tag": "Medium · Release reliability",
+      "options": [
+        "Model versioning tracks old releases, but only the newest version should remain deployable. Reproducible environments install the latest dependencies, and CI/CD runs after production users report release failures.",
+        "Model versioning tracks releases and supports rollback, while reproducible environments maintain consistent dependencies. CI/CD pipelines automate testing and deployment, reducing manual errors and improving release reliability.",
+        "Versioning tracks model releases and CI/CD can test new versions, but production servers should update libraries independently. Different dependency versions make it easier to select the fastest serving machine.",
+        "Versioning records previous models and reproducible environments document package names, while CI/CD copies the release manually. Teams rely on developers to remember which tests were completed before deployment."
+      ],
+      "answer": "b",
+      "explanation": "<strong>Explanation:</strong> Model versioning tells you exactly which model was released and lets you return to a known version. A reproducible environment keeps library and runtime versions consistent. CI/CD automatically runs checks and moves approved releases into service. Picture a factory inspection model whose latest update starts flagging good products as defective. Version tracking identifies the earlier working model; a reproducible build makes it load correctly; and an automated release process can test and restore it. This reduces risky manual changes.",
+      "figure": "<section class=\"md-figure\">Visual scene being installed.</section>"
+    },
+    {
+      "stem": "How do Canary Deployment, Blue-Green Deployment, and Shadow Deployment help reduce risks when releasing new Machine Learning model versions?",
+      "tag": "Advanced · Rollout safety",
+      "options": [
+        "Canary Deployment duplicates live requests without using new predictions, while Shadow Deployment sends a small percentage of live answers from the new model. Blue-Green Deployment requires both environments to serve all users at once.",
+        "Blue-Green Deployment sends a small sample of requests to a new model before increasing traffic, while Canary Deployment moves everyone at once between environments. Shadow Deployment also serves new predictions directly to users.",
+        "Shadow Deployment immediately switches the public API to the new model, while Canary Deployment only compares copied traffic offline. Blue-Green Deployment keeps both model versions active for each user indefinitely.",
+        "Canary Deployment gradually sends live traffic to a new model, while Blue-Green Deployment switches between separate environments. Shadow Deployment sends copied requests to a new model without affecting live predictions."
+      ],
+      "answer": "d",
+      "explanation": "<strong>Explanation:</strong> These three strategies limit release risk in different ways. Canary Deployment lets a small fraction of users receive predictions from the new model before expanding traffic. Blue-Green Deployment prepares a separate new environment and switches traffic between old and new. Shadow Deployment copies requests to the new model but still serves the old model's answers. For example, a streaming app testing a new subtitle model can compare new outputs in shadow mode before users ever see them. Each approach offers a different degree of exposure and rollback control.",
+      "figure": "<section class=\"md-figure\">Visual scene being installed.</section>"
+    },
+    {
+      "stem": "How can production Machine Learning systems maintain model reliability through monitoring, drift detection, autoscaling, and automated rollback strategies?",
+      "tag": "Advanced · Operational reliability",
+      "options": [
+        "Monitoring tracks prediction quality, latency, errors, and data drift. Autoscaling adjusts computing resources, while automated rollback restores a previous model version when deployment health checks detect serious problems.",
+        "A production service checks errors and prediction latency, but does not need to track feature drift if the servers stay online. Autoscaling adds capacity, which also fixes accuracy problems caused by changing data.",
+        "Monitoring checks model outputs and incoming data, while autoscaling adds more servers when demand rises. If a newer model performs poorly, adding capacity restores its earlier accuracy without changing the deployed version.",
+        "Deployment health checks watch latency, errors, and drift, but rollback should reload the same failing version to keep releases consistent. Stored older versions are reserved for historical analysis rather than restoring service."
+      ],
+      "answer": "a",
+      "explanation": "<strong>Explanation:</strong> Reliable deployment requires watching prediction quality, response times, errors, and changes in the incoming data. Drift checks reveal when production inputs no longer look like training inputs. Autoscaling adds computing capacity during busy periods, while rollback restores a known working version when health checks detect a serious release problem. For example, a warehouse demand model may suddenly receive different seasonal sales patterns. Monitoring flags the shift, capacity adjusts for traffic, and a faulty new release can be rolled back while the team investigates.",
+      "figure": "<section class=\"md-figure\">Visual scene being installed.</section>"
+    }
+  ],
+  "footer": "Model Deployment · MLOps · 7 illustrated questions"
+}
