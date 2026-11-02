@@ -71,7 +71,7 @@ try{
   await page.locator('.pb-card').nth(1).screenshot({path:output+'/q2-'+width+'.png'});
   await page.locator('.pb-card').nth(2).screenshot({path:output+'/q3-'+width+'.png'});
   // Inspect repaired SciSketch Q2/Q3 with real browser geometry; preserve screenshot evidence.
-  for(const number of [2,3]){
+  for(const number of [1,2,3,4,5,6,7]){
    await page.locator('#pb-select-'+number).selectOption('scisketch');
    await sleep(180);
    const result=await page.evaluate(n=>{
@@ -82,14 +82,24 @@ try{
    },number);
    console.log('SCISKETCH',width,'Q'+number,JSON.stringify(result));
    if(result.selected!=='scisketch'||result.visible!==1)failures.push(width+': SciSketch control visibility failed Q'+number);
-   if(!result.status.includes('no detected SVG')||result.status.includes('potential collisions'))failures.push(width+': SciSketch collision check failed Q'+number+': '+result.status);
+   if(!result.status.includes('no detected collisions')||result.status.includes('potential collisions'))failures.push(width+': SciSketch collision check failed Q'+number+': '+result.status);
    await page.locator('.pb-card').nth(number-1).screenshot({path:output+'/q'+number+'-scisketch-'+width+'.png'});
    await page.locator('#pb-select-'+number).selectOption('paperbanana');
   }
+  // Ensure the per-card selector stays inside the card and is not styled as an answer option.
+  const control=await page.evaluate(()=>{
+    const card=document.querySelector('.pb-card');
+    const label=card.querySelector('.pb-select-wrap label');
+    const dropdown=card.querySelector('.pb-select');
+    const c=card.getBoundingClientRect(),s=dropdown.getBoundingClientRect();
+    return {fits:s.left>=c.left-2&&s.right<=c.right+2,border:parseFloat(getComputedStyle(label).borderTopWidth)||0};
+  });
+  console.log('CONTROL',width,JSON.stringify(control));
+  if(!control.fits||control.border>0)failures.push(width+': dropdown overflows or label inherits answer-option styling');
   await page.close();
  }
 }finally{
  if(browser)await browser.close();server.kill('SIGTERM');
 }
 if(failures.length){console.error('FAILURES '+failures.length+'\n'+failures.join('\n'));process.exitCode=1}
-else console.log('PASS: all seven PaperBanana SVG diagrams, dropdown switching, 28 original inputs, no geometry collisions, no page-level mobile overflow.');
+else console.log('PASS: all seven PaperBanana and SciSketch diagrams checked for marked-object/text/route collisions; dropdown, quiz, desktop and mobile checks passed.');

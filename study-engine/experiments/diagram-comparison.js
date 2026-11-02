@@ -13,6 +13,24 @@ export function mountResearchComparison(root){
    for(let k=i+1;k<blocks.length;k++)if(hit(b,blocks[k].b,2))issues.push('label collision: '+o.e.textContent.trim().slice(0,23)+' ↔ '+blocks[k].e.textContent.trim().slice(0,23));
    for(const rect of svg.querySelectorAll('[data-chart-bar]')){const bar=bb(rect);if(bar&&hit(b,bar,2))issues.push('chart-label collision: '+o.e.textContent.trim().slice(0,30))}
   }
+  // Collision groups are authored explicitly. Generic SVG rectangles can
+  // intentionally enclose labels, so checking every shape would produce noise.
+  const obstacles=[...svg.querySelectorAll('[data-layout-obstacle]')]
+    .map(e=>({e,b:bb(e),type:e.getAttribute('data-layout-obstacle')}))
+    .filter(o=>o.b&&o.b.w>0&&o.b.h>0);
+  for(let i=0;i<obstacles.length;i++)for(let j=i+1;j<obstacles.length;j++){
+    const a=obstacles[i],b=obstacles[j];
+    if(a.type!==b.type&&hit(a.b,b.b,1))issues.push('object collision: '+a.type+' / '+b.type);
+  }
+  for(const item of blocks)for(const o of obstacles){
+    if(item.e===o.e||!hit(item.b,o.b,2))continue;
+    const label=item.e.textContent.trim();
+    const contained=item.b.x>=o.b.x-2&&item.b.x+item.b.w<=o.b.x+o.b.w+2
+      &&item.b.y>=o.b.y-2&&item.b.y+item.b.h<=o.b.y+o.b.h+2;
+    if(contained&&((o.type==='query-head'&&/^Q[1-4]$/.test(label))
+      ||(o.type==='kv-node'&&/^KV[12]$/.test(label))))continue;
+    issues.push('text overlaps '+o.type+': '+label.slice(0,35));
+  }
   // Route paths are only marked when the path is required to stay clear of labels.
   for(const path of svg.querySelectorAll('path[data-route]')){
    try{const len=path.getTotalLength(),samples=Math.max(10,Math.min(150,Math.ceil(len/8)));
@@ -34,7 +52,7 @@ export function mountResearchComparison(root){
    let issues=[];
    card.querySelectorAll('.pb-variant:not([hidden]) .pb-svg, .pb-variant:not([hidden]) .sc-diagram').forEach(svg=>issues.push(...auditOne(svg)));
    const status=card.querySelector('.pb-layout-status');
-   if(status){status.dataset.problems=String(issues.length>0);status.textContent=issues.length?('Layout audit: '+issues.length+' potential collisions; inspect the affected diagram.'):'Layout audit: no detected SVG label/marked-path collisions in visible research diagrams.';}
+   if(status){status.dataset.problems=String(issues.length>0);status.textContent=issues.length?('Layout audit: '+issues.length+' potential collisions; inspect the affected diagram.'):'Partial layout audit: no detected collisions in checked text, marked paths, and marked objects.';}
    if(issues.length)console.warn('[GradStudio diagram audit]',card.querySelector('.pb-controls-label strong')?.textContent,issues);
   });
  }

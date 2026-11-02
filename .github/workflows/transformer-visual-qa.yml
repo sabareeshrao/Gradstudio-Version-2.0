@@ -6,6 +6,8 @@ on:
       - 'study-engine/unlisted/transformer-scisketch.json'
       - 'study-engine/diagrams/transformer-scisketch.css'
       - 'study-engine/experiments/diagram-comparison.js'
+      - 'study-engine/index.html'
+      - 'study-engine/app.js'
       - 'study-engine/experiments/verify-transformer-browser.mjs'
       - '.github/workflows/transformer-visual-qa.yml'
   workflow_dispatch:
