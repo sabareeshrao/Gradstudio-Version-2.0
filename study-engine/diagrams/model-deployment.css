@@ -1,0 +1,14 @@
+/* Model Deployment | Data Augmentation reference layout | one complete SVG per question. */
+.md-hero,.md-figure{font-family:inherit;color:#2a5166;min-width:0;max-width:100%;box-sizing:border-box}
+.md-hero{background:radial-gradient(ellipse at 12% 0%,#def8f0,transparent 48%),linear-gradient(145deg,#f5fbfe,#fff9ef);padding:clamp(16px,2.8vw,30px);margin:0 0 23px;border:1px solid #cddfe7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
+.md-hero h2{font-size:clamp(1.25rem,2.8vw,1.85rem);margin:9px 0;line-height:1.25;color:#2d596c}
+.md-kicker{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;color:#278577}
+.md-hero p,.md-figure p{font-size:.86rem;color:#5b7b89;line-height:1.6}
+.md-figure{background:radial-gradient(ellipse at 95% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);border-radius:16px;padding:clamp(13px,2.4vw,24px);margin:0}
+.md-figure h3{font-size:clamp(1.05rem,1.9vw,1.27rem);line-height:1.35;margin:8px 0 14px;color:#2f6376}
+.md-art{display:block;min-width:0;max-width:100%;overflow:hidden;border:1px solid #d6e6eb;border-radius:13px;background:#f8fcfd}
+.md-art > svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.md-note{font-size:.81rem;color:#5c7a89;margin:12px 0 0;line-height:1.65}
+.q-fig:has(> .md-figure){border:0;background:transparent}
+.md-figure code,.md-hero code{background:#e7f0f6;color:#274f68;border:1px solid #cbdde8;border-radius:5px;padding:1px 5px;font-size:.88em}
+@media(prefers-reduced-motion:reduce){.md-hero *,.md-figure *{animation:none!important;transition:none!important}}
