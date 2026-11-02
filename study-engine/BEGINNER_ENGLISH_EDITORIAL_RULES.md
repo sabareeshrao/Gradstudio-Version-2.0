@@ -20,7 +20,7 @@ Use these rules when updating existing English study-engine modules in numbered 
 - Keep each visible explanation **at or under 100 words**.
 - **First answer every part of the question directly**: define the concept when asked what it is, then describe the mechanism, why, or requested comparisons. Follow with a distinct concrete example that supports the answer. Avoid unexplained acronyms.
 - Use **a different relevant example for every question**; do not recycle an imagination/scenario within or across a batch.
-- Keep the deeper optional technical explanation when a module already has one; do not replace the beginner explanation with that advanced text.
+- **Single-explanation UI:** Data Augmentation is the standard. Reveal shows only the main `explanation`; never add a “Read the detailed explanation” dropdown. Keep any existing `technicalExplanation` in JSON for archival reference without rendering it or replacing the beginner explanation with it.
 
 ## Diagram and layout guardrail
 - Preserve seven original, concept-specific diagrams and their responsive styling.
