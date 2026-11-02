@@ -54,9 +54,9 @@
         const styleURL=new URL(data.diagramStyle,base);
         // A fresh stylesheet version prevents previously cached nested-SVG
         // sizing rules from overriding the corrected lesson diagrams.
-        if(slug==='data-augmentation')styleURL.searchParams.set('v','20261101-fit-only-v2');
+        if(slug==='data-augmentation')styleURL.searchParams.set('v','20261102-single-border-v1');
         if(slug==='data-augmentation-scisketch')styleURL.searchParams.set('v','20261101-da-scisketch-v3');
-        if(slug==='multimodal-learning')styleURL.searchParams.set('v','20261102-five-fusion-panels-v1');
+        if(slug==='multimodal-learning')styleURL.searchParams.set('v','20261102-single-border-v1');
         if(slug==='transformer-scisketch')styleURL.searchParams.set('v','20261101-constraint-mobile-v1');
         await loadStyle(styleURL.href);
       }catch(error){
