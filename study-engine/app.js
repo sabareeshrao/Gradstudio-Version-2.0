@@ -54,7 +54,7 @@
         const styleURL=new URL(data.diagramStyle,base);
         // A fresh stylesheet version prevents previously cached nested-SVG
         // sizing rules from overriding the corrected lesson diagrams.
-        if(slug==='data-augmentation')styleURL.searchParams.set('v','20261101-slim-chevron-mobile-panels');
+        if(slug==='data-augmentation')styleURL.searchParams.set('v','20261101-no-sideways-v1');
         if(slug==='transformer-scisketch')styleURL.searchParams.set('v','20261101-constraint-mobile-v1');
         await loadStyle(styleURL.href);
       }catch(error){
@@ -95,6 +95,9 @@
       try{const {mountResearchComparison}=await import('./experiments/diagram-comparison.js?v=20261101-q7-object-audit');mountResearchComparison(root)}
       catch(e){console.error('Research diagram comparison unavailable',e)}
     }
+    // Fit all figure SVGs on mobile and reflow Data Augmentation into semantic panels.
+    try{const {mountResponsiveFigures}=await import('./responsive-figures.js?v=20261101-no-sideways-v1');mountResponsiveFigures(root,slug)}
+    catch(e){console.warn('Responsive figure helper unavailable',e)}
     // Normalize arrowheads for every English module; no stroke-width-scaled triangles.
     try{const {normalizeSvgArrowheads}=await import('./svg-arrowheads.js?v=20261101-slim-arrows');normalizeSvgArrowheads(root)}
     catch(e){console.warn('SVG arrowhead guard unavailable',e)}

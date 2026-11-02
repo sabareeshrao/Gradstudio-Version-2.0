@@ -1,34 +1,35 @@
-/* Data Augmentation illustrations | Account 2 Agent 1 | staging only */
-.da-hero,.da-figure{font-family:inherit;color:#2a5166;min-width:0}
+/* Data Augmentation — no sideways-panning; desktop SVG + mobile semantic panels. */
+.da-hero,.da-figure{font-family:inherit;color:#2a5166;width:100%;min-width:0;max-width:100%;box-sizing:border-box}
 .da-hero{background:radial-gradient(ellipse at 13% 0%,#e3f7f0,transparent 45%),linear-gradient(145deg,#f5fbfe,#fff9ef);padding:clamp(16px,2.8vw,30px);margin:0 0 23px;border:1px solid #cddfe7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
 .da-hero h2{font-size:clamp(1.25rem,2.8vw,1.85rem);margin:9px 0;line-height:1.25;color:#2d596c}
 .da-kicker{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;color:#278577}
 .da-hero p,.da-figure p{font-size:.86rem;color:#5b7b89;line-height:1.6}
-.da-figure{background:radial-gradient(ellipse at 95% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);border-radius:16px;padding:clamp(14px,2.8vw,25px);margin:0}
+.da-figure{background:radial-gradient(ellipse at 95% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);border-radius:16px;padding:clamp(13px,2.4vw,24px);margin:0}
 .da-figure h3{font-size:clamp(1.05rem,1.9vw,1.27rem);line-height:1.35;margin:8px 0 14px;color:#2f6376}
-.da-art{width:100%;max-width:100%;border:1px solid #d6e6eb;border-radius:13px;overflow-x:auto;overflow-y:hidden;background:#fff;scrollbar-color:#aeced8 transparent}
-.da-art > img,.da-art > svg{display:block;width:100%;min-width:920px;max-width:none;height:auto}
+.da-art{display:block;width:100%;max-width:100%;min-width:0;overflow:hidden;background:#fff;border:1px solid #d6e6eb;border-radius:13px}
+.da-art > img,.da-art > svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto}
 .da-note{font-size:.81rem;color:#5c7a89;margin:12px 0 0;line-height:1.65}
-.da-swipe{display:none;font-size:.75rem;font-weight:650;color:#60818d;margin:7px 0 0}
 .da-hero img,.da-hero svg,.da-figure img,.da-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-@media(max-width:800px){.da-art > img,.da-art > svg{min-width:940px}.da-hero{padding:17px 12px}.da-figure{padding:16px 10px}.da-swipe{display:block}}
-@media(prefers-reduced-motion:reduce){.da-hero *,.da-figure *{animation:none!important;transition:none!important}}
-
-/* Final audit: styles for the OUTER illustration only. Nested art SVGs
-   retain their intended x/y/width/height attributes; do not stretch them. */
-.da-art{overscroll-behavior-x:contain;scrollbar-width:thin}
-.da-art:focus-visible{outline:3px solid #1c7896;outline-offset:3px}
 .da-art > svg{shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
-
-/* Data Augmentation Q6: show each 300-unit illustrated technique separately on narrow phones.
-   Do not shrink all three 300-unit teaching panels into one unreadable 320px image. */
-.da-q6-mobile{display:none}
-.da-q6-panel{min-width:0;overflow:hidden;border-radius:14px;border:1px solid #d6e6eb;background:#fff}
-.da-q6-panel>svg{display:block;width:100%;height:auto;max-width:100%}
-@media(max-width:700px){
- .da-hero,.da-figure{max-width:100%;overflow:hidden}
- .da-art{min-width:0;max-width:100%;touch-action:pan-x pan-y}
+.da-swipe{display:none!important}
+.da-mobile-panels,.da-q6-mobile{display:none}
+.da-mobile-card{min-width:0;max-width:100%;width:100%;padding:10px;background:#fff;border:1px solid #d7e6eb;border-radius:13px;overflow:hidden;box-sizing:border-box}
+.da-mobile-card h4,.da-mobile-process h4{font-size:.92rem;font-weight:800;line-height:1.4;margin:0 0 9px;color:#32667a}
+.da-mobile-card svg{display:block;width:100%;min-width:0;max-width:100%;height:auto}
+.da-mobile-process{background:#fff;border:1px solid #d7e6eb;border-radius:13px;padding:14px 15px}
+.da-mobile-process ol{margin:0;padding:0;list-style:none;counter-reset:da-step;display:grid;gap:8px}
+.da-mobile-process li{counter-increment:da-step;display:flex;align-items:center;gap:11px;min-height:46px;padding:9px 11px;background:#f2f8fb;border-radius:9px;color:#31596d;font-size:.9rem;font-weight:700}
+.da-mobile-process li::before{content:counter(da-step);flex:0 0 27px;width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:#d5e8f1;color:#2c6c8b;font-weight:850;font-size:.75rem}
+.da-mobile-process[data-lane="offline"] li{background:#fff5e8}
+.da-mobile-process[data-lane="offline"] li::before{background:#f2dfc7;color:#94602c}
+.da-q6-panel{min-width:0;max-width:100%;overflow:hidden;border-radius:14px;border:1px solid #d6e6eb;background:#fff}
+.da-q6-panel>svg{display:block;width:100%;min-width:0;max-width:100%;height:auto}
+@media(max-width:760px){
+ .da-hero{padding:14px 10px;overflow:hidden}
+ .da-figure{padding:12px 8px;overflow:hidden}
+ .da-art{display:none!important}
+ .da-mobile-panels{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;width:100%;min-width:0;max-width:100%}
  .da-q6-desktop{display:none!important}
- .da-q6-mobile{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;width:100%;max-width:100%}
- .da-q6-mobile+.da-swipe{display:none}
+ .da-q6-mobile{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;width:100%;min-width:0;max-width:100%}
 }
+@media(prefers-reduced-motion:reduce){.da-hero *,.da-figure *{animation:none!important;transition:none!important}}
