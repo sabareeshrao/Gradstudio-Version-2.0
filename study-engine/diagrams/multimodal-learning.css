@@ -6,7 +6,7 @@
 .mm-hero p{font-size:.9rem;color:#597a8a;line-height:1.55;max-width:73ch;margin:0 0 18px}
 .mm-figure{background:radial-gradient(ellipse at 94% 0%,#e3f7ed,transparent 47%),linear-gradient(150deg,#f8fcff,#fffaf4);border-radius:15px;padding:clamp(15px,2.7vw,25px)}
 .mm-figure h3{color:#325c72;font-weight:850;line-height:1.32;margin:7px 0 14px;font-size:clamp(1.02rem,1.8vw,1.22rem)}
-.mm-art{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;border-radius:14px;border:0;background:transparent;scrollbar-color:#afccd6 transparent}
+.mm-art{width:100%;max-width:100%;overflow-x:auto;overflow-y:hidden;border-radius:14px;border:1px solid #d4e6eb;background:#fafeff;scrollbar-color:#afccd6 transparent}
 .mm-svg{display:block;width:100%;min-width:765px;max-width:none;height:auto}
 .mm-hero .mm-svg{min-width:750px}
 .mm-svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
@@ -41,5 +41,5 @@
  .mm-fusion-tradeoff{font-size:.8rem}
 }
 
-/* One visual frame only: the SVG canvas already has its own outline. */
+/* One artwork border; the outer SVG canvas background has no redundant frame. */
 .q-fig:has(> .mm-figure){border:0;background:transparent}
