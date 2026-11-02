@@ -75,7 +75,7 @@
 .da-aug-mini span:first-child,.da-aug-mini span:last-child{background:#e3f5ec;border-radius:7px;padding:7px 6px}
 .da-branch-ends small{font-size:.73rem;color:#62818a}
 .da-test-path{border-color:#e0d2bd}
-.da-lock-icon{height:32px;font-size:30px;line-height:1;color:#ad8967}
+.da-lock-icon{display:block;width:40px!important;height:36px!important;max-width:40px;flex:none}
 .da-check-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
 .da-check-row span{padding:5px 9px;border-radius:99px;background:#e6f5f0;border:1px solid #c0e1d5;font-size:.75rem;color:#2e7466;font-weight:750}
 .q-fig:has(> .da-figure){border:0!important;background:transparent!important}
@@ -117,3 +117,38 @@
  .da-aug-mini span:first-child,.da-aug-mini span:last-child{padding:5px}
 }
 @media(prefers-reduced-motion:reduce){.da-figure *,.da-hero *{animation:none!important;transition:none!important}}
+
+/* Compact phone composition: stay within original cards, avoid tall stacks. */
+@media(max-width:540px){
+ .da-hero-flow{grid-template-columns:minmax(0,1fr) 13px minmax(0,1fr) 13px minmax(0,1fr);gap:3px}
+ .da-hero-flow .da-panel{min-height:82px;padding:6px 3px;gap:3px}
+ .da-hero-flow .da-panel svg{max-height:48px}
+ .da-hero-flow .da-panel-label{font-size:.69rem}
+ .da-flow-arrow{transform:none;font-size:15px;line-height:1}
+ .da-mini-views{max-width:100%;gap:2px}
+ .da-contact-sheet,.da-triptych,.da-methods{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+ .da-contact-sheet .da-panel,.da-triptych .da-panel{padding:7px 3px;min-height:100px}
+ .da-contact-sheet .da-panel-label,.da-triptych .da-panel-label{font-size:.72rem}
+ .da-contact-sheet .da-bike{height:55px}
+ .da-triptych .da-panel svg{max-height:60px}
+ .da-word-pair{min-height:60px;font-size:.67rem}
+ .da-triptych .da-caption{font-size:.68rem}
+ .da-methods .da-panel{min-height:118px;padding:8px 3px}
+ .da-methods .da-panel-label{font-size:.74rem}
+ .da-methods .da-caption{font-size:.68rem}
+ .da-methods .da-color-disc{width:16px;height:16px}
+ .da-methods .da-blend-graphic{gap:2px}
+ .da-methods .da-blend-plus,.da-methods .da-blend-arrow{font-size:.72rem}
+ .da-methods .da-cut-base{width:49px;height:44px}
+ .da-methods .da-cut-patch{width:22px;height:20px;top:10px}
+ .da-methods .da-gen-card{width:26px;height:33px;font-size:16px}
+ .da-comparison,.da-safe-compare{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .da-comparison .da-panel{padding:7px 4px;min-height:100px}
+ .da-comparison svg{max-height:95px}
+ .da-safe-compare .da-panel{padding:8px 4px;min-height:105px}
+ .da-digit-row{gap:3px}
+ .da-digit{font-size:clamp(1.75rem,8vw,2.7rem)}
+ .da-transform-arrow{font-size:1rem}
+ .da-status{font-size:.9rem}
+ .da-figure .da-note{font-size:.76rem}
+}
