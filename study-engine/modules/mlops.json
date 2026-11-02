@@ -37,9 +37,9 @@
       "tag": "Beginner · Lifecycle map",
       "options": [
         "The MLOps lifecycle includes data preparation, model training, evaluation, versioning, deployment, monitoring, and retraining. These stages help maintain model quality throughout production use.",
-        "The MLOps lifecycle starts with preparing data, then training and deploying the model. Evaluation and versioning happen only after users report errors, while monitoring primarily records hardware utilization.",
-        "The MLOps lifecycle follows data collection, feature creation, model training, and deployment. Once the service responds successfully, its data and model versions stay fixed until a different project begins.",
-        "The MLOps lifecycle covers preparing data, choosing model settings, validating predictions, and releasing a service. Retraining usually happens before the first evaluation, rather than following production monitoring."
+        "The MLOps lifecycle prepares data, trains, and deploys a model. Evaluation and versioning begin only after users report errors, while monitoring mainly checks server health.",
+        "The MLOps lifecycle prepares data, trains, and deploys a model. Once the service works, the data and model versions remain fixed until another project begins.",
+        "The MLOps lifecycle prepares data, selects settings, evaluates predictions, and deploys a service. Retraining usually happens before initial evaluation rather than after production monitoring."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> The lifecycle is a loop: prepare data, train a model, evaluate it, keep track of its versions, deploy it, monitor real predictions, and retrain when needed. Each stage gives the next stage dependable inputs. Imagine a parcel-delay predictor: fresh shipment records feed training, tests check accuracy, the registry stores the approved version, and monitoring reveals when delivery routes change. The team can then start a new training cycle without losing track of previous results.",
