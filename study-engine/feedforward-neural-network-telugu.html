@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Feedforward Neural Network explained in Telugu with clear English-only educational diagrams. No MCQs.">
+<title>Feedforward Neural Network — Telugu Visual Guide | Gradstudio</title>
+<style>
+:root{--sky:#0878b6;--deep:#145879;--teal:#148c91;--text:#203847;--muted:#5b7481;--line:#c7e2ee;--soft:#eaf8ff;--bg:#f4fbff;--green:#2d8e70;--amber:#bd7b36}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Telugu","Gautami","Segoe UI",sans-serif;line-height:1.66}
+header{position:sticky;top:0;z-index:20;background:#f4fbfff2;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar{max-width:970px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.brand{font-weight:900;color:var(--deep);font-size:.96rem}.brand span{display:block;color:#6b8696;font-size:.69rem;font-weight:650;letter-spacing:.065em}
+.topnav{display:flex;gap:8px;align-items:center}.topnav a{text-decoration:none;color:var(--deep);background:white;border:1px solid #d0e6ed;padding:7px 11px;border-radius:999px;font-weight:700;font-size:.78rem}
+main{max-width:970px;padding:26px 20px 80px;margin:auto}
+h1,h2,h3{line-height:1.3;letter-spacing:-.015em}h1{font-size:clamp(1.8rem,4vw,2.65rem);margin:7px 0 12px;color:#193e5d}
+.intro{font-size:1rem;color:#416375;max-width:76ch;margin:0 0 22px}
+.pretitle{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;color:var(--teal);font-weight:900}
+.hero{background:linear-gradient(115deg,#dff3fd,#f4fffb 58%,#fff4e8);border:1px solid #c1deeb;border-radius:20px;padding:clamp(17px,3vw,28px);margin-bottom:20px;overflow:hidden;box-shadow:0 7px 22px #265d8211}
+.hero h2{font-size:clamp(1.17rem,2.4vw,1.42rem);color:#215676;margin:0 0 6px}
+.hero p{margin:0 0 14px;color:#56788c;font-size:.9rem}
+.hero-diagram{max-width:710px;margin:auto}
+.hero-diagram .network-art{display:block;width:100%;height:auto;max-height:210px}
+.layer-caption{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:2px;text-align:center;color:#376679;font-weight:800;font-size:clamp(.66rem,1.3vw,.82rem)}
+.signal-bar{text-align:center;margin-top:12px;color:#2c7486;font-size:.82rem;font-weight:780;letter-spacing:.01em}
+.lesson-card{background:white;border:1px solid #d8eaf1;border-radius:18px;padding:clamp(15px,2.7vw,25px);box-shadow:0 4px 16px #2461850b;margin-bottom:17px;scroll-margin-top:100px}
+.lesson-top{display:flex;align-items:center;gap:13px;margin-bottom:15px}
+.step-index{height:41px;width:41px;flex:none;display:grid;place-items:center;color:white;border-radius:12px;background:#0878b6;font-weight:900;font-size:.86rem;box-shadow:0 4px 12px #0878b628}
+.eyebrow{font-size:.69rem;letter-spacing:.1em;color:#3983a3;font-weight:850;margin:0;text-transform:uppercase}
+.lesson-card h2{font-size:clamp(1.08rem,2vw,1.31rem);margin:3px 0 0;color:#244a65}
+.diagram{border:1px solid #d7ebf2;border-radius:14px;background:radial-gradient(circle at 90% 5%,#e6f5f1,transparent 42%),linear-gradient(150deg,#f6fbff,#fffaf4);padding:clamp(12px,2.4vw,22px);overflow:hidden;min-width:0;color:#244c62;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.diagram *{box-sizing:border-box}
+.diagram-title{font-size:.71rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:#3f7b91;margin-bottom:10px}
+.explain{margin-top:15px;font-size:.97rem;line-height:1.8;color:#294555}
+.explain p{margin:0 0 10px}.explain p:last-child{margin-bottom:0}
+.explain ul{padding-left:0;padding-inline-start:24px;margin:9px 0 0}.explain li{margin-bottom:7px}
+.explain strong{color:#215a75}
+.fnn-structure{display:grid;grid-template-columns:minmax(105px,1fr) minmax(150px,1.65fr) minmax(105px,1fr);gap:10px;align-items:center}
+.signal-card{background:#fff;border:1px solid #cde3e8;border-radius:12px;padding:11px 9px;min-width:0;text-align:center;box-shadow:0 2px 6px #2b6c7d0b}
+.signal-card small{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;color:#527a89;font-weight:900;margin-bottom:7px}
+.signal-card strong{display:block;font-size:clamp(.81rem,1.6vw,.95rem);color:#21536b}
+.signal-card .big-number{font-size:clamp(1rem,2.2vw,1.5rem);color:#147b89;white-space:nowrap}
+.feature-list{display:grid;gap:6px}
+.feature-row{display:flex;gap:7px;justify-content:space-between;border-radius:8px;padding:6px;background:#edf6fb;font-size:.79rem;font-weight:700;color:#39677f}
+.feature-row b{color:#206c88}
+.network-block{text-align:center;min-width:0}
+.network-block svg{display:block;width:100%;height:auto;max-height:180px}
+.network-block .subline{font-size:.74rem;color:#477a86;font-weight:750}
+.neuron-map{display:grid;grid-template-columns:minmax(95px,1fr) 19px minmax(140px,1.45fr) 19px minmax(95px,1fr);gap:5px;align-items:center}
+.neuron-inputs{display:grid;gap:8px}
+.in-value{padding:10px 6px;text-align:center;background:#fff;border:1px solid #c2e0ed;border-radius:10px;font-size:.88rem;font-weight:850;color:#275d78}
+.in-value em{font-style:normal;color:#638795;font-size:.72rem;display:block}
+.arrow{color:#4592ab;text-align:center;font-size:1.55rem;font-weight:650}
+.neuron-center{background:#e7f4fa;border:1px solid #b9dce7;border-radius:14px;text-align:center;padding:12px 7px;min-width:0}
+.neuron-center .math{font:800 clamp(.88rem,1.9vw,1.16rem)/1.5 ui-monospace,Consolas,monospace;overflow-wrap:anywhere;color:#1c5e83}
+.neuron-center .math-small{color:#49748c;font:750 clamp(.72rem,1.4vw,.89rem)/1.6 ui-monospace,Consolas,monospace}
+.neuron-result{background:#ebfaf3;border:1px solid #bce3ce;border-radius:13px;padding:14px 6px;text-align:center;min-width:0}
+.neuron-result .result-big{display:block;font-size:clamp(1.5rem,4vw,2.35rem);font-weight:900;color:#227755;line-height:1.3}
+.neuron-result small{font-size:.72rem;color:#43856c;font-weight:800}
+.math-note{margin-top:9px;color:#567785;font-size:.78rem;text-align:center}
+.flow-rail{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;align-items:center;text-align:center}
+.flow-step{min-width:0;background:#fff;border:1px solid #b4d9e7;border-radius:10px;padding:11px 4px;font-weight:850;font-size:clamp(.72rem,1.5vw,.92rem);color:#245e7f;line-height:1.35}
+.flow-step.output{background:#eaf7ed;color:#277858;border-color:#b6dfc7}
+.flow-arr{color:#3291aa;font-size:20px}
+.direction-labels{margin-top:15px;display:grid;gap:8px}
+.direction-pill{border-radius:10px;padding:8px 12px;background:#ddf3fc;border-left:4px solid #168ab4;color:#226583;font-weight:760;font-size:.82rem}
+.direction-pill.backward{background:#fff2e4;border-color:#d69448;color:#99652d}
+.train-progress{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:center;gap:4px}
+.train-step{text-align:center;background:white;border:1px solid #cce2ea;border-radius:11px;padding:13px 4px;min-width:0}
+.train-step b{display:block;color:#286781;font-size:clamp(.72rem,1.4vw,.88rem);line-height:1.32}
+.train-step span{display:block;margin:0 auto 5px;width:24px;height:24px;border-radius:50%;background:#e3f3fa;border:1px solid #acd7e6;color:#267d9d;font-weight:850;line-height:22px}
+.train-arrow{text-align:center;color:#4c9cad;font-size:20px}
+.train-loss{display:flex;justify-content:center;align-items:center;gap:13px;margin-top:14px;flex-wrap:wrap}
+.train-loss span{background:#f7faff;border:1px solid #d4e8ec;border-radius:9px;padding:8px 13px;font-size:.8rem;font-weight:760}
+.train-loss span strong{color:#205b81}
+.cycle-text{text-align:center;margin-top:12px;font-size:.76rem;font-weight:800;color:#49818b}
+.use-case-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.use-case{display:grid;justify-items:center;text-align:center;gap:7px;min-width:0;padding:12px 6px;border-radius:12px;background:#fff;border:1px solid #d3e6e9}
+.use-case svg{height:52px;width:52px;max-width:100%}
+.use-case strong{color:#2c617e;font-size:.78rem;line-height:1.3}
+.use-case small{color:#758894;font-size:.68rem;line-height:1.3}
+.interview-rail{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:center;gap:4px}
+.interview-item{background:white;border:1px solid #cee3ec;border-radius:11px;padding:12px 4px;text-align:center;font-weight:850;color:#2b6480;font-size:clamp(.72rem,1.4vw,.86rem)}
+.interview-arrow{text-align:center;color:#4c9cad;font-size:1.25rem}
+.english-answer{margin-top:14px;background:#142b40;border-radius:13px;padding:18px 20px;color:#edf9ff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.english-answer p{margin:0 0 13px;line-height:1.62;font-size:.91rem}.english-answer p:last-child{margin-bottom:0}
+.answer-header{display:flex;justify-content:space-between;gap:9px;align-items:center;margin-bottom:11px;color:#8ee3d8;font-size:.73rem;text-transform:uppercase;letter-spacing:.07em;font-weight:900}
+.copy-btn{border:1px solid #51778d;background:#26465f;color:#f2fcff;border-radius:8px;font-size:.74rem;font-weight:800;padding:6px 11px;cursor:pointer}
+.copy-btn:hover{background:#376782}.copy-btn:focus-visible{outline:3px solid #66c1f2;outline-offset:2px}
+.takeaway{border:1px solid #a8dcce;background:linear-gradient(135deg,#e4f8f0,#eff9ff);border-radius:18px;padding:20px 22px;margin-top:23px}
+.takeaway h2{margin:0 0 8px;color:#196c65;font-size:1.24rem}
+.takeaway .diagram{background:white;border-color:#b8dfd5;margin-top:12px}
+.takeaway p{margin:0 0 6px;font-weight:650}
+.foot{text-align:center;margin-top:28px;font-size:.79rem;color:#6d8b9d}
+@media(max-width:700px){
+ .fnn-structure{grid-template-columns:minmax(96px,1fr) minmax(130px,1.4fr) minmax(96px,1fr)}
+ .use-case-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .use-case:nth-child(4),.use-case:nth-child(5){grid-column:auto}
+}
+@media(max-width:500px){
+ .topbar{padding:10px 13px}.topnav a{padding:6px 8px;font-size:.69rem}.brand{font-size:.79rem}
+ main{padding:18px 12px 54px}
+ .lesson-card{padding:15px 12px;border-radius:15px}
+ .diagram{padding:12px 9px}
+ .fnn-structure{grid-template-columns:minmax(78px,1fr) minmax(118px,1.37fr) minmax(78px,1fr);gap:4px}
+ .signal-card{padding:8px 4px}.signal-card small{font-size:.58rem}.signal-card strong{font-size:.73rem}
+ .feature-row{padding:5px 3px;font-size:.62rem;gap:3px}.network-block .subline{font-size:.59rem}
+ .neuron-map{grid-template-columns:minmax(70px,1fr) 12px minmax(105px,1.35fr) 12px minmax(75px,1fr);gap:3px}
+ .in-value{font-size:.72rem;padding:8px 2px}.in-value em{font-size:.62rem}
+ .arrow{font-size:1.1rem}.neuron-center{padding:10px 2px}
+ .neuron-result{padding:10px 2px}
+ .flow-rail,.train-progress,.interview-rail{gap:2px}
+ .flow-step,.train-step,.interview-item{padding:9px 1px;font-size:.61rem;overflow-wrap:anywhere}
+ .flow-arr,.train-arrow,.interview-arrow{font-size:.9rem}
+ .train-step span{width:20px;height:20px;line-height:18px}
+ .use-case-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .use-case{padding:9px 4px}.use-case svg{width:40px;height:40px}
+ .english-answer{padding:14px 13px}.english-answer p{font-size:.86rem}
+ .takeaway{padding:18px 14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,.copy-btn{display:none}.hero,.lesson-card,.takeaway{box-shadow:none;break-inside:avoid}body{background:white}main{max-width:100%}}
+</style>
+</head>
+<body>
+<header><div class="topbar"><div class="brand">GRADSTUDIO <span>TELUGU VISUAL LESSON</span></div><nav class="topnav" aria-label="Lesson navigation"><a href="#layer-1">Start</a><a href="#layer-6">Interview</a><a href="#remember">Remember</a></nav></div></header>
+<main>
+<p class="pretitle">Neural Networks · Visual Learning</p>
+<h1>Feedforward Neural Network అంటే ఏంటి?</h1>
+<p class="intro">Feedforward Neural Network (FNN) అనేది ఒక Artificial Neural Network. ఇందులో information Input Layer నుంచి Hidden Layers ద్వారా Output Layer వరకు ఒకే direction లో ప్రయాణిస్తుంది. అంటే data ముందుకు వెళ్తుంది. తిరిగి వెనక్కి వెళ్లి అదే network లో loop అవ్వదు.</p>
+<section class="hero"><h2>One direction. No recurrent loops.</h2><p>Input → Hidden Layers → Output</p><div class="hero-diagram"><svg class="network-art" viewBox="0 0 440 184" role="img" aria-label="Feedforward connections from input nodes through two hidden layers to an output node"><defs><linearGradient id="wire" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8ac5df"/><stop offset="1" stop-color="#0785ba"/></linearGradient></defs><g stroke="url(#wire)" stroke-width="2.1" opacity=".62"><path d="M42 43 L165 32"/><path d="M42 43 L165 72"/><path d="M42 43 L165 112"/><path d="M42 43 L165 152"/><path d="M42 91 L165 32"/><path d="M42 91 L165 72"/><path d="M42 91 L165 112"/><path d="M42 91 L165 152"/><path d="M42 139 L165 32"/><path d="M42 139 L165 72"/><path d="M42 139 L165 112"/><path d="M42 139 L165 152"/><path d="M165 32 L288 43"/><path d="M165 32 L288 91"/><path d="M165 32 L288 139"/><path d="M165 72 L288 43"/><path d="M165 72 L288 91"/><path d="M165 72 L288 139"/><path d="M165 112 L288 43"/><path d="M165 112 L288 91"/><path d="M165 112 L288 139"/><path d="M165 152 L288 43"/><path d="M165 152 L288 91"/><path d="M165 152 L288 139"/><path d="M288 43 L401 91"/><path d="M288 91 L401 91"/><path d="M288 139 L401 91"/></g><g stroke-width="3"><circle cx="42" cy="43" r="14" fill="#ebf7fd" stroke="#49a4c3"/><circle cx="42" cy="91" r="14" fill="#ebf7fd" stroke="#49a4c3"/><circle cx="42" cy="139" r="14" fill="#ebf7fd" stroke="#49a4c3"/><circle cx="165" cy="32" r="13" fill="#e6f8ee" stroke="#36a37c"/><circle cx="165" cy="72" r="13" fill="#e6f8ee" stroke="#36a37c"/><circle cx="165" cy="112" r="13" fill="#e6f8ee" stroke="#36a37c"/><circle cx="165" cy="152" r="13" fill="#e6f8ee" stroke="#36a37c"/><circle cx="288" cy="43" r="14" fill="#eff0ff" stroke="#7f88d2"/><circle cx="288" cy="91" r="14" fill="#eff0ff" stroke="#7f88d2"/><circle cx="288" cy="139" r="14" fill="#eff0ff" stroke="#7f88d2"/><circle cx="401" cy="91" r="17" fill="#ffeed8" stroke="#e6a458"/></g><g fill="#0785ba" opacity=".96"><circle cx="101" cy="67" r="4"/><circle cx="220" cy="99" r="4"/><circle cx="353" cy="91" r="4"/></g></svg><div class="layer-caption"><span>Input</span><span>Hidden 1</span><span>Hidden 2</span><span>Output</span></div><div class="signal-bar">Forward information flow →</div></div></section>
+
+<section class="lesson-card" id="layer-1"><div class="lesson-top"><span class="step-index">01</span><div><p class="eyebrow">LAYER 1</p><h2>Neural Network Structure</h2></div></div><div class="diagram" role="group" aria-label="English instructional diagram for layer 1"><div class="diagram-title">House price prediction · Layer structure</div><div class="fnn-structure"><div class="signal-card"><small>Input layer</small><div class="feature-list"><div class="feature-row"><span>Size</span><b>2,000 ft²</b></div><div class="feature-row"><span>Bedrooms</span><b>3</b></div><div class="feature-row"><span>Age</span><b>12 years</b></div></div></div><div class="network-block"><svg class="network-art" viewBox="0 0 440 184" role="img" aria-label="Feedforward connections from input nodes through two hidden layers to an output node"><defs><linearGradient id="wire" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8ac5df"/><stop offset="1" stop-color="#0785ba"/></linearGradient></defs><g stroke="url(#wire)" stroke-width="2.1" opacity=".62"><path d="M42 43 L165 32"/><path d="M42 43 L165 72"/><path d="M42 43 L165 112"/><path d="M42 43 L165 152"/><path d="M42 91 L165 32"/><path d="M42 91 L165 72"/><path d="M42 91 L165 112"/><path d="M42 91 L165 152"/><path d="M42 139 L165 32"/><path d="M42 139 L165 72"/><path d="M42 139 L165 112"/><path d="M42 139 L165 152"/><path d="M165 32 L288 43"/><path d="M165 32 L288 91"/><path d="M165 32 L288 139"/><path d="M165 72 L288 43"/><path d="M165 72 L288 91"/><path d="M165 72 L288 139"/><path d="M165 112 L288 43"/><path d="M165 112 L288 91"/><path d="M165 112 L288 139"/><path d="M165 152 L288 43"/><path d="M165 152 L288 91"/><path d="M165 152 L288 139"/><path d="M288 43 L401 91"/><path d="M288 91 L401 91"/><path d="M288 139 L401 91"/></g><g stroke-width="3"><circle cx="42" cy="43" r="14" fill="#ebf7fd" stroke="#49a4c3"/><circle cx="42" cy="91" r="14" fill="#ebf7fd" stroke="#49a4c3"/><circle cx="42" cy="139" r="14" fill="#ebf7fd" stroke="#49a4c3"/><circle cx="165" cy="32" r="13" fill="#e6f8ee" stroke="#36a37c"/><circle cx="165" cy="72" r="13" fill="#e6f8ee" stroke="#36a37c"/><circle cx="165" cy="112" r="13" fill="#e6f8ee" stroke="#36a37c"/><circle cx="165" cy="152" r="13" fill="#e6f8ee" stroke="#36a37c"/><circle cx="288" cy="43" r="14" fill="#eff0ff" stroke="#7f88d2"/><circle cx="288" cy="91" r="14" fill="#eff0ff" stroke="#7f88d2"/><circle cx="288" cy="139" r="14" fill="#eff0ff" stroke="#7f88d2"/><circle cx="401" cy="91" r="17" fill="#ffeed8" stroke="#e6a458"/></g><g fill="#0785ba" opacity=".96"><circle cx="101" cy="67" r="4"/><circle cx="220" cy="99" r="4"/><circle cx="353" cy="91" r="4"/></g></svg><div class="subline">Hidden layers · Learned patterns</div></div><div class="signal-card"><small>Output layer</small><strong>Predicted price</strong><strong class="big-number">$350,000</strong></div></div></div><div class="explain"><p>ప్రతి connection ద్వారా numerical information ముందుకు వెళ్తుంది. ఇక్కడ మూడు main components ఉన్నాయి.</p><ul><li><strong>Input Layer:</strong> Model కి data అందిస్తుంది. House price predict చేయాలంటే house size, bedrooms, age వంటి values inputs అవుతాయి.</li><li><strong>Hidden Layers:</strong> Input values మీద mathematical calculations చేసి patterns నేర్చుకుంటాయి.</li><li><strong>Output Layer:</strong> Final prediction ఇస్తుంది. ఉదాహరణకు house price <strong>$350,000</strong>.</li></ul></div></section>
+
+<section class="lesson-card" id="layer-2"><div class="lesson-top"><span class="step-index">02</span><div><p class="eyebrow">LAYER 2</p><h2>ఒక Neuron ఎలా పనిచేస్తుంది?</h2></div></div><div class="diagram" role="group" aria-label="English instructional diagram for layer 2"><div class="diagram-title">Single neuron · Weighted sum + activation</div><div class="neuron-map"><div class="neuron-inputs"><div class="in-value">x₁ = 2 <em>w₁ = 0.5</em></div><div class="in-value">x₂ = 3 <em>w₂ = 0.2</em></div></div><div class="arrow" aria-hidden="true">→</div><div class="neuron-center"><div class="math-small">z = w₁x₁ + w₂x₂ + b</div><div class="math">1.0 + 0.6 + 0.1</div><div class="math">z = 1.7</div></div><div class="arrow" aria-hidden="true">→</div><div class="neuron-result"><small>ReLU(z)</small><span class="result-big">1.7</span><small>Neuron output</small></div></div><div class="math-note">b = 0.1 · a = f(z)</div></div><div class="explain"><p>ప్రతి neuron కి inputs వస్తాయి. వాటిని weights తో multiply చేసి, bias add చేసి, activation function కి పంపుతుంది.</p><p><strong>Input values:</strong> x₁, x₂ · <strong>Weights:</strong> w₁, w₂ · <strong>Bias:</strong> b · <strong>Activation:</strong> f(z) · <strong>Output:</strong> a.</p><p>ఈ example లో <strong>z = (2 × 0.5) + (3 × 0.2) + 0.1 = 1.7</strong>. Activation function గా ReLU వాడితే <strong>ReLU(1.7) = 1.7</strong>. అంటే neuron output 1.7.</p></div></section>
+
+<section class="lesson-card" id="layer-3"><div class="lesson-top"><span class="step-index">03</span><div><p class="eyebrow">LAYER 3</p><h2>Feedforward అంటే ఎందుకు అంటారు?</h2></div></div><div class="diagram" role="group" aria-label="English instructional diagram for layer 3"><div class="diagram-title">Forward pass vs. training gradients</div><div class="flow-rail"><div class="flow-step">Input</div><div class="flow-arr" aria-hidden="true">→</div><div class="flow-step">Hidden 1</div><div class="flow-arr" aria-hidden="true">→</div><div class="flow-step">Hidden 2</div><div class="flow-arr" aria-hidden="true">→</div><div class="flow-step output">Output</div></div><div class="direction-labels"><div class="direction-pill">→ Forward pass: information travels to prediction</div><div class="direction-pill backward">← Backpropagation: gradients are calculated during training</div></div></div><div class="explain"><p>Data ఒక layer నుంచి next layer కి మాత్రమే వెళ్తుంది. <strong>Recurrent connections ఉండవు.</strong></p><p>కానీ training సమయంలో <strong>Backpropagation</strong> ద్వారా errors ఆధారంగా gradients వెనక్కి calculate చేస్తారు. అది forward-only architecture కి విరుద్ధం కాదు. Backpropagation అనేది learning calculation; network లో recurrent information loop కాదు.</p></div></section>
+
+<section class="lesson-card" id="layer-4"><div class="lesson-top"><span class="step-index">04</span><div><p class="eyebrow">LAYER 4</p><h2>Model ఎలా నేర్చుకుంటుంది?</h2></div></div><div class="diagram" role="group" aria-label="English instructional diagram for layer 4"><div class="diagram-title">Training cycle · Repeated optimization steps</div><div class="train-progress"><div class="train-step"><span>1</span><b>Forward<br>Pass</b></div><div class="train-arrow" aria-hidden="true">→</div><div class="train-step"><span>2</span><b>Calculate<br>Loss</b></div><div class="train-arrow" aria-hidden="true">→</div><div class="train-step"><span>3</span><b>Backprop<br>Gradients</b></div><div class="train-arrow" aria-hidden="true">→</div><div class="train-step"><span>4</span><b>Update<br>Weights</b></div></div><div class="train-loss"><span>Prediction <strong>$320k</strong></span><span>Actual <strong>$350k</strong></span><span>Difference <strong>$30k</strong></span></div><div class="cycle-text">↺ Repeat for many training steps</div></div><div class="explain"><p>మొదట weights random values తో initialize అవుతాయి. Model prediction చేస్తుంది. ఆ prediction ని actual answer తో compare చేసి <strong>loss</strong> calculate చేస్తుంది.</p><p>తర్వాత backpropagation మరియు optimizer ద్వారా weights update చేస్తుంది. ఈ process చాలా training steps repeat అవుతుంది.</p></div></section>
+
+<section class="lesson-card" id="layer-5"><div class="lesson-top"><span class="step-index">05</span><div><p class="eyebrow">LAYER 5</p><h2>Feedforward Neural Network ఎక్కడ ఉపయోగిస్తారు?</h2></div></div><div class="diagram" role="group" aria-label="English instructional diagram for layer 5"><div class="diagram-title">Common applications · Classification & regression</div><div class="use-case-grid"><div class="use-case"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="25" cy="19" r="10" fill="#d3f1df" stroke="#318567" stroke-width="3"/><path d="M6 53c0-13 8-20 19-20s19 7 19 20" fill="#d3f1df" stroke="#318567" stroke-width="3"/><circle cx="48" cy="26" r="7" fill="#deedfa" stroke="#5085a7" stroke-width="3"/><path d="M44 41c8-2 14 3 14 12" fill="none" stroke="#5085a7" stroke-width="3"/></svg><strong>Customer Churn</strong><small>Stay / Leave</small></div><div class="use-case"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m8 31 24-20 24 20v24H8Z" fill="#bce3f1" stroke="#287995" stroke-width="3" stroke-linejoin="round"/><path d="M25 55V37h14v18" fill="white" stroke="#287995" stroke-width="3"/><path d="M44 13h8v14" fill="none" stroke="#287995" stroke-width="3"/></svg><strong>House Prices</strong><small>Predict value</small></div><div class="use-case"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 5 53 14v17c0 14-11 22-21 28C22 53 11 45 11 31V14Z" fill="#e6edff" stroke="#667db8" stroke-width="3"/><path d="m22 33 7 7 14-16" fill="none" stroke="#667db8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Fraud Detection</strong><small>Risk / Safe</small></div><div class="use-case"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="17" cy="16" r="7" fill="#afe5d4"/><circle cx="29" cy="29" r="7" fill="#afe5d4"/><circle cx="17" cy="44" r="7" fill="#afe5d4"/><circle cx="46" cy="19" r="7" fill="#f7d4ad"/><circle cx="51" cy="44" r="7" fill="#f7d4ad"/><path d="M36 8 37 55" stroke="#5b87ab" stroke-dasharray="5 4" stroke-width="3"/></svg><strong>Classification</strong><small>Class A / B</small></div><div class="use-case"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="9" width="52" height="46" rx="7" fill="#e9f3fc" stroke="#508ba9" stroke-width="3"/><path d="M6 24h52M6 40h52M24 9v46M43 9v46" stroke="#508ba9" stroke-width="2"/></svg><strong>Tabular Data</strong><small>Rows + columns</small></div></div></div><div class="explain"><p>Feedforward Neural Networks ని <strong>classification</strong> మరియు <strong>regression</strong> పనులకు ఉపయోగిస్తారు. ముఖ్యంగా structured/tabular data మీద పనిచేయవచ్చు. కొన్ని common examples:</p><ul><li>Customer churn prediction</li><li>House price prediction</li><li>Fraud detection</li><li>Classification problems</li><li>Structured/tabular data prediction</li></ul></div></section>
+
+<section class="lesson-card" id="layer-6"><div class="lesson-top"><span class="step-index">06</span><div><p class="eyebrow">LAYER 6</p><h2>Interview Answer (English)</h2></div></div><div class="diagram" role="group" aria-label="English instructional diagram for layer 6"><div class="diagram-title">Interview structure · Four clear talking points</div><div class="interview-rail"><div class="interview-item">Definition</div><div class="interview-arrow">→</div><div class="interview-item">Neuron</div><div class="interview-arrow">→</div><div class="interview-item">Training</div><div class="interview-arrow">→</div><div class="interview-item">Uses</div></div></div><div class="explain"><p>Interview లో చెప్పడానికి ఈ answer ఉపయోగపడుతుంది. Definition, neuron calculation, training, applications అన్నీ ఒకే answer లో ఉన్నాయి.</p></div><div class="english-answer"><div class="answer-header"><span>Candidate Answer · English</span><button class="copy-btn" type="button" id="copyInterview" aria-label="Copy interview answer">Copy</button></div><div id="interviewText"><p>A feedforward neural network is an artificial neural network in which information flows from the input layer through one or more hidden layers to the output layer without recurrent connections.</p><p>Each neuron calculates a weighted sum, adds a bias, and applies an activation function.</p><p>During training, backpropagation and optimization update the weights to reduce prediction error.</p><p>Feedforward neural networks are commonly used for classification and regression tasks.</p></div></div></section>
+
+<section class="takeaway" id="remember"><h2>Remember This</h2><p>Feedforward Neural Network లో information ముందుకు మాత్రమే వెళ్తుంది. Network architecture లో feedback loops ఉండవు.</p><div class="diagram"><div class="diagram-title">One-line summary</div><div class="flow-rail"><div class="flow-step">Input</div><div class="flow-arr" aria-hidden="true">→</div><div class="flow-step">Hidden</div><div class="flow-arr" aria-hidden="true">→</div><div class="flow-step">Hidden</div><div class="flow-arr" aria-hidden="true">→</div><div class="flow-step output">Output</div></div><p class="math-note">No recurrent connections in the architecture</p></div></section>
+<p class="foot">Gradstudio · Telugu Visual Learning · No MCQs · English diagram labels</p>
+</main>
+<script>
+document.getElementById('copyInterview').addEventListener('click',async()=>{
+ const b=document.getElementById('copyInterview');
+ const s=[...document.querySelectorAll('#interviewText p')].map(p=>p.textContent).join('\n\n');
+ try{await navigator.clipboard.writeText(s);b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1800)}
+ catch{b.textContent='Select text';document.getElementById('interviewText').setAttribute('tabindex','-1');document.getElementById('interviewText').focus()}
+});
+</script>
+</body></html>
