@@ -20,11 +20,14 @@ try{
  for(const width of [1280,900,390,320]){
    const page=await browser.newPage({viewport:{width,height:860},deviceScaleFactor:1});
    const pageErrors=[];page.on('pageerror',e=>pageErrors.push(String(e)));
-   await page.goto('http://127.0.0.1:'+PORT+'/study-engine/?module=data-augmentation-scisketch',{waitUntil:'domcontentloaded'});
+   await page.goto('http://127.0.0.1:'+PORT+'/study-engine/data-augmentation-scisketch.html',{waitUntil:'domcontentloaded'});
    await page.locator('.ds-card').first().waitFor({timeout:30000});
    await page.evaluate(()=>document.fonts.ready);
    await sleep(240);
    const initial=await page.evaluate(()=>({
+     url:location.href,
+     title:document.title,
+     lessonHeader:document.querySelector('#moduleRoot>h1')?.textContent,
      cards:document.querySelectorAll('.ds-card').length,
      inputs:document.querySelectorAll('#quiz input[type="radio"]').length,
      scenes:document.querySelectorAll('[data-ds-diagram]').length,
@@ -32,7 +35,7 @@ try{
      pageWidth:document.documentElement.scrollWidth
    }));
    console.log('VIEWPORT',width,JSON.stringify(initial));
-   if(initial.cards!==7||initial.inputs!==28||initial.scenes!==7)issues.push(width+': missing cards/options/diagrams');
+   if(initial.cards!==7||initial.inputs!==28||initial.scenes!==7||!initial.lessonHeader?.includes('Data Augmentation'))issues.push(width+': dedicated HTML page failed to load all lesson components');
    if(initial.pageWidth>width+2)issues.push(width+': page horizontal overflow');
    for(let q=1;q<=7;q++){
     const card=page.locator('.ds-card').nth(q-1);
