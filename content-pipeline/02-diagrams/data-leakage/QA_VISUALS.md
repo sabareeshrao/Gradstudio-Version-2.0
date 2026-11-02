@@ -1,10 +1,8 @@
-# Agent 2 visual integration audit — Data Leakage (AI-00435)
+# Agent 2 illustration redesign — Data Leakage
 
-Original Agent 1 SHA: `06a57ecc285aaffcd8dd67f5e14821ddd65cc5d8`
+All seven question/choice/answer sets and all Agent 3 explanation texts retained verbatim. One hero + seven differentiated SVG compositions redesigned against Data Augmentation's clear pictorial teaching style. Replaced repeated rectangles with clocks, sample documents, fold lanes, chronology, boundary locks, and pipeline nodes. Compact SVG labels and captions outside figures. Q5 high-contrast Python preserved.
 
-- All seven original stems, 28 options, seven answer keys, and seven Agent 3 beginner explanations retained.
-- One hero and seven unique SVG diagrams, each with a distinct `data-scene` marker, accessible SVG labels, and at least eight primitives.
-- Q5 example remains in a fixed-contrast dark code panel, with independent mobile overflow confined to code.
-- A separate technical explanation and grounded documentation reference list augment (without replacing) the Agent 3 copy.
-- Still requires browser QA and independent Agent 4 audit.
-- **Open question for Agent 4:** Correct options are the longest choices on all seven questions in the current Agent 1 source. Agent 2 preserved the source, so distractor bias requires Agent 1/Agent 4 editorial handling; it was not suppressed in QA.
+Visual scenes: dl-future-score, dl-two-leakage-types, dl-training-stats, dl-fold-augmentation, dl-safe-pipeline, dl-time-groups, dl-feature-availability.
+Primitive counts: 19, 24, 11, 31, 17, 16, 23.
+Source commit: 06a57ecc285aaffcd8dd67f5e14821ddd65cc5d8.
+Still requires live browser review and Agent 4 approval; locked answer-length imbalance untouched.
