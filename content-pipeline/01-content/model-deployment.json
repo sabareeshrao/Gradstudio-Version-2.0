@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "status": "content-only-staging",
+  "slug": "model-deployment",
+  "keyword": "Model Deployment",
+  "title": "Model Deployment",
+  "topic": "Deploying Machine Learning Models into Production",
+  "subject": "MLOps",
+  "topicId": "AI-03296",
+  "rankedPosition": 63,
+  "curriculumNote": "Staged at user request; not in the currently approved 58-topic whitelist. Do not alter that whitelist without separate authorization.",
+  "source": "User-supplied four-topic Agent 1 input; verbatim question and correct-answer lock",
+  "questions": [
+    {
+      "tag": "Beginner · Production availability",
+      "level": "Beginner",
+      "stem": "What is Model Deployment in Machine Learning, and how does it make a trained model available for real-world predictions?",
+      "options": [
+        "Model Deployment means saving training results on a developer's computer where the model can be tested again. A separate prediction interface is unnecessary for real-world use.",
+        "Model Deployment is complete when a model achieves high validation accuracy, because that proves it can answer requests from users without any production service or integration.",
+        "Model Deployment moves training data into a production server so the model can continue fitting after each user request. Predictions are returned only after that fitting step.",
+        "Model Deployment is the process of making a trained Machine Learning model available in a production environment. It allows applications or users to send input data and receive predictions."
+      ],
+      "answer": "d"
+    },
+    {
+      "tag": "Beginner · Release preparation",
+      "level": "Beginner",
+      "stem": "What are the main steps involved in deploying a trained Machine Learning model from development to production?",
+      "options": [
+        "Deployment begins by making the model publicly reachable, then collecting its dependencies and environment settings from runtime errors. Testing is postponed until production requests have accumulated.",
+        "Model Deployment involves saving the trained model, preparing its dependencies, creating a prediction interface, testing the system, and releasing it to a production environment.",
+        "Deployment mainly involves exporting model weights and uploading them to storage. The serving interface, input validation and runtime dependencies can be reconstructed automatically by users.",
+        "Deployment requires retraining the model on live inputs after release, then choosing a suitable software environment. Saving its trained state and testing request handling are optional preparation steps."
+      ],
+      "answer": "b"
+    },
+    {
+      "tag": "Beginner · Real-time and batch inference",
+      "level": "Beginner",
+      "stem": "What is the difference between real-time inference and batch inference, and when is each deployment approach used?",
+      "options": [
+        "Real-time inference means collecting requests continuously but calculating predictions at fixed intervals. Batch inference handles each request immediately so callers receive responses without waiting.",
+        "Real-time inference is chosen when models run on GPUs, while batch inference is selected when the same model uses CPUs. The difference depends on hardware rather than request timing.",
+        "Real-time inference generates predictions immediately when requests arrive. Batch inference processes groups of inputs at scheduled times or in bulk without requiring immediate responses.",
+        "Real-time inference serves results using only previously stored predictions; batch inference runs the model each time an individual user submits a new request, avoiding any scheduling."
+      ],
+      "answer": "c"
+    },
+    {
+      "tag": "Medium · APIs, containers and cloud",
+      "level": "Medium",
+      "stem": "How do REST APIs, containers, and cloud infrastructure work together to serve Machine Learning models in production?",
+      "options": [
+        "REST APIs receive prediction requests and return model outputs. Containers package the model and its dependencies, while cloud infrastructure provides computing resources to run and scale the service.",
+        "REST APIs package model dependencies inside an isolated image, containers supply public request endpoints, and cloud services mainly provide the format used to serialize prediction inputs.",
+        "REST APIs receive requests and return predictions, but containers by themselves automatically increase computing capacity for every traffic spike without requiring deployment orchestration or cloud resources.",
+        "REST APIs route requests to a model, while containers install the model's training dataset from scratch on each request. Cloud infrastructure replaces the need for runtime dependency management."
+      ],
+      "answer": "a"
+    },
+    {
+      "tag": "Medium · Versioning and reproducibility",
+      "level": "Medium",
+      "stem": "Why are model versioning, dependency management, and reproducible environments important for reliable Model Deployment?",
+      "options": [
+        "Model versioning tracks model files, but dependencies should be updated to the newest releases whenever production starts. Reproducible environments matter only for retraining, not serving.",
+        "Model versioning identifies which model is live, while dependency management is unnecessary once it passes local tests. A rollback can restore previous predictions without restoring previous software.",
+        "Reproducibility requires saving the trained weights alone, because containers and package versions do not affect output behavior. Versioning is useful only when creating a completely different architecture.",
+        "Model versioning tracks deployed models and supports rollback. Dependency management and reproducible environments keep software versions and configurations consistent, reducing deployment failures."
+      ],
+      "answer": "d"
+    },
+    {
+      "tag": "Advanced · Safe deployment strategies",
+      "level": "Advanced",
+      "stem": "How do Canary Deployment, Blue-Green Deployment, and Shadow Deployment reduce risks when releasing updated Machine Learning models?",
+      "options": [
+        "Canary Deployment routes copied requests to a new model without using its predictions, Blue-Green Deployment gradually raises its traffic share, and Shadow Deployment switches all users at once.",
+        "Canary Deployment exposes a new model to limited traffic, while Blue-Green Deployment switches between separate production environments. Shadow Deployment tests a new model using copied traffic without affecting live predictions.",
+        "Canary Deployment sends all live traffic to a new version after testing, Blue-Green Deployment compares predictions silently on mirrored requests, and Shadow Deployment serves a limited user share.",
+        "Canary Deployment and Blue-Green Deployment both require replacing the current model in place with no fallback, while Shadow Deployment gives users the new model's outputs immediately."
+      ],
+      "answer": "b"
+    },
+    {
+      "tag": "Advanced · Monitoring and operational quality",
+      "level": "Advanced",
+      "stem": "How can deployed Machine Learning models be monitored and optimized for prediction latency, throughput, scalability, data drift, and model performance degradation?",
+      "options": [
+        "Deployment monitoring can focus on average accuracy alone because good prediction quality automatically implies low latency and adequate throughput. Autoscaling addresses every type of drift.",
+        "Latency and throughput can be optimized by running additional predictions for each request. Data drift should be treated as a request-volume problem instead of a change in feature distributions.",
+        "Production monitoring tracks response time, request volume, resource usage, data drift, and prediction quality. Autoscaling, inference optimization, alerts, and model retraining help maintain reliable performance.",
+        "Monitoring can track latency and traffic while using recent predictions as labels to retrain automatically. Retraining before independent evaluation prevents performance loss after every data shift."
+      ],
+      "answer": "c"
+    }
+  ],
+  "handoff": {
+    "approvedForPublication": false,
+    "sourceLockedFields": [
+      "questions[*].stem",
+      "questions[*].options[answer]",
+      "questions[*].answer"
+    ],
+    "nextSteps": [
+      "Agent 3: add seven explanatory lessons referenced by this original Agent 1 commit.",
+      "Agent 2: add high-quality hero and seven SVG diagrams when upstream explanations and scope approval are available.",
+      "Agent 4: audit preserved source, distractor quality and published behavior."
+    ]
+  }
+}
