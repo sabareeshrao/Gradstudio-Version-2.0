@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "agent-2-diagrams-staged",
+  "approvedForPublication": false,
+  "slug": "model-evaluation",
+  "topic": "Model Evaluation",
+  "topicId": "AI-03476",
+  "sourceContentCommit": "e85f10d81a78ee79d7f98479aacf183b9780fd17",
+  "sourceContentPath": "content-pipeline/01-content/model-evaluation.json",
+  "agent3ExplanationsPath": "content-pipeline/03-explanations/model-evaluation.json",
+  "hero": "hero.svg",
+  "figures": [
+    "layer-1.svg",
+    "layer-2.svg",
+    "layer-3.svg",
+    "layer-4.svg",
+    "layer-5.svg",
+    "layer-6.svg",
+    "layer-7.svg"
+  ],
+  "css": "diagrams.css",
+  "preview": "preview.html",
+  "sourceLockedFields": [
+    "questions[*].stem",
+    "questions[*].options[answer]",
+    "questions[*].answer"
+  ]
+}
