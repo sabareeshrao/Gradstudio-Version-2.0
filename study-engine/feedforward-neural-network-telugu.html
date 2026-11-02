@@ -121,6 +121,19 @@ h1,h2,h3{line-height:1.3;letter-spacing:-.015em}h1{font-size:clamp(1.8rem,4vw,2.
  .english-answer{padding:14px 13px}.english-answer p{font-size:.86rem}
  .takeaway{padding:18px 14px}
 }
+@media(max-width:360px){
+ .fnn-structure{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr) minmax(0,1fr);gap:3px}
+ .feature-row{display:block;padding:4px 2px;font-size:.59rem}
+ .feature-row b{display:block}
+ .signal-card small{letter-spacing:0;font-size:.54rem}
+ .network-block .subline{font-size:.56rem}
+ .neuron-map{grid-template-columns:minmax(0,.84fr) 7px minmax(0,1.18fr) 7px minmax(0,.84fr);gap:2px}
+ .in-value{font-size:.66rem}.in-value em{font-size:.56rem}
+ .neuron-center .math{font-size:.7rem}.neuron-center .math-small{font-size:.6rem}
+ .neuron-result small{font-size:.62rem}.neuron-result .result-big{font-size:1.44rem}
+ .flow-step,.train-step,.interview-item{font-size:.56rem}
+ .train-step b{letter-spacing:-.02em}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{header,.copy-btn{display:none}.hero,.lesson-card,.takeaway{box-shadow:none;break-inside:avoid}body{background:white}main{max-width:100%}}
 </style>
