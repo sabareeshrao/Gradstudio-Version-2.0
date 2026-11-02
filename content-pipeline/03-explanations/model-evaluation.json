@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "agent-3-explanations-complete",
+  "agent": 3,
+  "slug": "model-evaluation",
+  "keyword": "Model Evaluation",
+  "topicId": "AI-03476",
+  "topic": "Measuring Machine Learning Model Performance",
+  "subject": "AI Evaluation and Benchmarking",
+  "originalAgent1CommitSha": "e85f10d81a78ee79d7f98479aacf183b9780fd17",
+  "sourceContentPath": "content-pipeline/01-content/model-evaluation.json",
+  "sourceContentBlobSha": "6cb00109db6ded9472d40b05794fcc2f51ca013a",
+  "sourceLocks": [
+    "questions[*].stem",
+    "questions[*].options[answer]",
+    "questions[*].answer"
+  ],
+  "publicationApproved": false,
+  "questions": [
+    {
+      "questionNumber": 1,
+      "level": "Beginner",
+      "stem": "What is Model Evaluation in Machine Learning, and how does it help determine whether a trained model makes accurate and reliable predictions?",
+      "answer": "b",
+      "correctAnswer": "Model Evaluation measures how well a trained model performs using evaluation data and suitable metrics. It helps determine whether the model can make accurate predictions on unseen data.",
+      "explanation": "Explanation: Model evaluation checks how well a trained model predicts outcomes, especially for examples it did not learn from. We choose metrics that suit the task, compare predictions with known answers, and look for reliable performance beyond the training set. Imagine predicting how many visitors a museum will have next weekend. Comparing past predictions with actual visitor counts on reserved test dates shows whether the model's errors are small enough to be useful. A high training score alone would not answer that question."
+    },
+    {
+      "questionNumber": 2,
+      "level": "Beginner",
+      "stem": "Why is evaluating a Machine Learning model only on its training data insufficient, and what role does unseen test data play?",
+      "answer": "c",
+      "correctAnswer": "Training performance alone cannot show whether a model has learned useful patterns or memorized examples. Unseen test data measures how well the model generalizes to new inputs.",
+      "explanation": "Explanation: Training examples are the data a model already practiced on, so excellent training scores can hide memorization or overfitting. An untouched test set gives a more realistic picture of how the model handles new cases. Imagine a handwriting recognizer that scores perfectly on the same handwritten notes used for training. That tells us little about unfamiliar handwriting. Checking it on new writers reveals whether it learned general letter shapes rather than remembering particular pages. Keep test data separate until the final assessment."
+    },
+    {
+      "questionNumber": 3,
+      "level": "Beginner",
+      "stem": "What are the main evaluation metrics used for classification and regression models, and how do they measure different types of prediction performance?",
+      "answer": "a",
+      "correctAnswer": "Classification uses accuracy, precision, recall, and F1-score to measure prediction correctness. Regression uses MAE, MSE, and RMSE to measure differences between predicted and actual numerical values.",
+      "explanation": "Explanation: Classification predicts categories, so accuracy counts overall correct labels, precision checks how trustworthy positive predictions are, recall checks how many actual positives were found, and F1 combines precision and recall. Regression predicts numbers, so MAE measures average absolute error, MSE squares errors, and RMSE returns that squared-error measure to the target's units. Imagine a bus operator predicting whether a bus will be late and estimating delay minutes. The first task needs classification metrics; the second needs regression error metrics."
+    },
+    {
+      "questionNumber": 4,
+      "level": "Medium",
+      "stem": "How do precision, recall, F1-score, and confusion matrices provide a more complete evaluation of classification models than accuracy alone?",
+      "answer": "d",
+      "correctAnswer": "Precision measures correct positive predictions, recall measures detected actual positives, and F1-score balances both. A confusion matrix shows true positives, true negatives, false positives, and false negatives.",
+      "explanation": "Explanation: Accuracy alone can look good when most examples belong to one class. Precision asks, 'Of the alerts we raised, how many were real?' Recall asks, 'Of all real cases, how many did we catch?' F1 is their harmonic mean, balancing both. A confusion matrix shows true positives, true negatives, false positives, and false negatives separately. Imagine a smoke detector that almost always reports 'no fire.' Its accuracy might be high, yet poor recall would expose the danger of missed fires."
+    },
+    {
+      "questionNumber": 5,
+      "level": "Medium",
+      "stem": "How do cross-validation, baseline models, and hyperparameter tuning contribute to reliable Model Evaluation and model selection?",
+      "answer": "b",
+      "correctAnswer": "Cross-validation evaluates performance across multiple data splits, while baseline models provide reference scores. Hyperparameter tuning uses validation results to select settings without using the final test set.",
+      "explanation": "Explanation: Cross-validation trains and evaluates a model on several different splits, helping reveal whether one score was unusually lucky. A baseline gives a simple reference to beat, such as always predicting the most common outcome. Hyperparameter tuning compares settings using validation results, while the final test set remains untouched. Imagine forecasting theater ticket no-shows. Compare a simple majority-class baseline with candidate models across folds, choose the settings on validation data, and use the reserved test set once for a fair final check."
+    },
+    {
+      "questionNumber": 6,
+      "level": "Advanced",
+      "stem": "How should Model Evaluation handle imbalanced datasets, probability calibration, and distribution shifts to avoid misleading performance results?",
+      "answer": "a",
+      "correctAnswer": "Imbalanced datasets require metrics such as precision, recall, F1-score, and PR-AUC. Calibration measures probability reliability, while distribution-shift testing checks performance when data patterns change.",
+      "explanation": "Explanation: With imbalanced data, a model can get high accuracy by mostly predicting the common class, so use measures such as recall, precision, F1, and PR-AUC. Probability calibration checks whether confidence values match real frequencies. Distribution-shift tests ask whether results hold when inputs change. Imagine inspecting solar panels for rare cracks. A model that predicts 'no crack' for nearly everything may look accurate. Also check missed defects, whether 80% confidence means roughly 80% correctness, and performance under new lighting conditions."
+    },
+    {
+      "questionNumber": 7,
+      "level": "Advanced",
+      "stem": "How can Model Evaluation frameworks prevent data leakage, ensure fair benchmark comparisons, and monitor prediction quality after model deployment?",
+      "answer": "c",
+      "correctAnswer": "Reliable evaluation uses independent test sets, consistent metrics, leakage-free validation, and standardized benchmarks. Production monitoring tracks prediction quality, data drift, and performance degradation over time.",
+      "explanation": "Explanation: Reliable evaluation needs a clean boundary between training and testing, the same benchmark data and suitable metrics for competing models, and monitoring after release. Leakage can make a test artificially easy; inconsistent benchmarks make comparisons unfair. Imagine comparing two search-result ranking models. Both should be assessed on the same untouched queries with the same relevance measure. After deployment, monitor search satisfaction, changing query patterns, and declining relevance. The model that wins a test can still perform worse as real user behavior changes."
+    }
+  ],
+  "verification": {
+    "questions": 7,
+    "explanations": 7,
+    "maxWords": 83,
+    "wordCounts": [
+      83,
+      83,
+      80,
+      81,
+      82,
+      80,
+      83
+    ],
+    "upstreamMatchesOriginalCommit": true,
+    "questionStemsAndAnswerKeysCopiedExactly": true,
+    "diagramsOrUIChanged": false
+  },
+  "handoff": {
+    "nextAgent": "Agent 2",
+    "note": "Match original Agent 1 SHA and topic ID before merging explanations into canonical lesson. This topic is staged outside the approved 58-topic whitelist; do not publish without curriculum approval."
+  }
+}
