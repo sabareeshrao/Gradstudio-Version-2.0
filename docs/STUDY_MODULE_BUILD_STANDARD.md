@@ -123,15 +123,14 @@ The original root `index.html` includes a distinctive illustrated hero titled "F
 
 For a default eight-question module, distribute correct answers **two each across A, B, C, D**, without a predictable A-B-C-D cycle. For a user-supplied non-eight count, keep distribution as even as reasonably possible. The correctness of the choices is more important than distribution; never rearrange into a wrong key merely to balance letters.
 
-### 3.5 Explanation constraint — mandatory beginner-first rule (2026-10-30)
+### 3.5 Explanation constraint — mandatory single-explanation standard (2026-11-02)
 
-- **The default visible explanation should be 18–30 words** (allow **12–42 words** for clarity and technical correctness), written in **one to three short, everyday sentences**.
-- Teach **one core idea** and, where useful, **one tiny, relatable example**. Explain jargon in simple words instead of stacking advanced terminology.
-- Start the concise `explanation` value with `<strong>In simple words:</strong>`. The short body must explain **why** the correct option is right, not restate the option or the question.
-- Preserve the original more detailed answer in `technicalExplanation`. Render it in a **closed-by-default `<details>`** labeled “Read the detailed explanation.” Do not automatically expand it on scoring.
-- **Never** make the default explanation a dense paragraph, formula derivation, long checklist, table, code listing, or discussion of all incorrect choices. Put such material in the diagram or optional technical disclosure.
-- Do not add distracting warning text or repeated answer-letter labels: the quiz already marks the correct option. Do not pretend toy values, scores, or examples were actually measured.
-- Run `node study-engine/verify-explanation-quality.mjs` against every module. A passing word-count audit is **not** a substitute for manually asking whether a newcomer can explain the idea after one read.
+- **Data Augmentation is the UI standard:** each question shows exactly **one** learner-facing `explanation` when the user selects Reveal. Never render a second “Read the detailed explanation” dropdown in English or Telugu HTML.
+- Keep the visible explanation **at or under 100 words**. First answer every part of the question, explain why the correct option is right, then give a distinct and relevant example in beginner-friendly language.
+- Use the **Explanation:** label. Put extended code, calculations and diagrams in the appropriate lesson visuals rather than a second explanation panel.
+- Historical `technicalExplanation` fields may remain in module JSON for archival/editorial reference but must **not be displayed** by the shared renderer. Do not delete them as a side effect of this presentation change.
+- Avoid unnecessary warning text, answer-letter labels and unverified performance claims.
+- Run `node study-engine/verify-explanation-quality.mjs` against each module where supported. A passing audit does not replace a manual clarity review.
 
 ### 3.6 Strict zero-redundancy policy (mandatory for every module)
 
