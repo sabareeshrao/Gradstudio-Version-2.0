@@ -134,3 +134,55 @@ html,body{overflow-x:clip}
  .q-fig,.hero{overflow-x:hidden}
  .q-fig pre,.hero pre,.code-panel pre,.ai-code pre{white-space:pre-wrap!important;overflow-wrap:anywhere;overflow-x:hidden!important}
 }
+
+
+/* Gradstudio universal teaching-code presentation — VS Code Dark+ palette.
+   Applies across the 58 approved lessons and unlisted study-engine topics. */
+.q-fig pre.gs-code-block,.hero pre.gs-code-block,
+.question pre.gs-code-block,.container pre.gs-code-block{
+  display:block!important;position:relative!important;max-width:100%!important;
+  margin:9px 0 12px!important;padding:0!important;border-radius:10px!important;
+  border:1px solid #3e4551!important;background:#1e1e1e!important;
+  box-shadow:0 3px 14px #13202f24!important;color:#d4d4d4!important;
+  font:500 13px/1.55 ui-monospace,SFMono-Regular,Consolas,Menlo,monospace!important;
+  white-space:normal!important;overflow:visible!important;overflow-wrap:anywhere;
+  max-height:none!important;min-height:0!important;
+}
+pre.gs-code-block::before{
+  content:attr(data-language);display:block;background:#252526!important;
+  color:#9cdcfe!important;border-bottom:1px solid #3e4551!important;
+  padding:7px 12px;font:700 10px/1.35 system-ui,sans-serif;letter-spacing:.12em;
+}
+pre.gs-code-block code.gs-syntax{
+  display:block!important;margin:0!important;padding:9px 0 11px!important;
+  width:100%!important;max-width:100%!important;min-width:0!important;
+  background:transparent!important;border:0!important;border-radius:0!important;
+  box-shadow:none!important;text-decoration:none!important;color:#d4d4d4!important;
+  font:inherit!important;line-height:inherit!important;white-space:normal!important;
+}
+.gs-code-row{display:block!important;position:relative!important;max-width:100%;
+  min-height:1.55em;padding:0 13px 0 3.6em!important;margin:0!important;
+  font:inherit!important;line-height:inherit!important;white-space:pre-wrap!important;
+  overflow-wrap:anywhere!important;color:#d4d4d4!important}
+.gs-code-row::before{content:attr(data-number);position:absolute;left:0;top:0;width:2.7em;
+  text-align:right;padding-right:.8em;color:#858585;font-variant-numeric:tabular-nums;
+  font-size:inherit;user-select:none}
+.gs-code-block .gs-tok-keyword{color:#569cd6!important}
+.gs-code-block .gs-tok-string{color:#ce9178!important}
+.gs-code-block .gs-tok-number{color:#b5cea8!important}
+.gs-code-block .gs-tok-comment{color:#6a9955!important}
+.gs-code-block .gs-tok-function{color:#dcdcaa!important}
+.gs-code-block .gs-tok-class{color:#4ec9b0!important}
+.gs-code-block .gs-tok-builtin{color:#9cdcfe!important}
+.gs-code-block .gs-tok-decorator{color:#c586c0!important}
+pre.gs-code-block[data-truncated-lines]::after{
+  content:"Showing 15 lines — source contains more; needs editorial shortening";
+  display:block;padding:7px 12px;border-top:1px solid #4f5361;background:#3a3131;
+  color:#ffd7aa;font:600 11px/1.45 system-ui,sans-serif;white-space:normal
+}
+@media(max-width:530px){
+  .q-fig pre.gs-code-block,.hero pre.gs-code-block,.question pre.gs-code-block{
+    font-size:12px!important;line-height:1.55!important
+  }
+  .gs-code-row{padding-left:3.15em!important;padding-right:9px!important}
+}
