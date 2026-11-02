@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "status": "agent-3-explanations-complete",
+  "agent": 3,
+  "slug": "data-leakage",
+  "keyword": "Data Leakage",
+  "topicId": "AI-00435",
+  "topic": "Preventing Information Leakage in Machine Learning",
+  "subject": "Data Preprocessing and Feature Engineering",
+  "originalAgent1CommitSha": "06a57ecc285aaffcd8dd67f5e14821ddd65cc5d8",
+  "sourceContentPath": "content-pipeline/01-content/data-leakage.json",
+  "sourceContentBlobSha": "35688793a940ed88914967afb8fbabd38ea180c0",
+  "sourceLocks": [
+    "questions[*].stem",
+    "questions[*].options[answer]",
+    "questions[*].answer"
+  ],
+  "publicationApproved": false,
+  "questions": [
+    {
+      "questionNumber": 1,
+      "level": "Beginner",
+      "stem": "What is Data Leakage in Machine Learning, and why can it make a model appear more accurate during testing than it will be in real-world use?",
+      "answer": "b",
+      "correctAnswer": "Data Leakage occurs when a model uses information that should not be available during training or prediction. This can produce artificially high evaluation scores and poor performance on new data.",
+      "explanation": "Explanation: Data leakage happens when a model learns from information it would not have when making a real prediction. Testing then becomes unfairly easy, making the score look better than the model's true ability. Imagine a bank predicting whether a loan will be repaid. If its training data includes a collection notice created after someone misses payments, the model has effectively seen the future. That notice will not exist when a new loan application arrives, so the impressive test score may collapse in practice."
+    },
+    {
+      "questionNumber": 2,
+      "level": "Beginner",
+      "stem": "What are Target Leakage and Train-Test Contamination, and how do these two types of Data Leakage differ?",
+      "answer": "d",
+      "correctAnswer": "Target Leakage occurs when a feature reveals target information unavailable at prediction time. Train-Test Contamination occurs when information from test data influences model training or preprocessing.",
+      "explanation": "Explanation: Target leakage means an input reveals the outcome using information unavailable when a prediction must be made. Train-test contamination is different: information from the test set reaches training or preprocessing, so the test is no longer independent. Imagine predicting which hospital patients will be readmitted. Using a future follow-up code is target leakage. Calculating a preprocessing statistic using both training patients and test patients is contamination. One leaks future outcome information; the other leaks evaluation-set information."
+    },
+    {
+      "questionNumber": 3,
+      "level": "Beginner",
+      "stem": "Why must preprocessing methods such as scaling, missing-value imputation, and feature selection be fitted only on training data rather than the entire dataset?",
+      "answer": "a",
+      "correctAnswer": "Fitting preprocessing methods on the entire dataset allows test information to influence the model. Fitting them only on training data keeps test data independent and produces more reliable evaluation results.",
+      "explanation": "Explanation: Preprocessing can learn information from data, even when it is not learning model weights. A scaler learns averages, an imputer learns replacement values, and feature selection learns which inputs look useful. If these decisions use the test set, its information has influenced training. Imagine predicting apartment rents: calculate the median floor area from training apartments only, then use that same value for missing entries in test apartments. Split first, fit on training data, and transform the test data without refitting."
+    },
+    {
+      "questionNumber": 4,
+      "level": "Medium",
+      "stem": "How can Data Leakage occur during cross-validation when preprocessing, feature selection, or data augmentation is performed before creating validation folds?",
+      "answer": "c",
+      "correctAnswer": "Leakage occurs when preprocessing or feature selection uses validation data, or when related augmented samples appear in both training and validation folds. These operations must respect training and validation boundaries.",
+      "explanation": "Explanation: Cross-validation works only when each validation fold stays unseen during fitting. If you select features or calculate scaling statistics before making folds, every validation fold has already influenced those choices. Data augmentation can also leak nearly identical examples across folds. Imagine creating rotated copies of product photos before cross-validation: the original image might land in training and its rotated twin in validation. The score then measures recognition of a familiar image, not generalization. Make folds first and fit transformations using each fold's training portion."
+    },
+    {
+      "questionNumber": 5,
+      "level": "Medium",
+      "stem": "How do Scikit-learn Pipelines and proper train-test splitting help prevent Data Leakage during Machine Learning model development?",
+      "answer": "b",
+      "correctAnswer": "Scikit-learn Pipelines fit preprocessing and model steps using only training data within each split. Proper train-test splitting prevents evaluation data from influencing the training process.",
+      "explanation": "Explanation: A Scikit-learn Pipeline keeps preprocessing and model fitting together, so each cross-validation training fold learns its own imputation values, scaling statistics, and selected features. Its validation fold is transformed using those learned settings, not used to fit them. First reserve a separate test set, then cross-validate the Pipeline on training data. For example, an email-spam classifier might select useful words from each training fold only. That prevents the validation emails from influencing which words were chosen and gives a fairer performance estimate."
+    },
+    {
+      "questionNumber": 6,
+      "level": "Advanced",
+      "stem": "Why can random train-test splitting cause Data Leakage in time-series datasets or datasets containing repeated observations from the same users, patients, or devices?",
+      "answer": "d",
+      "correctAnswer": "Random splitting can expose future information or place related observations in both training and testing sets. Time-based and group-aware splitting help prevent leakage by keeping future or related data separated.",
+      "explanation": "Explanation: Random splitting assumes observations can be mixed freely, but time and identity can make that unsafe. In a time series, training on later records to predict earlier ones leaks future information. With repeated observations, the same person or device may appear in both sets, letting the model recognize familiar patterns. Imagine a factory machine generating sensor readings each hour. A random split mixes readings from before and after a failure, and may place nearly identical readings on both sides. Use chronological splits or group-aware splits that keep related readings together."
+    },
+    {
+      "questionNumber": 7,
+      "level": "Advanced",
+      "stem": "How can Data Leakage be detected and prevented in production Machine Learning systems using point-in-time validation, feature availability checks, and data lineage?",
+      "answer": "a",
+      "correctAnswer": "Point-in-time validation verifies that features use only information available at prediction time. Feature availability checks and data lineage help detect future information, hidden target details, and contamination between datasets.",
+      "explanation": "Explanation: Production leakage checks ask one basic question: was every feature truly available when the prediction would have been made? Point-in-time validation recreates the data as it existed at that moment. Feature availability checks catch fields created too late, while data lineage tracks where each field came from and how it changed. Imagine detecting fraudulent purchases at checkout. A chargeback decision recorded two weeks later must not appear in checkout-time features. Trace the timestamps and data sources, and test with realistic historical snapshots."
+    }
+  ],
+  "verification": {
+    "questions": 7,
+    "explanations": 7,
+    "maxWords": 91,
+    "wordCounts": [
+      84,
+      77,
+      81,
+      85,
+      83,
+      91,
+      83
+    ],
+    "upstreamMatchesOriginalCommit": true,
+    "questionStemsAndAnswerKeysCopiedExactly": true,
+    "diagramsOrUIChanged": false
+  },
+  "handoff": {
+    "nextAgent": "Agent 2",
+    "note": "Match original Agent 1 SHA and topic ID before merging explanations into canonical lesson. This topic is staged outside the approved 58-topic whitelist; do not publish without curriculum approval."
+  }
+}
