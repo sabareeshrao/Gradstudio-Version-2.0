@@ -90,3 +90,18 @@
  .question .pb-controls .pb-select-wrap{display:grid;grid-template-columns:minmax(0,1fr);width:100%}
  .question .pb-controls .pb-select{display:block;width:100%;max-width:100%;box-sizing:border-box}
 }
+
+/* Prevent per-diagram horizontal scrolling. Desktop SVG scales to the content area;
+   phones use the separate constraint-first vertical reflow. */
+.transformer-research .container{max-width:1510px}
+.transformer-research .pb-scroll,
+.transformer-research .sc-stage,
+.transformer-research .tr-surface,
+.transformer-research .pb-baseline,
+.transformer-research .tr-code-grid{max-width:100%;overflow-x:clip!important}
+.transformer-research .pb-scroll>.pb-svg,
+.transformer-research .sc-enhanced .sc-stage>.sc-diagram,
+.transformer-research .sc-stage>.sc-diagram{min-width:0!important;width:100%!important;max-width:100%!important;height:auto!important}
+.transformer-research .pb-card .pb-variant[data-version="original"] svg{min-width:0!important;max-width:100%!important;width:100%!important;height:auto!important}
+.transformer-research .pb-panes{min-width:0}
+@media(max-width:720px){.transformer-research .pb-scroll,.transformer-research .sc-stage,.transformer-research .tr-surface{overflow-x:clip!important}}

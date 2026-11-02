@@ -55,7 +55,7 @@
         // A fresh stylesheet version prevents previously cached nested-SVG
         // sizing rules from overriding the corrected lesson diagrams.
         if(slug==='data-augmentation')styleURL.searchParams.set('v','20261101-slim-chevron-mobile-panels');
-        if(slug==='transformer-scisketch')styleURL.searchParams.set('v','20261101-q7-geometry-fix');
+        if(slug==='transformer-scisketch')styleURL.searchParams.set('v','20261101-constraint-mobile-v1');
         await loadStyle(styleURL.href);
       }catch(error){
         if(!/^diagrams\/[a-z0-9]+(?:-[a-z0-9]+)*\.css$/.test(data.diagramStyle))throw error;
@@ -80,6 +80,17 @@
       '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
       '<div class="actions"><button id="checkBtn" type="button">Check Answers</button><button id="resetBtn" type="button">Reset</button></div>'+
       (data.sources||'')+'<p class="footer">'+esc(data.footer||data.keyword+' · Visual study module · 15 themes')+'</p>';
+    if(slug==='transformer-scisketch'){
+      document.body.classList.add('transformer-research');
+      try{
+        const mobileCSS=new URL('./experiments/mobile-constraint-layout.css?v=20261101-cl-v1',base);
+        const link=document.createElement('link');
+        link.rel='stylesheet';link.href=mobileCSS.href;
+        document.head.appendChild(link);
+        const {mountConstraintMobileLayout}=await import('./experiments/mobile-constraint-layout.js?v=20261101-cl-v1');
+        mountConstraintMobileLayout(root);
+      }catch(e){console.error('Constraint-first responsive layout unavailable',e)}
+    }
     if(slug==='transformer-scisketch'){
       try{const {mountResearchComparison}=await import('./experiments/diagram-comparison.js?v=20261101-q7-object-audit');mountResearchComparison(root)}
       catch(e){console.error('Research diagram comparison unavailable',e)}
