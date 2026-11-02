@@ -56,7 +56,7 @@ if(!existsSync(bilingualPath)){
   fail('Bilingual links directory is missing');
 }else{
   const directory=readFileSync(bilingualPath,'utf8');
-  const rows=directory.split(/\\r?\\n/).filter(line=>/^\\|\\s*\\d{2}\\s*\\|/.test(line));
+  const rows=directory.split(/\r?\n/).filter(line=>/^\|\s*\d{2}\s*\|/.test(line));
   if(rows.length!==index.modules.length)fail('Bilingual link rows mismatch registered module count: '+rows.length);
   const prefix='https://sabareeshrao.github.io/Gradstudio-Version-2.0';
   for(let i=0;i<rows.length;i++){
@@ -64,11 +64,11 @@ if(!existsSync(bilingualPath)){
     const number=Number(cells[0]);
     const module=index.modules[i];
     if(!module||number!==i+1){fail('Bilingual directory row numbering differs from registry at '+(i+1));continue}
-    const link=cells[3]?.match(/^\\[Open English\\]\\((https?:\\/\\/[^)]+)\\)$/);
+    const link=cells[3]?.match(/^\[Open English\]\((https?:\/\/[^)]+)\)$/);
     const expected=prefix+'/study-engine/?module='+module.slug;
     if(!link||link[1]!==expected)fail('English link must use canonical study-engine route at row '+number+' ('+module.slug+')');
     if(i<50){
-      const telugu=cells[2]?.match(/^\\[Open Telugu\\]\\((https?:\\/\\/[^)]+)\\)$/);
+      const telugu=cells[2]?.match(/^\[Open Telugu\]\((https?:\/\/[^)]+)\)$/);
       const file=String(number).padStart(2,'0')+'-'+module.slug+'.html';
       const teluguExpected=prefix+'/Telugu%20Translation/'+file;
       if(!telugu||telugu[1]!==teluguExpected||!existsSync(resolve(root,'../Telugu Translation',file)))
