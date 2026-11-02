@@ -1,5 +1,7 @@
 # Gradstudio Visual Gold Standard — Reference the Original Multimodal Training Diagrams
 
+> **Current hosted lesson count:** One hero plus **seven** distinct question visuals (8 total) for each new GradStudio seven-question lesson. Older references to 8 question visuals and 9 total figures describe archived eight-question lessons and do not apply to the current shared-engine production pipeline. Preserve the original visual-quality bar and rendering checks.
+
 **Status: MANDATORY.** This guide defines visual acceptance for every diagram in every keyword module. Read it **together with the original root `index.html`**, not instead of it.
 
 **Primary reference:** [../index.html](../index.html) — the original Multimodal Training page. Its seven distinct question-card visuals are the **minimum artistic and instructional benchmark**, not just its radio buttons or CSS.
