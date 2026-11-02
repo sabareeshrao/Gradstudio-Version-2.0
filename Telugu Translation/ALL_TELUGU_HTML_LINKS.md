@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**58 English lessons · 406 questions · 50 Telugu translations completed · 8 Telugu translations pending**
+**62 English lesson links · 434 questions · 50 Telugu translations completed · 12 Telugu translations pending**
 
-English lessons 01–58 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–58 are intentionally blank until those translations are published.
+English lesson links 01–62 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–62 are intentionally blank until those translations are published. Lessons 59–62 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -68,9 +68,15 @@ English lessons 01–58 are listed below. Telugu translations are available for 
 | 56 | Generalization |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=generalization) |
 | 57 | Train-Validation-Test Split |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=train-validation-test-split) |
 | 58 | Cross-Validation Evaluation |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=cross-validation-evaluation) |
+| 59 | Machine Learning Operations (MLOps) |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=mlops) |
+| 60 | Model Evaluation |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=model-evaluation) |
+| 61 | Model Deployment |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=model-deployment) |
+| 62 | Feature Selection |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=feature-selection) |
+
+**New English lessons (59–62):** MLOps is in the study library index. Model Evaluation, Model Deployment, and Feature Selection are accessible by direct lesson links; Model Deployment is stored in the Study Engine’s `unlisted` folder. No Telugu HTML translations were found for these four lessons, so their Telugu cells remain blank.
 
 ## Copy-ready HTML URLs
 
 [Copy-ready Telugu URLs for lessons 01–50](COPY_READY_TELUGU_URLS.txt)
 
-Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–58 are pending.
+Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–62 are pending.
