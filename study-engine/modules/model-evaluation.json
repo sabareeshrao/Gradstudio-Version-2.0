@@ -37,7 +37,7 @@
       "tag": "Beginner · Metrics",
       "options": [
         "Classification uses precision and recall to measure how far predicted numbers differ from actual numbers. Regression uses MAE and RMSE to count how many category labels are predicted correctly.",
-        "Classification uses accuracy and F1-score to check predictions against category labels. Regression uses MAE, MSE, and RMSE to measure how often predicted numbers fall into the right category.",
+        "Classification uses accuracy, precision, recall, and F1-score to check predictions against categorical labels. Regression uses MAE, MSE, and RMSE to measure how often numerical estimates receive the correct predefined category.",
         "Classification uses accuracy, precision, recall, and F1-score to judge predicted labels. Regression uses MAE, MSE, and RMSE to measure whether predictions exceed a chosen classification threshold.",
         "Classification uses accuracy, precision, recall, and F1-score to measure different aspects of prediction quality. Regression uses MAE, MSE, and RMSE to measure differences between predicted and actual numerical values."
       ],
@@ -51,7 +51,7 @@
       "options": [
         "Precision measures the share of actual positives found, while recall measures the share of predicted positives that are right. F1 combines both and a confusion matrix lists prediction outcomes.",
         "Precision measures the proportion of predicted positives that are correct, recall measures the proportion of actual positives detected, and F1-score balances both. A confusion matrix shows correct and incorrect predictions for each class.",
-        "Precision measures correct positive predictions, recall measures detected actual positives, and F1 takes their ordinary arithmetic average. A confusion matrix counts correct and incorrect outcomes across classes.",
+        "Precision measures the proportion of correct positive predictions, recall measures the proportion of actual positives detected, and F1-score takes their simple arithmetic average, while a confusion matrix records the outcomes for every class.",
         "Precision checks how many positive predictions are correct, and recall checks how many positives are found. F1 combines them, while a confusion matrix records only correct class predictions."
       ],
       "answer": "b",
@@ -90,7 +90,7 @@
       "options": [
         "Reliable evaluation uses one benchmark dataset repeatedly to choose the best model and reports that final score. Production monitoring follows training loss instead of checking correctness on incoming records.",
         "Reliable evaluation keeps training and testing separate but allows benchmark feature statistics to use the combined data. Production monitoring watches prediction confidence without collecting later actual outcomes.",
-        "Reliable evaluation compares benchmark scores with different metrics chosen for each candidate, then monitors input drift in production. Changes in actual prediction quality are assumed to follow the drift results.",
+        "Reliable evaluation compares benchmark scores with different metrics chosen for each candidate, then monitors input drift in production. Changes in actual prediction quality are assumed to follow those drift results automatically.",
         "Reliable evaluation uses independent test sets, consistent metrics, leakage-free validation, and standardized benchmarks. Production monitoring tracks prediction quality, data drift, and performance degradation over time."
       ],
       "answer": "d",
