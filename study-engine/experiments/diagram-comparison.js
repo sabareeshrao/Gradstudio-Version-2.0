@@ -52,7 +52,7 @@ export function mountResearchComparison(root){
    let issues=[];
    card.querySelectorAll('.pb-variant:not([hidden]) .pb-svg, .pb-variant:not([hidden]) .sc-diagram').forEach(svg=>issues.push(...auditOne(svg)));
    const status=card.querySelector('.pb-layout-status');
-   if(status){status.dataset.problems=String(issues.length>0);status.textContent=issues.length?('Layout audit: '+issues.length+' potential collisions; inspect the affected diagram.'):'Partial layout audit: no detected collisions in checked text, marked paths, and marked objects.';}
+   if(status){status.dataset.problems=String(issues.length>0);status.textContent=issues.length?('Layout audit: '+issues.length+' potential collisions: '+issues.slice(0,3).join('; ')):'Partial layout audit: no detected collisions in checked text, marked paths, and marked objects.';}
    if(issues.length)console.warn('[GradStudio diagram audit]',card.querySelector('.pb-controls-label strong')?.textContent,issues);
   });
  }
