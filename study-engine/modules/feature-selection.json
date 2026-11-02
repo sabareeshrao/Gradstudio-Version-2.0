@@ -26,9 +26,9 @@
       "tag": "Beginner · Noise and redundancy",
       "answer": "d",
       "options": [
-        "Irrelevant features add extra measurements but generally help a model detect hidden patterns, while redundant features offer different evidence. Feature Selection should keep both groups and remove mainly columns with missing data.",
-        "Unrelated features can distract a model, but repeated features help by giving the same evidence multiple times. Feature Selection improves training by keeping duplicated columns while removing only low-variance inputs.",
-        "Irrelevant and redundant features mainly affect how the dataset looks when displayed, not how a model learns. Feature Selection is useful primarily for organizing tables rather than reducing the workload of training.",
+        "Irrelevant features add measurements but may reveal unexpected predictive relationships, while redundant features offer separate evidence. Feature Selection should keep both groups and remove columns that contain missing values.",
+        "Unrelated features may distract a model, but repeated features help by reinforcing evidence. Feature Selection should preserve duplicate columns and remove only inputs whose values rarely change.",
+        "Irrelevant and redundant features mostly affect dataset appearance rather than learning quality. Feature Selection is helpful for organizing tables and naming columns, not for lowering training costs.",
         "Irrelevant features can introduce noise, while redundant features add repeated information. Feature Selection removes unnecessary inputs, reducing computational cost and potentially improving model accuracy and generalization."
       ],
       "explanation": "<strong>Explanation:</strong> Imagine a supermarket forecasting tomorrow's bread sales. Today's weather may be helpful; a randomly assigned receipt number may add noise. Two columns showing the same temperature in Celsius and Fahrenheit repeat much of the same information. Too many weak or duplicate inputs can increase training cost and sometimes make generalization harder. Feature Selection checks which signals are worth keeping. It is about reducing unnecessary information, not assuming every extra feature is harmful.",
@@ -82,9 +82,9 @@
       "tag": "Advanced · Leakage-safe CV",
       "answer": "d",
       "options": [
-        "Selecting features before cross-validation can use every label, but this is safe because validation labels are known to the evaluator. Pipelines mainly avoid leakage by reusing the same feature ranking across all folds.",
-        "Selecting features before cross-validation becomes a problem only if the final test set is included. Pipelines can therefore fit the selector on all cross-validation records once and evaluate the model in separate folds.",
-        "Selecting features before cross-validation may bias results, but pipelines prevent this by freezing one global selected subset before splitting the folds. Each model then uses that common subset without refitting selection.",
+        "Selecting features before cross-validation using validation labels is acceptable because those labels are already available to the evaluation procedure. Pipelines prevent leakage by reusing one consistently ranked feature subset across folds.",
+        "Selecting features before cross-validation is problematic only if final test records are included. Pipelines may fit the selector once on all cross-validation records and reuse it across folds.",
+        "Selecting features before cross-validation may bias evaluation, but pipelines avoid this by freezing one universally optimized feature subset before dividing data into folds. All models then reuse that subset without refitting.",
         "Selecting features before cross-validation allows validation data to influence feature choices, producing overly optimistic results. Pipelines prevent this by fitting Feature Selection separately within each training fold."
       ],
       "explanation": "<strong>Explanation:</strong> Consider a scholarship model with a small dataset. If you select the best columns using all records before cross-validation, the validation folds have already influenced what the model sees. That can make scores look better than they should. Put the selector and model inside a Scikit-learn Pipeline instead. During each fold, the selector learns only from that fold's training records, and the validation records stay unseen until scoring. Keep the final test set untouched too.",
