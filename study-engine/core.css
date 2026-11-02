@@ -186,3 +186,4 @@ pre.gs-code-block[data-truncated-lines]::after{
   }
   .gs-code-row{padding-left:3.15em!important;padding-right:9px!important}
 }
+.gs-code-note{max-width:90ch;margin:9px 0 13px;padding:8px 11px;border-radius:8px;background:#eef5f8;color:#35556a;font-size:.78rem;line-height:1.5}
