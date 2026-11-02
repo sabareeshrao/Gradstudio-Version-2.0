@@ -16,8 +16,9 @@ function fail(message){console.error('FAIL route integrity: '+message);failures+
 
 const libraryBranch=app.indexOf('if(!slug){');
 const manifestFetch=app.indexOf("const manifest=await getJSON(new URL('modules/index.json',base));");
-const lessonFetch=app.indexOf("const data=await getJSON(new URL('modules/'+slug+'.json',base));");
-if(libraryBranch<0||manifestFetch<libraryBranch||lessonFetch<manifestFetch)
+const lessonPath=app.indexOf("const lessonPath=(slug===");
+const lessonFetch=app.indexOf('const data=await getJSON(new URL(lessonPath,base));');
+if(libraryBranch<0||manifestFetch<libraryBranch||lessonPath<manifestFetch||lessonFetch<lessonPath)
   fail('The library or direct-lesson fetch path is missing or rearranged');
 if(app.includes('manifest.modules.some('))
   fail('Direct lesson links must not be blocked by a stale module index');
@@ -49,5 +50,32 @@ for(const filename of filenames){
   const slug=filename.slice(0,-5);
   if(!registered.has(slug))fail('Module JSON missing from library index: '+slug);
 }
+// Validate all bilingual directory URLs against the exact registered English module slugs.
+const bilingualPath=resolve(root,'../Telugu Translation/ALL_TELUGU_HTML_LINKS.md');
+if(!existsSync(bilingualPath)){
+  fail('Bilingual links directory is missing');
+}else{
+  const directory=readFileSync(bilingualPath,'utf8');
+  const rows=directory.split(/\\r?\\n/).filter(line=>/^\\|\\s*\\d{2}\\s*\\|/.test(line));
+  if(rows.length!==index.modules.length)fail('Bilingual link rows mismatch registered module count: '+rows.length);
+  const prefix='https://sabareeshrao.github.io/Gradstudio-Version-2.0';
+  for(let i=0;i<rows.length;i++){
+    const cells=rows[i].split('|').slice(1,-1).map(s=>s.trim());
+    const number=Number(cells[0]);
+    const module=index.modules[i];
+    if(!module||number!==i+1){fail('Bilingual directory row numbering differs from registry at '+(i+1));continue}
+    const link=cells[3]?.match(/^\\[Open English\\]\\((https?:\\/\\/[^)]+)\\)$/);
+    const expected=prefix+'/study-engine/?module='+module.slug;
+    if(!link||link[1]!==expected)fail('English link must use canonical study-engine route at row '+number+' ('+module.slug+')');
+    if(i<50){
+      const telugu=cells[2]?.match(/^\\[Open Telugu\\]\\((https?:\\/\\/[^)]+)\\)$/);
+      const file=String(number).padStart(2,'0')+'-'+module.slug+'.html';
+      const teluguExpected=prefix+'/Telugu%20Translation/'+file;
+      if(!telugu||telugu[1]!==teluguExpected||!existsSync(resolve(root,'../Telugu Translation',file)))
+        fail('Missing or invalid Telugu HTML link at row '+number);
+    }else if(cells[2])fail('Unpublished Telugu translation linked at row '+number);
+  }
+}
+
 console.log('Verified '+registered.size+' direct lesson URLs and module JSON files; '+failures+' blocking errors.');
 if(failures)process.exitCode=1;
