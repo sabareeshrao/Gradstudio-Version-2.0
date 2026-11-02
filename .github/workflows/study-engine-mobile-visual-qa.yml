@@ -1,0 +1,40 @@
+name: Gradstudio No-Horizontal-Scroll Browser QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'study-engine/core.css'
+      - 'study-engine/app.js'
+      - 'study-engine/index.html'
+      - 'study-engine/responsive-figures.js'
+      - 'study-engine/unlisted/data-augmentation.json'
+      - 'study-engine/diagrams/data-augmentation.css'
+      - 'study-engine/verify-browser-responsive.mjs'
+      - '.github/workflows/study-engine-mobile-visual-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mobile-visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install chromium --with-deps
+      - name: Check the real rendered page and diagram widths at 320–1280px
+        run: node study-engine/verify-browser-responsive.mjs
+      - name: Save actual mobile screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradstudio-no-sideways-screenshots
+          path: study-engine/qa-artifacts/responsive
+          if-no-files-found: ignore
