@@ -1,0 +1,37 @@
+name: Data Augmentation SciSketch Visual QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'study-engine/unlisted/data-augmentation-scisketch.json'
+      - 'study-engine/diagrams/data-augmentation-scisketch.css'
+      - 'study-engine/experiments/data-augmentation-scisketch.js'
+      - 'study-engine/experiments/verify-data-augmentation-scisketch-browser.mjs'
+      - 'study-engine/app.js'
+      - '.github/workflows/data-augmentation-scisketch-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify immutable Data Augmentation source content
+        run: node study-engine/experiments/verify-data-augmentation-scisketch.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install chromium --with-deps
+      - name: Render and check seven diagrams and compare modes
+        run: node study-engine/experiments/verify-data-augmentation-scisketch-browser.mjs
+      - name: Upload research diagram screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-augmentation-scisketch-screenshots
+          path: study-engine/experiments/qa-data-augmentation-scisketch
+          if-no-files-found: ignore

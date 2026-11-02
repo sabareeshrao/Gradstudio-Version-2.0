@@ -94,6 +94,10 @@ jobs:
           npx playwright install chromium --with-deps
       - name: Blocking browser diagram regression (all Transformer experiment cards)
         run: node study-engine/experiments/verify-transformer-browser.mjs
+      - name: Verify Data Augmentation SciSketch source and original figure locks
+        run: node study-engine/experiments/verify-data-augmentation-scisketch.mjs
+      - name: Blocking Data Augmentation SciSketch rendered geometry audit
+        run: node study-engine/experiments/verify-data-augmentation-scisketch-browser.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Build only the 58 approved topics and original template
