@@ -34,6 +34,10 @@ jobs:
         run: |
           node --check study-engine/responsive-figures.js
           node study-engine/verify-responsive-templates.mjs
+      - name: Verify all teaching code snippets respect the 15-line limit
+        run: |
+          node --check study-engine/code-snippets.js
+          node study-engine/verify-code-snippets.mjs
       - name: Reject bulky or stroke-width-scaled SVG arrowheads
         run: node study-engine/verify-svg-arrowheads.mjs
       - name: Verify every hosted lesson link and bypass stale module indexes
