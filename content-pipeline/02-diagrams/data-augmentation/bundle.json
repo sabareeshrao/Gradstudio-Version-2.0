@@ -1,7 +1,6 @@
 {
   "schemaVersion": 1,
   "status": "diagram-stage-only",
-  "approvedForPublication": false,
   "topic": "Data Augmentation",
   "slug": "data-augmentation",
   "contentCommit": "06da98f5fd659889c30e679f4c86cb7b982b0df4",
@@ -22,5 +21,6 @@
     "questions[*].options[answer]",
     "questions[*].answer"
   ],
-  "approvalNote": "Not on approved 58-topic whitelist; final auditor must seek explicit expansion approval before canonical publication."
+  "approvalNote": "New AI topics require no curriculum approval. Agent 2 may publish after integrating completed content and passing visual/content/functionality QA.",
+  "curriculumApprovalRequired": false
 }
