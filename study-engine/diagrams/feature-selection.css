@@ -1,0 +1,24 @@
+/* Feature Selection — Data Augmentation-inspired illustration system.
+ * Every question: one complete responsive SVG, fitted inside its existing card.
+ * No background scripts, external fonts, or sideways mobile scrolling. */
+.fs-hero,.fs-figure{font-family:inherit;color:#284f66;min-width:0;max-width:100%;box-sizing:border-box}
+.fs-hero,.fs-figure{background:radial-gradient(ellipse at 90% 0%,#e5f7ef,transparent 48%),linear-gradient(148deg,#f7fcff,#fff9f1);border-radius:17px}
+.fs-hero{padding:clamp(16px,2.8vw,28px);margin:0 0 24px;border:1px solid #d0e3e7;box-shadow:0 10px 28px #34596c0e}
+.fs-figure{padding:clamp(13px,2.2vw,24px);margin:0}
+.fs-eyebrow{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:#267e7b;line-height:1.5}
+.fs-hero h2{margin:8px 0 6px;color:#2b526a;font-size:clamp(1.3rem,2.7vw,1.86rem);line-height:1.26}
+.fs-figure h3{font-size:clamp(1.06rem,2vw,1.32rem);line-height:1.34;margin:7px 0 14px;color:#2b566f}
+.fs-hero p,.fs-figure p{font-size:.87rem;color:#526e7e;line-height:1.6}
+.fs-hero p{margin:3px 0 16px}
+.fs-art{width:100%;min-width:0;max-width:100%;overflow:hidden;background:#f9fcfd;border:1px solid #d3e5ea;border-radius:12px}
+.fs-art>svg{display:block;width:100%!important;height:auto!important;min-width:0!important;max-width:100%!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.fs-note{font-size:.82rem!important;color:#607b88!important;margin:12px 0 0;line-height:1.62}
+.fs-hero svg,.fs-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(> .fs-figure){padding:0;border:0;background:transparent}
+@media(max-width:440px){
+ .fs-hero,.fs-figure{padding:12px}
+ .fs-figure h3{margin-bottom:9px}
+ .fs-hero h2{font-size:1.27rem}
+ .fs-note{font-size:.79rem!important}
+}
+@media(prefers-reduced-motion:reduce){.fs-hero *,.fs-figure *{transition:none!important;animation:none!important}}
