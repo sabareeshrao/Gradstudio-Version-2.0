@@ -79,6 +79,13 @@
       '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
       '<div class="actions"><button id="checkBtn" type="button">Check Answers</button><button id="resetBtn" type="button">Reset</button></div>'+
       (data.sources||'')+'<p class="footer">'+esc(data.footer||data.keyword+' · Visual study module · 15 themes')+'</p>';
+    // Format every HTML classroom code panel with readable VS Code colors.
+    // Source code examples should be <=15 lines; runtime also enforces a safe cap.
+    try{
+      const {formatLessonCode}=await import('./code-snippets.js?v=20261102-vscode15-v1');
+      const result=formatLessonCode(root);
+      if(result.truncated)console.warn('Some study snippets still exceed 15 source lines:',result.truncated);
+    }catch(error){console.warn('Shared code syntax styling unavailable:',error)}
     if(slug==='data-augmentation-scisketch'){
       document.body.classList.add('da-scisketch-research');
       const {mountDataAugmentationSciSketch}=await import('./experiments/data-augmentation-scisketch.js?v=20261101-da-scisketch-v3');
