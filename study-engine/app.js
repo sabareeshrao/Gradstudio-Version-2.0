@@ -39,7 +39,7 @@
     if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))throw Error('Invalid keyword: '+slug);
     // The published 58-topic catalog stays locked; this approved direct-link
     // lesson is kept separately and never added to the public index.
-    const lessonPath=(slug==='data-augmentation'||slug==='transformer-scisketch')?'unlisted/'+slug+'.json':'modules/'+slug+'.json';
+    const lessonPath=(slug==='data-augmentation'||slug==='data-augmentation-scisketch'||slug==='transformer-scisketch')?'unlisted/'+slug+'.json':'modules/'+slug+'.json';
     const data=await getJSON(new URL(lessonPath,base));
     if(!Array.isArray(data.questions)||data.questions.length<1||data.questions.some(q=>q.options?.length!==4||!['a','b','c','d'].includes(q.answer)||!q.figure))throw Error('Invalid module: each question needs four choices, one answer, and its own figure.');
     if(data.diagramStyle){
@@ -55,6 +55,7 @@
         // A fresh stylesheet version prevents previously cached nested-SVG
         // sizing rules from overriding the corrected lesson diagrams.
         if(slug==='data-augmentation')styleURL.searchParams.set('v','20261101-fit-only-v2');
+        if(slug==='data-augmentation-scisketch')styleURL.searchParams.set('v','20261101-da-scisketch-v3');
         if(slug==='transformer-scisketch')styleURL.searchParams.set('v','20261101-constraint-mobile-v1');
         await loadStyle(styleURL.href);
       }catch(error){
@@ -80,6 +81,11 @@
       '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
       '<div class="actions"><button id="checkBtn" type="button">Check Answers</button><button id="resetBtn" type="button">Reset</button></div>'+
       (data.sources||'')+'<p class="footer">'+esc(data.footer||data.keyword+' · Visual study module · 15 themes')+'</p>';
+    if(slug==='data-augmentation-scisketch'){
+      document.body.classList.add('da-scisketch-research');
+      const {mountDataAugmentationSciSketch}=await import('./experiments/data-augmentation-scisketch.js?v=20261101-da-scisketch-v3');
+      mountDataAugmentationSciSketch(root);
+    }
     if(slug==='transformer-scisketch'){
       document.body.classList.add('transformer-research');
       try{
