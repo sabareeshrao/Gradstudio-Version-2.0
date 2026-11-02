@@ -31,8 +31,8 @@ try {
        cards:document.querySelectorAll('.lesson-card').length,
        diagrams:diagrams.length,
        mcq:document.querySelectorAll('input[type="radio"],.quiz,.q-text').length,
-       teluguInsideDiagrams:diagrams.filter(el=>/[\\u0c00-\\u0c7f]/.test(el.innerText)).length,
-       teluguInHero:/[\\u0c00-\\u0c7f]/.test(document.querySelector('.hero-diagram')?.innerText||''),
+       teluguInsideDiagrams:diagrams.filter(el=>/[ఀ-౿]/.test(el.innerText)).length,
+       teluguInHero:/[ఀ-౿]/.test(document.querySelector('.hero-diagram')?.innerText||''),
        clipped:regions.map((el,i)=>({i,c:el.className,sw:el.scrollWidth,cw:el.clientWidth})).filter(x=>x.sw>x.cw+3),
        extreme:regions.map((el,i)=>({i,box:el.getBoundingClientRect()})).filter(({box})=>box.left< -3||box.right>innerWidth+3).map(x=>x.i)
       };
