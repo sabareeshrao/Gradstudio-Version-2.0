@@ -1,6 +1,6 @@
 # Gradstudio AI Replication Playbook — English Visual Study Modules
 
-**Purpose:** Use this file as a durable, repo-based reference when another AI (or another chat) is asked to build or revise a Gradstudio topic. Read [BEGINNER_ENGLISH_EDITORIAL_RULES.md](./BEGINNER_ENGLISH_EDITORIAL_RULES.md) too. The retained [Train/Validation/Test Split module](./modules/train-validation-test-split.json), [Backpropagation module](./modules/backpropagation.json) and the original [Multimodal Training template](../index.html) are current visual and content references. The original 58-topic file is a historical baseline, not a publication whitelist. User-assigned topics such as Data Leakage and Feature Selection require no separate curriculum approval; all normal content, diagram and functional quality checks still apply.
+**Purpose:** Use this file as a durable, repo-based reference when another AI (or another chat) is asked to build or revise a Gradstudio topic. Read [BEGINNER_ENGLISH_EDITORIAL_RULES.md](./BEGINNER_ENGLISH_EDITORIAL_RULES.md) too. The retained [Train/Validation/Test Split module](./modules/train-validation-test-split.json), [Backpropagation module](./modules/backpropagation.json) and the original [Multimodal Training template](../index.html) are current visual and content references. The original 58-topic file is a historical baseline, not a publication whitelist. New user-assigned topics still require normal content, diagram and functional quality checks before publication.
 
 ## Non-negotiable content contract
 
