@@ -1,0 +1,20 @@
+/* Agent 2 | Data Leakage | original high-fidelity SVG teaching diagrams */
+.g2-hero,.g2-figure{font-family:inherit;color:#213f53;min-width:0;max-width:100%;box-sizing:border-box}
+.g2-hero{padding:clamp(16px,2.8vw,30px);margin:0 0 25px;border:1px solid #c2dce3;border-radius:21px;background:radial-gradient(circle at 7% 5%,#def6ed,transparent 45%),linear-gradient(128deg,#f4faff,#fff8ef);box-shadow:0 10px 27px #1e55610b}
+.g2-kicker{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#147d74}
+.g2-hero h2{font-size:clamp(1.34rem,3vw,2rem);line-height:1.2;margin:10px 0 7px;color:#21485f}
+.g2-hero>p{max-width:75ch;font-size:.87rem;line-height:1.64;color:#536e7c;margin:0 0 18px}
+.g2-mini{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.g2-mini>span{border:1px solid #cce0e3;border-radius:30px;background:#fff;padding:6px 11px;color:#35727d;font-size:.75rem;font-weight:750}
+.g2-figure{padding:clamp(14px,2.4vw,23px);border-radius:14px;background:radial-gradient(circle at 90% 4%,#e8f7ef,transparent 42%),linear-gradient(145deg,#f5fbff,#fff9f1)}
+.g2-figure h3{font-size:clamp(1.03rem,2vw,1.25rem);line-height:1.37;margin:8px 0 16px;color:#264d62}
+.g2-canvas{background:#fff;border:1px solid #d7e6ec;border-radius:15px;max-width:100%;min-width:0;overflow:hidden;box-shadow:0 4px 13px #274d5e0b}
+.g2-canvas>svg{width:100%!important;min-width:0!important;max-width:100%!important;height:auto;display:block;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.g2-note{margin:12px 0 0;color:#536e7b;font-size:.83rem;line-height:1.6}
+.g2-code{border:1px solid #345469;border-radius:13px;background:#142a3b!important;color:#f1f8fe!important;overflow:hidden;margin-top:15px}
+.g2-code-label{padding:12px 15px;color:#edf8ff!important;background:#28465a;font-weight:850;letter-spacing:.08em;font-size:.7rem}
+.g2-figure .g2-code pre{display:block;background:#142a3b!important;color:#f1f8fe!important;white-space:pre;padding:16px;tab-size:4;overflow-x:auto;overflow-y:visible;margin:0;font:500 13px/1.67 ui-monospace,Consolas,Menlo,monospace}
+.g2-figure .g2-code pre code{display:block;width:max-content;min-width:100%;white-space:pre;border:0!important;background:transparent!important;color:#f1f8fe!important;padding:0!important;margin:0!important;font:inherit!important;line-height:inherit!important;box-shadow:none!important}
+.g2-code p{padding:0 16px 14px;color:#c9e0eb!important;line-height:1.56;font-size:.78rem;margin:0}
+@media(max-width:620px){.g2-hero,.g2-figure{padding:13px}.g2-code pre{font-size:12px!important}.g2-mini span{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.g2-hero *,.g2-figure *{animation:none!important;transition:none!important}}

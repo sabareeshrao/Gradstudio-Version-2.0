@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Historical first 58 GradStudio topics, preserved as a baseline. NOT a publication whitelist or maximum: new AI keywords may be registered and published without separate curriculum approval.",
+  "description": "Owner-approved English curriculum: exactly 59 seven-question topics. The legacy filename is retained for existing repository tooling.",
   "topics": [
     {
       "number": 1,
@@ -349,6 +349,12 @@
       "slug": "cross-validation-evaluation",
       "id": "AI-03482",
       "subject": "AI Evaluation and Benchmarking"
+    },
+    {
+      "number": 59,
+      "slug": "data-leakage",
+      "id": "AI-00435",
+      "subject": "Data Preprocessing and Feature Engineering"
     }
   ]
 }
