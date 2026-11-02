@@ -24,7 +24,7 @@
 - If retaining SVG files rather than inlining, ensure URLs resolve from `study-engine/`, are available on GitHub Pages, and pass CORS and loading tests.
 - Check every text label, arrow direction, scroll area, small-screen readability and high-contrast theming **in a real browser**.
 - Verify that Q6 Mixup/CutMix targets are mixed by proportions and that augmentation is restricted to training data during evaluation.
-- **Do not publish yet.** Content stage indicates that Data Augmentation is **not on the approved 58-topic whitelist**; curriculum expansion needs explicit user authorization.
+- **New-topic publication is authorized.** After content and diagram QA, register and publish this lesson using the existing shared engine; the historical 58-topic list is not a gate.
 
 ## QA scope
 - Each SVG has a unique accessible title/description and explicit `role="img"`.
