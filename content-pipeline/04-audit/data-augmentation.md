@@ -53,3 +53,7 @@ Previous CSS forced SVG widths around 920–940px and allowed `overflow-x:auto` 
 Added `study-engine/responsive-figures.js` for all template renderers, a universal shared-core fit guard, an editorial prohibition against horizontal panning, and a mandatory `study-engine/verify-responsive-templates.mjs` workflow check.
 
 Questions, all 28 options, answer keys and explanations were preserved. Legacy wide diagrams have a shared fit fallback; human review is still required wherever shrinking would make labels too small.
+
+## 2026-11-01 owner correction: fit the original diagrams only
+
+Reverted the additional mobile-only compositions and the mobile stack renderer. The original hero and seven lesson SVGs are displayed individually and proportionally fit to the **existing** card width using `width:100%; min-width:0; max-width:100%; height:auto`. Removed the extra Question 6 mobile SVG copies. The legacy runtime now only scales oversized top-level SVGs, never changes card dimensions. This supersedes prior stack/reflow guidance. User-provided questions, 28 options, keyed answers and explanations remain untouched. Check source and browser QA on the resulting commit; don't claim physical-device visual perfection without screenshot review.

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Static regression gate for no-sideways-panning in Gradstudio lesson templates. */
+/** Fail if Gradstudio regresses to oversized SVGs, scrolling, or mobile replicas. */
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
@@ -8,28 +8,28 @@ const file=p=>readFileSync(path.join(here,p),'utf8');
 const lesson=JSON.parse(file('unlisted/data-augmentation.json'));
 const source=JSON.parse(readFileSync(path.join(here,'..','content-pipeline','01-content','data-augmentation.json'),'utf8'));
 const css=file('diagrams/data-augmentation.css');
-const core=file('core.css');
 const runtime=file('responsive-figures.js');
+const core=file('core.css');
 const app=file('app.js');
 const html=file('index.html');
-const errors=[];
-if(lesson.questions.length!==7)errors.push('Data Augmentation lost a question');
+const problems=[];
+if(lesson.questions.length!==7)problems.push('Expected seven questions');
 for(let i=0;i<7;i++){
- const a=lesson.questions[i],b=source.questions[i];
- if(a.stem!==b.stem||a.answer!==b.answer||JSON.stringify(a.options)!==JSON.stringify(b.options))
-  errors.push('Data Augmentation Q'+(i+1)+' changed protected content');
+ const q=lesson.questions[i],ref=source.questions[i];
+ if(q.stem!==ref.stem||q.answer!==ref.answer||JSON.stringify(q.options)!==JSON.stringify(ref.options))
+  problems.push('Q'+(i+1)+' question or answers changed');
 }
-if(/swipe horizontally|scroll horizontally/i.test(lesson.hero+lesson.questions.map(q=>q.figure).join(' ')))
- errors.push('Instruction to swipe horizontally remains');
-if(/overflow-x\s*:\s*(?:auto|scroll)|min-width\s*:\s*(?:[6-9]\d{2}|[1-9]\d{3})px/i.test(css))
- errors.push('Data Augmentation has forbidden horizontal scrolling or forced large SVG width');
-if(!css.includes('.da-mobile-panels{display:grid')||!css.includes('.da-art{display:none!important'))
- errors.push('Mobile semantic panel styling is missing');
-if(!runtime.includes('DA_SECTIONS=')||!runtime.includes('mountResponsiveFigures')||!runtime.includes('renameSvgIds'))
- errors.push('Shared semantic figure reflow is missing');
-if(!core.includes('Universal no-sideways-panning figure layout')||!core.includes('overflow-x:clip'))
- errors.push('Shared viewport protection is missing');
-if(!app.includes('mountResponsiveFigures(root,slug)')||!html.includes('no-sideways-v1'))
- errors.push('Shared rendering hook or cache version is missing');
-if(errors.length){errors.forEach(e=>console.error('FAIL '+e));process.exitCode=1;}
-else console.log('PASS: seven original questions, no forced Data Augmentation horizontal scrolling, mobile semantic figures and shared template guards');
+if(lesson.questions.some(q=>!q.figure.includes('<svg')))problems.push('Missing SVG figures');
+if(lesson.questions[5].figure.includes('da-q6-mobile'))problems.push('Duplicated Q6 mobile panels remain');
+if(/overflow-x\s*:\s*(?:auto|scroll)|min-width\s*:\s*(?:[5-9]\d{2}|[1-9]\d{3})px/i.test(css))
+ problems.push('Figure CSS forces panning or oversized minimum width');
+if(!css.includes('.da-art > svg,.da-art > img')||!css.includes('width:100%!important'))
+ problems.push('Fit-to-card SVG rule missing');
+if(runtime.includes('DA_SECTIONS')||runtime.includes('makePanel(')||runtime.includes('cloneNode('))
+ problems.push('Responsive helper still duplicates mobile diagrams');
+if(!runtime.includes("svg.ownerSVGElement")||!core.includes('Global diagram-fit fallback'))
+ problems.push('Global fit-only safeguard missing');
+if(!app.includes('mountResponsiveFigures(root,slug)')||!html.includes('20261101-fit-only-v2'))
+ problems.push('Renderer or cache version mismatch');
+if(problems.length){problems.forEach(p=>console.error('FAIL '+p));process.exitCode=1;}
+else console.log('PASS: seven original figures fit existing cards; no scrolling, width increase, or duplicated mobile layouts');

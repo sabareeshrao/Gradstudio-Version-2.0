@@ -50,7 +50,7 @@ try{
     '<div class="actions"><button id="checkBtn" type="button">Check Answers · సమాధానాలు చూడండి</button><button id="resetBtn" type="button">Reset Quiz · మళ్లీ ప్రయత్నించండి</button></div>'+
     (data.sources||'')+'<p class="footer">'+esc(data.footer)+'</p>';
   // Shared mobile-fit fallback for English diagrams reused in Telugu lessons.
-  try{const {mountResponsiveFigures}=await import('../study-engine/responsive-figures.js?v=20261101-no-sideways-v1');mountResponsiveFigures(root,slug)}
+  try{const {mountResponsiveFigures}=await import('../study-engine/responsive-figures.js?v=20261101-fit-only-v2');mountResponsiveFigures(root,slug)}
   catch(e){console.warn('Responsive figure helper unavailable',e)}
   // Apply the shared visual safety check; Telugu wording and source remain untouched.
   try{const {normalizeSvgArrowheads}=await import('../study-engine/svg-arrowheads.js?v=20261101-slim-arrows');normalizeSvgArrowheads(root)}

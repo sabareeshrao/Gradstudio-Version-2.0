@@ -48,8 +48,8 @@ async function inspect(slug,width,strict){
   if(strict){
    if(report.docDelta>1||report.bodyDelta>1||report.overflow.length)
     errors.push(slug+' '+width+'px horizontal overflow: '+JSON.stringify(report));
-   if(width<=760&&(report.mobilePanels!==7||report.q6Mobile!==1))
-    errors.push(slug+' '+width+'px missing vertical mobile panels: '+JSON.stringify(report));
+   if(report.mobilePanels!==0||report.q6Mobile!==0)
+    errors.push(slug+' '+width+'px unexpected duplicated mobile figures: '+JSON.stringify(report));
   }else if(report.docDelta>1||report.bodyDelta>1||report.overflow.length){
    console.warn('LEGACY REVIEW: '+slug+' '+width+'px '+JSON.stringify(report));
   }
@@ -67,5 +67,5 @@ try{
  console.log('Chromium checked '+metrics.length+' lesson/viewport combinations');
  console.log('Data Augmentation:',JSON.stringify(metrics.filter(x=>x.slug==='data-augmentation')));
  if(errors.length){errors.forEach(e=>console.error('FAIL '+e));process.exitCode=1;}
- else console.log('PASS: no horizontally scrollable Data Augmentation panels on all phone/tablet/desktop viewports');
+ else console.log('PASS: no sideways diagram panning or duplicated mobile panels on all phone/tablet/desktop viewports');
 }finally{await browser.close();await new Promise(ok=>server.close(ok));}

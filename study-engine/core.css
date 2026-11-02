@@ -126,16 +126,11 @@
  .math-expression.math-display{font-size:.84em}
 }
 
-/* Universal no-sideways-panning figure layout for all English/Telugu templates.
-   Wide illustrations must fit the card or use semantic mobile vertical panels. */
-html,body{max-width:100%;overflow-x:clip}
-.container,.question,.q-fig,.hero,.diagram,.answer-choices{min-width:0;max-width:100%;box-sizing:border-box}
-.q-fig :where(img,video,canvas),.hero :where(img,video,canvas){max-width:100%;height:auto}
+/* Global diagram-fit fallback: preserve card widths and original SVG art.
+   Never force a wide min-width or horizontal scrolling for illustrations. */
+html,body{overflow-x:clip}
+.container,.question,.q-fig,.hero,.diagram{min-width:0}
 @media(max-width:760px){
- .container{width:100%;padding-inline:10px}
- .question{width:100%;padding-inline:12px}
- .q-fig{max-width:100%;overflow-x:clip}
- .q-fig pre,.hero pre,.code-panel pre,.ai-code pre{white-space:pre-wrap!important;overflow-wrap:anywhere;overflow-x:clip!important}
- .math-expression{white-space:normal!important;overflow-wrap:anywhere;overflow-x:clip!important}
- .math-expression.math-display mjx-container{overflow-x:clip!important}
+ .q-fig,.hero{overflow-x:hidden}
+ .q-fig pre,.hero pre,.code-panel pre,.ai-code pre{white-space:pre-wrap!important;overflow-wrap:anywhere;overflow-x:hidden!important}
 }
