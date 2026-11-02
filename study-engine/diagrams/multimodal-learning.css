@@ -16,3 +16,27 @@
 .mm-sources a{color:#176b95}
 @media(max-width:700px){.mm-hero{padding:18px 12px}.mm-figure{padding:14px 10px}.mm-svg,.mm-hero .mm-svg{min-width:750px}.mm-art{scrollbar-width:thin}}
 @media(prefers-reduced-motion:reduce){.mm-figure *,.mm-hero *{animation:none!important;transition:none!important}}
+
+
+/* Q4 fusion strategies — isolate each mechanism in its own responsive instructional panel. */
+.mm-fusion-figure .mm-fusion-intro{font-size:.88rem;line-height:1.55;color:#587584;margin:0 0 15px;max-width:76ch}
+.mm-fusion-figure .mm-fusion-intro strong{color:#2c6172}
+.mm-fusion-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.mm-fusion-panel{background:#fff;border:1px solid #d1e4e8;border-radius:14px;padding:15px;min-width:0;box-shadow:0 5px 16px #315a6a08}
+.mm-fusion-panel:last-child{grid-column:1/-1}
+.mm-fusion-heading{display:flex;align-items:center;gap:11px;min-width:0}
+.mm-fusion-number{display:grid;place-items:center;flex:0 0 31px;width:31px;height:31px;border-radius:9px;background:#e3f5ef;border:1px solid #bce0d3;color:#1b7967;font-size:.75rem;font-weight:850}
+.mm-fusion-heading h4{margin:0;font-size:1rem;line-height:1.25;color:#284f63;font-weight:850}
+.mm-fusion-stage{display:block;margin:4px 0 0;color:#607d89;font-size:.74rem;line-height:1.3}
+.mm-fusion-panel .mm-fusion-svg{display:block;width:100%;max-width:410px;height:auto;min-width:0;margin:10px auto;overflow:visible}
+.mm-fusion-panel .mm-fusion-svg text{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.mm-fusion-tradeoff{font-size:.79rem;line-height:1.53;color:#526f7a;background:#f7fbfc;border-radius:8px;padding:9px 11px;margin:7px 0 0}
+.mm-fusion-tradeoff strong{color:#27627a}
+.mm-fusion-figure>.mm-note{max-width:78ch;margin-top:15px}
+@media(max-width:630px){
+ .mm-fusion-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+ .mm-fusion-panel:last-child{grid-column:auto}
+ .mm-fusion-panel{padding:12px}
+ .mm-fusion-heading h4{font-size:.98rem}
+ .mm-fusion-tradeoff{font-size:.8rem}
+}
