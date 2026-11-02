@@ -39,11 +39,11 @@ try{
   }
   document.title=data.title+' — Gradstudio తెలుగు';
   document.getElementById('moduleBrand').innerHTML=esc(data.keyword)+'<small>Telugu + English Study · '+data.questions.length+' Questions</small>';
+  // One learner-facing explanation per question, following Data Augmentation.
+  // Retain legacy technicalExplanation fields in source JSON only.
   const renderCard=(q,i)=>{
     const options=q.options.map((opt,j)=>'<label><input name="q'+(i+1)+'" type="radio" value="'+('abcd'[j])+'"><span class="answer-text"><strong class="option-letter">'+('ABCD'[j])+'.</strong> '+opt+'</span></label>').join('');
-    const detailLabel=data.translationSource?.preserveEnglishExplanationStructure?'Read the detailed explanation':'Detailed Explanation · ఇంకా తెలుసుకోండి';
-    const detail=q.technicalExplanation?'<details class="explanation-deep"><summary>'+detailLabel+'</summary><div class="explanation-deep-content">'+q.technicalExplanation+'</div></details>':'';
-    return '<section class="question" data-answer="'+esc(q.answer)+'"><div class="q-head"><span class="q-badge">Q'+(i+1)+'</span><span class="q-tag">'+esc(q.tag)+'</span></div><figure class="q-fig">'+q.figure+'</figure><p class="q-text">'+esc(q.stem)+'</p><fieldset class="answer-choices"><legend class="sr-only">Q'+(i+1)+': Best Answer ఎంచుకోండి</legend>'+options+'</fieldset><div class="reveal-control-row"><button type="button" class="reveal-toggle" aria-expanded="false" aria-controls="te-reveal-explanation-'+(i+1)+'" aria-label="Reveal answer for question '+(i+1)+'">Reveal</button></div><div class="explanation" id="te-reveal-explanation-'+(i+1)+'" aria-live="polite"><div class="explanation-quick">'+q.explanation+'</div>'+detail+'</div></section>';
+    return '<section class="question" data-answer="'+esc(q.answer)+'"><div class="q-head"><span class="q-badge">Q'+(i+1)+'</span><span class="q-tag">'+esc(q.tag)+'</span></div><figure class="q-fig">'+q.figure+'</figure><p class="q-text">'+esc(q.stem)+'</p><fieldset class="answer-choices"><legend class="sr-only">Q'+(i+1)+': Best Answer ఎంచుకోండి</legend>'+options+'</fieldset><div class="reveal-control-row"><button type="button" class="reveal-toggle" aria-expanded="false" aria-controls="te-reveal-explanation-'+(i+1)+'" aria-label="Reveal answer for question '+(i+1)+'">Reveal</button></div><div class="explanation" id="te-reveal-explanation-'+(i+1)+'" aria-live="polite"><div class="explanation-quick">'+q.explanation+'</div></div></section>';
   };
   root.innerHTML='<h1>'+esc(data.title)+'</h1><p class="sub">'+esc(data.subtitle)+'</p>'+data.hero+
     '<div id="result" role="status" aria-live="polite"></div><form id="quiz">'+data.questions.map(renderCard).join('')+'</form>'+
