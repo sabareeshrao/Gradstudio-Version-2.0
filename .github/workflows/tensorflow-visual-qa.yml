@@ -26,5 +26,7 @@ jobs:
         if: always()
         with:
           name: tensorflow-diagram-screenshots
-          path: tensorflow-visual-qa/
+          path: |
+            tensorflow-visual-qa/
+            study-engine/tensorflow-standalone.html
           retention-days: 7
