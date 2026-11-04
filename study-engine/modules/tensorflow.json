@@ -24,7 +24,7 @@
       "stem": "How would you use TensorFlow in an e-commerce application to recommend products based on customer browsing history, previous purchases, and preferences?",
       "tag": "Layer 1 — Real-World Scenario",
       "options": [
-        "I would collect customer interactions in TensorFlow, then rank products by overall popularity. Every customer would receive the same leading items, because learning individual preferences is outside the model.",
+        "I would collect customer interactions in TensorFlow, then rank products by overall popularity. Every customer would receive the same leading items, because learning individual preferences is outside the model. The same ranking would apply at each visit, even if the customer's interests changed.",
         "I would create a TensorFlow model using only product categories, without browsing or purchase events. The model would sort items by category name rather than learning which products each customer prefers.",
         "I would build a TensorFlow prediction service that randomly rotates popular products for each visitor. Previous purchases would be stored for reporting, but would not influence the recommendations shown.",
         "I would use TensorFlow to train a recommendation model using customer interactions and product information. The model would learn customer preferences and predict which products are most relevant to each user."
@@ -50,10 +50,10 @@
       "stem": "What happens internally when you create a `Sequential` model, add `Dense` layers, specify an activation function, select an optimizer, and call `model.fit()`?",
       "tag": "Layer 3 — Code Explanation",
       "options": [
-        "`Sequential` connects the layers in order, but `Dense` layers mainly copy input values. During `fit()`, TensorFlow tests a fixed network and updates the activation function rather than its learned weights.",
-        "`Sequential` builds an ordered network and activation functions adjust outputs, but `model.fit()` only creates predictions. The optimizer calculates losses separately after training and does not change the model parameters.",
+        "`Sequential` connects the layers in order, but `Dense` layers mainly copy input values. During `fit()`, TensorFlow tests a fixed network and updates the activation function rather than its learned weights. The same fixed values remain after each training pass.",
+        "`Sequential` builds an ordered network and activation functions adjust outputs, but `model.fit()` only creates predictions. The optimizer calculates losses separately after training and does not change the model parameters. Instead it retains the same parameters for the next batch.",
         "`Sequential` connects layers in order, `Dense` layers perform weighted calculations, and activation functions introduce nonlinearity. During `fit()`, TensorFlow calculates predictions, measures loss, computes gradients, and updates model weights using the optimizer.",
-        "`Sequential` arranges layers and `Dense` units compute weights, but `fit()` adjusts parameters using random changes. The loss function is measured only after the training phase has already finished."
+        "`Sequential` arranges layers and `Dense` units compute weights, but `fit()` adjusts parameters using random changes. The loss function is measured only after the training phase has already finished. It therefore ignores the feedback that should improve earlier layers."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> `Sequential` connects layers in order, `Dense` layers perform weighted calculations, and activation functions introduce nonlinearity. During `fit()`, TensorFlow calculates predictions, measures loss, computes gradients, and updates model weights using the optimizer.",
@@ -65,7 +65,7 @@
       "options": [
         "TensorFlow uses tensors to store numerical data and operations to calculate predictions and loss. Automatic differentiation computes gradients, while execution graphs can optimize operations across CPUs and GPUs. Optimizers use gradients to update weights.",
         "TensorFlow stores data in tensors and evaluates predictions, but it estimates weight changes by manually testing every possible parameter value. Computation graphs simply display the results and do not aid execution.",
-        "TensorFlow stores numerical arrays as tensors and runs operations on CPUs or GPUs, but gradients must always be derived by hand. The execution graph cannot optimize training operations or coordinate devices.",
+        "TensorFlow stores numerical arrays as tensors and runs operations on CPUs or GPUs, but gradients must always be derived by hand. The execution graph cannot optimize training operations or coordinate devices. Instead it depends on a fixed update schedule that cannot follow the measured loss.",
         "TensorFlow uses tensors and computation graphs to execute model operations, but GPUs calculate the loss while CPUs always update the weights. Automatic differentiation is used only when the model makes final predictions."
       ],
       "answer": "a",
@@ -91,7 +91,7 @@
       "options": [
         "TensorFlow is mainly a storage system for image tensors and product catalogs. It prepares numerical inputs for other training libraries, while GPU acceleration and automatic differentiation are handled outside the framework.",
         "TensorFlow is a Machine Learning framework that uses tensors and mathematical operations to build neural networks. It supports automatic differentiation, model training, GPU acceleration, and deployment for applications such as image recognition and recommendation systems.",
-        "TensorFlow is a Machine Learning framework built around tensors and neural networks, but its main operation is fixed-weight inference. Learning gradients and updating neural network parameters require a separate training engine.",
+        "TensorFlow is a Machine Learning framework built around tensors and neural networks, but its main operation is fixed-weight inference. Learning gradients and updating neural network parameters require a separate training engine. Network weights are loaded from an external tool.",
         "TensorFlow organizes neural networks using mathematical operations, but it runs model calculations on CPUs only. Its primary use is academic experimentation because production prediction services are not part of its ecosystem."
       ],
       "answer": "b",
@@ -116,7 +116,7 @@
       "tag": "Layer 8 — Advanced Follow-Up",
       "options": [
         "I would deploy the TensorFlow model using TensorFlow Serving and connect it to Spring Boot through REST APIs. I would manage concurrent requests, version models, monitor latency, and scale serving instances to maintain reliable predictions.",
-        "I would package the trained model as a static file inside a Spring Boot web page and let browsers run every prediction. Production versioning, concurrent requests, and latency metrics would be handled automatically by HTML.",
+        "I would package the trained model as a static file inside a Spring Boot web page and let browsers run every prediction. Production versioning, concurrent requests, and latency metrics would be handled automatically by HTML. for every request, regardless of traffic or load.",
         "I would call a TensorFlow training job through REST for each Spring Boot request so the latest model is always used. Retraining on every request would remove the need for separate serving instances or versions.",
         "I would place one TensorFlow Serving instance behind Spring Boot without any version controls or scaling plan. The service would queue requests indefinitely, so monitoring latency and concurrency would not be necessary."
       ],
