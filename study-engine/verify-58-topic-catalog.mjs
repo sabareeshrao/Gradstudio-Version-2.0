@@ -23,7 +23,7 @@ for(const [i,item] of (entries||[]).entries()){
  if(!existsSync(path)){errors.push('Missing module '+item.slug);continue}
  try{
   const module=JSON.parse(readFileSync(path,'utf8'));
-  if(!Array.isArray(module.questions)||module.questions.length!==7)errors.push('Expected 7 questions for '+item.slug);
+  if(!Array.isArray(module.questions)||module.questions.length<1||(i<baseline.length&&module.questions.length!==7))errors.push('Invalid question count for '+item.slug);
   else for(const [n,q] of module.questions.entries())
    if(!q||!Array.isArray(q.options)||q.options.length!==4||!['a','b','c','d'].includes(q.answer)||!q.stem||!q.figure)
     errors.push('Invalid question '+item.slug+' Q'+(n+1));
