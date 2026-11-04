@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**63 English lesson links · 443 questions · 50 Telugu translations completed · 13 Telugu translations pending**
+**64 English lesson links · 450 questions · 50 Telugu translations completed · 14 Telugu translations pending**
 
-English lesson links 01–63 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–63 remain blank until those translations are published. Lessons 59–63 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
+English lesson links 01–64 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–64 remain blank until those translations are published. Lessons 59–64 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -73,11 +73,12 @@ English lesson links 01–63 are listed below. Telugu translations are available
 | 61 | Model Deployment |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=model-deployment) |
 | 62 | Feature Selection |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=feature-selection) |
 | 63 | TensorFlow |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tensorflow) |
+| 64 | MCP Server |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=mcp-server) |
 
-**New English lessons (59–63):** MLOps, Model Evaluation, Feature Selection and TensorFlow are in the study library index. Model Deployment is accessible by direct link from the Study Engine’s `unlisted` folder. No Telugu HTML translations were found for these five new lessons, so their Telugu cells remain blank.
+**New English lessons (59–64):** MLOps, Model Evaluation, Feature Selection, TensorFlow and MCP Server are in the study library index. Model Deployment is accessible by direct link from the Study Engine’s `unlisted` folder. No Telugu HTML translations were found for these six newer lessons, so their Telugu cells remain blank.
 
 ## Copy-ready HTML URLs
 
 [Copy-ready Telugu URLs for lessons 01–50](COPY_READY_TELUGU_URLS.txt)
 
-Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–63 are pending.
+Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–64 are pending.
