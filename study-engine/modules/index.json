@@ -365,6 +365,12 @@
       "title": "Model Evaluation",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-MODEL-EVALUATION"
+    },
+    {
+      "slug": "tensorflow",
+      "title": "TensorFlow",
+      "domain": "Machine Learning",
+      "catalogId": "PENDING-TENSORFLOW"
     }
   ]
 }
