@@ -9,6 +9,8 @@ The original 58 English topics are preserved, and new AI topics can be published
 - [AI replication playbook](study-engine/AI_REPLICATION_PLAYBOOK.md) and [English editorial rules](study-engine/BEGINNER_ENGLISH_EDITORIAL_RULES.md)
 - [Existing Telugu translations of the first 50 approved topics](Telugu%20Translation/README.md)
 
+- [TensorFlow — 9-question illustrated lesson](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tensorflow) · [module JSON source](study-engine/modules/tensorflow.json)
+
 The canonical manifest is `study-engine/modules/index.json`. Hosted URLs use `?module=<slug>`, without copying the HTML boilerplate into individual pages.
 
 The original model-training template at the root and the entire shared engine are retained unchanged. Redundant standalone HTML demos, retired topics and preview experiments were removed from the working tree, but can be recovered from Git history. Historical `lessons/01-...` to `lessons/10-...` URLs are generated as redirects during deployment to preserve browser bookmarks.
