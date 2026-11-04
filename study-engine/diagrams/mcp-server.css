@@ -1,0 +1,24 @@
+/* MCP Server — compact Data Augmentation-inspired visual lessons.
+ * Purpose-specific SVG drawings; readable captions outside artwork.
+ * Scoped styles preserve the shared Gradstudio 15-theme engine. */
+.mcp-hero,.mcp-fig{font-family:inherit;color:#294d63;min-width:0;max-width:100%;box-sizing:border-box}
+.mcp-hero{padding:clamp(13px,2.1vw,20px);background:linear-gradient(135deg,#f0fbf7,#f7fcfe 65%,#fff9f1);border:1px solid #d3e5e9;border-radius:16px;margin:0 0 19px}
+.mcp-hero h2{font-size:clamp(1.22rem,2.4vw,1.65rem);line-height:1.28;font-weight:830;margin:6px 0;color:#2b5168}
+.mcp-hero>p{font-size:.85rem;color:#557484;line-height:1.53;margin:4px 0 13px}
+.mcp-fig{background:linear-gradient(145deg,#f7fcfe,#fbfcf8);border-radius:13px;padding:clamp(11px,1.7vw,16px)}
+.mcp-kicker{color:#2b887c;text-transform:uppercase;font-weight:830;letter-spacing:.075em;font-size:.67rem;line-height:1.45}
+.mcp-fig h3{color:#2d566f;font-size:clamp(.99rem,1.75vw,1.16rem);line-height:1.29;margin:5px 0 10px;font-weight:795}
+.mcp-art{width:100%;max-width:100%;min-width:0;overflow:hidden;border-radius:10px;background:#f8fcfd;border:1px solid #dbe8ec}
+.mcp-art>svg{display:block;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.mcp-caption{font-size:.8rem!important;color:#587583!important;line-height:1.54!important;margin:9px 0 0!important}
+.mcp-hero svg,.mcp-fig svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(>.mcp-fig){padding:0;border:0;background:transparent;margin-bottom:13px}
+/* Current SDK code snippets: do not inherit light theme's inline-code backgrounds. */
+.mcp-code{margin-top:11px;min-width:0;max-width:100%;border-radius:11px;overflow:hidden;border:1px solid #3d566c;background:#162b3b}
+.mcp-code-title{background:#294357;color:#f1f9ff;padding:8px 13px;font-weight:760;font-size:.77rem;display:flex;gap:10px;justify-content:space-between}
+.mcp-code-title span{color:#c5dbe9;font-weight:560}
+.mcp-fig .mcp-code pre{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:0;padding:13px 15px;white-space:pre;tab-size:4;background:#162b3b!important;color:#f2f8ff!important;font:500 13px/1.56 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;letter-spacing:0}
+.mcp-fig .mcp-code pre code{display:block;width:max-content;min-width:100%;margin:0;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#f2f8ff!important;font:inherit!important;white-space:pre!important}
+.mcp-code-note{color:#d7e7f0;background:#20384b;font-size:.74rem;line-height:1.5;margin:0;padding:8px 12px}
+@media(max-width:440px){.mcp-hero,.mcp-fig{padding:10px;border-radius:11px}.mcp-fig h3{font-size:1rem;margin-bottom:7px}.mcp-kicker{font-size:.61rem}.mcp-caption{font-size:.78rem!important}.mcp-fig .mcp-code pre{font-size:12px!important;padding:11px}}
+@media(prefers-reduced-motion:reduce){.mcp-hero *,.mcp-fig *{animation:none!important;transition:none!important}}
