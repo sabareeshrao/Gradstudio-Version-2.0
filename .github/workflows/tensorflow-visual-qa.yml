@@ -1,0 +1,30 @@
+name: TensorFlow Visual and Offline HTML QA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'study-engine/tensorflow-standalone.html'
+      - 'study-engine/modules/tensorflow.json'
+      - 'study-engine/diagrams/tensorflow.css'
+      - 'study-engine/verify-tensorflow-visual.mjs'
+      - '.github/workflows/tensorflow-visual-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  visual-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright
+      - run: npx playwright install chromium --with-deps
+      - run: node study-engine/verify-tensorflow-visual.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tensorflow-diagram-screenshots
+          path: tensorflow-visual-qa/
+          retention-days: 7
