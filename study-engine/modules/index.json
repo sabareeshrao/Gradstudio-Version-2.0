@@ -371,6 +371,12 @@
       "title": "TensorFlow",
       "domain": "Machine Learning",
       "catalogId": "PENDING-TENSORFLOW"
+    },
+    {
+      "slug": "mcp-server",
+      "title": "MCP Server",
+      "domain": "Agentic AI",
+      "catalogId": "PENDING-MCP-SERVER"
     }
   ]
 }
