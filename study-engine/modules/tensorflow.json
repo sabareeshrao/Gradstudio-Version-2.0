@@ -50,10 +50,10 @@
       "stem": "What happens internally when you create a `Sequential` model, add `Dense` layers, specify an activation function, select an optimizer, and call `model.fit()`?",
       "tag": "Layer 3 — Code Explanation",
       "options": [
-        "`Sequential` arranges `Dense` layers in order and activations adjust their outputs, but `fit()` updates the weights directly from predictions before calculating loss or gradients, even when prediction errors are significant.",
-        "`Sequential` chains `Dense` operations and activation functions can add nonlinearity, but during `fit()` the optimizer selects a layer arrangement and leaves numerical weights fixed throughout subsequent training epochs.",
+        "`Sequential` arranges `Dense` layers in order and activations adjust their outputs, but `fit()` updates the weights directly from predictions before calculating loss or gradients, even when prediction errors are significant, without differentiating how each layer contributed.",
+        "`Sequential` chains `Dense` operations and activation functions can add nonlinearity, but during `fit()` the optimizer selects a layer arrangement and leaves numerical weights fixed throughout later training epochs and backpropagation steps.",
         "`Sequential` connects layers in order, `Dense` layers perform weighted calculations, and activation functions introduce nonlinearity. During `fit()`, TensorFlow calculates predictions, measures loss, computes gradients, and updates model weights using the optimizer.",
-        "`Sequential` arranges layers and activations produce outputs, while `fit()` measures the loss and adjusts the original training inputs rather than computing gradients and updating the model's trainable weights over successive batches."
+        "`Sequential` arranges layers and activations produce outputs, while `fit()` measures the loss and adjusts the original training inputs rather than computing gradients and updating the model's trainable weights over successive batches and optimization iterations."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> `Sequential` connects layers in order. `Dense` layers calculate weighted sums plus biases, and nonlinear activations enable more complex patterns. During `fit()`, the model predicts, measures loss against targets, computes gradients through automatic differentiation, and lets the optimizer update trainable weights. For example, a greenhouse temperature model can gradually lower prediction error as it learns from sensor readings. A training step adjusts learned parameters; it does not simply rearrange the layers or edit the original input records.",
@@ -64,9 +64,9 @@
       "tag": "Layer 4 — Internal Working",
       "options": [
         "TensorFlow uses tensors to store numerical data and operations to calculate predictions and loss. Automatic differentiation computes gradients, while execution graphs can optimize operations across CPUs and GPUs. Optimizers use gradients to update weights.",
-        "TensorFlow stores data in tensors and computes predictions, but gradients come from comparing complete training runs rather than differentiating operations, so optimizer updates do not follow the derivatives of a loss function.",
-        "TensorFlow represents numerical tensors and performs forward calculations on CPUs or GPUs, but its optimizer updates weights directly from loss values without gradients, while graph execution offers no operation scheduling benefits.",
-        "TensorFlow uses tensors and execution graphs for computing predictions and losses, but every operation must be compiled into a fixed static graph before eager execution or automatic differentiation can run on a CPU."
+        "TensorFlow stores data in tensors and computes predictions, but gradients come from comparing complete training runs rather than differentiating operations, so optimizer updates do not follow derivatives of the loss through differentiable tensor operations.",
+        "TensorFlow represents numerical tensors and performs forward calculations on CPUs or GPUs, but its optimizer updates weights directly from loss values without gradients, while graph execution offers no optimization or scheduling benefits for repeated tensor operations.",
+        "TensorFlow uses tensors and execution graphs for computing predictions and losses, but every operation must be compiled into a fixed static graph before eager execution or automatic differentiation can run on a CPU during nested differentiable neural-network calculations."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> TensorFlow uses tensors for numerical data and operations to calculate forward predictions and loss. Automatic differentiation, commonly with `tf.GradientTape`, computes gradients of the loss with respect to trainable variables. The optimizer uses these gradients to update weights. TensorFlow 2 normally runs operations eagerly; `tf.function` can create graphs to optimize execution. Eligible operations can run on CPUs or GPUs. For example, GPU matrix calculations may speed up training an image classifier without changing what the model should predict.",
@@ -89,10 +89,10 @@
       "stem": "How would you explain TensorFlow to an interviewer, including its architecture, tensors, neural networks, training process, GPU acceleration, and real-world applications?",
       "tag": "Layer 6 — Interview Explanation",
       "options": [
-        "TensorFlow is a framework using tensors and neural networks, but each layer needs manually written gradient formulas, while GPU execution mainly stores training examples rather than accelerating mathematical operations used during learning.",
+        "TensorFlow is a framework using tensors and neural networks, but each layer needs manually written gradient formulas, while GPU execution mainly stores training examples rather than accelerating mathematical operations used during learning, even for models containing multiple differentiable neural-network layers.",
         "TensorFlow is a Machine Learning framework that uses tensors and mathematical operations to build neural networks. It supports automatic differentiation, model training, GPU acceleration, and deployment for applications such as image recognition and recommendation systems.",
-        "TensorFlow offers layers and tensors for models, but neural-network training repeatedly applies fixed rules instead of updating learned weights, and developers must implement all gradient calculations separately outside the runtime.",
-        "TensorFlow runs tensor operations, supports training with computed gradients, and deploys neural networks, but GPU execution and production inference require translating a trained network into another Machine Learning framework before applications can use it."
+        "TensorFlow offers layers and tensors for models, but neural-network training repeatedly applies fixed rules instead of updating learned weights, and developers must implement all gradient calculations separately outside the runtime, without built-in reverse-mode automatic differentiation support.",
+        "TensorFlow runs tensor operations, supports training with computed gradients, and deploys neural networks, but GPU execution and production inference require translating a trained network into another Machine Learning framework before applications can use it for new image-recognition and recommendation predictions."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> TensorFlow is a Machine Learning framework that operates on numerical tensors and supports neural networks. Keras provides model-building layers, while TensorFlow executes forward computation, differentiates losses, and applies optimizer updates; eligible workloads can use GPUs. Trained models can be deployed for inference. As an interview example, a factory can train a computer-vision model to detect defective parts on an assembly line. Explain that GPU acceleration improves suitable calculations, not predictive accuracy automatically.",
@@ -102,10 +102,10 @@
       "stem": "What are the most important TensorFlow concepts to remember, including tensors, Keras, layers, activation functions, loss functions, optimizers, gradients, epochs, and inference?",
       "tag": "Layer 7 — Key Takeaways",
       "options": [
-        "Tensors store data and Keras defines layers, but activation functions calculate loss, optimizers provide training labels, gradients count epochs, and inference updates a model's weights whenever it produces predictions.",
-        "Keras creates TensorFlow models and layers process inputs, while gradients represent accuracy, loss functions update weights directly, epochs count prediction requests, and inference repeats training on each new input.",
+        "Tensors store data and Keras defines layers, but activation functions calculate loss, optimizers provide training labels, gradients count epochs, and inference updates a model's weights whenever it generates a new prediction request.",
+        "Keras creates TensorFlow models and layers process inputs, while gradients represent accuracy, loss functions update weights directly, epochs count prediction requests, and inference repeats training on each new incoming inference request.",
         "Tensors store data, Keras builds models, layers process inputs, and activation functions introduce nonlinearity. Loss measures errors, gradients guide optimizers, epochs represent training passes, and inference generates predictions.",
-        "Tensors and Keras organize networks, but layers only store data, activation functions update model weights, and each epoch is one gradient calculation; inference routinely refits the network before making predictions."
+        "Tensors and Keras organize networks, but layers only store data, activation functions update model weights, and each epoch is one gradient calculation; inference routinely refits the network before making predictions, regardless of training state."
       ],
       "answer": "c",
       "explanation": "<strong>Explanation:</strong> Tensors contain numerical data, Keras defines the model, layers process inputs, and activation functions introduce nonlinearity. Loss measures prediction error, gradients show how trainable weights affect loss, and optimizers update those weights. An epoch is one full pass through the training examples. Inference uses the learned parameters to predict without retraining each time. For example, a speech-command classifier may train through several epochs of labeled recordings, then identify a new spoken instruction during normal use.",
@@ -116,9 +116,9 @@
       "tag": "Layer 8 — Advanced Follow-Up",
       "options": [
         "I would deploy the TensorFlow model using TensorFlow Serving and connect it to Spring Boot through REST APIs. I would manage concurrent requests, version models, monitor latency, and scale serving instances to maintain reliable predictions.",
-        "I would expose TensorFlow Serving through a Spring Boot REST endpoint, but send incoming application objects without matching the exported model's input signature and accept HTTP success as proof that predictions are semantically correct.",
-        "I would run TensorFlow Serving behind a Spring Boot API and track latency, but let every concurrent request reload and retrain the entire model before responding, replacing explicit version management with per-request learning.",
-        "I would connect Spring Boot to TensorFlow Serving over REST, but publish new weights directly into active requests and rely on added replicas instead of using controlled model versions, monitoring, and rollback support."
+        "I would expose TensorFlow Serving through a Spring Boot REST endpoint, but send incoming application objects without matching the exported model's input signature and accept HTTP success as proof that predictions are semantically correct or well-calibrated.",
+        "I would run TensorFlow Serving behind a Spring Boot API and track latency, but let every concurrent request reload and retrain the entire model before responding, replacing explicit version management with per-request learning and shared inference.",
+        "I would connect Spring Boot to TensorFlow Serving over REST, but publish new weights directly into active requests and rely on added replicas instead of using controlled model versions, monitoring, and rollback support during concurrent traffic."
       ],
       "answer": "a",
       "explanation": "<strong>Explanation:</strong> Export a trained TensorFlow model with a suitable serving signature, load a specific version into TensorFlow Serving, and call its prediction REST endpoint from Spring Boot. Match the request JSON to the model's expected tensors, use timeouts and reusable HTTP clients, and monitor error rates and latency. Multiple serving replicas handle greater concurrency; versioned releases support controlled rollout and rollback. For example, a warehouse inventory API may send demand features from Spring Boot to TensorFlow Serving and return a forecast.",
