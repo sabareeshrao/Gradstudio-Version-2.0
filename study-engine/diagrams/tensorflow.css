@@ -1,33 +1,16 @@
-/* TensorFlow · Data Augmentation reference, compact and mobile-safe.
-   One accessible SVG per card; captions explain details at readable HTML text size. */
-.tf-hero,.tf-fig{font-family:inherit;min-width:0;max-width:100%;box-sizing:border-box;color:#2c546b}
-.tf-hero{padding:clamp(13px,2.2vw,21px);background:linear-gradient(130deg,#effaf5,#f6fbfe 57%,#fff9ef);border:1px solid #cfe2e6;border-radius:17px;margin:0 0 21px}
-.tf-hero h2{font-size:clamp(1.25rem,2.3vw,1.67rem);color:#2c526a;line-height:1.28;margin:6px 0}
-.tf-hero>p{font-size:.86rem;color:#5b7483;line-height:1.55;margin:4px 0 13px}
-.tf-fig{padding:clamp(11px,1.65vw,17px);background:linear-gradient(135deg,#f7fcfe,#fbfcf9);border-radius:14px}
-.tf-kicker{font-size:.68rem;font-weight:830;letter-spacing:.09em;text-transform:uppercase;color:#33867b}
-.tf-fig h3{font-size:clamp(1.01rem,1.7vw,1.18rem);line-height:1.28;font-weight:800;color:#2f586f;margin:5px 0 10px}
-.tf-art{display:block;max-width:100%;min-width:0;overflow:hidden;border-radius:11px;border:1px solid #d6e6e9;background:#f8fcfd}
-.tf-art>svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
-.tf-note{font-size:.82rem;line-height:1.54;color:#597687;margin:10px 0 0}
-.q-fig:has(> .tf-fig){padding:0;border:0;background:transparent;margin-bottom:15px}
-.tf-hero svg,.tf-fig svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-.tf-code-wrap{margin-top:12px;max-width:100%;min-width:0;border-radius:11px;overflow:hidden;background:#162b3b;border:1px solid #3c586a;box-shadow:0 4px 16px #1b324319}
-.tf-code-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#2a4255;color:#eaf5ff;padding:8px 13px;font-weight:740;font-size:.76rem;letter-spacing:.025em}
-.tf-code-heading small{color:#cbdce9;font-weight:580}
-.tf-fig .tf-code-wrap pre{display:block;max-width:100%;margin:0;padding:13px 15px;white-space:pre;tab-size:4;overflow-x:auto;overflow-y:hidden;scrollbar-color:#6f91a7 #162b3b;background:#162b3b!important;color:#f4f9ff!important;font:500 13px/1.58 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;letter-spacing:0}
-.tf-fig .tf-code-wrap pre code{display:block;width:max-content;min-width:100%;margin:0;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:#f4f9ff!important;box-shadow:none!important;font:inherit!important;line-height:inherit!important;white-space:pre!important;text-decoration:none!important}
-.tf-fig .tf-code-wrap pre code .tf-kw{color:#c5a7fa}
-.tf-fig .tf-code-wrap pre code .tf-fn{color:#9fe5fd}
-.tf-fig .tf-code-wrap pre code .tf-str{color:#f5c68c}
-.tf-code-note{padding:8px 12px;background:#1e3548;color:#d2e8f2;font-size:.73rem;line-height:1.48}
-@media(max-width:440px){
- .tf-hero,.tf-fig{padding:10px;border-radius:12px}
- .tf-fig h3{font-size:.99rem;margin:5px 0 7px}
- .tf-hero h2{font-size:1.25rem}
- .tf-kicker{font-size:.63rem}
- .tf-note{font-size:.79rem}
- .tf-fig .tf-code-wrap pre{font-size:12px!important;padding:12px}
- .tf-code-heading{font-size:.72rem}
-}
-@media(prefers-reduced-motion:reduce){.tf-hero *, .tf-fig *{animation:none!important;transition:none!important}}
+/* TensorFlow bespoke visual lessons — scoped to the new module */
+.tf-hero,.tf-figure{box-sizing:border-box;border:1px solid rgba(102,153,176,.25);border-radius:17px;overflow:hidden;background:linear-gradient(145deg,rgba(246,251,255,.95),rgba(238,249,245,.97));color:#25475b;margin:20px 0}
+.tf-hero{padding:clamp(14px,2.5vw,27px)}
+.tf-hero h2{font-size:clamp(22px,3vw,32px);line-height:1.18;letter-spacing:-.02em;margin:9px 0 8px;color:#244356}
+.tf-hero>p{max-width:760px;line-height:1.57;color:#4a677a}
+.tf-kicker{font-size:11px;font-weight:900;letter-spacing:.14em;color:#168d81}
+.tf-fig-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:16px 20px 0;color:#294b60}
+.tf-fig-head span{font-size:10px;letter-spacing:.11em;font-weight:900;color:#248d8a}
+.tf-fig-head strong{font-size:17px;letter-spacing:-.01em}
+.tf-art{width:100%;margin:12px auto 4px;overflow:hidden}
+.tf-art svg{width:100%;height:auto;display:block;max-width:760px;margin:auto;overflow:visible}
+.tf-hero .tf-art{max-width:760px}
+.tf-caption{font-size:13px;line-height:1.55;color:#4d6b7d;margin:0;padding:8px 18px 16px}
+.tf-hero .tf-caption{padding:8px 0 3px}
+@media(max-width:600px){.tf-hero{padding:13px}.tf-fig-head{padding:14px 12px 0;gap:5px}.tf-fig-head strong{width:100%;font-size:15px}.tf-art{margin:8px 0 0}.tf-caption{padding:7px 12px 13px;font-size:12px}.tf-hero .tf-caption{padding:7px 0 0}}
+@media(prefers-reduced-motion:reduce){.tf-art svg *{animation:none!important;transition:none!important}}
