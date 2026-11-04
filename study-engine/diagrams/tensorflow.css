@@ -14,3 +14,18 @@
 .tf-hero .tf-caption{padding:8px 0 3px}
 @media(max-width:600px){.tf-hero{padding:13px}.tf-fig-head{padding:14px 12px 0;gap:5px}.tf-fig-head strong{width:100%;font-size:15px}.tf-art{margin:8px 0 0}.tf-caption{padding:7px 12px 13px;font-size:12px}.tf-hero .tf-caption{padding:7px 0 0}}
 @media(prefers-reduced-motion:reduce){.tf-art svg *{animation:none!important;transition:none!important}}
+
+/* TensorFlow code panels: always readable, even when the shared theme styles code. */
+.tf-figure .tf-code-wrap{margin:10px 16px 12px;min-width:0;max-width:calc(100% - 32px);overflow:hidden;background:#162b3b;border:1px solid #405a70;border-radius:11px}
+.tf-figure .tf-code-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#2a4255;color:#f3f9fc;padding:8px 12px;font-size:.77rem;font-weight:760}
+.tf-figure .tf-code-heading small{color:#c9deeb;font-size:.73rem;font-weight:520}
+.tf-figure .tf-code-wrap pre{margin:0;padding:13px 15px;display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:pre;tab-size:4;background:#162b3b!important;color:#f4f9ff!important;font:500 13px/1.57 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;letter-spacing:0}
+.tf-figure .tf-code-wrap pre code{display:block;width:max-content;min-width:100%;margin:0;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#f4f9ff!important;font:inherit!important;white-space:pre!important}
+.tf-figure .tf-code-note{margin:0;padding:8px 12px;color:#d7e6f0;background:#21394b;font-size:.73rem;line-height:1.5}
+.tf-figure{margin:12px 0;border-radius:14px}
+.tf-figure .tf-art svg{min-width:0;max-width:100%;height:auto;overflow:visible}
+@media(max-width:600px){
+ .tf-figure .tf-code-wrap{margin:9px 10px 10px;max-width:calc(100% - 20px)}
+ .tf-figure .tf-code-wrap pre{font-size:12px!important;padding:11px}
+ .tf-figure .tf-code-heading{font-size:.73rem}
+}
