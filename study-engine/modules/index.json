@@ -383,6 +383,12 @@
       "title": "RMSNorm",
       "domain": "Transformers and LLM Architecture",
       "catalogId": "PENDING-RMSNORM"
+    },
+    {
+      "slug": "batch-normalization",
+      "title": "Batch Normalization",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "PENDING-BATCH-NORMALIZATION"
     }
   ]
 }
