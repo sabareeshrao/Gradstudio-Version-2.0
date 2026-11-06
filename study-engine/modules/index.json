@@ -743,6 +743,12 @@
       "title": "Q-Learning",
       "domain": "Reinforcement Learning",
       "catalogId": "PENDING-Q-LEARNING"
+    },
+    {
+      "slug": "deep-q-network",
+      "title": "Deep Q-Network (DQN)",
+      "domain": "Reinforcement Learning",
+      "catalogId": "PENDING-DEEP-Q-NETWORK"
     }
   ]
 }
