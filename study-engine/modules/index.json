@@ -557,6 +557,12 @@
       "title": "Precision Score",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-PRECISION-SCORE"
+    },
+    {
+      "slug": "image-classification",
+      "title": "Image Classification",
+      "domain": "Computer Vision",
+      "catalogId": "PENDING-IMAGE-CLASSIFICATION"
     }
   ]
 }
