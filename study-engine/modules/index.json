@@ -413,6 +413,12 @@
       "title": "Weight Decay",
       "domain": "Optimization",
       "catalogId": "PENDING-WEIGHT-DECAY"
+    },
+    {
+      "slug": "early-stopping",
+      "title": "Early Stopping",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "PENDING-EARLY-STOPPING"
     }
   ]
 }
