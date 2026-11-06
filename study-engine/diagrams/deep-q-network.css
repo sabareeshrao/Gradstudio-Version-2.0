@@ -1,0 +1,30 @@
+/* Deep Q-Network (DQN) • Gradstudio Data Augmentation reference.
+   Scoped SVG diagrams and high-contrast Python; common study engine and themes unchanged. */
+.dqn-hero,.dqn-figure{box-sizing:border-box;min-width:0;max-width:100%;font-family:inherit;color:#31576b}
+.dqn-hero{margin:0 0 23px;padding:clamp(15px,2.7vw,29px);border:1px solid #cbdfe7;border-radius:19px;background:radial-gradient(ellipse at 12% 0%,#def6eb,transparent 43%),linear-gradient(145deg,#f4fbff,#fff9ec);box-shadow:0 9px 25px #2c506812}
+.dqn-kicker{display:block;color:#248d7b;font-size:.72rem;font-weight:900;letter-spacing:.105em;line-height:1.5;text-transform:uppercase}
+.dqn-hero h2{font-size:clamp(1.25rem,2.7vw,1.86rem);line-height:1.27;letter-spacing:-.021em;color:#29586e;margin:8px 0}
+.dqn-hero>p{font-size:.86rem;line-height:1.61;color:#5c7a88;margin:0 0 14px;max-width:80ch}
+.dqn-figure{padding:clamp(12px,2.35vw,24px);border-radius:16px;background:radial-gradient(ellipse at 96% 0%,#e0f6ec,transparent 48%),linear-gradient(144deg,#f8fcff,#fff9f0)}
+.dqn-figure h3{margin:5px 0 13px;font-size:clamp(1.04rem,1.93vw,1.29rem);font-weight:840;line-height:1.35;color:#2c5b70}
+.dqn-art{display:block;overflow:hidden;max-width:100%;min-width:0;border:1px solid #d7e7ed;border-radius:13px;background:#f9fcfe}
+.dqn-art svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;text-rendering:geometricPrecision;shape-rendering:geometricPrecision}
+.dqn-hero svg,.dqn-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.dqn-note{font-size:.8rem!important;line-height:1.62!important;color:#567587!important;margin:11px 0 0!important}
+.q-fig:has(>.dqn-figure){padding:0!important;border:0!important;background:transparent!important;margin-bottom:14px}
+.dqn-tags{display:flex;flex-wrap:wrap;gap:8px;margin:11px 0 0}
+.dqn-tags span{font-size:.73rem;color:#476c7b;background:#fff;border:1px solid #d6e6eb;border-radius:100px;padding:5px 10px;font-weight:770}
+.dqn-pair,.dqn-triplet{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.dqn-triplet{grid-template-columns:repeat(3,minmax(0,1fr))}
+.dqn-pair>div,.dqn-triplet>div{border:1px solid #d7e7eb;border-radius:10px;background:#fff;color:#597989;padding:10px;min-width:0;font-size:.76rem;line-height:1.56}
+.dqn-pair strong,.dqn-triplet strong{display:block;color:#2d6676;margin-bottom:5px;font-size:.82rem}
+.dqn-code{margin:13px 0 0;border:1px solid #365468;border-radius:12px;background:#172b3b;min-width:0;max-width:100%;overflow:hidden}
+.dqn-code-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:7px;padding:9px 13px;background:#29495b;color:#f1f9ff;font-size:.77rem;font-weight:850}
+.dqn-code-head small{font-size:.71rem;color:#c8dfe9;font-weight:520}
+.dqn-figure .dqn-code pre{display:block;min-width:0;max-width:100%;margin:0;padding:14px 15px;background:#172b3b!important;color:#f3f9ff!important;white-space:pre!important;tab-size:4;overflow-x:auto!important;overflow-y:hidden;font:500 12.5px/1.63 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.dqn-figure .dqn-code pre code{display:block!important;width:max-content!important;min-width:100%!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#f3f9ff!important;white-space:pre!important;font:inherit!important;line-height:inherit!important}
+.dqn-code-foot{padding:9px 13px;color:#dbeaf3;background:#29495b;font-size:.74rem;line-height:1.57}
+.dqn-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+@media(max-width:790px){.dqn-triplet{grid-template-columns:1fr}}
+@media(max-width:610px){.dqn-hero,.dqn-figure{padding:11px;border-radius:12px}.dqn-pair{grid-template-columns:1fr}.dqn-figure .dqn-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.dqn-hero *,.dqn-figure *{transition:none!important;animation:none!important}}
