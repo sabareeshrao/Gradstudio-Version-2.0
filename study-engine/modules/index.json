@@ -713,6 +713,12 @@
       "title": "Latent Diffusion Model (LDM)",
       "domain": "Generative Modeling",
       "catalogId": "PENDING-LATENT-DIFFUSION-MODEL"
+    },
+    {
+      "slug": "zero-shot-prompting",
+      "title": "Zero-shot Prompting",
+      "domain": "Prompt Engineering",
+      "catalogId": "PENDING-ZERO-SHOT-PROMPTING"
     }
   ]
 }
