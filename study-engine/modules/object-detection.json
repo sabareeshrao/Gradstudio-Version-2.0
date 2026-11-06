@@ -40,7 +40,7 @@
       "tag": "Beginner · IoU geometry",
       "answer": "a",
       "options": [
-        "IoU measures the overlapping area of two boxes divided by their combined area without double-counting overlap. It shows how closely a predicted box matches an annotated object and helps decide whether detections qualify as matches.",
+        "IoU is shared box area divided by the total area covered by both boxes. It measures how well a predicted box fits the actual object, helping decide whether a detection counts as a match.",
         "IoU measures the overlap area divided by the predicted box's area, regardless of the annotation's size. A box fully inside a much larger labeled object can therefore receive a perfect overlap score.",
         "IoU measures the overlap between two boxes divided by the area of their smallest enclosing rectangle. It treats the empty corners within that rectangle as part of the union even when neither box covers them.",
         "IoU measures how close the centers of two boxes are and converts that distance to a percentage. Two boxes can earn a high score whenever their centers match, even if their widths differ greatly."
@@ -69,7 +69,7 @@
       "answer": "b",
       "options": [
         "Compute the overlap of two boxes and rank detections by confidence, then remove the highest-scoring box whenever its overlap exceeds the threshold. This leaves the weaker duplicate proposals and discards the strongest candidate first.",
-        "Calculate intersection and union areas for boxes in a consistent coordinate format, then sort detections by confidence. Keep a high-scoring box and suppress lower-scoring boxes with excessive IoU; use class-aware grouping when classes differ.",
+        "Calculate intersection and union areas for boxes in the same coordinate format, then divide them to get IoU. Apply NMS by confidence order, suppressing lower-scoring boxes with IoU above a chosen threshold.",
         "Compute intersection over union by dividing the shared area by the smaller box's area, then remove predictions with the least overlap. This method treats well-separated objects as duplicates and keeps heavily overlapping proposals.",
         "Calculate standard IoU for predicted boxes, but run suppression in the order the detections were generated rather than by confidence. A weaker duplicate may remain while the stronger box is removed, even if both identify the same object."
       ],
