@@ -1,0 +1,22 @@
+/* Concept Drift Monitoring · Data Augmentation Sky visual standard and responsive teaching figures. */
+.cdm-hero,.cdm-figure{color:#294f65;font-family:inherit;min-width:0;max-width:100%;box-sizing:border-box}
+.cdm-hero{background:radial-gradient(ellipse at 14% 0%,#e1f7ef,transparent 47%),linear-gradient(145deg,#f5fbfe,#fff9ef);padding:clamp(16px,2.8vw,30px);margin:0 0 23px;border:1px solid #cddfe7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
+.cdm-hero h2{font-size:clamp(1.25rem,2.8vw,1.85rem);margin:9px 0;line-height:1.24;color:#2d596c}
+.cdm-kicker{display:block;color:#278577;font-size:.73rem;letter-spacing:.11em;text-transform:uppercase;font-weight:850}
+.cdm-hero p,.cdm-figure p{font-size:.88rem;color:#5b7887;line-height:1.65}
+.cdm-figure{background:radial-gradient(ellipse at 95% 0%,#e5f8ee,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);padding:clamp(12px,2.4vw,24px);border-radius:16px;margin:0}
+.cdm-art{display:block;max-width:100%;min-width:0;overflow:hidden;background:#f8fcfd;border-radius:13px;border:1px solid #d6e6eb}
+.cdm-art>svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.cdm-hero svg,.cdm-figure svg{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.cdm-figure .cdm-kicker{margin:0 0 8px}
+.cdm-note{font-size:.81rem;color:#607d8c;margin:13px 0 0;line-height:1.62}
+.q-fig:has(>.cdm-figure){border:0;background:transparent}
+.cdm-code{background:#1e1e1e;color:#eaf6ff;border:1px solid #38566b;border-radius:12px;max-width:100%;min-width:0;overflow:hidden;margin-top:15px}
+.cdm-code-top{padding:10px 15px;background:#2c4154;color:#ecf6ff;font:700 .79rem/1.45 system-ui,sans-serif}
+.cdm-code pre{display:block;margin:0;padding:16px;max-width:100%;min-width:0;overflow-x:auto;overflow-y:visible;background:#1e1e1e!important;color:#eaf6ff!important;white-space:pre;tab-size:4;font:500 12px/1.7 ui-monospace,Consolas,monospace}
+.cdm-code pre code{display:block;width:max-content;min-width:100%;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#eaf6ff!important;white-space:pre;font:inherit!important}
+.cdm-sources{border:1px solid var(--border,#d5e6e9);border-radius:13px;padding:15px 17px;background:var(--card,#fff);margin:20px 0 0}
+.cdm-sources summary{cursor:pointer;font-weight:800}
+.cdm-sources li{margin:7px 0}
+@media(max-width:480px){.cdm-figure{padding:11px}.cdm-code pre{font-size:11px;padding:12px}}
+@media(prefers-reduced-motion:reduce){.cdm-hero *,.cdm-figure *{animation:none!important;transition:none!important}}
