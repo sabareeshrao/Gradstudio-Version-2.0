@@ -13,7 +13,7 @@
         "LLM-as-a-Judge uses a second language model to generate reference answers for each test item. Matching those answers creates an objective result that can replace human review across open-ended tasks.",
         "LLM-as-a-Judge asks a language model to score candidate outputs under instructions. Because it did not write the original response, the evaluator's ratings can be treated as unbiased ground truth.",
         "LLM-as-a-Judge asks the candidate model to grade its own completions for confidence and fluency. The resulting confidence is enough to measure answer quality even when factual checking is unavailable.",
-        "LLM-as-a-Judge uses a language model to score or compare responses against criteria. It can scale qualitative review, but ratings may be biased or mistaken and need validation against human or factual evidence."
+        "LLM-as-a-Judge uses a language model to score or compare answers against stated criteria. This scales review, but ratings can be biased or mistaken and need human or factual checks."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> LLM-as-a-Judge uses one language model to evaluate text produced by another model or system. It can apply rubrics, give scores, choose between answers and provide short rationales, making large-scale reviews more practical. However, fluent explanations are not guarantees of correct grading. In a language-learning chatbot, a judge might quickly assess hundreds of feedback responses, while trained teachers review representative cases and factual mistakes. Human or reference-based checks remain necessary.",
@@ -50,8 +50,8 @@
       "tag": "Medium · Position and style bias",
       "options": [
         "Position bias mainly means the model favors shorter answers placed last; verbosity bias means longer answers are always factually more complete. Giving the judge a detailed score explanation removes both effects.",
-        "Position bias comes from unequal dataset class frequencies, verbosity bias comes from repeated prompt tokens, and self-preference only arises when judges score identical text. Random sampling corrects them automatically.",
-        "Judges may favor a response's display position, length or familiar model style instead of its merits. Swap candidate order, anonymize origins, use criterion-based checks and audit preference consistency against human ratings.",
+        "Position and verbosity biases can influence judgments, so score each response separately and average the ratings. A shared rubric then makes candidate-order swapping and human-preference checks less important.",
+        "Judges may favor a candidate's display position, length or familiar style over its merits. Swap order, anonymize origins, use explicit criteria and audit the resulting preferences against human judgments.",
         "Judges can display position and verbosity bias, but swapping responses after scores are computed is enough to debias results. Model identity and human comparison are unnecessary once both candidates have been graded."
       ],
       "answer": "c",
@@ -65,7 +65,7 @@
         "Compute human agreement on the first displayed ordering, then compare reversed-order verdicts without remapping A and B. A model is consistent when it chooses the same display letter even after the candidates swap positions.",
         "Compare original judge choices with human labels and treat high agreement as proof that display order cannot matter. The reverse-order results should be excluded because they introduce unnecessary duplicate evaluations.",
         "Compare judge reasoning lengths across both orderings and use their similarity as the consistency measure. If explanations are similar, candidate identity does not need to be tracked when computing preference stability.",
-        "Map swapped-order verdicts back to the original candidate identities, then calculate human agreement and same-candidate consistency. These measures can differ, and recorded toy votes can demonstrate the audit without a live LLM call."
+        "Map swapped-order votes back to original candidate identities, then compute human agreement and same-candidate consistency. These rates can differ, as stored toy votes demonstrate without calling a live LLM."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> To audit pairwise results, keep candidate identities stable when you swap their display positions. A judge vote for displayed A after the swap may refer to original candidate B. Compare normalized preferences against human labels, and compare normal versus swapped judgments for order consistency. The runnable Python example uses stored illustrative votes: human agreement is 80% in each ordering, while same-candidate consistency is only 60%. For a résumé-summary evaluator, this catches choices that flip with layout rather than content. The code does not contact a live judge.",
@@ -76,7 +76,7 @@
       "tag": "Advanced · Human calibration",
       "options": [
         "Compare the judge with one human rating per item and label every mismatch as a judge error. This gives an objective gold standard even where multiple reasonable human judgments exist or experts disagree.",
-        "Use diverse human-labeled cases, measure agreement by task and subgroup, and examine human–human disagreement. Adjudicate or allow multiple acceptable ratings for ambiguous items instead of relying only on one aggregate score.",
+        "Use varied human-labeled cases, check agreement by task and subgroup, and inspect human–human disagreement. Resolve ambiguous items with adjudication or multiple acceptable ratings, not just one aggregate score.",
         "Measure the judge's average score and compare it with the human average across the full benchmark. Close aggregate values establish calibration even if the judge disagrees with humans on every individual example.",
         "Use only high-consensus examples for human validation because disagreement would introduce noise. After agreement is high on these easy items, the judge's ratings on disputed or unfamiliar cases need no further checks."
       ],
@@ -88,7 +88,7 @@
       "stem": "How should an LLM-as-a-Judge benchmark defend against prompt injection in candidate answers and maintain reproducibility, privacy, reliability and oversight in production evaluation?",
       "tag": "Advanced · Safety and reproducibility",
       "options": [
-        "Treat candidate answers as untrusted data, keep judge instructions separate, and limit unsafe tool or data access. Version the judge, prompt and rubric; monitor disagreement, costs and changes, with human review for high-stakes cases.",
+        "Treat candidate text as untrusted, separate judge instructions and restrict risky tool access. Version judge, prompt and rubric; monitor disagreement and cost, with human review for consequential cases.",
         "Treat candidate answers as ordinary user instructions because the evaluator must read them fully. Reproducing the judge prompt alone is enough to establish security even if candidates can request secret system details.",
         "Keep the judge model fixed but let each candidate supply its own grading rubric for flexibility. This improves fairness and makes prompt-injection risks negligible when the same model family produces every answer.",
         "Log final scores without the rubric or judge version to protect privacy, then rely on repeated judge votes to resolve disputes. Human oversight is optional even where unsafe or unsupported claims can affect users."
