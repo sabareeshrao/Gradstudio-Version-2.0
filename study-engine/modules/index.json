@@ -395,6 +395,12 @@
       "title": "Dropout",
       "domain": "Deep Learning Foundations",
       "catalogId": "PENDING-DROPOUT"
+    },
+    {
+      "slug": "stochastic-depth",
+      "title": "Stochastic Depth",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "PENDING-STOCHASTIC-DEPTH"
     }
   ]
 }
