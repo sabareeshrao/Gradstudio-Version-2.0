@@ -641,6 +641,12 @@
       "title": "Text-to-Speech (TTS)",
       "domain": "Speech and Audio AI",
       "catalogId": "PENDING-TEXT-TO-SPEECH"
+    },
+    {
+      "slug": "data-drift-monitoring",
+      "title": "Data Drift Monitoring",
+      "domain": "MLOps",
+      "catalogId": "PENDING-DATA-DRIFT-MONITORING"
     }
   ]
 }
