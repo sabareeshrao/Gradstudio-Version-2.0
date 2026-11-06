@@ -659,6 +659,12 @@
       "title": "Text-to-Image Generation",
       "domain": "Generative Modeling",
       "catalogId": "PENDING-TEXT-TO-IMAGE-GENERATION"
+    },
+    {
+      "slug": "benchmark",
+      "title": "Benchmark",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-BENCHMARK"
     }
   ]
 }
