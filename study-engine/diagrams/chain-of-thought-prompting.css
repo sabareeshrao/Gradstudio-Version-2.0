@@ -1,0 +1,22 @@
+/* Chain-of-Thought Prompting · Data Augmentation Sky visual reference. */
+.cot-hero,.cot-figure{font-family:inherit;color:#294f65;min-width:0;max-width:100%;box-sizing:border-box}
+.cot-hero{background:radial-gradient(ellipse at 14% 0%,#e2f7ef,transparent 47%),linear-gradient(145deg,#f5fbfe,#fff9f0);padding:clamp(16px,2.8vw,30px);margin:0 0 23px;border:1px solid #cddfe7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
+.cot-hero h2{font-size:clamp(1.25rem,2.8vw,1.85rem);margin:9px 0;color:#2d596c;line-height:1.25}
+.cot-kicker{display:block;font-size:.73rem;color:#278577;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+.cot-hero p,.cot-figure p{font-size:.87rem;line-height:1.64;color:#5b7b89}
+.cot-figure{background:radial-gradient(ellipse at 95% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);padding:clamp(12px,2.4vw,24px);border-radius:16px;margin:0}
+.cot-art{display:block;max-width:100%;min-width:0;overflow:hidden;border:1px solid #d6e6eb;border-radius:13px;background:#f8fcfd}
+.cot-art>svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.cot-hero svg,.cot-figure svg{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.cot-figure .cot-kicker{margin:0 0 8px}
+.cot-note{font-size:.81rem;color:#607d8c;line-height:1.61;margin:13px 0 0}
+.q-fig:has(>.cot-figure){border:0;background:transparent}
+.cot-code{background:#1e1e1e;color:#ecf7ff;border:1px solid #38566b;border-radius:12px;max-width:100%;min-width:0;overflow:hidden;margin-top:15px}
+.cot-code-head{padding:10px 15px;background:#2c4154;color:#ecf7ff;font:700 .79rem/1.45 system-ui,sans-serif}
+.cot-code pre{display:block;margin:0;padding:16px;max-width:100%;min-width:0;overflow-x:auto;overflow-y:visible;background:#1e1e1e!important;color:#ecf7ff!important;white-space:pre;tab-size:4;font:500 12px/1.7 ui-monospace,Consolas,monospace}
+.cot-code pre code{display:block;width:max-content;min-width:100%;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#ecf7ff!important;font:inherit!important;white-space:pre}
+.cot-sources{margin:19px 0 0;border:1px solid var(--border,#d5e6e9);border-radius:13px;background:var(--card,#fff);padding:15px 17px}
+.cot-sources summary{cursor:pointer;font-weight:800}
+.cot-sources li{margin:7px 0}
+@media(max-width:480px){.cot-figure{padding:11px}.cot-code pre{padding:12px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.cot-hero *,.cot-figure *{animation:none!important;transition:none!important}}
