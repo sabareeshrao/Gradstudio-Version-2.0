@@ -779,6 +779,12 @@
       "title": "Bayesian Inference",
       "domain": "Bayesian and Probabilistic Modeling",
       "catalogId": "PENDING-BAYESIAN-INFERENCE"
+    },
+    {
+      "slug": "bayes-theorem",
+      "title": "Bayes’ Theorem",
+      "domain": "Probability and Statistics",
+      "catalogId": "PENDING-BAYES-THEOREM"
     }
   ]
 }
