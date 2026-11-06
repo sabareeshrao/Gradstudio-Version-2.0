@@ -731,6 +731,12 @@
       "title": "Structured Output",
       "domain": "Prompt Engineering",
       "catalogId": "PENDING-STRUCTURED-OUTPUT"
+    },
+    {
+      "slug": "prompt-chaining",
+      "title": "Prompt Chaining",
+      "domain": "Prompt Engineering",
+      "catalogId": "PENDING-PROMPT-CHAINING"
     }
   ]
 }
