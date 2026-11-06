@@ -437,6 +437,12 @@
       "title": "Loss Landscape",
       "domain": "Optimization",
       "catalogId": "PENDING-LOSS-LANDSCAPE"
+    },
+    {
+      "slug": "flops",
+      "title": "FLOPs",
+      "domain": "Efficient and Edge AI",
+      "catalogId": "PENDING-FLOPS"
     }
   ]
 }
