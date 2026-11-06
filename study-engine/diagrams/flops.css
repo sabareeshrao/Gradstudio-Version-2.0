@@ -1,0 +1,27 @@
+/* FLOPs · compact illustrations for Efficient and Edge AI.
+   Data Augmentation-inspired spacing, single responsive SVG per question,
+   text captions outside artwork, and code that is legible in all themes. */
+.flops-hero,.flops-figure{box-sizing:border-box;min-width:0;max-width:100%;font-family:inherit;color:#2d5268}
+.flops-hero{padding:clamp(12px,2.1vw,20px);margin:0 0 19px;border-radius:16px;border:1px solid #d4e5e8;background:linear-gradient(142deg,#f0faf7,#f8fcff 61%,#fff9ed)}
+.flops-hero h2{font-size:clamp(1.22rem,2.3vw,1.63rem);font-weight:820;line-height:1.3;margin:5px 0;color:#2d536a}
+.flops-hero p{font-size:.84rem;line-height:1.54;color:#5b7786;margin:4px 0 12px}
+.flops-figure{margin:0;padding:clamp(10px,1.65vw,16px);border-radius:13px;background:linear-gradient(145deg,#f7fcfe,#fbfcf8)}
+.flops-eyebrow{font-size:.65rem;font-weight:840;letter-spacing:.08em;text-transform:uppercase;color:#27877b;line-height:1.4}
+.flops-figure h3{font-size:clamp(.99rem,1.7vw,1.14rem);font-weight:810;line-height:1.32;color:#2c576e;margin:5px 0 9px}
+.flops-art{width:100%;max-width:100%;min-width:0;overflow:hidden;border-radius:10px;border:1px solid #d9e7eb;background:#f9fcfd}
+.flops-art>svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.flops-note{font-size:.8rem!important;line-height:1.54!important;color:#5b7785!important;margin:9px 0 0!important}
+.flops-hero svg,.flops-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(>.flops-figure){padding:0;border:0;background:transparent;margin-bottom:13px}
+/* Code uses a dark fully scoped block, overriding light-theme inline code. */
+.flops-code{max-width:100%;min-width:0;overflow:hidden;margin-top:11px;border-radius:11px;background:#1e1e1e;border:1px solid #454f60}
+.flops-code-head{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#2a3039;color:#edf5fc;padding:8px 12px;font-weight:760;font-size:.76rem}
+.flops-code-head small{color:#bbcede;font-weight:540;font-size:.71rem}
+.flops-figure .flops-code pre{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;margin:0;padding:12px 14px;white-space:pre;tab-size:4;background:#1e1e1e!important;color:#e4e4e4!important;font:500 12.5px/1.58 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;letter-spacing:0}
+.flops-figure .flops-code pre code{display:block;width:max-content;min-width:100%;margin:0;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:#e4e4e4!important;box-shadow:none!important;white-space:pre!important;font:inherit!important}
+.flops-figure .flops-code .ln{display:inline-block;min-width:2.4ch;margin-right:1ch;text-align:right;user-select:none;color:#868686!important}
+.flops-figure .flops-code .kw{color:#569cd6}.flops-figure .flops-code .str{color:#ce9178}.flops-figure .flops-code .fn{color:#dcdcaa}.flops-figure .flops-code .num{color:#b5cea8}.flops-figure .flops-code .cm{color:#78b178}
+.flops-code-hint{font-size:.73rem;line-height:1.52;color:#d5e3ed;background:#283545;padding:8px 12px;margin:0}
+.flops-code-hint code{color:#e4e4e4!important;background:#1e1e1e!important;border:0!important;padding:1px 3px!important}
+@media(max-width:440px){.flops-hero,.flops-figure{padding:10px;border-radius:11px}.flops-figure h3{font-size:1rem}.flops-eyebrow{font-size:.61rem}.flops-note{font-size:.77rem!important}.flops-figure .flops-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.flops-hero *,.flops-figure *{animation:none!important;transition:none!important}}
