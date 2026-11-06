@@ -41,7 +41,7 @@
       "answer": "d",
       "options": [
         "NF4 uses a uniform 4-bit integer grid intended for non-normal weights. Double quantization applies the same rounding twice to every weight, increasing precision so the full-size optimizer can train all base parameters.",
-        "NF4 stores four independently quantized redundant copies of each original foundation-model weight to improve numerical reconstruction accuracy. Double quantization then compresses exclusively LoRA gradient information, reducing optimizer bookkeeping rather than the memory occupied by original frozen pretrained parameters.",
+        "NF4 stores four redundant copies of each foundation-model weight to improve high-fidelity reconstruction. Double quantization then compresses LoRA gradient information, reducing optimizer bookkeeping rather than the memory occupied by frozen pretrained parameters.",
         "NF4 is a 4-bit format for training adapter gradients instead of storing base weights. Double quantization permanently quantizes each activation twice, so the model needs no scale metadata or dequantization during computation.",
         "NF4 uses a 4-bit representation designed for approximately normally distributed weights. Double quantization further compresses stored quantization constants, reducing overhead beyond the weight codes. Neither technique means training every frozen base parameter."
       ],
@@ -56,8 +56,8 @@
       "options": [
         "Full fine-tuning updates every base weight, while LoRA trains only adapters. QLoRA differs by updating a 4-bit copy of every base weight instead of adapters, reducing optimizer states without changing the trainable parameter count.",
         "Full fine-tuning updates the model's base weights, while LoRA freezes them and trains adapters. QLoRA also trains adapters but stores the frozen base in 4-bit form, reducing memory with quantization-related compatibility and quality considerations.",
-        "Full fine-tuning trains base weights and LoRA trains adapters, but QLoRA freezes both base and adapters. It relies entirely on calibrating higher-precision per-layer quantization metadata to learn a new task, avoiding trainable parameters and gradient storage.",
-        "Full fine-tuning updates model weights, while LoRA uses low-rank adapters. QLoRA keeps its base model in high precision as LoRA, then quantizes the adapter outputs after each gradient step to lower training memory."
+        "Full fine-tuning trains base weights and LoRA trains adapters, but QLoRA freezes both base and adapters. It relies on calibrating higher-precision per-layer quantization-metadata to learn a task, avoiding independently trainable parameters and gradient storage.",
+        "Full fine-tuning updates model weights, while LoRA uses low-rank adapters. QLoRA keeps its base model in relatively high precision as LoRA, then quantizes the adapter outputs after each gradient step to lower training memory."
       ],
       "explanation": "<strong>Explanation:</strong> Full fine-tuning can update all pretrained weights, requiring substantial gradient and optimizer memory. LoRA freezes those weights and trains small low-rank matrices, but the base is often stored at a higher precision. QLoRA combines LoRA with 4-bit storage for the frozen base. For example, a team adapting a 7B language model might fit a QLoRA job on less GPU memory than ordinary LoRA with a higher-precision base. Compare output quality, training speed, backend compatibility, and actual memory rather than assuming zero trade-offs.",
       "technicalExplanation": "Full fine-tuning can update all pretrained weights, requiring substantial gradient and optimizer memory. LoRA freezes those weights and trains small low-rank matrices, but the base is often stored at a higher precision. QLoRA combines LoRA with 4-bit storage for the frozen base. For example, a team adapting a 7B language model might fit a QLoRA job on less GPU memory than ordinary LoRA with a higher-precision base. Compare output quality, training speed, backend compatibility, and actual memory rather than assuming zero trade-offs.",
@@ -69,7 +69,7 @@
       "answer": "a",
       "options": [
         "Configure BitsAndBytesConfig for 4-bit NF4 loading and an appropriate compute dtype, load the base model, prepare it for k-bit training, and attach a PEFT LoraConfig. Train only the resulting adapter parameters.",
-        "Configure BitsAndBytesConfig for 4-bit loading, then enable gradients on each quantized base tensor before training. PEFT attaches adapters only after all full-model weights have been updated and the optimizer checkpoint is finalized.",
+        "Configure BitsAndBytesConfig for 4-bit loading, then enable gradients on each quantized base tensor before training. PEFT attaches adapters only after full-model weights have been updated and the optimizer checkpoint is finalized.",
         "Configure a 4-bit quantizer and PEFT LoRA settings, but call get_peft_model before loading the pretrained model. Adapter parameters are then trained without forward batches, loss calculation, or optimizer step.",
         "Configure NF4 and load a quantized pretrained model, then replace the selected LoRA target layers with permanently frozen matrices. PEFT automatically updates quantization constants as the sole trainable variables during fine-tuning."
       ],
@@ -83,7 +83,7 @@
       "answer": "c",
       "options": [
         "Double quantization moves selected optimizer-state pages to the host system's memory during temporary training spikes, whereas paged optimizers compress weight-scale metadata. These mechanisms both reduce constant GPU arithmetic cost, preventing out-of-memory failures regardless of sequence length.",
-        "Double quantization reduces weight-scale overhead and paged optimizers handle temporary memory pressure, but paging permanently replaces GPU execution with slow system-level CPU computations instead. Once enabled, activation memory and device-transfer latency no longer influence training.",
+        "Double quantization reduces weight-scale overhead and paged optimizers handle temporary memory pressure, but paging permanently replaces GPU execution with slow system-level CPU computations instead. Once enabled, activation memory and device-transfer latency no longer influence subsequent training.",
         "Double quantization reduces overhead for weight quantization constants, whereas paged optimizers can move optimizer-state pages between GPU and host memory to handle temporary spikes. They do not remove activation costs or guarantee freedom from out-of-memory failures.",
         "Double quantization stores complete adapter parameters redundantly twice to avoid rounding error, while paged optimizers permanently freeze every optimizer state on the GPU. This combination guarantees that longer context windows cannot produce new severe training-memory peaks."
       ],
@@ -96,9 +96,9 @@
       "tag": "Advanced · Deployment and evaluation",
       "answer": "d",
       "options": [
-        "Evaluate QLoRA mainly from the reduction in frozen weight storage, since 4-bit training guarantees consistently faster inference and much lower power on every edge accelerator. Adapter compatibility and held-out task accuracy need no additional testing.",
-        "Evaluate QLoRA by comparing adapter file size with full-model checkpoint size, then assume fully equivalent output quality and device-dependent inference latency. All quantized 4-bit formats are interchangeable across runtimes without conversion or backend limitations.",
-        "Evaluate QLoRA using model quality and GPU memory during fine-tuning, but ignore actual inference benchmarking and device-level compatibility after saving adapters. Since the base remains frozen, downstream serving hardware always reproduces exactly the training performance.",
+        "Evaluate QLoRA mainly from the reduction in frozen weight storage, since 4-bit training guarantees consistently faster inference and much lower power on every edge accelerator. Adapter compatibility and held-out task accuracy need no additional independent testing.",
+        "Evaluate QLoRA by comparing adapter file size with full-model checkpoint size, then assume fully equivalent output quality and device-dependent inference latency. All quantized 4-bit formats are fully interchangeable across different runtimes without conversion or backend limitations.",
+        "Evaluate QLoRA using model quality and GPU memory during fine-tuning, but ignore actual inference benchmarking and device-level compatibility after saving adapters. Since the base remains frozen, downstream serving hardware always reproduces exactly the original training performance.",
         "Measure task quality against a baseline, training peak memory, throughput, and adapter stability, then benchmark inference latency, runtime compatibility, and power on target hardware. QLoRA saves fine-tuning memory but does not automatically make a model edge-ready."
       ],
       "explanation": "<strong>Explanation:</strong> QLoRA primarily makes adapting a pretrained model more memory efficient. For an edge deployment, evaluate the trained adapter's accuracy, peak training memory, and reproducibility, then test the quantized base plus adapter on the intended runtime. For example, a factory-maintenance assistant may train on one GPU but deploy on a smaller industrial computer. Verify that the backend supports the quantization format, adapter loading or merging strategy, acceptable latency, and power limits. A smaller training footprint does not automatically guarantee fast edge inference.",
