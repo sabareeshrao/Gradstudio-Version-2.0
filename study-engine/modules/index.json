@@ -503,6 +503,12 @@
       "title": "Retrieval Recall",
       "domain": "Information Retrieval and RAG",
       "catalogId": "PENDING-RETRIEVAL-RECALL"
+    },
+    {
+      "slug": "multiclass-classification",
+      "title": "Multiclass Classification",
+      "domain": "Supervised Machine Learning",
+      "catalogId": "PENDING-MULTICLASS-CLASSIFICATION"
     }
   ]
 }
