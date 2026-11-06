@@ -545,6 +545,12 @@
       "title": "Semantic Textual Similarity",
       "domain": "Natural Language Processing",
       "catalogId": "PENDING-SEMANTIC-TEXTUAL-SIMILARITY"
+    },
+    {
+      "slug": "bias-variance-tradeoff",
+      "title": "Bias–Variance Tradeoff",
+      "domain": "Supervised Machine Learning",
+      "catalogId": "PENDING-BIAS-VARIANCE-TRADEOFF"
     }
   ]
 }
