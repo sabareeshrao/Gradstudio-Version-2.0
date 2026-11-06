@@ -677,6 +677,12 @@
       "title": "LLM-as-a-Judge",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-LLM-AS-A-JUDGE"
+    },
+    {
+      "slug": "variational-autoencoder",
+      "title": "Variational Autoencoder (VAE)",
+      "domain": "Generative Modeling",
+      "catalogId": "PENDING-VARIATIONAL-AUTOENCODER"
     }
   ]
 }
