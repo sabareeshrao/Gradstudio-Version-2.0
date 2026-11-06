@@ -527,6 +527,12 @@
       "title": "Classification",
       "domain": "Supervised Machine Learning",
       "catalogId": "PENDING-CLASSIFICATION"
+    },
+    {
+      "slug": "answer-faithfulness",
+      "title": "Answer Faithfulness",
+      "domain": "Information Retrieval and RAG",
+      "catalogId": "PENDING-ANSWER-FAITHFULNESS"
     }
   ]
 }
