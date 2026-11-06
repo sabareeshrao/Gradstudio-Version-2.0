@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**64 English lesson links · 450 questions · 50 Telugu translations completed · 14 Telugu translations pending**
+**69 English lesson links · 485 questions · 50 Telugu translations completed · 19 Telugu translations pending**
 
-English lesson links 01–64 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–64 remain blank until those translations are published. Lessons 59–64 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
+English lesson links 01–69 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–69 remain blank until those translations are published. Lessons 59–69 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -74,11 +74,16 @@ English lesson links 01–64 are listed below. Telugu translations are available
 | 62 | Feature Selection |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=feature-selection) |
 | 63 | TensorFlow |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tensorflow) |
 | 64 | MCP Server |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=mcp-server) |
+| 65 | RMSNorm |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=rmsnorm) |
+| 66 | Batch Normalization |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=batch-normalization) |
+| 67 | Dropout |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=dropout) |
+| 68 | Stochastic Depth |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=stochastic-depth) |
+| 69 | Tensor Parallelism |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=tensor-parallelism) |
 
-**New English lessons (59–64):** MLOps, Model Evaluation, Feature Selection, TensorFlow and MCP Server are in the study library index. Model Deployment is accessible by direct link from the Study Engine’s `unlisted` folder. No Telugu HTML translations were found for these six newer lessons, so their Telugu cells remain blank.
+**New English lessons (59–69):** MLOps, Model Evaluation, Feature Selection, TensorFlow, MCP Server, RMSNorm, Batch Normalization, Dropout, Stochastic Depth, and Tensor Parallelism are in the study library index. Model Deployment is accessible by direct link from the Study Engine’s `unlisted` folder. Telugu HTML translations were not found for lessons 51–69, so their Telugu cells remain blank.
 
 ## Copy-ready HTML URLs
 
 [Copy-ready Telugu URLs for lessons 01–50](COPY_READY_TELUGU_URLS.txt)
 
-Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–64 are pending.
+Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–69 are pending.
