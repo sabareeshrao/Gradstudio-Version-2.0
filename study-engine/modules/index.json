@@ -755,6 +755,12 @@
       "title": "Proximal Policy Optimization (PPO)",
       "domain": "Reinforcement Learning",
       "catalogId": "PENDING-PROXIMAL-POLICY-OPTIMIZATION"
+    },
+    {
+      "slug": "policy-gradient",
+      "title": "Policy Gradient",
+      "domain": "Reinforcement Learning",
+      "catalogId": "PENDING-POLICY-GRADIENT"
     }
   ]
 }
