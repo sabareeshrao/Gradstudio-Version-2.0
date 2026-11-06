@@ -689,6 +689,12 @@
       "title": "Perplexity",
       "domain": "Natural Language Processing",
       "catalogId": "PENDING-PERPLEXITY"
+    },
+    {
+      "slug": "chain-of-thought-prompting",
+      "title": "Chain-of-Thought Prompting",
+      "domain": "Prompt Engineering",
+      "catalogId": "PENDING-CHAIN-OF-THOUGHT-PROMPTING"
     }
   ]
 }
