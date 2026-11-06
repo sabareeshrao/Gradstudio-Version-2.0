@@ -1,0 +1,42 @@
+/* Semantic Segmentation · Data Augmentation-inspired illustrated study module.
+   Fresh lesson-specific visual vocabulary, mobile-safe SVGs and legible Python panel. */
+.ss-hero,.ss-figure{font-family:inherit;box-sizing:border-box;min-width:0;max-width:100%;color:#2e5265}
+.ss-hero{border:1px solid #cbdfe6;border-radius:20px;padding:clamp(15px,2.7vw,28px);background:radial-gradient(ellipse at 10% 0%,#dbf5ed,transparent 43%),linear-gradient(148deg,#f2faff,#fff9f0);margin:0 0 24px;box-shadow:0 8px 22px #31546b11}
+.ss-kicker{font-size:.72rem;line-height:1.45;letter-spacing:.09em;font-weight:900;color:#238a7b;text-transform:uppercase}
+.ss-hero h2{margin:7px 0 8px;color:#2c566a;font-size:clamp(1.24rem,2.5vw,1.8rem);letter-spacing:-.025em;line-height:1.24}
+.ss-hero p{margin:0 0 12px;color:#617b89;font-size:.87rem;line-height:1.6;max-width:74ch}
+.ss-figure{padding:clamp(12px,2.3vw,23px);background:radial-gradient(ellipse at 94% 4%,#e4f7f0,transparent 45%),linear-gradient(142deg,#f7fbff,#fffaf3);border-radius:16px}
+.ss-figure h3{font-size:clamp(1.04rem,1.8vw,1.27rem);line-height:1.33;font-weight:830;color:#315d72;margin:5px 0 12px}
+.ss-art{background:#f9fcfe;border:1px solid #d7e8ec;border-radius:13px;overflow:hidden;min-width:0;max-width:100%}
+.ss-art>svg{display:block;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;text-rendering:geometricPrecision;shape-rendering:geometricPrecision}
+.ss-note{font-size:.81rem!important;color:#567787!important;line-height:1.6!important;margin:12px 0 0!important}
+.ss-hero svg,.ss-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(>.ss-figure){padding:0;border:0;background:transparent;margin-bottom:15px}
+.ss-caption{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.ss-caption span{border-radius:100px;padding:5px 10px;background:#fff;color:#476877;font-size:.75rem;font-weight:700;border:1px solid #d3e5e9}
+.ss-two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.ss-card{background:#fff;border:1px solid #dce8ec;border-radius:11px;padding:10px;min-width:0}
+.ss-card strong{display:block;color:#305b6e;font-size:.85rem;margin-bottom:8px}
+.ss-metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:9px 0}
+.ss-metric{min-width:0;padding:12px;background:#fff;border:1px solid #dce8ec;border-radius:11px;text-align:center}
+.ss-metric strong{font-size:clamp(1.05rem,2vw,1.4rem);color:#198c80;display:block}
+.ss-metric small{font-size:.75rem;color:#5f7b8a}
+.ss-code{margin:13px 0 0;background:#172b3b;border:1px solid #37566d;border-radius:12px;overflow:hidden;max-width:100%;min-width:0}
+.ss-code-title{padding:10px 13px;background:#294759;color:#eef8ff;font-size:.78rem;font-weight:800;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.ss-code-title small{color:#c2d9e7;font-size:.73rem;font-weight:500}
+.ss-figure .ss-code pre{display:block;margin:0;max-width:100%;overflow-x:auto;overflow-y:hidden;padding:13px 16px;background:#172b3b!important;color:#eef8ff!important;font:500 12.6px/1.65 ui-monospace,Menlo,Consolas,monospace!important;tab-size:4;white-space:pre!important}
+.ss-figure .ss-code pre code{display:block;width:max-content;min-width:100%;max-width:none;padding:0!important;background:transparent!important;color:#eef8ff!important;border:none!important;box-shadow:none!important;font:inherit!important;line-height:inherit!important;white-space:pre!important}
+.ss-figure .ss-code .sk{color:#9ac8ff}.ss-figure .ss-code .sf{color:#c9e5a6}.ss-figure .ss-code .sc{color:#9bafb9}
+.ss-code-note{margin:0;padding:9px 13px;background:#294759;color:#d2e8f4;font-size:.75rem;line-height:1.6}
+.ss-code-note code{background:#172b3b!important;color:#f0f8ff!important;border:none!important}
+.ss-legend{display:flex;flex-wrap:wrap;gap:11px;margin:9px 0}
+.ss-legend span{display:inline-flex;align-items:center;gap:6px;color:#4d697b;font-size:.76rem;font-weight:680}
+.ss-legend i{display:inline-block;width:12px;height:12px;border-radius:3px}
+.ss-grid-diagram{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:14px;align-items:center}
+.ss-figure .ss-sequence{padding:9px;border:1px solid #d7e9e8;border-radius:12px;background:#fff}
+.ss-figure .ss-sequence p{margin:0 0 6px;font-size:.8rem;color:#416374}
+.ss-error-list{display:grid;gap:8px}
+.ss-error-list>div{padding:9px 12px;border-left:4px solid #68b6a7;border-radius:8px;background:#fff;font-size:.78rem;color:#446678}
+@media(max-width:760px){.ss-two,.ss-grid-diagram{grid-template-columns:1fr}}
+@media(max-width:530px){.ss-hero,.ss-figure{padding:11px;border-radius:13px}.ss-metric-grid{grid-template-columns:1fr 1fr}.ss-figure .ss-code pre{padding:10px;font-size:12px!important}.ss-code-title{flex-wrap:wrap}.ss-caption span{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.ss-hero *,.ss-figure *{animation:none!important;transition:none!important}}
