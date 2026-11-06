@@ -485,6 +485,12 @@
       "title": "Binary Cross-Entropy Loss",
       "domain": "Deep Learning Foundations",
       "catalogId": "PENDING-BINARY-CROSS-ENTROPY-LOSS"
+    },
+    {
+      "slug": "qlora",
+      "title": "QLoRA",
+      "domain": "Efficient and Edge AI",
+      "catalogId": "PENDING-QLORA"
     }
   ]
 }
