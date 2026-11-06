@@ -1,0 +1,33 @@
+/* Policy Gradient — original Data Augmentation-inspired visuals for Gradstudio.
+   Module-scoped CSS only; shared study engine / Telugu / themes unchanged. */
+.pg-hero,.pg-figure{box-sizing:border-box;min-width:0;max-width:100%;font-family:inherit;color:#30586b}
+.pg-hero{margin:0 0 23px;padding:clamp(15px,2.7vw,30px);border:1px solid #cddfe7;border-radius:20px;background:radial-gradient(ellipse at 12% 0%,#e0f7ed,transparent 45%),linear-gradient(145deg,#f4fbff,#fff9ef);box-shadow:0 8px 27px #35516a13}
+.pg-kicker{display:block;font-size:.71rem;font-weight:900;letter-spacing:.105em;line-height:1.52;text-transform:uppercase;color:#248a7c}
+.pg-hero h2{font-size:clamp(1.23rem,2.7vw,1.85rem);line-height:1.28;letter-spacing:-.022em;color:#2a576a;margin:8px 0}
+.pg-hero>p{max-width:78ch;margin:0 0 14px;color:#597887;font-size:.86rem;line-height:1.62}
+.pg-figure{padding:clamp(12px,2.4vw,24px);border-radius:16px;background:radial-gradient(ellipse at 94% 0%,#e1f8ef,transparent 47%),linear-gradient(147deg,#f8fcff,#fff9f0)}
+.pg-figure h3{font-size:clamp(1.05rem,1.9vw,1.29rem);font-weight:850;color:#2c596f;line-height:1.34;margin:6px 0 12px}
+.pg-art{display:block;min-width:0;max-width:100%;border-radius:13px;border:1px solid #d5e6eb;background:#f9fcfe;overflow:hidden}
+.pg-art svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.pg-hero svg,.pg-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.pg-note{font-size:.8rem!important;color:#567788!important;line-height:1.62!important;margin:11px 0 0!important}
+.q-fig:has(>.pg-figure){border:0!important;padding:0!important;background:transparent!important;margin-bottom:14px}
+.pg-tags{display:flex;flex-wrap:wrap;gap:8px;margin:11px 0 0}
+.pg-tags span{font-size:.73rem;color:#466e7b;font-weight:760;background:#fff;border:1px solid #d7e6ea;border-radius:100px;padding:5px 10px}
+.pg-pair,.pg-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.pg-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pg-pair>div,.pg-triple>div{min-width:0;border:1px solid #d9e8ec;border-radius:11px;background:#fff;padding:10px;color:#577787;font-size:.76rem;line-height:1.56}
+.pg-pair strong,.pg-triple strong{display:block;color:#2b6675;font-size:.82rem;margin-bottom:4px}
+.pg-key{display:flex;align-items:center;flex-wrap:wrap;gap:8px 17px;margin-top:11px}
+.pg-key span{font-size:.75rem;color:#4d6f7c;font-weight:760;display:inline-flex;align-items:center;gap:6px}
+.pg-key i{display:inline-block;width:11px;height:11px;border-radius:3px}
+.pg-code{max-width:100%;min-width:0;margin:13px 0 0;overflow:hidden;border-radius:12px;border:1px solid #365467;background:#172b3b}
+.pg-code-head{background:#294858;color:#f1f9ff;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:.77rem;font-weight:850;padding:9px 13px}
+.pg-code-head small{color:#c9e1eb;font-size:.71rem;font-weight:500}
+.pg-figure .pg-code pre{min-width:0;max-width:100%;display:block;overflow-x:auto!important;overflow-y:hidden;background:#172b3b!important;color:#f3f9ff!important;white-space:pre!important;tab-size:4;padding:14px 15px;margin:0;font:500 12.5px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.pg-figure .pg-code pre code{display:block!important;min-width:100%!important;width:max-content!important;white-space:pre!important;background:transparent!important;color:#f3f9ff!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important;font:inherit!important;line-height:inherit!important}
+.pg-code-foot{background:#294858;color:#d9e8f0;padding:9px 13px;font-size:.74rem;line-height:1.58}
+.pg-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+@media(max-width:790px){.pg-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.pg-hero,.pg-figure{padding:11px;border-radius:12px}.pg-pair{grid-template-columns:1fr}.pg-figure .pg-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.pg-hero *,.pg-figure *{transition:none!important;animation:none!important}}
