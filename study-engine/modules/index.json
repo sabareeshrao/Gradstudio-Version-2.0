@@ -629,6 +629,12 @@
       "title": "Speech Recognition (ASR)",
       "domain": "Speech and Audio AI",
       "catalogId": "PENDING-SPEECH-RECOGNITION"
+    },
+    {
+      "slug": "model-monitoring",
+      "title": "Model Monitoring",
+      "domain": "MLOps",
+      "catalogId": "PENDING-MODEL-MONITORING"
     }
   ]
 }
