@@ -1,0 +1,33 @@
+/* Normal Distribution · original Gradstudio seven-scene teaching visuals.
+   Data Augmentation layout reference; no edits to shared engine or 15 themes. */
+.nd-hero,.nd-figure{font-family:inherit;box-sizing:border-box;min-width:0;max-width:100%;color:#315a70}
+.nd-hero{margin:0 0 24px;padding:clamp(16px,2.8vw,30px);border:1px solid #cbdfe8;border-radius:20px;background:radial-gradient(ellipse at 10% 0%,#ddf7ed,transparent 45%),linear-gradient(145deg,#f3faff,#fff9ee);box-shadow:0 8px 26px #32566d14}
+.nd-kicker{display:block;color:#258d7f;font-size:.71rem;letter-spacing:.11em;line-height:1.54;text-transform:uppercase;font-weight:900}
+.nd-hero h2{margin:8px 0;color:#285b70;font-size:clamp(1.24rem,2.7vw,1.87rem);letter-spacing:-.022em;line-height:1.3}
+.nd-hero>p{max-width:80ch;margin:0 0 14px;color:#5b7b8b;font-size:.86rem;line-height:1.65}
+.nd-figure{padding:clamp(12px,2.4vw,24px);border-radius:16px;background:radial-gradient(ellipse at 95% 0%,#e4f8ee,transparent 47%),linear-gradient(145deg,#f9fcff,#fff9f0)}
+.nd-figure h3{margin:6px 0 12px;color:#2f5a70;font-size:clamp(1.05rem,1.93vw,1.3rem);line-height:1.35;font-weight:860}
+.nd-art{display:block;max-width:100%;min-width:0;overflow:hidden;border:1px solid #d7e7ec;border-radius:13px;background:#f9fcfe}
+.nd-art svg{display:block;max-width:100%!important;width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.nd-hero svg,.nd-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.nd-note{color:#597988!important;font-size:.8rem!important;line-height:1.63!important;margin:11px 0 0!important}
+.q-fig:has(>.nd-figure){margin-bottom:14px;border:0!important;padding:0!important;background:transparent!important}
+.nd-tags,.nd-key{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.nd-tags span{font-size:.73rem;color:#496e7d;font-weight:760;border:1px solid #d5e7eb;background:#fff;border-radius:100px;padding:5px 10px}
+.nd-key{gap:9px 17px}
+.nd-key span{display:inline-flex;align-items:center;gap:6px;color:#4b7082;font-size:.75rem;font-weight:750}
+.nd-key i{display:inline-block;width:11px;height:11px;border-radius:3px}
+.nd-pair,.nd-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.nd-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.nd-pair>div,.nd-triple>div{min-width:0;background:#fff;border:1px solid #d8e8ec;border-radius:10px;padding:10px;color:#5a7a89;font-size:.76rem;line-height:1.58}
+.nd-pair strong,.nd-triple strong{display:block;color:#2c6577;font-size:.82rem;margin-bottom:5px}
+.nd-code{max-width:100%;min-width:0;overflow:hidden;margin:13px 0 0;border:1px solid #39576b;border-radius:12px;background:#172b3b}
+.nd-code-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;background:#294859;padding:9px 13px;color:#f1f9ff;font-size:.78rem;font-weight:850}
+.nd-code-head small{color:#cce1eb;font-size:.71rem;font-weight:500}
+.nd-figure .nd-code pre{display:block;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden;margin:0;padding:14px 15px;tab-size:4;white-space:pre!important;background:#172b3b!important;color:#f3f9ff!important;font:500 12.5px/1.63 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.nd-figure .nd-code pre code{display:block!important;min-width:100%!important;width:max-content!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#f3f9ff!important;white-space:pre!important;font:inherit!important;line-height:inherit!important}
+.nd-code-foot{background:#294859;color:#dceaf2;padding:9px 13px;font-size:.75rem;line-height:1.56}
+.nd-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+@media(max-width:790px){.nd-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.nd-hero,.nd-figure{padding:11px;border-radius:12px}.nd-pair{grid-template-columns:1fr}.nd-figure .nd-code pre{padding:10px;font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.nd-hero *,.nd-figure *{animation:none!important;transition:none!important}}
