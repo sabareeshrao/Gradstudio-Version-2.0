@@ -10,8 +10,8 @@
       "stem": "What is a Benchmark in AI Evaluation, and how do a shared task, dataset, evaluation protocol and metrics make comparisons between models meaningful?",
       "tag": "Beginner · What a benchmark includes",
       "options": [
-        "An AI benchmark compares candidate models on the same test examples and metrics, but lets each team choose its own preprocessing and label rules. Comparable dataset names are enough to make results fair.",
-        "An AI benchmark defines a shared task, evaluation data, scoring metrics and protocol. Models following those same rules can be compared meaningfully, although the reported scores still depend on the chosen evaluation conditions.",
+        "An AI benchmark compares models on the same test examples and metrics, but lets each team redefine which labels count as correct. A shared dataset name is enough to make results comparable.",
+        "An AI benchmark defines one task, evaluation data, scoring metrics and protocol. Models following those rules can be fairly compared, although scores depend on the selected conditions.",
         "An AI benchmark uses a standard training dataset and ranking table to compare models. The table itself guarantees fair results even if each submission selects its own evaluation split or scoring rules.",
         "An AI benchmark reports the highest score achieved by a model across any available datasets. Selecting each model's strongest evaluation setting provides the clearest comparison of their practical capability."
       ],
@@ -26,7 +26,7 @@
         "Use a simple baseline as a lower bound on model size and compare it with the candidate's accuracy alone. Once accuracy improves, positive-class detection must also improve by the same amount.",
         "Use a baseline trained on a different random sample and compare the candidate's F1 on its own test set. Baseline differences then measure architecture quality without requiring matched evaluation cases.",
         "Use a simple baseline to estimate the best achievable task performance before training advanced models. Any candidate below the baseline is necessarily overfitted, even when it uses fewer resources.",
-        "Use a baseline as a reference that the candidate should improve on under the same evaluation rules. Compare accuracy and positive-class F1, since majority-class predictions can score well while missing all positives."
+        "Use a baseline as a reference for improvement under identical evaluation rules. Compare accuracy with positive-class F1, since majority-class predictions can score well while missing positives."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> A baseline sets a clear reference for whether extra model complexity helps. A majority-class predictor can have high accuracy on imbalanced data while failing to find any minority examples. On the lesson's 75-example synthetic holdout, the baseline gets 80% accuracy and 0.00 positive-class F1; a logistic-regression pipeline reaches 92% accuracy and 0.80 F1. For an equipment-defect detector, an improved F1 shows the model is finding defects instead of simply declaring almost everything normal.",
@@ -51,7 +51,7 @@
       "options": [
         "Use training data to fit the model, validation data to choose its settings, and the test set to compare final candidates repeatedly. Frequent test checks are harmless if training examples stay separate.",
         "Use training data to fit transformations and models, validation data to report the final public benchmark, and test data to select thresholds. Each dataset is distinct, so the selection process remains unbiased.",
-        "Fit preprocessing and models using training portions, tune choices on validation data, and reserve an untouched test set for final reporting. Test-informed model selection would make the benchmark score optimistic.",
+        "Fit preprocessing and models on training data, tune on validation data, and keep the final test set untouched. Test-informed model choices would inflate reported benchmark performance.",
         "Fit model preprocessing on all available features before splitting, then fit model weights using training labels only. Since test labels remain hidden, the benchmark is unaffected by feature preprocessing leakage."
       ],
       "answer": "c",
@@ -78,7 +78,7 @@
         "Repeated benchmark submissions are harmless when model training code never reads the private evaluation labels. Choosing the highest public score remains an unbiased estimate of performance on genuinely unseen data.",
         "Benchmark contamination matters only if final test labels appear explicitly in the training files. Repeated public-score tuning and memorizing benchmark examples cannot affect claims about generalization.",
         "Selective reporting raises benchmark scores only when incorrect arithmetic is used. Reporting the best seed or a single favorable task is an adequate summary if the model code can be reproduced.",
-        "Repeatedly using public evaluation feedback to select models can overfit the benchmark. Exposure to test examples and reporting only favorable runs also distort comparisons, so independent holdouts and full reporting matter."
+        "Repeated optimization against public test feedback can overfit a benchmark. Exposure to evaluation examples and selective reporting also distort comparisons; use independent holdouts and transparent reporting."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> A benchmark can become less trustworthy when teams repeatedly optimize against public test feedback, accidentally include evaluation examples in training, or publish only their strongest runs. Even without direct access to private labels, many submissions can adapt to a public test. Imagine a language model benchmark with familiar questions seen during training: a high score may reflect memorization rather than broader ability. Use held-out private tests, versioned data and transparent reporting across multiple runs and tasks.",
@@ -88,7 +88,7 @@
       "stem": "How should a production-oriented AI benchmark report subgroup performance, distribution shift, uncertainty, computational cost and reproducibility beyond an overall leaderboard score?",
       "tag": "Advanced · Responsible benchmark reports",
       "options": [
-        "Report overall and relevant subgroup metrics, performance under realistic distribution shifts, uncertainty and sample counts, and compute costs such as latency. Record dataset, model and protocol versions so results can be reproduced.",
+        "Report overall and subgroup metrics, shifted-data performance, uncertainty, sample counts and compute costs such as latency. Record model versions and protocol details so others can reproduce the benchmark.",
         "Report a single overall score with confidence intervals, then assume all smaller groups receive the same benefit. Computational cost and distribution shifts are operational concerns rather than components of evaluation.",
         "Choose the metric that improves most across subgroup and shifted-data trials and use it as the benchmark headline. Keep the other results private to prevent confusing comparisons between different metrics.",
         "Use the same nominal dataset name and model family to ensure reproducibility, then rank candidates by their best observed score. Reporting hardware, split versions and uncertainty is unnecessary for fair comparison."
