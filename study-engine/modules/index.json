@@ -665,6 +665,12 @@
       "title": "Benchmark",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-BENCHMARK"
+    },
+    {
+      "slug": "text-to-video-generation",
+      "title": "Text-to-Video Generation",
+      "domain": "Multimodal AI",
+      "catalogId": "PENDING-TEXT-TO-VIDEO-GENERATION"
     }
   ]
 }
