@@ -767,6 +767,12 @@
       "title": "Actor–Critic",
       "domain": "Reinforcement Learning",
       "catalogId": "PENDING-ACTOR-CRITIC"
+    },
+    {
+      "slug": "uncertainty-quantification",
+      "title": "Uncertainty Quantification",
+      "domain": "Bayesian and Probabilistic Modeling",
+      "catalogId": "PENDING-UNCERTAINTY-QUANTIFICATION"
     }
   ]
 }
