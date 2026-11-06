@@ -1,0 +1,22 @@
+/* Data Drift Monitoring — Data Augmentation Sky design language, distinctive responsive instructional diagrams. */
+.ddm-hero,.ddm-figure{color:#294f65;font-family:inherit;min-width:0;max-width:100%;box-sizing:border-box}
+.ddm-hero{background:radial-gradient(ellipse at 13% 0%,#e2f7ef,transparent 47%),linear-gradient(145deg,#f5fbfe,#fff9f1);padding:clamp(16px,2.8vw,30px);margin:0 0 23px;border:1px solid #cddfe7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
+.ddm-hero h2{font-size:clamp(1.25rem,2.8vw,1.85rem);line-height:1.25;margin:9px 0;color:#2d596c}
+.ddm-kicker{display:block;font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:860;color:#278577}
+.ddm-hero p,.ddm-figure p{font-size:.88rem;color:#5b7988;line-height:1.65}
+.ddm-figure{background:radial-gradient(ellipse at 94% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);border-radius:16px;padding:clamp(12px,2.4vw,24px);margin:0}
+.ddm-art{display:block;min-width:0;max-width:100%;overflow:hidden;border:1px solid #d6e6eb;border-radius:13px;background:#f8fcfd}
+.ddm-art>svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.ddm-hero svg,.ddm-figure svg{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.ddm-figure .ddm-kicker{margin:0 0 8px}
+.ddm-note{font-size:.82rem;color:#607f8e;margin:12px 0 0;line-height:1.6}
+.q-fig:has(>.ddm-figure){border:0;background:transparent}
+.ddm-code{margin:14px 0 0;min-width:0;max-width:100%;overflow:hidden;background:#1e1e1e;color:#f1f9ff;border:1px solid #38566b;border-radius:12px}
+.ddm-code-head{background:#2c4154;color:#eaf6ff;padding:10px 15px;font:700 .79rem/1.4 system-ui,sans-serif}
+.ddm-code pre{display:block;margin:0;padding:16px;max-width:100%;min-width:0;overflow-x:auto;overflow-y:visible;background:#1e1e1e!important;color:#f1f9ff!important;white-space:pre;font:500 12px/1.7 ui-monospace,Consolas,monospace;tab-size:4}
+.ddm-code pre code{display:block;width:max-content;min-width:100%;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:#f1f9ff!important;box-shadow:none!important;font:inherit!important;white-space:pre}
+.ddm-sources{margin:20px 0 0;padding:15px 17px;border:1px solid var(--border,#d5e6e9);background:var(--card,#fff);border-radius:13px}
+.ddm-sources summary{cursor:pointer;color:var(--accent-dark,#365f73);font-weight:800}
+.ddm-sources li{margin:8px 0}
+@media(max-width:480px){.ddm-figure{padding:11px}.ddm-code pre{font-size:11px;padding:12px}}
+@media(prefers-reduced-motion:reduce){.ddm-hero *,.ddm-figure *{animation:none!important;transition:none!important}}
