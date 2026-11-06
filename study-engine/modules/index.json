@@ -407,6 +407,12 @@
       "title": "Tensor Parallelism",
       "domain": "Distributed AI Training",
       "catalogId": "PENDING-TENSOR-PARALLELISM"
+    },
+    {
+      "slug": "weight-decay",
+      "title": "Weight Decay",
+      "domain": "Optimization",
+      "catalogId": "PENDING-WEIGHT-DECAY"
     }
   ]
 }
