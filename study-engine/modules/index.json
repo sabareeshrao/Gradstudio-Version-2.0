@@ -515,6 +515,12 @@
       "title": "Context Precision",
       "domain": "Information Retrieval and RAG",
       "catalogId": "PENDING-CONTEXT-PRECISION"
+    },
+    {
+      "slug": "regression",
+      "title": "Regression",
+      "domain": "Supervised Machine Learning",
+      "catalogId": "PENDING-REGRESSION"
     }
   ]
 }
