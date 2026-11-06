@@ -13,7 +13,7 @@
       "answer": "b",
       "options": [
         "Actor–Critic trains the actor to predict the next environment state and the critic to select the action with maximum reward. Both components follow a shared transition model, so the critic's prediction becomes the action taken.",
-        "Actor–Critic uses an actor to select actions from a learned policy and a critic to estimate value-related feedback. The critic helps judge outcomes relative to expectations, so its signal can guide improvement of the actor's future choices.",
+        "Actor–Critic uses an actor to choose actions from a learned policy and a critic to estimate expected state or action value. The critic's feedback guides updates so the actor improves its choices over time.",
         "Actor–Critic stores a separate action table in each component: the actor chooses the highest table value and the critic repeats the action to confirm it. Cooperation works by voting rather than learning a gradient from feedback.",
         "Actor–Critic trains the critic only after the actor finishes all episodes and stops changing. The actor uses direct rewards without any value estimate, so the two components alternate complete training phases without interacting."
       ],
@@ -77,7 +77,7 @@
       "stem": "How do synchronous Advantage Actor–Critic (A2C), asynchronous A3C, and Proximal Policy Optimization (PPO) differ in collecting experience and updating policies?",
       "answer": "a",
       "options": [
-        "A2C commonly gathers rollouts from parallel workers and synchronizes updates; A3C lets workers apply updates asynchronously. PPO typically reuses recent on-policy rollouts for clipped policy-optimization epochs, rather than using the identical A2C update.",
+        "A2C synchronizes updates from parallel worker rollouts; A3C allows asynchronous worker updates. PPO uses clipped policy ratios and multiple minibatch epochs on recent on-policy rollouts. All three can use actor and critic components.",
         "A2C trains an actor only after its critic converges; A3C trains several critics without a policy network. PPO instead relies on an exact environment model to compute a guaranteed best action from every state.",
         "A2C performs many updates from an indefinitely reused replay buffer; A3C differs only by replacing the critic with Monte Carlo returns. PPO uses a clipped value-network loss, leaving action probabilities unchanged after each rollout.",
         "A2C and A3C are both off-policy value-learning algorithms, while PPO is the only method in this group with an actor and critic. Their update schedules differ because only PPO samples actual actions from its policy."
