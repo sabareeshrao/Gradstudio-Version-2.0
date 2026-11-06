@@ -75,7 +75,7 @@
       "stem": "Why can adding predictors raise training R-squared in ordinary least-squares regression, and how does adjusted R-squared account for model complexity?",
       "tag": "Advanced · Adjusted R²",
       "options": [
-        "In ordinary least squares with an intercept, adding predictors cannot lower training R² because old coefficients remain possible. Adjusted R² uses sample size and predictor count to penalize extra complexity, sometimes decreasing.",
+        "In ordinary least squares with an intercept, added predictors cannot lower training R² because old fits remain possible. Adjusted R² penalizes extra predictors according to sample size, so it may decrease.",
         "In ordinary least squares with an intercept, every added predictor lowers training R² unless it is statistically significant. Adjusted R² removes this effect, so its score always increases as predictors accumulate.",
         "Training R² is unchanged by adding predictors because it depends solely on target variance. Adjusted R² instead multiplies the score by the number of features, consistently rewarding more complex models.",
         "Training R² may increase when predictors are added, but adjusted R² penalizes complexity by squaring every model error again. Its value is independent of sample size and number of observations."
