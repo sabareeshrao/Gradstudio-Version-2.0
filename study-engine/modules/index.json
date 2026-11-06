@@ -725,6 +725,12 @@
       "title": "Markov Decision Process (MDP)",
       "domain": "Reinforcement Learning",
       "catalogId": "PENDING-MARKOV-DECISION-PROCESS"
+    },
+    {
+      "slug": "structured-output",
+      "title": "Structured Output",
+      "domain": "Prompt Engineering",
+      "catalogId": "PENDING-STRUCTURED-OUTPUT"
     }
   ]
 }
