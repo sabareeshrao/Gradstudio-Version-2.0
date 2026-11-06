@@ -443,6 +443,12 @@
       "title": "FLOPs",
       "domain": "Efficient and Edge AI",
       "catalogId": "PENDING-FLOPS"
+    },
+    {
+      "slug": "learning-rate-schedule",
+      "title": "Learning Rate Schedule",
+      "domain": "Optimization",
+      "catalogId": "PENDING-LEARNING-RATE-SCHEDULE"
     }
   ]
 }
