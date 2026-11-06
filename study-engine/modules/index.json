@@ -599,6 +599,12 @@
       "title": "Area Under the ROC Curve",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-AREA-UNDER-ROC-CURVE"
+    },
+    {
+      "slug": "semantic-segmentation",
+      "title": "Semantic Segmentation",
+      "domain": "Computer Vision",
+      "catalogId": "PENDING-SEMANTIC-SEGMENTATION"
     }
   ]
 }
