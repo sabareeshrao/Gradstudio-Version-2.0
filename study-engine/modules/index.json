@@ -539,6 +539,12 @@
       "title": "Underfitting",
       "domain": "Supervised Machine Learning",
       "catalogId": "PENDING-UNDERFITTING"
+    },
+    {
+      "slug": "semantic-textual-similarity",
+      "title": "Semantic Textual Similarity",
+      "domain": "Natural Language Processing",
+      "catalogId": "PENDING-SEMANTIC-TEXTUAL-SIMILARITY"
     }
   ]
 }
