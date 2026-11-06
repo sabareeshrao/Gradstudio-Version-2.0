@@ -587,6 +587,12 @@
       "title": "Confusion Matrix",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-CONFUSION-MATRIX"
+    },
+    {
+      "slug": "classification-accuracy",
+      "title": "Classification Accuracy",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-CLASSIFICATION-ACCURACY"
     }
   ]
 }
