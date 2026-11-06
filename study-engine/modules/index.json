@@ -719,6 +719,12 @@
       "title": "Zero-shot Prompting",
       "domain": "Prompt Engineering",
       "catalogId": "PENDING-ZERO-SHOT-PROMPTING"
+    },
+    {
+      "slug": "markov-decision-process",
+      "title": "Markov Decision Process (MDP)",
+      "domain": "Reinforcement Learning",
+      "catalogId": "PENDING-MARKOV-DECISION-PROCESS"
     }
   ]
 }
