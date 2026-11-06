@@ -1,0 +1,26 @@
+/* Context Precision · compact and responsive Gradstudio diagrams.
+ * Seven distinct Context Precision SVG explanations, restrained text, accessible labels.
+ * Data Augmentation-inspired spacing; no fixed-width mobile overflow. */
+.cp-hero,.cp-figure{box-sizing:border-box;min-width:0;max-width:100%;font-family:inherit;color:#30566b}
+.cp-hero{padding:clamp(12px,2.1vw,20px);margin:0 0 19px;border:1px solid #d5e5e9;border-radius:16px;background:linear-gradient(141deg,#f1fbf7,#f7fcfe 61%,#fff9ef)}
+.cp-hero h2{font-size:clamp(1.22rem,2.25vw,1.62rem);line-height:1.29;margin:5px 0;color:#2a536a;font-weight:820}
+.cp-hero>p{font-size:.85rem;line-height:1.54;color:#5a7886;margin:4px 0 12px}
+.cp-figure{margin:0;padding:clamp(10px,1.65vw,16px);border-radius:13px;background:linear-gradient(145deg,#f8fcfd,#fbfcf8)}
+.cp-kicker{font-size:.67rem;line-height:1.4;font-weight:830;letter-spacing:.08em;text-transform:uppercase;color:#29897a}
+.cp-figure h3{font-size:clamp(1rem,1.75vw,1.15rem);line-height:1.32;font-weight:800;margin:5px 0 9px;color:#2e566c}
+.cp-art{width:100%;max-width:100%;min-width:0;overflow:hidden;border-radius:10px;border:1px solid #d9e7eb;background:#f8fcfd}
+.cp-art>svg{display:block;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.cp-caption{font-size:.8rem!important;line-height:1.53!important;color:#5b7885!important;margin:9px 0 0!important}
+.q-fig:has(>.cp-figure){padding:0;border:0;background:transparent;margin-bottom:13px}
+.cp-hero svg,.cp-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.cp-code{margin-top:11px;min-width:0;max-width:100%;overflow:hidden;border:1px solid #3f4c5b;border-radius:11px;background:#1e1e1e}
+.cp-code-header{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#2b333e;color:#eef6fc;padding:8px 12px;font-size:.77rem;font-weight:760}
+.cp-code-header small{font-size:.71rem;color:#bacfdd;font-weight:540}
+.cp-figure .cp-code pre{display:block;max-width:100%;margin:0;padding:12px 14px;white-space:pre;overflow-x:auto;overflow-y:hidden;background:#1e1e1e!important;color:#e4e4e4!important;tab-size:4;font:500 12.5px/1.58 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;letter-spacing:0}
+.cp-figure .cp-code pre code{display:block;min-width:100%;width:max-content;padding:0!important;margin:0;border:0!important;background:transparent!important;box-shadow:none!important;color:#e4e4e4!important;font:inherit!important;white-space:pre!important}
+.cp-figure .cp-code .cp-ln{display:inline-block;min-width:2.35ch;margin-right:1ch;text-align:right;user-select:none;color:#878787!important}
+.cp-figure .cp-code .kw{color:#569cd6}.cp-figure .cp-code .str{color:#ce9178}.cp-figure .cp-code .fn{color:#dcdcaa}.cp-figure .cp-code .num{color:#b5cea8}.cp-figure .cp-code .cm{color:#79ad7a}
+.cp-code-note{margin:0;padding:8px 12px;background:#293748;color:#d6e5ef;font-size:.73rem;line-height:1.52}
+.cp-code-note code{padding:1px 3px!important;border:0!important;background:#1e1e1e!important;color:#e4e4e4!important}
+@media(max-width:440px){.cp-hero,.cp-figure{padding:10px;border-radius:11px}.cp-figure h3{font-size:1rem}.cp-kicker{font-size:.61rem}.cp-caption{font-size:.77rem!important}.cp-figure .cp-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.cp-hero *,.cp-figure *{animation:none!important;transition:none!important}}
