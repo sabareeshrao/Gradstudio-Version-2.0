@@ -11,7 +11,7 @@
       "tag": "Beginner · Continuous model health",
       "options": [
         "Model Monitoring checks prediction accuracy when production labels arrive, while treating invalid inputs and endpoint outages as unrelated tasks. Strong offline performance remains a sufficient guarantee until labeled accuracy begins falling.",
-        "Model Monitoring continually tracks live inputs, model outputs, service reliability, and quality when true outcomes arrive. It helps detect changing conditions or failures that a strong offline evaluation could not guarantee against.",
+        "Model Monitoring tracks deployed inputs, predictions, service reliability, and measured quality when true outcomes arrive. It detects changes or failures that a strong offline evaluation cannot rule out.",
         "Model Monitoring compares new feature averages with the training baseline and retrains automatically after every distribution change. Once a shift is found, investigating prediction quality or operational impact is unnecessary.",
         "Model Monitoring watches request counts, infrastructure errors and prediction latency after deployment. If these service metrics remain stable, it is safe to assume the model's answers are still correct."
       ],
@@ -36,7 +36,7 @@
       "stem": "How do Data Drift, Concept Drift and Training-Serving Skew differ, and what evidence helps an MLOps team distinguish them?",
       "tag": "Beginner · Three types of change",
       "options": [
-        "Data drift changes live input distributions, concept drift changes the relationship between inputs and real outcomes, and training-serving skew reflects inconsistent feature representations or pipelines. Labeled outcomes help investigate relationship changes.",
+        "Data drift changes input distributions; concept drift changes how inputs relate to real outcomes; training-serving skew means a mismatch between training and live feature processing. Labels help investigate concept drift.",
         "Data drift means true labels change without input variation, concept drift means a field changes format, and training-serving skew means request traffic increases. All three can be confirmed using input statistics alone.",
         "Data drift means model weights change after release, concept drift means new input columns appear, and training-serving skew means latency becomes unstable. Monitoring input distributions is enough to identify every case.",
         "Data drift occurs only after predictive accuracy decreases, concept drift occurs only when predicted scores change distribution, and training-serving skew can be established solely from comparing observed labels across recent weeks."
@@ -51,7 +51,7 @@
       "options": [
         "Calculate accuracy immediately by counting every prediction without an observed label as an incorrect result. This is conservative and avoids falsely claiming success, while ensuring every request contributes to the evaluation metric.",
         "Wait until all outcomes are known, then pair predictions with labels according to row position in the latest export. This produces unbiased performance even when some requests have been dropped or delayed.",
-        "Log predictions with stable event IDs and timestamps, join verified outcomes to those records, and evaluate matched cases. Report label coverage and potential selection bias so measured performance is not mistaken for full-population quality.",
+        "Log predictions with stable IDs and timestamps, then join verified outcomes to their matching records. Measure accuracy on labeled cases, and report coverage and possible selection bias.",
         "Use average prediction confidence as observed accuracy until true outcomes arrive, and stop reporting accuracy once labels become incomplete. Stable confidence indicates the missing outcomes cannot bias the reported model quality."
       ],
       "answer": "c",
@@ -63,7 +63,7 @@
       "tag": "Medium · Python monitoring example",
       "options": [
         "Replace the historical baseline with each new batch of live feature values before computing change scores. Assume every request without a confirmed label is negative so the reported accuracy includes all observed predictions.",
-        "Compare current features with a fixed reference window and treat a large standardized shift as an alert for investigation. Separately join predictions to available true labels and report observed accuracy together with label coverage.",
+        "Compare recent feature values with a fixed reference; a large shift triggers investigation, not proof of failure. Separately match predictions to available labels and report observed accuracy with coverage.",
         "Measure prediction accuracy by comparing model outputs with one another, since ground-truth outcomes might be late. Then use that computed accuracy to set drift alert thresholds, proving when the model becomes incorrect.",
         "Compute a feature-shift statistic using live and historical measurements, then use the drift number as the model error rate. Separate true labels are unnecessary because distribution change itself establishes prediction failure."
       ],
@@ -78,7 +78,7 @@
         "Apply a universal drift threshold to every feature and user group, triggering a page whenever a statistical test returns significance. Sample counts and seasonal variation do not matter after the statistic is standardized.",
         "Replace the reference distribution continuously with the latest observations, then alert on any difference between consecutive samples. This provides a stable, comparable baseline and eliminates false positives during normal seasonal changes.",
         "Track only global prediction-score averages rather than subgroup or feature distributions, since unchanged aggregate outputs prove all inputs and underlying input-to-outcome relationships stayed stable, including for small user populations.",
-        "Use representative baseline and recent windows, assess important features and population segments, and calibrate drift thresholds against expected variation and sample size. Investigate business impact before treating an alert as a model incident."
+        "Compare representative baseline and recent windows, check important features and population segments, and calibrate thresholds to sample size and expected variation. Investigate business impact before escalating an alert."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Drift tests and distances compare recent inputs against a meaningful reference, but the monitoring window, sample size, seasonality and number of checks affect false alarms. Tune thresholds against normal variation and the cost of missing real problems. For an online retailer, holiday returns can change the item mix even when the model still works well. Review affected categories, labels and business impact before retraining. Statistical shift is a clue, not a diagnosis.",
@@ -88,7 +88,7 @@
       "stem": "How should an MLOps team handle Model Monitoring alerts using root-cause analysis, subgroup checks, safe deployment and rollback?",
       "tag": "Advanced · Incident response",
       "options": [
-        "Investigate model inputs, pipelines, outcomes and affected subgroups, then validate any proposed fix on representative data. Use controlled rollouts, clear ownership and rollback options rather than automatically retraining after every alert.",
+        "Investigate inputs, pipelines, outcomes and affected subgroups. Validate fixes on representative data and release gradually with clear ownership and rollback controls, rather than automatically retraining after every alert.",
         "Retrain automatically on all new production requests whenever drift appears, regardless of whether their true labels are known. Deploy immediately because newer examples always improve generalization to the current user population.",
         "Disable noisy alerts until the next release and roll back every model update without inspecting feature transformations or service faults. Previously passing offline evaluation removes the need to check the recovered deployment again.",
         "Close monitoring incidents when global accuracy and uptime are stable, even if smaller groups are failing. Teams can update the model using the current test set without separate release verification when overall metrics look healthy."
