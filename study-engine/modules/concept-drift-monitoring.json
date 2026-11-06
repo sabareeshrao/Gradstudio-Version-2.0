@@ -36,9 +36,9 @@
       "stem": "What are sudden, gradual and recurring forms of Concept Drift, and how can their different time patterns affect the way production model performance is monitored?",
       "tag": "Beginner · Drift time patterns",
       "options": [
-        "Sudden drift appears as a one-time input schema error, gradual drift appears when request volume increases, and recurring drift is identical to random label noise. Each type can be identified without outcome measurements.",
-        "Sudden drift means a model is retrained abruptly, gradual drift means parameters update slowly, and recurring drift means the original dataset is reused. These categories describe retraining schedules rather than changing outcome relationships.",
-        "Sudden drift causes accuracy to improve immediately, gradual drift keeps error constant while features shift, and recurring drift occurs only when a feature is missing. Their patterns can be read directly from latency charts.",
+        "Sudden drift produces an abrupt jump in labeled error, gradual drift produces slow deterioration, and recurring drift produces repeated error peaks. These patterns alone establish a genuine changed feature–outcome relationship.",
+        "Sudden drift changes the outcome relationship at once, gradual drift changes it over time, and recurring drift revisits earlier conditions. A single fixed-length weekly average reliably reveals all three.",
+        "Sudden drift occurs immediately, gradual drift builds slowly, and recurring drift returns to a previous relationship. Each is identified most reliably from overall input averages even when labeled outcomes are missing.",
         "Sudden drift changes the input–outcome relationship quickly, gradual drift develops across time, and recurring drift revisits earlier patterns. Monitor suitable time windows and labeled quality to recognize each behavior."
       ],
       "answer": "d",
@@ -75,10 +75,10 @@
       "stem": "How do error-stream detectors such as Drift Detection Method (DDM) and ADWIN help monitor possible Concept Drift, and what limitations should engineers consider before acting on an alert?",
       "tag": "Advanced · Online drift detectors",
       "options": [
-        "DDM detects changes directly in input feature distributions without needing model outcomes, while ADWIN checks classifier weight updates. Either alert proves that the conditional relationship P(Y|X) changed and requires retraining.",
+        "DDM tracks observed error rates, while ADWIN compares adaptive windows of model errors. A significant alert from either detector confirms concept drift rather than a labeling or pipeline problem.",
         "DDM tracks observed classification errors; ADWIN compares adaptive windows of stream values, which may include errors. Alerts depend on signal choice and settings, and do not prove the cause.",
-        "DDM and ADWIN both monitor prediction confidence only, so no labels are useful once the stream is configured. A high confidence score establishes that the classifier's decision rule still matches true outcomes.",
-        "DDM measures the distance between training and production feature averages, while ADWIN compares one recent point with the original test score. Both detectors use a universal fixed threshold that fits every service."
+        "DDM and ADWIN can analyze labeled prediction errors, but each alert identifies the exact observation when the input–outcome relationship changed. No additional evidence is needed to locate its cause.",
+        "DDM and ADWIN can watch an error stream, but should compute errors from predicted confidence without labels. True outcomes are only required to verify the final replacement model."
       ],
       "answer": "b",
       "explanation": "<strong>Explanation:</strong> DDM watches an online classification error stream and searches for evidence that its error behavior is worsening. ADWIN maintains an adaptive window of values and checks for differences within that window; those values can be observed errors when labels exist. A streaming quality-control classifier can use either approach to surface warning signals. Detection quality depends on sample counts, label timeliness, stream order, thresholds and noise. A raised alert is not a complete diagnosis of concept drift.",
