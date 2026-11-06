@@ -25,7 +25,7 @@
       "stem": "How does the Q-learning update equation use reward, discount factor γ, learning rate α, and the maximum next-state Q-value, and what changes when the next state is terminal?",
       "answer": "d",
       "options": [
-        "Q-learning sets the updated value equal to the immediate reward plus α times the average next-state value, using γ only when the current action was random. For a terminal state it repeats the old Q-value instead of incorporating the final reward.",
+        "Q-learning sets a value equal to immediate reward plus α times the average next-state value, using γ only when the current action was random. For a terminal state it repeats the old Q-value instead of incorporating the final reward.",
         "Q-learning updates Q(s,a) using its current estimate, reward, and next-state values, but α multiplies the full target rather than the estimation error. Terminal transitions bootstrap from the greatest action value before resetting the episode.",
         "Q-learning combines reward with γ times the Q-value of the next action actually selected during exploration. Its learning rate controls discounting, while terminal states use a final greedy action to estimate the remaining return.",
         "Q-learning moves Q(s,a) by α times the error between r + γ max Q(s′,·) and its old estimate. If s′ is terminal, future value is zero, so the TD target contains only the observed reward."
@@ -38,7 +38,7 @@
       "stem": "Why does Q-learning use an exploration strategy such as ε-greedy, and how can it learn toward a greedy policy while sometimes choosing actions with lower current Q-values?",
       "answer": "a",
       "options": [
-        "Q-learning can choose a random action with probability ε and a greedy action otherwise, gathering experience beyond its current favorite. Its update still uses the maximum next-state Q-value, so behavior can explore while the target remains greedy.",
+        "Q-learning chooses a random action with probability ε and a greedy action otherwise, exploring beyond its current favorite. Its update still maximizes next-state Q-values, so behavior can explore while the target stays greedy.",
         "Q-learning explores by adding ε to the reward every time it chooses a low-valued action, raising that action's target. Its next-state update then uses the actual exploratory action, which makes learning on-policy until ε reaches zero.",
         "Q-learning uses ε-greedy to sample actions in direct proportion to their Q-values, giving every lower-valued action the same chance as the best one. During exploration it also removes the max operator from the temporal-difference target.",
         "Q-learning selects the best current action with probability ε and a uniformly random action otherwise, so lowering ε increases exploration. The greedy target is valid only when all sampled actions have identical Q-values at the next state."
@@ -53,7 +53,7 @@
       "options": [
         "Q-learning evaluates the next exploratory action chosen by its behavior policy, whereas SARSA uses the maximum next-state Q-value. In cliff walking this typically makes Q-learning avoid the edge and SARSA plan the shortest risky route.",
         "Q-learning and SARSA both use the maximum next-state Q-value; their difference is whether the learning rate is fixed or decays. Both therefore learn the same routes under ongoing exploration, even beside dangerous cliff cells.",
-        "Q-learning uses the best next-state Q-value in its target, learning off-policy, while SARSA uses the value of the next action actually taken. Ongoing exploration can make SARSA favor safer cliff routes while Q-learning learns a risky shortest path.",
+        "Q-learning uses the best next-state Q-value in its target, making it off-policy; SARSA uses the next action actually taken. Under continued exploration, SARSA can avoid cliff edges while Q-learning favors shorter risky routes.",
         "Q-learning and SARSA differ because Q-learning requires known transition probabilities while SARSA learns directly from experience. Cliff walking rewards lead to different routes only when one method uses a model and the other does not."
       ],
       "explanation": "<strong>Explanation:</strong> Q-learning is off-policy: its target uses maxₐ′ Q(s′,a′) regardless of the next action taken during exploration. SARSA is on-policy: it updates from the value of the next action actually selected. In classic cliff walking, the greedy shortest route stays near a dangerous cliff. Q-learning can favor that route, while ε-greedy SARSA accounts for exploratory missteps and can learn a longer safer path. This difference reflects what each target evaluates, not whether one algorithm has access to a transition model.",
@@ -65,8 +65,8 @@
       "answer": "b",
       "options": [
         "Python can store a Q-table, sample ε-greedy actions, and update values from rewards, but it should bootstrap a terminal state's Q-value before ending an episode. This keeps delayed rewards comparable with immediate rewards.",
-        "Python can store state–action values, sample ε-greedy actions, and apply Q ← Q + α[target − Q] after each transition. Terminal targets omit future value; repeated episodes can reveal whether delayed reward exceeds an immediate payoff.",
-        "Python can choose greedy actions from a Q-table and update only after an episode ends by averaging its total return into each visited action. ε-greedy selection is unnecessary once the first positive reward has been observed.",
+        "Python stores state–action Q-values, selects ε-greedy actions, and applies Q ← Q + α[target − Q] after each transition. Terminal targets exclude future value; repeated episodes show when a delayed payoff beats an immediate reward.",
+        "Python can choose greedy actions from a Q-table and update only after an episode ends by equally averaging its total return into each visited action. ε-greedy selection is unnecessary once the first positive reward has been observed.",
         "Python can maintain one Q-value per state, update it from the immediate reward, and add ε to actions that were not taken. The terminal-state flag is used only to control printing, not to affect the learning target."
       ],
       "explanation": "<strong>Explanation:</strong> Tabular Q-learning stores one value per state–action pair. Each episode selects an action using ε-greedy behavior, observes the reward and next state, and adjusts Q using a discounted greedy target. If the next state is terminal, no future value is added. The example below has a quick delivery paying 2 immediately and a safe route that pays 5 one step later. With γ=0.9, the safe route is worth 4.5. After 300 seeded episodes, Python prints Q values 4.5 and 2.0.",
@@ -90,7 +90,7 @@
       "stem": "Under what assumptions can tabular Q-learning converge, why do function approximation and off-policy exploration complicate deep Q-learning, and how should learned policies be evaluated safely?",
       "answer": "a",
       "options": [
-        "Tabular Q-learning can converge under suitable stationary MDP, visitation, and learning-rate assumptions. Deep function approximation lacks that general guarantee; replay and target networks may stabilize training, while safety requires held-out tests and constrained exploration.",
+        "Tabular Q-learning can converge with stationarity, repeated state–action visits, and suitable step sizes. Deep models lack that guarantee; replay and target networks may stabilize learning, but deployment needs held-out tests and safe exploration.",
         "Tabular Q-learning converges whenever the reward increases each episode, even if important actions are never visited. Deep Q-learning guarantees convergence once replay memory is large enough, making separate safety evaluation unnecessary after training.",
         "Tabular Q-learning requires an explicit transition model and exact Bellman backups to converge. Deep Q-learning avoids exploration problems because neural networks can infer values for unvisited states and actions without encountering data shifts.",
         "Tabular Q-learning converges by setting ε to zero immediately and fixing α at one for all updates. Deep Q-learning remains stable with any discount factor as long as the training return is high, so evaluation can reuse training episodes."
