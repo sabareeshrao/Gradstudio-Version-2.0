@@ -467,6 +467,12 @@
       "title": "AdamW",
       "domain": "Optimization",
       "catalogId": "PENDING-ADAMW"
+    },
+    {
+      "slug": "mixture-of-experts-transformer",
+      "title": "Mixture-of-Experts Transformer",
+      "domain": "Transformers and LLM Architecture",
+      "catalogId": "PENDING-MOE-TRANSFORMER"
     }
   ]
 }
