@@ -1,0 +1,33 @@
+/* Bayes' Theorem · concept-specific visual study module
+   Scoped Data Augmentation-derived styling; no changes to shared theme engine. */
+.bt-hero,.bt-figure{box-sizing:border-box;max-width:100%;min-width:0;font-family:inherit;color:#32586d}
+.bt-hero{margin:0 0 23px;padding:clamp(15px,2.8vw,30px);border:1px solid #c9dfe7;border-radius:20px;background:radial-gradient(ellipse at 14% 0%,#ddf5ed,transparent 44%),linear-gradient(145deg,#f4fbff,#fffaf0);box-shadow:0 9px 24px #284a6412}
+.bt-kicker{display:block;text-transform:uppercase;letter-spacing:.105em;color:#248b7e;font-size:.72rem;font-weight:900;line-height:1.5}
+.bt-hero h2{font-size:clamp(1.25rem,2.8vw,1.84rem);line-height:1.28;letter-spacing:-.018em;color:#28586c;margin:8px 0}
+.bt-hero>p{max-width:79ch;font-size:.87rem;line-height:1.62;color:#587887;margin:0 0 13px}
+.bt-figure{border-radius:16px;padding:clamp(12px,2.35vw,23px);background:radial-gradient(ellipse at 94% 0%,#e5f7ef,transparent 48%),linear-gradient(148deg,#f8fcff,#fff9ee)}
+.bt-figure h3{font-size:clamp(1.04rem,1.95vw,1.3rem);font-weight:860;line-height:1.34;color:#2d5b6e;margin:6px 0 12px}
+.bt-art{display:block;min-width:0;max-width:100%;overflow:hidden;border-radius:13px;border:1px solid #d6e6eb;background:#f9fcfe}
+.bt-art svg{display:block!important;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.bt-hero svg,.bt-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.bt-note{font-size:.8rem!important;line-height:1.64!important;color:#557587!important;margin:11px 0 0!important}
+.q-fig:has(>.bt-figure){margin-bottom:14px;padding:0!important;border:0!important;background:transparent!important}
+.bt-tags,.bt-key{display:flex;flex-wrap:wrap;gap:8px;margin:11px 0 0}
+.bt-tags span{background:#fff;border:1px solid #d7e6eb;border-radius:99px;padding:5px 10px;color:#476e7a;font-size:.73rem;font-weight:770}
+.bt-key{gap:10px 17px}
+.bt-key span{display:inline-flex;align-items:center;gap:6px;color:#4c7180;font-size:.75rem;font-weight:760}
+.bt-key i{display:inline-block;width:11px;height:11px;border-radius:3px}
+.bt-pair,.bt-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.bt-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bt-pair>div,.bt-triple>div{min-width:0;border:1px solid #d7e7ec;background:#fff;border-radius:10px;padding:10px;color:#5b7a8b;font-size:.76rem;line-height:1.55}
+.bt-pair strong,.bt-triple strong{display:block;color:#2e6676;font-size:.82rem;margin-bottom:4px}
+.bt-code{max-width:100%;min-width:0;overflow:hidden;border:1px solid #3b596a;border-radius:12px;background:#172b3b;margin:12px 0 0}
+.bt-code-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:9px 13px;background:#29485a;color:#f1f9ff;font-size:.78rem;font-weight:850}
+.bt-code-head small{font-size:.71rem;color:#cce0eb;font-weight:520}
+.bt-figure .bt-code pre{display:block;margin:0;padding:14px 15px;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden;white-space:pre!important;tab-size:4;background:#172b3b!important;color:#f3f9ff!important;font:500 12.5px/1.64 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.bt-figure .bt-code pre code{display:block!important;width:max-content!important;min-width:100%!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;border-radius:0!important;background:transparent!important;color:#f3f9ff!important;white-space:pre!important;font:inherit!important;line-height:inherit!important}
+.bt-code-foot{background:#29485a;color:#dcecf3;padding:9px 13px;font-size:.75rem;line-height:1.56}
+.bt-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+@media(max-width:790px){.bt-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.bt-hero,.bt-figure{padding:11px;border-radius:12px}.bt-pair{grid-template-columns:1fr}.bt-figure .bt-code pre{padding:10px;font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.bt-hero *,.bt-figure *{animation:none!important;transition:none!important}}
