@@ -635,6 +635,12 @@
       "title": "Model Monitoring",
       "domain": "MLOps",
       "catalogId": "PENDING-MODEL-MONITORING"
+    },
+    {
+      "slug": "text-to-speech",
+      "title": "Text-to-Speech (TTS)",
+      "domain": "Speech and Audio AI",
+      "catalogId": "PENDING-TEXT-TO-SPEECH"
     }
   ]
 }
