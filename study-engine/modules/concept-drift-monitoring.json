@@ -12,7 +12,7 @@
       "options": [
         "Concept Drift Monitoring checks whether the average model confidence changes as production requests arrive. If the input distribution stays similar, confidence changes directly measure the true outcome relationship without labeled examples.",
         "Concept Drift Monitoring compares recent feature distributions with the training reference. When input proportions remain similar, the original relationship between features and true outcomes must also remain stable.",
-        "Concept Drift Monitoring watches whether the relationship between inputs and actual outcomes changes over time. Even with similar input distributions, verified labels can reveal that the same inputs now lead to different outcomes.",
+        "Concept Drift Monitoring tracks whether the relationship between inputs and real outcomes changes. Even with similar input distributions, verified labels can show that the same features now produce different outcomes.",
         "Concept Drift Monitoring compares model parameter values between deployed releases to detect learning changes. If weights are unchanged, the conditional outcome relationship cannot drift regardless of what is happening in production."
       ],
       "answer": "c",
@@ -24,7 +24,7 @@
       "tag": "Beginner · Distinguishing drift types",
       "options": [
         "Concept drift refers to changed input frequencies, data drift refers to a changed outcome relationship, and prediction drift describes falling model accuracy. Any one of these shifts automatically proves all three occurred.",
-        "Concept drift changes the relationship between features and true outcomes; data drift changes the feature distribution; prediction drift changes model output patterns. Input or score shifts alone cannot establish a changed outcome relationship.",
+        "Concept drift changes how features relate to true outcomes; data drift changes feature distributions; prediction drift changes model outputs. Shifts in features or scores alone cannot establish a changed outcome relationship.",
         "Concept drift and data drift both describe changing feature values, while prediction drift describes changing true labels. The three differ only in which monitoring chart is used, not in the underlying quantity.",
         "Concept drift changes a deployed model's weight values, data drift changes inference latency, and prediction drift changes infrastructure utilization. If all three are stable, the model's outcome relationship must be unchanged."
       ],
@@ -49,7 +49,7 @@
       "stem": "How can production systems monitor possible Concept Drift when true labels are delayed or missing for some predictions, and what prevents biased or misleading performance comparisons?",
       "tag": "Medium · Delayed labels and joins",
       "options": [
-        "Log predictions with event IDs, timestamps, model versions and features, then join verified outcomes when available. Report labeled performance and label coverage, and check whether missing outcomes systematically bias the observed sample.",
+        "Log predictions with stable IDs, times and model versions, then match verified outcomes to those records. Report labeled performance, outcome coverage and possible selection bias from missing labels.",
         "Treat every missing outcome as an incorrect prediction until its label arrives, then compare recent accuracy to historical values. This gives a conservative but unbiased estimate of how the underlying relationship changed.",
         "Use prediction confidence as a replacement for confirmed outcomes when labels are delayed, and compare its mean across time windows. Stable confidence guarantees a stable input–outcome relationship for the unlabeled population.",
         "Pair recent outcomes with stored predictions by their row position in the latest export, and omit cases without labels. This remains reliable even if event arrival order changes or outcomes are selectively observed."
@@ -76,7 +76,7 @@
       "tag": "Advanced · Online drift detectors",
       "options": [
         "DDM detects changes directly in input feature distributions without needing model outcomes, while ADWIN checks classifier weight updates. Either alert proves that the conditional relationship P(Y|X) changed and requires retraining.",
-        "DDM tracks labeled classification errors over time; ADWIN adaptively compares statistics across portions of a value stream, which may contain errors. Alerts depend on the signal, sample size and settings, and do not prove a cause.",
+        "DDM tracks observed classification errors; ADWIN compares adaptive windows of stream values, which may include errors. Alerts depend on signal choice and settings, and do not prove the cause.",
         "DDM and ADWIN both monitor prediction confidence only, so no labels are useful once the stream is configured. A high confidence score establishes that the classifier's decision rule still matches true outcomes.",
         "DDM measures the distance between training and production feature averages, while ADWIN compares one recent point with the original test score. Both detectors use a universal fixed threshold that fits every service."
       ],
