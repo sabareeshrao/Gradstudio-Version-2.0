@@ -431,6 +431,12 @@
       "title": "Gradient Clipping",
       "domain": "Optimization",
       "catalogId": "PENDING-GRADIENT-CLIPPING"
+    },
+    {
+      "slug": "loss-landscape",
+      "title": "Loss Landscape",
+      "domain": "Optimization",
+      "catalogId": "PENDING-LOSS-LANDSCAPE"
     }
   ]
 }
