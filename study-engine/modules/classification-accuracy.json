@@ -50,7 +50,7 @@
       "stem": "How is Classification Accuracy computed from a multiclass confusion matrix, and why should per-class recall be inspected even when the overall accuracy is reasonably high?",
       "options": [
         "Multiclass accuracy equals the average probability of the most likely class rather than the number of correct labels. The confusion-matrix diagonal estimates confidence, while row totals measure the number of predicted examples.",
-        "Multiclass accuracy divides the confusion-matrix diagonal sum by all examples. Here (25+14+7)/60 is 76.7%, but class C recall is only 7/12≈58.3%, revealing that overall accuracy hides errors in a particular class.",
+        "Multiclass accuracy divides the confusion-matrix diagonal total by all examples: (25+14+7)/60=76.7%. Yet class C recall is only 7/12≈58.3%, so the overall score hides errors for that class.",
         "Multiclass accuracy divides each class's correct count by its predicted column total, then averages the resulting precisions. This means classes with low recall cannot reduce accuracy when other classes are frequent.",
         "Multiclass accuracy counts every off-diagonal cell as a partial success because the model still selected a valid class. Only examples assigned no class count as errors, so accuracy cannot be derived from the diagonal alone."
       ],
