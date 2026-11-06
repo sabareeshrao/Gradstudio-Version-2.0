@@ -23,7 +23,7 @@
       "stem": "What belongs in a useful Zero-shot Prompt, and why do task instructions, input boundaries and output constraints help even when no examples are provided?",
       "tag": "Beginner · Prompt components",
       "options": [
-        "State the task, separate the new input and specify useful constraints or an answer format. These instructions clarify the request without adding any worked input–output examples to the prompt.",
+        "State the task, mark the new input and specify useful response constraints or formatting. These instructions clarify the request without adding solved input–output examples.",
         "Give an explicit task description and include a solved demonstration of the target output. It remains zero-shot if the demonstration is short and the model weights stay unchanged.",
         "Describe the input but leave allowed labels and desired output unspecified, letting the model invent categories and formatting. This makes evaluation results more consistent across different tasks.",
         "Provide the task, input and the correct answer for that input, then ask the model to repeat the answer. This establishes unbiased zero-shot performance without needing examples."
@@ -75,7 +75,7 @@
       "stem": "How should variants of Zero-shot Prompting be evaluated fairly to measure instruction wording, response validity, latency and generalization?",
       "tag": "Advanced · Prompt testing",
       "options": [
-        "Keep the model, evaluated cases and scoring rules fixed, tune wording on development data, and report final held-out results. Include correctness, format validity, token cost and uncertainty.",
+        "Keep the model, cases and metrics fixed, tune wording using development examples, then report held-out scores. Include accuracy, format validity, token cost and uncertainty.",
         "Add worked demonstrations to the revised prompt and attribute score changes to zero-shot instruction clarity. Example counts can be ignored because the model's parameters remain unchanged.",
         "Repeatedly edit prompts using final test answers and publish the best resulting score. Prompt-only tuning cannot create leakage or selection bias without changing the model's weights.",
         "Evaluate the basic prompt on easy questions and the refined prompt on difficult cases. Differing test difficulty provides a fairer contrast than shared benchmark tasks."
@@ -91,7 +91,7 @@
         "Treat retrieved documents or pasted messages as higher-priority instructions than the task rules. They are closer to the current question and therefore safe to obey directly.",
         "Assume a zero-shot prompt prevents hallucination and dangerous instructions because it includes no misleading examples. Output validation is unnecessary once the task is clear.",
         "Include all customer records in the prompt and store complete responses permanently for audit. Without fine-tuning, private data cannot raise security or disclosure concerns.",
-        "Keep trusted instructions separate from untrusted input, reduce sensitive-data exposure and verify important answers. Use uncertainty, abstention or human review when evidence is insufficient."
+        "Separate trusted rules from untrusted input, limit sensitive data and verify important answers. Use abstention or human review when reliable evidence is unavailable."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Zero-shot prompting does not eliminate hallucination, prompt injection or privacy risks. Keep trusted rules separate from pasted or retrieved content, minimize sensitive records and verify consequential claims. Allow refusal, uncertainty or human escalation when evidence is missing. For a banking assistant, pasted text demanding that the model reveal account details should be treated as untrusted content, not a new authorized rule. Model safety requires controls beyond prompt format.",
