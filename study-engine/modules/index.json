@@ -497,6 +497,12 @@
       "title": "Binary Classification",
       "domain": "Supervised Machine Learning",
       "catalogId": "PENDING-BINARY-CLASSIFICATION"
+    },
+    {
+      "slug": "retrieval-recall",
+      "title": "Retrieval Recall",
+      "domain": "Information Retrieval and RAG",
+      "catalogId": "PENDING-RETRIEVAL-RECALL"
     }
   ]
 }
