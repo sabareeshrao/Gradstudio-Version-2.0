@@ -53,7 +53,7 @@
       "options": [
         "U-Net downsamples images to learn broad patterns, but its decoder predicts a single global category before returning to full resolution. Skip connections copy the final class label across pixels rather than bringing back spatial feature information.",
         "U-Net downsamples images for context and then upsamples feature maps, but it removes all early spatial information intentionally. Skip connections carry only final image labels into the decoder, making boundary location independent of encoder detail.",
-        "U-Net uses an encoder to extract features at smaller resolutions and a decoder to upsample them into a pixel-level prediction. Skip connections combine earlier, higher-resolution features with decoder features, helping restore fine spatial details and boundaries.",
+        "U-Net's encoder learns context at smaller resolutions and its decoder upsamples features to predict a class per pixel. Skip connections supply earlier, high-resolution encoder details, helping preserve edges and small structures.",
         "U-Net keeps all feature maps at the original image resolution and uses downsampling only after prediction. Skip connections pass decoder outputs backward to replace encoder inputs, so the model learns pixel categories without multi-scale features."
       ],
       "explanation": "<strong>Explanation:</strong> The encoder side of U-Net gradually reduces image resolution while learning broader context, such as what a structure looks like. The decoder increases resolution again to assign a class to each pixel. Skip connections bring useful high-resolution features from the encoder into matching decoder stages. Imagine outlining cells in a microscope image: the deep features help identify a cell, while the earlier details help recover its edges. Upsampling alone can blur boundaries without that finer information.",
@@ -65,7 +65,7 @@
       "answer": "b",
       "options": [
         "PyTorch can convert class-score maps into a mask by choosing the highest score along the image height axis. Preprocessing may use any channel order, while training masks should be resized with bilinear interpolation to preserve smooth class IDs.",
-        "PyTorch can produce per-pixel class logits shaped [batch, classes, height, width] and select the highest-scoring class along the class axis. Use consistent input preprocessing; resize logits appropriately and use nearest-neighbor interpolation for discrete masks.",
+        "PyTorch generates class scores shaped [batch, classes, height, width] and uses argmax along the class axis to label each pixel. Keep input preprocessing consistent; resize score maps as needed and use nearest-neighbor interpolation for discrete masks.",
         "PyTorch converts per-pixel logits into a mask by averaging scores across all classes at each location. Resize the resulting integer labels with bilinear interpolation, because fractional values improve boundary accuracy when converted back to class numbers.",
         "PyTorch can produce class logits for every pixel, but should choose the largest score over the entire image at once. Preprocessing and resizing can change pixel alignment freely because segmentation output concerns categories rather than exact positions."
       ],
