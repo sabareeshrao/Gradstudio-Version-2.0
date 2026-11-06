@@ -749,6 +749,12 @@
       "title": "Deep Q-Network (DQN)",
       "domain": "Reinforcement Learning",
       "catalogId": "PENDING-DEEP-Q-NETWORK"
+    },
+    {
+      "slug": "proximal-policy-optimization",
+      "title": "Proximal Policy Optimization (PPO)",
+      "domain": "Reinforcement Learning",
+      "catalogId": "PENDING-PROXIMAL-POLICY-OPTIMIZATION"
     }
   ]
 }
