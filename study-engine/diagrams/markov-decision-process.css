@@ -1,0 +1,31 @@
+/* Markov Decision Process — Data Augmentation visual standard.
+   Seven distinct RL diagrams, high-contrast Python, responsive within quiz cards.
+   No changes to shared Gradstudio themes or content. */
+.mdp-hero,.mdp-figure{font-family:inherit;box-sizing:border-box;min-width:0;max-width:100%;color:#30576b}
+.mdp-hero{padding:clamp(15px,2.7vw,30px);margin:0 0 23px;border:1px solid #cddee8;border-radius:20px;background:radial-gradient(ellipse at 12% 0%,#e0f7ef,transparent 45%),linear-gradient(145deg,#f4fbff,#fff9ed);box-shadow:0 9px 24px #30536d12}
+.mdp-kicker{display:block;color:#248c79;letter-spacing:.11em;font-size:.71rem;font-weight:900;line-height:1.55;text-transform:uppercase}
+.mdp-hero h2{font-size:clamp(1.24rem,2.7vw,1.84rem);letter-spacing:-.023em;line-height:1.28;color:#28566b;margin:8px 0}
+.mdp-hero>p{max-width:76ch;font-size:.86rem;line-height:1.6;color:#5a7887;margin:0 0 14px}
+.mdp-figure{padding:clamp(12px,2.35vw,24px);border-radius:16px;background:radial-gradient(ellipse at 95% 0%,#e2f8ef,transparent 48%),linear-gradient(145deg,#f8fcff,#fff9ef)}
+.mdp-figure h3{font-size:clamp(1.04rem,1.93vw,1.28rem);line-height:1.35;color:#315c6d;font-weight:850;margin:6px 0 13px}
+.mdp-art{background:#f9fcfe;max-width:100%;min-width:0;overflow:hidden;border:1px solid #d5e6eb;border-radius:13px;display:block}
+.mdp-art svg{display:block;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.mdp-hero svg,.mdp-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.mdp-note{margin:11px 0 0!important;color:#567684!important;font-size:.8rem!important;line-height:1.63!important}
+.q-fig:has(>.mdp-figure){padding:0!important;border:0!important;background:transparent!important;margin-bottom:14px}
+.mdp-pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.mdp-pillrow span{font-size:.73rem;color:#466e7c;font-weight:760;background:#fff;border:1px solid #d5e6eb;border-radius:100px;padding:5px 10px}
+.mdp-pair,.mdp-triptych{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:10px}
+.mdp-triptych{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mdp-pair>div,.mdp-triptych>div{min-width:0;background:#fff;border:1px solid #d7e8ec;border-radius:10px;padding:10px;font-size:.76rem;color:#597789;line-height:1.54}
+.mdp-pair strong,.mdp-triptych strong{font-size:.82rem;color:#306274;display:block;margin-bottom:5px}
+.mdp-code{background:#172b3b;border:1px solid #365469;border-radius:12px;margin-top:13px;max-width:100%;min-width:0;overflow:hidden}
+.mdp-code-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;padding:9px 13px;color:#f1f9ff;background:#294759;font-size:.77rem;font-weight:850}
+.mdp-code-head small{font-size:.71rem;color:#cee1ed;font-weight:500}
+.mdp-figure .mdp-code pre{display:block;background:#172b3b!important;color:#f3f9ff!important;font:500 12.5px/1.63 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;white-space:pre!important;tab-size:4;overflow-x:auto!important;overflow-y:hidden;margin:0;padding:14px 15px;min-width:0;max-width:100%}
+.mdp-figure .mdp-code pre code{display:block!important;width:max-content!important;min-width:100%!important;white-space:pre!important;border:0!important;border-radius:0!important;background:transparent!important;color:#f3f9ff!important;box-shadow:none!important;padding:0!important;margin:0!important;font:inherit!important;line-height:inherit!important}
+.mdp-code-foot{padding:9px 13px;background:#294759;color:#dbeaf3;font-size:.74rem;line-height:1.58}
+.mdp-code-foot code{border:0!important;background:#172b3b!important;color:#f3f9ff!important}
+@media(max-width:800px){.mdp-triptych{grid-template-columns:1fr}}
+@media(max-width:610px){.mdp-hero,.mdp-figure{padding:11px;border-radius:12px}.mdp-pair{grid-template-columns:1fr}.mdp-figure .mdp-code pre{padding:10px;font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.mdp-hero *,.mdp-figure *{transition:none!important;animation:none!important}}
