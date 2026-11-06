@@ -695,6 +695,12 @@
       "title": "Chain-of-Thought Prompting",
       "domain": "Prompt Engineering",
       "catalogId": "PENDING-CHAIN-OF-THOUGHT-PROMPTING"
+    },
+    {
+      "slug": "classifier-free-guidance",
+      "title": "Classifier-Free Guidance (CFG)",
+      "domain": "Generative Modeling",
+      "catalogId": "PENDING-CLASSIFIER-FREE-GUIDANCE"
     }
   ]
 }
