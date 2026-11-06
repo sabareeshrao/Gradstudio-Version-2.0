@@ -1,0 +1,33 @@
+/* Uncertainty Quantification · seven original SVG teaching scenes.
+   Data Augmentation reference palette, scoped to this module; no shared-engine edits. */
+.uq-hero,.uq-figure{font-family:inherit;box-sizing:border-box;max-width:100%;min-width:0;color:#30586b}
+.uq-hero{margin:0 0 23px;padding:clamp(16px,2.8vw,29px);border:1px solid #ccdee8;border-radius:20px;background:radial-gradient(ellipse at 11% 0%,#dcf6ec,transparent 44%),linear-gradient(145deg,#f3faff,#fff9ec);box-shadow:0 8px 26px #34586b12}
+.uq-kicker{display:block;font-size:.71rem;line-height:1.5;letter-spacing:.107em;font-weight:900;color:#248d79;text-transform:uppercase}
+.uq-hero h2{margin:8px 0;color:#29566b;line-height:1.29;font-size:clamp(1.24rem,2.65vw,1.85rem);letter-spacing:-.019em}
+.uq-hero>p{color:#5b7989;margin:0 0 14px;font-size:.86rem;line-height:1.65;max-width:79ch}
+.uq-figure{border-radius:16px;padding:clamp(12px,2.35vw,24px);background:radial-gradient(ellipse at 94% 0%,#e2f8ed,transparent 46%),linear-gradient(145deg,#f8fcff,#fff9ef)}
+.uq-figure h3{margin:6px 0 12px;color:#305b6f;font-size:clamp(1.04rem,1.93vw,1.29rem);font-weight:850;line-height:1.34}
+.uq-art{max-width:100%;min-width:0;display:block;overflow:hidden;border:1px solid #d5e5eb;border-radius:13px;background:#f9fcfe}
+.uq-art svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.uq-hero svg,.uq-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.uq-note{margin:11px 0 0!important;color:#567584!important;font-size:.8rem!important;line-height:1.62!important}
+.q-fig:has(>.uq-figure){padding:0!important;border:0!important;background:transparent!important;margin-bottom:14px}
+.uq-tags,.uq-key{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.uq-tags span{border:1px solid #d5e6e9;background:#fff;border-radius:100px;padding:5px 10px;font-size:.73rem;color:#486d7b;font-weight:750}
+.uq-key{gap:8px 17px}
+.uq-key span{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;color:#4e7280;font-weight:770}
+.uq-key i{display:inline-block;width:11px;height:11px;border-radius:3px}
+.uq-pair,.uq-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.uq-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.uq-pair>div,.uq-triple>div{min-width:0;padding:10px;border:1px solid #d9e8ed;border-radius:11px;background:#fff;font-size:.76rem;color:#5b7988;line-height:1.54}
+.uq-pair strong,.uq-triple strong{display:block;color:#2b6577;font-size:.82rem;margin-bottom:5px}
+.uq-code{background:#172b3b;max-width:100%;min-width:0;margin:13px 0 0;overflow:hidden;border:1px solid #39566a;border-radius:12px}
+.uq-code-head{display:flex;flex-wrap:wrap;gap:7px;justify-content:space-between;align-items:center;padding:9px 13px;color:#eff9ff;background:#294859;font-size:.77rem;font-weight:850}
+.uq-code-head small{color:#c9e0eb;font-size:.71rem;font-weight:520}
+.uq-figure .uq-code pre{display:block;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden;white-space:pre!important;tab-size:4;margin:0;padding:14px 15px;background:#172b3b!important;color:#f3f9ff!important;font:500 12.5px/1.63 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.uq-figure .uq-code pre code{display:block!important;min-width:100%!important;width:max-content!important;white-space:pre!important;color:#f3f9ff!important;background:transparent!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:inherit!important;line-height:inherit!important}
+.uq-code-foot{background:#294859;color:#dbeaf2;padding:9px 13px;font-size:.74rem;line-height:1.56}
+.uq-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+@media(max-width:790px){.uq-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.uq-hero,.uq-figure{border-radius:12px;padding:11px}.uq-pair{grid-template-columns:1fr}.uq-figure .uq-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.uq-hero *,.uq-figure *{animation:none!important;transition:none!important}}
