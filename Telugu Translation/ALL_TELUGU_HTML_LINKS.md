@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**80 English lesson links · 562 questions · 50 Telugu translations completed · 30 Telugu translations pending**
+**83 English lesson links · 583 questions · 50 Telugu translations completed · 33 Telugu translations pending**
 
-English lesson links 01–80 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–80 remain blank until those translations are published. Lessons 59–80 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
+English lesson links 01–83 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–83 remain blank until those translations are published. Lessons 59–83 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -90,11 +90,14 @@ English lesson links 01–80 are listed below. Telugu translations are available
 | 78 | Cosine Annealing |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=cosine-annealing) |
 | 79 | AdamW |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=adamw) |
 | 80 | Mixture-of-Experts Transformer |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=mixture-of-experts-transformer) |
+| 81 | Categorical Cross-Entropy Loss |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=categorical-cross-entropy-loss) |
+| 82 | Binary Cross-Entropy Loss |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=binary-cross-entropy-loss) |
+| 83 | QLoRA |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=qlora) |
 
-**New English lessons (59–80):** MLOps, Model Evaluation, Feature Selection, TensorFlow, MCP Server, RMSNorm, Batch Normalization, Dropout, Stochastic Depth, Tensor Parallelism, Weight Decay, Early Stopping, Pipeline Parallelism, Gradient Clipping, Loss Landscape, FLOPs, Learning Rate Schedule, Mixture-of-Experts Architecture, Cosine Annealing, AdamW, and Mixture-of-Experts Transformer are in the study library index. Model Deployment is accessible by direct link from the Study Engine’s `unlisted` folder. Telugu HTML translations were not found for lessons 51–80, so their Telugu cells remain blank.
+**New English lessons (59–83):** MLOps, Model Evaluation, Feature Selection, TensorFlow, MCP Server, RMSNorm, Batch Normalization, Dropout, Stochastic Depth, Tensor Parallelism, Weight Decay, Early Stopping, Pipeline Parallelism, Gradient Clipping, Loss Landscape, FLOPs, Learning Rate Schedule, Mixture-of-Experts Architecture, Cosine Annealing, AdamW, Mixture-of-Experts Transformer, Categorical Cross-Entropy Loss, Binary Cross-Entropy Loss, and QLoRA are in the study library index. Model Deployment is accessible by direct link from the Study Engine’s `unlisted` folder. Telugu HTML translations were not found for lessons 51–83, so their Telugu cells remain blank.
 
 ## Copy-ready HTML URLs
 
 [Copy-ready Telugu URLs for lessons 01–50](COPY_READY_TELUGU_URLS.txt)
 
-Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–80 are pending.
+Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–83 are pending.
