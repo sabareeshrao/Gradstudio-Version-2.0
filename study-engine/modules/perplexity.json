@@ -12,7 +12,7 @@
       "options": [
         "Perplexity averages the reciprocals of the probabilities for observed next tokens. It therefore gives each token's reciprocal probability equal weight before averaging, rather than combining their log probabilities.",
         "Perplexity exponentiates the average confidence assigned across the full vocabulary at every position. It measures how certain the model feels overall, even when actual next-token probabilities are low.",
-        "Perplexity exponentiates the average negative log probability assigned to the observed next tokens. Lower values indicate higher likelihood for the same held-out text under the same tokenization and scoring conditions.",
+        "Perplexity exponentiates the mean negative log probability of observed next tokens. Lower scores mean these tokens were more likely under the same held-out corpus, tokenization and scoring rules.",
         "Perplexity measures the fraction of generated tokens that match a reference word for word. Lower values indicate fewer exact mismatches, regardless of the model's probabilities for alternative tokens."
       ],
       "answer": "c",
@@ -39,7 +39,7 @@
         "Perplexity is the average negative log-likelihood itself, so a cross-entropy of ln 2 gives perplexity 0.69. Exponentiation would double-count the effect of language-model uncertainty.",
         "Perplexity equals the square root of average negative log-likelihood, making rare-token errors less influential. Two models with equal average losses can still have different perplexities under the same log base.",
         "Perplexity uses the sum of negative log-likelihood across a corpus without dividing by scored-token count. Longer evaluation documents therefore have intrinsically higher valid perplexity under otherwise identical conditions.",
-        "Perplexity is the exponential of mean negative log-likelihood, or cross-entropy on observed next tokens. On the same scoring setup, losses ln 2 and ln 4 correspond to perplexities 2 and 4."
+        "Perplexity exponentiates mean negative log-likelihood of observed next tokens. On the same scoring setup, losses ln 2 and ln 4 become perplexities 2 and 4."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> For a causal language model, average negative log-likelihood (cross-entropy on observed next tokens) becomes perplexity when exponentiated. Thus mean losses ln 2 and ln 4 correspond to perplexities 2 and 4. Lower is better when both models score the same text with compatible tokenization and context rules. For two keyboard language models evaluated on the same chat messages, this comparison shows which assigned greater probability to the real next tokens. It does not establish which writes more helpful replies.",
@@ -50,7 +50,7 @@
       "tag": "Medium · Fair comparisons",
       "options": [
         "Perplexity becomes comparable as long as models process the same original characters, even if one tokenizer splits a word into many pieces. Both models then have identical prediction units and likelihood denominators.",
-        "Perplexity is measured per scored token, so different token boundaries or evaluation corpora change the quantity being averaged. Use matched protocols and suitable normalization before drawing claims from cross-model scores.",
+        "Perplexity averages surprise per scored token; different tokenizers or test corpora change what is counted. Match evaluation protocols or use appropriate normalization before comparing scores for fair evaluation.",
         "Perplexity depends mostly on model parameter count, while tokenization only changes how text is displayed. Holding model size constant is therefore sufficient to compare per-token scores between unrelated corpora.",
         "Perplexity values can be compared directly after converting all logarithms to the same base. Tokenization, scored-token counts and context windows then cancel automatically from the resulting exponential average."
       ],
@@ -62,7 +62,7 @@
       "stem": "How can a short Python script calculate Perplexity from true next-token probabilities while excluding padding and handling the next-token alignment correctly?",
       "tag": "Medium · Python next-token scoring",
       "options": [
-        "Use the probabilities assigned to observed next tokens, exclude padding or other ignored targets, average their negative logs and exponentiate. Ensure each probability corresponds to its preceding context and actual next token.",
+        "Take each actual next token's probability from its preceding context, exclude padding and ignored targets, then exponentiate mean negative log probability. Align tokens with the correct predictions.",
         "Use each position's largest predicted vocabulary probability, including padding tokens, then exponentiate the negative log average. The most likely token gives a fair estimate even when the observed token differs.",
         "Use the probabilities assigned to observed next tokens, but divide their total negative log-likelihood by all sequence positions including padding. Ignored tokens still belong in the denominator when they have probabilities.",
         "Use the likelihoods of each token given both its previous and next tokens, then calculate the usual autoregressive perplexity. Conditioning on the actual future token does not alter the metric's interpretation."
@@ -91,7 +91,7 @@
         "Split long documents into independent equal-sized chunks, always score every token in each chunk, and assume context boundaries have no effect. Repeatedly scoring overlap makes perplexity a more reliable average.",
         "Evaluate on the model's training corpus and treat low perplexity as evidence of robustness to new subject areas. Reporting tokenization is unnecessary if the training loss used an exponential function.",
         "Use sliding windows over long text but count overlapping context tokens in every loss average. Repeated context scoring is useful because it assigns extra weight to positions where the model has more history.",
-        "Use held-out, domain-representative text; score each target token once with valid preceding context, even when windows overlap. Record tokenizer, stride, context rules, domain slices and uncertainty when comparing systems."
+        "Score held-out text using valid preceding context and count each target once, even with overlapping windows. Document tokenizer, stride, context, domain slices and uncertainty for fair reports."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> For a model with limited context, independently scoring disjoint chunks can deprive boundary tokens of useful history. Sliding or strided overlapping windows preserve more context, but tokens used only as overlap must not be counted repeatedly. Compare models on appropriate held-out corpora with documented tokenization, context, stride and valid-token counts. Inspect domain slices and uncertainty rather than reporting only one average. In a legal-document language model, low perplexity on contracts might not transfer to scientific articles or current legislation.",
