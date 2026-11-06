@@ -1,0 +1,46 @@
+/* Speech Recognition (ASR) — Data Augmentation-inspired visual study diagrams.
+   Seven distinct lesson visuals, responsive layouts, readable code, shared themes untouched. */
+.asr-hero,.asr-figure{box-sizing:border-box;min-width:0;max-width:100%;color:#315a6d;font-family:inherit}
+.asr-hero{padding:clamp(15px,2.7vw,29px);margin:0 0 23px;border:1px solid #cbdfe8;border-radius:20px;background:radial-gradient(ellipse at 13% 0%,#dff6ed,transparent 45%),linear-gradient(145deg,#f4faff,#fff9ef);box-shadow:0 9px 26px #34526b10}
+.asr-kicker{font-size:.7rem;font-weight:900;letter-spacing:.1em;line-height:1.5;text-transform:uppercase;color:#228c7b}
+.asr-hero h2{margin:8px 0;color:#28596b;font-size:clamp(1.28rem,2.6vw,1.84rem);line-height:1.28;letter-spacing:-.025em}
+.asr-hero>p{font-size:.86rem;color:#5a7888;line-height:1.64;max-width:75ch;margin:3px 0 13px}
+.asr-figure{border-radius:16px;padding:clamp(13px,2.3vw,24px);background:radial-gradient(ellipse at 94% 0%,#e5f7ef,transparent 45%),linear-gradient(145deg,#f8fcff,#fff9f1)}
+.asr-figure h3{margin:5px 0 13px;font-size:clamp(1.05rem,1.9vw,1.3rem);line-height:1.32;color:#305b70;font-weight:850}
+.asr-art{display:block;max-width:100%;min-width:0;overflow:hidden;border:1px solid #d4e6eb;border-radius:13px;background:#f8fbfd}
+.asr-art>svg,.asr-svg{display:block;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.asr-notes,.asr-caption{margin:11px 0 0!important;color:#5b7886!important;font-size:.79rem!important;line-height:1.6!important}
+.asr-hero svg,.asr-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(>.asr-figure){border:0!important;background:transparent!important;padding:0!important;margin-bottom:14px}
+.asr-two,.asr-three{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch}
+.asr-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.asr-scene{background:#fff;border:1px solid #d8e8ec;border-radius:12px;min-width:0;padding:11px;box-shadow:0 3px 10px #2c536509}
+.asr-scene h4{font-size:.84rem;line-height:1.4;color:#2d6172;font-weight:850;margin:0 0 9px}
+.asr-scene svg{display:block;width:100%;max-width:100%;height:auto}
+.asr-scene p{font-size:.76rem!important;line-height:1.55!important;color:#536f7e!important;margin:8px 0 0!important}
+.asr-scene strong{color:#265c6e}
+.asr-equation{margin:10px 0;padding:10px 12px;background:#eaf7f2;border:1px solid #cde6db;border-radius:10px;color:#2b6570;font-size:.83rem;line-height:1.55;font-weight:800}
+.asr-strip{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:10px 0 2px}
+.asr-strip span{background:#fff;border:1px solid #dbe8ed;border-radius:9px;padding:7px 9px;color:#4e6979;font-size:.77rem;font-weight:720}
+.asr-labels{display:flex;gap:9px;flex-wrap:wrap;margin:9px 0 0}
+.asr-labels span{font-size:.74rem;font-weight:750;color:#436b77}
+.asr-labels span::before{content:"";display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--asr-label-color,#48a990);margin-right:6px;vertical-align:-1px}
+.asr-pipeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0}
+.asr-pipeline>div{background:#fff;border:1px solid #d7e6e9;border-radius:11px;padding:10px;min-width:0}
+.asr-pipeline strong{font-size:.79rem;display:block;color:#276779}
+.asr-pipeline small{display:block;font-size:.72rem;color:#5c7887;line-height:1.5;margin-top:5px}
+.asr-code{margin-top:13px;max-width:100%;min-width:0;border-radius:12px;overflow:hidden;background:#172b3b;border:1px solid #37566a}
+.asr-code-head{padding:9px 13px;background:#294759;color:#edf7ff;display:flex;gap:12px;justify-content:space-between;align-items:center;font-size:.76rem;font-weight:800;flex-wrap:wrap}
+.asr-code-head small{color:#bed9e7;font-size:.72rem;font-weight:540}
+.asr-figure .asr-code pre{display:block;max-width:100%;margin:0;padding:14px;overflow-x:auto;overflow-y:hidden;background:#172b3b!important;color:#eef7fd!important;white-space:pre!important;tab-size:4;font:500 12.5px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.asr-figure .asr-code pre code{display:block!important;width:max-content;min-width:100%;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:#eef7fd!important;font:inherit!important;line-height:inherit!important;white-space:pre!important;box-shadow:none!important}
+.asr-code-note{padding:9px 13px;background:#294759;color:#d9e9f3;font-size:.74rem;line-height:1.56}
+.asr-code-note code{background:#172b3b!important;color:#eef7fd!important;border:0!important}
+.asr-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:11px}
+.asr-stats>div{background:#fff;border:1px solid #d7e6ec;border-radius:10px;padding:9px;text-align:center}
+.asr-stats strong{display:block;color:#258b80;font-size:clamp(1rem,2.1vw,1.35rem)}
+.asr-stats small{color:#5d7989;font-size:.71rem}
+@media(max-width:770px){.asr-three{grid-template-columns:1fr}.asr-pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:630px){.asr-two{grid-template-columns:1fr}.asr-hero,.asr-figure{padding:11px;border-radius:12px}.asr-figure .asr-code pre{padding:10px;font-size:12px!important}}
+@media(max-width:400px){.asr-stats{grid-template-columns:1fr}.asr-pipeline{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.asr-hero *,.asr-figure *{animation:none!important;transition:none!important}}
