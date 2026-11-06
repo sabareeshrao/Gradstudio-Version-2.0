@@ -533,6 +533,12 @@
       "title": "Answer Faithfulness",
       "domain": "Information Retrieval and RAG",
       "catalogId": "PENDING-ANSWER-FAITHFULNESS"
+    },
+    {
+      "slug": "underfitting",
+      "title": "Underfitting",
+      "domain": "Supervised Machine Learning",
+      "catalogId": "PENDING-UNDERFITTING"
     }
   ]
 }
