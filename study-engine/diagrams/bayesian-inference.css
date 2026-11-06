@@ -1,0 +1,33 @@
+/* Bayesian Inference · seven bespoke SVG lessons.
+   Data Augmentation reference; the common study-engine and 15 themes stay unchanged. */
+.bi-hero,.bi-figure{font-family:inherit;box-sizing:border-box;min-width:0;max-width:100%;color:#31596d}
+.bi-hero{margin:0 0 23px;padding:clamp(16px,2.8vw,30px);border:1px solid #cddfe8;border-radius:20px;background:radial-gradient(ellipse at 13% 0%,#e2f8ee,transparent 45%),linear-gradient(145deg,#f5fbff,#fff9ed);box-shadow:0 8px 26px #30566a13}
+.bi-kicker{display:block;font-size:.71rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;line-height:1.52;color:#258e7c}
+.bi-hero h2{margin:8px 0;color:#28596d;font-size:clamp(1.24rem,2.7vw,1.85rem);line-height:1.29;letter-spacing:-.02em}
+.bi-hero>p{max-width:79ch;margin:0 0 14px;color:#5b7a89;font-size:.86rem;line-height:1.64}
+.bi-figure{padding:clamp(12px,2.38vw,24px);border-radius:16px;background:radial-gradient(ellipse at 95% 0%,#e3f8ef,transparent 47%),linear-gradient(146deg,#f8fcff,#fff9f0)}
+.bi-figure h3{margin:6px 0 12px;color:#305d70;font-size:clamp(1.05rem,1.94vw,1.3rem);font-weight:850;line-height:1.35}
+.bi-art{display:block;min-width:0;max-width:100%;overflow:hidden;border:1px solid #d6e7ed;border-radius:13px;background:#f9fcfe}
+.bi-art svg{display:block;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.bi-hero svg,.bi-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.bi-note{font-size:.8rem!important;line-height:1.62!important;color:#567585!important;margin:11px 0 0!important}
+.q-fig:has(>.bi-figure){padding:0!important;border:0!important;background:transparent!important;margin-bottom:14px}
+.bi-tags,.bi-key{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.bi-tags span{font-size:.73rem;font-weight:760;color:#476d7d;background:#fff;border:1px solid #d7e6eb;border-radius:100px;padding:5px 10px}
+.bi-key{gap:9px 17px}
+.bi-key span{display:inline-flex;align-items:center;gap:6px;color:#507282;font-weight:750;font-size:.76rem}
+.bi-key i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.bi-pair,.bi-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.bi-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bi-pair>div,.bi-triple>div{min-width:0;border:1px solid #dae8ec;border-radius:11px;background:#fff;padding:10px;color:#597989;font-size:.76rem;line-height:1.54}
+.bi-pair strong,.bi-triple strong{display:block;color:#286578;font-size:.82rem;margin-bottom:5px}
+.bi-code{max-width:100%;min-width:0;overflow:hidden;margin:13px 0 0;background:#172b3b;border:1px solid #37556b;border-radius:12px}
+.bi-code-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;background:#294859;color:#f0f9ff;font-size:.77rem;font-weight:850;padding:9px 13px}
+.bi-code-head small{font-size:.71rem;color:#cce0ea;font-weight:530}
+.bi-figure .bi-code pre{display:block;max-width:100%;min-width:0;margin:0;padding:14px 15px;overflow-x:auto!important;overflow-y:hidden;white-space:pre!important;tab-size:4;background:#172b3b!important;color:#f3f9ff!important;font:500 12.5px/1.64 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.bi-figure .bi-code pre code{display:block!important;min-width:100%!important;width:max-content!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;white-space:pre!important;background:transparent!important;color:#f3f9ff!important;font:inherit!important;line-height:inherit!important}
+.bi-code-foot{background:#294859;color:#dceaf3;padding:9px 13px;font-size:.75rem;line-height:1.58}
+.bi-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+@media(max-width:790px){.bi-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.bi-hero,.bi-figure{padding:11px;border-radius:12px}.bi-pair{grid-template-columns:1fr}.bi-figure .bi-code pre{padding:10px;font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.bi-hero *,.bi-figure *{animation:none!important;transition:none!important}}
