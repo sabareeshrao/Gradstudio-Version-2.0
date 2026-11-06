@@ -479,6 +479,12 @@
       "title": "Categorical Cross-Entropy Loss",
       "domain": "Deep Learning Foundations",
       "catalogId": "PENDING-CATEGORICAL-CROSS-ENTROPY-LOSS"
+    },
+    {
+      "slug": "binary-cross-entropy-loss",
+      "title": "Binary Cross-Entropy Loss",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "PENDING-BINARY-CROSS-ENTROPY-LOSS"
     }
   ]
 }
