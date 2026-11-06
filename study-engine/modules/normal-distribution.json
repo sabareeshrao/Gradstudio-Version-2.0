@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "visualQuality": "data-augmentation-reference",
+  "keyword": "Normal distribution",
+  "title": "Normal Distribution",
+  "subtitle": "Topic: Normal Distribution · Subject: Probability and Statistics · Seven visual lessons on bell-curve parameters, z-scores, the empirical rule, tail areas, Python CDFs, the central limit theorem, and normality diagnostics.",
+  "diagramStyle": "diagrams/normal-distribution.css",
+  "hero": "",
+  "questions": [
+    {
+      "tag": "Beginner · Bell curve parameters and symmetry",
+      "stem": "What defines a normal distribution, and how do its mean, standard deviation, symmetry, and notation N(μ,σ²) determine the shape of its probability density?",
+      "answer": "c",
+      "options": [
+        "A normal density is symmetric, but its standard deviation marks the center while the mean determines width. N(μ,σ²) lists the center and standard deviation directly, so the second parameter never requires a square root.",
+        "A normal density is symmetric with a central peak, but changing the mean changes its spread as well as its center. Standard deviation controls only peak height, leaving horizontal width unaffected by parameter changes.",
+        "A normal distribution has a symmetric bell-shaped density centered at mean μ, with spread controlled by standard deviation σ. In N(μ,σ²), the second parameter is variance, and greater σ makes the curve wider and lower.",
+        "A normal distribution is bell-shaped but its median generally differs from its mean because longer tails pull the center. Its standard deviation gives the distance from the peak to the highest possible observation."
+      ],
+      "explanation": "<strong>Explanation:</strong> A normal distribution has a symmetric bell-shaped density centered on its mean μ; its median and mode equal μ. Standard deviation σ controls spread, and the conventional notation N(μ,σ²) uses variance as its second parameter. Increasing μ shifts the curve; increasing σ makes it wider and lower while keeping area one. For example, a bottling plant may target 350 mL with a standard deviation of 10 mL. Changing the target to 360 mL shifts the center; doubling variation to 20 mL spreads the same probability over a wider range.",
+      "figure": ""
+    },
+    {
+      "tag": "Beginner · Z-score and percentile",
+      "stem": "How do you standardize a normally distributed observation into a z-score, and what percentile corresponds approximately to an exam score of 84 when the mean is 72 and standard deviation is 8?",
+      "answer": "a",
+      "options": [
+        "Compute z=(84−72)/8=1.5, which is 1.5 standard deviations above the mean. The standard normal CDF at 1.5 is about 0.9332, placing the score near the 93.32nd percentile.",
+        "Compute z=(84−72)/8=1.5, but interpret z itself as a percentile after multiplying by 100. This places the score at the 150th percentile, requiring a cap because percentiles cannot exceed 100.",
+        "Compute z=(84−72)/8=1.5, then read the normal density height at z=1.5 as the percentage scoring below 84. This confuses the pointwise density with the accumulated probability.",
+        "Compute z=(84−72)/8=1.5 and use the upper-tail probability as the percentile because it counts scores above 84. About 6.68% would then be described as the student's percentile rank."
+      ],
+      "explanation": "<strong>Explanation:</strong> A z-score is the observation minus the population mean, divided by the population standard deviation. It measures how far an observation lies from the mean in standard deviation units. To obtain a percentile for a normal model, use the standard normal cumulative probability. For example, a student earning 84 on a normally modeled exam with mean 72 and standard deviation 8 has z=(84−72)/8=1.5. The CDF Φ(1.5)≈0.9332 means about 93.32% score at or below 84 under the model.",
+      "figure": ""
+    },
+    {
+      "tag": "Beginner · The empirical rule",
+      "stem": "What does the 68–95–99.7 empirical rule say for a normal distribution, and what length ranges follow if manufactured rods have mean 100 cm and standard deviation 2 cm?",
+      "answer": "d",
+      "options": [
+        "The rule assigns approximately 68%, 95%, and 99.7% of normal outcomes to one, two, and three standard deviations above the mean only. The corresponding rod ranges therefore start at 100 cm, not below it.",
+        "The rule gives exactly 68%, 95%, and 99.7% for every continuous distribution with finite variance. With rods averaging 100 cm, their ranges remain valid even if the lengths are strongly skewed or multimodal.",
+        "The rule uses the variance as the length offset, so one, two, and three variance units correspond to ranges 96–104, 92–108, and 88–112 cm. Standard deviation units are unnecessary when drawing normal intervals.",
+        "For a normal model, about 68%, 95%, and 99.7% lie within one, two, and three standard deviations of μ. With μ=100 cm and σ=2 cm, the ranges are 98–102, 96–104, and 94–106 cm."
+      ],
+      "explanation": "<strong>Explanation:</strong> The empirical rule summarizes central probability in a normal distribution: about 68% is within μ±σ, 95% within μ±2σ, and 99.7% within μ±3σ. The more exact normal probabilities are approximately 68.27%, 95.45%, and 99.73%. For example, if steel rod lengths follow N(100 cm, (2 cm)²), about 68% fall between 98 and 102 cm, 95% between 96 and 104 cm, and 99.7% between 94 and 106 cm. These are population-model probabilities, not guarantees for a small batch.",
+      "figure": ""
+    },
+    {
+      "tag": "Medium · Upper tails and percentiles",
+      "stem": "How do a normal upper-tail probability and an upper percentile differ, and for call-handling time X∼N(12,3²) what is P(X>16.5) versus the 95th-percentile threshold?",
+      "answer": "b",
+      "options": [
+        "An upper-tail probability gives the cumulative area below a chosen cutoff, while a percentile gives the area above it. For 16.5 minutes, the model places 93.32% above the cutoff, so the 95th percentile is shorter.",
+        "A tail probability measures area beyond a fixed cutoff; a percentile finds the cutoff leaving a specified area below it. Here z=(16.5−12)/3=1.5 gives P(X>16.5)≈6.68%, while the 95th percentile is about 16.93 minutes.",
+        "An upper-tail probability equals the normal density at the cutoff, while a percentile is its derivative. Since z=1.5 has small density, the corresponding 95th-percentile threshold must be exactly 16.5 minutes.",
+        "A percentile is calculated from sample ranking only and cannot be obtained from a normal CDF. The tail beyond 16.5 minutes therefore has no model-based value until a large sample of calls has been recorded."
+      ],
+      "explanation": "<strong>Explanation:</strong> An upper-tail probability starts with a fixed threshold and asks how much area lies above it. A percentile starts with a desired cumulative probability and finds its threshold. With mean 12 and standard deviation 3, 16.5 minutes gives z=1.5; the area above is 1−Φ(1.5)≈0.0668. The 95th percentile has z≈1.645, giving 12+3×1.645≈16.93 minutes. For example, a call center deciding which calls need escalation should distinguish the proportion exceeding a current time limit from a proposed 95th-percentile time limit.",
+      "figure": ""
+    },
+    {
+      "tag": "Medium · Standard-library normal calculation",
+      "stem": "How can Python calculate normal probabilities using the CDF, the PDF, and the standard error of a sample mean without treating a density height as a probability?",
+      "answer": "c",
+      "options": [
+        "Python can compute right tails by reading the normal PDF at a threshold and intervals by subtracting PDF heights. For sample means, the standard error remains the population standard deviation regardless of sample size.",
+        "Python can use the normal CDF for intervals and tails but must divide CDF differences by the interval width. The result is a probability because the CDF itself measures probability per unit rather than cumulative area.",
+        "Python can use the error function to obtain a normal CDF, subtract CDFs for interval probabilities, and use one minus the CDF for right tails. A sample mean of n independent observations has standard error σ/√n.",
+        "Python can obtain normal probabilities by adding density values at observed points without accounting for width. A sample mean's distribution is always normal even for strongly dependent measurements, so independent sampling is unnecessary."
+      ],
+      "explanation": "<strong>Explanation:</strong> Python's math.erf can calculate a normal cumulative distribution function (CDF); subtracting CDF values gives an interval probability, and 1−CDF gives a right-tail probability. The PDF returns density per unit, not probability at one exact value. For a mean of n independent observations, standard error is σ/√n. For example, individual commutes modeled N(40,8²) give P(X>52)≈0.066807, P(32<X<48)≈0.682689 and f(40)≈0.049868 per minute. The tested code also evaluates the mean of sixteen commutes separately.",
+      "figure": ""
+    },
+    {
+      "tag": "Advanced · Central limit theorem and standard error",
+      "stem": "How does the sampling distribution of an average differ from the distribution of individual observations, and when is normality of a sample mean exact versus a central-limit-theorem approximation?",
+      "answer": "a",
+      "options": [
+        "For independent observations with variance σ², the sample mean has mean μ and standard error σ/√n. It is exactly normal if observations are normal, while finite-variance nonnormal data can yield an approximate normal mean under suitable central-limit conditions.",
+        "The sample mean has the same spread σ as each individual observation, because averaging changes only the center. A central limit theorem explains why the mean is exactly normal for any sample size regardless of the population.",
+        "For independent observations, averaging divides the population standard deviation by n instead of its square root. Normality of the average requires a perfectly symmetric original population but does not require independence or stable variance.",
+        "The sample mean's density is always identical to the population density, but its tail probabilities depend on the chosen measurement units. The central limit theorem concerns the distribution of sample maxima rather than averages."
+      ],
+      "explanation": "<strong>Explanation:</strong> The mean of n independent observations has expected value μ and standard deviation σ/√n, known as standard error. If observations are normal, the average is exactly normal; with suitable independent finite-variance nonnormal observations, a central limit theorem can justify an approximate normal distribution as n grows. For example, daily energy demand has modeled mean 50 and SD 12. Averaging 36 independent days gives standard error 2, so P(sample mean>54)≈0.0228 if the normal model applies, far below P(one day>54)≈0.369.",
+      "figure": ""
+    },
+    {
+      "tag": "Advanced · Normality diagnostics and limits",
+      "stem": "What can make a normal model unreliable for data or tail-risk estimates, and how should histograms, normal Q–Q plots, outliers, and sampling assumptions guide its use?",
+      "answer": "d",
+      "options": [
+        "A normal model remains reliable when a histogram is skewed, provided the sample mean and standard deviation are estimated precisely. Q–Q plot curvature then describes only random plotting variation, not a possible tail mismatch.",
+        "Normality can be assessed entirely by the fit at the center of a histogram; tails and extreme observations are irrelevant for estimating rare-event risk. A straight central Q–Q segment is enough to validate every percentile.",
+        "Strong skew or outliers make the sample mean undefined, so normal methods fail because average values cannot be computed at all. A normal Q–Q plot automatically repairs these cases by transforming the raw observations.",
+        "Heavy tails, skew, multiple peaks or extreme observations can make normal tail probabilities misleading. Inspect the histogram and Q–Q plot, validate held-out tails, and check independence and sampling conditions before using normal approximations."
+      ],
+      "explanation": "<strong>Explanation:</strong> A normal distribution is symmetric and has relatively light tails. Skew, multimodality, heavy tails or outliers can make a fitted normal curve underestimate or misplace extreme probabilities. A histogram shows shape; a normal Q–Q plot checks whether empirical and theoretical quantiles roughly follow a line, particularly in the tails. For example, insurance claim amounts can be strongly right-skewed, so a normal model might assign probability to impossible negative claims and underestimate rare large losses. Check model fit, independence and held-out outcomes; consider alternative distributions where needed.",
+      "figure": ""
+    }
+  ],
+  "figureFingerprints": [
+    "mean-shift-and-sigma-spread-overlays",
+    "exam-z-score-93rd-percentile",
+    "steel-rod-empirical-rule-bands",
+    "call-center-tail-vs-quantile",
+    "python-normal-commute-cdf",
+    "sample-mean-standard-error-clt",
+    "normality-histogram-and-qq-plot"
+  ],
+  "footer": "Gradstudio · Normal Distribution · 7 bespoke illustrations · 28 subject-specific choices · 14-line standard-library Python normal probability demonstration"
+}
