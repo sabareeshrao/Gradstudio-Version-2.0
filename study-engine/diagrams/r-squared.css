@@ -1,0 +1,19 @@
+/* R-squared: illustrated Sky-theme lesson, using Data Augmentation as design reference. */
+.rsq-hero,.rsq-figure{color:#294f65;font-family:inherit;min-width:0;max-width:100%;box-sizing:border-box}
+.rsq-hero{background:radial-gradient(ellipse at 14% 0%,#e1f7ed,transparent 47%),linear-gradient(145deg,#f5fbfe,#fff9f0);padding:clamp(16px,2.8vw,30px);margin-bottom:23px;border:1px solid #ccdee7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
+.rsq-hero h2{font-size:clamp(1.23rem,2.8vw,1.85rem);color:#2d596c;line-height:1.24;margin:9px 0}
+.rsq-kicker{font-size:.73rem;color:#278577;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+.rsq-hero p,.rsq-figure p{font-size:.88rem;line-height:1.65;color:#5b7887}
+.rsq-figure{background:radial-gradient(ellipse at 97% 0%,#e5f8ee,transparent 45%),linear-gradient(145deg,#f8fcfe,#fff9f1);border-radius:15px;padding:clamp(12px,2.4vw,24px);margin:0}
+.rsq-art{display:block;max-width:100%;min-width:0;overflow:hidden;background:#f8fcfd;border:1px solid #d6e6eb;border-radius:13px}
+.rsq-art>svg{display:block;width:100%!important;max-width:100%!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.rsq-hero svg,.rsq-figure svg{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.rsq-figure .rsq-kicker{display:block;margin:0 0 8px}
+.rsq-note{font-size:.81rem;color:#607d8a;margin:13px 0 0}
+.q-fig:has(>.rsq-figure){border:0;background:transparent}
+.rsq-code{min-width:0;max-width:100%;margin-top:15px;overflow:hidden;background:#1e1e1e;color:#d4d4d4;border:1px solid #38566b;border-radius:12px}
+.rsq-code-head{padding:10px 15px;background:#2d4052;color:#e8f3fa;font:700 .79rem/1.45 system-ui,sans-serif}
+.rsq-code pre{display:block;background:#1e1e1e!important;color:#e8f3f9!important;margin:0;padding:16px;max-width:100%;min-width:0;overflow-x:auto;white-space:pre;font:500 12px/1.7 ui-monospace,Consolas,monospace}
+.rsq-code pre code{display:block;width:max-content;min-width:100%;background:transparent!important;color:#e8f3f9!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important;font:inherit!important;white-space:pre}
+@media(max-width:480px){.rsq-figure{padding:11px}.rsq-code pre{padding:12px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.rsq-hero *,.rsq-figure *{animation:none!important;transition:none!important}}
