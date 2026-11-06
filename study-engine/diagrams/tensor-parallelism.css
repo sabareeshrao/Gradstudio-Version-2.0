@@ -1,0 +1,24 @@
+/* Tensor Parallelism · compact, diagram-first Gradstudio visual reference.
+ * All diagrams fit existing cards; labels are concise and each scene is distinct. */
+.tp-hero,.tp-figure{box-sizing:border-box;min-width:0;max-width:100%;font-family:inherit;color:#294e63}
+.tp-hero{background:linear-gradient(140deg,#f2fbf8,#f7fcff 64%,#fffaf1);border:1px solid #d4e5e8;border-radius:17px;padding:clamp(12px,2.2vw,21px);margin-bottom:19px}
+.tp-hero h2{margin:5px 0;color:#2e546b;line-height:1.26;font-size:clamp(1.2rem,2.25vw,1.6rem)}
+.tp-hero p{font-size:.85rem;line-height:1.52;color:#5a7886;margin:4px 0 12px}
+.tp-figure{background:linear-gradient(145deg,#f7fcfe,#fbfcf7);padding:clamp(10px,1.65vw,16px);border-radius:13px;margin:0}
+.tp-eyebrow{font-size:.67rem;font-weight:830;letter-spacing:.085em;text-transform:uppercase;color:#29867a;line-height:1.4}
+.tp-figure h3{font-size:clamp(1rem,1.7vw,1.16rem);font-weight:800;line-height:1.32;color:#2e586e;margin:5px 0 9px}
+.tp-art{display:block;width:100%;min-width:0;max-width:100%;background:#f8fcfd;overflow:hidden;border:1px solid #d9e8ec;border-radius:10px}
+.tp-art>svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.tp-note{font-size:.8rem!important;color:#5b7685!important;line-height:1.54!important;margin:9px 0 0!important}
+.q-fig:has(>.tp-figure){padding:0;border:0;background:transparent;margin-bottom:13px}
+.tp-hero svg,.tp-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+/* High-contrast small code panel; source capped at 15 lines. */
+.tp-code{max-width:100%;min-width:0;overflow:hidden;margin-top:11px;background:#1e1e1e;border:1px solid #454e60;border-radius:11px}
+.tp-code-label{background:#292e36;color:#e6ecf5;display:flex;justify-content:space-between;gap:9px;padding:8px 12px;font-size:.77rem;font-weight:780}
+.tp-code-label small{color:#b9c9dc;font-weight:540}
+.tp-figure .tp-code pre{display:block;margin:0;padding:12px 14px;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:pre;tab-size:4;background:#1e1e1e!important;color:#d4d4d4!important;font:500 12.5px/1.57 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;letter-spacing:0}
+.tp-figure .tp-code pre code{display:block;min-width:100%;width:max-content;padding:0!important;margin:0;border:0!important;border-radius:0!important;background:transparent!important;color:#d4d4d4!important;box-shadow:none!important;font:inherit!important;white-space:pre!important}
+.tp-figure .tp-code .kw{color:#569cd6}.tp-figure .tp-code .str{color:#ce9178}.tp-figure .tp-code .fn{color:#dcdcaa}.tp-figure .tp-code .num{color:#b5cea8}.tp-figure .tp-code .cm{color:#6a9955}
+.tp-code-hint{font-size:.73rem;line-height:1.5;color:#d4e1ed;background:#283544;padding:8px 12px;margin:0}
+@media(max-width:440px){.tp-hero,.tp-figure{padding:10px;border-radius:11px}.tp-figure h3{font-size:1rem}.tp-eyebrow{font-size:.62rem}.tp-note{font-size:.77rem!important}.tp-figure .tp-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.tp-hero *, .tp-figure *{transition:none!important;animation:none!important}}
