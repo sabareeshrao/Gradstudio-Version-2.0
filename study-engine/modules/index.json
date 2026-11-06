@@ -401,6 +401,12 @@
       "title": "Stochastic Depth",
       "domain": "Deep Learning Foundations",
       "catalogId": "PENDING-STOCHASTIC-DEPTH"
+    },
+    {
+      "slug": "tensor-parallelism",
+      "title": "Tensor Parallelism",
+      "domain": "Distributed AI Training",
+      "catalogId": "PENDING-TENSOR-PARALLELISM"
     }
   ]
 }
