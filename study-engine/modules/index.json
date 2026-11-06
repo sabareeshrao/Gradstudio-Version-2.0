@@ -797,6 +797,12 @@
       "title": "Normal Distribution",
       "domain": "Probability and Statistics",
       "catalogId": "PENDING-NORMAL-DISTRIBUTION"
+    },
+    {
+      "slug": "matrix-multiplication",
+      "title": "Matrix Multiplication",
+      "domain": "Mathematics for AI",
+      "catalogId": "PENDING-MATRIX-MULTIPLICATION"
     }
   ]
 }
