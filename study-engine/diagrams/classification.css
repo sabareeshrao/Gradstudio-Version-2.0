@@ -1,0 +1,23 @@
+/* Classification | Data Augmentation Sky reference. Single SVG scene per question, no horizontal illustration overflow. */
+.cl-hero,.cl-figure{font-family:inherit;color:#2a5166;min-width:0;max-width:100%;box-sizing:border-box}
+.cl-hero{background:radial-gradient(ellipse at 13% 0%,#e3f7f0,transparent 45%),linear-gradient(145deg,#f5fbfe,#fff9ef);padding:clamp(16px,2.8vw,30px);margin:0 0 23px;border:1px solid #cddfe7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
+.cl-hero h2{font-size:clamp(1.25rem,2.8vw,1.85rem);margin:9px 0;line-height:1.25;color:#2d596c}
+.cl-kicker{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;color:#278577}
+.cl-hero p,.cl-figure p{font-size:.86rem;color:#5b7b89;line-height:1.6}
+.cl-figure{background:radial-gradient(ellipse at 95% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);border-radius:16px;padding:clamp(13px,2.4vw,24px);margin:0}
+.cl-art{display:block;min-width:0;max-width:100%;overflow:hidden;border:1px solid #d6e6eb;border-radius:13px;background:#f8fcfd}
+.cl-art > svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.cl-note{font-size:.81rem;color:#5c7a89;margin:12px 0 0;line-height:1.65}
+.cl-hero svg,.cl-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(> .cl-figure){border:0;background:transparent}
+.cl-code{margin:14px 0 0;min-width:0;max-width:100%;border:1px solid #3b576e;background:#1e1e1e;color:#d4d4d4;border-radius:12px;overflow:hidden}
+.cl-code-head{display:flex;align-items:center;gap:8px;background:#263544;color:#e4f3f9;padding:10px 14px;font:700 .79rem/1.4 system-ui,sans-serif}
+.cl-dots{width:9px;height:9px;flex:none;border-radius:50%;background:#e5a778;box-shadow:14px 0 #e5d074,28px 0 #78cdb2;margin-right:30px}
+.cl-code-count{color:#d5e2ec;font-size:.72rem;margin-left:auto}
+.cl-code pre{display:block;margin:0;max-width:100%;min-width:0;padding:15px 17px;overflow-x:auto;overflow-y:visible;background:#1e1e1e!important;color:#d4d4d4!important;font:500 12px/1.7 ui-monospace,Consolas,monospace;tab-size:4;white-space:pre}
+.cl-code pre code{display:block;width:max-content;min-width:100%;margin:0;padding:0!important;border:0!important;border-radius:0;box-shadow:none!important;background:transparent!important;color:#d4d4d4!important;font:inherit!important;white-space:pre}
+.cl-sources{margin:20px 0 0;padding:14px 16px;border:1px solid #d6e5e9;background:#fff;border-radius:13px}
+.cl-sources summary{cursor:pointer;color:#355f73;font-weight:850}
+.cl-sources li{margin:8px 0}
+@media(max-width:480px){.cl-code pre{padding:12px;font-size:11px}.cl-figure{padding:12px}}
+@media(prefers-reduced-motion:reduce){.cl-hero *,.cl-figure *{animation:none!important;transition:none!important}}

@@ -521,6 +521,12 @@
       "title": "Regression",
       "domain": "Supervised Machine Learning",
       "catalogId": "PENDING-REGRESSION"
+    },
+    {
+      "slug": "classification",
+      "title": "Classification",
+      "domain": "Supervised Machine Learning",
+      "catalogId": "PENDING-CLASSIFICATION"
     }
   ]
 }
