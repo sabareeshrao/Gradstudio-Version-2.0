@@ -569,6 +569,12 @@
       "title": "Recall Score",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-RECALL-SCORE"
+    },
+    {
+      "slug": "f1-score",
+      "title": "F1 Score",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-F1-SCORE"
     }
   ]
 }
