@@ -473,6 +473,12 @@
       "title": "Mixture-of-Experts Transformer",
       "domain": "Transformers and LLM Architecture",
       "catalogId": "PENDING-MOE-TRANSFORMER"
+    },
+    {
+      "slug": "categorical-cross-entropy-loss",
+      "title": "Categorical Cross-Entropy Loss",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "PENDING-CATEGORICAL-CROSS-ENTROPY-LOSS"
     }
   ]
 }
