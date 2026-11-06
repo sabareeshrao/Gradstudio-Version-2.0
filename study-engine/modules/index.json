@@ -785,6 +785,12 @@
       "title": "Bayes’ Theorem",
       "domain": "Probability and Statistics",
       "catalogId": "PENDING-BAYES-THEOREM"
+    },
+    {
+      "slug": "probability-density-function",
+      "title": "Probability Density Function (PDF)",
+      "domain": "Probability and Statistics",
+      "catalogId": "PENDING-PROBABILITY-DENSITY-FUNCTION"
     }
   ]
 }
