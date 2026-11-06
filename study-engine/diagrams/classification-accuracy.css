@@ -21,3 +21,6 @@
 .ca-sources li{margin:8px 0}
 @media(max-width:480px){.ca-code pre{padding:12px;font-size:11px}.ca-figure{padding:12px}}
 @media(prefers-reduced-motion:reduce){.ca-hero *,.ca-figure *{animation:none!important;transition:none!important}}
+
+/* Data Augmentation visual hierarchy: explicit teaching title above each independent SVG. */
+.ca-visual-title{font-size:clamp(1.03rem,1.9vw,1.27rem);line-height:1.35;margin:9px 0 14px;font-weight:850;color:#2f6376;letter-spacing:-.01em}
