@@ -36,7 +36,7 @@
       "stem": "How should a ROC-AUC score be interpreted, including the meaning of 0.5, 1.0 and its probability-based ranking interpretation?",
       "tag": "Beginner · Ranking interpretation",
       "options": [
-        "An AUC of 0.5 means chance-level ranking, while 1.0 means positives always outrank negatives. AUC is the probability that a random positive scores higher than a random negative, with ties counting as half.",
+        "AUC 0.5 means chance-level ranking, while 1.0 means positives always outrank negatives. It is the probability that a random positive scores higher than a random negative, counting ties as half.",
         "An AUC of 0.5 means half the hard predictions are correct, while 1.0 means all scores are perfectly calibrated. The measure describes threshold accuracy rather than positive-negative comparisons.",
         "An AUC of 0.5 means precision equals recall, while 1.0 means there are no false positives at the chosen cutoff. The value estimates the chance of the next prediction being correct.",
         "An AUC of 0.5 means positives make up half the data, while 1.0 means only one class remains. The number mainly reports class prevalence and does not directly assess ranking."
