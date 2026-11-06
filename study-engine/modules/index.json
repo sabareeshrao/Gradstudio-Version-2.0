@@ -653,6 +653,12 @@
       "title": "Concept Drift Monitoring",
       "domain": "MLOps",
       "catalogId": "PENDING-CONCEPT-DRIFT-MONITORING"
+    },
+    {
+      "slug": "text-to-image-generation",
+      "title": "Text-to-Image Generation",
+      "domain": "Generative Modeling",
+      "catalogId": "PENDING-TEXT-TO-IMAGE-GENERATION"
     }
   ]
 }
