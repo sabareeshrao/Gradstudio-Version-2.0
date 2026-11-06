@@ -419,6 +419,12 @@
       "title": "Early Stopping",
       "domain": "Deep Learning Foundations",
       "catalogId": "PENDING-EARLY-STOPPING"
+    },
+    {
+      "slug": "pipeline-parallelism",
+      "title": "Pipeline Parallelism",
+      "domain": "Distributed AI Training",
+      "catalogId": "PENDING-PIPELINE-PARALLELISM"
     }
   ]
 }
