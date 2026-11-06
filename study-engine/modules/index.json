@@ -701,6 +701,12 @@
       "title": "Classifier-Free Guidance (CFG)",
       "domain": "Generative Modeling",
       "catalogId": "PENDING-CLASSIFIER-FREE-GUIDANCE"
+    },
+    {
+      "slug": "few-shot-prompting",
+      "title": "Few-shot Prompting",
+      "domain": "Prompt Engineering",
+      "catalogId": "PENDING-FEW-SHOT-PROMPTING"
     }
   ]
 }
