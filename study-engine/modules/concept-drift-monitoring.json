@@ -36,7 +36,7 @@
       "stem": "What are sudden, gradual and recurring forms of Concept Drift, and how can their different time patterns affect the way production model performance is monitored?",
       "tag": "Beginner · Drift time patterns",
       "options": [
-        "Sudden drift produces an abrupt jump in labeled error, gradual drift produces slow deterioration, and recurring drift produces repeated error peaks. These patterns alone establish a genuine changed feature–outcome relationship.",
+        "Sudden drift produces an abrupt jump in labeled error, gradual drift produces slow deterioration, and recurring drift produces repeated error peaks. These patterns alone establish a genuine change in the feature–outcome relationship.",
         "Sudden drift changes the outcome relationship at once, gradual drift changes it over time, and recurring drift revisits earlier conditions. A single fixed-length weekly average reliably reveals all three.",
         "Sudden drift occurs immediately, gradual drift builds slowly, and recurring drift returns to a previous relationship. Each is identified most reliably from overall input averages even when labeled outcomes are missing.",
         "Sudden drift changes the input–outcome relationship quickly, gradual drift develops across time, and recurring drift revisits earlier patterns. Monitor suitable time windows and labeled quality to recognize each behavior."
