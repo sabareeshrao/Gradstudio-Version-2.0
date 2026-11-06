@@ -623,6 +623,12 @@
       "title": "R-squared",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-R-SQUARED"
+    },
+    {
+      "slug": "speech-recognition",
+      "title": "Speech Recognition (ASR)",
+      "domain": "Speech and Audio AI",
+      "catalogId": "PENDING-SPEECH-RECOGNITION"
     }
   ]
 }
