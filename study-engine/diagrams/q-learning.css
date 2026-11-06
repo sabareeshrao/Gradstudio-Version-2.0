@@ -1,0 +1,31 @@
+/* Q-learning — Data Augmentation visual reference.
+   Seven unique SVG teaching scenes, high contrast Python, mobile responsive.
+   Scoped only to this module; common 15-theme engine is unmodified. */
+.ql-hero,.ql-figure{font-family:inherit;min-width:0;max-width:100%;box-sizing:border-box;color:#31596d}
+.ql-hero{margin:0 0 23px;padding:clamp(16px,2.8vw,30px);border:1px solid #ccdee8;border-radius:20px;background:radial-gradient(ellipse at 13% 0%,#e0f7ef,transparent 44%),linear-gradient(145deg,#f4fbff,#fff9ef);box-shadow:0 8px 25px #294d6b12}
+.ql-kicker{display:block;font-size:.71rem;font-weight:900;letter-spacing:.105em;line-height:1.5;color:#258b7c;text-transform:uppercase}
+.ql-hero h2{font-size:clamp(1.24rem,2.7vw,1.87rem);line-height:1.28;color:#28586b;margin:8px 0;letter-spacing:-.022em}
+.ql-hero>p{max-width:80ch;margin:0 0 14px;font-size:.86rem;line-height:1.61;color:#587887}
+.ql-figure{border-radius:16px;padding:clamp(12px,2.35vw,24px);background:radial-gradient(ellipse at 94% 0%,#e2f7ef,transparent 47%),linear-gradient(145deg,#f8fcff,#fffaef)}
+.ql-figure h3{margin:6px 0 13px;font-size:clamp(1.05rem,1.93vw,1.29rem);font-weight:840;line-height:1.34;color:#305d70}
+.ql-art{display:block;overflow:hidden;min-width:0;max-width:100%;border:1px solid #d6e7eb;border-radius:13px;background:#f9fcfe}
+.ql-art svg{display:block;max-width:100%!important;width:100%!important;min-width:0!important;height:auto!important;text-rendering:geometricPrecision;shape-rendering:geometricPrecision}
+.ql-hero svg,.ql-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.ql-note{font-size:.8rem!important;color:#587685!important;line-height:1.62!important;margin:11px 0 0!important}
+.q-fig:has(>.ql-figure){padding:0!important;border:0!important;background:transparent!important;margin-bottom:14px}
+.ql-tags{margin-top:11px;display:flex;gap:8px;flex-wrap:wrap}
+.ql-tags span{font-size:.73rem;color:#486e7c;background:#fff;border:1px solid #d4e6eb;border-radius:100px;padding:5px 10px;font-weight:760}
+.ql-pair,.ql-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:11px 0 0}
+.ql-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ql-pair>div,.ql-triple>div{min-width:0;padding:10px;border:1px solid #d8e7ed;border-radius:10px;background:#fff;color:#587989;font-size:.76rem;line-height:1.53}
+.ql-pair strong,.ql-triple strong{font-size:.82rem;color:#286579;display:block;margin-bottom:4px}
+.ql-code{margin:13px 0 0;max-width:100%;min-width:0;overflow:hidden;border:1px solid #38566b;border-radius:12px;background:#172b3b}
+.ql-code-head{background:#29485a;color:#f0f9ff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;padding:9px 13px;font-size:.78rem;font-weight:850}
+.ql-code-head small{font-weight:540;font-size:.72rem;color:#c9e0ea}
+.ql-figure .ql-code pre{min-width:0;max-width:100%;display:block;margin:0;padding:14px 15px;background:#172b3b!important;color:#f4f9ff!important;overflow-x:auto!important;overflow-y:hidden;tab-size:4;white-space:pre!important;font:500 12.5px/1.63 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.ql-figure .ql-code pre code{display:block!important;width:max-content!important;min-width:100%!important;margin:0!important;padding:0!important;border:0!important;box-shadow:none!important;border-radius:0!important;background:transparent!important;color:#f4f9ff!important;white-space:pre!important;font:inherit!important;line-height:inherit!important}
+.ql-code-foot{padding:9px 13px;color:#dcebf4;background:#29485a;font-size:.74rem;line-height:1.55}
+.ql-code-foot code{color:#f4f9ff!important;background:#172b3b!important;border:0!important}
+@media(max-width:790px){.ql-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.ql-hero,.ql-figure{padding:11px;border-radius:12px}.ql-pair{grid-template-columns:1fr}.ql-figure .ql-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.ql-hero *,.ql-figure *{animation:none!important;transition:none!important}}
