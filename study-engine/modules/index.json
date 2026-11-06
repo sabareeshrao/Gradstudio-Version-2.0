@@ -773,6 +773,12 @@
       "title": "Uncertainty Quantification",
       "domain": "Bayesian and Probabilistic Modeling",
       "catalogId": "PENDING-UNCERTAINTY-QUANTIFICATION"
+    },
+    {
+      "slug": "bayesian-inference",
+      "title": "Bayesian Inference",
+      "domain": "Bayesian and Probabilistic Modeling",
+      "catalogId": "PENDING-BAYESIAN-INFERENCE"
     }
   ]
 }
