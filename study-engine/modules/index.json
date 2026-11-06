@@ -617,6 +617,12 @@
       "title": "Vision Transformer (ViT)",
       "domain": "Computer Vision",
       "catalogId": "PENDING-VISION-TRANSFORMER"
+    },
+    {
+      "slug": "r-squared",
+      "title": "R-squared",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-R-SQUARED"
     }
   ]
 }
