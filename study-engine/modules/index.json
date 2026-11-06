@@ -707,6 +707,12 @@
       "title": "Few-shot Prompting",
       "domain": "Prompt Engineering",
       "catalogId": "PENDING-FEW-SHOT-PROMPTING"
+    },
+    {
+      "slug": "latent-diffusion-model",
+      "title": "Latent Diffusion Model (LDM)",
+      "domain": "Generative Modeling",
+      "catalogId": "PENDING-LATENT-DIFFUSION-MODEL"
     }
   ]
 }
