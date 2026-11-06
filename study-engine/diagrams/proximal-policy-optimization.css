@@ -1,0 +1,34 @@
+/* Gradstudio · Proximal Policy Optimization (PPO)
+   Data Augmentation-inspired 7-scene instructional design.
+   Scoped styles preserve the shared 15 themes and quiz engine. */
+.ppo-hero,.ppo-figure{box-sizing:border-box;min-width:0;max-width:100%;font-family:inherit;color:#31586b}
+.ppo-hero{margin:0 0 23px;padding:clamp(16px,2.7vw,30px);border:1px solid #cadfe7;border-radius:20px;background:radial-gradient(ellipse at 12% 0%,#e1f7ed,transparent 45%),linear-gradient(145deg,#f4fbff,#fff9ed);box-shadow:0 8px 26px #33556c12}
+.ppo-kicker{display:block;color:#248c7a;font-size:.71rem;font-weight:900;letter-spacing:.105em;line-height:1.5;text-transform:uppercase}
+.ppo-hero h2{margin:8px 0;color:#2c5970;font-size:clamp(1.25rem,2.7vw,1.84rem);line-height:1.29;letter-spacing:-.02em}
+.ppo-hero>p{max-width:79ch;margin:0 0 14px;color:#597989;font-size:.86rem;line-height:1.6}
+.ppo-figure{padding:clamp(12px,2.3vw,24px);border-radius:16px;background:radial-gradient(ellipse at 95% 0%,#e2f7ef,transparent 45%),linear-gradient(148deg,#f8fcff,#fffaef)}
+.ppo-figure h3{margin:6px 0 12px;color:#305d71;font-size:clamp(1.05rem,1.95vw,1.29rem);line-height:1.34;font-weight:850}
+.ppo-art{display:block;min-width:0;max-width:100%;overflow:hidden;border:1px solid #d5e6eb;border-radius:13px;background:#f9fcfe}
+.ppo-art svg{display:block;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;text-rendering:geometricPrecision;shape-rendering:geometricPrecision}
+.ppo-hero svg,.ppo-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.ppo-note{margin:11px 0 0!important;color:#587887!important;font-size:.8rem!important;line-height:1.63!important}
+.q-fig:has(>.ppo-figure){margin-bottom:14px;padding:0!important;border:0!important;background:transparent!important}
+.ppo-tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.ppo-tags span{font-size:.73rem;font-weight:760;color:#496d7d;background:#fff;border:1px solid #d6e7ea;border-radius:100px;padding:5px 10px}
+.ppo-pair,.ppo-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.ppo-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ppo-pair>div,.ppo-triple>div{background:#fff;min-width:0;border:1px solid #d9e8eb;border-radius:10px;padding:10px;color:#5b7b8a;font-size:.76rem;line-height:1.54}
+.ppo-pair strong,.ppo-triple strong{display:block;color:#2d6576;font-size:.82rem;margin-bottom:4px}
+.ppo-code{max-width:100%;min-width:0;margin:13px 0 0;overflow:hidden;border-radius:12px;border:1px solid #38566b;background:#172b3b}
+.ppo-code-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:7px;padding:9px 13px;color:#f0f9ff;background:#294859;font-size:.77rem;font-weight:850}
+.ppo-code-head small{font-size:.71rem;font-weight:530;color:#cee1ea}
+.ppo-figure .ppo-code pre{display:block;min-width:0;max-width:100%;overflow-x:auto!important;overflow-y:hidden;margin:0;padding:14px 15px;white-space:pre!important;tab-size:4;background:#172b3b!important;color:#f3f9ff!important;font:500 12.5px/1.63 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.ppo-figure .ppo-code pre code{display:block!important;width:max-content!important;min-width:100%!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#f3f9ff!important;white-space:pre!important;font:inherit!important;line-height:inherit!important}
+.ppo-code-foot{background:#294859;color:#deedf4;padding:9px 13px;font-size:.75rem;line-height:1.58}
+.ppo-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+.ppo-key{margin-top:11px;display:flex;flex-wrap:wrap;gap:8px 15px}
+.ppo-key span{display:inline-flex;align-items:center;gap:6px;font-size:.76rem;font-weight:780;color:#4f7080}
+.ppo-key i{display:inline-block;width:10px;height:10px;border-radius:3px}
+@media(max-width:790px){.ppo-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.ppo-hero,.ppo-figure{border-radius:12px;padding:11px}.ppo-pair{grid-template-columns:1fr}.ppo-figure .ppo-code pre{padding:10px;font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.ppo-hero *,.ppo-figure *{animation:none!important;transition:none!important}}
