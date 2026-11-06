@@ -1,0 +1,22 @@
+/* Prompt Chaining | Data Augmentation Sky visual reference | shared study engine. */
+.pc-hero,.pc-figure{font-family:inherit;color:#294f65;min-width:0;max-width:100%;box-sizing:border-box}
+.pc-hero{background:radial-gradient(ellipse at 14% 0%,#e2f7ef,transparent 47%),linear-gradient(145deg,#f5fbfe,#fff9ef);padding:clamp(16px,2.8vw,30px);margin:0 0 23px;border:1px solid #cddfe7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
+.pc-hero h2{font-size:clamp(1.25rem,2.8vw,1.85rem);color:#2d596c;line-height:1.25;margin:9px 0}
+.pc-kicker{display:block;color:#278577;font-size:.73rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+.pc-hero p,.pc-figure p{font-size:.88rem;line-height:1.65;color:#5b7887}
+.pc-figure{background:radial-gradient(ellipse at 96% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);padding:clamp(12px,2.4vw,24px);margin:0;border-radius:16px}
+.pc-art{display:block;max-width:100%;min-width:0;overflow:hidden;border:1px solid #d6e6eb;border-radius:13px;background:#f8fcfd}
+.pc-art>svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.pc-hero svg,.pc-figure svg{font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.pc-figure .pc-kicker{margin:0 0 8px}
+.pc-note{font-size:.81rem;color:#607d8c;line-height:1.63;margin:13px 0 0}
+.q-fig:has(>.pc-figure){border:0;background:transparent}
+.pc-code{min-width:0;max-width:100%;margin:15px 0 0;overflow:hidden;border:1px solid #38566b;border-radius:12px;background:#1e1e1e;color:#eff8ff}
+.pc-code-head{padding:10px 15px;background:#2c4154;color:#eff8ff;font:700 .79rem/1.45 system-ui,sans-serif}
+.pc-code pre{display:block;margin:0;padding:16px;max-width:100%;min-width:0;overflow-x:auto;overflow-y:visible;background:#1e1e1e!important;color:#eff8ff!important;white-space:pre;tab-size:4;font:500 12px/1.7 ui-monospace,Consolas,monospace}
+.pc-code pre code{display:block;min-width:100%;width:max-content;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#eff8ff!important;font:inherit!important;white-space:pre}
+.pc-sources{margin:19px 0 0;padding:15px 17px;border:1px solid var(--border,#d5e6e9);border-radius:13px;background:var(--card,#fff)}
+.pc-sources summary{cursor:pointer;font-weight:800}
+.pc-sources li{margin:7px 0}
+@media(max-width:480px){.pc-figure{padding:11px}.pc-code pre{font-size:11px;padding:12px}}
+@media(prefers-reduced-motion:reduce){.pc-hero *,.pc-figure *{animation:none!important;transition:none!important}}
