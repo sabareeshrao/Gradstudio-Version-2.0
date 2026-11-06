@@ -803,6 +803,12 @@
       "title": "Matrix Multiplication",
       "domain": "Mathematics for AI",
       "catalogId": "PENDING-MATRIX-MULTIPLICATION"
+    },
+    {
+      "slug": "vector",
+      "title": "Vector",
+      "domain": "Mathematics for AI",
+      "catalogId": "PENDING-VECTOR"
     }
   ]
 }
