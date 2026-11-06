@@ -1,0 +1,25 @@
+/* Pipeline Parallelism · compact Data Augmentation-inspired diagrams.
+   Fit the existing question-card width at every breakpoint; no layout duplication. */
+.pp-hero,.pp-figure{box-sizing:border-box;min-width:0;max-width:100%;font-family:inherit;color:#294f64}
+.pp-hero{padding:clamp(12px,2vw,20px);background:linear-gradient(140deg,#f0fbf7,#f7fcff 66%,#fff9ed);border:1px solid #d3e4e8;border-radius:16px;margin:0 0 20px}
+.pp-hero h2{font-size:clamp(1.2rem,2.3vw,1.62rem);line-height:1.28;margin:6px 0;color:#2b5269;font-weight:820}
+.pp-hero p{font-size:.84rem;color:#587684;line-height:1.54;margin:5px 0 13px}
+.pp-figure{padding:clamp(10px,1.7vw,16px);background:linear-gradient(145deg,#f8fcfd,#fcfcf8);border-radius:13px;margin:0}
+.pp-kicker{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:#248579;font-weight:830;line-height:1.38}
+.pp-figure h3{font-size:clamp(1rem,1.72vw,1.15rem);color:#2a566c;font-weight:810;line-height:1.32;margin:5px 0 9px}
+.pp-art{display:block;width:100%;min-width:0;max-width:100%;border-radius:10px;border:1px solid #d9e7eb;overflow:hidden;background:#f9fcfd}
+.pp-art>svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.pp-caption{font-size:.80rem!important;line-height:1.54!important;color:#5a7685!important;margin:9px 0 0!important}
+.pp-hero svg,.pp-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(>.pp-figure){padding:0;border:0;background:transparent;margin-bottom:13px}
+.pp-code{margin-top:11px;max-width:100%;min-width:0;overflow:hidden;border-radius:11px;border:1px solid #484e5b;background:#1e1e1e}
+.pp-code-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 12px;background:#292f36;color:#e5eef6;font-weight:780;font-size:.77rem}
+.pp-code-heading small{font-size:.73rem;font-weight:570;color:#b7cee0}
+.pp-figure .pp-code pre{display:block;max-width:100%;margin:0;padding:12px 14px;white-space:pre;overflow-x:auto;overflow-y:hidden;background:#1e1e1e!important;color:#d4d4d4!important;tab-size:4;font:500 12.5px/1.56 ui-monospace,SFMono-Regular,Consolas,monospace!important;letter-spacing:0}
+.pp-figure .pp-code pre code{display:block;min-width:100%;width:max-content;margin:0;padding:0!important;border:0!important;border-radius:0!important;white-space:pre!important;background:transparent!important;box-shadow:none!important;color:#d4d4d4!important;font:inherit!important}
+.pp-figure .pp-code .kw{color:#569cd6}.pp-figure .pp-code .str{color:#ce9178}.pp-figure .pp-code .fn{color:#dcdcaa}.pp-figure .pp-code .num{color:#b5cea8}.pp-figure .pp-code .cm{color:#6a9955}
+.pp-figure .pp-code .ln{display:inline-block;min-width:2.3ch;margin-right:1ch;text-align:right;user-select:none;color:#858585!important}
+.pp-code-hint{margin:0;padding:8px 12px;background:#283544;color:#d3e2ec;font-size:.73rem;line-height:1.52}
+.pp-code-hint code{padding:1px 3px!important;color:#d4d4d4!important;background:#1e1e1e!important;border:0!important}
+@media(max-width:440px){.pp-hero,.pp-figure{padding:10px;border-radius:11px}.pp-figure h3{font-size:1rem}.pp-kicker{font-size:.61rem}.pp-caption{font-size:.77rem!important}.pp-figure .pp-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.pp-hero *, .pp-figure *{animation:none!important;transition:none!important}}
