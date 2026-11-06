@@ -389,6 +389,12 @@
       "title": "Batch Normalization",
       "domain": "Deep Learning Foundations",
       "catalogId": "PENDING-BATCH-NORMALIZATION"
+    },
+    {
+      "slug": "dropout",
+      "title": "Dropout",
+      "domain": "Deep Learning Foundations",
+      "catalogId": "PENDING-DROPOUT"
     }
   ]
 }
