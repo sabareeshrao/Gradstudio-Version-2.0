@@ -461,6 +461,12 @@
       "title": "Cosine Annealing",
       "domain": "Optimization",
       "catalogId": "PENDING-COSINE-ANNEALING"
+    },
+    {
+      "slug": "adamw",
+      "title": "AdamW",
+      "domain": "Optimization",
+      "catalogId": "PENDING-ADAMW"
     }
   ]
 }
