@@ -1,8 +1,8 @@
 # All Telugu + English Lesson HTML Links
 
-**75 English lesson links · 527 questions · 50 Telugu translations completed · 25 Telugu translations pending**
+**77 English lesson links · 541 questions · 50 Telugu translations completed · 27 Telugu translations pending**
 
-English lesson links 01–75 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–75 remain blank until those translations are published. Lessons 59–75 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
+English lesson links 01–77 are listed below. Telugu translations are available for lessons 01–50; the Telugu link cells for lessons 51–77 remain blank until those translations are published. Lessons 59–77 were added after the original 58-topic catalog; some are direct-link lessons not yet included in the library index.
 
 [Open complete bilingual lesson library](https://sabareeshrao.github.io/Gradstudio-Version-2.0/Telugu%20Translation/)
 
@@ -85,11 +85,13 @@ English lesson links 01–75 are listed below. Telugu translations are available
 | 73 | Gradient Clipping |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=gradient-clipping) |
 | 74 | Loss Landscape |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=loss-landscape) |
 | 75 | FLOPs |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=flops) |
+| 76 | Learning Rate Schedule |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=learning-rate-schedule) |
+| 77 | Mixture-of-Experts Architecture |  | [Open English](https://sabareeshrao.github.io/Gradstudio-Version-2.0/study-engine/?module=mixture-of-experts-architecture) |
 
-**New English lessons (59–75):** MLOps, Model Evaluation, Feature Selection, TensorFlow, MCP Server, RMSNorm, Batch Normalization, Dropout, Stochastic Depth, Tensor Parallelism, Weight Decay, Early Stopping, Pipeline Parallelism, Gradient Clipping, Loss Landscape, and FLOPs are in the study library index. Model Deployment is accessible by direct link from the Study Engine’s `unlisted` folder. Telugu HTML translations were not found for lessons 51–75, so their Telugu cells remain blank.
+**New English lessons (59–77):** MLOps, Model Evaluation, Feature Selection, TensorFlow, MCP Server, RMSNorm, Batch Normalization, Dropout, Stochastic Depth, Tensor Parallelism, Weight Decay, Early Stopping, Pipeline Parallelism, Gradient Clipping, Loss Landscape, FLOPs, Learning Rate Schedule, and Mixture-of-Experts Architecture are in the study library index. Model Deployment is accessible by direct link from the Study Engine’s `unlisted` folder. Telugu HTML translations were not found for lessons 51–77, so their Telugu cells remain blank.
 
 ## Copy-ready HTML URLs
 
 [Copy-ready Telugu URLs for lessons 01–50](COPY_READY_TELUGU_URLS.txt)
 
-Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–75 are pending.
+Existing Telugu pages preserve the original English diagrams, tiles, code, and formulas. Questions, choices, and explanations are in modern Telugu + English for lessons 01–50; Telugu translations for lessons 51–77 are pending.
