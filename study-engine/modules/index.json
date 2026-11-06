@@ -455,6 +455,12 @@
       "title": "Mixture-of-Experts Architecture",
       "domain": "Neural Network Architectures",
       "catalogId": "PENDING-MIXTURE-OF-EXPERTS"
+    },
+    {
+      "slug": "cosine-annealing",
+      "title": "Cosine Annealing",
+      "domain": "Optimization",
+      "catalogId": "PENDING-COSINE-ANNEALING"
     }
   ]
 }
