@@ -425,6 +425,12 @@
       "title": "Pipeline Parallelism",
       "domain": "Distributed AI Training",
       "catalogId": "PENDING-PIPELINE-PARALLELISM"
+    },
+    {
+      "slug": "gradient-clipping",
+      "title": "Gradient Clipping",
+      "domain": "Optimization",
+      "catalogId": "PENDING-GRADIENT-CLIPPING"
     }
   ]
 }
