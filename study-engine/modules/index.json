@@ -563,6 +563,12 @@
       "title": "Image Classification",
       "domain": "Computer Vision",
       "catalogId": "PENDING-IMAGE-CLASSIFICATION"
+    },
+    {
+      "slug": "recall-score",
+      "title": "Recall Score",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-RECALL-SCORE"
     }
   ]
 }
