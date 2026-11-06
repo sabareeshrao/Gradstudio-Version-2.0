@@ -10,8 +10,8 @@
       "stem": "What is Few-shot Prompting in large language models, and how does learning from examples placed in the prompt differ from fine-tuning model weights?",
       "tag": "Beginner · In-context examples",
       "options": [
-        "Few-shot prompting places labeled examples in the prompt and then adjusts a small set of model weights before the new question. These updates are why the model can use the examples when generating its response.",
-        "Few-shot prompting shows a small number of input–output demonstrations alongside a new task. The model conditions on this context during inference; its underlying weights are not updated by the examples.",
+        "Few-shot prompting places labeled examples in the prompt and updates selected model weights before the new question. Those parameter changes persist across requests, allowing the model to retain task-specific learning.",
+        "Few-shot prompting gives a model a small set of labeled input–output examples before a new task. It uses these examples during inference without changing its trained weights.",
         "Few-shot prompting uses a few training examples to compute task-specific gradients in the background. Those learned updates remain available after the prompt ends, unlike ordinary instruction following.",
         "Few-shot prompting presents several sample outputs and treats them as replacement training labels for the new request. It requires rewriting the model's stored vocabulary probabilities before the next prediction."
       ],
@@ -26,7 +26,7 @@
         "Zero-shot prompts contain a task instruction and no examples; one-shot prompts contain one example; few-shot prompts contain several examples. The difference is mainly whether the outputs include explicit reasoning explanations.",
         "Zero-shot prompting asks for a label without examples, one-shot includes one input–output sample, and few-shot includes several. Examples become effective only after a task-specific gradient training step.",
         "Zero-shot gives no demonstrations, one-shot gives a single demonstration, and few-shot gives several. The new task should appear before the examples so the model can retroactively compare earlier output labels.",
-        "Zero-shot gives no worked input–output examples, one-shot gives one, and few-shot gives a small set. Clear label names, separators and a new unlabeled input establish the pattern the model should continue."
+        "Zero-shot supplies no examples, one-shot supplies one, and few-shot supplies several input–output demonstrations. Label names, separators and an unlabeled new input define the pattern to continue."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Zero-shot prompting gives the task without demonstrations. One-shot provides a single example, and few-shot provides a small number of examples showing the desired input–output pattern. The task instruction, label names, separators and final unlabeled case clarify what to produce. For restaurant-review sentiment, a few-shot prompt might demonstrate Positive, Negative and Neutral reviews before asking for the label of a new comment. More examples do not automatically produce better results.",
@@ -78,7 +78,7 @@
         "Select all available demonstrations, even when they crowd out the latest user request. More labeled examples always improve performance and reduce output latency because they provide additional context.",
         "Retrieve only the single most semantically similar example to each new request, even if this removes all other categories. A matching phrase alone guarantees correct few-shot classification.",
         "Keep a fixed set of examples regardless of changing input types, because dynamic selection would update model parameters. Context-window limits matter only when a fine-tuning job is running.",
-        "Select relevant, diverse demonstrations within the context budget and reserve room for instructions, the new request and output. Measure gains against extra tokens, latency and sensitivity to example selection."
+        "Choose relevant, varied examples that fit the context budget while reserving space for instructions, input and output. Evaluate accuracy, token cost, latency and example-selection stability."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Few-shot prompts consume context tokens, so very long or poorly selected demonstrations may increase cost, slow requests or crowd out important instructions. Retrieval can select examples similar to the new task, but diversity and correct label coverage still matter. Budget space for instructions, examples, the new request and the answer. For a travel-help chatbot, dynamically selected booking and cancellation examples may help more than unrelated hotel questions. Compare answer quality and latency rather than assuming more examples are better.",
@@ -88,7 +88,7 @@
       "stem": "How should Few-shot Prompting be evaluated and deployed responsibly while preventing evaluation leakage, sensitive-example exposure and misleading claims of generalization?",
       "tag": "Advanced · Evaluation and privacy",
       "options": [
-        "Compare zero-shot and few-shot variants using the same held-out cases and scoring rules, tuning examples only on development data. Remove private records, test order sensitivity and report accuracy, cost and uncertainty.",
+        "Compare prompt variants on identical held-out cases, tuning examples only on development data. Exclude private records and report accuracy, token cost, order sensitivity and uncertainty.",
         "Choose demonstrations from final test questions because their correct labels best represent the evaluation target. Then compare prompt variants on those same tests to measure realistic performance without contamination.",
         "Publish only the best few-shot score across prompt orders and evaluation seeds, omitting example selection details. The selected result is unbiased so long as the underlying model weights remain fixed.",
         "Use real customer conversations in public prompt templates to capture authentic language, even if identifiers remain visible. Few-shot prompting is safe because demonstrations do not permanently update model weights."
