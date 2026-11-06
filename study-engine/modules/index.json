@@ -605,6 +605,12 @@
       "title": "Semantic Segmentation",
       "domain": "Computer Vision",
       "catalogId": "PENDING-SEMANTIC-SEGMENTATION"
+    },
+    {
+      "slug": "mean-squared-error",
+      "title": "Mean Squared Error",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-MEAN-SQUARED-ERROR"
     }
   ]
 }
