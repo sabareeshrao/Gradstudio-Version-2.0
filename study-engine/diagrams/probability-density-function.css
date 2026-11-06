@@ -1,0 +1,33 @@
+/* Probability Density Function (PDF): seven original visual teaching scenes.
+   Scoped Data Augmentation reference; shared study engine and 15 themes unchanged. */
+.pdf-hero,.pdf-figure{font-family:inherit;box-sizing:border-box;min-width:0;max-width:100%;color:#305a70}
+.pdf-hero{margin:0 0 23px;padding:clamp(16px,2.75vw,30px);border:1px solid #cadfe8;border-radius:20px;background:radial-gradient(ellipse at 11% 0%,#dff8ed,transparent 44%),linear-gradient(147deg,#f4fbff,#fff9ed);box-shadow:0 8px 26px #335b6f12}
+.pdf-kicker{display:block;color:#218e7c;font-size:.72rem;font-weight:900;letter-spacing:.108em;line-height:1.52;text-transform:uppercase}
+.pdf-hero h2{margin:8px 0;color:#285a6d;font-size:clamp(1.26rem,2.75vw,1.85rem);letter-spacing:-.022em;line-height:1.29}
+.pdf-hero>p{font-size:.86rem;line-height:1.64;color:#587b89;max-width:79ch;margin:0 0 14px}
+.pdf-figure{padding:clamp(12px,2.4vw,24px);border-radius:16px;background:radial-gradient(ellipse at 95% 0%,#e3f8ed,transparent 47%),linear-gradient(148deg,#f9fcff,#fffaf0)}
+.pdf-figure h3{margin:5px 0 13px;color:#2d5b6d;font-size:clamp(1.05rem,1.93vw,1.3rem);font-weight:850;line-height:1.34}
+.pdf-art{display:block;max-width:100%;min-width:0;overflow:hidden;border:1px solid #d8e7ed;border-radius:13px;background:#f9fcfe}
+.pdf-art svg{display:block;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.pdf-hero svg,.pdf-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.pdf-note{margin:11px 0 0!important;color:#577788!important;font-size:.8rem!important;line-height:1.64!important}
+.q-fig:has(>.pdf-figure){padding:0!important;margin-bottom:14px;border:0!important;background:transparent!important}
+.pdf-tags,.pdf-key{display:flex;flex-wrap:wrap;gap:8px;margin:11px 0 0}
+.pdf-tags span{border:1px solid #d6e7eb;background:#fff;padding:5px 10px;border-radius:100px;color:#4b6d7d;font-size:.73rem;font-weight:760}
+.pdf-key{gap:10px 17px}
+.pdf-key span{display:inline-flex;align-items:center;gap:6px;color:#4d7181;font-size:.75rem;font-weight:750}
+.pdf-key i{display:inline-block;width:11px;height:11px;border-radius:3px}
+.pdf-pair,.pdf-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.pdf-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pdf-pair>div,.pdf-triple>div{min-width:0;padding:10px;border:1px solid #d9e8ec;background:#fff;border-radius:10px;color:#597a8a;font-size:.76rem;line-height:1.58}
+.pdf-pair strong,.pdf-triple strong{display:block;color:#2b6374;font-size:.82rem;margin-bottom:5px}
+.pdf-code{max-width:100%;min-width:0;overflow:hidden;margin:13px 0 0;border-radius:12px;border:1px solid #39566b;background:#172b3b}
+.pdf-code-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:9px 13px;background:#29485b;color:#f2f9ff;font-size:.77rem;font-weight:840}
+.pdf-code-head small{color:#c9e1ed;font-size:.71rem;font-weight:520}
+.pdf-figure .pdf-code pre{display:block;min-width:0;max-width:100%;overflow-x:auto!important;overflow-y:hidden;margin:0;padding:14px 15px;white-space:pre!important;tab-size:4;background:#172b3b!important;color:#f3f9ff!important;font:500 12.5px/1.64 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.pdf-figure .pdf-code pre code{display:block!important;width:max-content!important;min-width:100%!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#f3f9ff!important;white-space:pre!important;font:inherit!important;line-height:inherit!important}
+.pdf-code-foot{padding:9px 13px;background:#29485b;color:#dceaf3;font-size:.75rem;line-height:1.58}
+.pdf-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+@media(max-width:790px){.pdf-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.pdf-hero,.pdf-figure{padding:11px;border-radius:12px}.pdf-pair{grid-template-columns:1fr}.pdf-figure .pdf-code pre{font-size:12px!important;padding:10px}}
+@media(prefers-reduced-motion:reduce){.pdf-hero *,.pdf-figure *{animation:none!important;transition:none!important}}
