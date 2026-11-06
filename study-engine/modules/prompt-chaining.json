@@ -11,7 +11,7 @@
       "tag": "Beginner · Definition and separate calls",
       "options": [
         "Prompt chaining asks one model to write a long response containing numbered steps, all within a single invocation. Intermediate paragraphs are considered separate calls even when nothing is passed between them.",
-        "Prompt chaining divides a task into dependent calls, passing a result from one step into the next. Each stage can use its own instruction and validation, unlike numbered steps inside one call.",
+        "Prompt chaining uses separate dependent calls, passing earlier results into later prompts. Each step can have its own instructions and validation checkpoints, unlike numbered steps in one invocation.",
         "Prompt chaining sends the same independent prompt to multiple models at once, then averages their final answers. No response from an earlier call needs to be read by a later step.",
         "Prompt chaining repeats an unchanged prompt until a model produces the desired answer. Each retry counts as a dependent stage even if prior outputs are discarded before the next attempt."
       ],
@@ -51,7 +51,7 @@
       "options": [
         "Early extraction errors are corrected automatically when a later model rewrites the output in fluent language. Checking only the final grammar and tone is sufficient to confirm the facts.",
         "Once an intermediate object follows its schema, its source values cannot be wrong. Later stages may safely reuse its numbers without revisiting the original document.",
-        "Later steps may repeat an incorrect earlier value because they depend on that output. Comparing key extracted fields with the original source can catch the error before it reaches a polished final answer.",
+        "Later stages can repeat errors because they rely on earlier outputs. Check important extracted values against the original source before a polished final answer spreads the mistake.",
         "Error propagation occurs only when all chain stages share identical prompts. Using different instructions for extraction and drafting prevents incorrect facts from moving through the pipeline."
       ],
       "answer": "c",
@@ -78,7 +78,7 @@
         "Judge a chain only by its final answer's readability. More calls are automatically better when each prompt is shorter, so latency and API spending need not be measured.",
         "Compare latency by measuring only the last call because earlier stages are independent of the final response. Validation and retries do not contribute to user-visible completion time.",
         "Measure cost by counting the number of calls while ignoring input and output token counts. A fixed call count is enough to establish which design is cheaper across different models.",
-        "Compare answer quality, end-to-end latency, total token and request cost, failure rate and recovery behavior. Sequential stage times can add up, although validation may prevent costly downstream errors."
+        "Compare answer quality, complete latency, token and request costs, failure rates and recovery. Sequential calls add delay, but validation may prevent expensive downstream mistakes."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Prompt chaining may improve control and checkpointing, but sequential calls introduce additional latency and token use. Measure the complete workflow, including retries, validators and failures, against a reasonable single-call baseline. In an illustrated content-localization pipeline, extraction takes 450 ms, validation 100 ms and drafting 700 ms, totaling 1,250 ms before other overhead. That added time may be worthwhile if the chain prevents bad source facts from being translated, but performance gains must be measured rather than assumed.",
@@ -88,7 +88,7 @@
       "stem": "How should a production Prompt Chain protect trusted instructions, private data and intermediate outputs while remaining observable, recoverable and safe to operate?",
       "tag": "Advanced · Security, privacy and observability",
       "options": [
-        "Treat model and retrieved outputs as untrusted data, validate each handoff and restrict stage permissions. Redact sensitive logs, version prompts and support safe retries, stop conditions and human escalation.",
+        "Treat previous model outputs as untrusted, validate handoffs and limit each stage's permissions. Redact logs, version prompts and set retry limits, stop rules and escalation.",
         "Trust any earlier model's output as a higher-priority instruction for later stages because it came from inside the application. This removes the need for new trust checks at each handoff.",
         "Log all private inputs and generated intermediates indefinitely to simplify debugging. Versioning and permission limits are optional once the final answer has passed its schema check.",
         "Reuse the full prompt history and all available tools at every stage to preserve context. Broad shared permissions make prompt injection unlikely because the pipeline's instructions are consistent."
