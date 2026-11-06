@@ -26,7 +26,7 @@
         "Direct prompting uses a short question; zero-shot CoT adds several worked examples; few-shot CoT asks for a structured answer without examples. The distinction depends mainly on the requested answer's length.",
         "Direct prompting supplies an answer format; zero-shot CoT adds one worked example; few-shot CoT adds multiple instructions without example solutions. The number of output tokens is what separates these methods.",
         "Direct prompting requests a result; zero-shot CoT provides solved examples; few-shot CoT adds only a generic instruction to explain steps. Whether the example covers the same task is not part of the distinction.",
-        "Direct prompting asks the task directly; zero-shot CoT adds a reasoning-oriented instruction without worked examples; few-shot CoT provides solved, stepwise demonstrations before the new task."
+        "Direct prompts ask the task plainly; zero-shot CoT adds instructions for a stepwise response without solved examples; few-shot CoT provides examples of worked steps before the new task."
       ],
       "answer": "d",
       "explanation": "<strong>Explanation:</strong> Direct prompting asks the model to perform the task without showing a worked solution pattern. Zero-shot CoT adds a reasoning-oriented instruction but no solved examples. Few-shot CoT supplies examples showing intermediate steps before the new problem. In travel scheduling, the direct prompt asks for an arrival time; a zero-shot version asks for a brief time calculation; a few-shot version demonstrates adding travel durations in similar cases. The best format should be tested rather than assumed.",
@@ -36,7 +36,7 @@
       "stem": "What makes a few-shot Chain-of-Thought example useful, and how can incorrect or unrepresentative examples affect the model's solution to a new problem?",
       "tag": "Beginner · Demonstration quality",
       "options": [
-        "Useful examples closely match the task, show correct intermediate operations and keep a consistent output format. Wrong or irrelevant steps can teach an unreliable pattern that carries into new answers.",
+        "Useful examples match the task, show correct intermediate operations and use a consistent answer format. Wrong or irrelevant steps can teach unreliable patterns in later answers.",
         "Useful examples should be as long as possible, even when they include unrelated operations. The additional details usually outweigh any arithmetic mistakes because the model can automatically correct them.",
         "Useful examples should provide only correct final answers without intermediate calculations. The model can infer the omitted operations reliably, so demonstration accuracy matters mainly for formatting.",
         "Useful examples work best when their calculation pattern differs substantially from the new task. A varied set prevents memorization, making validation of each demonstrated step largely unnecessary."
@@ -51,7 +51,7 @@
       "options": [
         "An explicit solution can omit intermediate details, but any explanation that reaches the expected final number is necessarily faithful. Answer correctness alone proves the model used those written steps internally.",
         "A written solution can contain arithmetic errors, but longer explanations remove this risk by exposing enough detail for inspection. A judge can trust a coherent explanation without an independent reference.",
-        "Generated explanations may be plausible yet inaccurate or unfaithful to what influenced the answer. Verify important results with independent calculations, source evidence or task-specific checks rather than trusting prose alone.",
+        "Generated explanations can sound plausible yet be wrong or unfaithful to the actual decision. Verify results using independent calculations, trusted sources or task-specific checks, not prose alone.",
         "Generated explanations can be misleading only when a prompt includes deliberately false examples. With correct demonstrations, the displayed reasoning necessarily matches the real causal process behind every answer."
       ],
       "answer": "c",
@@ -88,7 +88,7 @@
       "stem": "How should a production prompt system use Chain-of-Thought-style demonstrations responsibly while handling untrusted input, private information, answer verification and output constraints?",
       "tag": "Advanced · Safety and reliable deployment",
       "options": [
-        "Keep demonstrations task-relevant and free of secrets, separate trusted instructions from untrusted text, and verify consequential answers independently. Ask for concise checkable results rather than treating generated reasoning as authoritative.",
+        "Use relevant, secret-free demonstrations and separate trusted rules from untrusted text. Verify consequential answers independently and request concise, checkable outputs instead of trusting generated reasoning.",
         "Include complete private user records in demonstrations because detailed examples make reasoning more reliable. Generated explanations can be stored as ground-truth audit trails without additional review or redaction.",
         "Let text supplied by the user replace the original prompt rules whenever it contains worked examples. A longer chain of reasoning then prevents prompt injection by making instructions more explicit.",
         "Require every deployed model to print a lengthy reasoning trace before each answer, including sensitive intermediate details. Such traces make factual checks and privacy controls unnecessary when a task is important."
