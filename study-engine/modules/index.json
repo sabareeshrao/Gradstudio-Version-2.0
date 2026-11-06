@@ -551,6 +551,12 @@
       "title": "Bias–Variance Tradeoff",
       "domain": "Supervised Machine Learning",
       "catalogId": "PENDING-BIAS-VARIANCE-TRADEOFF"
+    },
+    {
+      "slug": "precision-score",
+      "title": "Precision Score",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-PRECISION-SCORE"
     }
   ]
 }
