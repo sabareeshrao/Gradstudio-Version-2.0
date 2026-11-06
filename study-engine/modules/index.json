@@ -683,6 +683,12 @@
       "title": "Variational Autoencoder (VAE)",
       "domain": "Generative Modeling",
       "catalogId": "PENDING-VARIATIONAL-AUTOENCODER"
+    },
+    {
+      "slug": "perplexity",
+      "title": "Perplexity",
+      "domain": "Natural Language Processing",
+      "catalogId": "PENDING-PERPLEXITY"
     }
   ]
 }
