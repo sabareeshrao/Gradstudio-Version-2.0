@@ -491,6 +491,12 @@
       "title": "QLoRA",
       "domain": "Efficient and Edge AI",
       "catalogId": "PENDING-QLORA"
+    },
+    {
+      "slug": "binary-classification",
+      "title": "Binary Classification",
+      "domain": "Supervised Machine Learning",
+      "catalogId": "PENDING-BINARY-CLASSIFICATION"
     }
   ]
 }
