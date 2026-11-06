@@ -671,6 +671,12 @@
       "title": "Text-to-Video Generation",
       "domain": "Multimodal AI",
       "catalogId": "PENDING-TEXT-TO-VIDEO-GENERATION"
+    },
+    {
+      "slug": "llm-as-a-judge",
+      "title": "LLM-as-a-Judge",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-LLM-AS-A-JUDGE"
     }
   ]
 }
