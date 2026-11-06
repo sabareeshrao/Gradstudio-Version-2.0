@@ -581,6 +581,12 @@
       "title": "Object Detection",
       "domain": "Computer Vision",
       "catalogId": "PENDING-OBJECT-DETECTION"
+    },
+    {
+      "slug": "confusion-matrix",
+      "title": "Confusion Matrix",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-CONFUSION-MATRIX"
     }
   ]
 }
