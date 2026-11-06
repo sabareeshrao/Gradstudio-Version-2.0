@@ -1,0 +1,33 @@
+/* Matrix Multiplication · seven original visual lessons.
+   Scoped Data Augmentation aesthetic; shared engine and 15 themes remain intact. */
+.mm-hero,.mm-figure{font-family:inherit;box-sizing:border-box;min-width:0;max-width:100%;color:#30596c}
+.mm-hero{margin:0 0 24px;padding:clamp(16px,2.8vw,30px);border:1px solid #cbdfe7;border-radius:20px;background:radial-gradient(ellipse at 12% 0%,#dcf7ec,transparent 46%),linear-gradient(145deg,#f4fbff,#fff9ed);box-shadow:0 8px 26px #35587016}
+.mm-kicker{display:block;color:#218b79;font-size:.71rem;letter-spacing:.11em;line-height:1.54;text-transform:uppercase;font-weight:900}
+.mm-hero h2{margin:8px 0;color:#28586c;font-size:clamp(1.24rem,2.7vw,1.86rem);letter-spacing:-.022em;line-height:1.3}
+.mm-hero>p{max-width:80ch;margin:0 0 14px;color:#5b7889;font-size:.86rem;line-height:1.65}
+.mm-figure{padding:clamp(12px,2.4vw,24px);border-radius:16px;background:radial-gradient(ellipse at 94% 0%,#e3f7ef,transparent 46%),linear-gradient(145deg,#f9fcff,#fff9f0)}
+.mm-figure h3{margin:6px 0 12px;color:#2d5a6f;font-size:clamp(1.05rem,1.93vw,1.3rem);line-height:1.35;font-weight:860}
+.mm-art{display:block;max-width:100%;min-width:0;overflow:hidden;border:1px solid #d7e7ec;border-radius:13px;background:#f9fcfe}
+.mm-art svg{display:block;max-width:100%!important;width:100%!important;min-width:0!important;height:auto!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.mm-hero svg,.mm-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.mm-note{color:#577787!important;font-size:.8rem!important;line-height:1.63!important;margin:11px 0 0!important}
+.q-fig:has(>.mm-figure){margin-bottom:14px;border:0!important;padding:0!important;background:transparent!important}
+.mm-tags,.mm-key{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.mm-tags span{font-size:.73rem;color:#496e7c;font-weight:760;border:1px solid #d5e6eb;background:#fff;border-radius:100px;padding:5px 10px}
+.mm-key{gap:9px 17px}
+.mm-key span{display:inline-flex;align-items:center;gap:6px;color:#4b7181;font-size:.75rem;font-weight:760}
+.mm-key i{display:inline-block;width:11px;height:11px;border-radius:3px}
+.mm-pair,.mm-triple{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:11px}
+.mm-triple{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mm-pair>div,.mm-triple>div{min-width:0;background:#fff;border:1px solid #d9e8ed;border-radius:10px;padding:10px;color:#597888;font-size:.76rem;line-height:1.58}
+.mm-pair strong,.mm-triple strong{display:block;color:#2b6577;font-size:.82rem;margin-bottom:5px}
+.mm-code{max-width:100%;min-width:0;overflow:hidden;margin:13px 0 0;border:1px solid #38566b;border-radius:12px;background:#172b3b}
+.mm-code-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;background:#29495b;padding:9px 13px;color:#f1f9ff;font-size:.78rem;font-weight:850}
+.mm-code-head small{color:#cee1eb;font-size:.71rem;font-weight:510}
+.mm-figure .mm-code pre{display:block;max-width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden;margin:0;padding:14px 15px;tab-size:4;white-space:pre!important;background:#172b3b!important;color:#f3f9ff!important;font:500 12.5px/1.63 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.mm-figure .mm-code pre code{display:block!important;min-width:100%!important;width:max-content!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#f3f9ff!important;white-space:pre!important;font:inherit!important;line-height:inherit!important}
+.mm-code-foot{background:#29495b;color:#dcebf2;padding:9px 13px;font-size:.75rem;line-height:1.56}
+.mm-code-foot code{background:#172b3b!important;color:#f3f9ff!important;border:0!important}
+@media(max-width:790px){.mm-triple{grid-template-columns:1fr}}
+@media(max-width:610px){.mm-hero,.mm-figure{padding:11px;border-radius:12px}.mm-pair{grid-template-columns:1fr}.mm-figure .mm-code pre{padding:10px;font-size:12px!important}}
+@media(prefers-reduced-motion:reduce){.mm-hero *,.mm-figure *{animation:none!important;transition:none!important}}
