@@ -1,0 +1,23 @@
+/* RMSNorm visual template: matches Data Augmentation's single SVG card, responsive fit-only rules. */
+.rn-hero,.rn-figure{font-family:inherit;color:#2b5165;min-width:0;max-width:100%;box-sizing:border-box}
+.rn-hero{background:radial-gradient(ellipse at 10% 0%,#e2f7ef,transparent 46%),linear-gradient(145deg,#f4fbfd,#fff9ef);padding:clamp(16px,2.8vw,30px);margin:0 0 23px;border:1px solid #cddfe7;border-radius:20px;box-shadow:0 9px 24px #2f536512}
+.rn-hero h2{font-size:clamp(1.25rem,2.8vw,1.85rem);margin:9px 0;line-height:1.25;color:#2d596c}
+.rn-kicker{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;color:#278577}
+.rn-hero p,.rn-figure p{font-size:.86rem;color:#5b7b89;line-height:1.6}
+.rn-figure{background:radial-gradient(ellipse at 95% 0%,#e5f8ef,transparent 47%),linear-gradient(145deg,#f8fcfe,#fff9f1);border-radius:16px;padding:clamp(13px,2.4vw,24px);margin:0}
+.rn-art{display:block;min-width:0;max-width:100%;overflow:hidden;border:1px solid #d6e6eb;border-radius:13px;background:#f8fcfd}
+.rn-art > svg{display:block;width:100%!important;min-width:0!important;max-width:100%!important;height:auto;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.rn-note{font-size:.81rem;color:#5c7a89;margin:12px 0 0;line-height:1.65}
+.rn-hero svg,.rn-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(> .rn-figure){border:0;background:transparent}
+.rn-code-panel{margin:14px 0 0;min-width:0;max-width:100%;overflow:hidden;border:1px solid #314b63;border-radius:12px;background:#142738;color:#f2f8fc}
+.rn-code-head{background:#274154;color:#e5f3f9;padding:11px 15px;display:flex;align-items:center;gap:9px;font:700 .79rem/1.4 system-ui,sans-serif}
+.rn-dot{width:10px;height:10px;border-radius:50%;background:#e6ae78;box-shadow:16px 0 0 #d6c66b,32px 0 0 #72d0aa;margin-right:34px;flex:none}
+.rn-code-label{margin-left:auto;color:#bdd1dc;font-size:.72rem}
+.rn-code-panel pre{display:block;margin:0;max-width:100%;min-width:0;padding:15px 18px;overflow-x:auto;overflow-y:visible;background:#142738!important;color:#f3f9fd!important;font:500 12px/1.68 ui-monospace,Consolas,monospace;tab-size:4;white-space:pre}
+.rn-code-panel pre code{display:block;width:max-content;min-width:100%;padding:0!important;margin:0;border:0!important;border-radius:0;box-shadow:none!important;background:transparent!important;color:#f3f9fd!important;font:inherit!important;white-space:pre}
+.rn-sources{margin:20px 0;border:1px solid #d5e5e9;background:#fff;border-radius:13px;padding:12px 16px}
+.rn-sources summary{cursor:pointer;color:#355a70;font-weight:800}
+.rn-sources li{margin:7px 0}
+@media(max-width:480px){.rn-code-panel pre{font-size:11px;padding:12px}.rn-figure{padding:12px}}
+@media(prefers-reduced-motion:reduce){.rn-hero *,.rn-figure *{animation:none!important;transition:none!important}}
