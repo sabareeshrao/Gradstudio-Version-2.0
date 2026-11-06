@@ -737,6 +737,12 @@
       "title": "Prompt Chaining",
       "domain": "Prompt Engineering",
       "catalogId": "PENDING-PROMPT-CHAINING"
+    },
+    {
+      "slug": "q-learning",
+      "title": "Q-Learning",
+      "domain": "Reinforcement Learning",
+      "catalogId": "PENDING-Q-LEARNING"
     }
   ]
 }
