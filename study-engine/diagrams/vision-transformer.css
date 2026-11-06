@@ -1,0 +1,30 @@
+/* Vision Transformer (ViT) – original illustrated Gradstudio lesson.
+ * Visual reference: Data Augmentation (sky theme), responsive SVG-first diagrams.
+ * Scoped styles do not change shared engine, existing questions, or Telugu assets. */
+.vt-hero,.vt-figure{font-family:inherit;color:#31576c;box-sizing:border-box;min-width:0;max-width:100%}
+.vt-hero{background:radial-gradient(ellipse at 8% 0%,#dcf5ee,transparent 42%),linear-gradient(145deg,#f4faff,#fff9ef);border:1px solid #c9e2e8;border-radius:20px;padding:clamp(16px,2.8vw,30px);margin:0 0 23px;box-shadow:0 9px 24px #31556812}
+.vt-kicker{font-size:.7rem;line-height:1.45;color:#21887d;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.vt-hero h2{font-size:clamp(1.22rem,2.6vw,1.82rem);line-height:1.26;color:#2a586d;margin:8px 0}
+.vt-hero>p{font-size:.87rem;line-height:1.6;max-width:80ch;color:#567789;margin:0 0 13px}
+.vt-figure{background:radial-gradient(ellipse at 95% 5%,#e3f7ef,transparent 47%),linear-gradient(149deg,#f8fcfe,#fff9f2);border-radius:16px;padding:clamp(12px,2.2vw,24px)}
+.vt-figure h3{font-size:clamp(1.03rem,1.9vw,1.27rem);line-height:1.3;color:#315c72;margin:7px 0 12px;font-weight:850}
+.vt-art{border:1px solid #d3e5eb;border-radius:13px;overflow:hidden;background:#f8fcfe;min-width:0;max-width:100%}
+.vt-art svg{display:block;width:100%!important;max-width:100%!important;height:auto!important;min-width:0!important;shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+.vt-note{font-size:.8rem!important;color:#5d7988!important;line-height:1.6!important;margin:10px 0 0!important}
+.vt-hero svg,.vt-figure svg{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.q-fig:has(>.vt-figure){padding:0;border:0;background:transparent;margin-bottom:14px}
+.vt-leg{display:flex;gap:8px 14px;flex-wrap:wrap;margin:10px 0 0}
+.vt-leg span{display:inline-flex;gap:6px;align-items:center;color:#4b6978;font-size:.75rem;font-weight:700}
+.vt-leg i{display:block;height:11px;width:11px;border-radius:3px}
+.vt-code{background:#172b3b;max-width:100%;min-width:0;margin:11px 0 0;border:1px solid #385871;border-radius:12px;overflow:hidden}
+.vt-code-head{padding:9px 13px;background:#294559;color:#eff8ff;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.76rem;font-weight:800}
+.vt-code-head small{font-weight:550;color:#bfdae8;font-size:.71rem}
+.vt-figure .vt-code pre{display:block;max-width:100%;background:#172b3b!important;color:#f2f8ff!important;overflow-x:auto!important;overflow-y:hidden;margin:0;padding:14px 15px;white-space:pre!important;tab-size:4;font:500 12.4px/1.61 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important}
+.vt-figure .vt-code pre code{display:block;min-width:100%;width:max-content;padding:0!important;margin:0!important;background:transparent!important;color:#f2f8ff!important;box-shadow:none!important;border:0!important;font:inherit!important;white-space:pre!important}
+.vt-code-foot{margin:0;padding:8px 13px;background:#294559;color:#d8e9f3;font-size:.75rem;line-height:1.5}
+.vt-mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 0}
+.vt-mini-grid>div{background:#fff;border:1px solid #dce9ec;border-radius:10px;padding:10px;font-size:.75rem;line-height:1.45;color:#537181}
+.vt-mini-grid strong{font-size:.9rem;display:block;color:#276477}
+@media(max-width:730px){.vt-mini-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.vt-hero,.vt-figure{padding:11px;border-radius:12px}.vt-kicker{font-size:.65rem}.vt-figure .vt-code pre{font-size:12px!important;padding:10px}.vt-code-head{padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.vt-hero *,.vt-figure *{animation:none!important;transition:none!important}}
