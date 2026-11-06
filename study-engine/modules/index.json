@@ -593,6 +593,12 @@
       "title": "Classification Accuracy",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-CLASSIFICATION-ACCURACY"
+    },
+    {
+      "slug": "area-under-roc-curve",
+      "title": "Area Under the ROC Curve",
+      "domain": "AI Evaluation and Benchmarking",
+      "catalogId": "PENDING-AREA-UNDER-ROC-CURVE"
     }
   ]
 }
