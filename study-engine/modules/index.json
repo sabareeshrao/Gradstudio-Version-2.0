@@ -647,6 +647,12 @@
       "title": "Data Drift Monitoring",
       "domain": "MLOps",
       "catalogId": "PENDING-DATA-DRIFT-MONITORING"
+    },
+    {
+      "slug": "concept-drift-monitoring",
+      "title": "Concept Drift Monitoring",
+      "domain": "MLOps",
+      "catalogId": "PENDING-CONCEPT-DRIFT-MONITORING"
     }
   ]
 }
