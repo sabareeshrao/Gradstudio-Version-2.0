@@ -25,7 +25,7 @@
       "stem": "How does conditioning dropout during diffusion-model training enable both the conditional and unconditional predictions required by Classifier-Free Guidance?",
       "answer": "a",
       "options": [
-        "During training, the model sometimes receives the real condition and sometimes a null condition, while learning the same denoising task. This teaches one set of weights to make conditional and unconditional predictions at inference time.",
+        "During training, the denoiser predicts noise with a real prompt for some examples and a deliberately dropped prompt for others. One model thereby learns conditional and unconditional predictions for inference.",
         "During training, the model drops all text for the first half of epochs and permanently restores it later. The early weights become a fixed unconditional network, and the later weights train a separate conditional network.",
         "During training, the model replaces a random fraction of image pixels with blank pixels, teaching one denoiser to reconstruct missing content. At inference, those blank pixels act as the unconditional text embedding.",
         "During training, dropout removes prompt words only from examples the model predicts incorrectly, so the denoiser learns a corrective negative prompt. The unconditional estimate is then calculated from the final image quality score."
@@ -52,7 +52,7 @@
       "answer": "b",
       "options": [
         "Increasing guidance makes conditional and unconditional predictions more similar, so high scales gradually remove text influence. A useful scale is chosen by maximizing diversity, because image quality remains stable as conditioning becomes weaker.",
-        "Increasing guidance strengthens the difference between conditional and unconditional predictions, often improving prompt alignment while reducing variety or amplifying artifacts. Compare several scales with matched prompts and seeds to choose a practical balance.",
+        "Stronger guidance extrapolates farther along the conditional direction, often improving prompt adherence but reducing diversity or producing artifacts. Compare scales with the same prompts, seeds, and sampling steps to select a useful balance.",
         "Increasing guidance improves adherence by adding more denoising steps and reducing the scheduler's learning rate. Strong guidance causes artifacts only when the image has too many objects, so selecting scale by object count is sufficient.",
         "Increasing guidance directs each pixel toward the text embedding before the denoiser runs, eliminating uncertainty at high scales. Select the strongest supported scale because diversity and visual quality are unrelated to guidance magnitude."
       ],
