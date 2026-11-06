@@ -575,6 +575,12 @@
       "title": "F1 Score",
       "domain": "AI Evaluation and Benchmarking",
       "catalogId": "PENDING-F1-SCORE"
+    },
+    {
+      "slug": "object-detection",
+      "title": "Object Detection",
+      "domain": "Computer Vision",
+      "catalogId": "PENDING-OBJECT-DETECTION"
     }
   ]
 }
