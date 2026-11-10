@@ -114,6 +114,7 @@ jobs:
           mkdir -p _site
           cp index.html lab-v3.css lab-v3.js _site/
           cp -R study-engine _site/study-engine
+          cp -R spring-petclinic-visual _site/spring-petclinic-visual
           cp -R "Telugu Translation" "_site/Telugu Translation"
           cp -R archive _site/archive
           mkdir -p _site/lessons
