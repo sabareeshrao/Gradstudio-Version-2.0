@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1117">
+  <meta name="description" content="GitHub Timestamps — time-travel through the development of a repository, one action per simulated minute.">
+  <title>Spring PetClinic · Ideal Build | GitHub Timestamps</title>
+  <link rel="stylesheet" href="../css/app.css"
+  <link rel="stylesheet" href="./site.css">
+</head>
+<body data-palette="github">
+<div id="app">
+  <header class="topbar">
+    <button id="mobileFiles" class="square mobile-only" title="Open files" aria-label="Open file explorer">☰</button>
+    <div class="identity"><span class="brand-mark">⌘</span><strong>GitHub Timestamps</strong></div>
+    <span class="top-divider"></span>
+    <div class="repo-title"><span>spring-projects</span><span class="dim">/</span><b>spring-petclinic</b><span class="branch">⑂ main</span></div>
+    <div class="top-stats"><b id="topTime">D01 09:00</b><span id="topStep">Step 001</span><span id="topLines">0 lines</span></div>
+    <span class="demo-pill">IDEAL BUILD · SIMULATED · NO DELETIONS</span>
+  </header>
+  <div class="layout" id="layout">
+    <aside class="explorer" id="explorer">
+      <div class="explorer-top"><strong>Files</strong><div><button class="square ghost" id="searchToggle" aria-label="Search files">⌕</button><button class="square ghost" id="wideSidebar" title="Expand sidebar">⇔</button><button class="square ghost" id="hideSidebar" aria-label="Hide files">«</button></div></div>
+      <div class="branch-row"><span>⑂ &nbsp; main</span><span class="dim" id="fileCount">0 / 132</span></div>
+      <div class="search-row" id="searchRow" hidden><input id="fileSearch" type="search" placeholder="Find a file…" aria-label="Find file"></div>
+      <nav class="filetree" id="filetree" aria-label="Repository files"></nav>
+      <div class="explorer-footer"><div class="palettes" role="group" aria-label="Syntax colors"><button class="active" data-palette="github">GitHub colors</button><button data-palette="vivid">Vibrant</button><button data-palette="plain">Plain</button></div></div>
+    </aside>
+    <div id="sidebarGrip" class="sidebar-grip" role="separator" tabindex="0" aria-label="Resize sidebar" aria-orientation="vertical"></div>
+    <div id="mobileVeil" class="mobile-veil"></div>
+    <main class="main">
+      <div class="pathbar"><button id="revealSidebar" class="square" title="Show file explorer" aria-label="Show file explorer" hidden>☰</button><span class="path-icon">▤</span><span id="filePath" class="filepath">Repository</span></div>
+      <div class="controls">
+        <div class="transport"><button id="first" class="square" title="First step">|‹</button><button id="prev" class="square" title="Previous step (←)">‹</button><button id="play" class="play">▶ Play</button><button id="next" class="square" title="Next step (→)">›</button></div>
+        <label class="speed"><input id="speed" type="number" min="0.01" step="any" value="4" inputmode="decimal" aria-label="Lines per second"><span>lines / sec</span></label>
+        <div class="timeline"><input id="scrub" type="range" aria-label="Timeline step"><div class="range-labels"><span id="rangeStart"></span><span id="rangeEnd"></span></div></div>
+        <form id="jumpForm" class="jump"><label for="day">D</label><input id="day" type="number" min="1" value="1"><label for="clock" class="clock-label">Time</label><input id="clock" type="text" inputmode="numeric" value="09:00" pattern="(?:[01][0-9]|2[0-3]):[0-5][0-9]"><button class="small" type="submit">Jump</button><button id="wrap" class="square wrap-active" type="button" aria-label="Toggle line wrapping" title="Wrap / Unwrap code" aria-pressed="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 10h16M4 14h12a3 3 0 0 1 0 6h-4m0 0 2-2m-2 2 2 2"/></svg></button></form>
+        <form id="stepForm" class="jump step-jump"><label for="step">Step</label><input id="step" type="number" min="1" value="1"><button class="square" type="submit">↵</button></form>
+        <div class="action-tools"><label class="only" title="Show just the current line"><input id="onlySelected" type="checkbox">Selected</label><button class="square" id="copy" title="Copy visible code" aria-label="Copy source">⧉</button><button class="square" id="download" title="Download visible source" aria-label="Download source">↓</button><button class="small view-switch" id="switchView" title="Switch editor / terminal">Terminal</button></div>
+      </div>
+      <div class="commitbar"><div class="commit-left"><span id="commitIcon">⑂</span><span id="commitTitle">Project initialization</span><span id="commitMode" class="commit-mode">Ideal build</span></div><span class="commit-nav" id="commitPosition">Checkpoint 0 / 132</span></div>
+      <section class="editor" id="editor" aria-label="Code editor"><div class="editor-viewport wrapped" id="editorViewport"><div id="codeLines"></div></div></section>
+      <section class="terminal-stage" id="terminalStage" aria-label="Developer terminal" hidden><div class="terminal-panel" id="terminalPanel"><div id="terminalResize" class="terminal-resize" role="separator" tabindex="0" aria-label="Resize terminal height" aria-orientation="horizontal"></div><div class="terminal-title"><span>❯_ &nbsp; TERMINAL</span><span class="dim" id="terminalStats">0 commands</span><button id="maximizeTerminal" class="square ghost" title="Maximize terminal">⛶</button></div><div id="terminalScroll" class="terminal-scroll"><div id="terminalLines"></div></div></div><div class="terminal-empty">Terminal is the active workspace. The editor is hidden until the next code-writing action.</div></section>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+</div>
+<script type="module" src="./player.js"></script>
+</body>
+</html>
