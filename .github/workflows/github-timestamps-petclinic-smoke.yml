@@ -1,0 +1,34 @@
+name: PetClinic Timestamps Browser Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/github-timestamps-petclinic-smoke.yml'
+      - 'github-timestamps/petclinic/player.js'
+      - 'github-timestamps/petclinic/index.html'
+      - 'github-timestamps/petclinic/site.css'
+      - 'github-timestamps/petclinic/scripts/smoke.mjs'
+      - 'github-timestamps/petclinic/data/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check player JavaScript syntax
+        run: node --check github-timestamps/petclinic/player.js
+      - name: Install browser test runner
+        run: npm install --no-save playwright
+      - name: Start local static server and test replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/petclinic-http.log 2>&1 &
+          sleep 2
+          node github-timestamps/petclinic/scripts/smoke.mjs
