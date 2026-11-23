@@ -1,0 +1,10 @@
+/* PetClinic-only presentation adjustments; the shared compact GitHub shell is unchanged. */
+.repo-title .branch {color:#a2b9d2}
+.demo-pill {color:#d2f4da;border-color:#2d6a45;background:#122a1b}
+.commit-mode {color:#b4e2c4;background:#10281b;border-color:#24663c}
+.code-row.saved.active {background:#1d303d}
+.code-row.saved.active .line-num {border-left-color:#e3b341}
+.code-row .line-time {font-size:10px}
+.terminal-empty {padding:19px}
+.progress-loading {padding:32px 20px;color:#acbccc;font:13px/1.8 ui-monospace,Consolas,monospace}
+@media(max-width:440px){.top-stats #topStep {display:none} .identity{font-size:11px} .demo-pill{display:none}}
