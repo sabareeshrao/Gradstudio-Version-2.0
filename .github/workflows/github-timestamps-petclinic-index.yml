@@ -141,46 +141,18 @@ jobs:
           modes = collections.Counter(r[12] for r in rows)
           
           doc = [
-              "# Spring PetClinic — Complete Commit Size Index",
+              "# Spring PetClinic — Commit Table",
               "",
-              "**Main GitHub Timestamps reference.** Sorted by changed source-code lines, smallest first. "
-              "The History # column preserves the topological order needed for replay.",
+              "Sorted by **code lines changed (low to high)**. Code lines = added + deleted. Files = files changed. Click a commit number to open its original GitHub commit.",
               "",
-              "- **Upstream:** [" + source + "](" + source + ")",
-              "- **Pinned main commit:** [" + tick + pinned + tick + "](" + source + "/tree/" + pinned + ")",
-              "- **Commit rows:** **1,047 / 1,047**, unique and audited",
-              "- **Total code-line changes:** **" + f"{totals['code_add']+totals['code_del']:,}" +
-                  "** (" + f"+{totals['code_add']:,}" + " / " + f"-{totals['code_del']:,}" + ")",
-              "- **All textual changes:** **" + f"{totals['all_add']+totals['all_del']:,}" +
-                  "**; binary file changes: " + f"{totals['binary']:,}",
-              "- **Sequencing counts:** " + ", ".join(k + " " + str(modes[k]) for k in ("Git-based", "Hybrid", "Logical")),
-              "",
-              "## Definitions and audit rules",
-              "",
-              "1. **Code Δ** = Code + (added lines) + Code − (deleted lines). This is the ascending sort key; ties use file count, UTC date and SHA.",
-              "2. **Files** = all files changed relative to the first parent, including non-code and binaries. Rename detection is enabled: a pure rename counts as one file.",
-              "3. **Code files** = files in source, test, templates, stylesheets, SQL, XML, build/config, or script extensions. Blank lines and comments count. README and plain documentation do not count as code.",
-              "4. **All + / All − / All Δ** include changes in non-code text files too. Binaries count as changed files but contribute zero text lines.",
-              "5. **Merge commits** are compared to their first parent; all commits reachable from pinned main are included once. Commit dates are converted to UTC.",
-              "6. **Mode**: Git-based for Code Δ up to 50 and Files up to 3; Hybrid for Code Δ up to 300 and Files up to 7; otherwise Logical. Modes are reconstructed teaching strategies, not original typing history.",
-              "7. **Audit**: exactly 1,047 unique commit IDs, complete pinned ancestry, two independent Git diff methods for the changed-file count, ascending sort, and head cross-checked against GitHub REST (4 files, +36/−2). Generation fails on any mismatch.",
-              "8. **Source date vs simulation:** dates below are real commit dates, while D01/D02 timestamps in the UI will be simulated.",
-              "",
-              "## Every commit, sorted ascending by Code Δ",
-              "",
-              "| Rank | History # | Commit | Date UTC | Files | Code files | Code + | Code − | **Code Δ** | All + | All − | All Δ | Mode | Commit title |",
-              "| ---: | ---: | :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | :--- | :--- |",
+              "| S.No | Commit # | Code Lines | Files |",
+              "| ---: | ---: | ---: | ---: |",
           ]
           for rank, row in enumerate(rows, 1):
               position, sha, date, title, file_count, ncode, ca, cd, change, aa, ad, total, strategy = row
-              link = "[" + tick + sha[:10] + tick + "](" + source + "/commit/" + sha + ")"
-              values = [rank, position, link, date, file_count, ncode, ca, cd,
-                        "**" + str(change) + "**", aa, ad, total, strategy, clean(title)]
-              doc.append("| " + " | ".join(map(str, values)) + " |")
-          doc += ["", "## Reproducibility", "",
-                  "Generated from the full upstream Git object history by the project's "
-                  "[GitHub Actions index builder](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/.github/workflows/github-timestamps-petclinic-index.yml).",
-                  "The sorted table is an index, not a chronological animation: use History # and each commit's diff to build the actual D01/D02 playback.", ""]
+              link = "[" + str(position) + "](" + source + "/commit/" + sha + ")"
+              doc.append("| " + " | ".join([str(rank), link, str(change), str(file_count)]) + " |")
+          doc.append("")
           assert len([line for line in doc if line.startswith("| ")]) == 1049
           output.parent.mkdir(parents=True, exist_ok=True)
           output.write_text("\n".join(doc), encoding="utf-8")
