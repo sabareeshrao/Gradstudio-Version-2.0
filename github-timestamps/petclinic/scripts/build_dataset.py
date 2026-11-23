@@ -107,8 +107,11 @@ def main(repo):
             data = path_obj.read_bytes()
             assert b"\0" not in data, "Unexpected binary text file: " + path
             text = data.decode("utf-8")
-            lines = text.splitlines()
-            assert "\n".join(lines) == text.replace("\r\n", "\n").rstrip("\n"), "Lossy line parsing: " + path
+            normalized = text.replace("\r\n", "\n")
+            lines = normalized.split("\n")
+            if normalized.endswith("\n"):
+                lines.pop()
+            assert "\n".join(lines) + ("\n" if normalized.endswith("\n") else "") == normalized, "Lossy line parsing: " + path
             sources[path] = lines
             count_lines += len(lines)
             created = emit("terminal", file=path, command="touch " + shquote(path),
