@@ -1,0 +1,51 @@
+name: Build audited ideal Spring PetClinic replay
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/github-timestamps-petclinic-ideal.yml'
+      - 'github-timestamps/petclinic/scripts/build_dataset.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-timestamps-petclinic-ideal
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clone official Spring PetClinic source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet https://github.com/spring-projects/spring-petclinic.git "$RUNNER_TEMP/petclinic"
+          git -C "$RUNNER_TEMP/petclinic" checkout --detach 500158f732419217507c7656904b8e6aa1bcc0d6
+      - name: Generate verified no-deletions source timeline
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 github-timestamps/petclinic/scripts/build_dataset.py "$RUNNER_TEMP/petclinic"
+          git diff --check
+          test -s github-timestamps/petclinic/data/manifest.json
+          test -s github-timestamps/petclinic/data/sources.json
+      - name: Publish generated data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add github-timestamps/petclinic/data/manifest.json github-timestamps/petclinic/data/sources.json
+          if git diff --cached --quiet; then
+            echo 'Generated data unchanged'
+            exit 0
+          fi
+          git commit -m 'Publish pinned PetClinic ideal-build timeline (no historical deletes)'
+          git pull --rebase origin main
+          git push origin HEAD:main
