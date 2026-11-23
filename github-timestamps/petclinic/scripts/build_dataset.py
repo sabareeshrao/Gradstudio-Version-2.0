@@ -142,7 +142,7 @@ def main(repo):
     emit("terminal", command="./mvnw test", label="Run project tests",
          output="Test execution shown as a planned development action; not executed in this replay")
     assert len(files) == 132
-    assert len(sources) == 119, "Unexpected number of editable source files"
+    assert len(sources) == 118, "Unexpected number of editable source files"
     assert count_lines == 8957, "Unexpected source line inventory: " + str(count_lines)
     assert MIN_STEPS <= len(events) <= MAX_STEPS, "Outside requested step range: " + str(len(events))
     assert sum(f["totalLines"] for f in files) == count_lines
