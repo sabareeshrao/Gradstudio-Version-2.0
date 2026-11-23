@@ -18,7 +18,7 @@ async function load(){
  if(data.sourceSHA!=="500158f732419217507c7656904b8e6aa1bcc0d6"||
     data.metrics.steps!==data.events.length||data.metrics.sourceLines!==8957||
     data.metrics.deletionSteps!==0||data.events.length<10000||data.events.length>11000)throw Error("Source audit failed: cannot play incomplete data.");
- if(data.files.length!==132||Object.keys(sources).length!==119)throw Error("File inventory audit failed.");
+ if(data.files.length!==132||Object.keys(sources).length!==118)throw Error("File inventory audit failed.");
  return {data,sources};
 }
 try {
@@ -42,7 +42,6 @@ try {
    const n=Math.max(0,Math.min(events.length-1,Math.floor(Number(value))));
    state.step=n;const e=current();
    if(e.file&&fileByPath.has(e.file))state.file=e.file;
-   if(state.file&&!fileByPath.get(state.file)?.createdAt<=n)state.file=null;
    if(state.file&&fileByPath.get(state.file).createdAt>n)state.file=null;
    if(!state.file)state.file=visibleFiles().at(-1)?.path||null;
    state.override=null;if(n===events.length-1)stop();render();
