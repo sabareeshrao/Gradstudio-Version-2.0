@@ -1,0 +1,203 @@
+name: Generate audited Spring PetClinic commit table
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/github-timestamps-petclinic-index.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: github-timestamps-petclinic-index
+  cancel-in-progress: false
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout GitHub Timestamps
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Clone full official Spring PetClinic history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet --single-branch --branch main https://github.com/spring-projects/spring-petclinic.git "$RUNNER_TEMP/petclinic"
+      - name: Generate and audit complete commit-size index
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - "$RUNNER_TEMP/petclinic" <<'PY'
+          import collections
+          import datetime
+          import pathlib
+          import subprocess
+          import sys
+          
+          repository = pathlib.Path(sys.argv[1])
+          output = pathlib.Path("github-timestamps/SPRING-PETCLINIC-COMMIT-INDEX.md")
+          source = "https://github.com/spring-projects/spring-petclinic"
+          pinned = "500158f732419217507c7656904b8e6aa1bcc0d6"
+          extensions = {".java", ".kt", ".groovy", ".xml", ".html", ".htm", ".css", ".scss", ".less",
+                        ".sql", ".properties", ".gradle", ".js", ".jsx", ".ts", ".tsx", ".json",
+                        ".yml", ".yaml", ".sh", ".bash", ".bat", ".cmd", ".py", ".jmx", ".toml",
+                        ".jsp", ".jspx", ".kts", ".graphql", ".gql", ".vue", ".svelte"}
+          special = {"dockerfile", "makefile", "mvnw", "gradlew", "gemfile", "rakefile"}
+          tick = chr(96)
+          
+          def git(*args):
+              return subprocess.check_output(["git", "-C", str(repository), *args], stderr=subprocess.PIPE)
+          
+          def is_code(path):
+              name = path.rsplit("/", 1)[-1].lower()
+              return pathlib.Path(name).suffix in extensions or name in special
+          
+          def numstats(raw):
+              bits = raw.split(b"\0")
+              if bits[-1] == b"":
+                  bits.pop()
+              records = []
+              i = 0
+              while i < len(bits):
+                  cols = bits[i].split(b"\t", 2)
+                  if len(cols) != 3:
+                      raise ValueError("Malformed numstat header")
+                  a, d, path = cols
+                  if path:
+                      old = new = path.decode("utf-8", "surrogateescape")
+                      i += 1
+                  else:
+                      if i + 2 >= len(bits):
+                          raise ValueError("Incomplete rename path record")
+                      old = bits[i+1].decode("utf-8", "surrogateescape")
+                      new = bits[i+2].decode("utf-8", "surrogateescape")
+                      i += 3
+                  binary = a == b"-" and d == b"-"
+                  if (a == b"-") != (d == b"-"):
+                      raise ValueError("Malformed binary change record")
+                  records.append((old, new, 0 if binary else int(a), 0 if binary else int(d), binary))
+              return records
+          
+          def clean(text):
+              return text.replace("|", "\\|").replace("<", "&lt;").replace(">", "&gt;").replace("\r", " ").replace("\n", " ")
+          
+          def mode(delta, file_count):
+              if delta <= 50 and file_count <= 3:
+                  return "Git-based"
+              if delta <= 300 and file_count <= 7:
+                  return "Hybrid"
+              return "Logical"
+          
+          actual = git("rev-parse", "--verify", pinned+"^{commit}").decode().strip()
+          assert actual == pinned, "Pinned revision is unavailable"
+          ancestry = [line.split() for line in git("rev-list", "--reverse", "--topo-order", "--parents", pinned).decode().splitlines()]
+          assert len(ancestry) == 1047, "Missing history: expected 1047 commits"
+          assert len({row[0] for row in ancestry}) == 1047 and ancestry[-1][0] == pinned
+          logs = {}
+          for line in git("log", "--format=%H%x09%cI%x09%s", "--topo-order", pinned).decode("utf-8", "replace").splitlines():
+              sha, timestamp, title = line.split("\t", 2)
+              assert sha not in logs
+              logs[sha] = (timestamp, title)
+          assert set(logs) == {row[0] for row in ancestry}, "Ancestry / metadata mismatch"
+          
+          rows = []
+          totals = collections.Counter()
+          for position, (sha, *parents) in enumerate(ancestry, 1):
+              if parents:
+                  common = ("diff", "--no-ext-diff", "--no-textconv")
+                  tail = ("-M", parents[0], sha)
+                  changes = numstats(git(*common, "--numstat", "-z", *tail))
+                  paths = [x for x in git(*common, "--name-only", "-z", *tail).split(b"\0") if x]
+              else:
+                  common = ("diff-tree", "--root", "--no-commit-id", "-r", "--no-ext-diff")
+                  tail = ("-M", sha)
+                  changes = numstats(git(*common, "--numstat", "-z", *tail))
+                  paths = [x for x in git(*common, "--name-only", "-z", *tail).split(b"\0") if x]
+              assert len(paths) == len(changes), "File-count audit failed at " + sha
+              all_add = sum(a for _, _, a, _, _ in changes)
+              all_del = sum(d for _, _, _, d, _ in changes)
+              code = [(a, d) for old, new, a, d, _ in changes if is_code(old) or is_code(new)]
+              code_add = sum(a for a, _ in code)
+              code_del = sum(d for _, d in code)
+              file_count = len(changes)
+              code_delta = code_add + code_del
+              date, title = logs[sha]
+              utc = datetime.datetime.fromisoformat(date).astimezone(datetime.timezone.utc).strftime("%Y-%m-%d")
+              rows.append((position, sha, utc, title, file_count, len(code), code_add, code_del,
+                           code_delta, all_add, all_del, all_add+all_del, mode(code_delta, file_count)))
+              totals["all_add"] += all_add
+              totals["all_del"] += all_del
+              totals["code_add"] += code_add
+              totals["code_del"] += code_del
+              totals["binary"] += sum(binary for *_, binary in changes)
+          
+          assert len(rows) == 1047 and len({r[1] for r in rows}) == 1047
+          head = next(row for row in rows if row[1] == pinned)
+          assert (head[4], head[9], head[10]) == (4, 36, 2), "Pinned head failed GitHub REST calibration"
+          rows.sort(key=lambda r: (r[8], r[4], r[2], r[1]))
+          assert all(a[8] <= b[8] for a, b in zip(rows, rows[1:]))
+          modes = collections.Counter(r[12] for r in rows)
+          
+          doc = [
+              "# Spring PetClinic — Complete Commit Size Index",
+              "",
+              "**Main GitHub Timestamps reference.** Sorted by changed source-code lines, smallest first. "
+              "The History # column preserves the topological order needed for replay.",
+              "",
+              "- **Upstream:** [" + source + "](" + source + ")",
+              "- **Pinned main commit:** [" + tick + pinned + tick + "](" + source + "/tree/" + pinned + ")",
+              "- **Commit rows:** **1,047 / 1,047**, unique and audited",
+              "- **Total code-line changes:** **" + f"{totals['code_add']+totals['code_del']:,}" +
+                  "** (" + f"+{totals['code_add']:,}" + " / " + f"-{totals['code_del']:,}" + ")",
+              "- **All textual changes:** **" + f"{totals['all_add']+totals['all_del']:,}" +
+                  "**; binary file changes: " + f"{totals['binary']:,}",
+              "- **Sequencing counts:** " + ", ".join(k + " " + str(modes[k]) for k in ("Git-based", "Hybrid", "Logical")),
+              "",
+              "## Definitions and audit rules",
+              "",
+              "1. **Code Δ** = Code + (added lines) + Code − (deleted lines). This is the ascending sort key; ties use file count, UTC date and SHA.",
+              "2. **Files** = all files changed relative to the first parent, including non-code and binaries. Rename detection is enabled: a pure rename counts as one file.",
+              "3. **Code files** = files in source, test, templates, stylesheets, SQL, XML, build/config, or script extensions. Blank lines and comments count. README and plain documentation do not count as code.",
+              "4. **All + / All − / All Δ** include changes in non-code text files too. Binaries count as changed files but contribute zero text lines.",
+              "5. **Merge commits** are compared to their first parent; all commits reachable from pinned main are included once. Commit dates are converted to UTC.",
+              "6. **Mode**: Git-based for Code Δ up to 50 and Files up to 3; Hybrid for Code Δ up to 300 and Files up to 7; otherwise Logical. Modes are reconstructed teaching strategies, not original typing history.",
+              "7. **Audit**: exactly 1,047 unique commit IDs, complete pinned ancestry, two independent Git diff methods for the changed-file count, ascending sort, and head cross-checked against GitHub REST (4 files, +36/−2). Generation fails on any mismatch.",
+              "8. **Source date vs simulation:** dates below are real commit dates, while D01/D02 timestamps in the UI will be simulated.",
+              "",
+              "## Every commit, sorted ascending by Code Δ",
+              "",
+              "| Rank | History # | Commit | Date UTC | Files | Code files | Code + | Code − | **Code Δ** | All + | All − | All Δ | Mode | Commit title |",
+              "| ---: | ---: | :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | :--- | :--- |",
+          ]
+          for rank, row in enumerate(rows, 1):
+              position, sha, date, title, file_count, ncode, ca, cd, change, aa, ad, total, strategy = row
+              link = "[" + tick + sha[:10] + tick + "](" + source + "/commit/" + sha + ")"
+              values = [rank, position, link, date, file_count, ncode, ca, cd,
+                        "**" + str(change) + "**", aa, ad, total, strategy, clean(title)]
+              doc.append("| " + " | ".join(map(str, values)) + " |")
+          doc += ["", "## Reproducibility", "",
+                  "Generated from the full upstream Git object history by the project's "
+                  "[GitHub Actions index builder](https://github.com/sabareeshrao/Gradstudio-Version-2.0/blob/main/.github/workflows/github-timestamps-petclinic-index.yml).",
+                  "The sorted table is an index, not a chronological animation: use History # and each commit's diff to build the actual D01/D02 playback.", ""]
+          assert len([line for line in doc if line.startswith("| ")]) == 1049
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_text("\n".join(doc), encoding="utf-8")
+          print("AUDIT PASSED: " + str(len(rows)) + " commits, " + str(len(doc)) + " lines; wrote " + str(output))
+          PY
+          git diff --check
+          test -s github-timestamps/SPRING-PETCLINIC-COMMIT-INDEX.md
+      - name: Commit verified index to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add github-timestamps/SPRING-PETCLINIC-COMMIT-INDEX.md
+          if git diff --cached --quiet; then
+            echo 'Index unchanged'
+            exit 0
+          fi
+          git commit -m 'Publish verified Spring PetClinic commit-size table (1047 commits)'
+          git push origin HEAD:main
