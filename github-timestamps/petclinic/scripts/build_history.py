@@ -179,7 +179,7 @@ def main(repo):
             p["toStep"]=step
         path=e.get("file")
         if path and (e.get("created",False) or (e["kind"]=="terminal" and
-             (e.get("command","").startswith("touch ") or e.get("command","").startswith("cp "))):
+             (e.get("command","").startswith("touch ") or e.get("command","").startswith("cp ")))):
             if by_path[path]["createdAt"]<0:by_path[path]["createdAt"]=step
         if e["kind"]=="add":
             f=by_path[path]
