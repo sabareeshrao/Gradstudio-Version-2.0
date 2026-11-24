@@ -41,13 +41,14 @@ jobs:
         run: |
           node github-timestamps/petclinic/scripts/generate_commit_table.mjs
           test -s github-timestamps/petclinic/COMMIT_TABLE.md
+          test -s github-timestamps/petclinic/data/logical-commits.json
       - name: Publish generated data
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add github-timestamps/petclinic/data/manifest.json github-timestamps/petclinic/data/sources.json github-timestamps/petclinic/COMMIT_TABLE.md
+          git add github-timestamps/petclinic/data/manifest.json github-timestamps/petclinic/data/sources.json github-timestamps/petclinic/data/logical-commits.json github-timestamps/petclinic/COMMIT_TABLE.md
           if git diff --cached --quiet; then
             echo 'Generated data unchanged'
             exit 0
