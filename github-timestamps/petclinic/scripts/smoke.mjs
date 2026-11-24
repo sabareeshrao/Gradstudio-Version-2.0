@@ -46,7 +46,7 @@ try{
  assert.equal(await page.locator("#topTime").textContent(),"D01 09:00");
  assert.equal(await page.locator("#terminalStage").isVisible(),true);
  assert.equal(await page.locator("#fileCount").textContent(),"0 / 132");
- const firstAdd=data.events.findIndex(e=>e.kind==="add");
+ const firstAdd=logical.events.findIndex(e=>e.kind==="add");
  await page.locator("#step").fill(String(firstAdd+1));
  await page.locator("#stepForm").evaluate(el=>el.requestSubmit());
  assert.equal((await page.locator("#topStep").textContent()).trim(),"Step "+String(firstAdd+1).padStart(5,"0"));
@@ -85,5 +85,5 @@ try{
  await page.locator("#mobileVeil").click({position:{x:385,y:300}});
  assert.equal(await page.locator("#explorer").isVisible(),false);
  assert.deepEqual(errors,[],"browser page errors");
- console.log("BROWSER AUDIT PASSED: 10,580 steps, 95 logical commits, cross-file navigation, source fidelity, commit detail, wraps, terminal, mobile sidebar");
+ console.log("BROWSER AUDIT PASSED: "+logical.events.length+" steps, "+logical.phases.length+" logical commits, cross-file navigation, source fidelity, commit detail, wraps, terminal, mobile sidebar");
 } finally {await browser.close();}
