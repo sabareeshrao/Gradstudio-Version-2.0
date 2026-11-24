@@ -1671,6 +1671,289 @@ export const project = {
           "label": "Inspect generated storage files"
         }
       ]
+    },
+    {
+      "id": 8,
+      "title": "Cosine similarity and comparison against stored embeddings",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "similarity.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → similarity.py",
+          "label": "Create cosine similarity module"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 0,
+          "text": "import numpy as np",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 1,
+          "text": "",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 2,
+          "text": "",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 3,
+          "text": "def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 4,
+          "text": "    if a.ndim != 1 or b.ndim != 1 or a.shape != b.shape or a.size == 0:",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 5,
+          "text": "        raise ValueError(\"Expected equal-length nonempty vectors\")",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 6,
+          "text": "    if not np.isfinite(a).all() or not np.isfinite(b).all():",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 7,
+          "text": "        raise ValueError(\"Vectors must contain finite values\")",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 8,
+          "text": "",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 9,
+          "text": "    a = a.astype(np.float64)",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 10,
+          "text": "    b = b.astype(np.float64)",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 11,
+          "text": "    norm_a = np.linalg.norm(a)",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 12,
+          "text": "    norm_b = np.linalg.norm(b)",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 13,
+          "text": "",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 14,
+          "text": "    if norm_a == 0 or norm_b == 0:",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 15,
+          "text": "        raise ValueError(\"Cosine similarity is undefined for zero vectors\")",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 16,
+          "text": "",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 17,
+          "text": "    dot_product = np.dot(a, b)",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 18,
+          "text": "    score = dot_product / (norm_a * norm_b)",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 19,
+          "text": "    return float(np.clip(score, -1.0, 1.0))",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 20,
+          "text": "",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 21,
+          "text": "",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 22,
+          "text": "def cosine_scores(query: np.ndarray, matrix: np.ndarray) -> np.ndarray:",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 23,
+          "text": "    if query.ndim != 1 or matrix.ndim != 2:",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 24,
+          "text": "        raise ValueError(\"Expected a query vector and an embedding matrix\")",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 25,
+          "text": "    if query.size == 0 or matrix.shape[1] != query.size:",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 26,
+          "text": "        raise ValueError(\"Embedding dimensions must match\")",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 27,
+          "text": "",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "add",
+          "file": "similarity.py",
+          "at": 28,
+          "text": "    return np.array([cosine_similarity(query, row) for row in matrix])",
+          "label": "Write similarity code"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 6,
+          "text": "from similarity import cosine_scores",
+          "label": "Integrate similarity demonstration"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 42,
+          "text": "",
+          "label": "Integrate similarity demonstration"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 43,
+          "text": "    reference = saved_embeddings[0]",
+          "label": "Integrate similarity demonstration"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 44,
+          "text": "    scores = cosine_scores(reference, saved_embeddings)",
+          "label": "Integrate similarity demonstration"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 45,
+          "text": "    print(f\"\\nSimilarity to reference chunk: {saved_chunks[0]['id']}\")",
+          "label": "Integrate similarity demonstration"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 46,
+          "text": "    for chunk, score in zip(saved_chunks, scores, strict=True):",
+          "label": "Integrate similarity demonstration"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 47,
+          "text": "        print(f\"{chunk['id']}: {score:.4f}\")",
+          "label": "Integrate similarity demonstration"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"import numpy as np; from similarity import cosine_similarity; print(cosine_similarity(np.array([3, 4]), np.array([4, 3])))\"",
+          "output": "0.96",
+          "label": "Test known cosine similarity"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile main.py similarity.py",
+          "output": "No output on success.",
+          "label": "Syntax check — expected"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\nLoaded 3 documents\nCreated 7 chunks\nEmbedding matrix shape: (7, 384)\nai.txt:1: 384 dimensions\nai.txt:2: 384 dimensions\nai.txt:3: 384 dimensions\nllm.txt:1: 384 dimensions\nllm.txt:2: 384 dimensions\nrag.txt:1: 384 dimensions\nrag.txt:2: 384 dimensions\nVector store saved.\nReloaded 7 chunks\nReloaded matrix shape: (7, 384)\n\nSimilarity to reference chunk: ai.txt:1\nai.txt:1: 1.0000\nai.txt:2: [model-dependent score]\nai.txt:3: [model-dependent score]\nllm.txt:1: [model-dependent score]\nllm.txt:2: [model-dependent score]\nrag.txt:1: [model-dependent score]\nrag.txt:2: [model-dependent score]",
+          "label": "Expected self-similarity; remaining scores require real model inference"
+        }
+      ]
     }
   ]
 };

@@ -34,4 +34,8 @@ D01 02:10–02:58. Install requirements, load the pretrained English-oriented al
 
 D01 02:59–04:00. Save NumPy embeddings and UTF-8 JSON metadata (model name and ordered chunks), then reload and validate rank, width, row count, finite values and model name. Generated storage files, virtual environments and .env are ignored by Git. The application still re-embeds on every run; cache reuse and retrieval are future work. Two-file persistence is educational, not transactional; same-sized mismatched data is not detected. No real model inference claimed by the replay.
 
-Next stage: cosine similarity, only after learner advances.
+## Stage 8 — cosine similarity
+
+D01 04:01–04:40. Compute cosine similarity using dot product and Euclidean norms, reject invalid dimensions, non-finite inputs and zero vectors, and clip roundoff to [-1, 1]. Score each stored vector against the first stored vector to demonstrate self-similarity. Educational exhaustive loop; no ranking or user-query encoding yet. Non-self scores depend on actual model inference.
+
+Next stage: semantic search, only after learner advances.
