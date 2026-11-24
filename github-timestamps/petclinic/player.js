@@ -111,7 +111,7 @@ try {
  }
  function renderCommitDetails(phase){
    if(!phase){$("commitDetails").hidden=true;return;}
-   const rows=phase.changes.map(x=>'<button class="commit-file" data-commit-file="'+esc(x.file)+'"><span>'+esc(x.file)+'</span><b>+'+x.added+'</b></button>').join("");
+   const rows=phase.changes.map(x=>{const lines=(x.lineRanges||[]).map(r=>"L"+r.from+(r.to!==r.from?"–"+r.to:"")).join(", ")||"Imported asset";return '<button class="commit-file" data-commit-file="'+esc(x.file)+'"><span class="commit-file-info"><span>'+esc(x.file)+'</span><small title="'+esc(lines)+'">'+esc(lines)+'</small></span><b>+'+x.added+'</b></button>';}).join("");
    $("commitDetails").innerHTML='<div class="commit-detail-head"><b>C'+String(phase.id).padStart(3,"0")+" · "+esc(phase.title)+'</b><button id="commitClose" class="square" aria-label="Close details">×</button></div><div class="commit-detail-list">'+rows+'</div><div class="commit-detail-foot">+'+phase.totalLines+' code lines · '+phase.filesChanged+' files · simulated Git commit</div>';
  }
  function navigateCommit(offset){
