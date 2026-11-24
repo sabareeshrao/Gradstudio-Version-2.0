@@ -1,6 +1,6 @@
 # Spring Petclinic — First 100 Minutes
 
-**D01 09:00–10:39 (inclusive).** These are simulated minute markers. Git SHAs and surviving code lines are evidence-backed; terminal and typing actions are reconstructed.
+**D01 00:01–D01 01:40 (inclusive).** These are simulated minute markers. Git SHAs and surviving code lines are evidence-backed; terminal and typing actions are reconstructed.
 
 Source SHA: 500158f732419217507c7656904b8e6aa1bcc0d6
 
