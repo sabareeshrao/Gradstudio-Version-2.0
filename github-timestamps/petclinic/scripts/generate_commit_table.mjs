@@ -53,4 +53,20 @@ lines.push('','## Audit','','- Multi-file logical commits: '+data.metrics.multiF
  '- Terminal commands, write order and commit boundaries are simulated.',
  '- Individual source lines remain append-only; no removal events are scheduled.','');
 writeFileSync(base+'COMMIT_TABLE.md',lines.join('\n'),'utf8');
+const eventStamp=(index)=>{
+ const minute=data.startMinute+index;
+ return 'D'+String(Math.floor(minute/1440)+1).padStart(2,'0')+' '+
+ String(Math.floor((minute%1440)/60)).padStart(2,'0')+':'+String(minute%60).padStart(2,'0');
+};
+const addedLines=data.events.flatMap((e,index)=>e.kind==='add'?[{
+ step:index+1,timestamp:eventStamp(index),commit:e.commit+1,file:e.file,line:e.line+1
+}]:[]);
+const logicalDetails={
+ sourceSHA:data.sourceSHA,mode:data.mode,metrics:data.metrics,
+ commits:data.phases.map(p=>({id:p.id,title:p.title,firstStep:p.fromStep+1,lastStep:p.toStep+1,
+  linesAdded:p.totalLines,filesChanged:p.filesChanged,changes:p.changes})),
+ addedLines
+};
+assert.equal(addedLines.length,8957);
+writeFileSync(base+'data/logical-commits.json',JSON.stringify(logicalDetails), 'utf8');
 console.log('AUDIT PASSED',JSON.stringify(data.metrics));
