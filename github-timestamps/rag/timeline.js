@@ -1238,6 +1238,439 @@ export const project = {
           "label": "Expected shape; first run downloads model; numeric values not simulated"
         }
       ]
+    },
+    {
+      "id": 7,
+      "title": "Persistent NumPy vector storage and JSON metadata",
+      "actions": [
+        {
+          "kind": "create",
+          "file": ".gitignore",
+          "language": "text",
+          "command": "VS Code Explorer: New File → .gitignore",
+          "label": "Create .gitignore"
+        },
+        {
+          "kind": "add",
+          "file": ".gitignore",
+          "at": 0,
+          "text": ".venv/",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": ".gitignore",
+          "at": 1,
+          "text": "__pycache__/",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": ".gitignore",
+          "at": 2,
+          "text": "storage/",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": ".gitignore",
+          "at": 3,
+          "text": ".env",
+          "label": "Write source line"
+        },
+        {
+          "kind": "create",
+          "file": "vector_store.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → vector_store.py",
+          "label": "Create vector_store.py"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 0,
+          "text": "import json",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 1,
+          "text": "from pathlib import Path",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 2,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 3,
+          "text": "import numpy as np",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 4,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 5,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 6,
+          "text": "def validate_store(chunks: list[dict[str, str]], embeddings: np.ndarray) -> None:",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 7,
+          "text": "    if embeddings.ndim != 2 or embeddings.shape[1] == 0:",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 8,
+          "text": "        raise ValueError(\"Embeddings must be a nonempty-width matrix\")",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 9,
+          "text": "    if len(chunks) != embeddings.shape[0]:",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 10,
+          "text": "        raise ValueError(\"Chunk count and vector count must match\")",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 11,
+          "text": "    if not np.isfinite(embeddings).all():",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 12,
+          "text": "        raise ValueError(\"Embeddings contain non-finite values\")",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 13,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 14,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 15,
+          "text": "def save_vector_store(directory, chunks, embeddings, model_name):",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 16,
+          "text": "    validate_store(chunks, embeddings)",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 17,
+          "text": "    directory.mkdir(parents=True, exist_ok=True)",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 18,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 19,
+          "text": "    np.save(directory / \"embeddings.npy\", embeddings, allow_pickle=False)",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 20,
+          "text": "    metadata = {\"model_name\": model_name, \"chunks\": chunks}",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 21,
+          "text": "    (directory / \"chunks.json\").write_text(",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 22,
+          "text": "        json.dumps(metadata, ensure_ascii=False, indent=2),",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 23,
+          "text": "        encoding=\"utf-8\",",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 24,
+          "text": "    )",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 25,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 26,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 27,
+          "text": "def load_vector_store(directory: Path, model_name: str):",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 28,
+          "text": "    metadata = json.loads(",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 29,
+          "text": "        (directory / \"chunks.json\").read_text(encoding=\"utf-8\")",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 30,
+          "text": "    )",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 31,
+          "text": "    if metadata[\"model_name\"] != model_name:",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 32,
+          "text": "        raise ValueError(\"Embedding model mismatch\")",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 33,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 34,
+          "text": "    chunks = metadata[\"chunks\"]",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 35,
+          "text": "    embeddings = np.load(directory / \"embeddings.npy\", allow_pickle=False)",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 36,
+          "text": "    validate_store(chunks, embeddings)",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "vector_store.py",
+          "at": 37,
+          "text": "    return chunks, embeddings",
+          "label": "Write source line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 4,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 4,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 4,
+          "text": "from embedder import load_embedding_model, embed_texts, MODEL_NAME",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 5,
+          "text": "from vector_store import save_vector_store, load_vector_store",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 32,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 32,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 32,
+          "text": "    storage_directory = data_directory.parent / \"storage\"",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 33,
+          "text": "    save_vector_store(storage_directory, all_chunks, embeddings, MODEL_NAME)",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 34,
+          "text": "    print(\"Vector store saved.\")",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 35,
+          "text": "",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 36,
+          "text": "    saved_chunks, saved_embeddings = load_vector_store(",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 37,
+          "text": "        storage_directory, MODEL_NAME",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 38,
+          "text": "    )",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 39,
+          "text": "    print(f\"Reloaded {len(saved_chunks)} chunks\")",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 40,
+          "text": "    print(f\"Reloaded matrix shape: {saved_embeddings.shape}\")",
+          "label": "Integrate vector storage"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile main.py vector_store.py",
+          "output": "No output on success.",
+          "label": "Syntax check — expected"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\nLoaded 3 documents\nCreated 7 chunks\nEmbedding matrix shape: (7, 384)\nai.txt:1: 384 dimensions\nai.txt:2: 384 dimensions\nai.txt:3: 384 dimensions\nllm.txt:1: 384 dimensions\nllm.txt:2: 384 dimensions\nrag.txt:1: 384 dimensions\nrag.txt:2: 384 dimensions\nVector store saved.\nReloaded 7 chunks\nReloaded matrix shape: (7, 384)",
+          "label": "Expected output — real vectors generated locally; storage files created by application"
+        },
+        {
+          "kind": "terminal",
+          "command": "ls storage",
+          "output": "chunks.json\nembeddings.npy",
+          "label": "Inspect generated storage files"
+        }
+      ]
     }
   ]
 };

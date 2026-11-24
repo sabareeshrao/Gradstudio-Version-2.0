@@ -30,4 +30,8 @@ D01 01:30–02:09. Split normalized text into windows of 20 words with 5 words o
 
 D01 02:10–02:58. Install requirements, load the pretrained English-oriented all-MiniLM-L6-v2 model once on CPU, batch-encode chunk texts as unit-normalized NumPy vectors, and retain row-to-chunk correspondence. Expected matrix shape (7, 384). First run needs internet to download model files; no API key. Dependency versions are not pinned yet. No real model inference claimed by the replay; numerical values are displayed only when executed locally.
 
-Next stage: vector storage, only after learner advances.
+## Stage 7 — vector storage
+
+D01 02:59–04:00. Save NumPy embeddings and UTF-8 JSON metadata (model name and ordered chunks), then reload and validate rank, width, row count, finite values and model name. Generated storage files, virtual environments and .env are ignored by Git. The application still re-embeds on every run; cache reuse and retrieval are future work. Two-file persistence is educational, not transactional; same-sized mismatched data is not detected. No real model inference claimed by the replay.
+
+Next stage: cosine similarity, only after learner advances.

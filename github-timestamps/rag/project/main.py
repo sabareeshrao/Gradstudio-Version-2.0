@@ -2,7 +2,8 @@ from pathlib import Path
 from loader import load_documents
 from preprocessor import clean_text
 from chunker import create_chunks
-from embedder import load_embedding_model, embed_texts
+from embedder import load_embedding_model, embed_texts, MODEL_NAME
+from vector_store import save_vector_store, load_vector_store
 
 
 def main():
@@ -29,7 +30,15 @@ def main():
     for chunk, vector in zip(all_chunks, embeddings, strict=True):
         print(f"{chunk['id']}: {len(vector)} dimensions")
 
-    print("First vector (first 5 values):", embeddings[0][:5])
+    storage_directory = data_directory.parent / "storage"
+    save_vector_store(storage_directory, all_chunks, embeddings, MODEL_NAME)
+    print("Vector store saved.")
+
+    saved_chunks, saved_embeddings = load_vector_store(
+        storage_directory, MODEL_NAME
+    )
+    print(f"Reloaded {len(saved_chunks)} chunks")
+    print(f"Reloaded matrix shape: {saved_embeddings.shape}")
 
 
 if __name__ == "__main__":
