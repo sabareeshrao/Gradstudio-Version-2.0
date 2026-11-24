@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d1117">
   <meta name="description" content="GitHub Timestamps — time-travel through the development of a repository, one action per simulated minute.">
-  <title>Spring PetClinic · Logical Build | GitHub Timestamps</title>
+  <title>Spring PetClinic · Real Commit History | GitHub Timestamps</title>
   <link rel="stylesheet" href="../css/app.css">
   <link rel="stylesheet" href="./site.css">
 </head>
@@ -17,7 +17,7 @@
     <span class="top-divider"></span>
     <div class="repo-title"><span>spring-projects</span><span class="dim">/</span><b>spring-petclinic</b><span class="branch">⑂ main</span></div>
     <div class="top-stats"><b id="topTime">D01 09:00</b><span id="topStep">Step 001</span><span id="topLines">0 lines</span></div>
-    <span class="demo-pill">LOGICAL COMMITS · SIMULATED · NO DELETIONS</span>
+    <span class="demo-pill">REAL COMMIT ORDER · RECONSTRUCTED ACTIONS</span>
   </header>
   <div class="layout" id="layout">
     <aside class="explorer" id="explorer">
@@ -39,7 +39,7 @@
         <form id="stepForm" class="jump step-jump"><label for="step">Step</label><input id="step" type="number" min="1" value="1"><button class="square" type="submit">↵</button></form>
         <div class="action-tools"><label class="only" title="Show just the current line"><input id="onlySelected" type="checkbox">Selected</label><button class="square" id="copy" title="Copy visible code" aria-label="Copy source">⧉</button><button class="square" id="download" title="Download visible source" aria-label="Download source">↓</button><button class="small view-switch" id="switchView" title="Switch editor / terminal">Terminal</button></div>
       </div>
-      <div class="commitbar"><div class="commit-left"><span id="commitIcon">⑂</span><span id="commitTitle">Project initialization</span><span id="commitMode" class="commit-mode">Feature commit</span></div><div class="commit-actions"><button class="square" id="prevCommit" title="Previous logical commit">‹</button><button class="small" id="commitDetailsBtn" title="Show files and lines added in this commit"><span id="commitPosition">Loading commits</span> ▾</button><button class="square" id="nextCommit" title="Next logical commit">›</button><button class="square" id="downloadCommits" title="Download 4-column commit table as Markdown">↓</button></div></div>
+      <div class="commitbar"><div class="commit-left"><span id="commitIcon">⑂</span><span id="commitTitle">Project initialization</span><span id="commitMode" class="commit-mode">Git blame history</span></div><div class="commit-actions"><button class="square" id="prevCommit" title="Previous logical commit">‹</button><button class="small" id="commitDetailsBtn" title="Show files and lines added in this commit"><span id="commitPosition">Loading commits</span> ▾</button><button class="square" id="nextCommit" title="Next logical commit">›</button><button class="square" id="downloadCommits" title="Download 4-column commit table as Markdown">↓</button></div></div>
   <div id="commitDetails" class="commit-details" hidden></div>
       <section class="editor" id="editor" aria-label="Code editor"><div class="editor-viewport wrapped" id="editorViewport"><div id="codeLines"></div></div></section>
       <section class="terminal-stage" id="terminalStage" aria-label="Developer terminal" hidden><div class="terminal-panel" id="terminalPanel"><div id="terminalResize" class="terminal-resize" role="separator" tabindex="0" aria-label="Resize terminal height" aria-orientation="horizontal"></div><div class="terminal-title"><span>❯_ &nbsp; TERMINAL</span><span class="dim" id="terminalStats">0 commands</span><button id="maximizeTerminal" class="square ghost" title="Maximize terminal">⛶</button></div><div id="terminalScroll" class="terminal-scroll"><div id="terminalLines"></div></div></div><div class="terminal-empty">Terminal is the active workspace. The editor is hidden until the next code-writing action.</div></section>
