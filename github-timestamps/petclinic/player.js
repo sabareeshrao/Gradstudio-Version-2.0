@@ -1,4 +1,5 @@
-/* Pinned Spring PetClinic ideal-build player. No historical deletions.
+import {createLogicalReplay} from './logical-replay.js';
+/* Pinned Spring PetClinic logical-build player. No historical deletions.
    Original code is real, but typing, terminal commands and checkpoints are simulated. */
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -22,7 +23,8 @@ async function load(){
  return {data,sources};
 }
 try {
- const {data,sources}=await load();
+ const {data:original,sources}=await load();
+ const data=createLogicalReplay(original,sources);
  const files=data.files,events=data.events,phases=data.phases;
  const fileByPath=new Map(files.map(f=>[f.path,f]));
  const terminalSteps=events.flatMap((e,i)=>e.kind==="terminal"?[i]:[]);
@@ -89,7 +91,7 @@ try {
    if(!$("terminalStage").hidden){const x=$("terminalScroll");x.scrollTop=x.scrollHeight;}
  }
  function renderToolbar(){
-   const e=current(),tm=dayTime(state.step),phase=phases[e.commit??0];
+   const e=current(),tm=dayTime(state.step),phase=Number.isInteger(e.commit)?phases[e.commit]:null;
    $("topTime").textContent=stamp(state.step);$("topStep").textContent="Step "+String(state.step+1).padStart(5,"0");
    $("topLines").textContent=writtenTotal().toLocaleString()+" / "+data.metrics.sourceLines.toLocaleString()+" lines";
    $("day").value=tm.day;$("clock").value=tm.time;
@@ -97,12 +99,25 @@ try {
    $("scrub").value=state.step;
    $("play").textContent=state.playing?"Ⅱ Pause":"▶ Play";
    $("first").disabled=$("prev").disabled=state.step===0;$("next").disabled=state.step===events.length-1;
-   $("commitTitle").textContent=phase?"Checkpoint "+phase.id+" · "+phase.title:(e.label||"Project initialization");
+   $("commitTitle").textContent=phase?"C"+String(phase.id).padStart(3,"0")+" · "+phase.title:(e.label||"Project initialization");
    $("commitMode").textContent=e.kind==="save"?"Editor save":phase?.mode||"Terminal setup";
-   $("commitPosition").textContent=phase?phase.id+" / "+phases.length+" files":"Setup";
+   $("commitPosition").textContent=phase?"+"+phase.totalLines+" lines · "+phase.filesChanged+" files":"Setup";
+   $("prevCommit").disabled=!phase||phase.id<=1;$("nextCommit").disabled=!phase||phase.id>=phases.length;
+   $("commitDetailsBtn").disabled=!phase;
+   if(!$("commitDetails").hidden)renderCommitDetails(phase);
    const term=state.override===null?e.kind==="terminal":state.override;
    $("terminalStage").hidden=!term;$("editor").hidden=term;
    $("switchView").textContent=term?"Code":"Terminal";
+ }
+ function renderCommitDetails(phase){
+   if(!phase){$("commitDetails").hidden=true;return;}
+   const rows=phase.changes.map(x=>'<button class="commit-file" data-commit-file="'+esc(x.file)+'"><span>'+esc(x.file)+'</span><b>+'+x.added+'</b></button>').join("");
+   $("commitDetails").innerHTML='<div class="commit-detail-head"><b>C'+String(phase.id).padStart(3,"0")+" · "+esc(phase.title)+'</b><button id="commitClose" class="square" aria-label="Close details">×</button></div><div class="commit-detail-list">'+rows+'</div><div class="commit-detail-foot">+'+phase.totalLines+' code lines · '+phase.filesChanged+' files · simulated Git commit</div>';
+ }
+ function navigateCommit(offset){
+   const e=current(),id=Number.isInteger(e.commit)?e.commit:0;
+   const p=phases[Math.max(0,Math.min(phases.length-1,id+offset))];
+   if(p){stop();seek(p.toStep);$("commitDetails").hidden=false;renderCommitDetails(p);}
  }
  function render(){renderToolbar();renderTree();renderCode();renderTerminal();}
  function source(){const meta=fileByPath.get(state.file);return meta?.kind==="text"?(sources[meta.path]||[]).slice(0,lineCount(meta)).join("\n"):"";}
@@ -138,9 +153,26 @@ try {
  }
  resize($("sidebarGrip"),"x");resize($("terminalResize"),"y");
  $("maximizeTerminal").addEventListener("click",()=>$("terminalPanel").classList.toggle("maximized"));
+ $("prevCommit").addEventListener("click",()=>navigateCommit(-1));
+ $("nextCommit").addEventListener("click",()=>navigateCommit(1));
+ $("commitDetailsBtn").addEventListener("click",()=>{const p=phases[current().commit??0];$("commitDetails").hidden=!$("commitDetails").hidden;if(!$("commitDetails").hidden)renderCommitDetails(p);});
+ $("commitDetails").addEventListener("click",e=>{
+   if(e.target.closest("#commitClose")){$("commitDetails").hidden=true;return;}
+   const btn=e.target.closest("[data-commit-file]");if(!btn)return;
+   const p=phases[current().commit??0];if(!p)return;
+   const last=events.findLastIndex((ev,i)=>i>=p.fromStep&&i<=p.toStep&&ev.kind==="add"&&ev.file===btn.dataset.commitFile);
+   if(last>=0){stop();seek(last);$("commitDetails").hidden=true;}
+ });
+ $("downloadCommits").addEventListener("click",()=>{
+   const rows=["# Spring PetClinic — logical commit table","","Source: "+data.sourceSHA+" · "+data.metrics.sourceLines+" source lines · "+events.length+" timed actions.","","| Commit | Added code lines | Files changed | Feature |","|---:|---:|---:|---|"];
+   phases.slice().sort((a,b)=>a.totalLines-b.totalLines||a.id-b.id).forEach(p=>rows.push("| C"+String(p.id).padStart(3,"0")+" | "+p.totalLines+" | "+p.filesChanged+" | "+p.title+" |"));
+   downloadText(rows.join("\n")+"\n","COMMIT_TABLE.md");
+ });
  document.querySelectorAll("[data-palette]").forEach(b=>b.addEventListener("click",()=>{document.body.dataset.palette=b.dataset.palette;document.querySelectorAll(".palettes button").forEach(v=>v.classList.toggle("active",v===b));}));
  document.addEventListener("keydown",e=>{if(e.target.closest("input,button,textarea")||e.metaKey||e.ctrlKey)return;if(e.key==="ArrowLeft"){stop();seek(state.step-1);}else if(e.key==="ArrowRight"){stop();seek(state.step+1);}else if(e.key===" "){e.preventDefault();play();}});
  state.file=null;render();
+ const requested=Number(new URLSearchParams(location.search).get("commit"));
+ if(Number.isInteger(requested)&&requested>=1&&requested<=phases.length){seek(phases[requested-1].toStep);$("commitDetails").hidden=false;renderCommitDetails(phases[requested-1]);}
 } catch(err) {
  console.error(err);
  $("filePath").textContent="Data loading error";
