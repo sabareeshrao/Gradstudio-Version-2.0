@@ -4,7 +4,7 @@ from preprocessor import clean_text
 from chunker import create_chunks
 from embedder import load_embedding_model, embed_texts, MODEL_NAME
 from vector_store import save_vector_store, load_vector_store
-from similarity import cosine_scores
+from search import semantic_search
 
 
 def main():
@@ -41,11 +41,19 @@ def main():
     print(f"Reloaded {len(saved_chunks)} chunks")
     print(f"Reloaded matrix shape: {saved_embeddings.shape}")
 
-    reference = saved_embeddings[0]
-    scores = cosine_scores(reference, saved_embeddings)
-    print(f"\nSimilarity to reference chunk: {saved_chunks[0]['id']}")
-    for chunk, score in zip(saved_chunks, scores, strict=True):
-        print(f"{chunk['id']}: {score:.4f}")
+    question = input("\nAsk a question: ").strip()
+    if not question:
+        print("Question cannot be empty.")
+        return
+
+    query = embed_texts(model, [question])[0]
+    results = semantic_search(query, saved_chunks, saved_embeddings, top_k=3)
+
+    print(f"\nTop {len(results)} results:")
+    for rank, result in enumerate(results, start=1):
+        print(f"\n{rank}. {result['id']} | Score: {result['score']:.4f}")
+        print(f"Source: {result['source']}")
+        print(result["text"])
 
 
 if __name__ == "__main__":

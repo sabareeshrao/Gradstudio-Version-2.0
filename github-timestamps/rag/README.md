@@ -38,4 +38,8 @@ D01 02:59–04:00. Save NumPy embeddings and UTF-8 JSON metadata (model name and
 
 D01 04:01–04:40. Compute cosine similarity using dot product and Euclidean norms, reject invalid dimensions, non-finite inputs and zero vectors, and clip roundoff to [-1, 1]. Score each stored vector against the first stored vector to demonstrate self-similarity. Educational exhaustive loop; no ranking or user-query encoding yet. Non-self scores depend on actual model inference.
 
-Next stage: semantic search, only after learner advances.
+## Stage 9 — semantic search
+
+D01 04:41–05:32. Read one nonblank user question, encode it with the existing model, compare it to the reloaded vectors with cosine_scores, rank in descending order using stable NumPy argsort, and return up to three results with metadata and scores. Synthetic-vector ranking and syntax checks executed successfully; real embedding inference remains unverified. No relevance threshold, cache reuse or LLM answer generation yet. Full exhaustive search and unpinned dependencies remain teaching limitations.
+
+Next stage: document retrieval, only after learner advances.

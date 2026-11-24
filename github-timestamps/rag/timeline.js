@@ -1954,6 +1954,361 @@ export const project = {
           "label": "Expected self-similarity; remaining scores require real model inference"
         }
       ]
+    },
+    {
+      "id": 9,
+      "title": "Semantic search: query embedding, similarity ranking and Top-K results",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "search.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → search.py",
+          "label": "Create semantic search module"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 0,
+          "text": "import numpy as np",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 1,
+          "text": "from similarity import cosine_scores",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 2,
+          "text": "",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 3,
+          "text": "",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 4,
+          "text": "def semantic_search(",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 5,
+          "text": "    query: np.ndarray,",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 6,
+          "text": "    chunks: list[dict[str, str]],",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 7,
+          "text": "    embeddings: np.ndarray,",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 8,
+          "text": "    top_k: int = 3,",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 9,
+          "text": ") -> list[dict[str, str | float]]:",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 10,
+          "text": "    if top_k <= 0:",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 11,
+          "text": "        raise ValueError(\"top_k must be positive\")",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 12,
+          "text": "    if len(chunks) != len(embeddings):",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 13,
+          "text": "        raise ValueError(\"Chunk count and vector count must match\")",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 14,
+          "text": "",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 15,
+          "text": "    scores = cosine_scores(query, embeddings)",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 16,
+          "text": "    ranked_indices = np.argsort(-scores, kind=\"stable\")[:top_k]",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 17,
+          "text": "",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 18,
+          "text": "    return [",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 19,
+          "text": "        {**chunks[index], \"score\": float(scores[index])}",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 20,
+          "text": "        for index in ranked_indices",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "add",
+          "file": "search.py",
+          "at": 21,
+          "text": "    ]",
+          "label": "Write search and ranking code"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"import numpy as np; from search import semantic_search; chunks = [{'id': x} for x in ['A', 'B', 'C']]; results = semantic_search(np.array([1, 0]), chunks, np.array([[0, 1], [1, 0], [1, 1]]), 2); print([(r['id'], round(r['score'], 4)) for r in results])\"",
+          "output": "[('B', 1.0), ('C', 0.7071)]",
+          "label": "Synthetic-vector ranking test (executed)"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 6,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 6,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 6,
+          "text": "from search import semantic_search",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 43,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 43,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 43,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 43,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 43,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 43,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 43,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 43,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 43,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 43,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 43,
+          "text": "    question = input(\"\\nAsk a question: \").strip()",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 44,
+          "text": "    if not question:",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 45,
+          "text": "        print(\"Question cannot be empty.\")",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 46,
+          "text": "        return",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 47,
+          "text": "",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 48,
+          "text": "    query = embed_texts(model, [question])[0]",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 49,
+          "text": "    results = semantic_search(query, saved_chunks, saved_embeddings, top_k=3)",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 50,
+          "text": "",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 51,
+          "text": "    print(f\"\\nTop {len(results)} results:\")",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 52,
+          "text": "    for rank, result in enumerate(results, start=1):",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 53,
+          "text": "        print(f\"\\n{rank}. {result['id']} | Score: {result['score']:.4f}\")",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 54,
+          "text": "        print(f\"Source: {result['source']}\")",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 55,
+          "text": "        print(result[\"text\"])",
+          "label": "Integrate semantic search"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile main.py search.py",
+          "output": "No output on success.",
+          "label": "Syntax check (executed)"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\nLoaded 3 documents\nCreated 7 chunks\nEmbedding matrix shape: (7, 384)\nai.txt:1: 384 dimensions\nai.txt:2: 384 dimensions\nai.txt:3: 384 dimensions\nllm.txt:1: 384 dimensions\nllm.txt:2: 384 dimensions\nrag.txt:1: 384 dimensions\nrag.txt:2: 384 dimensions\nVector store saved.\nReloaded 7 chunks\nReloaded matrix shape: (7, 384)\n\nAsk a question: What are embeddings?\n\nTop 3 results:\n[Actual IDs, scores, sources and text depend on model inference. Run locally to see them.]",
+          "label": "Interactive search — example input, actual ranking unverified"
+        }
+      ]
     }
   ]
 };
