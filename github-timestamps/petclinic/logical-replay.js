@@ -9,7 +9,11 @@ export function createLogicalReplay(original,sources){
   if(p.includes('petclinicapplication.java')||p.includes('petclinicruntimehints.java')||p.includes('/system/')||p.startsWith('src/main/resources/application'))return '01|Bootstrap and web configuration';
   if(p.includes('/model/')&&!p.includes('/test/'))return '02|Shared entity models';
   if(p.startsWith('src/main/resources/db/'))return '03|Database schema and data';
-  if(p.includes('/owner/')||p.includes('/templates/owners/')||p.includes('/templates/pets/'))return '04|Owner, pet and visit workflows';
+  if(p.includes('/owner/')||p.includes('/templates/owners/')||p.includes('/templates/pets/')){
+   if(/visit/.test(p))return '04c|Visits and veterinary appointments';
+   if(/pet|type|validator|formatter/.test(p))return '04b|Pet registration and types';
+   return '04a|Owner records and management';
+  }
   if(p.includes('/vet/')||p.includes('/templates/vets/'))return '05|Veterinary features';
   if(p.startsWith('src/main/resources/templates/')||p.startsWith('src/main/scss/')||p.startsWith('src/main/resources/static/')||p.startsWith('src/main/resources/messages/'))return '06|Views, styling and localization';
   if(p.startsWith('src/test/'))return '07|Integration and regression tests';
@@ -31,7 +35,18 @@ export function createLogicalReplay(original,sources){
   }else f.createdAt=emit('terminal',{file:f.path,command:'touch '+quote(f.path),label:'Create source file',commit,created:true});
  }
  for(const [key,group] of [...groups].sort(([a],[b])=>a.localeCompare(b))){
-  group.sort((a,b)=>a.path.localeCompare(b.path));
+  const order=f=>{
+   const p=f.path;
+   if(/(?:Owner|Pet|Visit|Vet|Specialty|PetType|BaseEntity|NamedEntity|Person)\.java$/.test(p))return 0;
+   if(/Repository\.java$/.test(p))return 1;
+   if(/(?:Validator|Formatter)\.java$/.test(p))return 2;
+   if(/Controller\.java$/.test(p))return 3;
+   if(/\/templates\//.test(p))return 4;
+   if(/Tests?\.java$/.test(p))return 5;
+   if(f.kind==='asset')return 7;
+   return 6;
+  };
+  group.sort((a,b)=>order(a)-order(b)||a.path.localeCompare(b.path));
   const titleBase=key.split('|')[1];let remaining=group.slice(),iteration=1,touched=new Map(),fromStep=events.length;
   const touch=(p,n)=>(touched.set(p,(touched.get(p)||0)+n));
   function commit(){
