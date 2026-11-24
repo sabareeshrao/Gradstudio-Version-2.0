@@ -1,4 +1,4 @@
-name: Build audited ideal Spring PetClinic replay
+name: Build audited logical Spring PetClinic replay
 
 on:
   push:
@@ -6,6 +6,8 @@ on:
     paths:
       - '.github/workflows/github-timestamps-petclinic-ideal.yml'
       - 'github-timestamps/petclinic/scripts/build_dataset.py'
+      - 'github-timestamps/petclinic/scripts/generate_commit_table.mjs'
+      - 'github-timestamps/petclinic/logical-replay.js'
   workflow_dispatch:
 
 permissions:
@@ -35,17 +37,21 @@ jobs:
           git diff --check
           test -s github-timestamps/petclinic/data/manifest.json
           test -s github-timestamps/petclinic/data/sources.json
+      - name: Audit logical commits and generate sorted commit table
+        run: |
+          node github-timestamps/petclinic/scripts/generate_commit_table.mjs
+          test -s github-timestamps/petclinic/COMMIT_TABLE.md
       - name: Publish generated data
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add github-timestamps/petclinic/data/manifest.json github-timestamps/petclinic/data/sources.json
+          git add github-timestamps/petclinic/data/manifest.json github-timestamps/petclinic/data/sources.json github-timestamps/petclinic/COMMIT_TABLE.md
           if git diff --cached --quiet; then
             echo 'Generated data unchanged'
             exit 0
           fi
-          git commit -m 'Publish pinned PetClinic ideal-build timeline (no historical deletes)'
+          git commit -m 'Publish audited PetClinic logical commit table (source-faithful)'
           git pull --rebase origin main
           git push origin HEAD:main
