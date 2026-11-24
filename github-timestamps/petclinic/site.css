@@ -8,3 +8,30 @@
 .terminal-empty {padding:19px}
 .progress-loading {padding:32px 20px;color:#acbccc;font:13px/1.8 ui-monospace,Consolas,monospace}
 @media(max-width:440px){.top-stats #topStep {display:none} .identity{font-size:11px} .demo-pill{display:none}}
+
+/* Logical commits: compact navigation, no panels stealing editor height. */
+.main {position:relative}
+.commitbar .commit-actions {display:flex;align-items:center;gap:4px;flex:none}
+.commit-actions .small {max-width:170px;font-size:10px;padding:2px 8px;color:#a5d4ff;background:#14293b}
+.commit-actions .small span {overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.commit-actions .square {min-width:23px;width:24px;height:23px;padding:1px 5px}
+.commit-details {position:absolute;z-index:20;right:12px;top:120px;width:min(435px,calc(100% - 24px));max-height:min(68vh,500px);overflow:auto;background:#111923;border:1px solid #3b5065;border-radius:8px;box-shadow:0 12px 38px #000b}
+.commit-detail-head {display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border-bottom:1px solid var(--border);color:#e6edf3}
+.commit-detail-head b {min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.commit-detail-list {max-height:310px;overflow:auto}
+.commit-file {border:0;border-bottom:1px solid #202b37;background:transparent;color:#b6d6f4;display:flex;justify-content:space-between;align-items:center;text-align:left;padding:9px 12px;width:100%;gap:9px;cursor:pointer}
+.commit-file:hover {background:#1b3148}
+.commit-file span {min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.commit-file b {color:#60cd84;font-variant-numeric:tabular-nums}
+.commit-detail-foot {padding:9px 12px;color:#8c9fb0;font-size:10px}
+.tree-node .node-icon,.tree-node .caret {flex:none}
+.explorer {height:100%;min-height:0}
+.filetree {max-width:100%;overflow-x:hidden}
+.node-title {max-width:100%}
+.terminal-panel {height:25%}
+@media(max-width:790px) {
+ .commit-details {top:148px;right:5px;width:calc(100% - 10px)}
+ .commit-left #commitTitle {max-width:48vw}
+ .commit-actions .small {max-width:100px}
+ .explorer.open {height:100%;bottom:0}
+}
