@@ -39,13 +39,13 @@ const lines=[
  data.metrics.sourceLines.toLocaleString()+' added code lines; '+data.files.length+
  ' files; '+data.phases.length+' logical commits; zero deletions.',
  '',
- 'The table is sorted by added code lines (ascending). The commit links open the interactive player.',
+ 'The table is sorted by added code lines (ascending). The commit links open the interactive GitHub Pages player.',
  '',
  '| Commit | Code lines added | Files changed | Feature |',
  '|---:|---:|---:|---|'
 ];
 for(const p of [...data.phases].sort((a,b)=>a.totalLines-b.totalLines||a.id-b.id)){
- lines.push('| [C'+String(p.id).padStart(3,'0')+'](./?commit='+p.id+') | '+p.totalLines+' | '+p.filesChanged+' | '+p.title.replaceAll('|','/')+' |');
+ lines.push('| [C'+String(p.id).padStart(3,'0')+'](https://sabareeshrao.github.io/Gradstudio-Version-2.0/github-timestamps/petclinic/?commit='+p.id+') | '+p.totalLines+' | '+p.filesChanged+' | '+p.title.replaceAll('|','/')+' |');
 }
 lines.push('','## Audit','','- Multi-file logical commits: '+data.metrics.multiFileCommits,
  '- Files revisited in later commits: '+data.metrics.revisitedFiles,
