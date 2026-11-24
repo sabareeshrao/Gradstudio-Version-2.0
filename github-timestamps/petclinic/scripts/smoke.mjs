@@ -8,6 +8,9 @@ const sources=JSON.parse(readFileSync(base+"/data/sources.json","utf8"));
 assert.equal(data.mode,"upstream-git-blame-surviving-lines");
 assert.equal(data.sourceSHA,"500158f732419217507c7656904b8e6aa1bcc0d6");
 assert.equal(data.events.length,10580);
+assert.equal(data.startMinute,1);
+assert.equal(Math.floor((data.startMinute+1439)/1440)+1,2);
+assert.equal((data.startMinute+1439)%1440,0);
 assert.equal(data.metrics.historyAttributedLines,8957);
 assert.equal(data.metrics.sourceLines,8957);
 assert.equal(data.metrics.deletionSteps,0);
@@ -36,7 +39,7 @@ try{
  await page.goto("http://127.0.0.1:8765/github-timestamps/petclinic/",{waitUntil:"networkidle",timeout:30000});
  await page.waitForFunction(()=>document.getElementById("topStep").textContent.includes("00001"),{timeout:20000});
  assert(!((await page.locator("#filePath").textContent())||"").includes("Data loading error"));
- assert.equal(await page.locator("#topTime").textContent(),"D01 09:00");
+ assert.equal(await page.locator("#topTime").textContent(),"D01 00:01");
  assert.equal(await page.locator("#terminalStage").isVisible(),true);
  assert.equal(await page.locator("#fileCount").textContent(),"0 / 132");
  const firstAdd=data.events.findIndex(e=>e.kind==="add");
