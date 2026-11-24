@@ -4,7 +4,7 @@ from preprocessor import clean_text
 from chunker import create_chunks
 from embedder import load_embedding_model, embed_texts, MODEL_NAME
 from vector_store import save_vector_store, load_vector_store
-from search import semantic_search
+from retriever import retrieve_documents
 
 
 def main():
@@ -47,9 +47,14 @@ def main():
         return
 
     query = embed_texts(model, [question])[0]
-    results = semantic_search(query, saved_chunks, saved_embeddings, top_k=3)
+    results = retrieve_documents(
+        query, saved_chunks, saved_embeddings, top_k=3, min_score=0.35
+    )
+    if not results:
+        print("No relevant context found.")
+        return
 
-    print(f"\nTop {len(results)} results:")
+    print(f"\nRetrieved {len(results)} relevant chunks:")
     for rank, result in enumerate(results, start=1):
         print(f"\n{rank}. {result['id']} | Score: {result['score']:.4f}")
         print(f"Source: {result['source']}")

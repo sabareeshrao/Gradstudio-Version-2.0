@@ -42,4 +42,8 @@ D01 04:01–04:40. Compute cosine similarity using dot product and Euclidean nor
 
 D01 04:41–05:32. Read one nonblank user question, encode it with the existing model, compare it to the reloaded vectors with cosine_scores, rank in descending order using stable NumPy argsort, and return up to three results with metadata and scores. Synthetic-vector ranking and syntax checks executed successfully; real embedding inference remains unverified. No relevance threshold, cache reuse or LLM answer generation yet. Full exhaustive search and unpinned dependencies remain teaching limitations.
 
-Next stage: document retrieval, only after learner advances.
+## Stage 10 — document retrieval
+
+D01 05:33–06:09. Add retriever.py as a policy wrapper around semantic_search; retain at most top_k results whose cosine score is >= min_score. Default top_k=3 and min_score=0.35 are teaching settings, not calibrated relevance guarantees. Validate threshold range, preserve ranking and metadata, and stop with a no-context message when nothing passes. Synthetic-vector tests (13 checks) and syntax compilation executed on reproduced source; real embedding inference remains unverified. No context-string construction, LLM, cache reuse or deduplication yet.
+
+Next stage: prompt augmentation, only after learner advances.

@@ -2309,6 +2309,260 @@ export const project = {
           "label": "Interactive search — example input, actual ranking unverified"
         }
       ]
+    },
+    {
+      "id": 10,
+      "title": "Document retrieval with configurable relevance threshold and empty-context handling",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "retriever.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → retriever.py",
+          "label": "Create retrieval policy module"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 0,
+          "text": "import numpy as np",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 1,
+          "text": "from search import semantic_search",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 2,
+          "text": "",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 3,
+          "text": "",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 4,
+          "text": "def retrieve_documents(",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 5,
+          "text": "    query: np.ndarray,",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 6,
+          "text": "    chunks: list[dict[str, str]],",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 7,
+          "text": "    embeddings: np.ndarray,",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 8,
+          "text": "    top_k: int = 3,",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 9,
+          "text": "    min_score: float = 0.35,",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 10,
+          "text": ") -> list[dict[str, str | float]]:",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 11,
+          "text": "    if not -1.0 <= min_score <= 1.0:",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 12,
+          "text": "        raise ValueError(\"min_score must be between -1 and 1\")",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 13,
+          "text": "",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 14,
+          "text": "    candidates = semantic_search(query, chunks, embeddings, top_k=top_k)",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "add",
+          "file": "retriever.py",
+          "at": 15,
+          "text": "    return [result for result in candidates if result[\"score\"] >= min_score]",
+          "label": "Write retrieval policy"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"import numpy as np; from retriever import retrieve_documents; chunks = [{'id': x} for x in ['A', 'B', 'C']]; results = retrieve_documents(np.array([1, 0]), chunks, np.array([[0, 1], [1, 0], [1, 1]]), top_k=3, min_score=0.8); print([r['id'] for r in results])\"",
+          "output": "['B']",
+          "label": "Threshold test using synthetic vectors — executed"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 6,
+          "label": "Mark old search line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 6,
+          "label": "Remove old search line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 6,
+          "text": "from retriever import retrieve_documents",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 49,
+          "label": "Mark old search line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 49,
+          "label": "Remove old search line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 49,
+          "label": "Mark old search line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 49,
+          "label": "Remove old search line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 49,
+          "label": "Mark old search line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 49,
+          "label": "Remove old search line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 49,
+          "text": "    results = retrieve_documents(",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 50,
+          "text": "        query, saved_chunks, saved_embeddings, top_k=3, min_score=0.35",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 51,
+          "text": "    )",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 52,
+          "text": "    if not results:",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 53,
+          "text": "        print(\"No relevant context found.\")",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 54,
+          "text": "        return",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 55,
+          "text": "",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 56,
+          "text": "    print(f\"\\nRetrieved {len(results)} relevant chunks:\")",
+          "label": "Integrate retrieval policy"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile main.py retriever.py",
+          "output": "No output on success.",
+          "label": "Syntax check — executed"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\nLoaded 3 documents\nCreated 7 chunks\nEmbedding matrix shape: (7, 384)\n[Existing indexing and storage messages]\n\nAsk a question: What are embeddings?\n\n[Either 1–3 retrieved chunks with actual scores >= 0.35, or No relevant context found. Actual inference not verified.]",
+          "label": "Local inference and retrieval — expected structure only"
+        }
+      ]
     }
   ]
 };
