@@ -46,4 +46,8 @@ D01 04:41–05:32. Read one nonblank user question, encode it with the existing 
 
 D01 05:33–06:09. Add retriever.py as a policy wrapper around semantic_search; retain at most top_k results whose cosine score is >= min_score. Default top_k=3 and min_score=0.35 are teaching settings, not calibrated relevance guarantees. Validate threshold range, preserve ranking and metadata, and stop with a no-context message when nothing passes. Synthetic-vector tests (13 checks) and syntax compilation executed on reproduced source; real embedding inference remains unverified. No context-string construction, LLM, cache reuse or deduplication yet.
 
-Next stage: prompt augmentation, only after learner advances.
+## Stage 11 — prompt augmentation
+
+D01 06:10–06:54. Add prompt_builder.py: preserve ranked chunk IDs, source names and text; omit similarity scores from evidence; serialize the question and context as Unicode JSON; separate system instructions from user data. Reject blank questions or missing context. Print the two messages instead of the raw result list. Eleven deterministic checks and syntax compilation executed locally on the same code. No actual LLM call, real embedding inference or prompt-injection immunity is claimed. Context deduplication, token budgeting and citation verification remain pending.
+
+Next stage: LLM integration, only after learner advances.

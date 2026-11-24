@@ -5,6 +5,7 @@ from chunker import create_chunks
 from embedder import load_embedding_model, embed_texts, MODEL_NAME
 from vector_store import save_vector_store, load_vector_store
 from retriever import retrieve_documents
+from prompt_builder import build_prompt
 
 
 def main():
@@ -55,10 +56,11 @@ def main():
         return
 
     print(f"\nRetrieved {len(results)} relevant chunks:")
-    for rank, result in enumerate(results, start=1):
-        print(f"\n{rank}. {result['id']} | Score: {result['score']:.4f}")
-        print(f"Source: {result['source']}")
-        print(result["text"])
+    prompt = build_prompt(question, results)
+    print("\nSystem message:")
+    print(prompt["system"])
+    print("\nUser message:")
+    print(prompt["user"])
 
 
 if __name__ == "__main__":
