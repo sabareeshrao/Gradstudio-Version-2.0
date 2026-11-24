@@ -3174,6 +3174,232 @@ export const project = {
           "label": "Expected API integration output; may incur usage charges"
         }
       ]
+    },
+    {
+      "id": 13,
+      "title": "Answer generation: extract completed response text and handle unavailable answers",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "answer.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → answer.py",
+          "label": "Create answer extraction module"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 0,
+          "text": "from __future__ import annotations",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 1,
+          "text": "",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 2,
+          "text": "from typing import TYPE_CHECKING",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 3,
+          "text": "",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 4,
+          "text": "if TYPE_CHECKING:",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 5,
+          "text": "    from openai.types.responses import Response",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 6,
+          "text": "",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 7,
+          "text": "",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 8,
+          "text": "def extract_answer(response: Response) -> str:",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 9,
+          "text": "    if response.status != \"completed\":",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 10,
+          "text": "        raise ValueError(f\"LLM response is not complete: {response.status}\")",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 11,
+          "text": "",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 12,
+          "text": "    answer = response.output_text.strip()",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 13,
+          "text": "    if not answer:",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 14,
+          "text": "        raise ValueError(\"LLM returned no answer text\")",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 15,
+          "text": "",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "add",
+          "file": "answer.py",
+          "at": 16,
+          "text": "    return answer",
+          "label": "Write answer validation code"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"from types import SimpleNamespace; from answer import extract_answer; print(extract_answer(SimpleNamespace(status='completed', output_text='  Demo answer [demo.txt:1]  ')))\"",
+          "output": "Demo answer [demo.txt:1]",
+          "label": "Synthetic completed response — executed"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"from types import SimpleNamespace; from answer import extract_answer; extract_answer(SimpleNamespace(status='incomplete', output_text='Partial answer'))\"",
+          "output": "ValueError: LLM response is not complete: incomplete",
+          "label": "Expected exception; incomplete status validated by executed unit test (traceback abbreviated)"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 9,
+          "text": "from answer import extract_answer",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 64,
+          "text": "",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 65,
+          "text": "    try:",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 66,
+          "text": "        answer = extract_answer(response)",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 67,
+          "text": "    except ValueError as error:",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 68,
+          "text": "        print(f\"Answer unavailable: {error}\")",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 69,
+          "text": "        return",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 70,
+          "text": "",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 71,
+          "text": "    print(\"\\nAnswer:\")",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 72,
+          "text": "    print(answer)",
+          "label": "Integrate answer extraction"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile main.py answer.py",
+          "output": "No output on success.",
+          "label": "Syntax compilation — executed on identical source"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\n[Existing indexing and storage messages]\n\nAsk a question: What are embeddings?\n\n[If retrieval succeeds and the API returns completed nonblank text:]\nLLM response status: completed\n\nAnswer:\n[Actual generated answer]\n[Other branches: no context, answer unavailable, or API error. Live inference unverified.]",
+          "label": "Expected local run — may incur API charges"
+        }
+      ]
     }
   ]
 };

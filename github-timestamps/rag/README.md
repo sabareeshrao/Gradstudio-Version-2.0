@@ -54,4 +54,8 @@ D01 06:10–06:54. Add prompt_builder.py: preserve ranked chunk IDs, source name
 
 D01 06:55–07:38. Add openai dependency, llm.py client factory and request_response wrapper. Read OPENAI_API_KEY from the environment (never commit secrets), default to gpt-6-luna, allow OPENAI_MODEL override, map the system message to instructions and user JSON to input, limit output to 512 tokens, disable response storage with store=False, set SDK timeout=30 seconds and max_retries=0. main.py sends a request only after successful retrieval, then prints response status. API usage may be billed and retrieved context leaves the local machine. No generated answer extraction yet. Syntax compilation and stub-SDK mock assertions passed; actual SDK import was unavailable in the test runtime, so real SDK integration, API calls and embedding inference remain unverified. Do not confuse store=False with zero retention.
 
-Next stage: answer generation, only after learner advances.
+## Stage 13 — answer generation
+
+D01 07:39–08:10. Add answer.py to validate response.status before reading output_text, strip surrounding whitespace, and reject empty answers with ValueError. Use deferred annotations and a type-checking-only SDK import for independent tests. main.py catches extraction ValueError, displays an unavailable-answer message, or prints the completed answer. Fourteen local tests on reproduced source passed (nine extraction checks and five main-flow checks with stubbed dependencies); syntax compilation passed. No real SDK/model calls or live answer quality tests. Incomplete responses are intentionally rejected, not retried. Citation validation, error handling for API requests, and cache reuse remain pending.
+
+Next stage: source citations, only after learner advances.

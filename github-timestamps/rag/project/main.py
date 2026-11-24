@@ -7,6 +7,7 @@ from vector_store import save_vector_store, load_vector_store
 from retriever import retrieve_documents
 from prompt_builder import build_prompt
 from llm import create_llm_client, request_response
+from answer import extract_answer
 
 
 def main():
@@ -61,6 +62,15 @@ def main():
     client = create_llm_client()
     response = request_response(client, prompt)
     print(f"\nLLM response status: {response.status}")
+
+    try:
+        answer = extract_answer(response)
+    except ValueError as error:
+        print(f"Answer unavailable: {error}")
+        return
+
+    print("\nAnswer:")
+    print(answer)
 
 
 if __name__ == "__main__":
