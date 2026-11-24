@@ -150,3 +150,64 @@ out.push("","## Verification",
  "- No assumption is made that a file was runnable before all dependencies were present.","");
 writeFileSync(base+"FIRST_100_MINUTES.md",out.join("\n"),"utf8");
 console.log("FIRST 100 MINUTES",summary,"groups",grouped.size);
+
+
+// Subsequent 100-minute report: real SHA provenance, reconstructed minute events.
+{
+ const start=100,stop=200;
+ const slice=data.events.slice(start,stop);
+ assert.equal(slice.length,100);
+ const counts=slice.reduce((a,e)=>(a[e.kind]=(a[e.kind]||0)+1,a),{});
+ const groups=new Map();
+ slice.forEach((event,offset)=>{
+  const index=start+offset,commit=Number.isInteger(event.commit)?event.commit:-1;
+  if(!groups.has(commit))groups.set(commit,{operations:[],files:new Map()});
+  const group=groups.get(commit);
+  if(event.kind==="add"){
+   if(!group.files.has(event.file))group.files.set(event.file,[]);
+   group.files.get(event.file).push({event,index});
+  }else group.operations.push({event,index});
+ });
+ const result=[
+  "# Spring Petclinic — Minutes 101–200","",
+  "**"+stamp(start)+"–"+stamp(stop-1)+" (inclusive)** · Steps "+(start+1)+"–"+stop+".",
+  "",
+  "This report uses the pinned source and Git blame evidence. Minute timestamps, typing order, and shell commands are reconstructed.",
+  "",
+  "| Event kind | Count |","|---|---:|",
+  ...Object.entries(counts).map(([kind,n])=>"| "+kind+" | "+n+" |"),
+  "",
+  "## Feature additions, grouped by upstream commit and file"
+ ];
+ for(const [id,group] of groups){
+  const commit=id<0?null:commits[id];
+  result.push("","## "+(commit?commit.title:"Repository setup"),
+   commit?"Upstream Git commit: ["+commit.sha.slice(0,12)+"]("+commit.url+")":"No upstream commit for initialization");
+  for(const [path,lines] of group.files){
+   result.push("","### "+path+" · "+lines.length+" surviving code lines · "+stamp(lines[0].index)+"–"+stamp(lines.at(-1).index),"");
+   const lang=data.files.find(f=>f.path===path)?.language||"text";
+   result.push("~~~"+lang);
+   for(const {event} of lines){
+    const code=sources[path]?.[event.line];
+    assert.equal(typeof code,"string","Missing source line "+path+":"+event.line);
+    result.push(code);
+   }
+   result.push("~~~","","Line-by-line timestamps:");
+   for(const {event,index} of lines)result.push("- "+stamp(index)+" · L"+(event.line+1)+": "+JSON.stringify(sources[path][event.line]));
+  }
+  if(group.operations.length){
+   result.push("","### Terminal and editor actions");
+   for(const {event,index} of group.operations){
+    const command=event.command ? " \`"+event.command.replaceAll("\`","\\\`")+"\`" : event.label||"Save editor buffer";
+    result.push("- "+stamp(index)+" · "+event.kind+": "+command);
+   }
+  }
+ }
+ result.push("","## Source and timing audit","",
+ "- Steps 101–200 only; exactly 100 event slots.",
+ "- File content is transcribed from the pinned final source snapshot.",
+ "- Real Git commit SHA provenance; reconstructed code-writing order and terminal actions.",
+ "- No guarantee that this partial replay represents a compilable project at these timestamps.","");
+ writeFileSync(base+"SECOND_100_MINUTES.md",result.join("\n"),"utf8");
+ console.log("MINUTES 101–200 REPORT",counts,"groups",groups.size);
+}
