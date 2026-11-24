@@ -9,6 +9,7 @@ const old=JSON.parse(readFileSync(base+"data/manifest.json","utf8"));
 assert.equal(data.mode,"upstream-git-blame-surviving-lines");
 assert.equal(data.sourceSHA,"500158f732419217507c7656904b8e6aa1bcc0d6");
 assert.equal(data.events.length,10580);
+assert.equal(data.startMinute,1,"Simulated replay must start D01 00:01");
 assert.equal(data.files.length,132);
 assert.equal(data.metrics.sourceLines,8957);
 assert.equal(data.metrics.historyAttributedLines,8957);
@@ -103,7 +104,7 @@ first100.forEach((e,i)=>{
 });
 const out=[
  "# Spring Petclinic — First 100 Minutes", "",
- "**D01 09:00–10:39 (inclusive).** These are simulated minute markers. Git SHAs and surviving code lines are evidence-backed; terminal and typing actions are reconstructed.",
+ "**"+stamp(0)+"–"+stamp(99)+" (inclusive).** These are simulated minute markers. Git SHAs and surviving code lines are evidence-backed; terminal and typing actions are reconstructed.",
  "",
  "Source SHA: "+data.sourceSHA,
  "",
