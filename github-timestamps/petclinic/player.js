@@ -1,6 +1,6 @@
-import {createLogicalReplay} from './logical-replay.js';
-/* Pinned Spring PetClinic logical-build player. No historical deletions.
-   Original code is real, but typing, terminal commands and checkpoints are simulated. */
+/* Git-history anchored Spring PetClinic replay.
+   Upstream commit SHAs and surviving source-line provenance are real.
+   Editor actions/minutes are reconstructed, not historical keystrokes. */
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const folderIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2.5 7h6l2 2h11v10h-19z"/></svg>';
@@ -12,7 +12,7 @@ function syntax(line){
   let html="",offset=0;for(const m of line.matchAll(token)){html+=esc(line.slice(offset,m.index));const w=m[0],css=w.startsWith("//")?"cm":w.startsWith('"')||w.startsWith("'")?"str":w.startsWith("@")?"ann":w.startsWith("<")?"tag":"kw";html+='<span class="'+css+'">'+esc(w)+'</span>';offset=m.index+w.length;}return html+esc(line.slice(offset));
 }
 async function load(){
- const urls=["./data/manifest.json","./data/sources.json"];
+ const urls=["./data/history-manifest.json","./data/sources.json"];
  const response=await Promise.all(urls.map(u=>fetch(u,{cache:"no-cache"})));
  if(response.some(r=>!r.ok))throw Error("Data has not been published yet; missing "+urls[response.findIndex(r=>!r.ok)]);
  const [data,sources]=await Promise.all(response.map(r=>r.json()));
@@ -23,8 +23,8 @@ async function load(){
  return {data,sources};
 }
 try {
- const {data:original,sources}=await load();
- const data=createLogicalReplay(original,sources);
+ const {data,sources}=await load();
+ if(data.mode!=="upstream-git-blame-surviving-lines"||data.metrics.historyAttributedLines!==8957||!data.metrics.realCommits)throw Error("Real commit attribution data is unavailable");
  const files=data.files,events=data.events,phases=data.phases;
  const fileByPath=new Map(files.map(f=>[f.path,f]));
  const terminalSteps=events.flatMap((e,i)=>e.kind==="terminal"?[i]:[]);
@@ -36,7 +36,7 @@ try {
  const current=()=>events[state.step];
  function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("show"),2500);}
  function visibleFiles(){return files.filter(f=>f.createdAt<=state.step);}
- function lineCount(f){return upperBound(f.lineSteps,state.step);}
+ function lineCount(f){return upperBound(f.chronologicalSteps,state.step);}
  function writtenTotal(){let n=0;for(const f of files)if(f.kind==="text"&&f.createdAt<=state.step)n+=lineCount(f);return n;}
  function stop(){state.playing=false;cancelAnimationFrame(frame);frame=0;prevT=0;fraction=0;}
  function seek(value){
@@ -71,9 +71,11 @@ try {
    const upto=lineCount(meta),all=sources[meta.path];
    if(upto===0){$("codeLines").innerHTML='<div class="empty-file">The file exists. Its code has not been written yet.</div>';return;}
    const e=current(),saved=e.kind==="save"&&e.file===meta.path;
+   const lastWritten=saved?meta.chronologicalSteps[upto-1]:-1;
    let output="";
-   for(let i=0;i<upto;i++){
-     const n=meta.lineSteps[i],active=n===state.step||(saved&&i===upto-1);
+   for(let i=0;i<meta.lineSteps.length;i++){
+     const n=meta.lineSteps[i];if(n>state.step)continue;
+     const active=n===state.step||(saved&&n===lastWritten);
      if(state.only&&!active)continue;
      const text=all[i],leading=(text.match(/^[ \t]*/)||[""])[0];
      const indent=[...leading].reduce((v,c)=>c==="\t"?v+(4-v%4):v+1,0);
@@ -112,7 +114,7 @@ try {
  function renderCommitDetails(phase){
    if(!phase){$("commitDetails").hidden=true;return;}
    const rows=phase.changes.map(x=>{const lines=(x.lineRanges||[]).map(r=>"L"+r.from+(r.to!==r.from?"–"+r.to:"")).join(", ")||"Imported asset";return '<button class="commit-file" data-commit-file="'+esc(x.file)+'"><span class="commit-file-info"><span>'+esc(x.file)+'</span><small title="'+esc(lines)+'">'+esc(lines)+'</small></span><b>+'+x.added+'</b></button>';}).join("");
-   $("commitDetails").innerHTML='<div class="commit-detail-head"><b>C'+String(phase.id).padStart(3,"0")+" · "+esc(phase.title)+'</b><button id="commitClose" class="square" aria-label="Close details">×</button></div><div class="commit-detail-list">'+rows+'</div><div class="commit-detail-foot">+'+phase.totalLines+' code lines · '+phase.filesChanged+' files · simulated Git commit</div>';
+   $("commitDetails").innerHTML='<div class="commit-detail-head"><b>C'+String(phase.id).padStart(3,"0")+" · "+esc(phase.title)+'</b><button id="commitClose" class="square" aria-label="Close details">×</button></div><div class="commit-detail-list">'+rows+'</div><div class="commit-detail-foot">+'+phase.totalLines+' surviving code lines · '+phase.filesChanged+' files · <a href="'+esc(phase.url)+'" target="_blank" rel="noopener noreferrer">View real upstream commit</a></div>';
  }
  function navigateCommit(offset){
    const e=current(),id=Number.isInteger(e.commit)?e.commit:0;
@@ -120,7 +122,7 @@ try {
    if(p){stop();seek(p.toStep);$("commitDetails").hidden=false;renderCommitDetails(p);}
  }
  function render(){renderToolbar();renderTree();renderCode();renderTerminal();}
- function source(){const meta=fileByPath.get(state.file);return meta?.kind==="text"?(sources[meta.path]||[]).slice(0,lineCount(meta)).join("\n"):"";}
+ function source(){const meta=fileByPath.get(state.file);return meta?.kind==="text"?(sources[meta.path]||[]).filter((_,i)=>meta.lineSteps[i]<=state.step).join("\n"):"";}
  function downloadText(s,name){const url=URL.createObjectURL(new Blob([s],{type:"text/plain;charset=utf-8"}));const a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
  function sidebar(open){if(matchMedia("(max-width:790px)").matches){$("explorer").classList.toggle("open",open);$("mobileVeil").classList.toggle("visible",open);}else{$("layout").classList.toggle("sidebar-hidden",!open);$("revealSidebar").hidden=open;}}
  $("first").addEventListener("click",()=>{stop();seek(0);});$("prev").addEventListener("click",()=>{stop();seek(state.step-1);});
@@ -164,8 +166,8 @@ try {
    if(last>=0){stop();seek(last);$("commitDetails").hidden=true;}
  });
  $("downloadCommits").addEventListener("click",()=>{
-   const rows=["# Spring PetClinic — logical commit table","","Source: "+data.sourceSHA+" · "+data.metrics.sourceLines+" source lines · "+events.length+" timed actions.","","| Commit | Added code lines | Files changed | Feature |","|---:|---:|---:|---|"];
-   phases.slice().sort((a,b)=>a.totalLines-b.totalLines||a.id-b.id).forEach(p=>rows.push("| C"+String(p.id).padStart(3,"0")+" | "+p.totalLines+" | "+p.filesChanged+" | "+p.title+" |"));
+   const rows=["# Spring PetClinic — upstream history attribution","","Source: "+data.sourceSHA+" · "+data.metrics.sourceLines+" surviving source lines · "+events.length+" reconstructed minute actions.","","| Commit | Surviving code lines | Files changed | Real upstream subject |","|---:|---:|---:|---|"];
+   phases.slice().sort((a,b)=>a.totalLines-b.totalLines||a.id-b.id).forEach(p=>rows.push("| [C"+String(p.id).padStart(3,"0")+"]("+p.url+") | "+p.totalLines+" | "+p.filesChanged+" | "+p.title.replaceAll("|","/")+" |"));
    downloadText(rows.join("\n")+"\n","COMMIT_TABLE.md");
  });
  document.querySelectorAll("[data-palette]").forEach(b=>b.addEventListener("click",()=>{document.body.dataset.palette=b.dataset.palette;document.querySelectorAll(".palettes button").forEach(v=>v.classList.toggle("active",v===b));}));
