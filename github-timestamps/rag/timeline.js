@@ -2873,6 +2873,307 @@ export const project = {
           "label": "Expected interactive prompt preview; no LLM call yet"
         }
       ]
+    },
+    {
+      "id": 12,
+      "title": "LLM integration using OpenAI Responses API and environment credentials",
+      "actions": [
+        {
+          "kind": "insert",
+          "file": "requirements.txt",
+          "at": 2,
+          "text": "openai",
+          "label": "Add OpenAI Python SDK dependency"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m pip install -r requirements.txt",
+          "output": "Install requirements in your local virtual environment. SDK installation not verified here.",
+          "label": "Install SDK locally"
+        },
+        {
+          "kind": "create",
+          "file": "llm.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → llm.py",
+          "label": "Create LLM client module"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 0,
+          "text": "import os",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 1,
+          "text": "",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 2,
+          "text": "from openai import OpenAI",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 3,
+          "text": "from openai.types.responses import Response",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 4,
+          "text": "",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 5,
+          "text": "LLM_MODEL = \"gpt-6-luna\"",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 6,
+          "text": "",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 7,
+          "text": "",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 8,
+          "text": "def create_llm_client() -> OpenAI:",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 9,
+          "text": "    api_key = os.getenv(\"OPENAI_API_KEY\", \"\").strip()",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 10,
+          "text": "    if not api_key:",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 11,
+          "text": "        raise ValueError(\"Set OPENAI_API_KEY before running the application\")",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 12,
+          "text": "",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 13,
+          "text": "    return OpenAI(api_key=api_key, timeout=30.0, max_retries=0)",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 14,
+          "text": "",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 15,
+          "text": "",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 16,
+          "text": "def request_response(client: OpenAI, prompt: dict[str, str]) -> Response:",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 17,
+          "text": "    model = os.getenv(\"OPENAI_MODEL\", LLM_MODEL).strip() or LLM_MODEL",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 18,
+          "text": "    return client.responses.create(",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 19,
+          "text": "        model=model,",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 20,
+          "text": "        instructions=prompt[\"system\"],",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 21,
+          "text": "        input=prompt[\"user\"],",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 22,
+          "text": "        max_output_tokens=512,",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 23,
+          "text": "        store=False,",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "add",
+          "file": "llm.py",
+          "at": 24,
+          "text": "    )",
+          "label": "Write LLM integration code"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"from unittest.mock import Mock; from llm import request_response; c=Mock(); c.responses.create.return_value.status='completed'; print('Mock response status:', request_response(c, {'system':'Use context','user':'Test'}).status)\"",
+          "output": "Mock response status: completed",
+          "label": "Expected local mock output; wrapper tested with stub SDK, no real request"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 8,
+          "text": "from llm import create_llm_client, request_response",
+          "label": "Integrate LLM request"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 60,
+          "label": "Mark prompt preview line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 60,
+          "label": "Remove preview line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 60,
+          "label": "Mark prompt preview line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 60,
+          "label": "Remove preview line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 60,
+          "label": "Mark prompt preview line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 60,
+          "label": "Remove preview line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 60,
+          "label": "Mark prompt preview line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 60,
+          "label": "Remove preview line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 60,
+          "text": "    client = create_llm_client()",
+          "label": "Integrate LLM request"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 61,
+          "text": "    response = request_response(client, prompt)",
+          "label": "Integrate LLM request"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 62,
+          "text": "    print(f\"\\nLLM response status: {response.status}\")",
+          "label": "Integrate LLM request"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile main.py llm.py",
+          "output": "No output on success.",
+          "label": "Syntax compilation — executed on identical source"
+        },
+        {
+          "kind": "terminal",
+          "command": "$env:OPENAI_API_KEY = [System.Net.NetworkCredential]::new(\"\", (Read-Host \"OpenAI API key\" -AsSecureString)).Password",
+          "output": "Enter your own key privately; do not commit it. Session only.",
+          "label": "Configure credential locally in PowerShell (not executed here)"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\n[Existing indexing and storage messages]\n\nAsk a question: What are embeddings?\n\n[If retrieval succeeds and API request completes:]\nLLM response status: completed\n[Otherwise: no context, API error, or other status. Live inference unverified.]",
+          "label": "Expected API integration output; may incur usage charges"
+        }
+      ]
     }
   ]
 };

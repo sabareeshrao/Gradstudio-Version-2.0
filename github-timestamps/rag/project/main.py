@@ -6,6 +6,7 @@ from embedder import load_embedding_model, embed_texts, MODEL_NAME
 from vector_store import save_vector_store, load_vector_store
 from retriever import retrieve_documents
 from prompt_builder import build_prompt
+from llm import create_llm_client, request_response
 
 
 def main():
@@ -57,10 +58,9 @@ def main():
 
     print(f"\nRetrieved {len(results)} relevant chunks:")
     prompt = build_prompt(question, results)
-    print("\nSystem message:")
-    print(prompt["system"])
-    print("\nUser message:")
-    print(prompt["user"])
+    client = create_llm_client()
+    response = request_response(client, prompt)
+    print(f"\nLLM response status: {response.status}")
 
 
 if __name__ == "__main__":

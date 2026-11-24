@@ -50,4 +50,8 @@ D01 05:33–06:09. Add retriever.py as a policy wrapper around semantic_search; 
 
 D01 06:10–06:54. Add prompt_builder.py: preserve ranked chunk IDs, source names and text; omit similarity scores from evidence; serialize the question and context as Unicode JSON; separate system instructions from user data. Reject blank questions or missing context. Print the two messages instead of the raw result list. Eleven deterministic checks and syntax compilation executed locally on the same code. No actual LLM call, real embedding inference or prompt-injection immunity is claimed. Context deduplication, token budgeting and citation verification remain pending.
 
-Next stage: LLM integration, only after learner advances.
+## Stage 12 — LLM integration
+
+D01 06:55–07:38. Add openai dependency, llm.py client factory and request_response wrapper. Read OPENAI_API_KEY from the environment (never commit secrets), default to gpt-6-luna, allow OPENAI_MODEL override, map the system message to instructions and user JSON to input, limit output to 512 tokens, disable response storage with store=False, set SDK timeout=30 seconds and max_retries=0. main.py sends a request only after successful retrieval, then prints response status. API usage may be billed and retrieved context leaves the local machine. No generated answer extraction yet. Syntax compilation and stub-SDK mock assertions passed; actual SDK import was unavailable in the test runtime, so real SDK integration, API calls and embedding inference remain unverified. Do not confuse store=False with zero retention.
+
+Next stage: answer generation, only after learner advances.
