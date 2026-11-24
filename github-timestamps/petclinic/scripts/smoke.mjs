@@ -1,10 +1,19 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+const moduleText=readFileSync("github-timestamps/petclinic/logical-replay.js","utf8");
+const {createLogicalReplay}=await import("data:text/javascript;base64,"+Buffer.from(moduleText).toString("base64"));
 import {chromium} from "playwright";
 
 const root="github-timestamps/petclinic";
 const data=JSON.parse(readFileSync(root+"/data/manifest.json","utf8"));
 const sources=JSON.parse(readFileSync(root+"/data/sources.json","utf8"));
+const logical=createLogicalReplay(data,sources);
+assert.equal(logical.events.length,10580);
+assert.equal(logical.metrics.sourceLines,8957);
+assert.equal(logical.metrics.deletionSteps,0);
+assert(logical.metrics.multiFileCommits>=70);
+assert(logical.metrics.revisitedFiles>=70);
+assert.equal(logical.phases.reduce((sum,p)=>sum+p.totalLines,0),8957);
 assert.equal(data.metrics.steps,10580,"expected exact audited step count");
 assert.equal(data.metrics.sourceLines,8957);
 assert.equal(data.metrics.files,132);
@@ -52,6 +61,16 @@ try{
  await page.locator("#stepForm").evaluate(el=>el.requestSubmit());
  assert((await page.locator("#topLines").textContent()).includes("8,957 / 8,957"));
  assert.equal(await page.locator("#terminalStage").isVisible(),true);
+ const multi=logical.phases.find(p=>p.filesChanged>2&&p.totalLines>50);
+ await page.locator("#step").fill(String(multi.toStep+1));
+ await page.locator("#stepForm").evaluate(el=>el.requestSubmit());
+ assert((await page.locator("#commitPosition").textContent()).includes("files"));
+ await page.locator("#commitDetailsBtn").click();
+ assert.equal(await page.locator("#commitDetails .commit-file").count(),multi.filesChanged);
+ await page.locator("#commitDetails .commit-file").first().click();
+ assert.equal(await page.locator("#editor").isVisible(),true);
+ await page.locator("#step").fill(String(data.events.length));
+ await page.locator("#stepForm").evaluate(el=>el.requestSubmit());
  await page.locator("#prev").click();
  assert.equal((await page.locator("#topStep").textContent()).trim(),"Step "+String(data.events.length-1).padStart(5,"0"));
  await page.locator("#next").click();
@@ -66,5 +85,5 @@ try{
  await page.locator("#mobileVeil").click({position:{x:385,y:300}});
  assert.equal(await page.locator("#explorer").isVisible(),false);
  assert.deepEqual(errors,[],"browser page errors");
- console.log("BROWSER AUDIT PASSED: 10,580 steps, source line fidelity, navigation, wraps, speed, terminal, time jump, mobile sidebar");
+ console.log("BROWSER AUDIT PASSED: 10,580 steps, 95 logical commits, cross-file navigation, source fidelity, commit detail, wraps, terminal, mobile sidebar");
 } finally {await browser.close();}
