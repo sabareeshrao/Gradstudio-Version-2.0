@@ -10,4 +10,8 @@ Python version check, create folder, open VS Code, create and activate .venv, wr
 
 Expected output: RAG Application Started. No retrieval functionality yet.
 
-Next stage: knowledge base creation, only after learner advances.
+## Stage 2 — knowledge base and document loading
+
+D01 00:15–00:36. Create `data/ai.txt`, implement `loader.py` with UTF-8 text reading, and integrate it into `main.py`. The application locates the document relative to the script, then prints its contents. No embeddings, chunking or retrieval yet.
+
+Next stage: loading multiple documents, only after learner advances.

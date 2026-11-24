@@ -1,0 +1,5 @@
+Artificial intelligence enables machines to perform tasks that normally require human intelligence.
+
+Machine learning is a subset of artificial intelligence that learns patterns from data.
+
+Retrieval-Augmented Generation retrieves relevant information from external documents before generating an answer.
