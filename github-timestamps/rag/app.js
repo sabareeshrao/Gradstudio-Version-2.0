@@ -39,5 +39,14 @@ $('searchToggle').addEventListener('click',()=>{$('searchRow').hidden=!$('search
 $('wideSidebar').addEventListener('click',()=>{const v=parseInt(getComputedStyle($('explorer')).width);$('layout').style.setProperty('--sidebar',v<380?'470px':'254px');});$('hideSidebar').addEventListener('click',()=>setSidebar(false));$('revealSidebar').addEventListener('click',()=>setSidebar(true));$('mobileFiles').addEventListener('click',()=>setSidebar(true));$('mobileVeil').addEventListener('click',()=>setSidebar(false));
 function resize(el,axis){let start=0,original=0;el.addEventListener('pointerdown',e=>{if(e.button!==0)return;start=axis==='x'?e.clientX:e.clientY;original=axis==='x'?$('explorer').getBoundingClientRect().width:$('terminalPanel').getBoundingClientRect().height;el.setPointerCapture(e.pointerId);el.classList.add('dragging');e.preventDefault();});el.addEventListener('pointermove',e=>{if(!el.hasPointerCapture(e.pointerId))return;const diff=(axis==='x'?e.clientX:e.clientY)-start;const value=Math.max(axis==='x'?150:90,Math.min(axis==='x'?680:$('terminalStage').clientHeight,original+diff));if(axis==='x')$('layout').style.setProperty('--sidebar',`${value}px`);else $('terminalPanel').style.height=`${value}px`;});el.addEventListener('pointerup',e=>{if(el.hasPointerCapture(e.pointerId))el.releasePointerCapture(e.pointerId);el.classList.remove('dragging');});el.addEventListener('dblclick',()=>{if(axis==='x')$('layout').style.removeProperty('--sidebar');else $('terminalPanel').style.height='25%';});}
 resize($('sidebarGrip'),'x');resize($('terminalResize'),'y');$('maximizeTerminal').addEventListener('click',()=>{$('terminalPanel').classList.toggle('maximized');});
-document.addEventListener('keydown',e=>{if(e.target.closest('input,button,textarea')||e.metaKey||e.ctrlKey)return;if(e.key==='ArrowLeft'){stop();seek(state.step-1);}else if(e.key==='ArrowRight'){stop();seek(state.step+1);}else if(e.key===' '){e.preventDefault();togglePlay();}});
+document.addEventListener('keydown',e=>{
+  if(e.defaultPrevented||e.isComposing||e.metaKey||e.ctrlKey||e.altKey||e.shiftKey)return;
+  const target=e.target instanceof Element?e.target:null;
+  if(target?.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"]),[role="textbox"],[role="slider"]'))return;
+  if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
+    e.preventDefault();stop();seek(state.step+(e.key==='ArrowLeft'?-1:1));
+  }else if(e.key===' '&&!target?.closest('button,a,[role="button"]')){
+    e.preventDefault();togglePlay();
+  }
+});
 render();
