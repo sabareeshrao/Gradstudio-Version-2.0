@@ -87,6 +87,21 @@ export function createLogicalReplay(original,sources){
   if(Number.isInteger(e.commit)&&phases[e.commit]){const p=phases[e.commit];if(p.fromStep<0)p.fromStep=index;p.toStep=index;}
  });
  files.forEach(f=>{if(f.finishedAt<0)f.finishedAt=f.createdAt;});
+ const exact=new Map();
+ events.forEach((e,step)=>{
+  if(e.kind!=='add'||!Number.isInteger(e.commit))return;
+  const key=e.commit+'|'+e.file;
+  if(!exact.has(key))exact.set(key,[]);
+  exact.get(key).push({line:e.line+1,step:step+1});
+ });
+ phases.forEach((phase,index)=>phase.changes.forEach(change=>{
+  const lines=exact.get(index+'|'+change.file)||[];
+  const ranges=[];
+  for(const x of lines){const last=ranges.at(-1);if(last&&x.line===last.to+1)last.to=x.line;else ranges.push({from:x.line,to:x.line});}
+  change.lineRanges=ranges;
+  change.firstStep=lines[0]?.step??null;
+  change.lastStep=lines.at(-1)?.step??null;
+ }));
  const sourceLines=files.reduce((n,f)=>n+f.lineSteps.length,0);
  if(events.length!==target||sourceLines!==original.metrics.sourceLines||!files.every(f=>f.kind==='asset'||f.lineSteps.length===f.totalLines)||events.some(e=>['remove','strike','delete'].includes(e.kind)))throw Error('Logical schedule source audit failed');
  const multi=phases.filter(p=>p.filesChanged>1).length,revisits=files.filter(f=>phases.filter(p=>p.files.includes(f.path)).length>1).length;
