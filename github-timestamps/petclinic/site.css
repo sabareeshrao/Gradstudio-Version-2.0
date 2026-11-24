@@ -35,3 +35,7 @@
  .commit-actions .small {max-width:100px}
  .explorer.open {height:100%;bottom:0}
 }
+
+.commit-file .commit-file-info {display:flex;flex-direction:column;min-width:0;gap:3px;flex:1}
+.commit-file .commit-file-info span {max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.commit-file .commit-file-info small {color:#91a1b2;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
