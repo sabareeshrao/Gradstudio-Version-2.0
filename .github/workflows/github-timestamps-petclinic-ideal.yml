@@ -48,13 +48,14 @@ jobs:
           test -s github-timestamps/petclinic/COMMIT_TABLE.md
           test -s github-timestamps/petclinic/data/history-commits.json
           test -s github-timestamps/petclinic/FIRST_100_MINUTES.md
+          test -s github-timestamps/petclinic/SECOND_100_MINUTES.md
       - name: Publish generated data
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add github-timestamps/petclinic/data/manifest.json github-timestamps/petclinic/data/sources.json github-timestamps/petclinic/data/history-manifest.json github-timestamps/petclinic/data/history-commits.json github-timestamps/petclinic/COMMIT_TABLE.md github-timestamps/petclinic/FIRST_100_MINUTES.md
+          git add github-timestamps/petclinic/data/manifest.json github-timestamps/petclinic/data/sources.json github-timestamps/petclinic/data/history-manifest.json github-timestamps/petclinic/data/history-commits.json github-timestamps/petclinic/COMMIT_TABLE.md github-timestamps/petclinic/FIRST_100_MINUTES.md github-timestamps/petclinic/SECOND_100_MINUTES.md
           if git diff --cached --quiet; then
             echo 'Generated data unchanged'
             exit 0
