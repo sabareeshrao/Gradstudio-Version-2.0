@@ -58,8 +58,8 @@ const lines=[
 "|---:|---:|---:|---|"
 ];
 for(const p of sorted){
- lines.push("| [C"+String(p.id).padStart(4,"0")+"]("+p.url+") | "+p.totalLines+
- " | "+p.filesChanged+" | "+p.title.replaceAll("|","/")+" |");
+ lines.push("| [C"+String(p.id).padStart(4,"0")+"](https://sabareeshrao.github.io/Gradstudio-Version-2.0/github-timestamps/petclinic/?commit="+p.id+") | "+p.totalLines+
+ " | "+p.filesChanged+" | "+p.title.replaceAll("|","/")+" ([upstream]("+p.url+")) |");
 }
 lines.push("","## Auditing notes","",
 "- Commit sequence follows the repository's upstream ancestry, not invented file-by-file commits.",
