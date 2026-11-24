@@ -620,6 +620,286 @@ export const project = {
           "label": "Expected output — verify locally"
         }
       ]
+    },
+    {
+      "id": 5,
+      "title": "Word-based text chunking with overlap and source metadata",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "chunker.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → chunker.py",
+          "label": "Create chunking module"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 0,
+          "text": "def chunk_text(",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 1,
+          "text": "    text: str, chunk_size: int = 20, overlap: int = 5",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 2,
+          "text": ") -> list[str]:",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 3,
+          "text": "    if chunk_size <= 0 or not 0 <= overlap < chunk_size:",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 4,
+          "text": "        raise ValueError(\"Require 0 <= overlap < chunk_size\")",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 5,
+          "text": "",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 6,
+          "text": "    words = text.split()",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 7,
+          "text": "    chunks = []",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 8,
+          "text": "    step = chunk_size - overlap",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 9,
+          "text": "",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 10,
+          "text": "    for start in range(0, len(words), step):",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 11,
+          "text": "        end = start + chunk_size",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 12,
+          "text": "        chunks.append(\" \".join(words[start:end]))",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 13,
+          "text": "        if end >= len(words):",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 14,
+          "text": "            break",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 15,
+          "text": "",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 16,
+          "text": "    return chunks",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 17,
+          "text": "",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 18,
+          "text": "",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 19,
+          "text": "def create_chunks(source: str, text: str) -> list[dict[str, str]]:",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 20,
+          "text": "    return [",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 21,
+          "text": "        {\"id\": f\"{source}:{index}\", \"source\": source, \"text\": chunk}",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 22,
+          "text": "        for index, chunk in enumerate(chunk_text(text), start=1)",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "add",
+          "file": "chunker.py",
+          "at": 23,
+          "text": "    ]",
+          "label": "Write chunking code"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 3,
+          "text": "from chunker import create_chunks",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 12,
+          "text": "    all_chunks = []",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 15,
+          "label": "Mark obsolete output"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 15,
+          "label": "Remove obsolete output"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 15,
+          "label": "Mark obsolete output"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 15,
+          "label": "Remove obsolete output"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 15,
+          "text": "        all_chunks.extend(create_chunks(name, cleaned_content))",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 16,
+          "text": "",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 17,
+          "text": "    print(f\"Created {len(all_chunks)} chunks\")",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 18,
+          "text": "    for chunk in all_chunks:",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 19,
+          "text": "        print(f\"\\nChunk: {chunk['id']}\")",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 20,
+          "text": "        print(f\"Source: {chunk['source']}\")",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 21,
+          "text": "        print(chunk[\"text\"])",
+          "label": "Integrate chunking"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"from chunker import chunk_text; print(chunk_text('one two three four five six seven eight nine ten', 6, 2))\"",
+          "output": "['one two three four five six', 'five six seven eight nine ten']",
+          "label": "Test overlap"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\nLoaded 3 documents\nCreated 7 chunks\n\nChunk: ai.txt:1\nSource: ai.txt\nArtificial intelligence enables machines to perform tasks that normally require human intelligence. Machine learning is a subset of artificial intelligence\n\nChunk: ai.txt:2\nSource: ai.txt\na subset of artificial intelligence that learns patterns from data. Retrieval-Augmented Generation retrieves relevant information from external documents before generating\n\nChunk: ai.txt:3\nSource: ai.txt\nfrom external documents before generating an answer.\n\nChunk: llm.txt:1\nSource: llm.txt\nA large language model is trained on large amounts of text. Tokens are the units of text processed by a\n\nChunk: llm.txt:2\nSource: llm.txt\nof text processed by a language model. Transformers use attention mechanisms to process relationships between tokens.\n\nChunk: rag.txt:1\nSource: rag.txt\nDocument chunking divides large documents into smaller sections. Embeddings represent text as numerical vectors. Semantic search retrieves information based on\n\nChunk: rag.txt:2\nSource: rag.txt\nsearch retrieves information based on meaning rather than exact keyword matches.\n",
+          "label": "Expected output — verify locally"
+        }
+      ]
     }
   ]
 };

@@ -22,4 +22,8 @@ D01 00:37–01:12. Add two sample text documents. Implement sorted, nonrecursive
 
 D01 01:13–01:29. Normalize CRLF and CR to LF, collapse horizontal whitespace, trim spaces around line breaks, collapse excess blank lines, and strip outer whitespace. Preserve single line breaks, paragraph boundaries, case and punctuation. Integrate per-document cleaning while retaining source names. Plain prose only; this policy is not suitable for indentation-sensitive code or tabular data without adjustment.
 
-Next stage: text chunking, only after learner advances.
+## Stage 5 — text chunking
+
+D01 01:30–02:09. Split normalized text into windows of 20 words with 5 words of overlap. Validate parameters, stop after reaching the end, preserve source filename and per-document chunk ID. Word-based chunking flattens paragraph whitespace and is a teaching implementation, not token-aware or semantic chunking.
+
+Next stage: embedding generation, only after learner advances.
