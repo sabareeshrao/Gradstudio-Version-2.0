@@ -171,7 +171,16 @@ try {
    downloadText(rows.join("\n")+"\n","COMMIT_TABLE.md");
  });
  document.querySelectorAll("[data-palette]").forEach(b=>b.addEventListener("click",()=>{document.body.dataset.palette=b.dataset.palette;document.querySelectorAll(".palettes button").forEach(v=>v.classList.toggle("active",v===b));}));
- document.addEventListener("keydown",e=>{if(e.target.closest("input,button,textarea")||e.metaKey||e.ctrlKey)return;if(e.key==="ArrowLeft"){stop();seek(state.step-1);}else if(e.key==="ArrowRight"){stop();seek(state.step+1);}else if(e.key===" "){e.preventDefault();play();}});
+ document.addEventListener('keydown',e=>{
+  if(e.defaultPrevented||e.isComposing||e.metaKey||e.ctrlKey||e.altKey||e.shiftKey)return;
+  const target=e.target instanceof Element?e.target:null;
+  if(target?.closest('input,textarea,select,[contenteditable]:not([contenteditable="false"]),[role="textbox"],[role="slider"]'))return;
+  if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
+    e.preventDefault();stop();seek(state.step+(e.key==='ArrowLeft'?-1:1));
+  }else if(e.key===' '&&!target?.closest('button,a,[role="button"]')){
+    e.preventDefault();play();
+  }
+});
  state.file=null;render();
  const requested=Number(new URLSearchParams(location.search).get("commit"));
  if(Number.isInteger(requested)&&requested>=1&&requested<=phases.length){seek(phases[requested-1].toStep);$("commitDetails").hidden=false;renderCommitDetails(phases[requested-1]);}
