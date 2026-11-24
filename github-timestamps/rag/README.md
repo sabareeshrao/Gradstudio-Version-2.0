@@ -14,4 +14,8 @@ Expected output: RAG Application Started. No retrieval functionality yet.
 
 D01 00:15–00:36. Create `data/ai.txt`, implement `loader.py` with UTF-8 text reading, and integrate it into `main.py`. The application locates the document relative to the script, then prints its contents. No embeddings, chunking or retrieval yet.
 
-Next stage: loading multiple documents, only after learner advances.
+## Stage 3 — multiple document loading
+
+D01 00:37–01:12. Add two sample text documents. Implement sorted, nonrecursive .txt discovery and load document contents into a dictionary keyed by filename. Preserve source names for future citations. Ignore matching directories. No chunking or retrieval yet.
+
+Next stage: text preprocessing, only after learner advances.

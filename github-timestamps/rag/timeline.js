@@ -250,6 +250,255 @@ export const project = {
           "label": "Expected output — verify locally"
         }
       ]
+    },
+    {
+      "id": 3,
+      "title": "Multiple document loading",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "data/llm.txt",
+          "language": "text",
+          "command": "VS Code Explorer: data → New File → llm.txt",
+          "label": "Create knowledge document"
+        },
+        {
+          "kind": "add",
+          "file": "data/llm.txt",
+          "at": 0,
+          "text": "A large language model is trained on large amounts of text.",
+          "label": "Write document line"
+        },
+        {
+          "kind": "add",
+          "file": "data/llm.txt",
+          "at": 1,
+          "text": "",
+          "label": "Write document line"
+        },
+        {
+          "kind": "add",
+          "file": "data/llm.txt",
+          "at": 2,
+          "text": "Tokens are the units of text processed by a language model.",
+          "label": "Write document line"
+        },
+        {
+          "kind": "add",
+          "file": "data/llm.txt",
+          "at": 3,
+          "text": "",
+          "label": "Write document line"
+        },
+        {
+          "kind": "add",
+          "file": "data/llm.txt",
+          "at": 4,
+          "text": "Transformers use attention mechanisms to process relationships between tokens.",
+          "label": "Write document line"
+        },
+        {
+          "kind": "create",
+          "file": "data/rag.txt",
+          "language": "text",
+          "command": "VS Code Explorer: data → New File → rag.txt",
+          "label": "Create knowledge document"
+        },
+        {
+          "kind": "add",
+          "file": "data/rag.txt",
+          "at": 0,
+          "text": "Document chunking divides large documents into smaller sections.",
+          "label": "Write document line"
+        },
+        {
+          "kind": "add",
+          "file": "data/rag.txt",
+          "at": 1,
+          "text": "",
+          "label": "Write document line"
+        },
+        {
+          "kind": "add",
+          "file": "data/rag.txt",
+          "at": 2,
+          "text": "Embeddings represent text as numerical vectors.",
+          "label": "Write document line"
+        },
+        {
+          "kind": "add",
+          "file": "data/rag.txt",
+          "at": 3,
+          "text": "",
+          "label": "Write document line"
+        },
+        {
+          "kind": "add",
+          "file": "data/rag.txt",
+          "at": 4,
+          "text": "Semantic search retrieves information based on meaning rather than exact keyword matches.",
+          "label": "Write document line"
+        },
+        {
+          "kind": "insert",
+          "file": "loader.py",
+          "at": 5,
+          "text": "",
+          "label": "Add automatic document loading"
+        },
+        {
+          "kind": "insert",
+          "file": "loader.py",
+          "at": 6,
+          "text": "",
+          "label": "Add automatic document loading"
+        },
+        {
+          "kind": "insert",
+          "file": "loader.py",
+          "at": 7,
+          "text": "def load_documents(directory: Path) -> dict[str, str]:",
+          "label": "Add automatic document loading"
+        },
+        {
+          "kind": "insert",
+          "file": "loader.py",
+          "at": 8,
+          "text": "    documents = {}",
+          "label": "Add automatic document loading"
+        },
+        {
+          "kind": "insert",
+          "file": "loader.py",
+          "at": 9,
+          "text": "    for path in sorted(directory.glob(\"*.txt\")):",
+          "label": "Add automatic document loading"
+        },
+        {
+          "kind": "insert",
+          "file": "loader.py",
+          "at": 10,
+          "text": "        if path.is_file():",
+          "label": "Add automatic document loading"
+        },
+        {
+          "kind": "insert",
+          "file": "loader.py",
+          "at": 11,
+          "text": "            documents[path.name] = load_document(path)",
+          "label": "Add automatic document loading"
+        },
+        {
+          "kind": "insert",
+          "file": "loader.py",
+          "at": 12,
+          "text": "    return documents",
+          "label": "Add automatic document loading"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 1,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 1,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 1,
+          "text": "from loader import load_documents",
+          "label": "Import collection loader"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 7,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 7,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 7,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 7,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 7,
+          "label": "Mark obsolete line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 7,
+          "label": "Remove obsolete line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 7,
+          "text": "    data_directory = Path(__file__).resolve().parent / \"data\"",
+          "label": "Integrate collection loading"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 8,
+          "text": "    documents = load_documents(data_directory)",
+          "label": "Integrate collection loading"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 9,
+          "text": "    print(f\"Loaded {len(documents)} documents\")",
+          "label": "Integrate collection loading"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 10,
+          "text": "    for name, content in documents.items():",
+          "label": "Integrate collection loading"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 11,
+          "text": "        print(f\"\\nSource: {name}\")",
+          "label": "Integrate collection loading"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 12,
+          "text": "        print(content)",
+          "label": "Integrate collection loading"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\nLoaded 3 documents\n\nSource: ai.txt\nArtificial intelligence enables machines to perform tasks that normally require human intelligence.\n\nMachine learning is a subset of artificial intelligence that learns patterns from data.\n\nRetrieval-Augmented Generation retrieves relevant information from external documents before generating an answer.\n\n\nSource: llm.txt\nA large language model is trained on large amounts of text.\n\nTokens are the units of text processed by a language model.\n\nTransformers use attention mechanisms to process relationships between tokens.\n\n\nSource: rag.txt\nDocument chunking divides large documents into smaller sections.\n\nEmbeddings represent text as numerical vectors.\n\nSemantic search retrieves information based on meaning rather than exact keyword matches.\n\n",
+          "label": "Expected output — verify locally"
+        }
+      ]
     }
   ]
 };

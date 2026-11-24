@@ -1,0 +1,5 @@
+A large language model is trained on large amounts of text.
+
+Tokens are the units of text processed by a language model.
+
+Transformers use attention mechanisms to process relationships between tokens.

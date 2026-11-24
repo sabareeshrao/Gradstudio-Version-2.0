@@ -1,0 +1,5 @@
+Document chunking divides large documents into smaller sections.
+
+Embeddings represent text as numerical vectors.
+
+Semantic search retrieves information based on meaning rather than exact keyword matches.
