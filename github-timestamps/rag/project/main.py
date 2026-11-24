@@ -1,5 +1,6 @@
 from pathlib import Path
 from loader import load_documents
+from preprocessor import clean_text
 
 
 def main():
@@ -9,8 +10,9 @@ def main():
     documents = load_documents(data_directory)
     print(f"Loaded {len(documents)} documents")
     for name, content in documents.items():
+        cleaned_content = clean_text(content)
         print(f"\nSource: {name}")
-        print(content)
+        print(cleaned_content)
 
 
 if __name__ == "__main__":

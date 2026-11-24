@@ -18,4 +18,8 @@ D01 00:15–00:36. Create `data/ai.txt`, implement `loader.py` with UTF-8 text r
 
 D01 00:37–01:12. Add two sample text documents. Implement sorted, nonrecursive .txt discovery and load document contents into a dictionary keyed by filename. Preserve source names for future citations. Ignore matching directories. No chunking or retrieval yet.
 
-Next stage: text preprocessing, only after learner advances.
+## Stage 4 — text preprocessing
+
+D01 01:13–01:29. Normalize CRLF and CR to LF, collapse horizontal whitespace, trim spaces around line breaks, collapse excess blank lines, and strip outer whitespace. Preserve single line breaks, paragraph boundaries, case and punctuation. Integrate per-document cleaning while retaining source names. Plain prose only; this policy is not suitable for indentation-sensitive code or tabular data without adjustment.
+
+Next stage: text chunking, only after learner advances.

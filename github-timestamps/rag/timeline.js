@@ -499,6 +499,127 @@ export const project = {
           "label": "Expected output — verify locally"
         }
       ]
+    },
+    {
+      "id": 4,
+      "title": "Text preprocessing and whitespace normalization",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "preprocessor.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → preprocessor.py",
+          "label": "Create preprocessing module"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 0,
+          "text": "import re",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 1,
+          "text": "",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 2,
+          "text": "",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 3,
+          "text": "def clean_text(text: str) -> str:",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 4,
+          "text": "    text = text.replace(\"\\r\\n\", \"\\n\").replace(\"\\r\", \"\\n\")",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 5,
+          "text": "    text = re.sub(r\"[^\\S\\n]+\", \" \", text)",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 6,
+          "text": "    text = re.sub(r\" *\\n *\", \"\\n\", text)",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 7,
+          "text": "    text = re.sub(r\"\\n{3,}\", \"\\n\\n\", text)",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "add",
+          "file": "preprocessor.py",
+          "at": 8,
+          "text": "    return text.strip()",
+          "label": "Write preprocessing code"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 2,
+          "text": "from preprocessor import clean_text",
+          "label": "Import preprocessing function"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 12,
+          "text": "        cleaned_content = clean_text(content)",
+          "label": "Clean each document"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 14,
+          "label": "Mark raw output line"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 14,
+          "label": "Remove raw output line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 14,
+          "text": "        print(cleaned_content)",
+          "label": "Print normalized text"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"from preprocessor import clean_text; print(repr(clean_text('  Artificial    Intelligence\\r\\n\\t is powerful.\\n\\n\\nMachine Learning  ')))\"",
+          "output": "'Artificial Intelligence\\nis powerful.\\n\\nMachine Learning'",
+          "label": "Test whitespace normalization"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\nLoaded 3 documents\n\nSource: ai.txt\nArtificial intelligence enables machines to perform tasks that normally require human intelligence.\n\nMachine learning is a subset of artificial intelligence that learns patterns from data.\n\nRetrieval-Augmented Generation retrieves relevant information from external documents before generating an answer.\n\n\nSource: llm.txt\nA large language model is trained on large amounts of text.\n\nTokens are the units of text processed by a language model.\n\nTransformers use attention mechanisms to process relationships between tokens.\n\n\nSource: rag.txt\nDocument chunking divides large documents into smaller sections.\n\nEmbeddings represent text as numerical vectors.\n\nSemantic search retrieves information based on meaning rather than exact keyword matches.",
+          "label": "Expected output — verify locally"
+        }
+      ]
     }
   ]
 };
