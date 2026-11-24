@@ -12,7 +12,7 @@ import sys
 
 PIN = "500158f732419217507c7656904b8e6aa1bcc0d6"
 OUT = pathlib.Path("github-timestamps/petclinic/data")
-START_MINUTE = 9 * 60
+START_MINUTE = 1  # D01 00:01 at global step 1
 SAVE_EVERY = 8
 MIN_STEPS, MAX_STEPS = 10000, 11000
 
@@ -171,7 +171,7 @@ def main(repo):
     assert len(check["events"]) == len(events) and original == sources
     print("AUDIT PASSED: {steps:,} steps, {lines:,} real text lines, {files} files, {assets} imported/generated assets, ZERO deletes"
           .format(steps=len(events), lines=count_lines, files=len(files), assets=len(files)-len(sources)))
-    print("Timed replay: first=D01 09:00 last minute offset=" + str(START_MINUTE + len(events) - 1))
+    print("Timed replay: first=D01 00:01 last minute offset=" + str(START_MINUTE + len(events) - 1))
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
