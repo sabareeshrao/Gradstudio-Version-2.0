@@ -900,6 +900,344 @@ export const project = {
           "label": "Expected output — verify locally"
         }
       ]
+    },
+    {
+      "id": 6,
+      "title": "Local pretrained embedding generation",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "requirements.txt",
+          "language": "text",
+          "command": "VS Code Explorer: New File → requirements.txt",
+          "label": "Create requirements.txt"
+        },
+        {
+          "kind": "add",
+          "file": "requirements.txt",
+          "at": 0,
+          "text": "sentence-transformers",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "requirements.txt",
+          "at": 1,
+          "text": "numpy",
+          "label": "Write source line"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m pip install -r requirements.txt",
+          "output": "Installation output varies by operating system and installed packages.",
+          "label": "Install embedding dependencies — illustrative output"
+        },
+        {
+          "kind": "create",
+          "file": "embedder.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → embedder.py",
+          "label": "Create embedder.py"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 0,
+          "text": "from numpy import ndarray",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 1,
+          "text": "from sentence_transformers import SentenceTransformer",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 2,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 3,
+          "text": "MODEL_NAME = \"sentence-transformers/all-MiniLM-L6-v2\"",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 4,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 5,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 6,
+          "text": "def load_embedding_model() -> SentenceTransformer:",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 7,
+          "text": "    return SentenceTransformer(MODEL_NAME, device=\"cpu\")",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 8,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 9,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 10,
+          "text": "def embed_texts(model: SentenceTransformer, texts: list[str]) -> ndarray:",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 11,
+          "text": "    if not texts:",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 12,
+          "text": "        raise ValueError(\"At least one text is required\")",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 13,
+          "text": "",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 14,
+          "text": "    return model.encode(",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 15,
+          "text": "        texts,",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 16,
+          "text": "        convert_to_numpy=True,",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 17,
+          "text": "        normalize_embeddings=True,",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 18,
+          "text": "        show_progress_bar=False,",
+          "label": "Write source line"
+        },
+        {
+          "kind": "add",
+          "file": "embedder.py",
+          "at": 19,
+          "text": "    )",
+          "label": "Write source line"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 4,
+          "text": "from embedder import load_embedding_model, embed_texts",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 19,
+          "label": "Mark old chunk print statement"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 19,
+          "label": "Remove old chunk print statement"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 19,
+          "label": "Mark old chunk print statement"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 19,
+          "label": "Remove old chunk print statement"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 19,
+          "label": "Mark old chunk print statement"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 19,
+          "label": "Remove old chunk print statement"
+        },
+        {
+          "kind": "strike",
+          "file": "main.py",
+          "at": 19,
+          "label": "Mark old chunk print statement"
+        },
+        {
+          "kind": "remove",
+          "file": "main.py",
+          "at": 19,
+          "label": "Remove old chunk print statement"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 19,
+          "text": "    if not all_chunks:",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 20,
+          "text": "        print(\"No chunks to embed.\")",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 21,
+          "text": "        return",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 22,
+          "text": "",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 23,
+          "text": "    texts = [chunk[\"text\"] for chunk in all_chunks]",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 24,
+          "text": "    model = load_embedding_model()",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 25,
+          "text": "    embeddings = embed_texts(model, texts)",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 26,
+          "text": "",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 27,
+          "text": "    print(f\"Embedding matrix shape: {embeddings.shape}\")",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 28,
+          "text": "    for chunk, vector in zip(all_chunks, embeddings, strict=True):",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 29,
+          "text": "        print(f\"{chunk['id']}: {len(vector)} dimensions\")",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 30,
+          "text": "",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 31,
+          "text": "    print(\"First vector (first 5 values):\", embeddings[0][:5])",
+          "label": "Integrate embedding generation"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile main.py embedder.py",
+          "output": "No output on success.",
+          "label": "Syntax check — expected"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "RAG Application Started\nLoaded 3 documents\nCreated 7 chunks\nEmbedding matrix shape: (7, 384)\nai.txt:1: 384 dimensions\nai.txt:2: 384 dimensions\nai.txt:3: 384 dimensions\nllm.txt:1: 384 dimensions\nllm.txt:2: 384 dimensions\nrag.txt:1: 384 dimensions\nrag.txt:2: 384 dimensions\nFirst vector (first 5 values): [model-generated values shown locally]",
+          "label": "Expected shape; first run downloads model; numeric values not simulated"
+        }
+      ]
     }
   ]
 };

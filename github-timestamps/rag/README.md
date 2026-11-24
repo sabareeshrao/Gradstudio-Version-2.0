@@ -26,4 +26,8 @@ D01 01:13–01:29. Normalize CRLF and CR to LF, collapse horizontal whitespace, 
 
 D01 01:30–02:09. Split normalized text into windows of 20 words with 5 words of overlap. Validate parameters, stop after reaching the end, preserve source filename and per-document chunk ID. Word-based chunking flattens paragraph whitespace and is a teaching implementation, not token-aware or semantic chunking.
 
-Next stage: embedding generation, only after learner advances.
+## Stage 6 — embedding generation
+
+D01 02:10–02:58. Install requirements, load the pretrained English-oriented all-MiniLM-L6-v2 model once on CPU, batch-encode chunk texts as unit-normalized NumPy vectors, and retain row-to-chunk correspondence. Expected matrix shape (7, 384). First run needs internet to download model files; no API key. Dependency versions are not pinned yet. No real model inference claimed by the replay; numerical values are displayed only when executed locally.
+
+Next stage: vector storage, only after learner advances.
