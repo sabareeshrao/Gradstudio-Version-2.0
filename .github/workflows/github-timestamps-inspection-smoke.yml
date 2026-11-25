@@ -1,0 +1,34 @@
+name: Timestamp Simulator Inspection Regression
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'github-timestamps/**'
+      - '.github/workflows/github-timestamps-inspection-smoke.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check github-timestamps/js/app.js
+          node --check github-timestamps/rag/app.js
+          node --check github-timestamps/petclinic/player.js
+          node --check github-timestamps/scripts/inspection-smoke.mjs
+      - name: Install browser
+        run: |
+          npm install --no-save playwright
+          npx playwright install chromium --with-deps
+      - name: Verify replay inspection
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/replay-http.log 2>&1 &
+          sleep 2
+          node github-timestamps/scripts/inspection-smoke.mjs
