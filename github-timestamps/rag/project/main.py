@@ -8,6 +8,7 @@ from retriever import retrieve_documents
 from prompt_builder import build_prompt
 from llm import create_llm_client, request_response
 from answer import extract_answer
+from citations import display_citations
 
 
 def main():
@@ -71,6 +72,7 @@ def main():
 
     print("\nAnswer:")
     print(answer)
+    display_citations(answer, results)
 
 
 if __name__ == "__main__":

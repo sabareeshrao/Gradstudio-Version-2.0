@@ -3400,6 +3400,330 @@ export const project = {
           "label": "Expected local run — may incur API charges"
         }
       ]
+    },
+    {
+      "id": 14,
+      "title": "Source citations: extraction, retrieved-ID validation and evidence display",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "citations.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → citations.py",
+          "label": "Create citation validation module"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 0,
+          "text": "import re",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 1,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 2,
+          "text": "CITATION_PATTERN = re.compile(r\"\\[([^\\[\\]\\r\\n]+:[0-9]+)\\]\")",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 3,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 4,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 5,
+          "text": "def extract_citations(answer: str) -> list[str]:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 6,
+          "text": "    return list(dict.fromkeys(CITATION_PATTERN.findall(answer)))",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 7,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 8,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 9,
+          "text": "def validate_citations(",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 10,
+          "text": "    answer: str, results: list[dict[str, str | float]]",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 11,
+          "text": ") -> tuple[list[dict[str, str | float]], list[str]]:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 12,
+          "text": "    retrieved = {result[\"id\"]: result for result in results}",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 13,
+          "text": "    valid = []",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 14,
+          "text": "    unknown = []",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 15,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 16,
+          "text": "    for citation_id in extract_citations(answer):",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 17,
+          "text": "        if citation_id in retrieved:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 18,
+          "text": "            valid.append(retrieved[citation_id])",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 19,
+          "text": "        else:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 20,
+          "text": "            unknown.append(citation_id)",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 21,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 22,
+          "text": "    return valid, unknown",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 23,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 24,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 25,
+          "text": "def display_citations(answer: str, results: list[dict[str, str | float]]) -> None:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 26,
+          "text": "    valid, unknown = validate_citations(answer, results)",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 27,
+          "text": "    if not valid and not unknown:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 28,
+          "text": "        print(\"\\nNo chunk citations found; answer is not source-linked.\")",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 29,
+          "text": "        return",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 30,
+          "text": "",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 31,
+          "text": "    if valid:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 32,
+          "text": "        print(\"\\nCited sources (ID match only):\")",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 33,
+          "text": "        for source in valid:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 34,
+          "text": "            print(f\"[{source['id']}] {source['source']}\")",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 35,
+          "text": "            print(source[\"text\"])",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 36,
+          "text": "    if unknown:",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 37,
+          "text": "        print(\"\\nWarning: unknown citation IDs:\", \", \".join(unknown))",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "add",
+          "file": "citations.py",
+          "at": 38,
+          "text": "    print(\"Citation ID matches do not prove factual support.\")",
+          "label": "Implement citation validation"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 10,
+          "text": "from citations import display_citations",
+          "label": "Import citation display"
+        },
+        {
+          "kind": "insert",
+          "file": "main.py",
+          "at": 74,
+          "text": "    display_citations(answer, results)",
+          "label": "Validate citations against retrieved context"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"from citations import extract_citations; print(extract_citations('[rag.txt:1] [missing.txt:99] [rag.txt:1]'))\"",
+          "output": "['rag.txt:1', 'missing.txt:99']",
+          "label": "Deterministic extraction test"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -c \"from citations import display_citations; display_citations('[rag.txt:1] [missing.txt:99]', [{'id':'rag.txt:1','source':'rag.txt','text':'Embeddings represent text as numerical vectors.'}])\"",
+          "output": "\nCited sources (ID match only):\n[rag.txt:1] rag.txt\nEmbeddings represent text as numerical vectors.\n\nWarning: unknown citation IDs: missing.txt:99\nCitation ID matches do not prove factual support.",
+          "label": "Synthetic citation display test"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile citations.py main.py",
+          "output": "",
+          "label": "Local syntax check command"
+        },
+        {
+          "kind": "terminal",
+          "command": "python main.py",
+          "output": "Requires local embedding model and authorized API credentials. Actual answer and citations depend on retrieval and model response; no live call made.",
+          "label": "Optional live run — API usage may be billed"
+        }
+      ]
     }
   ]
 };

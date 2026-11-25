@@ -58,4 +58,8 @@ D01 06:55–07:38. Add openai dependency, llm.py client factory and request_resp
 
 D01 07:39–08:10. Add answer.py to validate response.status before reading output_text, strip surrounding whitespace, and reject empty answers with ValueError. Use deferred annotations and a type-checking-only SDK import for independent tests. main.py catches extraction ValueError, displays an unavailable-answer message, or prints the completed answer. Fourteen local tests on reproduced source passed (nine extraction checks and five main-flow checks with stubbed dependencies); syntax compilation passed. No real SDK/model calls or live answer quality tests. Incomplete responses are intentionally rejected, not retried. Citation validation, error handling for API requests, and cache reuse remain pending.
 
-Next stage: source citations, only after learner advances.
+## Stage 14 — source citations
+
+D01 08:11–08:56. Extract bracketed IDs ending in a colon and ASCII digits, deduplicate in answer order, match only against retrieved context, display matched source filenames and full chunk text, and warn on unknown or absent citations. Matching IDs is not factual verification; malformed or other bracket formats are not recognized. Fourteen deterministic checks on reproduced citation module passed; no live embedding or LLM call made. The answer is displayed with warnings rather than rejected.
+
+Next stage: REST API development, only after learner advances.
