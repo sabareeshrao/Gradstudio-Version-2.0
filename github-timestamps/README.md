@@ -18,3 +18,7 @@ Run locally with `python -m http.server 8000`, then visit `/`.
 ## Global replay interaction rule
 
 Code rows, line numbers, historical timestamps and terminal output are inspection-only. Clicking, double-clicking, and selecting text must not change the current step, timestamp, file, snapshot or playback state. Only explicit transport controls, keyboard playback shortcuts, timeline slider, step/time jump forms, and dedicated commit navigation may seek. Apply this rule to all future simulators.
+
+## Simulator header standard
+
+Use only the uppercase project name as the left-hand header identity. No GitHub Timestamps branding, decorative logo, organization prefix, duplicate project name or branch badge in this area. Preserve playback status and mobile explorer access.

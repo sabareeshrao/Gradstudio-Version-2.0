@@ -11,3 +11,8 @@
 @media(max-width:480px){.identity .brand-mark{display:none}.top-stats #topLines{display:none}.controls{gap:4px;padding:5px}.transport button{min-width:24px;padding:2px 5px}.speed input{width:42px}.speed span{font-size:10px}.jump label.clock-label{display:none}.jump input#clock{width:48px}.step-jump{padding-left:4px}.step-jump #step{width:41px}.only{font-size:0}.action-tools{gap:3px;padding-left:5px}.action-tools button{padding:2px 6px;min-width:25px}.commit-mode{max-width:125px;overflow:hidden;text-overflow:ellipsis}.terminal-panel{min-height:158px}}
 .line-num,.line-time,.term-time{cursor:default}
 .code-content,.term-command{cursor:text;user-select:text}
+
+/* Project-only simulator title; retain room for playback status. */
+.topbar .project-name{min-width:0;flex:0 1 auto;overflow:hidden;white-space:nowrap;color:var(--fg);letter-spacing:.045em;font-weight:700}
+.topbar .project-name strong{overflow:hidden;text-overflow:ellipsis}
+.topbar .top-stats{flex-shrink:0}
