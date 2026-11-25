@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Annotated, Literal
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import FileResponse
 from openai import OpenAIError
 from pydantic import BaseModel, StringConstraints
 
@@ -39,6 +40,11 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="RAG from Scratch", lifespan=lifespan)
+
+
+@app.get("/", include_in_schema=False)
+def chat_page():
+    return FileResponse(Path(__file__).resolve().parent / "chat.html")
 
 
 @app.get("/health")

@@ -4578,6 +4578,853 @@ export const project = {
           "label": "Stop local server"
         }
       ]
+    },
+    {
+      "id": 16,
+      "title": "Chat interface: same-origin browser UI, answers and citations",
+      "actions": [
+        {
+          "kind": "create",
+          "file": "chat.html",
+          "language": "html",
+          "command": "VS Code Explorer: New File → chat.html",
+          "label": "Create same-origin chat interface"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 0,
+          "text": "<!doctype html>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 1,
+          "text": "<html lang=\"en\">",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 2,
+          "text": "<head>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 3,
+          "text": "<meta charset=\"utf-8\">",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 4,
+          "text": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 5,
+          "text": "<title>RAG Chat</title>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 6,
+          "text": "<style>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 7,
+          "text": "* { box-sizing: border-box; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 8,
+          "text": "body { margin: 0; background: #171717; color: #ececec; font: 16px/1.6 system-ui, sans-serif; color-scheme: dark; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 9,
+          "text": "main { max-width: 820px; margin: auto; padding: 20px 16px; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 10,
+          "text": "header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 11,
+          "text": "h1 { font-size: 24px; margin: 0; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 12,
+          "text": "#messages { display: grid; gap: 12px; min-height: 180px; margin: 20px 0; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 13,
+          "text": ".message { padding: 12px 16px; border: 1px solid #444; border-radius: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 14,
+          "text": ".user { background: #303030; justify-self: end; max-width: 90%; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 15,
+          "text": ".assistant { background: #212121; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 16,
+          "text": ".source { margin-top: 8px; padding: 8px; border-left: 2px solid #60a5fa; font-size: 14px; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 17,
+          "text": ".warning { color: #fbbf24; font-size: 14px; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 18,
+          "text": "form { display: flex; gap: 8px; align-items: end; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 19,
+          "text": "textarea { flex: 1; min-width: 0; resize: vertical; padding: 12px; border: 1px solid #555; border-radius: 10px; background: #252525; color: inherit; font: inherit; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 20,
+          "text": "button { background: #363636; color: inherit; border: 1px solid #666; border-radius: 8px; padding: 10px 14px; font: inherit; cursor: pointer; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 21,
+          "text": "button:disabled { opacity: .45; cursor: not-allowed; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 22,
+          "text": ":focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 23,
+          "text": "#status { min-height: 26px; color: #bdbdbd; font-size: 14px; }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 24,
+          "text": "</style>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 25,
+          "text": "</head>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 26,
+          "text": "<body>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 27,
+          "text": "<main>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 28,
+          "text": "<header><h1>RAG Chat</h1><button id=\"clear\" type=\"button\">Clear</button></header>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 29,
+          "text": "<section id=\"messages\" aria-label=\"Chat messages\" aria-live=\"polite\"></section>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 30,
+          "text": "<form id=\"chat-form\">",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 31,
+          "text": "<textarea id=\"question\" aria-label=\"Question\" placeholder=\"Ask about your documents...\" rows=\"2\" maxlength=\"2000\" required></textarea>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 32,
+          "text": "<button id=\"send\" type=\"submit\">Send</button>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 33,
+          "text": "</form>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 34,
+          "text": "<p id=\"status\" role=\"status\">Ready</p>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 35,
+          "text": "</main>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 36,
+          "text": "<script>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 37,
+          "text": "const form = document.getElementById(\"chat-form\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 38,
+          "text": "const question = document.getElementById(\"question\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 39,
+          "text": "const messages = document.getElementById(\"messages\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 40,
+          "text": "const send = document.getElementById(\"send\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 41,
+          "text": "const clear = document.getElementById(\"clear\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 42,
+          "text": "const status = document.getElementById(\"status\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 43,
+          "text": "let busy = false;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 44,
+          "text": "",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 45,
+          "text": "function addMessage(role, text) {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 46,
+          "text": "    const item = document.createElement(\"article\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 47,
+          "text": "    item.className = \"message \" + role;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 48,
+          "text": "    item.textContent = text;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 49,
+          "text": "    messages.append(item);",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 50,
+          "text": "    return item;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 51,
+          "text": "}",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 52,
+          "text": "",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 53,
+          "text": "function showAnswer(data) {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 54,
+          "text": "    const item = addMessage(\"assistant\", data.answer);",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 55,
+          "text": "    for (const source of data.sources) {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 56,
+          "text": "        const detail = document.createElement(\"div\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 57,
+          "text": "        detail.className = \"source\";",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 58,
+          "text": "        detail.textContent = source.id + \" | \" + source.source + \"\\n\" + source.text;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 59,
+          "text": "        item.append(detail);",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 60,
+          "text": "    }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 61,
+          "text": "    const note = document.createElement(\"p\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 62,
+          "text": "    note.className = \"warning\";",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 63,
+          "text": "    note.textContent = \"Citation status: \" + data.citation_status;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 64,
+          "text": "    if (data.unknown_citations.length) {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 65,
+          "text": "        note.textContent += \" | Unknown IDs: \" + data.unknown_citations.join(\", \");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 66,
+          "text": "    }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 67,
+          "text": "    item.append(note);",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 68,
+          "text": "}",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 69,
+          "text": "",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 70,
+          "text": "form.addEventListener(\"submit\", async (event) => {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 71,
+          "text": "    event.preventDefault();",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 72,
+          "text": "    const text = question.value.trim();",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 73,
+          "text": "    if (busy || !text || text.length > 2000) return;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 74,
+          "text": "    busy = true;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 75,
+          "text": "    send.disabled = clear.disabled = question.disabled = true;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 76,
+          "text": "    addMessage(\"user\", text);",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 77,
+          "text": "    question.value = \"\";",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 78,
+          "text": "    status.textContent = \"Retrieving and generating...\";",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 79,
+          "text": "    try {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 80,
+          "text": "        const response = await fetch(\"/ask\", {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 81,
+          "text": "            method: \"POST\",",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 82,
+          "text": "            headers: { \"Content-Type\": \"application/json\" },",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 83,
+          "text": "            body: JSON.stringify({ question: text })",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 84,
+          "text": "        });",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 85,
+          "text": "        if (!response.ok) throw new Error(\"HTTP \" + response.status);",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 86,
+          "text": "        showAnswer(await response.json());",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 87,
+          "text": "        status.textContent = \"Ready\";",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 88,
+          "text": "    } catch (error) {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 89,
+          "text": "        addMessage(\"assistant\", \"Unable to answer. Please try again.\");",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 90,
+          "text": "        status.textContent = \"Request failed\";",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 91,
+          "text": "    } finally {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 92,
+          "text": "        busy = false;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 93,
+          "text": "        send.disabled = clear.disabled = question.disabled = false;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 94,
+          "text": "        question.focus();",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 95,
+          "text": "    }",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 96,
+          "text": "});",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 97,
+          "text": "",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 98,
+          "text": "clear.addEventListener(\"click\", () => {",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 99,
+          "text": "    if (busy) return;",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 100,
+          "text": "    messages.replaceChildren();",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 101,
+          "text": "    question.value = \"\";",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 102,
+          "text": "    status.textContent = \"Ready\";",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 103,
+          "text": "    question.focus();",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 104,
+          "text": "});",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 105,
+          "text": "</script>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 106,
+          "text": "</body>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "add",
+          "file": "chat.html",
+          "at": 107,
+          "text": "</html>",
+          "label": "Write chat HTML, CSS and JavaScript"
+        },
+        {
+          "kind": "insert",
+          "file": "api.py",
+          "at": 5,
+          "text": "from fastapi.responses import FileResponse",
+          "label": "Import HTML file response"
+        },
+        {
+          "kind": "insert",
+          "file": "api.py",
+          "at": 44,
+          "text": "@app.get(\"/\", include_in_schema=False)",
+          "label": "Serve chat.html at root URL"
+        },
+        {
+          "kind": "insert",
+          "file": "api.py",
+          "at": 45,
+          "text": "def chat_page():",
+          "label": "Serve chat.html at root URL"
+        },
+        {
+          "kind": "insert",
+          "file": "api.py",
+          "at": 46,
+          "text": "    return FileResponse(Path(__file__).resolve().parent / \"chat.html\")",
+          "label": "Serve chat.html at root URL"
+        },
+        {
+          "kind": "insert",
+          "file": "api.py",
+          "at": 47,
+          "text": "",
+          "label": "Serve chat.html at root URL"
+        },
+        {
+          "kind": "insert",
+          "file": "api.py",
+          "at": 48,
+          "text": "",
+          "label": "Serve chat.html at root URL"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile api.py",
+          "output": "",
+          "label": "Check Python syntax"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m uvicorn api:app --host 127.0.0.1 --port 8000",
+          "output": "Expected: Uvicorn running on http://127.0.0.1:8000 after successful initialization.",
+          "label": "Start RAG web server locally"
+        },
+        {
+          "kind": "terminal",
+          "command": "Open http://127.0.0.1:8000/ in browser",
+          "output": "Expected: RAG Chat page with question input, Send and Clear.",
+          "label": "Open chat interface"
+        },
+        {
+          "kind": "terminal",
+          "command": "Type What are embeddings? → Send",
+          "output": "Optional live request: answer and sources depend on local index and configured model. API usage may be billed.",
+          "label": "Test browser question submission"
+        },
+        {
+          "kind": "terminal",
+          "command": "Click Clear",
+          "output": "Chat messages removed; status Ready.",
+          "label": "Clear local chat history"
+        },
+        {
+          "kind": "terminal",
+          "command": "Ctrl+C",
+          "output": "Server stops.",
+          "label": "Stop local server"
+        }
+      ]
     }
   ]
 };
