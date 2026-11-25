@@ -3724,6 +3724,860 @@ export const project = {
           "label": "Optional live run — API usage may be billed"
         }
       ]
+    },
+    {
+      "id": 15,
+      "title": "REST API: FastAPI request validation, reusable RAG service and JSON responses",
+      "actions": [
+        {
+          "kind": "insert",
+          "file": "requirements.txt",
+          "at": 3,
+          "text": "fastapi",
+          "label": "Add REST API framework"
+        },
+        {
+          "kind": "insert",
+          "file": "requirements.txt",
+          "at": 4,
+          "text": "uvicorn",
+          "label": "Add ASGI server"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m pip install -r requirements.txt",
+          "output": "Install dependencies in your active virtual environment; actual output varies.",
+          "label": "Local dependency installation"
+        },
+        {
+          "kind": "create",
+          "file": "rag_service.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → rag_service.py",
+          "label": "Create rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 0,
+          "text": "from pathlib import Path",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 1,
+          "text": "from threading import Lock",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 2,
+          "text": "",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 3,
+          "text": "from loader import load_documents",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 4,
+          "text": "from preprocessor import clean_text",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 5,
+          "text": "from chunker import create_chunks",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 6,
+          "text": "from embedder import load_embedding_model, embed_texts",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 7,
+          "text": "from retriever import retrieve_documents",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 8,
+          "text": "from prompt_builder import build_prompt",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 9,
+          "text": "from llm import create_llm_client, request_response",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 10,
+          "text": "from answer import extract_answer",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 11,
+          "text": "from citations import validate_citations",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 12,
+          "text": "",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 13,
+          "text": "",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 14,
+          "text": "class RAGService:",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 15,
+          "text": "    def __init__(self, data_directory: Path):",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 16,
+          "text": "        documents = load_documents(data_directory)",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 17,
+          "text": "        self.chunks = []",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 18,
+          "text": "        for name, content in documents.items():",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 19,
+          "text": "            self.chunks.extend(create_chunks(name, clean_text(content)))",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 20,
+          "text": "        if not self.chunks:",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 21,
+          "text": "            raise RuntimeError(\"No chunks to embed\")",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 22,
+          "text": "        self.model = load_embedding_model()",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 23,
+          "text": "        self.embeddings = embed_texts(",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 24,
+          "text": "            self.model, [chunk[\"text\"] for chunk in self.chunks]",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 25,
+          "text": "        )",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 26,
+          "text": "        self.embedding_lock = Lock()",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 27,
+          "text": "",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 28,
+          "text": "    def ask(self, question: str) -> dict:",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 29,
+          "text": "        with self.embedding_lock:",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 30,
+          "text": "            query = embed_texts(self.model, [question])[0]",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 31,
+          "text": "        results = retrieve_documents(",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 32,
+          "text": "            query, self.chunks, self.embeddings, top_k=3, min_score=0.35",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 33,
+          "text": "        )",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 34,
+          "text": "        if not results:",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 35,
+          "text": "            return {",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 36,
+          "text": "                \"status\": \"no_context\",",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 37,
+          "text": "                \"answer\": \"No relevant context found.\",",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 38,
+          "text": "                \"sources\": [],",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 39,
+          "text": "                \"unknown_citations\": [],",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 40,
+          "text": "                \"citation_status\": \"not_applicable\",",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 41,
+          "text": "            }",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 42,
+          "text": "        prompt = build_prompt(question, results)",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 43,
+          "text": "        with create_llm_client() as client:",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 44,
+          "text": "            response = request_response(client, prompt)",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 45,
+          "text": "        answer = extract_answer(response)",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 46,
+          "text": "        valid, unknown = validate_citations(answer, results)",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 47,
+          "text": "        citation_status = \"unknown_ids\" if unknown else (",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 48,
+          "text": "            \"id_match_only\" if valid else \"no_citations\"",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 49,
+          "text": "        )",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 50,
+          "text": "        return {",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 51,
+          "text": "            \"status\": \"answered\",",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 52,
+          "text": "            \"answer\": answer,",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 53,
+          "text": "            \"sources\": valid,",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 54,
+          "text": "            \"unknown_citations\": unknown,",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 55,
+          "text": "            \"citation_status\": citation_status,",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "add",
+          "file": "rag_service.py",
+          "at": 56,
+          "text": "        }",
+          "label": "Write rag_service.py"
+        },
+        {
+          "kind": "create",
+          "file": "api.py",
+          "language": "python",
+          "command": "VS Code Explorer: New File → api.py",
+          "label": "Create api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 0,
+          "text": "from contextlib import asynccontextmanager",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 1,
+          "text": "from pathlib import Path",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 2,
+          "text": "from typing import Annotated, Literal",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 3,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 4,
+          "text": "from fastapi import FastAPI, HTTPException, Request",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 5,
+          "text": "from openai import OpenAIError",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 6,
+          "text": "from pydantic import BaseModel, StringConstraints",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 7,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 8,
+          "text": "from rag_service import RAGService",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 9,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 10,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 11,
+          "text": "class AskRequest(BaseModel):",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 12,
+          "text": "    question: Annotated[str, StringConstraints(",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 13,
+          "text": "        strip_whitespace=True, min_length=1, max_length=2000",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 14,
+          "text": "    )]",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 15,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 16,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 17,
+          "text": "class Source(BaseModel):",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 18,
+          "text": "    id: str",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 19,
+          "text": "    source: str",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 20,
+          "text": "    text: str",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 21,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 22,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 23,
+          "text": "class AskResponse(BaseModel):",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 24,
+          "text": "    status: Literal[\"answered\", \"no_context\"]",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 25,
+          "text": "    answer: str",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 26,
+          "text": "    sources: list[Source]",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 27,
+          "text": "    unknown_citations: list[str]",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 28,
+          "text": "    citation_status: Literal[",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 29,
+          "text": "        \"id_match_only\", \"unknown_ids\", \"no_citations\", \"not_applicable\"",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 30,
+          "text": "    ]",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 31,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 32,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 33,
+          "text": "@asynccontextmanager",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 34,
+          "text": "async def lifespan(app: FastAPI):",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 35,
+          "text": "    data_directory = Path(__file__).resolve().parent / \"data\"",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 36,
+          "text": "    app.state.rag = RAGService(data_directory)",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 37,
+          "text": "    yield",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 38,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 39,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 40,
+          "text": "app = FastAPI(title=\"RAG from Scratch\", lifespan=lifespan)",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 41,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 42,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 43,
+          "text": "@app.get(\"/health\")",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 44,
+          "text": "def health():",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 45,
+          "text": "    return {\"status\": \"ready\"}",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 46,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 47,
+          "text": "",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 48,
+          "text": "@app.post(\"/ask\", response_model=AskResponse)",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 49,
+          "text": "def ask(payload: AskRequest, request: Request) -> AskResponse:",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 50,
+          "text": "    try:",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 51,
+          "text": "        result = request.app.state.rag.ask(payload.question)",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 52,
+          "text": "        return AskResponse(**result)",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 53,
+          "text": "    except (OpenAIError, ValueError):",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "add",
+          "file": "api.py",
+          "at": 54,
+          "text": "        raise HTTPException(status_code=502, detail=\"Answer unavailable.\") from None",
+          "label": "Write api.py"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m py_compile rag_service.py api.py",
+          "output": "",
+          "label": "Syntax check (tested)"
+        },
+        {
+          "kind": "terminal",
+          "command": "python -m uvicorn api:app --host 127.0.0.1 --port 8000",
+          "output": "Expected: Uvicorn running on http://127.0.0.1:8000 after index initialization.",
+          "label": "Start local API; real model load not verified"
+        },
+        {
+          "kind": "terminal",
+          "command": "Invoke-RestMethod http://127.0.0.1:8000/health",
+          "output": "status\n------\nready",
+          "label": "Expected health response; startup must succeed"
+        },
+        {
+          "kind": "terminal",
+          "command": "Open http://127.0.0.1:8000/docs in browser",
+          "output": "Swagger UI; use POST /ask with a question. Optional paid API call.",
+          "label": "Inspect OpenAPI and optionally ask a question"
+        },
+        {
+          "kind": "terminal",
+          "command": "Ctrl+C",
+          "output": "Server stops.",
+          "label": "Stop local server"
+        }
+      ]
     }
   ]
 };
