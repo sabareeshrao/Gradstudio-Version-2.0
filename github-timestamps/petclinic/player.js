@@ -139,8 +139,8 @@ try {
  $("copy").addEventListener("click",async()=>{const text=source();if(!text){toast("No source visible for this step");return;}try{await navigator.clipboard.writeText(text);toast("Visible source copied");}catch{toast("Clipboard unavailable; try Download");}});
  $("download").addEventListener("click",()=>{const text=source();if(!text){toast("No source visible");return;}downloadText(text,state.file.split("/").at(-1));});
  $("filetree").addEventListener("click",e=>{const btn=e.target.closest("button");if(!btn)return;if(btn.dataset.dir!==undefined){const p=btn.dataset.dir;if(state.closed.has(p))state.closed.delete(p);else state.closed.add(p);renderTree();}else if(btn.dataset.file){state.file=btn.dataset.file;state.override=false;render();if(matchMedia("(max-width:790px)").matches)sidebar(false);}});
- $("codeLines").addEventListener("click",e=>{const row=e.target.closest("[data-event]");if(row){stop();seek(Number(row.dataset.event));}});
- $("terminalLines").addEventListener("click",e=>{const row=e.target.closest("[data-event]");if(row){stop();seek(Number(row.dataset.event));}});
+ /* Source and terminal inspection never changes the replay time. */
+ 
  $("searchToggle").addEventListener("click",()=>{$("searchRow").hidden=!$("searchRow").hidden;if(!$("searchRow").hidden)$("fileSearch").focus();});
  $("fileSearch").addEventListener("input",e=>{state.search=e.target.value;renderTree();});
  $("wideSidebar").addEventListener("click",()=>{const w=$("explorer").getBoundingClientRect().width;$("layout").style.setProperty("--sidebar",w<380?"470px":"254px");});

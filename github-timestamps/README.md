@@ -15,3 +15,6 @@ Run locally with `python -m http.server 8000`, then visit `/`.
 - File path-only bar; Selected, Copy, Download controls in the step toolbar
 
 **Important:** The demo commit SHAs and terminal output are fictional. The simulation does not run shell commands or connect to a GitHub repository. Real Spring PetClinic history will only be imported after UI review.
+## Global replay interaction rule
+
+Code rows, line numbers, historical timestamps and terminal output are inspection-only. Clicking, double-clicking, and selecting text must not change the current step, timestamp, file, snapshot or playback state. Only explicit transport controls, keyboard playback shortcuts, timeline slider, step/time jump forms, and dedicated commit navigation may seek. Apply this rule to all future simulators.
