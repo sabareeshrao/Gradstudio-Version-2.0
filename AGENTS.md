@@ -38,3 +38,7 @@ This repository creates premium visual MCQ study modules. **Before creating, edi
 **Required final response:** **Preview in browser** (GitHub Pages) first, then distinct **HTML source** (GitHub code) and optional raw HTML. Check the live preview if possible and clearly label it unverified when inaccessible. Include counts/QA facts and any unverified tests.
 
 Do not bypass the detailed acceptance checks and quality rubric in the full standard.
+
+## Thumbnail catalog — automatic publishing (owner instruction)
+
+For every new GradStudio subject thumbnail collection, style comparison, alternate cover, extra demo, or corrected thumbnail, publish the finished original SVG designs to the existing catalog at `templates/subject-thumbnails/internet/index.html` on `main` as part of the same task, unless the owner explicitly requests chat-only previews or no repository changes. Preserve all existing designs; use the corrected version when replacing a pending flawed design. Maintain 16:9 proportions, dedicated title spacing, and no dividers crossing titles. Do not modify the production application. Verify the commit, catalog counts, and preservation of prior content; provide the GitHub Pages catalog/section link and report any unverified browser rendering or visual parity. Do not wait for a separate push request.
